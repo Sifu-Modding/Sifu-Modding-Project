@@ -1,0 +1,20 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "Blueprint/UserWidget.h"
+#include "TabWidget.generated.h"
+
+UCLASS(EditInlineNew)
+class SIFU_API UTabWidget : public UUserWidget {
+    GENERATED_BODY()
+public:
+private:
+    UPROPERTY(EditAnywhere)
+    uint8 m_uiEnumValue;
+    
+public:
+    UTabWidget();
+    UFUNCTION(BlueprintCallable)
+    uint8 BPF_GetEnumValue();
+    
+};
+
