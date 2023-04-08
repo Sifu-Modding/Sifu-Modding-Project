@@ -3,11 +3,11 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionIsFrozenBySanctuary.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionIsFrozenBySanctuary : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bInvert;
     
     UComboAIConditionIsFrozenBySanctuary();

@@ -7,12 +7,12 @@
 
 class UAvoidPropertyDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UHitDefenseResultHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UHitDefenseResultHelpers();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EAvoidType BPF_GetAvoidType(const FHitDefenseResult& _defenseResult);
     
     UFUNCTION(BlueprintCallable)

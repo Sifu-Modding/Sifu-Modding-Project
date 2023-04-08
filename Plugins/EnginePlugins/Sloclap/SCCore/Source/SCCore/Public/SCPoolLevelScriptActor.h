@@ -3,7 +3,7 @@
 #include "SCLevelScriptActor.h"
 #include "SCPoolLevelScriptActor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCPoolLevelScriptActor : public ASCLevelScriptActor {
     GENERATED_BODY()
 public:

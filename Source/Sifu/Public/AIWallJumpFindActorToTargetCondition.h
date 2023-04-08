@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ComboAIConditionFindActorEnvQuery.h"
+#include "Templates/SubclassOf.h"
 #include "AIWallJumpFindActorToTargetCondition.generated.h"
 
 class UAIActionWallJumpAttack;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIWallJumpFindActorToTargetCondition : public UComboAIConditionFindActorEnvQuery {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAIActionWallJumpAttack> m_AttackAction;
     
 public:
     UAIWallJumpFindActorToTargetCondition();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UAIActionWallJumpAttack> BPF_GetAttackActionClass() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAIActionWallJumpAttack* BPF_GetAttackAction() const;
     
 };

@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "WidgetPoolEntryTemplate.h"
 #include "SCUserDefinedEnumHandler.h"
 #include "WidgetPoolElementArray.h"
+#include "WidgetPoolEntryTemplate.h"
 #include "WidgetPoolComponent.generated.h"
 
 class USCUserWidget;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UWidgetPoolComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FWidgetPoolEntryTemplate> m_WidgetPoolTemplate;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<FName, FWidgetPoolElementArray> m_WidgetPool;
     
 public:

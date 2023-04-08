@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGameOptionTypes.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGameOptionTypes : uint8 {
     CameraSpeed,
     MusicVolume,

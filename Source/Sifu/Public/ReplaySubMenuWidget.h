@@ -1,51 +1,51 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCUserWidget.h"
 #include "IsSubMenuAvailableDelegateDelegate.h"
+#include "SCUserWidget.h"
+#include "Templates/SubclassOf.h"
 #include "ReplaySubMenuWidget.generated.h"
 
-class UReplaySubMenuWidget;
 class UCustomWidgetNavigation;
 class UReplayMenuWidget;
+class UReplaySubMenuWidget;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UReplaySubMenuWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UCustomWidgetNavigation> m_CustomWidgetNavigationClass;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCustomWidgetNavigation* m_CustomWidgetNavigation;
     
-    UPROPERTY(BlueprintReadOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UReplaySubMenuWidget* m_ParentSubMenu;
     
 public:
     UReplaySubMenuWidget();
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsSubMenuAvailable(const UReplaySubMenuWidget* _menu) const;
     
     UFUNCTION(BlueprintCallable)
     void BPF_BindIsSubMenuAvailableDelegate(const FIsSubMenuAvailableDelegate& _delegate);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRemovedFromParent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnMenuPushRequest(UReplayMenuWidget* _parent, UReplaySubMenuWidget* _previousMenu, UReplaySubMenuWidget* _parentSubMenu);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnMenuPushed(UReplaySubMenuWidget* _previousMenu, UReplaySubMenuWidget* _parentSubMenu);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnMenuPopRequest(UReplayMenuWidget* _parent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnMenuPopped();
     
 };

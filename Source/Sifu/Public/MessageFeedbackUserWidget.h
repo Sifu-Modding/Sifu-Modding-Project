@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserWidget.h"
 #include "EMessageReason.h"
+#include "SCUserWidget.h"
 #include "MessageFeedbackUserWidget.generated.h"
 
 class ABaseReplayController;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UMessageFeedbackUserWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ABaseReplayController* m_Controller;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMessageReason m_eShowForReason;
     
 public:
     UMessageFeedbackUserWidget();
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsActive() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_Show(bool _bHasActiveMessage);
     
 };

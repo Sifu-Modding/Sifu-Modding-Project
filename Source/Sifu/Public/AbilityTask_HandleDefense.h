@@ -7,7 +7,7 @@
 class UAbilityTask_HandleDefense;
 class UGameplayAbility;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAbilityTask_HandleDefense : public UAbilityTask {
     GENERATED_BODY()
 public:

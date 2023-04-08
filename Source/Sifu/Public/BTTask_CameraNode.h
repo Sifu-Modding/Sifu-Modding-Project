@@ -5,11 +5,11 @@
 
 class UAbstractCameraData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBTTask_CameraNode : public UBTTaskNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAbstractCameraData* m_CameraData;
     
     UBTTask_CameraNode();

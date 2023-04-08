@@ -1,7 +1,7 @@
 #include "ThePlainesGameMode.h"
 
-class APlayerController;
 class AController;
+class APlayerController;
 
 void AThePlainesGameMode::KillAllAis() {
 }
@@ -11,6 +11,12 @@ TArray<APlayerController*> AThePlainesGameMode::BPF_GetPlayers() {
 }
 
 void AThePlainesGameMode::BPF_ForceRestartPlayerAtStartNull(AController* _controller) {
+}
+
+void AThePlainesGameMode::BPE_TryGetOverrideGenderAndOutfit_Implementation(ECharacterGender& _eOutGender, int32& _iOutOutfitIndex, bool& _bOutEnableOutfitPropSpawn) const {
+}
+
+void AThePlainesGameMode::BPE_TryGetOverrideAge_Implementation(int32& _iOutAge) const {
 }
 
 bool AThePlainesGameMode::BPE_IsStartupGameMode_Implementation() const {

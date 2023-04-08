@@ -5,11 +5,11 @@
 
 class UBlendProfile;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FBlendProfileBySpeedStateTableRow : public FTableRowBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendProfile* m_BlendProfileBySpeedState[4];
     
     FBlendProfileBySpeedStateTableRow();

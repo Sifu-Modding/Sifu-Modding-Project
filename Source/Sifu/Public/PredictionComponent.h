@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCPoolableActorComponent.h"
 #include "Components/ActorComponent.h"
+#include "SCPoolableActorComponent.h"
 #include "PredictionComponent.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UPredictionComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bLocalPredictionOnly;
     
     UPredictionComponent();

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FReplicatedSequencerAnimMontagePosition {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMontageId;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPosition;
     
     SIFU_API FReplicatedSequencerAnimMontagePosition();

@@ -1,7 +1,7 @@
 #include "GameMathTools.h"
 
-class AFightingCharacter;
 class AActor;
+class AFightingCharacter;
 
 EQuadrantTypes UGameMathTools::GetQuadrantTowardTarget(AFightingCharacter* _originChar, AActor* _target) {
     return EQuadrantTypes::FrontLeft;

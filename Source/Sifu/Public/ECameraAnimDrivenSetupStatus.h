@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECameraAnimDrivenSetupStatus.generated.h"
 
-UENUM()
-enum class ECameraAnimDrivenSetupStatus {
+UENUM(BlueprintType)
+enum class ECameraAnimDrivenSetupStatus : uint8 {
     Invalid,
     PendingComputation,
     PendingLaunch,

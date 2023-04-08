@@ -7,11 +7,11 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCReplayLevelStreamingData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCReplayLevelStreamingState m_InitialState;
     
 protected:
-    UPROPERTY()
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<uint32, FSCReplayLevelStreamingState> m_LevelStreamingEvents;
     
 public:

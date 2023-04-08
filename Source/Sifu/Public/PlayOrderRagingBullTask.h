@@ -5,12 +5,12 @@
 
 class URagingBullDB;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UPlayOrderRagingBullTask : public UPlayOrderTask {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URagingBullDB* m_ragingBullDB;
     
 public:

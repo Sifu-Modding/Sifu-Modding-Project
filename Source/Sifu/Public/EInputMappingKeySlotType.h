@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EInputMappingKeySlotType.generated.h"
 
-UENUM()
-enum class EInputMappingKeySlotType {
+UENUM(BlueprintType)
+enum class EInputMappingKeySlotType : uint8 {
     Action,
     HorAxis,
     VertAxit,

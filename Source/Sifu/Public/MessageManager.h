@@ -5,12 +5,12 @@
 
 class UMessengerComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UMessageManager : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMessengerComponent* m_MessengerComponent;
     
 public:

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseActorCondition.h"
 #include "Engine/EngineTypes.h"
+#include "BaseActorCondition.h"
 #include "MovementModeCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UMovementModeCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EMovementMode> m_eMovementMode;
     
     UMovementModeCondition();

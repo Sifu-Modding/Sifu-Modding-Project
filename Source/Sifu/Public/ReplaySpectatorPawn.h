@@ -3,24 +3,24 @@
 #include "SCSpectatorPawnBase.h"
 #include "ReplaySpectatorPawn.generated.h"
 
-class UReplayCineCameraComponent;
 class AController;
+class UReplayCineCameraComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AReplaySpectatorPawn : public ASCSpectatorPawnBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UReplayCineCameraComponent* m_CineCameraComponent;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDefaultRollCooldownOnReset;
     
 public:
     AReplaySpectatorPawn();
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPossess(AController* _controller);
     
 };

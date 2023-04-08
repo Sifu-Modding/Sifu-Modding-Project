@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FProgressionRewardArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ECharacterProgressionRewardTypes> m_WeaponRewards;
     
     SIFU_API FProgressionRewardArray();

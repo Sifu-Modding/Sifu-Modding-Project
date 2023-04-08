@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPatrolLaunchMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPatrolLaunchMethod : uint8 {
     AtSpawn,
     OnAnEvent,

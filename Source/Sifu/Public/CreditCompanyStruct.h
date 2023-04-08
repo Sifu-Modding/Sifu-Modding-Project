@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCreditCompanyStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_CompanyName;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCreditCategoryStruct> m_Categories;
     
     FCreditCompanyStruct();

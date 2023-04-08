@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderParams.h"
 #include "NetOrderStructDash.h"
+#include "OrderParams.h"
 #include "OrderDashParams.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UOrderDashParams : public UOrderParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNetOrderStructDash m_Params;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNetOrderStructDash m_TransientParams;
     
     UOrderDashParams();

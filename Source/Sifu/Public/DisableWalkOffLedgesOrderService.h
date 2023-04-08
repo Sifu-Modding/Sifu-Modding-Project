@@ -3,7 +3,7 @@
 #include "OrderService.h"
 #include "DisableWalkOffLedgesOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UDisableWalkOffLedgesOrderService : public UOrderService {
     GENERATED_BODY()
 public:

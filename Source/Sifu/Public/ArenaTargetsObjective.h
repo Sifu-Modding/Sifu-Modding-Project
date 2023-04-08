@@ -5,18 +5,18 @@
 
 class AAISpawner;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UArenaTargetsObjective : public UBaseArenaObjective {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<AAISpawner>> m_Targets;
     
     UArenaTargetsObjective();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSoftObjectPtr<AAISpawner>> BPF_GetTargets() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnTargetDown(AAISpawner* _AISpawner);
     
 };

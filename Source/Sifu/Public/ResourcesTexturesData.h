@@ -5,14 +5,14 @@
 
 class UTexture2D;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UResourcesTexturesData : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_FragmentText;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> m_FragmentTexture;
     
     UResourcesTexturesData();

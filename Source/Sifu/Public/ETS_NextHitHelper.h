@@ -7,7 +7,7 @@
 
 class AFightingCharacter;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UETS_NextHitHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

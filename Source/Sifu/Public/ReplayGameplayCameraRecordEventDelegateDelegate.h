@@ -3,5 +3,5 @@
 #include "ReplayGameplayCameraRecordEvent.h"
 #include "ReplayGameplayCameraRecordEventDelegateDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FReplayGameplayCameraRecordEventDelegate, const FReplayGameplayCameraRecordEvent&, _serializedEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FReplayGameplayCameraRecordEventDelegate, const FReplayGameplayCameraRecordEvent&, _serializedEvent);
 

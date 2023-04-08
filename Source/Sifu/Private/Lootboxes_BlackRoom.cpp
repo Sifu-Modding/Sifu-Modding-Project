@@ -1,7 +1,7 @@
 #include "Lootboxes_BlackRoom.h"
 
-class UTexture2D;
 class UMaterialInstanceDynamic;
+class UTexture2D;
 
 void ALootboxes_BlackRoom::LoadTextureAsyncForMaterial(TSoftObjectPtr<UTexture2D> _texture, UMaterialInstanceDynamic* _material, FName _paramName) {
 }

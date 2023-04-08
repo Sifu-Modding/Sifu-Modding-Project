@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "AssociatedPropsAnimInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAssociatedPropsAnimInfo {
     GENERATED_BODY()
 public:

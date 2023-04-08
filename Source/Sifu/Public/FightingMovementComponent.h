@@ -1,81 +1,87 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "SCPoolableActorComponent.h"
+#include "BaseComponent.h"
 #include "EFallLevel.h"
 #include "EMoveStatus.h"
-#include "GameFramework/CharacterMovementComponent.h"
-#include "BaseComponent.h"
-#include "SCPoolableActorComponent.h"
-#include "UObject/NoExportTypes.h"
 #include "ESpeedState.h"
 #include "ETraversalPhase.h"
+#include "Templates/SubclassOf.h"
+#include "TraversalInfo.h"
 #include "FightingMovementComponent.generated.h"
 
-class UBaseMovementDB;
-class UTraversalDB;
-class UAnimSequence;
-class UEffectData;
 class AActor;
+class UAnimSequence;
+class UBaseMovementDB;
+class UEffectData;
+class UTraversalDB;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UFightingMovementComponent : public UCharacterMovementComponent, public IBaseComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FTraversalHintUsable, const FTraversalInfo&, currentTraversalInfo, bool, bUsable);
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPenetrationExpulsionSpeed;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FTraversalHintUsable m_OnTraversalHintUsable;
+    
 private:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vVelocity;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMoveStatus m_eMoveStatus;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBaseMovementDB* m_BaseMovementDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverlapOnRemoveCollision;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_bPushForceScaledToMassInNavWalking: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fInitialPushForceFactorInNavWalking;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPushForceFactorInNavWalking;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFlyModeSpeed;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFlyModeRushSpeed;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UTraversalDB> m_TraversalInfosDB;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAnimSequence*> m_LastDodgeAnims;
     
 public:
     UFightingMovementComponent();
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPopDesyncFromServer(uint8 _uiResyncID);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEffectAddedOrRemovedCallback(bool _bAdded, UEffectData* _effectData);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetRealVelocity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRealSpeed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetRealHorizontalVelocity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRealHorizontalSpeed() const;
     
     UFUNCTION(BlueprintCallable)
@@ -93,34 +99,37 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_OverrideBaseMovementDB(UBaseMovementDB* _newBaseMovementDB);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsRushing() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FVector BPF_GetTraversalHintPosition() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetLastWantedDir() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFreeMoveSpeed(const FVector& _vLocalDir, const float _fGlobalIntensity, const ESpeedState& _eSpeedState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFreeMoveOverallAnimSpeed(ESpeedState _eSpeedState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFreeMoveMinSpeed(ESpeedState _eSpeedState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFreeMoveMaxSpeed(ESpeedState _eSpeedState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFreeMoveAnimSpeed(ESpeedState _eSpeedState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EFallLevel BPF_GetFallLevel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ETraversalPhase BPF_GetCurrentTraversalPhase() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESpeedState BPF_GetCurrentSpeedState() const;
     
     

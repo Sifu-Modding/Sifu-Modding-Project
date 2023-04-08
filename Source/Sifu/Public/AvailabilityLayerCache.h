@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FAvailabilityLayerCache {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGenericAvailabilityLayerDB* m_DB;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iPriority;
     
     SIFU_API FAvailabilityLayerCache();

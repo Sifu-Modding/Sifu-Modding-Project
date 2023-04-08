@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCTransform52 {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FSCLocation48 m_Location;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FSCRotation4 m_Rotation;
     
     FSCTransform52();

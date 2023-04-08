@@ -4,12 +4,12 @@
 #include "ESCAICombatRoles.h"
 #include "AIPhaseTransitionRoleChange.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionRoleChange : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCAICombatRoles m_eRole;
     
 public:

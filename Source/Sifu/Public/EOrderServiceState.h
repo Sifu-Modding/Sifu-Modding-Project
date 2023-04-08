@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOrderServiceState.generated.h"
 
-UENUM()
-enum class EOrderServiceState {
+UENUM(BlueprintType)
+enum class EOrderServiceState : uint8 {
     None,
     Running,
     Pending,

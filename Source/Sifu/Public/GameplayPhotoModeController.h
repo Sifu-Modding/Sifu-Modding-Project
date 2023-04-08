@@ -6,7 +6,7 @@
 class ASCPlayerController;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AGameplayPhotoModeController : public ABaseReplayController {
     GENERATED_BODY()
 public:
@@ -16,17 +16,17 @@ protected:
     void BPF_LeavePhotoMode();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ASCPlayerController* BPF_GetOriginalPlayerController() const;
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="_worldContextObject"))
     static void BPF_EnterPhotoMode(const UObject* _worldContextObject);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPhotoModeDeactivationRequested();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPhotoModeActivated();
     
 };

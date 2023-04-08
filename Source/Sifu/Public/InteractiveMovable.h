@@ -1,66 +1,66 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "SCActor.h"
-#include "UObject/NoExportTypes.h"
-#include "InputAction.h"
-#include "UObject/NoExportTypes.h"
 #include "EDebugMovableState.h"
+#include "InputAction.h"
+#include "Templates/SubclassOf.h"
 #include "InteractiveMovable.generated.h"
 
-class UMovableInteractionComponent;
-class USCStreamingActorComponent;
-class UInteractiveDestructionComponent;
-class USCSaveGameComponent;
-class UTargetSettingsDB;
 class AActor;
 class AFightingCharacter;
+class UInteractiveDestructionComponent;
+class UMovableInteractionComponent;
+class USCSaveGameComponent;
+class USCStreamingActorComponent;
+class UTargetSettingsDB;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API AInteractiveMovable : public ASCActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USCStreamingActorComponent* m_StreamingComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEnableSreamingEvents;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMovableInteractionComponent* m_InteractionComponent;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInteractiveDestructionComponent* m_DestructibleComponent;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USCSaveGameComponent* m_SaveComponent;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fAngularFallingSpeedThreshold;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fLinearFallingSpeedThreshold;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsBreakSilent;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UTargetSettingsDB> m_throwTargetSettingsDB;
     
-    UPROPERTY(Transient, VisibleAnywhere)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_TmpTarget;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FTransform m_SavedTransform;
     
 public:
     AInteractiveMovable();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUpdatedFromSaveCallback();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPreSaveLevel();
     
 public:
@@ -70,44 +70,44 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetActivate(bool _bActivated);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsReadyToUse() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetPivotLoc() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* BPF_GetInstigator();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetHUDLocation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDebugMovableState BPF_GetDebugMovableState() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ShowMovableInteractions();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUsabilityUpdated(bool _bUsable);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnObjectBreak(bool _bIsSilent);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HideMovableInteractions();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HasHitChara();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     FText BPE_GetHUDActionText(bool& _bUsable) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     InputAction BPE_FindAppropriateActionFromContext(AFightingCharacter* _user) const;
     
 };

@@ -1,39 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "Buffer.h"
-#include "GameFramework/OnlineReplStructs.h"
 #include "Components/ActorComponent.h"
+#include "GameFramework/OnlineReplStructs.h"
 #include "SCPoolableActorComponent.h"
-#include "OrderInfosInstanceMap.h"
-#include "OrderType.h"
-#include "EOrderType.h"
-#include "OrderTransformData.h"
+#include "Buffer.h"
 #include "EOrderAccessMode.h"
+#include "EOrderType.h"
+#include "OrderInfosInstanceMap.h"
+#include "OrderTransformData.h"
+#include "OrderType.h"
+#include "Templates/SubclassOf.h"
 #include "OrderComponent.generated.h"
 
-//class UOrderDelegateHandler;
-class UOrderDBSet;
 class UOrderDB;
+class UOrderDBSet;
+class UOrderDelegateHandler;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UOrderComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UOrderDBSet>> m_OrderDBs;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOrderInfosInstanceMap m_OrderServiceInstances;
     
-  /*  UPROPERTY(Transient)
-    TMap<FOrderType, UOrderDelegateHandler*> m_OrderDelegateHandler;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    TMap<FOrderType, UOrderDelegateHandler*> m_OrderDelegateHandler;
     
 public:
     UOrderComponent();
 private:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerUpdateOrder(uint8 _uiOrderId, EOrderType _eOrderType, FBuffer _ReplicatedBuffer, FUniqueNetIdRepl _callerPlayerId);
     
     UFUNCTION(Reliable, Server, WithValidation)
@@ -48,14 +48,14 @@ private:
     UFUNCTION(Reliable, Server, WithValidation)
     void ServerCancelOrderByID(uint8 _uiOrderId, int64 _iTimeCancel, FUniqueNetIdRepl _callerPlayerId, bool _bRemoteRunOnMaster, bool _bFromServer);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MultiCastUpdateOrder(uint8 _uiOrderId, EOrderType _eOrderType, FBuffer _ReplicatedBuffer, FUniqueNetIdRepl _callerPlayerId);
     
     UFUNCTION(NetMulticast, Reliable)
     void MultiCastPlayOrder(EOrderType _eOrderType, uint8 _uiForcedID, FBuffer _ReplicatedBuffer, int64 _iTimeLaunch, uint8 _uiAfterOrder, FUniqueNetIdRepl _callerPlayerId, bool _bRemoteRunOnMaster, uint8 _uiOrderIDToInsertBefore, uint8 _uiReplaceInSequence);
     
 public:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MultiCastFirstOrderTransformData(uint8 _uiOrderId, FOrderTransformData _orderTransformData);
     
 private:
@@ -69,45 +69,45 @@ private:
     void MultiCastCancelOrderByID(uint8 _uiOrderId, int64 _iTimeCancel, FUniqueNetIdRepl _callerPlayerId, bool _bRemoteRunOnMaster);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UOrderDelegateHandler* GetOrderDelegates(const FOrderType& _OrderType);
     
 private:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void ClientPlayOrderRejected(uint8 _uiOrderId);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsOrderRunningWithID(uint8 _uiID, EOrderAccessMode _eAccessMode) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsOrderRunning(const FOrderType& _OrderType, EOrderAccessMode _eAccessMode, bool _bStillInRunningPhase, bool _bIncludeChildType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsLastActionOrderPlayedInMirror() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<uint8> BPF_GetRunningAndPendingActionOrders(bool _bStillInRunningPhase) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EOrderType BPF_GetOrderTypeFromOrderID(uint8 _uiOrderId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     uint8 BPF_GetOrderIDFromType(EOrderType _eOrderType, bool& _bFound, EOrderAccessMode _eAccessMode, bool _bStillInRunningPhase);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UOrderDelegateHandler* BPF_GetOrderDelegates(EOrderType _eOrderType);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UOrderDB* BPF_GetOrderDB(FOrderType _OrderType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     uint8 BPF_GetLastActionOrderId() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FOrderType BPF_GetBPOrderTypeFromOrderID(uint8 _uiOrderId) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UOrderDelegateHandler* BPF_GetBPOrderDelegates(FName _BPOrderType);
     
     UFUNCTION(BlueprintCallable)

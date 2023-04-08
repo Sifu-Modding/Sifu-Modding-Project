@@ -1,11 +1,8 @@
 #include "ArenaChallengeDescription.h"
 
 class AAIWaveRefillDirector;
+class ABaseWeapon;
 class UBaseArenaObjective;
-
-FArenaChallengeScoreUnion UArenaChallengeDescription::BPF_GetWantedScore(int32 _iLevel) const {
-    return FArenaChallengeScoreUnion{};
-}
 
 AAIWaveRefillDirector* UArenaChallengeDescription::BPF_GetRefillDirector() const {
     return NULL;
@@ -19,12 +16,12 @@ int32 UArenaChallengeDescription::BPF_GetDeathCount() const {
     return 0;
 }
 
-TArray<FGameplayTag> UArenaChallengeDescription::BPF_GetCheatsToActivate() const {
-    return TArray<FGameplayTag>();
+TMap<FGameplayTag, FString> UArenaChallengeDescription::BPF_GetCheatsToActivate() const {
+    return TMap<FGameplayTag, FString>();
 }
 
-TMap<FGameplayTag, FString> UArenaChallengeDescription::BPF_GetCheatsArguments() const {
-    return TMap<FGameplayTag, FString>();
+TSoftClassPtr<ABaseWeapon> UArenaChallengeDescription::BPF_GetCarriedWeapon() const {
+    return NULL;
 }
 
 UBaseArenaObjective* UArenaChallengeDescription::BPF_GetArenaObjective() const {
@@ -41,5 +38,6 @@ UArenaChallengeDescription::UArenaChallengeDescription() {
     this->m_eCharacterGender = ECharacterGender::None;
     this->m_bOverrideOutfit = false;
     this->m_iOutfitIndex = 0;
+    this->m_bEnableOutfitPropSpawn = true;
 }
 

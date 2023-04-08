@@ -3,7 +3,7 @@
 #include "MenuWidget.h"
 #include "DeathMenu.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UDeathMenu : public UMenuWidget {
     GENERATED_BODY()
 public:

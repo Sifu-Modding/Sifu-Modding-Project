@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FAIPhaseNodeSoftLink : public FAIPhaseNodeLink {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UAIPhaseScenario> m_PhaseScenario;
     
     SIFU_API FAIPhaseNodeSoftLink();

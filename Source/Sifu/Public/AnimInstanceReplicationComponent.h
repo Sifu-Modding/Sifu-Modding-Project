@@ -1,39 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCPoolableActorComponent.h"
 #include "Components/ActorComponent.h"
-#include "ReplayReplicatedStateMachine.h"
-#include "ReplayReplicatedAnimInstanceAssetPlayers.h"
 #include "SCAnimInstanceRef.h"
+#include "SCPoolableActorComponent.h"
+#include "ReplayReplicatedAnimInstanceAssetPlayers.h"
+#include "ReplayReplicatedStateMachine.h"
+#include "Templates/SubclassOf.h"
 #include "AnimInstanceReplicationComponent.generated.h"
 
 class USCAnimInstance;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAnimInstanceReplicationComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     uint32 m_uiReplicatedAnimGraphVersionHash;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TArray<FReplayReplicatedStateMachine> m_ReplicatedStateMachineSnapshots;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TArray<FReplayReplicatedAnimInstanceAssetPlayers> m_ReplicatedAnimInstancePlayerAssets;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<USCAnimInstance>> m_AllowedReplicatedTypes;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSCAnimInstanceRef> m_ReplicatedSubAnimInstances;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FSCAnimInstanceRef> m_ScrubSnapshotOnlySubAnimInstances;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     USCAnimInstance* m_AnimInstance;
     
 public:
@@ -41,7 +41,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);
     
     

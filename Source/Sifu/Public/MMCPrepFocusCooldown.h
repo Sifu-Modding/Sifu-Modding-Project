@@ -3,7 +3,7 @@
 #include "GameplayModMagnitudeCalculation.h"
 #include "MMCPrepFocusCooldown.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UMMCPrepFocusCooldown : public UGameplayModMagnitudeCalculation {
     GENERATED_BODY()
 public:

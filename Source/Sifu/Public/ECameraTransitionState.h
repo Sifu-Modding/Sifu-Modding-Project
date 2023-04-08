@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraTransitionState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECameraTransitionState : uint8 {
     None,
     BlendIn,

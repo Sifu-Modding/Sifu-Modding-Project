@@ -1,83 +1,83 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ProgressionDoorStruct.h"
 #include "Engine/DataAsset.h"
-#include "ECharacterProgressionRewardTypes.h"
 #include "CharacterProgressionReward.h"
+#include "ECharacterProgressionRewardConditions.h"
+#include "ECharacterProgressionRewardTypes.h"
+#include "ProgressionDoorStruct.h"
 #include "ProgressionRewardArray.h"
 #include "RetrieveLostItemStruct.h"
-#include "ECharacterProgressionRewardConditions.h"
 #include "CharacterProgressionDB.generated.h"
 
 class UProgressionDoorData;
 class UQuestItemData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UCharacterProgressionDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterProgressionReward m_Rewards[2];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ECharacterProgressionRewardTypes> m_FightingStyleProgression;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FProgressionRewardArray m_AttackSlotProgression[4];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> m_SpecialAbilityXPOnSuccess;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FProgressionDoorStruct> m_ProgressionDoors;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnTargetted;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnHit;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnGuard;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnDodge;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnParry;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnAvoid;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAttackXPOnAbsorb;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiOffenseAttackXPOnHit;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiOffenseAttackXPOnGuarded;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiOffenseAttackXPOnPerfectLink;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiOffenseAttackXPOnAbsorb;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiOffenseAttackXPOnGuardBreak;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iCairnsToOpen;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRetrieveLostItemStruct> m_RetrieveLostItems;
     
     UCharacterProgressionDB();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ECharacterProgressionRewardTypes BPF_GetProgressionRewardForSchoolLevel(int32 _iSchoolLevel);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FCharacterProgressionReward BPF_GetProgressionReward(ECharacterProgressionRewardTypes _type);
     
     UFUNCTION(BlueprintCallable)
@@ -86,7 +86,7 @@ public:
     UFUNCTION(BlueprintCallable)
     FProgressionDoorStruct BPF_GetProgressionDoorStructByDoorData(UProgressionDoorData* _progressionDoorData);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetNextProgressionRewards(ECharacterProgressionRewardConditions _condition, const int32& _iValue, TArray<FCharacterProgressionReward>& _result) const;
     
 };

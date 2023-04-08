@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderDB.h"
 #include "HitBox.h"
+#include "OrderDB.h"
 #include "OrderTraversalPushDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOrderTraversalPushDB : public UOrderDB {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMarginAfterTraversalEnd;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHitBox m_HitOnLandedWithoutFall;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHitBox m_HitOnLethalFall;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxLandingDistanceFromNavmesh;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFallVelocityVariation;
     
     UOrderTraversalPushDB();

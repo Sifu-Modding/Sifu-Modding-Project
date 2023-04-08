@@ -1,6 +1,6 @@
 #include "AISpawner.h"
-#include "Templates/SubclassOf.h"
 #include "Components/SceneComponent.h"
+#include "Templates/SubclassOf.h"
 
 class ABaseCharacter;
 class ABaseWeapon;
@@ -84,6 +84,7 @@ AAISpawner::AAISpawner() {
     this->m_iDeathCounterDecreaseWhenKilled = 0;
     this->m_bDeathCounterResetWhenKilled = false;
     this->m_eFirstSpawnMethod = EFirstSpawnMethod::OnAnEvent;
+    this->m_bAllowPerceptionInstantOnSpawn = false;
     this->m_RootComp = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
     this->m_carriedWeapon = NULL;
     this->m_bKeepIdleAnimDuringAlertedDialogs = false;

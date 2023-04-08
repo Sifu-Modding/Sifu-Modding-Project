@@ -4,21 +4,21 @@
 #include "BehaviorTree/BehaviorTreeTypes.h"
 #include "AIMoveToBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIMoveToBTTask : public UBTTask_MoveTo {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector AcceptableRadiusKey;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector FilterClassKey;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCanPredictStopTransition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverridePacingGoalActor;
     
 public:

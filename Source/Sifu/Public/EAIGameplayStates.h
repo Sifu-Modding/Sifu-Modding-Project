@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIGameplayStates.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIGameplayStates : uint8 {
     None,
     Idle,

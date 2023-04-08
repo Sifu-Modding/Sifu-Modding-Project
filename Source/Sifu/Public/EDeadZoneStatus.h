@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EDeadZoneStatus.generated.h"
 
-UENUM()
-enum class EDeadZoneStatus {
+UENUM(BlueprintType)
+enum class EDeadZoneStatus : uint8 {
     InSafeZone,
     InFarDeadZone,
     InNearDeadZone,

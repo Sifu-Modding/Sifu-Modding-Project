@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAttackPropertyResistanceMatrixByFightingState {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackPropertyLevel m_Matrix[9];
     
     SIFU_API FAttackPropertyResistanceMatrixByFightingState();

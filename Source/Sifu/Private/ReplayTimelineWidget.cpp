@@ -1,8 +1,8 @@
 #include "ReplayTimelineWidget.h"
 
+class AReplayController;
 class UReplayKey;
 class UReplayKeyWidget;
-class AReplayController;
 
 void UReplayTimelineWidget::OnTimelineControllerTransitionContextInitialized() {
 }

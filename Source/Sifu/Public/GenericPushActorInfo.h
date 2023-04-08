@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GenericPushActorInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGenericPushActorInfo {
     GENERATED_BODY()
 public:

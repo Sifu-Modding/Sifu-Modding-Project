@@ -4,14 +4,14 @@
 #include "SCAITicketEnum.h"
 #include "ComboAIConditionRequestPassiveAttackTicket.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionRequestPassiveAttackTicket : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCAITicketEnum m_TicketNameEnumValue;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bReleaseTicketInstantly;
     
     UComboAIConditionRequestPassiveAttackTicket();

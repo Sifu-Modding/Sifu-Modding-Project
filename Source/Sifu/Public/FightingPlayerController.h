@@ -1,46 +1,46 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCPlayerController.h"
-#include "CharacterProgressionReward.h"
-#include "ECharacterProgressionRewardTypes.h"
-#include "ERelationshipTypes.h"
-#include "EGameOptionTypes.h"
-#include "CoopGroup.h"
-#include "EMenuEnum.h"
-#include "InputCoreTypes.h"
-#include "ECycleDirection.h"
-#include "InteractionTextStruct.h"
+//#include "InputCoreTypes.h"
 #include "SCDelegate.h"
+#include "CharacterProgressionReward.h"
+#include "CoopGroup.h"
+#include "ECharacterProgressionRewardTypes.h"
+#include "ECycleDirection.h"
+#include "EDangerStates.h"
+#include "EGameOptionTypes.h"
+#include "EMenuEnum.h"
+#include "EQuadrantTypes.h"
+#include "ERelationshipTypes.h"
+#include "InputAction.h"
+#include "InteractionTextStruct.h"
 #include "MenuReferenceWithRequiredTags.h"
 #include "MenuStackInfos.h"
-#include "EQuadrantTypes.h"
-#include "EDangerStates.h"
-#include "InputAction.h"
+#include "SCPlayerController.h"
+#include "Templates/SubclassOf.h"
 #include "FightingPlayerController.generated.h"
 
-class UCharacterProgressionUnlockDB;
+class AAISpawner;
 class AActor;
-class UInteractionObjectComponent;
-class AFightingCharacter;
-class UASMDetectionComponent;
 class AController;
+class AFightingCharacter;
 class AInteractiveObject;
 class ASkillTree;
-class AAISpawner;
+class UASMDetectionComponent;
+class UCharacterProgressionUnlockDB;
+class UEquipmentSelectionData;
+class UInteractionObjectComponent;
+class UMaterialInterface;
 class UMaterialParameterCollection;
 class UMenuWidget;
+class UPanelWidget;
+class UPickUpMenu;
+class UPopupWidget;
+class UTargetableWidgetUpdaterComponent;
 class UTexture2D;
 class UUserWidget;
-class UMaterialInterface;
-class UPopupWidget;
-class UEquipmentSelectionData;
-class UTargetableWidgetUpdaterComponent;
 class UWidgetPoolComponent;
-class UPickUpMenu;
-class UPanelWidget;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AFightingPlayerController : public ASCPlayerController {
     GENERATED_BODY()
 public:
@@ -49,6 +49,7 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FProgressionRewardUnlocked, ECharacterProgressionRewardTypes, _eRewardType, const FCharacterProgressionReward&, _reward, UCharacterProgressionUnlockDB*, _unlock);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnInitializedDynamic, AFightingCharacter*, _pawn);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnWasKilled, AFightingCharacter*, _victim, AFightingCharacter*, _deathInstigator);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSwitchToFromPhotomode, bool, _bInPhotomode);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnOptionChangedDynamicDelegate, EGameOptionTypes, eGameOptionType);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAFKWarningActivated, bool, _bActivated);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDropItem, AController*, _discarder);
@@ -56,269 +57,275 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCloseIngameMenu);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChangeMenuPage, ECycleDirection, _eDirection);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnOptionChangedDynamicDelegate OnOptionChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCurrentMenuChanged OnCurrentMenuChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FProgressionRewardUnlocked OnNotifyProgressionRewardUnlocked;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FInteractionTextStruct m_InteractionText;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FText m_InteractionLockText;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool m_InteractionUseLockText;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASkillTree* m_MenuSkillTree;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bShowAltAttackStartQuadrant;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDropItem DropItemDelegate;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FChangeMenuPage OnChangeMenuPage;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPawnInitializedDynamic OnPawnInitializedDynamic;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnWasKilled OnPawnWasKilled;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCloseIngameMenu OnMenuClosed;
     
-    /*UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnGiveInitialControlToPlayer;*/
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnGiveInitialControlToPlayer;*/
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnSwitchToFromPhotomode OnSwitchToFromPhotomode;
     
 protected:
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bAppIsBackgrounded;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bEnvDeathRespawn;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UTexture2D*> m_MenuIconCache;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool m_bDebugDisplayAttackLearning;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EMenuEnum> m_DisabledMenus;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bHideNonInteractableObjectComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EMenuEnum, FMenuReferenceWithRequiredTags> m_MapMenuClassesSoft;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> m_MenuAnimationsClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EMenuEnum> m_eMenuListPreventingInGameMenu;
     
-    UPROPERTY(Instanced, Transient)
-    UMenuWidget* m_MenuInstances[50];
+    UPROPERTY(EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
+    UMenuWidget* m_MenuInstances[52];
     
-    UPROPERTY(BlueprintReadOnly, Transient, VisibleInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FMenuStackInfos> m_MenuStack;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* m_OutlineMaterial;
     
-    UPROPERTY(BlueprintReadWrite, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPopupWidget* m_PopupYesNo;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnAFKWarningActivated OnAFKWarningActivated;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float m_fTimeSinceLastNonRedundantUserInput;
     
 private:
-    UPROPERTY(Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UUserWidget* m_MenuAnimationsInstance;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UEquipmentSelectionData* m_EquipmentSelection;
     
-    UPROPERTY(Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTargetableWidgetUpdaterComponent* m_TagetableWigetUpdaterComponent;
     
-    UPROPERTY(Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UASMDetectionComponent* m_ASMDetectionComponent;
     
-    UPROPERTY(Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UWidgetPoolComponent* m_WidgetPoolComponent;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UPickUpMenu> m_PickUpMenuClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPreviewTimerHighlight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPreviewTimerScrollBox;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFadeTime;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> m_WaterMarkBP;
     
-    UPROPERTY(Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UUserWidget* m_WaterMarkScreen;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     int32 m_iCharacterLevel;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AInteractiveObject> m_CairnClass;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* m_MaterialParameterCollectionFXVisualParam;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_EmissiveMultiplierMPCParameterName;
     
 public:
     AFightingPlayerController();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void ToggleWaterMark();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void ToggleInteractionDetectionDebug();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void SuicideAll();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void Suicide(float _fDelay);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void SimulateError(const FString& _error);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void SimulateClientReturnToMainMenu(const FString& _reason);
     
     UFUNCTION(BlueprintCallable, Exec)
     void ShowQuadrant(uint8 _uiParam);
     
 protected:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void SetOptionValue(FName _optionType, float _fOptionValue);
     
 public:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void SetHealth(float _fHP);
     
     UFUNCTION(BlueprintCallable, Exec)
     void SessionTimeManagerActivateDebug(bool _bActivate);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerUseInterractiveObject(bool _bSuccess, UInteractionObjectComponent* _componentUsed);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSuicideAll();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetEnvDeathRespawn(bool _bValue);
     
 private:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSendLocalCoopGroup(const TArray<FCoopGroup>& _coopGroup);
     
 public:
-    UFUNCTION(Server, Unreliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Server, Unreliable, WithValidation)
     void ServerRequestTimeSync(uint8 _uiClientRequestID);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerFirstRequestTimeSync(uint8 _uiClientRequestID);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerDropItem();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void RemovePlayer();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void PawnDestructionOver(AActor* _destroyedActor);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnRegularAttack(EQuadrantTypes _eStartQuadrant, EQuadrantTypes _eEndQuadrant, uint8 uiNewIndex);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerProgressionUpdated();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlayerNotifyProgressionRewardUnlocked(ECharacterProgressionRewardTypes _eRewardType, const FCharacterProgressionReward& _reward, UCharacterProgressionUnlockDB* _unlock);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPickUpDestroyed(UInteractionObjectComponent* _component);
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPawnDangerStateChanged(EDangerStates _ePreviousDangerState, EDangerStates _eNewDangerState);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnNeedUpdateFromGameUserSettings();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnComboLastAttack(EQuadrantTypes newQuadrant);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnComboChangedQuadrant(EQuadrantTypes oldQuadrant);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCharacterInteractionObjectChanged(UInteractionObjectComponent* _objectComp, bool _bNewComp);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnAltAttack(EQuadrantTypes newQuadrant, uint8 _uiCurrentComboIndex);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void Mute(bool bMute);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void GiveFocusToGameViewport();
     
     UFUNCTION(BlueprintCallable, Exec)
     void ForceCameraOffsetAt(bool _bActivate, float _fRatio);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void DumpPlayerInfo();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void DebugToggleFollowPlayer(int32 _iPlayerIndex);
     
     UFUNCTION(BlueprintCallable, Exec)
     void DebugSpeedForceZ(bool _bActivate, float _fZValue);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ComboEnded(EQuadrantTypes newQuadrant);
     
 private:
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientSendNewCoopGroup(const TArray<FCoopGroup>& _coopGroup);
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientSendEntireCoopGroup(const TArray<FCoopGroup>& _coopGroup, const FCoopGroup& _coopGroupReturnToPVE);
     
 public:
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void ClientRespawnLocalAI(AAISpawner* _spawner);
     
     UFUNCTION(Client, Unreliable)
@@ -327,10 +334,10 @@ public:
     UFUNCTION(Client, Reliable)
     void ClientFirstRequestTimeSync(uint8 _uiClientRequestID, int64 _serverTimeTicks);
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_RestartMatch();
     
-    UFUNCTION(Client, Reliable)
+    UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ReceiveAllyHeal();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -342,7 +349,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void BPF_UnlockAllEmotes();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_ShouldDisplayInteractionText(bool& _bOutCanInteract);
     
     UFUNCTION(BlueprintCallable)
@@ -369,58 +376,58 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_PopMenu(bool _bRestoreFocus);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsMenuInStack(EMenuEnum _eMenu) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsMenuEnabled(EMenuEnum _eMenu) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsKeyBindedToInputAction(FKey _key, InputAction _eInputAction);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInGameMenuEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasSpawnedAtFirstStart() const;
     
     UFUNCTION(BlueprintCallable)
     UWidgetPoolComponent* BPF_GetWidgetPoolComponent();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetWantRespawn() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetVirtualCursorEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMenuWidget* BPF_GetTopMenuInstance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EMenuEnum BPF_GetTopMenu() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTargetableWidgetUpdaterComponent* BPF_GetTagetableWigetUpdaterComponent() const;
     
     UFUNCTION(BlueprintCallable)
     UPopupWidget* BPF_GetPopupYesNo();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMenuWidget* BPF_GetParentMenu(EMenuEnum& _eOutMenu, int32 _iOffset) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMenuWidget* BPF_GetMenuInstance(EMenuEnum _eMenu) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UUserWidget* BPF_GetMenuAnimations();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFadeTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EMenuEnum BPF_GetCurrentMenu() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UInteractionObjectComponent* BPF_GetCurrentInteractionObjectComponent() const;
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -441,7 +448,7 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void BPF_DebugForcePerfectLink(bool _bActivate);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void BPF_DebugForceAttackQuadrant(EQuadrantTypes _eQuadrant);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -459,45 +466,45 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void BPF_ActivateHitDetailsDebug(bool _bActivate);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_TryQuitBadCombo();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ToggleDebugMenu();
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_ShouldEnablePostProcessComponent() const;
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_RestartAsked();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_PawnInitialized();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUsedHealStone();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSetInteractiveObjectComponent(UInteractionObjectComponent* _newInteractionObjectComponent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnReceiveAllyHeal();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCurrentMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnComboEditorClose();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_MenuEvent();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GameInitialized(bool bHideLoadingScreen);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ChangeEditorQuadrantState(EQuadrantTypes _eNewQuadrant);
     
     UFUNCTION(BlueprintCallable, Exec)

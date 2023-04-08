@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserWidget.h"
-#include "InventorySearchFilter.h"
 #include "EAttackLearningState.h"
-#include "ECharacterProgressionRewardTypes.h"
 #include "EButtonNotificationType.h"
+#include "ECharacterProgressionRewardTypes.h"
+#include "InventorySearchFilter.h"
+#include "SCUserWidget.h"
 #include "NewNotificationWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UNewNotificationWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAttackLearningState m_eAttackLearningState;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInventorySearchFilter m_InventoryItemFilter;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ECharacterProgressionRewardTypes> m_eProgressionRewards;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAlwaysVisible;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_displayedText;
     
 public:
     UNewNotificationWidget();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStatsChanged();
     
     UFUNCTION(BlueprintCallable)
@@ -47,7 +47,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_Init(TArray<ECharacterProgressionRewardTypes> _rewards, FInventorySearchFilter _inventoryFilter, bool _bNewSparePoints, bool _bNewAttacks, bool _bNewInventoryItems, bool _bNewEmotes, bool _bNewIntros);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_Show();
     
 };

@@ -8,16 +8,16 @@ USTRUCT(BlueprintType)
 struct FSaveAdditionalInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     int32 m_iAge;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eGender;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_MapTag;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     EGameDifficulty m_eDifficulty;
     
     SIFU_API FSaveAdditionalInfos();

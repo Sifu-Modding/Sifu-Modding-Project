@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "DataProviders/AIDataProvider.h"
+#include "DataProviders/AIDataProvider.h"
 #include "EnvironmentQuery/EnvQueryGenerator.h"
-#include "DataProviders/AIDataProvider.h"
-#include "DataProviders/AIDataProvider.h"
+#include "Templates/SubclassOf.h"
 #include "EnvQueryGenerator_ActorClassFromManager.generated.h"
 
-class UEnvQueryContext;
 class AActor;
+class UEnvQueryContext;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UEnvQueryGenerator_ActorClassFromManager : public UEnvQueryGenerator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIDataProviderBoolValue m_GenerateOnlyActorsInRadius;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIDataProviderFloatValue m_SearchRadius;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEnvQueryContext> m_SearchCenter;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> m_ActorClass;
     
     UEnvQueryGenerator_ActorClassFromManager();

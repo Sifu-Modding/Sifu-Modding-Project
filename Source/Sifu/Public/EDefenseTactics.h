@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDefenseTactics.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDefenseTactics : uint8 {
     Invalid,
     Guard,

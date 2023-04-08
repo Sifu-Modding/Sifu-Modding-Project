@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAvoidPropertyContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvoidPropertyDB* m_AvoidPropertyDB[7];
     
     FAvoidPropertyContainer();

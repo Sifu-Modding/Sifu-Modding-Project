@@ -4,17 +4,17 @@
 #include "SCMathConditionGroup.h"
 #include "SCMathExpression.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FSCMathExpression {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCMathConditionValueType m_eValueType;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCMathConditionGroup> m_ConditionGroups;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxDepth;
     
     FSCMathExpression();

@@ -3,11 +3,11 @@
 #include "BaseTargetEvaluation.h"
 #include "TE_Preview.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UTE_Preview : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCameraTargetDirectionCoeff;
     
     UTE_Preview();

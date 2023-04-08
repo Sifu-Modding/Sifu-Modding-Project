@@ -4,11 +4,26 @@
 #include "GameplayTagContainer.h"
 #include "TrackingBlueprintHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UTrackingBlueprintHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UTrackingBlueprintHelper();
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SendTrackingEventTU4Launched();
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SendTrackingEventChallengeStart(const FText _sChallengeName);
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SendTrackingEventChallengeEnd(const FText _sChallengeName, const int32 _iHighScore, const uint8 _uiNumberStars);
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SendTrackingEventAccessedArenaFirstTimeAfterBeatingYang();
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SendTrackingEventAccessedArena();
+    
     UFUNCTION(BlueprintCallable)
     static void BPF_SendTrackingEvent_UnlockAllSkillsPermanently(int64 _iTimePlayed);
     

@@ -1,7 +1,7 @@
 #include "SCAiAction.h"
 
-class UBlackboardComponent;
 class ASCCharacter;
+class UBlackboardComponent;
 class UObject;
 class USCAIComponent;
 
@@ -58,7 +58,7 @@ UBlackboardComponent* USCAiAction::BPF_GetBlackBoardComponent() const {
 void USCAiAction::BPF_Finish(bool _bSucceeded, const FString& _message) {
 }
 
-void USCAiAction::BPF_CancelPendingActions(USCAIComponent* _aiComponent) {
+void USCAiAction::BPF_CancelPendingActions(USCAIComponent* _aiComponent, const FString& _reasonForDebug) {
 }
 
 void USCAiAction::BPF_Cancel(const FString& _message) {
@@ -90,5 +90,6 @@ bool USCAiAction::BPE_CanPerform_Implementation(const USCAIComponent* _aiCompone
 USCAiAction::USCAiAction() {
     this->m_BehaviorTreeAsset = NULL;
     this->m_eScheduleCondition = EAIActionScheduleCondition::None;
+    this->m_bCanForceCancel = true;
 }
 

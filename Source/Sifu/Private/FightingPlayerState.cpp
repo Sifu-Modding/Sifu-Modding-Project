@@ -1,8 +1,8 @@
 #include "FightingPlayerState.h"
 #include "Net/UnrealNetwork.h"
 
-class UDamageType;
 class AFightingPlayerState;
+class UDamageType;
 
 void AFightingPlayerState::OnRep_TeamNumber() {
 }

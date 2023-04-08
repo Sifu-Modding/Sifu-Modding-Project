@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCMathExpressionFloat.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "SCDynamicDelegateDelegate.h"
+#include "SCMathExpressionFloat.h"
 #include "SCMathExpressionInteger.h"
 #include "SCTypedValue.h"
-#include "UObject/NoExportTypes.h"
+#include "Templates/SubclassOf.h"
 #include "SCHelpers.generated.h"
 
-class UObject;
-class UCurveFloat;
-class UWorld;
 class AActor;
 class UAbilityTask;
+class UCurveFloat;
+class UObject;
+class UWorld;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -45,25 +45,25 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_PopBlockSlowmotion(int32 _iHandle, bool _bUnFreezeAnySlowmotion);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsSlowMotionEnabled();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FSCTypedValue BPF_IntToTypedValue(int32 _iValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_Int32RangeContains(const FInt32Range& _range, int32 _iValue);
     
     UFUNCTION(BlueprintCallable)
     static int32 BPF_InstantSlowMotion(UObject* _context, float _fScale, bool _bIsRelevantForGameplay);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float BPF_GetSlowMotionDebugUserValue();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float BPF_GetSlowMotionDebugCoef();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TMap<FString, FText> BPF_GetIsoCultureToDisplayName();
     
     UFUNCTION(BlueprintCallable)
@@ -72,16 +72,16 @@ public:
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static AActor* BPF_GetActorOfClassInWorld(const UObject* WorldContextObject, TSubclassOf<AActor> ActorClass);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FSCTypedValue BPF_FloatToTypedValue(float _fValue);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_EndTasks(const TArray<UAbilityTask*>& _tasks);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_Contains(const FFloatRange& _FloatRange, float _fValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FSCTypedValue BPF_BoolToTypedValue(bool _bValue);
     
     UFUNCTION(BlueprintCallable)

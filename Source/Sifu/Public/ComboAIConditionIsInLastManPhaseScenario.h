@@ -3,7 +3,7 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionIsInLastManPhaseScenario.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionIsInLastManPhaseScenario : public UAIComboCondition {
     GENERATED_BODY()
 public:

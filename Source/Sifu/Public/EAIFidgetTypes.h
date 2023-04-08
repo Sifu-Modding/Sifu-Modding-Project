@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIFidgetTypes.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIFidgetTypes : uint8 {
     Idle,
     JoinDialog,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWGGameFlowMapOption.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWGGameFlowMapOption : uint8 {
     UseGameDifficulty,
 };

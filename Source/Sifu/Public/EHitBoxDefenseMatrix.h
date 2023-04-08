@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EHitBoxDefenseMatrix.generated.h"
 
-UENUM()
-enum class EHitBoxDefenseMatrix {
+UENUM(BlueprintType)
+enum class EHitBoxDefenseMatrix : uint8 {
     None,
     Dodge,
     Deflect,

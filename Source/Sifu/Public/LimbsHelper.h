@@ -4,12 +4,12 @@
 #include "ELimbs.h"
 #include "LimbsHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API ULimbsHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     ULimbsHelper();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static ELimbs BPF_Mirror(ELimbs _eLimb, bool _bMirror);
     
 };

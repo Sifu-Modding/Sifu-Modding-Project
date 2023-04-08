@@ -5,15 +5,15 @@
 #include "InputMappingGroup.h"
 #include "InputMappingProfileContextDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UInputMappingProfileContextDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInputMappingGroup> m_MappingGroups;
     
     UInputMappingProfileContextDB();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     FString BPF_GetInputMappingDesc(const FInputMapping& _mapping);
     
 };

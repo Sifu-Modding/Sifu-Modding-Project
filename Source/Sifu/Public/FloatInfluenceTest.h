@@ -4,17 +4,17 @@
 #include "EAIInfluenceTest.h"
 #include "FloatInfluenceTest.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UFloatInfluenceTest : public UAIInfluenceTest {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAIInfluenceTest m_eTestType;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fValueMin;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fValueMax;
     
     UFloatInfluenceTest();

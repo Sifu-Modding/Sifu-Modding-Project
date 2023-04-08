@@ -4,14 +4,14 @@
 #include "GameplayTagContainer.h"
 #include "SCAIDataProvider_QueryActionParams.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SCCORE_API USCAIDataProvider_QueryActionParams : public UAIDataProvider_QueryParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bFetchOnce;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag m_ActionInjectionTag;
     
     USCAIDataProvider_QueryActionParams();

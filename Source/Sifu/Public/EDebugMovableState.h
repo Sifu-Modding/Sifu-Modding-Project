@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDebugMovableState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDebugMovableState : uint8 {
     TooFar,
     Blocked,

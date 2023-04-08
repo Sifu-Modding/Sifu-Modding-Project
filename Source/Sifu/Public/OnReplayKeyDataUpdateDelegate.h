@@ -5,5 +5,5 @@
 
 class UReplayKey;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnReplayKeyDataUpdate, UReplayKey*, _key, const FReplayKeyData&, _previousData);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnReplayKeyDataUpdate, UReplayKey*, _key, const FReplayKeyData&, _previousData);
 

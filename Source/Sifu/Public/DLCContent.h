@@ -3,17 +3,17 @@
 #include "InventoryItem.h"
 #include "DLCContent.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FDLCContent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> m_entitlements;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInventoryItem> m_Gears;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> m_Emotes;
     
     SIFU_API FDLCContent();

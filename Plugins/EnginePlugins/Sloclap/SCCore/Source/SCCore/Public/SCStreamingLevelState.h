@@ -3,7 +3,7 @@
 #include "StreamingLevelStateBase.h"
 #include "SCStreamingLevelState.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FSCStreamingLevelState : public FStreamingLevelStateBase {
     GENERATED_BODY()
 public:

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FGuardUpdateStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fGuardGaugePercentageTargetValue;
     
-    UPROPERTY()
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int64 m_iGuardGuageTargetTime;
     
     SIFU_API FGuardUpdateStruct();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EScoringActionType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EScoringActionType : uint8 {
     Attack,
     Defense,

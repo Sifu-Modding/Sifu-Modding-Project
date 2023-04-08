@@ -1,62 +1,62 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCBaseGameSettings.h"
-#include "Engine/DataTable.h"
-#include "SCWuguanUserEnumSetting.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/DataTable.h"
+#include "SCBaseGameSettings.h"
+#include "SCWuguanUserEnumSetting.h"
 #include "SCGameSettings.generated.h"
 
+class UArenaSettings;
 class UMirrorAnimDB;
 class UOrderService;
-class UArenaSettings;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USCGameSettings : public USCBaseGameSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMirrorAnimDB> m_DefaulMirrorAnimDB;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bFilterByOrderServiceOnTeleport;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftClassPtr<UOrderService>> m_FilteringOrderServicesOnTeleport;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_DefaultAttackTable;
     
-    UPROPERTY(Config, EditAnywhere)
-    FSCWuguanUserEnumSetting m_UserEnums[21];
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSCWuguanUserEnumSetting m_UserEnums[22];
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDataTableRowHandle m_DefaultHitbox;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_PoseAssetForFacial;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_DefaultPoseAssetNotifyStateEaseIn;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_DefaultPoseAssetNotifyStateEaseOut;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPredictionTime;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iHitBoxSamplingInFPS;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiPredictionStep;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowPredictionOnMovement;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDetachAvoidCapsuleWhenNoAvoidWindow;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UArenaSettings> m_ArenaSettings;
     
     USCGameSettings();

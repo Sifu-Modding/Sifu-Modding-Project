@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELevelSequenceAIBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ELevelSequenceAIBehavior : uint8 {
     AttackMainChar,
     None,

@@ -9,4 +9,5 @@ struct FSCAITicketEnum : public FSCUserDefinedEnumHandler {
 public:
     SIFU_API FSCAITicketEnum();
 };
+FORCEINLINE uint32 GetTypeHash(const FSCAITicketEnum) { return 0; }
 

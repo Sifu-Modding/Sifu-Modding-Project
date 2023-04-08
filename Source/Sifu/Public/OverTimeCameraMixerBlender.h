@@ -6,13 +6,13 @@
 
 class UCurveFloat;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UOverTimeCameraMixerBlender : public UCameraMixerBlender {
     GENERATED_BODY()
 public:
     UOverTimeCameraMixerBlender();
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetCoeff() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)

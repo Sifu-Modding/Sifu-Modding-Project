@@ -39,6 +39,10 @@ AActor* AAISituationActor::BPF_GetNamedActor(const FAISituationNamedActor& _name
     return NULL;
 }
 
+EGlobalBehaviors AAISituationActor::BPF_GetBehaviorOverride_Implementation() {
+    return EGlobalBehaviors::Idle;
+}
+
 int32 AAISituationActor::BPF_GetAis(TArray<UAIFightingComponent*>& _outAiComponents, bool _bIncludeAlertedSpawners, bool _bAppendToArray, bool _bIncludeAbandonningAIs) const {
     return 0;
 }

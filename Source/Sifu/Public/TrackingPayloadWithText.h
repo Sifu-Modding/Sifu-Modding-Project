@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "TrackingPayloadWithText.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTrackingPayloadWithText {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_Text;
     
     SIFU_API FTrackingPayloadWithText();

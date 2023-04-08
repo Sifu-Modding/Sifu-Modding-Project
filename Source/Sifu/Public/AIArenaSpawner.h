@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CarriedPropsContainer.h"
 #include "AISpawner.h"
-#include "CarriedWeaponContainer.h"
+#include "CarriedPropsContainer.h"
 #include "AICharacterSpawnParamsArray.h"
 #include "SpawningClassContainer.h"
+#include "CarriedWeaponContainer.h"
 #include "AIArenaSpawner.generated.h"
 
 UCLASS()

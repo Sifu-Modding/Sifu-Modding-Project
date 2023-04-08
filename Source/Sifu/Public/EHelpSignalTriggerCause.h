@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EHelpSignalTriggerCause.generated.h"
 
-UENUM()
-enum class EHelpSignalTriggerCause {
+UENUM(BlueprintType)
+enum class EHelpSignalTriggerCause : uint8 {
     Striked,
     StructureBroken,
     Pushed,

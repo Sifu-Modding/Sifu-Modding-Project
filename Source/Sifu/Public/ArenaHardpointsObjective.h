@@ -1,55 +1,55 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseArenaObjective.h"
-#include "HardpointInfos.h"
 #include "SCDelegate.h"
-#include "ESequentialLoopRule.h"
+#include "BaseArenaObjective.h"
 #include "EHardpointActivationRule.h"
+#include "ESequentialLoopRule.h"
+#include "HardpointInfos.h"
 #include "ArenaHardpointsObjective.generated.h"
 
 class AArenaHardpointAreaActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UArenaHardpointsObjective : public UBaseArenaObjective {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHardpointCaptured, const FHardpointInfos&, _HardpointInfo, int32, _CurrentChallengeIndex);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHardpointActivationChanged, const AArenaHardpointAreaActor*, _HardpointActor, bool, _Activated);
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FHardpointInfos> m_HardpointsInfos;
     
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnAllHardpointsClearedOnce;*/
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnAllHardpointsClearedOnce;*/
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnHardpointCaptured OnHardpointCapturedDelegate;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnHardpointActivationChanged OnHardpointActivationChanged;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EHardpointActivationRule m_eHardpointActivationRule;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESequentialLoopRule m_eSequentialLoopRule;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHardpointCaptureValue;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bHasClearedAllHardpointsOnce;
     
 public:
     UArenaHardpointsObjective();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetTotalNumberOfHardpoints() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetCurrentHardpointIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AArenaHardpointAreaActor* BPF_GetCurrentHardpointAreaActor() const;
     
 };

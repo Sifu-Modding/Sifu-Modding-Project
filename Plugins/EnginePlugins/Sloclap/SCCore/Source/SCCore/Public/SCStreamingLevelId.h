@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCStreamingLevelId {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_ID;
     
     FSCStreamingLevelId();

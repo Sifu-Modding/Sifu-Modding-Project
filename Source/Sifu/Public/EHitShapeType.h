@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EHitShapeType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EHitShapeType : uint8 {
     None,
     Line,

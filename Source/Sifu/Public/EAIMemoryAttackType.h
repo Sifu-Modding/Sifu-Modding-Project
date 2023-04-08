@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIMemoryAttackType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIMemoryAttackType : uint8 {
     AttackLaunched,
     AttackReceived,

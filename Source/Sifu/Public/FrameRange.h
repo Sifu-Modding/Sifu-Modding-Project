@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FFrameRange {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_Anim;
     
     SIFU_API FFrameRange();

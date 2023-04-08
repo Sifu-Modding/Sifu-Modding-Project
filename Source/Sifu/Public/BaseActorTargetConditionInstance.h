@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FBaseActorTargetConditionInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBaseActorTargetCondition> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBaseActorTargetCondition* m_Instance;
     
     FBaseActorTargetConditionInstance();

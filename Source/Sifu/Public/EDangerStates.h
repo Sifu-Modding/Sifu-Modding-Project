@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDangerStates.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDangerStates : uint8 {
     Safe,
     Warning,

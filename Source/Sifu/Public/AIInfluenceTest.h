@@ -3,11 +3,11 @@
 #include "AIInfluenceNode.h"
 #include "AIInfluenceTest.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UAIInfluenceTest : public UAIInfluenceNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bInverted;
     
     UAIInfluenceTest();

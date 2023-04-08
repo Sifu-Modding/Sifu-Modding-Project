@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EPathDistanceTest.generated.h"
 
-UENUM()
-enum class EPathDistanceTest {
+UENUM(BlueprintType)
+enum class EPathDistanceTest : uint8 {
     PathDistance_DeathPosition,
     PathDistance_Position,
     PathDistance_Weapon,

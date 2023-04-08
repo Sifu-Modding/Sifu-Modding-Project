@@ -3,7 +3,7 @@
 #include "Animation/AnimNotifies/AnimNotifyState.h"
 #include "SCNotifyStateDisableLoopedPoses.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SCCORE_API USCNotifyStateDisableLoopedPoses : public UAnimNotifyState {
     GENERATED_BODY()
 public:

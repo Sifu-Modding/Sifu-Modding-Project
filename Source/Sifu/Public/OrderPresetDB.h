@@ -4,11 +4,11 @@
 #include "OrderServiceInfos.h"
 #include "OrderPresetDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOrderPresetDB : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FOrderServiceInfos> m_Services;
     
     UOrderPresetDB();

@@ -1,32 +1,32 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ButtonUserWidget.h"
 #include "SkillTreeNode.h"
+#include "Templates/SubclassOf.h"
 #include "SkillButton.generated.h"
 
-class USkillGameplayEffect;
-class USkillButton;
-class USkillsDB;
 class ASkillTree;
+class USkillButton;
+class USkillGameplayEffect;
+class USkillsDB;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class USkillButton : public UButtonUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUdateParallax;
     
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_SocketName;
     
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USkillButton*> m_ChildButtons;
     
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USkillGameplayEffect> m_GameplayEffect;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkillsDB* m_DB;
     
     USkillButton();
@@ -36,7 +36,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetSkillTreeNode(const FSkillTreeNode& _node);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetSkillTreeNode(FSkillTreeNode& _node);
     
 };

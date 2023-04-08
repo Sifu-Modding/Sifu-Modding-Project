@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIConditionTraceRotationContext.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIConditionTraceRotationContext : uint8 {
     Instigator,
     Target,

@@ -9,6 +9,7 @@ bool ASCPlayerStart::BPF_WantKeepBackgroundDuringStartupMenu() const {
 ASCPlayerStart::ASCPlayerStart() : APlayerStart(FObjectInitializer::Get()) {
     this->m_AnchorSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("AnchorForSequence"));
     this->m_bKeepBackGroundDuringStartupMenu = false;
+    this->m_spawnedPlayer = NULL;
     this->m_bForFirstSpawn = false;
     this->m_ePlayerScreenSide = EPlayerScreenSide::Right;
     this->m_IdleStartupSequence = NULL;

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCardinalMatchArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ESCCardinalPoints> m_Array;
     
     SIFU_API FCardinalMatchArray();

@@ -10,13 +10,13 @@ USTRUCT(BlueprintType)
 struct FReplayInitialStateToggleEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayInitialStateToggleEventDelegate m_Event;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayInitialStateToggleGetValueEventDelegate m_GetValueDelegate;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* m_Actor;
     
     SIFU_API FReplayInitialStateToggleEvent();

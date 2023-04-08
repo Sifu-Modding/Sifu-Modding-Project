@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "VariableWeightActivation.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FVariableWeightActivation {
     GENERATED_BODY()
 public:

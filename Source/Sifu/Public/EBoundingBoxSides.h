@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EBoundingBoxSides.generated.h"
 
-UENUM()
-enum class EBoundingBoxSides {
+UENUM(BlueprintType)
+enum class EBoundingBoxSides : uint8 {
     None,
     Left,
     Right,

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWallDetectionStep.generated.h"
 
-UENUM()
-enum class EWallDetectionStep {
+UENUM(BlueprintType)
+enum class EWallDetectionStep : uint8 {
     Inactive,
     WaitingForDepthRaycast1,
     WaitingForDepthRaycast2,

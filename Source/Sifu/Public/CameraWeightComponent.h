@@ -8,7 +8,7 @@ class SIFU_API UCameraWeightComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UCameraWeightComponent();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetWeight() const;
     
 };

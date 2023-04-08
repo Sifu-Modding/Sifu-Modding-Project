@@ -3,7 +3,7 @@
 #include "BindablePropertyBase.h"
 #include "BindableEnumProperty.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBindableEnumProperty : public UBindablePropertyBase {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetRef(UPARAM(Ref) uint8& _uiValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     uint8 BPF_GetValue() const;
     
 };

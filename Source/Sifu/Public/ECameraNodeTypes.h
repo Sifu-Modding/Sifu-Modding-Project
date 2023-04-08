@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECameraNodeTypes.generated.h"
 
-UENUM()
-enum class ECameraNodeTypes {
+UENUM(BlueprintType)
+enum class ECameraNodeTypes : uint8 {
     CameraNode,
     CameraNodeBlender,
     CameraMixerNode,

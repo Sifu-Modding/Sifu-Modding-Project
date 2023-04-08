@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFXMaterials.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFXMaterials : uint8 {
     GuardBreak,
     Absorb,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETintEnum.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETintEnum : uint8 {
     Base,
     Brighter,

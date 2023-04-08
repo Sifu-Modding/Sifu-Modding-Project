@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPendingttackXPType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPendingttackXPType : uint8 {
     DefenseAttack,
     OffenseAttack,

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FReplayKeyScreenFading {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EReplayKeyFadeType m_bFadingType;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFadingTime;
     
     SIFU_API FReplayKeyScreenFading();

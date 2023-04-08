@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "OnRecordingCompleteDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnRecordingComplete);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnRecordingComplete);
 

@@ -3,31 +3,31 @@
 #include "GameplayOptionsMenu.h"
 #include "GraphOptionsMenu.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGraphOptionsMenu : public UGameplayOptionsMenu {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 m_iCurrentResIndex;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FString> m_ResList;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bSetCameraInStartIdlePosition;
     
 public:
     UGraphOptionsMenu();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRequestUIChange();
     
 public:
     UFUNCTION(BlueprintCallable)
     void BPF_ResolutionChanged(int32 _iIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetCurrentDisplayMode();
     
     UFUNCTION(BlueprintCallable)

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EStaminaImpactType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EStaminaImpactType : uint8 {
     StopRecovery,
     Consumption,

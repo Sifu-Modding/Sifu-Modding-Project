@@ -3,31 +3,31 @@
 #include "Engine/LevelScriptActor.h"
 #include "SCLevelScriptActor.generated.h"
 
-class UDataTable;
 class ALevelSequenceActor;
+class UDataTable;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCLevelScriptActor : public ALevelScriptActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bContainsSaveData;
     
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* m_ContextualDialogLines;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* m_WorldConversationSegments;
     
 public:
     ASCLevelScriptActor();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUpdatedFromSave();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnLevelSequenceSkipped(ALevelSequenceActor* _levelSequenceActor);
     
 };

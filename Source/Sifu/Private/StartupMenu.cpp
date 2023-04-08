@@ -1,6 +1,7 @@
 #include "StartupMenu.h"
 
 class AActor;
+class ASCBasePlayerController;
 
 void UStartupMenu::OnSequenceFinished() {
 }
@@ -18,6 +19,9 @@ void UStartupMenu::BPF_SetCanLaunchDirectly(bool _bLaunchDirectly) {
 }
 
 void UStartupMenu::BPF_NewGame() {
+}
+
+void UStartupMenu::BPF_LaunchIdlingStartupSequence(const ASCBasePlayerController* _controller) {
 }
 
 bool UStartupMenu::BPF_IsCameraShakeNeeded() const {

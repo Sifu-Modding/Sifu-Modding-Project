@@ -10,7 +10,7 @@ USTRUCT(BlueprintType)
 struct FAnimSequenceDBCache {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<ABaseWeapon>, UAnimSequenceEntryDB*> m_Sequences;
     
     SIFU_API FAnimSequenceDBCache();

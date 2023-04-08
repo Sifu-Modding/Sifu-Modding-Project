@@ -4,15 +4,15 @@
 #include "BaseActorConditionInstance.h"
 #include "BaseActorConditionHelpers.generated.h"
 
-class UObject;
 class AActor;
+class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UBaseActorConditionHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UBaseActorConditionHelpers();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UObject* BPF_GetInstance(const FBaseActorConditionInstance& _instance);
     
     UFUNCTION(BlueprintCallable)

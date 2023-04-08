@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "SCSaveObjectPlayerProfile.h"
 #include "ProfileData.h"
-#include "GameplayTagContainer.h"
 #include "WGSaveObjectPlayerProfile.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWGSaveObjectPlayerProfile : public USCSaveObjectPlayerProfile {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FProfileData m_WGProfileData;
     
     UWGSaveObjectPlayerProfile();

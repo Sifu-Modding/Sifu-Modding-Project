@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderParams.h"
 #include "NetOrderStructAttack.h"
+#include "OrderParams.h"
 #include "OrderAttackParams.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UOrderAttackParams : public UOrderParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNetOrderStructAttack m_Params;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNetOrderStructAttack m_TransientParams;
     
     UOrderAttackParams();

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FVariableWeightInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FVariableWeightLayerToBoneMask> m_layers;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FVariableWeightLayerToBoneMask> m_pendingDelete;
     
     FVariableWeightInfo();

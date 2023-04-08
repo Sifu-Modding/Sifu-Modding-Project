@@ -4,11 +4,11 @@
 #include "EFightingActionState.h"
 #include "ComboTransitionConditionActionState.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboTransitionConditionActionState : public UComboTransitionCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingActionState m_ActionState;
     
     UComboTransitionConditionActionState();

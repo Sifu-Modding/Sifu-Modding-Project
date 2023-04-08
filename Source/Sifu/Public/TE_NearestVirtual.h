@@ -3,7 +3,7 @@
 #include "BaseTargetEvaluation.h"
 #include "TE_NearestVirtual.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTE_NearestVirtual : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:

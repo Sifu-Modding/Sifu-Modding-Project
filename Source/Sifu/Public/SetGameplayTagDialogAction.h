@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DialogActionBase.h"
 #include "GameplayTagContainer.h"
+#include "DialogActionBase.h"
 #include "SetGameplayTagDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API USetGameplayTagDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAdd;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Owner;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag m_GameplayTag;
     
 public:

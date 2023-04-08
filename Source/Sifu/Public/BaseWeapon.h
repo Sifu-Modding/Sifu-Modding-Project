@@ -1,66 +1,66 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "ThrowableActor.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "AIWeaponTicketable.h"
 #include "EDropReason.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "EOnDestructibleDamageType.h"
+#include "Templates/SubclassOf.h"
+#include "ThrowableActor.h"
 #include "BaseWeapon.generated.h"
 
-class UWeaponGameplayData;
-class UTargetSettingsDB;
-class USkeletalMeshComponent;
-class UBaseWeaponData;
-class UAnimInstanceReplicationComponent;
 class AFightingCharacter;
+class UAnimInstanceReplicationComponent;
 class UAvailabilityLayerData;
+class UBaseWeaponData;
+class USkeletalMeshComponent;
+class UTargetSettingsDB;
+class UWeaponGameplayData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ABaseWeapon : public AThrowableActor, public IAIWeaponTicketable {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDrop, EDropReason, _eDropReason);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnDrop m_OnDrop;
     
 protected:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UTargetSettingsDB> m_throwFromPickUpTargetSettingsDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBaseWeaponData> m_weaponData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UWeaponGameplayData> m_weaponGameplayData;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* m_SkeletalMeshComponent;
     
-    UPROPERTY(Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAnimInstanceReplicationComponent* m_AnimInstanceReplicationComponent;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_EquipmentSocketName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AFightingCharacter> m_weaponBearer;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_ThrowingFromPickupAvaibilityLayer;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAttachedFakie;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_ResourceCooldownRangeValue;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fWeaponTicketMaxDistance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAvailableForIA;
     
 public:
@@ -77,10 +77,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_OverrideWeaponData(TSubclassOf<UBaseWeaponData> _newWeaponData);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWeaponGameplayData* BPF_GetWeaponGameplayData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBaseWeaponData* BPF_GetWeaponData() const;
     
     UFUNCTION(BlueprintCallable)
@@ -92,7 +92,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ApplyDamage(EOnDestructibleDamageType _eDamageType, const FVector& _vImpactLocation, float _fCustomDamage, bool _bPlayDropOrderOnDestroy);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_CanUseDamagedWeapon(int32 _iDamagedWeaponIndex);
     
     

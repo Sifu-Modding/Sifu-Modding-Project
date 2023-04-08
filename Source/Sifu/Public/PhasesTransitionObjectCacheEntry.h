@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FPhasesTransitionObjectCacheEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAIPhaseTransition* m_Object;
     
     SIFU_API FPhasesTransitionObjectCacheEntry();

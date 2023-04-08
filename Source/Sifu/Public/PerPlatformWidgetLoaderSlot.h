@@ -4,11 +4,11 @@
 #include "EWidgetPlatform.h"
 #include "PerPlatformWidgetLoaderSlot.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformWidgetLoaderSlot : public UWidgetSwitcherSlot {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWidgetPlatform Platform;
     
     UPerPlatformWidgetLoaderSlot();

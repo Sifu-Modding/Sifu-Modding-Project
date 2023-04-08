@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EDevTeamDefinedEnums.generated.h"
 
-UENUM()
-enum class EDevTeamDefinedEnums {
+UENUM(BlueprintType)
+enum class EDevTeamDefinedEnums : uint8 {
     TechAdviser,
     DataAdviser,
     Count,

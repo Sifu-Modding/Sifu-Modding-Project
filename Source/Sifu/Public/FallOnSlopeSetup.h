@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FFallOnSlopeSetup {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AActor*> m_IgnoredActors;
     
     SIFU_API FFallOnSlopeSetup();

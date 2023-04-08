@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FActionConditions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAllowedOnEmptyGauge;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAllowedOnBrokenGuard;
     
     FActionConditions();

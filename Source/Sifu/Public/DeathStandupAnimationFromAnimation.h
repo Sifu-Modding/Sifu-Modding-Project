@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FDeathStandupAnimationFromAnimation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* m_DeathAnim;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_StandAnim;
     
     SIFU_API FDeathStandupAnimationFromAnimation();

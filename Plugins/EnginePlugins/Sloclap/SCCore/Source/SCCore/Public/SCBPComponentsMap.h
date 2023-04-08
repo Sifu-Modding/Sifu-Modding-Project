@@ -4,12 +4,12 @@
 
 class UEnum;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FSCBPComponentsMap {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UEnum*> m_ComponentsEnums;
     
 public:

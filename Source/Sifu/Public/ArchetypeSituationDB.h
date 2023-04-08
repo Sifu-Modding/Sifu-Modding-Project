@@ -4,11 +4,11 @@
 #include "ArchetypeSituationDescription.h"
 #include "ArchetypeSituationDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UArchetypeSituationDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FArchetypeSituationDescription> m_ArchetypesInSituation;
     
     UArchetypeSituationDB();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAlertedReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAlertedReason : uint8 {
     None,
     HitReceived,

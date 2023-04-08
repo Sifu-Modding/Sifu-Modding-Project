@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWidgetLifeCycle.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWidgetLifeCycle : uint8 {
     ReleaseOnPop,
     NeverReleased,

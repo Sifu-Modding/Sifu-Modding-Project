@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FRetrieveLostItemStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBaseItemData* m_ItemOwned;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBaseItemData* m_ItemToGetIfOwned;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCheckReciprocity;
     
     SIFU_API FRetrieveLostItemStruct();

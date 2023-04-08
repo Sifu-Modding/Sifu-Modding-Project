@@ -5,11 +5,11 @@
 
 class UCurveFloat;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UHeightDifferenceWithActorCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_HeightDiffCurve;
     
     UHeightDifferenceWithActorCondition();

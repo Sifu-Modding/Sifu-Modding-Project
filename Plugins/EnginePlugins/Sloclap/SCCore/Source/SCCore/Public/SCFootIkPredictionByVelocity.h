@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCFootIkService.h"
 #include "UObject/NoExportTypes.h"
+#include "SCFootIkService.h"
 #include "SCFootIkPredictionByVelocity.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCFootIkPredictionByVelocity : public USCFootIkService {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_activationRange;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinRequiredVelocity;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseLastGroundNormal;
     
 public:

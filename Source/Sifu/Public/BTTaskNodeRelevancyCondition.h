@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseActorConditionInstance.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "BaseActorConditionInstance.h"
 #include "BTTaskNodeRelevancyCondition.generated.h"
 
 USTRUCT(BlueprintType)
 struct FBTTaskNodeRelevancyCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorConditionInstance m_RelevancyCondition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EBTNodeResult::Type> m_eResultWhenIrrelevant;
     
     SIFU_API FBTTaskNodeRelevancyCondition();

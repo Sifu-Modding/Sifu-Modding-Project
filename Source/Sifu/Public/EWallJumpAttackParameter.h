@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWallJumpAttackParameter.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWallJumpAttackParameter : uint8 {
     ValidAngleMin,
     ValidAngleMax,

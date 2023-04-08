@@ -1,7 +1,7 @@
 #include "InteractionObjectComponent.h"
 
-class USceneComponent;
 class UPrimitiveComponent;
+class USceneComponent;
 
 void UInteractionObjectComponent::ForceUse() {
 }

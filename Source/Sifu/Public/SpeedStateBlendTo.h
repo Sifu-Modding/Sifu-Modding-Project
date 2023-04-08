@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSpeedStateBlendTo {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FSpeedStateBlendDescription m_BlendDescription[4];
     
     SIFU_API FSpeedStateBlendTo();

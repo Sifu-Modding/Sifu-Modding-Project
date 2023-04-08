@@ -4,16 +4,16 @@
 #include "SCPoolableActor.h"
 #include "SCActor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCActor : public AActor, public ISCPoolableActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsStreamable;
     
 private:
-    UPROPERTY(VisibleInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsPooled;
     
 public:

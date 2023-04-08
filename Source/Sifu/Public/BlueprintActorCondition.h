@@ -10,7 +10,7 @@ class SIFU_API UBlueprintActorCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
     UBlueprintActorCondition();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_Evaluate(const AActor* _actor) const;
     
 };

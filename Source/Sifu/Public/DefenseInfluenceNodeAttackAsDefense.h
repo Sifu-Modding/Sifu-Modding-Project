@@ -4,18 +4,18 @@
 #include "SCAITicketEnum.h"
 #include "DefenseInfluenceNodeAttackAsDefense.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDefenseInfluenceNodeAttackAsDefense : public UContextualDefenseInfluenceNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTimeBeforeTagetAttackHit;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ComboTrigger;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCAITicketEnum m_AttackTicket;
     
 public:

@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EquipmentStruct.h"
 #include "ECharacterGender.h"
+#include "EquipmentStruct.h"
 #include "GearUpdateStruct.generated.h"
 
 class UBaseWeaponData;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGearUpdateStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FEquipmentStruct> m_Outfits;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBaseWeaponData* m_weaponData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eGender;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiSkinTone;
     
     SIFU_API FGearUpdateStruct();

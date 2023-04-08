@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOrderServiceFreezeFrameHandling.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOrderServiceFreezeFrameHandling : uint8 {
     Freeze,
     IgnoreFreezeFrame,

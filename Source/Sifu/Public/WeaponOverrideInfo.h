@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "BaseWeaponOverrideInfo.h"
-#include "LocomotionPaceSelector.h"
 #include "ComboOverride.h"
 #include "EAIWuguanTicketEvaluation.h"
 #include "ESCAICombatRoles.h"
+#include "LocomotionPaceSelector.h"
+#include "Templates/SubclassOf.h"
 #include "WeaponOverrideInfo.generated.h"
 
 class UAIContextualDefense;
@@ -16,34 +16,34 @@ USTRUCT(BlueprintType)
 struct FWeaponOverrideInfo : public FBaseWeaponOverrideInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAIContextualDefense* m_ContextualDefenseOverride;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FComboOverride> m_ComboOverrides;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAvoidAbility> m_AvoidAbility;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBaseMovementDB* m_MovementDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bActivateAttackTicketFactorsOverride;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EAIWuguanTicketEvaluation, float> m_AttackTicketEvaluationFactorsOverride;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bActivateCirclePerCombatRoleOverride;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ESCAICombatRoles, int32> m_CirclePerCombatRolesOverride;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideLocomotionPaceSelector;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLocomotionPaceSelector m_OverridingLocomotionPaceSelector;
     
     SIFU_API FWeaponOverrideInfo();

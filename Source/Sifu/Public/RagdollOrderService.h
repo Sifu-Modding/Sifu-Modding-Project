@@ -3,7 +3,7 @@
 #include "OrderService.h"
 #include "RagdollOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API URagdollOrderService : public UOrderService {
     GENERATED_BODY()
 public:

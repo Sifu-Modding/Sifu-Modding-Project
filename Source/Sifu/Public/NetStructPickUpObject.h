@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FNetStructPickUpObject : public FNetOrderStructPlayAnimVariableWeight {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_PickUpObject;
     
     SIFU_API FNetStructPickUpObject();

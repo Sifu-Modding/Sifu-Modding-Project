@@ -2,59 +2,59 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "ButtonUserWidget.h"
+#include "ReplayKeyWidgetStateChangedDelegate.h"
 #include "ReplayKeyWidgetVisualData.h"
 #include "ReplayKeyWidgetVisualKey.h"
-#include "ReplayKeyWidgetStateChangedDelegate.h"
 #include "ReplayKeyWidget.generated.h"
 
-class UReplayKeyWidgetVisualsDB;
 class UReplayKey;
+class UReplayKeyWidgetVisualsDB;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UReplayKeyWidget : public UButtonUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsKeySelected;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsKeyHovered;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D m_vSize;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UReplayKeyWidgetVisualsDB* m_VisualsDB;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UReplayKey* m_Key;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D m_vCachedTimelinePositionWithMargin;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D m_vCachedTimelinePosition;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCachedTimelineIsOutOfBounds;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayKeyWidgetStateChanged m_OnKeyMoved;
     
 public:
     UReplayKeyWidget();
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnSelectionUpdate(UReplayKey* _key, bool _bIsSelected);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnHoveringStateUpdate(UReplayKey* _key, bool _bIsHovered);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_ApplyVisualsOverride(const FReplayKeyWidgetVisualKey& _key, FVector2D& _vSize);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ApplyVisuals(const FReplayKeyWidgetVisualData& _visuals);
     
 };

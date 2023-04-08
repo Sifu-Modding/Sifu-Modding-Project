@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FRelationshipActionArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     ELockActionCondition m_Array[10];
     
     SIFU_API FRelationshipActionArray();

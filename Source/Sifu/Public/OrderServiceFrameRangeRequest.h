@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/Object.h"
 #include "OrderServiceFrameRangeRequest.generated.h"
 
 class ABaseCharacter;
@@ -11,7 +11,7 @@ class SIFU_API UOrderServiceFrameRangeRequest : public UObject {
     GENERATED_BODY()
 public:
     UOrderServiceFrameRangeRequest();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FFloatRange BPE_GetFrameRange(uint8 _uiOrderId, const ABaseCharacter* _owner) const;
     
 };

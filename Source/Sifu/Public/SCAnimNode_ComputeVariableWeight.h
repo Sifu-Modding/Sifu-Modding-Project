@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSCAnimNode_ComputeVariableWeight : public FAnimNode_Base {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPoseLink mBasePose;
     
     FSCAnimNode_ComputeVariableWeight();

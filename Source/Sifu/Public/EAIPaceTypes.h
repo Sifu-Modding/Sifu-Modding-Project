@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAIPaceTypes.generated.h"
 
-UENUM()
-enum class EAIPaceTypes {
+UENUM(BlueprintType)
+enum class EAIPaceTypes : uint8 {
     CloseToEnemy,
     FarFromEnemy,
     Attacking,

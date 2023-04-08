@@ -6,19 +6,19 @@
 
 class UAISanctuaryComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AAISanctuaryVolume : public ASCVolume {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAISanctuaryComponent* m_SanctuaryComponent;
     
     AAISanctuaryVolume();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSanctuaryAssignmentUpdated();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAlertLevelChanged(EAlertLevel _eNewLevel);
     
 };

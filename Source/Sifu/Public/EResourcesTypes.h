@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EResourcesTypes.generated.h"
 
-UENUM()
-enum class EResourcesTypes {
+UENUM(BlueprintType)
+enum class EResourcesTypes : uint8 {
     Money,
     Keys,
     Count,

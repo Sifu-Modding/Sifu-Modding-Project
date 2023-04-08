@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SafeZoneOrderService.h"
 #include "SafeZoneBonePair.h"
+#include "SafeZoneOrderService.h"
 #include "BoneToBoneSafeZoneOrderService.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API UBoneToBoneSafeZoneOrderService : public USafeZoneOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSafeZoneBonePair> m_bonePairList;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fForcedRatio;
     
     UBoneToBoneSafeZoneOrderService();

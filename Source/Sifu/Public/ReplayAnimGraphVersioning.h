@@ -3,14 +3,14 @@
 #include "ReplayAnimGraphPlayerAssetVersioning.h"
 #include "ReplayAnimGraphVersioning.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplayAnimGraphVersioning {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> m_StateMachineNames;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FReplayAnimGraphPlayerAssetVersioning> m_AssetPlayers;
     
     SIFU_API FReplayAnimGraphVersioning();

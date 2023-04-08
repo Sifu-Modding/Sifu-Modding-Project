@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMeshBodyParts.generated.h"
 
-UENUM()
-enum class EMeshBodyParts {
+UENUM(BlueprintType)
+enum class EMeshBodyParts : uint8 {
     Head,
     UpperArms,
     LowerArms,

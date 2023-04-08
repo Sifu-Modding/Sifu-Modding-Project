@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GenericInputData.h"
 #include "AnalogInputSequenceStep.h"
 #include "EControllerIconAxisTypes.h"
+#include "GenericInputData.h"
 #include "AnalogInputSequenceData.generated.h"
 
 class UVectorInputData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAnalogInputSequenceData : public UGenericInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UVectorInputData* m_VectorInputData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseRawVectorInputs;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAnalogInputSequenceStep> m_Steps;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxParalellStates;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EControllerIconAxisTypes> m_UIAxis;
     
     UAnalogInputSequenceData();

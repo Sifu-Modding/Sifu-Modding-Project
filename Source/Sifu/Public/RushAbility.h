@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCGameplayAbility.h"
 #include "ESpeedState.h"
+#include "SCGameplayAbility.h"
 #include "RushAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API URushAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESpeedState eMinNeededSpeedState;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bResetGuard;
     
 public:

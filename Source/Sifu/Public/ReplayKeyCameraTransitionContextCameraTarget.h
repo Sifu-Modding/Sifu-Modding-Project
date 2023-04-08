@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ReplayKeyCameraTransitionContextCameraTarget.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplayKeyCameraTransitionContextCameraTarget {
     GENERATED_BODY()
 public:

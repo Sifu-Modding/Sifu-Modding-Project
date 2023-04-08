@@ -1,11 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "GameplayTagContainer.h"
+#include "ECharacterGender.h"
+#include "ArenaChallengeSave.h"
 #include "FilterProperties.h"
+#include "InputMappingProfileData.h"
 #include "InputMappingProfileEnumHandler.h"
 #include "SaveAdditionalInfos.h"
-#include "InputMappingProfileData.h"
-#include "GameplayTagContainer.h"
+#include "Templates/SubclassOf.h"
 #include "ProfileData.generated.h"
 
 class USkillGameplayEffect;
@@ -14,38 +16,44 @@ USTRUCT(BlueprintType)
 struct FProfileData {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FFilterProperties> m_FilterPresets;
     
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     float m_GameOptions[41];
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<FString, FSaveAdditionalInfos> m_SaveAdditionalInfoMap;
     
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FInputMappingProfileEnumHandler m_GamepadProfile;
     
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FInputMappingProfileEnumHandler m_KeyboardProfile;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FInputMappingProfileData m_GamepadCustomMapping;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FInputMappingProfileData m_KeyboardCustomMapping;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bInputHoldToggleActivated;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer m_UnlockedCheats;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<USkillGameplayEffect>, int32> m_SkillConsolidationLevel;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     int32 m_iCheatUnlockPoints;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    TMap<FName, FArenaChallengeSave> m_aArenaSavePerChallenge;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    ECharacterGender m_eChallengeGender;
     
     SIFU_API FProfileData();
 };

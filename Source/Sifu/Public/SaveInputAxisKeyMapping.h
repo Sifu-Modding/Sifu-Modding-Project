@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FSaveInputAxisKeyMapping {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_Key;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     float m_fScale;
     
     SIFU_API FSaveInputAxisKeyMapping();

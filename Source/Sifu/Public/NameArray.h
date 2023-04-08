@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FNameArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> m_Array;
     
     FNameArray();

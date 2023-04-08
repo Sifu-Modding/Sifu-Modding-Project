@@ -4,14 +4,14 @@
 #include "InterchangeableData.h"
 #include "InterchangeableInputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UInterchangeableInputData : public UGenericInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInterchangeableData> m_Inputs;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseActiveSubInputLifeSpan;
     
     UInterchangeableInputData();

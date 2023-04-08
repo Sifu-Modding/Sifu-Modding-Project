@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserWidget.h"
 #include "AvailabilityLayerCaches.h"
+#include "SCUserWidget.h"
 #include "ReplayScreenshotUserWidget.generated.h"
 
 class ABaseReplayController;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UReplayScreenshotUserWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTakeScreenshotOnCooldown;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAvailabilityLayerCaches m_AvailabilityLayers;
     
 public:
@@ -23,13 +23,13 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_RequestScreenshot(int32 _iResolutionX, int32 _iResolutionY);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ABaseReplayController* BPF_GetReplayController() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnScreenshotRequestProcessed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnScreenshotRequested();
     
 };

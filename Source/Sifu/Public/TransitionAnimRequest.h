@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "LocomotionTransitionsAnimContainer.h"
 #include "AnimContainer.h"
+#include "LocomotionTransitionsAnimContainer.h"
 #include "TransitionAnimRequest.generated.h"
 
-UCLASS(Abstract, BlueprintType)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UTransitionAnimRequest : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bMirrorAllowed;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLocomotionTransitionsAnimContainer m_Transitions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLocomotionTransitionsAnimContainer m_WeaponTransitions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_MediumLanding;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_OnPlaceMediumLanding;
     
 public:

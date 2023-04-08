@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WGLevelSequence.h"
 #include "EAIPhaseTransitionEvents.h"
+#include "WGLevelSequence.h"
 #include "AIPhaseTransitionSequence.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIPhaseTransitionSequence : public UWGLevelSequence {
     GENERATED_BODY()
 public:

@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FNetOrderStructTraversalCine : public FNetOrderStructPlayAnim {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTraversalInfo m_TraversalInfo;
     
     SIFU_API FNetOrderStructTraversalCine();

@@ -7,11 +7,11 @@
 class ASCPlayerController;
 class UFilterPresetEntitlementDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFilterPresetDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UFilterPresetEntitlementDB*> m_DBs;
     
     UFilterPresetDB();

@@ -6,7 +6,7 @@
 
 class UOrderComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UNetOrderStructHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

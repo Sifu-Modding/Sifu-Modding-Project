@@ -7,19 +7,19 @@ USTRUCT(BlueprintType)
 struct FSpeedState {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bV0;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bV1;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bV2;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bV3;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ESpeedState m_eSpeedState;
     
     SIFU_API FSpeedState();

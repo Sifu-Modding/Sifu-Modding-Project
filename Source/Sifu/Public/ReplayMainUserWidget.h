@@ -1,63 +1,63 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ReplayMenuWidget.h"
 #include "ECycleDirection.h"
-#include "ReplayTimelineControl.h"
-#include "ReplayAvailabilityLayerCache.h"
-#include "EReplayTimelineControlType.h"
-#include "ReplayKeyData.h"
-#include "ETimelineStateAction.h"
-#include "TimelineChangeState.h"
 #include "EReplayCameraMode.h"
+#include "EReplayTimelineControlType.h"
+#include "ETimelineStateAction.h"
+#include "ReplayAvailabilityLayerCache.h"
+#include "ReplayKeyData.h"
+#include "ReplayMenuWidget.h"
+#include "ReplayTimelineControl.h"
+#include "TimelineChangeState.h"
 #include "ReplayMainUserWidget.generated.h"
 
-class UReplayKey;
-class UReplayTimelineWidget;
 class AActor;
 class AReplayController;
+class UReplayKey;
+class UReplayTimelineWidget;
 
-UCLASS(EditInlineNew, Config=Replay)
+UCLASS(Blueprintable, EditInlineNew, Config=Replay)
 class SIFU_API UReplayMainUserWidget : public UReplayMenuWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayTimelineControl m_TimelineControl;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUIInitialized;
     
-    UPROPERTY(BlueprintReadWrite, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAutoSelectKeyOnAdd;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOnlyApplyPersistentSettingsOnCustomCameraKeys;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOnApplyCameraSettingsSetCameraModeToCustom;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bSelectKeyOnGoToTimeCompleted;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOnSelectFailDefaultToSelectedKey;
     
-    UPROPERTY(BlueprintReadWrite, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UReplayTimelineWidget* m_TimelineWidget;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayAvailabilityLayerCache m_AvailabilityLayers;
     
 public:
     UReplayMainUserWidget();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     bool OnTimelineModePressed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnKeyRemoved(UReplayKey* _key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnKeyAdded(UReplayKey* _key, bool _bCanSelectKey);
     
     UFUNCTION(BlueprintCallable)
@@ -102,6 +102,9 @@ protected:
     bool BPF_RemoveSelectedKey();
     
     UFUNCTION(BlueprintCallable)
+    bool BPF_RemoveHoveredKey();
+    
+    UFUNCTION(BlueprintCallable)
     void BPF_PasteKey();
     
     UFUNCTION(BlueprintCallable)
@@ -117,36 +120,36 @@ protected:
     void BPF_LeavePasteKeyMode();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInMoveKeyState() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInKeyPastingMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasSelectedOrHoveredKey() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasKeySelected() const;
     
     UFUNCTION(BlueprintCallable)
     void BPF_GoToTime(UReplayKey* _key);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReplayKey* BPF_GetSelectedKey() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AReplayController* BPF_GetReplayController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReplayKey* BPF_GetKeyFromCurrentDemoTime(ECycleDirection _eDirection) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetIsMovingTimelineCursor() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetIsInPreviewMode() const;
     
 protected:
@@ -156,10 +159,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_CopySelectedKey();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanApplyCurrentCineCameraSettingsAndPositionToKey(const UReplayKey* _key) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanApplyCurrentCineCameraSettingsAndPositionToCurrentTime() const;
     
     UFUNCTION(BlueprintCallable)
@@ -171,126 +174,126 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_AddCutAtCurrentTime(const FReplayKeyData _presetData, int32 _iPresetOverride);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnVideoRecordingStop();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUndoOrRedoPressed(const ETimelineStateAction _eAction, const FTimelineChangeState& _changeState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnTimelineZoom(float _fActionValue);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnTimelineMoveForwardPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnTimelineMoveBackwardPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnTimelineModeToggled();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnSpecialMenuPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnSelectRightKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnSelectLeftKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSelectedKeyDataUpdate(UReplayKey* _key, const FReplayKeyData& _previousData);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnSelectCurrentKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnScrubReleased();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnResumePressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnReplayQuitPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnReplayJumpStart();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnReplayJumpEnd();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnRemoveKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnRemoveCutPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPreviewModeChanged(bool _bInPreview);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnPasteKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnNavigationModePressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnMoveKeyRightPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnMoveKeyReleased();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnMoveKeyLeftPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeySelectionUpdate(UReplayKey* _key, bool _bSelected);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeySelected(UReplayKey* _key);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeyRemoved(UReplayKey* _key);
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeyPastedOn(UReplayKey* _key, bool _bIsNew);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeyAdded(UReplayKey* _key);
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnGoToTimeInitiated(bool _bUnselectKey);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnGoToTimeCompleted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnEditReplayPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnEditCameraPressed();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnCutCreated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnCopyKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCameraModeChanged(EReplayCameraMode _eCameraMode);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnApplySettingsPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnAddSpeedKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnAddKeyPressed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnAddCutPressed();
     
 };

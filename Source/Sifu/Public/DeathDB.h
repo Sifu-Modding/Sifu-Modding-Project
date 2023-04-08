@@ -1,53 +1,53 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "AnimContainer.h"
 #include "InheritedDataAsset.h"
 #include "DeathRadialImpulse.h"
-#include "SCDeathAnimTypeEnum.h"
 #include "DeathStandupAnimations.h"
-#include "AnimContainer.h"
+#include "SCDeathAnimTypeEnum.h"
 #include "DeathDB.generated.h"
 
-class ULevelSequence;
 class UAnimSequence;
+class ULevelSequence;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UDeathDB : public UInheritedDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bFallOnSlopes;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeathRadialImpulse m_RadialImpulse;
     
-   /* UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    TMap<FSCDeathAnimTypeEnum, UAnimSequence*> m_DeathAnims;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FSCDeathAnimTypeEnum, UAnimSequence*> m_DeathAnims;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeathStandupAnimations m_StandUpAnims;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_DownBeforeStandupAnim;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fKnockBackDistance[3];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_iNbFrameStuned[3];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULevelSequence* m_Sequence;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDelayBeforeSequence;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFloorCorrectionCoeff;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCollisionsFreeRadius;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCameraTargetPelvis;
     
     UDeathDB();

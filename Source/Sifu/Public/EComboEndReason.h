@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EComboEndReason.generated.h"
 
-UENUM()
-enum class EComboEndReason {
+UENUM(BlueprintType)
+enum class EComboEndReason : uint8 {
     Finished,
     TicketOverride,
     ComboStartFailed,

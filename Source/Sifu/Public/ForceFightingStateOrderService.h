@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderService.h"
 #include "EFightingState.h"
+#include "OrderService.h"
 #include "ForceFightingStateOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UForceFightingStateOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingState m_eFightingState;
     
     UForceFightingStateOrderService();

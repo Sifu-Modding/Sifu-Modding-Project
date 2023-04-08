@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESlopeDetectionResult.generated.h"
 
-UENUM()
-enum class ESlopeDetectionResult {
+UENUM(BlueprintType)
+enum class ESlopeDetectionResult : uint8 {
     OnSlopeDescending,
     OnSlopeAscending,
     OnPlaneGround,

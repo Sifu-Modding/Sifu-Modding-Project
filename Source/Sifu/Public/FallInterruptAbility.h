@@ -3,7 +3,7 @@
 #include "SCGameplayAbility.h"
 #include "FallInterruptAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFallInterruptAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:

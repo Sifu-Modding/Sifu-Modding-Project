@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCarriedProps {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDataTableRowHandle m_props;
     
     SIFU_API FCarriedProps();

@@ -3,7 +3,7 @@
 #include "SCAnimNotify.h"
 #include "PopCurrentOrderFightingStateNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UPopCurrentOrderFightingStateNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:

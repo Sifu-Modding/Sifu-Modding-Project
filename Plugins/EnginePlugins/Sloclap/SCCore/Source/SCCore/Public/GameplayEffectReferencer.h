@@ -5,17 +5,17 @@
 
 class USCGameplayEffect;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API UGameplayEffectReferencer : public UDataAsset {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USCGameplayEffect*> m_ListOfAllGameplayEffect;
     
 public:
     UGameplayEffectReferencer();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void RetrieveAllGameplayEffects();
     
 };

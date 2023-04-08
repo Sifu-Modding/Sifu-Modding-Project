@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSpawningClassContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ABaseCharacter> m_SpawningClass;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ImpostorCustomName;
     
     SIFU_API FSpawningClassContainer();

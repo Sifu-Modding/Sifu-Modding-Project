@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "AIConditionClassInstance.h"
 #include "SCAiActionClassInstance.h"
+#include "AIConditionClassInstance.h"
+#include "Templates/SubclassOf.h"
 #include "AIConditionedAction.generated.h"
 
 class UComboTransitionCondition;
@@ -12,16 +12,16 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAIConditionedAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UComboTransitionCondition*> m_Conditions;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USCAiAction> m_ActionClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIConditionClassInstance> m_ConditionsArray;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCAiActionClassInstance m_Action;
     
     FAIConditionedAction();

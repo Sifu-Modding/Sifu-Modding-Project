@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-#include "SubZoneShortcutStruct.h"
 #include "UObject/NoExportTypes.h"
+#include "SubZoneShortcutStruct.h"
 #include "GhostGateCarrierInterface.generated.h"
 
 class UShapeComponent;

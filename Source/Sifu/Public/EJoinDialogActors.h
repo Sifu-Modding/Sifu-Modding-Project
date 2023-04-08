@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EJoinDialogActors.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EJoinDialogActors : uint8 {
     All,
     PrimarySpeaker,

@@ -4,11 +4,11 @@
 #include "InputSequenceStep.h"
 #include "InputSequenceData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UInputSequenceData : public UGenericInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInputSequenceStep> m_Sequence;
     
     UInputSequenceData();

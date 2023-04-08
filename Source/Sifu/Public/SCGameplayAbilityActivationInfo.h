@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayAbilitySpec.h"
+#include "GameplayAbilitySpec.h"
 #include "Abilities/GameplayAbilityTypes.h"
-#include "GameplayAbilitySpec.h"
 #include "SCGameplayAbilityActorInfo.h"
-#include "GameplayAbilitySpec.h"
 #include "SCGameplayAbilityActivationInfo.generated.h"
 
 class AActor;
@@ -13,22 +13,22 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSCGameplayAbilityActivationInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayAbilitySpecHandle m_Handle;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCGameplayAbilityActorInfo m_ActorInfos;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayAbilityActivationInfo m_ActivationInfo;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayEventData m_EventData;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAbilityPayload* m_Payload;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_Target;
     
     FSCGameplayAbilityActivationInfo();

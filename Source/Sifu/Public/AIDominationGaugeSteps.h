@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FAIDominationGaugeSteps {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_Steps[4];
     
     SIFU_API FAIDominationGaugeSteps();

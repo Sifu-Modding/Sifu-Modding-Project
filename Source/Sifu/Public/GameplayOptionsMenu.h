@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MenuWidget.h"
 #include "EGameOptionTypes.h"
+#include "MenuWidget.h"
 #include "GameplayOptionsMenu.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGameplayOptionsMenu : public UMenuWidget {
     GENERATED_BODY()
 public:
@@ -18,7 +18,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_RestoreOptionDefaultValue(EGameOptionTypes _eOptionType);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsModificationHasBeenMade();
     
     UFUNCTION(BlueprintCallable)
@@ -30,7 +30,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ApplyCurrentOptionsToDefault();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     TArray<EGameOptionTypes> BPE_GetHandledOptionTypes();
     
 };

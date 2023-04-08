@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FRagdollMoveableBone {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRagdollBone m_Bone;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRagdollBone> m_CascadedBones;
     
     SCCORE_API FRagdollMoveableBone();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EIconStyle.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EIconStyle : uint8 {
     Small,
     Medium,

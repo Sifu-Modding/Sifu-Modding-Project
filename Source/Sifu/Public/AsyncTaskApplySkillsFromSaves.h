@@ -4,15 +4,15 @@
 #include "OnSavesAppliedDelegate.h"
 #include "AsyncTaskApplySkillsFromSaves.generated.h"
 
-class USCAbilitySystemComponent;
 class UAsyncTaskApplySkillsFromSaves;
 class UObject;
+class USCAbilitySystemComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncTaskApplySkillsFromSaves : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSavesApplied SavesApplied;
     
     UAsyncTaskApplySkillsFromSaves();

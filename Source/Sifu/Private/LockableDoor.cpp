@@ -1,11 +1,11 @@
 #include "LockableDoor.h"
-#include "Net/UnrealNetwork.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "Components/SceneComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "SCSaveGameComponent.h"
+#include "Net/UnrealNetwork.h"
 
-class UAnimationAsset;
 class AFightingCharacter;
+class UAnimationAsset;
 
 void ALockableDoor::SetOpened(bool bOpened) {
 }
@@ -17,6 +17,9 @@ void ALockableDoor::OnReplaySystemRecordingChanged(bool _bRecording) {
 }
 
 void ALockableDoor::OnRep_SkeletalMesh() {
+}
+
+void ALockableDoor::OnRep_HidenMeshComponents() {
 }
 
 void ALockableDoor::BPF_SetNonOccluding(bool bNonOccluding) {
@@ -46,6 +49,7 @@ void ALockableDoor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(ALockableDoor, m_SkeletalMesh);
+    DOREPLIFETIME(ALockableDoor, m_HiddenMeshComponents);
 }
 
 ALockableDoor::ALockableDoor() {

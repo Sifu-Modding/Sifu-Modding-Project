@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FSoundStateInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     uint32 m_uiStateValue;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bReplicates;
     
     SIFU_API FSoundStateInfo();

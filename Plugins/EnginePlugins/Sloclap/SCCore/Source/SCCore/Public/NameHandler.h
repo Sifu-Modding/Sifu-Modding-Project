@@ -8,10 +8,10 @@ class SCCORE_API UNameHandler : public UObject {
     GENERATED_BODY()
 public:
     UNameHandler();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FString BPE_GetNameFromIndex(int32 _iIndex) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     int32 BPE_GetIndexFromName(const FString& _inName) const;
     
 };

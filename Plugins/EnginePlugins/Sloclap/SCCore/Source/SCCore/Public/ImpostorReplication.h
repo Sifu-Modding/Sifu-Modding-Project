@@ -4,12 +4,12 @@
 #include "SCImpostorReplicationInfos.h"
 #include "ImpostorReplication.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCCORE_API UImpostorReplication : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(ReplicatedUsing=OnRep_Impostors)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Impostors, meta=(AllowPrivateAccess=true))
     TArray<FSCImpostorReplicationInfos> m_Impostors;
     
 public:
@@ -17,7 +17,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Impostors();
     
 };

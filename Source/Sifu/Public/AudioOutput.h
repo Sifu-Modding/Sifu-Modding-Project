@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct FAudioOutput {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_DisplayText;
     
-   /* UPROPERTY(BlueprintReadOnly, EditAnywhere)
+  /*  UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AkChannelConfiguration m_eChannelConfig;*/
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUse3DOutput;
     
     SIFU_API FAudioOutput();

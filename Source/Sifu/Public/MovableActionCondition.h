@@ -4,14 +4,14 @@
 #include "InputAction.h"
 #include "MovableActionCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UMovableActionCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_HasAction;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIgnoreNonMovables;
     
     UMovableActionCondition();

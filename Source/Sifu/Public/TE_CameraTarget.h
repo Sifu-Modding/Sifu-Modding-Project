@@ -3,11 +3,11 @@
 #include "BaseTargetEvaluation.h"
 #include "TE_CameraTarget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTE_CameraTarget : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOnlyRelevantForOneTarget;
     
     UTE_CameraTarget();

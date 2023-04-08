@@ -3,11 +3,11 @@
 #include "EvaluateTargetCondition.h"
 #include "TC_Inverse.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTC_Inverse : public UEvaluateTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UEvaluateTargetCondition* m_condition;
     
     UTC_Inverse();

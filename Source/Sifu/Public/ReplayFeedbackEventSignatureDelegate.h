@@ -3,5 +3,5 @@
 #include "EReplayFeedbackEvent.h"
 #include "ReplayFeedbackEventSignatureDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FReplayFeedbackEventSignature, EReplayFeedbackEvent, _eEvent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FReplayFeedbackEventSignature, EReplayFeedbackEvent, _eEvent);
 

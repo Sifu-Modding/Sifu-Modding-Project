@@ -2,48 +2,54 @@
 #include "CoreMinimal.h"
 #include "SCActor.h"
 #include "EAIArchetype.h"
-#include "DamageInfos.h"
 #include "AIWaveRefillDirector.generated.h"
 
-class AAIWaveSpawner;
-class AFightingCharacter;
 class AAISituationActor;
-class ABaseCharacter;
+class AAISpawner;
+class AAIWaveSpawner;
 class AActor;
+class ABaseCharacter;
+class AFightingCharacter;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AAIWaveRefillDirector : public ASCActor {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnWaveRelatedSituationComplete, int32, _iWaveIndex, AAISituationActor*, _relatedSituationActor);
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnWaveComplete, int32, _iWaveIndex);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnWaveRelatedEvent, int32, _iWaveIndex);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnWaveAndSituationComplete, int32, _iWaveIndex);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnWaveAIDeath, const AFightingCharacter*, _FightingCharacter, EAIArchetype, _eArchetype);
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<AAIWaveSpawner>> m_WaveSpawners;
     
-    UPROPERTY(BlueprintAssignable)
-    FOnWaveComplete OnWaveCompleteDelegate;
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnWaveRelatedEvent OnWaveCompleteDelegate;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnWaveRelatedEvent OnWaveStartedDelegate;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnWaveRelatedSituationComplete OnWaveRelatedSituationComplete;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnWaveAndSituationComplete OnWaveAndSituationComplete;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnWaveAIDeath OnWaveAIDeath;
     
     AAIWaveRefillDirector();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSituationAIDeathDetected(ABaseCharacter* _character);
     
-    UFUNCTION()
-    void OnAIDeathDetected(const AFightingCharacter* _character, const FDamageInfos& _damageInfos);
+    UFUNCTION(BlueprintCallable)
+    void OnRelatedSituationActivated(AAISituationActor* _aiSituationActor);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
+    void OnAIDownDetected(AAISpawner* _spawner);
+    
+    UFUNCTION(BlueprintCallable)
     void OnAIAbandonDetected(AActor* _actor);
     
 public:
@@ -62,28 +68,31 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetRefillDisabled();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsWaveInProgress() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetAIRemainingInCurrentWave() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable)
+    void BPF_CancelCurrentWave();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnWaveStarted(int32 _iWaveIndex);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnWavesSequenceComplete();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnWaveComplete(int32 _iWaveIndex);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRelatedAISituationComplete(int32 _iWaveIndex, AAISituationActor* _situationActor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRefillSequenceStarted(int32 _iCurrentWaveIndex, const TArray<EAIArchetype>& _spawnRequests);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRefillSequenceEnded(int32 _iCurrentWaveIndex);
     
 };

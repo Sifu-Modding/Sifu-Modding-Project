@@ -1,49 +1,49 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ButtonUserWidget.h"
 #include "UObject/NoExportTypes.h"
+//#include "InputCoreTypes.h"
+#include "ButtonUserWidget.h"
+#include "EControllerIconAxisTypes.h"
+#include "EControllerIconStyles.h"
 #include "InputAction.h"
 #include "InputContext.h"
-#include "EControllerIconStyles.h"
-#include "EControllerIconAxisTypes.h"
-#include "MappingID.h"
 #include "InputMappingNode.h"
-#include "InputCoreTypes.h"
+#include "MappingID.h"
 #include "ControllerButtonWidget.generated.h"
 
 class UGenericInputData;
 class UTexture2D;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UControllerButtonWidget : public UButtonUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iInputSlotIndex;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_AxisScaleRange;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputContext m_eInputContext;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EControllerIconAxisTypes m_eAxisType;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUpdateOnControllerTypeChanged;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UGenericInputData*> m_InputDatas;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EControllerIconStyles m_IconStyle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eAction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMappingID m_MappingID;
     
 public:
@@ -70,16 +70,16 @@ public:
     void BPF_SetAction(InputAction _eAction, bool _bRefresh);
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsKeyboardInput();
     
     UFUNCTION(BlueprintCallable)
     void BPF_GetUIKeyInfos(bool& _bOutFoundIcon, FInputMappingNode& _outNode, TSoftObjectPtr<UTexture2D>& _icon, FKey& _key, FText& _replacementText, bool& _bShowText, FString& _outSeparator);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText BPF_GetKeyDisplayName(const FKey& _key);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetInputNode(FInputMappingNode& Node);
     
 };

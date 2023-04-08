@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "InputAction.h"
 #include "Components/ActorComponent.h"
+#include "Engine/DataTable.h"
+#include "SCUserDefinedEnumHandler.h"
 #include "DamageInfos.h"
 #include "EAlertLevel.h"
-#include "SCUserDefinedEnumHandler.h"
-#include "EScoringKillType.h"
-#include "Engine/DataTable.h"
-#include "VitalPointDataDefinition.h"
 #include "EScoringActionType.h"
+#include "EScoringKillType.h"
+#include "InputAction.h"
+#include "VitalPointDataDefinition.h"
 #include "PlayerScoringComponent.generated.h"
 
-class UOrderComponent;
 class AActor;
-class AVitalPointActor;
-class AFightingCharacter;
-class UArchetypeAsset;
-class UCurveFloat;
-class UAttackDB;
 class ABaseWeapon;
+class AFightingCharacter;
+class AVitalPointActor;
+class UArchetypeAsset;
+class UAttackDB;
+class UCurveFloat;
+class UOrderComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UPlayerScoringComponent : public UActorComponent {
@@ -27,22 +27,22 @@ class SIFU_API UPlayerScoringComponent : public UActorComponent {
 public:
     UPlayerScoringComponent();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerTakedownStarted(uint8 _iOrderID, UOrderComponent* _OrderComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerKilledSomething(AActor* _victim, bool _bIsOnlyAssist, bool _bKillingBlow, AActor* _Instigator, const FDamageInfos& _damage);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerAttackTaunt();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerAttackFocus(AVitalPointActor* _vitalPointSelected);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAvoidedAttackEnds(uint8 _iOrderID, UOrderComponent* _OrderComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAlertLevelChanged(EAlertLevel _eNewLevel);
     
 public:
@@ -51,6 +51,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void BPF_SetGlobalMultiplier(float _GlobalMultiplier);
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_SetFloorScore(float _newFloorScore);
     
     UFUNCTION(BlueprintCallable)
     void BPF_ResetScoringValues();
@@ -62,123 +65,134 @@ public:
     void BPF_OnKnockdownAttackStarted(uint8 _orderID, UOrderComponent* _OrderComponent);
     
     UFUNCTION(BlueprintCallable)
+    void BPF_InitializeFromDB();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float BPF_GetFloorScoreToReachMaxMultiplier() const;
+    
+    UFUNCTION(BlueprintCallable)
     float BPF_GetCurrentScore();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCurrentEfficiency() const;
     
     UFUNCTION(BlueprintCallable)
     void BPF_ComputeHighScore(bool _bUpdateSave, float& _fCurrentSavedHighScore, float& _fCurrentLevelScore, bool& _bHighscoreIsNew);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ToggleFloorScore(bool _Freeze);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_ShouldDecrementFloorWhenFloorScoreIsZero();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUpdateFloorScore(float _FloorScore, float _MaxFloorScore);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUnbindCallbacks(AFightingCharacter* _owner);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnNewFloorReached(int32 _NewFloor, int32 _OldFloor);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnNewEfficiency(float _fOld, float _fNew);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnInitializeScoring();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnFinalFloorReached();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnBindCallbacks(AFightingCharacter* _owner);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_IsSyncAttackKnockdown(const FSCUserDefinedEnumHandler& _BlueprintID);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetScoreOnAIFriendlyHit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetScoreFromKill(EScoringKillType _KillType, float& _ScoreValue, bool& _NeedsDiminishing, bool& _AddToQueue, UCurveFloat*& _DiminishingReturnCurve, float& _MaxDiminishingReturn, bool& _ImpactScoreStat);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetScoreFromHitboxRowHandle(const FDataTableRowHandle& _hitboxRawHanlde, bool& _ActionFound, float& _ScoreValue, bool& _NeedsDiminishing, bool& _AddToQueue, UCurveFloat*& _DiminishingReturnCurve, float& _MaxDiminishingReturn, bool& _ImpactScoreStat, bool& _ApplyMultiplierBonus);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetScoreFromAttackDB(const UAttackDB* _AttackDB, bool& _ActionFound, float& _ScoreValue, bool& _NeedsDiminishing, bool& _AddToQueue, UCurveFloat*& _DiminishingReturnCurve, float& _MaxDiminishingReturn, bool& _ImpactScoreStat, bool& _ApplyMultiplierBonus);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetScoreFromAction(InputAction _action, bool& _ActionFound, float& _ScoreValue, bool& _NeedsDiminishing, bool& _AddToQueue, UCurveFloat*& _DiminishingReturnCurve, float& _MaxDiminishingReturn, bool& _ImpactScoreStat, bool& _ApplyMultiplierBonus);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetScoreFocus(const FVitalPointDataDefinition& _VitalPointDef, AFightingCharacter* _character);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetScoreDefense(float& _ScoreValue, bool& _NeedsDiminishing, bool& _AddToQueue, UCurveFloat*& _DiminishingReturnCurve, float& _MaxDiminishingReturn, bool& _ImpactScoreStat);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     int32 BPE_GetScoreArchetype(UArchetypeAsset* _archetype);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetMultiplierFloorValue(float _Floor, float& _FloorScoreForNextFloor, float& _FloorScoreRatioWhenEnteringFromLower, float& _FloorScoreRatioWhenEnteringFromUpper, FFloatRange& _BaseDecrementRateRange, FFloatRange& _CooldownBeforeDecrementRange);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     int32 BPE_GetMaxMultiplierFloor();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetMalusOnHitStructureBrokenAI();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetInactionTimeDuringInactivity() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetInactionTime() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     int32 BPE_GetGlobalQueueSize();
     
-    UFUNCTION(BlueprintNativeEvent)
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    float BPE_GetFloorScoreToReachMaxMultiplier() const;
+    
+public:
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetFloorScoreGlobalMalusRatioOnMCHit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     int32 BPE_GetEfficiencyQueueSize();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetEfficiencyMalusOnMCHit(float& _EfficiencyValue, int32& _NbOfOccurences);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetEfficiencyCoeffInactiveAction() const;
     
-    UFUNCTION(BlueprintNativeEvent)
-    void BPE_GetEfficiencyBoundsFromActionType(EScoringActionType _ScoringActionType, float& _MinEfficiency, float& _MaxEfficiency);
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void BPE_GetEfficiencyBoundsFromActionType(EScoringActionType _ScoringActionType, bool& _ActionTypeFound, float& _MinEfficiency, float& _MaxEfficiency);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UCurveFloat* BPE_GetCurveForEfficiencyWeightByPlaceInQueue() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetBonusOnWeaponHit(const ABaseWeapon* _weapon);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetBonusOnPunish();
     
-    UFUNCTION(BlueprintNativeEvent)
-    float BPE_GetBonusOnEnvironmentalKill();
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    float BPE_GetBonusOnEnvironmentalKill(EScoringKillType _eScoringKillType, float _fTargetHealthBeforeKill);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetBonusMCLifeMultiplier(AFightingCharacter* _MCCharacter);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetBonusKillStreak(int32 _KillCount, float& _BonusValue, float& _DurationBetweenKills);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetAILifeBonus(AFightingCharacter* _AICharacter);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_CanTargetGenerateScoring(AFightingCharacter* _OpponentCharacter);
     
 };

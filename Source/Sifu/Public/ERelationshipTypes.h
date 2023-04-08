@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERelationshipTypes.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ERelationshipTypes : uint8 {
     Enemy,
     Fight,

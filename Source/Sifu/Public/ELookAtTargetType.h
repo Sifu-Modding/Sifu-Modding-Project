@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELookAtTargetType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ELookAtTargetType : uint8 {
     Dialog,
     Attack,

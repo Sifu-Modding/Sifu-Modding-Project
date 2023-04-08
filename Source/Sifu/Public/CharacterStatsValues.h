@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCharacterStatsValues {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ECharacterStat, float> m_Values;
     
     SIFU_API FCharacterStatsValues();

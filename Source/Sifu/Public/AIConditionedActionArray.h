@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAIConditionedActionArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIConditionedAction> m_Actions;
     
     FAIConditionedActionArray();

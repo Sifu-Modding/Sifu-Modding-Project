@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct SIFU_API FOrderServiceFrameRange {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bBoundToAnim;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOrderServiceFrameRangeRequest* m_FrameRangeRequest;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_FrameRange;
     
     FOrderServiceFrameRange();

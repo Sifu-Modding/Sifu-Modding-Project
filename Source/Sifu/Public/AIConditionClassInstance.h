@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAIConditionClassInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UComboTransitionCondition> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UComboTransitionCondition* m_Instance;
     
     FAIConditionClassInstance();

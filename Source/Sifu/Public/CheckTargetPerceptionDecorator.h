@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCBTDecorator.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "SCBTDecorator.h"
+#include "Templates/SubclassOf.h"
 #include "CheckTargetPerceptionDecorator.generated.h"
 
 class UAISense;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UCheckTargetPerceptionDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector m_TargetKey;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UAISense>> m_Senses;
     
     UCheckTargetPerceptionDecorator();

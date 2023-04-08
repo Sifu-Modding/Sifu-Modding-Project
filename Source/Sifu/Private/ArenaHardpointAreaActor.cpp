@@ -1,11 +1,14 @@
 #include "ArenaHardpointAreaActor.h"
 #include "Components/SceneComponent.h"
 
-class UCharacterHealthComponent;
-class ASCVolume;
 class AAISituationActor;
 class AActor;
+class ASCVolume;
+class UCharacterHealthComponent;
 class UPrimitiveComponent;
+
+void AArenaHardpointAreaActor::UpdateVolumeBounds() {
+}
 
 void AArenaHardpointAreaActor::OnOverlappingEnemyDown(UCharacterHealthComponent* _healthComponent, EDownState _eState) {
 }
@@ -23,12 +26,24 @@ TArray<ASCVolume*> AArenaHardpointAreaActor::GetAreaVolumes() const {
     return TArray<ASCVolume*>();
 }
 
+bool AArenaHardpointAreaActor::BPF_IsScoreDecreasing() const {
+    return false;
+}
+
+bool AArenaHardpointAreaActor::BPF_IsPlayerCapturing() const {
+    return false;
+}
+
 bool AArenaHardpointAreaActor::BPF_HasBeenCaptured() const {
     return false;
 }
 
 bool AArenaHardpointAreaActor::BPF_GetIsActive() const {
     return false;
+}
+
+FText AArenaHardpointAreaActor::BPF_GetHardpointAreaName() const {
+    return FText::GetEmpty();
 }
 
 float AArenaHardpointAreaActor::BPF_GetCurrentCaptureRatio() const {
@@ -43,12 +58,19 @@ FName AArenaHardpointAreaActor::BPF_GetAreaName() const {
     return NAME_None;
 }
 
+void AArenaHardpointAreaActor::BPF_ForceCapture() {
+}
 
 
 
 
 
 
+
+
+float AArenaHardpointAreaActor::BFF_GetCurrentCaptureScore() const {
+    return 0.0f;
+}
 
 AArenaHardpointAreaActor::AArenaHardpointAreaActor() {
     this->m_bIsActive = false;

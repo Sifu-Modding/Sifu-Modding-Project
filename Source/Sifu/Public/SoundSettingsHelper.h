@@ -5,12 +5,12 @@
 #include "EAudioOutputType.h"
 #include "SoundSettingsHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API USoundSettingsHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USoundSettingsHelper();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FAudioOutput BPF_GetAudioOuputFromType(EAudioOutputType _eType, bool& _bOutFound);
     
 };

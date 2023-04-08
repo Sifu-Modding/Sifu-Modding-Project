@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ComboTraceElementType.generated.h"
 
-UENUM()
-enum class ComboTraceElementType {
+UENUM(BlueprintType)
+enum class ComboTraceElementType : uint8 {
     NodeRoot,
     NodeAttack,
     NodeRedirect,

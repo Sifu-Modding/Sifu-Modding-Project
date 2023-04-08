@@ -4,11 +4,11 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionEnemyDistance.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionEnemyDistance : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCMathExpressionFloat m_condition;
     
     UComboAIConditionEnemyDistance();

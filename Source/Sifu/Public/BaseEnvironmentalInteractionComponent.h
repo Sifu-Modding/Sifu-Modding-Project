@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "NetOrderStructTakedown.h"
 #include "EPushObstacleReaction.h"
+#include "NetOrderStructTakedown.h"
 #include "BaseEnvironmentalInteractionComponent.generated.h"
 
 class AFightingCharacter;
@@ -13,26 +13,26 @@ class UBaseEnvironmentalInteractionComponent : public UActorComponent {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnImpact, AFightingCharacter*, _takenDown, const FNetOrderStructTakedown&, _takedownInfos);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnImpact m_OnImpact;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bActive;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     EPushObstacleReaction m_eReaction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAllowedInteractionTypes;
     
     UBaseEnvironmentalInteractionComponent();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnTakedownStarted(AFightingCharacter* _Instigator, AFightingCharacter* _takenDown);
     
     UFUNCTION(BlueprintNativeEvent)
     EPushObstacleReaction BPE_GetPushReaction(const AFightingCharacter* _Instigator, const AFightingCharacter* _takenDown);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_CanTakeDown(AFightingCharacter* _Instigator, AFightingCharacter* _takenDown);
     
 };

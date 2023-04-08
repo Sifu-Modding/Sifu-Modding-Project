@@ -4,11 +4,11 @@
 #include "EOrderType.h"
 #include "WaitOrderTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWaitOrderTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EOrderType> m_Orders;
     
     UWaitOrderTask();

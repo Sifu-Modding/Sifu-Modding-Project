@@ -3,23 +3,23 @@
 #include "Blueprint/UserWidget.h"
 #include "DistributionStatCompareWidget.generated.h"
 
-class UStatsComponent;
 class UPreviewData;
+class UStatsComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UDistributionStatCompareWidget : public UUserWidget {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPreviewData* m_PreviewData;
     
 public:
     UDistributionStatCompareWidget();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UStatsComponent* BPF_GetStatsComponent();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPreviewData* BPF_GetPreviewData() const;
     
 };

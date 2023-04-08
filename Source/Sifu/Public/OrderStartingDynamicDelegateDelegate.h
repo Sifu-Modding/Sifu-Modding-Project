@@ -4,5 +4,5 @@
 
 class UOrderComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOrderStartingDynamicDelegate, uint8, _ID, UOrderComponent*, _OrderComponent);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOrderStartingDynamicDelegate, uint8, _ID, UOrderComponent*, _OrderComponent);
 

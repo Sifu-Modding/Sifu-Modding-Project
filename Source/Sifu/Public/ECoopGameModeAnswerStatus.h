@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECoopGameModeAnswerStatus.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECoopGameModeAnswerStatus : uint8 {
     None,
     YesOnTheWay,

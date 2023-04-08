@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EParryDirection.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EParryDirection : uint8 {
     Front,
     Back,

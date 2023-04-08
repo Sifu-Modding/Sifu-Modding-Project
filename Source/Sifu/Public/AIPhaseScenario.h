@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "UObject/Object.h"
 #include "PhaseNodeHandler.h"
+#include "Templates/SubclassOf.h"
 #include "AIPhaseScenario.generated.h"
 
 class UArchetypeAsset;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAIPhaseScenario : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UArchetypeAsset> m_rootPhase;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPhaseNodeHandler> m_PhaseNodes;
     
     UAIPhaseScenario();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetPhaseNameFromIndex(int32 _iPhaseIndex) const;
     
 };

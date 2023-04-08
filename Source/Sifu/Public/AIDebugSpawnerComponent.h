@@ -4,11 +4,11 @@
 #include "AIDebugSpawnerInstance.h"
 #include "AIDebugSpawnerComponent.generated.h"
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAIDebugSpawnerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIDebugSpawnerInstance> m_Spawners;
     
     UAIDebugSpawnerComponent();

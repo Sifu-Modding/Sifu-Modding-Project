@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "OrderAnimSyncHelpers.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UOrderAnimSyncHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayOpenState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayOpenState : uint8 {
     Preview,
     Edit,

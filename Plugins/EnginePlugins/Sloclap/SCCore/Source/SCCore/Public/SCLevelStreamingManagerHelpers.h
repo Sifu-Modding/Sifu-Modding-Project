@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SCLevelStreamingManagerHelpers.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCLevelStreamingManagerHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

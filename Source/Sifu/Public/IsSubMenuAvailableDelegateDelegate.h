@@ -4,5 +4,5 @@
 
 class UReplaySubMenuWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(bool, FIsSubMenuAvailableDelegate, const UReplaySubMenuWidget*, _menu);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(bool, FIsSubMenuAvailableDelegate, const UReplaySubMenuWidget*, _menu);
 

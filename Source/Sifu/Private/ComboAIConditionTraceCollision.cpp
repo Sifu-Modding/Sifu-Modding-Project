@@ -1,7 +1,7 @@
 #include "ComboAIConditionTraceCollision.h"
 
-class UAIFightingComponent;
 class AActor;
+class UAIFightingComponent;
 
 bool UComboAIConditionTraceCollision::BPF_TestEQCondition(const UAIFightingComponent* _aiComponent, const AActor* _target) const {
     return false;

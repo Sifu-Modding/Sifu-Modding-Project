@@ -3,7 +3,7 @@
 #include "SCPlayerController.h"
 #include "SpectatorController.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASpectatorController : public ASCPlayerController {
     GENERATED_BODY()
 public:

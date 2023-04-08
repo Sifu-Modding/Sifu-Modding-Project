@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FVolumesArray {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASCVolume*> m_Volumes;
     
     SIFU_API FVolumesArray();

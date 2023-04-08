@@ -9,5 +9,9 @@ UTicketSettings::UTicketSettings() {
     this->m_fDefaultMaxDistanceToWeapon = 500.00f;
     this->m_fMinDistanceForCandidateAttackCancel = 170.00f;
     this->m_fMinDistanceForAttackTicketTimeOut = 300.00f;
+    this->m_fPathHeightTolerance = 25.00f;
+    this->m_fPathFallHeightTolerance = 300.00f;
+    this->m_fPathHeightDifferenceWeight = 15000.00f;
+    this->m_fPathNavlinkWeight = 500.00f;
 }
 

@@ -3,12 +3,12 @@
 #include "SCAnimNotify.h"
 #include "ChangeCollisionNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UChangeCollisionNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEnableCollisions;
     
 public:

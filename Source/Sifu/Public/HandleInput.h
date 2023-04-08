@@ -11,7 +11,7 @@ class UHandleInput : public UInterface {
 class IHandleInput : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_HandleInput();
     
 };

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EVW_MasterStates.generated.h"
 
-UENUM()
-enum class EVW_MasterStates {
+UENUM(BlueprintType)
+enum class EVW_MasterStates : uint8 {
     Idle,
     FreeMove,
     Locked,

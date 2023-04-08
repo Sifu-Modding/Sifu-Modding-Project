@@ -3,7 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "LevelSequenceRoot.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ALevelSequenceRoot : public AActor {
     GENERATED_BODY()
 public:

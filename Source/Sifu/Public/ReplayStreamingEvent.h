@@ -3,7 +3,7 @@
 #include "ReplaySerializedEvent.h"
 #include "ReplayStreamingEvent.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplayStreamingEvent : public FReplaySerializedEvent {
     GENERATED_BODY()
 public:

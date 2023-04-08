@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EImposterSpawnTransformType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EImposterSpawnTransformType : uint8 {
     Actor,
     Component,

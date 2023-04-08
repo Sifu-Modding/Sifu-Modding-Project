@@ -3,7 +3,7 @@
 #include "SpecialAbilityPropertyDB.h"
 #include "ParryPropertyDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UParryPropertyDB : public USpecialAbilityPropertyDB {
     GENERATED_BODY()
 public:

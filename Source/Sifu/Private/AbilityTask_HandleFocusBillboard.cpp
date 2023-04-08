@@ -1,8 +1,8 @@
 #include "AbilityTask_HandleFocusBillboard.h"
 
-class UGameplayAbility;
-class UAbilityTask_HandleFocusBillboard;
 class AAimingBillboardActor;
+class UAbilityTask_HandleFocusBillboard;
+class UGameplayAbility;
 
 UAbilityTask_HandleFocusBillboard* UAbilityTask_HandleFocusBillboard::BPF_HandleFocusBillboard(UGameplayAbility* _owningAbility, const FTargetForSlotsEnumHandler& _focusTargetSlot) {
     return NULL;

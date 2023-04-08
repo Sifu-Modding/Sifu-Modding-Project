@@ -3,7 +3,7 @@
 #include "BindablePropertyBase.h"
 #include "BindableIntProperty.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBindableIntProperty : public UBindablePropertyBase {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetRef(UPARAM(Ref) int32& _iValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetValue() const;
     
 };

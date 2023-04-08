@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EPendingGenerationTaskToLaunch.generated.h"
 
-UENUM()
-enum class EPendingGenerationTaskToLaunch {
+UENUM(BlueprintType)
+enum class EPendingGenerationTaskToLaunch : uint8 {
     None,
     CreateCandidates,
     GenerationTaskAroundEnemyIfNeeded,

@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InteractionObjectComponent.h"
-#include "InteractionObjectComponent.h"
 #include "InputAction.h"
+#include "InteractionObjectComponent.h"
+#include "InteractionObjectComponent.h"
 #include "MovableInteractionComponent.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UMovableInteractionComponent : public UInteractionObjectComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UInteractionObjectComponent::FUseObject OnPushObject;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UInteractionObjectComponent::FUseObject OnThrowObject;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UInteractionObjectComponent::FUseObject OnPickUpObject;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<InputAction> m_aInputActions;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fShowInteractionRange;
     
 public:

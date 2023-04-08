@@ -3,7 +3,7 @@
 #include "Engine/StaticMeshActor.h"
 #include "SCStaticMeshPrimInstActor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCStaticMeshPrimInstActor : public AStaticMeshActor {
     GENERATED_BODY()
 public:

@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BPOrderServiceInstance.h"
-#include "OrderService.h"
-#include "EOrderType.h"
 #include "UObject/NoExportTypes.h"
+#include "BPOrderServiceInstance.h"
+#include "EOrderType.h"
+#include "OrderService.h"
 #include "AttackTrackingOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAttackTrackingOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fForceTrackingFrames;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAlwaysTrackHittedTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsTrackingWindowOpenedByDefault;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsRushAttack;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseDisplacementDirAsAttackDir;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EOrderType> m_StopTrackingIfTargetPlaysOrder;
     
     UAttackTrackingOrderService();

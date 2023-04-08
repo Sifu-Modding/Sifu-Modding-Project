@@ -4,17 +4,17 @@
 #include "ECharacterStat.h"
 #include "SkillGameplayEffect.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USkillGameplayEffect : public USCGameplayEffect {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iSkillPointCost;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> m_ConsolidationSkillPointCosts;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterStat m_eStatUsedToUnlockSkill;
     
     USkillGameplayEffect();

@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WGAchievementUnlockCondition.h"
 #include "HitDescription.h"
+#include "WGAchievementUnlockCondition.h"
 #include "HitAchievementUnlockCondition.generated.h"
 
 class AFightingCharacter;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UHitAchievementUnlockCondition : public UWGAchievementUnlockCondition {
     GENERATED_BODY()
 public:
     UHitAchievementUnlockCondition();
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnMCHit(AFightingCharacter* _fightingCharHitted, const FHitDescription& _hitDescription);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnAIHit(AFightingCharacter* _fightingCharHitted, const FHitDescription& _hitDescription);
     
 };

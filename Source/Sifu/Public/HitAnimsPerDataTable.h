@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FHitAnimsPerDataTable {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FHitAnimsPerHitbox> m_HitAnimsPerHitboxMap;
     
     FHitAnimsPerDataTable();

@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "WidgetData.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UWidgetData : public UObject {
     GENERATED_BODY()
 public:

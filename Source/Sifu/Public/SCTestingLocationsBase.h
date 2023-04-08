@@ -3,7 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "SCTestingLocationsBase.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASCTestingLocationsBase : public AActor {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "SCBTDecorator.h"
 #include "AIActionFetchObjectBTDecorator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionFetchObjectBTDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:

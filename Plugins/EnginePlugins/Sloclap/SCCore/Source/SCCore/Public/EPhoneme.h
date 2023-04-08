@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPhoneme.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPhoneme : uint8 {
     V_A,
     V_AH,

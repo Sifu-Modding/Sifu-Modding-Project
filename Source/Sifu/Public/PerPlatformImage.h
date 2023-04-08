@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/Image.h"
 #include "PerPlatformWidget.h"
-#include "UObject/NoExportTypes.h"
 #include "PerPlatformImage.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformImage : public UImage, public IPerPlatformWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D NormalSize;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D SmallScreenSize;
     
     UPerPlatformImage();

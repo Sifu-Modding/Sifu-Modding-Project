@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FReplayCameraSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraLensSettings m_Lens;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraFilmbackSettings m_Filmback;
     
     SIFU_API FReplayCameraSettings();

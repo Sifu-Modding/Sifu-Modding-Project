@@ -4,11 +4,11 @@
 #include "InputBehaviourStruct.h"
 #include "BehaviourCombinationInputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBehaviourCombinationInputData : public UCombinationInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInputBehaviourStruct m_BehaviourStruct;
     
     UBehaviourCombinationInputData();

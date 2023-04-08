@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWeaponSlot.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWeaponSlot : uint8 {
     LeftHand,
     RightHand,

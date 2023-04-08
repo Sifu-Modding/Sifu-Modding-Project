@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "MenuItem.h"
 #include "Layout/Margin.h"
+#include "MenuItem.h"
+#include "Templates/SubclassOf.h"
 #include "LoadChoices.generated.h"
 
-class UPanelWidget;
 class ULoadSlot;
+class UPanelWidget;
 class UWidget;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API ULoadChoices : public UMenuItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Export)
+    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPanelWidget> m_SlotsBox;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ULoadSlot> m_LoadingButtonClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin m_SlotsPadding;
     
 public:

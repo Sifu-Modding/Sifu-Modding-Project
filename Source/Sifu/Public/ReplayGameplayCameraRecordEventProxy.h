@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ReplayGameplayCameraRecordEventDelegateDelegate.h"
 #include "UObject/Object.h"
+#include "ReplayGameplayCameraRecordEventDelegateDelegate.h"
 #include "ReplayGameplayCameraRecordEventProxy.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UReplayGameplayCameraRecordEventProxy : public UObject {
     GENERATED_BODY()
 public:

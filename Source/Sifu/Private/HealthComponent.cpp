@@ -1,6 +1,8 @@
 #include "HealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
+class AActor;
+
 void UHealthComponent::ServerHackSetHealth_Implementation(float _fHealth) {
 }
 bool UHealthComponent::ServerHackSetHealth_Validate(float _fHealth) {
@@ -34,6 +36,9 @@ float UHealthComponent::BPF_GetMaxHealth() const {
 
 float UHealthComponent::BPF_GetBaseMaxHealth() const {
     return 0.0f;
+}
+
+void UHealthComponent::BPF_ApplyDamageOnAvoid(AActor* _Instigator) {
 }
 
 void UHealthComponent::BPF_ApplyDamage(float _fDamage) {

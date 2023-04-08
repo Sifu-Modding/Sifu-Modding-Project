@@ -1,44 +1,44 @@
 #pragma once
 #include "CoreMinimal.h"
+//#include "AkExternalSourceInfo.h"
 #include "SCCharacterImpostor.h"
 #include "ESCSignificanceBuckets.h"
-//#include "AkExternalSourceInfo.h"
 #include "BaseCharacterImpostor.generated.h"
 
-class UAkRtpc;
 class UAkAudioEvent;
+class UAkRtpc;
 class UCurveFloat;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ABaseCharacterImpostor : public ASCCharacterImpostor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCSignificanceBuckets m_eMoanMinBucket;
     
-    //UPROPERTY(EditDefaultsOnly)
-    //UAkAudioEvent* m_MoanEvent;
-    //
-    //UPROPERTY(EditDefaultsOnly)
-    //TArray<FAkExternalSourceInfo> m_MoanExternalSourceInfos;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAkAudioEvent* m_MoanEvent;
     
-   /* UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FAkExternalSourceInfo> m_MoanExternalSourceInfos;*/
+    
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkRtpc* m_MoanIntensityRTPC;*/
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_MoanIntensityRTPCName;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMoanInterpolationInMs;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_AngleFromCameraForwardRemappingCurve;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_MoanRefBoneName;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_MoanIntensityThresold;
     
 public:

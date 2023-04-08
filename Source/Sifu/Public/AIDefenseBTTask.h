@@ -3,12 +3,12 @@
 #include "AIBTTaskNode.h"
 #include "AIDefenseBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIDefenseBTTask : public UAIBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bFinishWhenIsNotStun;
     
 public:

@@ -1,8 +1,8 @@
 #include "BaseBreakable.h"
-#include "PhysicalActorDependencyComponent.h"
-#include "ReplayableDestructibleComponent.h"
 #include "Components/BoxComponent.h"
+#include "PhysicalActorDependencyComponent.h"
 #include "SCStreamingActorComponent.h"
+#include "ReplayableDestructibleComponent.h"
 
 class AActor;
 class UPrimitiveComponent;

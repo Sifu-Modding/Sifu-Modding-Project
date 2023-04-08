@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EComboTransition.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EComboTransition : uint8 {
     Light,
     LightHold,

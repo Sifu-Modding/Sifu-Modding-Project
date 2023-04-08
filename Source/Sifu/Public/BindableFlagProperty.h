@@ -3,7 +3,7 @@
 #include "BindableIntProperty.h"
 #include "BindableFlagProperty.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBindableFlagProperty : public UBindableIntProperty {
     GENERATED_BODY()
 public:
@@ -11,10 +11,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveFlags(int32 _iFlags);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasAnyFlags(int32 _iFlags) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasAllFlags(int32 _iFlags) const;
     
     UFUNCTION(BlueprintCallable)

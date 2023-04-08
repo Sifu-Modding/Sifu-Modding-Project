@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTTaskNode.h"
 #include "PickupObjectBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UPickupObjectBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:

@@ -4,14 +4,14 @@
 #include "EGearRarity.h"
 #include "ResourceItemData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UResourceItemData : public UBaseItemData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iFragmentsNb;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGearRarity m_eRarity;
     
     UResourceItemData();

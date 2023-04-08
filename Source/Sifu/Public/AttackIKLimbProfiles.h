@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAttackIKLimbProfiles {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackIKProfileInfos m_Profiles[2];
     
     SIFU_API FAttackIKLimbProfiles();

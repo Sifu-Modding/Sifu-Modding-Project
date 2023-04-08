@@ -1,11 +1,11 @@
 #include "BaseCharacter.h"
-#include "SocialComponent.h"
-#include "OrderComponent.h"
 #include "CharacterTextLipSync.h"
+#include "OrderComponent.h"
+#include "SocialComponent.h"
 
-class UPrimitiveComponent;
 class AActor;
 class UMaterialInstanceDynamic;
+class UPrimitiveComponent;
 
 void ABaseCharacter::OnLandedRaw(const FHitResult& _Impact) {
 }
@@ -27,6 +27,9 @@ void ABaseCharacter::BPF_SetScalarValueOnMaterials(FName _parameterName, float _
 }
 
 void ABaseCharacter::BPF_SetGenderInSave(ECharacterGender _eNewGender, bool _bSendTrackingData) {
+}
+
+void ABaseCharacter::BPF_SetGenderInProfile(ECharacterGender _eNewGender) {
 }
 
 bool ABaseCharacter::BPF_PopAvailabilityLayer(int32 _iId, InputContext _eInputContext) {

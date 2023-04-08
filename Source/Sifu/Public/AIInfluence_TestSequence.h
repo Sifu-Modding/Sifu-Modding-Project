@@ -5,14 +5,14 @@
 
 class UAIInfluenceTest;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIInfluence_TestSequence : public UAIInfluenceNode {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAIInfluenceTest*> m_Tests;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fProbability;
     
     UAIInfluence_TestSequence();

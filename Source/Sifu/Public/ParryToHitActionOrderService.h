@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+#include "GameplayTagContainer.h"
 #include "BPOrderServiceInstance.h"
 #include "OrderService.h"
-#include "GameplayTagContainer.h"
+#include "Templates/SubclassOf.h"
 #include "ParryToHitActionOrderService.generated.h"
 
-class UHitActionLauncher;
 class UBaseHitDetectionDB;
+class UHitActionLauncher;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UParryToHitActionOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UHitActionLauncher> m_hitActionLauncher;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBaseHitDetectionDB*> m_IgnoringHitDetectionDBs;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer m_IgnoringGameplayTagContainer;
     
     UParryToHitActionOrderService();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnParryFailed(FBPOrderServiceInstance _description) const;
     
 };

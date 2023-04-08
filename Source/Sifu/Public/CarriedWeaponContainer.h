@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FCarriedWeaponContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ABaseWeapon> m_carriedWeapon;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_CarriedWeaponPoolName;
     
     SIFU_API FCarriedWeaponContainer();

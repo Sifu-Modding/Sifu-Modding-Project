@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAlwaysCollidingActions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<InputAction> m_Actions;
     
     SIFU_API FAlwaysCollidingActions();

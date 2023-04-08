@@ -1,60 +1,67 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ECharacterGender.h"
 #include "SCGameMode.h"
-#include "EFightingState.h"
 #include "DamageInfos.h"
+#include "EFightingState.h"
 #include "ThePlainesGameMode.generated.h"
 
 class AController;
 class APlayerController;
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SIFU_API AThePlainesGameMode : public ASCGameMode {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FTwoControllersDynamicDelegate, AController*, _killer, AController*, _victim, const FDamageInfos&, _damageInfos);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTwoControllersDynamicDelegate OnCharacterKilled;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideAITraversalInfo;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsTraversalUniversalLockEnabled;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTraversalLockTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTraversalCooldownPerAI;
     
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ForcedPlayerStart;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowInitialOverlappingAllButQueryOnly;
     
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fGMDamageMultiplier;
     
 public:
     AThePlainesGameMode();
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void KillAllAis();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<APlayerController*> BPF_GetPlayers();
     
     UFUNCTION(BlueprintCallable)
     void BPF_ForceRestartPlayerAtStartNull(AController* _controller);
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
+    void BPE_TryGetOverrideGenderAndOutfit(ECharacterGender& _eOutGender, int32& _iOutOutfitIndex, bool& _bOutEnableOutfitPropSpawn) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
+    void BPE_TryGetOverrideAge(int32& _iOutAge) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool BPE_IsStartupGameMode() const;
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void AllAisSetFightingState(EFightingState _eFightingState, float _fDuration);
     
 };

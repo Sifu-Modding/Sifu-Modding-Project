@@ -2,13 +2,13 @@
 #include "Net/UnrealNetwork.h"
 
 class AActor;
-class AVitalPointActor;
-class UTargetDB;
-class UCombo;
 class AInteractiveMovable;
-class UFocusDB;
-class AThrowableActor;
 class APushableActor;
+class AThrowableActor;
+class AVitalPointActor;
+class UCombo;
+class UFocusDB;
+class UTargetDB;
 
 void UAttackComponent::SetWantsComboRestart(bool _bWantsRestart) {
 }

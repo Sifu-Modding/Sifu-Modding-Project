@@ -3,7 +3,7 @@
 #include "SCTrackingAuthentication.h"
 #include "SCTrackingAuthenticationSTEAM.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class USCTrackingAuthenticationSTEAM : public USCTrackingAuthentication {
     GENERATED_BODY()
 public:

@@ -5,15 +5,15 @@
 
 class UAkAudioEvent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCDM_Sound : public UCameraDataModifier {
     GENERATED_BODY()
 public:
 protected:
-    /*UPROPERTY(EditAnywhere)
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* m_InAkEvent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* m_OutAkEvent;*/
     
 public:

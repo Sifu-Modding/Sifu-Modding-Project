@@ -3,7 +3,7 @@
 #include "StaminaNotify.h"
 #include "StartStaminaRecoveryNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UStartStaminaRecoveryNotify : public UStaminaNotify {
     GENERATED_BODY()
 public:

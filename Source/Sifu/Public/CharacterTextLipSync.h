@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LipSync_TimedData.h"
-#include "SCPoolableActorComponent.h"
-#include "TextLipSync.h"
 #include "LipSyncEmotionData.h"
 #include "LipSyncPhonemeInPhrase.h"
+#include "SCPoolableActorComponent.h"
+#include "LipSync_TimedData.h"
+#include "TextLipSync.h"
 #include "CharacterTextLipSync.generated.h"
 
 class UAkAudioEvent;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UCharacterTextLipSync : public UTextLipSync, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:

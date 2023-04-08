@@ -1,5 +1,6 @@
 #include "TraversalActor.h"
 
+
 void ATraversalActor::BPE_GetTraversalAnimation_Implementation(FAnimContainer& _outResult) const {
 }
 

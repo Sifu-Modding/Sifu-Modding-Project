@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserWidget.h"
-#include "CombatDeckDetails.h"
 #include "CharacterStatsBindings.h"
+#include "CombatDeckDetails.h"
+#include "SCUserWidget.h"
 #include "CharacterStatsWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UCharacterStatsWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_CharacterName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_CharacterClass;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCombatDeckDetails m_CurrentWeaponCombatDeckDetails;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCombatDeckDetails m_PreviewWeaponCombatDeckDetails;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCombatDeckDetails m_CurrentHandCombatDeckDetails;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCombatDeckDetails m_PreviewHandCombatDeckDetails;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterStatsBindings m_CurrentCharacterStats;
     
     UCharacterStatsWidget();

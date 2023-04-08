@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EChargeCapEndReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EChargeCapEndReason : uint8 {
     CapValidated,
     InterruptedOnPurpose,

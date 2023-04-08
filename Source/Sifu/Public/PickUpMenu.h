@@ -5,20 +5,20 @@
 
 class UResourcesTexturesData;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UPickUpMenu : public UHUDUserWidget {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UResourcesTexturesData* m_RessourcesDataAsset;
     
 public:
     UPickUpMenu();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void LoadPictoCallback();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnClose();
     
 };

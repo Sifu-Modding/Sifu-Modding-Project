@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NetOrderStructPlayAnimVariableWeight.h"
 #include "EDropReason.h"
+#include "NetOrderStructPlayAnimVariableWeight.h"
 #include "NetOrderDropObject.generated.h"
 
 USTRUCT(BlueprintType)
 struct FNetOrderDropObject : public FNetOrderStructPlayAnimVariableWeight {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDropReason m_eDropReason;
     
     SIFU_API FNetOrderDropObject();

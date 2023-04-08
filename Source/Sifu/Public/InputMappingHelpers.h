@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserDefinedEnumHandler.h"
+#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "SCUserDefinedEnumHandler.h"
+#include "EKeyboardLayout.h"
+#include "InputAction.h"
 #include "InputContext.h"
-#include "InputMappingProfileData.h"
-#include "InputPresetsEnumHandler.h"
+#include "InputMappingData.h"
 #include "InputMappingGroup.h"
 #include "InputMappingKeySlotContainer.h"
-#include "InputMappingData.h"
-#include "MappingValidationError.h"
-#include "MappingID.h"
-#include "InputAction.h"
-#include "InputMappingProfileEnumHandler.h"
 #include "InputMappingNode.h"
-#include "EKeyboardLayout.h"
-#include "UObject/NoExportTypes.h"
+#include "InputMappingProfileData.h"
+#include "InputMappingProfileEnumHandler.h"
+#include "InputPresetsEnumHandler.h"
+#include "MappingID.h"
+#include "MappingValidationError.h"
 #include "InputMappingHelpers.generated.h"
 
 class ASCPlayerController;
-class UInputMappingProfileDB;
 class UGenericInputData;
+class UInputMappingProfileDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UInputMappingHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -29,28 +29,28 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool ValidateMappingForPreset(const FInputMappingProfileData& _mappingContext, const FInputMappingGroup& _context, const FInputPresetsEnumHandler& _preset, InputContext _eContext, const FInputMappingData& _mapping, TArray<FMappingValidationError>& _outErrors, bool _bDetectCollisions);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool EqualEqual_MappingID(const FMappingID& _ID1, const FMappingID& _ID2);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool EqualEqual_MappingData(const FInputMappingData& _data1, const FInputMappingData& _data2);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText Conv_MappingIDToText(const FMappingID& _ID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FMappingID Conv_InputPresetsEnumHandlerToMappingID(const FInputPresetsEnumHandler& _handler, InputContext _eContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FMappingID Conv_InputActionToMappingID(InputAction _action, InputContext _eContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FInputMappingProfileEnumHandler Conv_EnumToProfileID(const FSCUserDefinedEnumHandler& _ID);
     
     UFUNCTION(BlueprintCallable)
     static bool BPF_ValidateMapping(const FInputMappingProfileData& _mappingContext, const FMappingID& _item, const FInputMappingData& _mapping, TArray<FMappingValidationError>& _outErrors, bool _bDetectCollisions);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_ValidateCompleteMapping(const FInputMappingProfileData& _mapping, TArray<FMappingValidationError>& _outErrors);
     
     UFUNCTION(BlueprintCallable)
@@ -68,43 +68,43 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_ResolveConflicts(UPARAM(Ref) FInputMappingProfileData& _inOutMappingContext, const FMappingID& _item, TArray<FMappingID>& _outResettedItems);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FMappingID BPF_MakeMappingID(const FInputPresetsEnumHandler& _PresetID, InputAction _eAction, InputContext _eContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsValid(const FInputMappingData& _data, const FInputMappingProfileData& _mappingContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsEmpty(const FInputMappingData& _data, const FInputMappingProfileData& _mappingContext);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsDependencyBrokenWithPreset(const FInputMappingProfileData& _inOutRemapping, const FMappingID& _ID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetMappingResult(const FInputMappingProfileData& _mappingContext, const FMappingID& _ID, FInputMappingNode& _outResultNode);
     
-   /* UFUNCTION(BlueprintCallable)
-    static void BPF_GetMappingProfiles(TMap<FInputMappingProfileEnumHandler, UInputMappingProfileDB*>& _outResult, bool _bGamePad);*/
+    UFUNCTION(BlueprintCallable)
+    static void BPF_GetMappingProfiles(TMap<FInputMappingProfileEnumHandler, UInputMappingProfileDB*>& _outResult, bool _bGamePad);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UInputMappingProfileDB* BPF_GetMappingProfileDB(const FInputMappingProfileEnumHandler& _profileID);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetMapping(const FInputMappingProfileData& _mappingContext, const FMappingID& _ID, FInputMappingData& _outMapping);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EKeyboardLayout BPF_GetKeyboardLayout();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_GetHoldToggleEnabled();
     
     UFUNCTION(BlueprintCallable)
     static void BPF_GetDefaultMapping(const ASCPlayerController* _controller, FInputMappingProfileData& _mappingContext, bool _bGamePad);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetDefaultInputMapping(ASCPlayerController* _controller, const FMappingID& _ID, FInputMappingData& _outMapping, bool _bGamePad);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FInputMappingProfileEnumHandler BPF_GetCurrentMappingProfile(bool _bGamePad);
     
     UFUNCTION(BlueprintCallable)
@@ -113,7 +113,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_GetAvailableInputDatas(const FInputMappingProfileData& _mappingContext, bool _bGamePad, const FMappingID& _mappingID, const FInputMappingData& _mappingData, TArray<UGenericInputData*>& _outAvailableInputData);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FInt32Range BPF_GetAuthorizedCombinationCount(const FMappingID& _mappingID, bool _bGamePad);
     
     UFUNCTION(BlueprintCallable)
@@ -122,7 +122,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_BuildContextFromProfile(FInputMappingProfileData& _outMappingContext, FInputMappingProfileEnumHandler _profile);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_BreakMappingID(const FMappingID& _mappingID, bool& _bOutUsePreset, InputAction& _eOutAction, FInputPresetsEnumHandler& _eOutPreset);
     
     UFUNCTION(BlueprintCallable)

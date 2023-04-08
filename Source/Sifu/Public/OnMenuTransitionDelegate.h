@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "OnMenuTransitionDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnMenuTransition);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnMenuTransition);
 

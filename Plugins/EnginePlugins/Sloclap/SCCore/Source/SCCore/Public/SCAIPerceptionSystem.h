@@ -3,7 +3,7 @@
 #include "Perception/AIPerceptionSystem.h"
 #include "SCAIPerceptionSystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCAIPerceptionSystem : public UAIPerceptionSystem {
     GENERATED_BODY()
 public:

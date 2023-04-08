@@ -1,13 +1,13 @@
 #include "DefenseComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UFightingMovementComponent;
-class UEffectData;
 class AFightingCharacter;
+class UAttackPropertiesResistanceDB;
+class UEffectData;
+class UFightingMovementComponent;
+class UGuardDB;
 class UHealthComponent;
 class UVitalPointDB;
-class UAttackPropertiesResistanceDB;
-class UGuardDB;
 
 void UDefenseComponent::ServerSetGuardValue_Implementation(float _fGuard) {
 }
@@ -74,6 +74,21 @@ bool UDefenseComponent::ClientNotifyIsTargettedByAttack_Validate(AFightingCharac
 void UDefenseComponent::BPF_SetPermanentFightingState(EFightingState _ePermanentFightingState) {
 }
 
+void UDefenseComponent::BPF_SetIsSlapstickFight(const bool _bIsSlapstickFight) {
+}
+
+void UDefenseComponent::BPF_SetIsOnePunchBreaker(const bool _bIsOnePunchBreaker) {
+}
+
+void UDefenseComponent::BPF_SetIsForceStructureDamage(bool _bIsForceStructureDamage) {
+}
+
+void UDefenseComponent::BPF_SetIsForceHealthDamage(bool _bIsForceHealthDamage) {
+}
+
+void UDefenseComponent::BPF_SetIsAutoDeflect(bool _bIsAutoDeflect) {
+}
+
 void UDefenseComponent::BPF_SetGuardType(EGuardType _eGuardType, bool _bInPrediction) {
 }
 
@@ -81,6 +96,9 @@ void UDefenseComponent::BPF_SetDisableGuard(bool _bValue) {
 }
 
 void UDefenseComponent::BPF_SetBuildUpFramesMultiplicator(float _fMult) {
+}
+
+void UDefenseComponent::BPF_SetAutoAvoid(bool _bAutoAvoid) {
 }
 
 void UDefenseComponent::BPF_RestoreIncreaseGuardGauge() {
@@ -107,11 +125,27 @@ void UDefenseComponent::BPF_OverrideGuardDB(UGuardDB* _guardDB) {
 void UDefenseComponent::BPF_NotifyVitalPointsChanged() {
 }
 
+bool UDefenseComponent::BPF_IsSlapstickFight() const {
+    return false;
+}
+
 bool UDefenseComponent::BPF_IsGuardBroken() const {
     return false;
 }
 
+bool UDefenseComponent::BPF_IsForceStructureDamage() const {
+    return false;
+}
+
+bool UDefenseComponent::BPF_IsForceHealthDamage() const {
+    return false;
+}
+
 bool UDefenseComponent::BPF_IsFightingStateActive(EFightingState _eFightingState) const {
+    return false;
+}
+
+bool UDefenseComponent::BPF_IsAutoAvoid() const {
     return false;
 }
 
@@ -186,6 +220,7 @@ UDefenseComponent::UDefenseComponent() {
     this->m_ParryDB = NULL;
     this->m_AvoidDB = NULL;
     this->m_fCurrentGuard = 0.00f;
+    this->m_AvoidPropertyDB = NULL;
     this->m_DefaultGuardDB = NULL;
     this->m_fMaxGuard = 100.00f;
     this->m_MaxGuardMultiplier[0] = 1.00f;

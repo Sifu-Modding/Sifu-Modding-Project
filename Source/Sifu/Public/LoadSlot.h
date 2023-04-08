@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MenuSlot.h"
 #include "CharacterSaveDescription.h"
+#include "MenuSlot.h"
 #include "LoadSlot.generated.h"
 
 class ULoadChoices;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API ULoadSlot : public UMenuSlot {
     GENERATED_BODY()
 public:
@@ -14,16 +14,16 @@ public:
     UFUNCTION(BlueprintCallable)
     uint8 BPF_GetSlotIndex();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString BPF_GetSaveName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FCharacterSaveDescription BPF_GetSaveDescription();
     
     UFUNCTION(BlueprintCallable)
     ULoadChoices* BPF_GetLoadPanel();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_InitSlot(FCharacterSaveDescription _save);
     
 };

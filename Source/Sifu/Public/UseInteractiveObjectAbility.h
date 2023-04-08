@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCGameplayAbility.h"
 #include "InputAction.h"
+#include "SCGameplayAbility.h"
 #include "UseInteractiveObjectAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UUseInteractiveObjectAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<InputAction> m_eCarriedMovableInputs;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<InputAction> m_eMovableInputs;
     
 public:

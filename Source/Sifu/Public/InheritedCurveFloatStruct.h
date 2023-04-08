@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InheritedStruct.h"
 #include "EInheritanceChoice.h"
+#include "InheritedStruct.h"
 #include "InheritedCurveFloatStruct.generated.h"
 
 class UCurveFloat;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FInheritedCurveFloatStruct : public FInheritedStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_parentCurveFloat;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_finalCurveFloat;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EInheritanceChoice m_eInheritanceChoice;
     
 public:

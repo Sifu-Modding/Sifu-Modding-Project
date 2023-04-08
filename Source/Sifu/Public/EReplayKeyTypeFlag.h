@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayKeyTypeFlag.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayKeyTypeFlag : uint8 {
     None,
     TimeDilation,

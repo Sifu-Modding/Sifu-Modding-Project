@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ActivityInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FActivityInfo {
     GENERATED_BODY()
 public:

@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "CharacterProgressionReward.h"
-#include "ECharacterProgressionRewardTypes.h"
-#include "EPendantUpdate.h"
-#include "AttackDataRow.h"
-#include "EPendingttackXPType.h"
-#include "CharacterStatChangedDelegateDelegate.h"
-#include "FocusPointsGainStruct.h"
-#include "EWeightCategory.h"
-#include "ECharacterStat.h"
 #include "Engine/EngineTypes.h"
-#include "DamageInfos.h"
-#include "ECharacterProgressionRewardConditions.h"
-#include "EEarnXPInstigator.h"
-#include "EStatsWeaponComputingMethod.h"
-#include "SCUserDefinedEnumHandler.h"
 #include "AttributeSet.h"
-#include "EAttackLearningState.h"
+#include "SCUserDefinedEnumHandler.h"
+#include "AttackDataRow.h"
+#include "CharacterProgressionReward.h"
+#include "CharacterStatChangedDelegateDelegate.h"
 #include "CombatDeckDetails.h"
+#include "DamageInfos.h"
+#include "EAttackLearningState.h"
+#include "ECharacterProgressionRewardConditions.h"
+#include "ECharacterProgressionRewardTypes.h"
+#include "ECharacterStat.h"
+#include "EEarnXPInstigator.h"
+#include "EPendantUpdate.h"
+#include "EPendingttackXPType.h"
+#include "EStatsWeaponComputingMethod.h"
+#include "EWeightCategory.h"
+#include "FocusPointsGainStruct.h"
 #include "StatsComponent.generated.h"
 
+class AActor;
+class AFightingCharacter;
+class UAbilitySystemComponent;
+class UBaseWeaponData;
 class UCharacterProgressionDB;
 class UCharacterProgressionUnlockDB;
 class UEffectData;
-class AFightingCharacter;
-class AActor;
 class UStatsDB;
-class UBaseWeaponData;
-class UAbilitySystemComponent;
 class UTexture2D;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -51,114 +51,117 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FAttackPendingProgressionUpdated, AFightingCharacter*, _opponent, FName, _attack, int32, _XP, EPendingttackXPType, _eXPType, bool, _bDiscovered);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAttackDiscovered, const FAttackDataRow&, _attack, AFightingCharacter*, _opponent);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FXPGain OnGlobalXPGain;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStatsChanged OnStatsChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterStatChangedDelegate OnStatChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLevelUp OnNotifyLevelUp;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FProgressionRewardUnlocked OnNotifyProgressionRewardUnlocked;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FProgressionUpdated OnProgressionUpdated;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackDiscovered OnAttackDiscovered;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackProgressionUpdated OnAttackUnlockProgress;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackProgressionLost OnAttackProgressionLost;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackPendingProgressionUpdated OnAttackPendingProgressionUpdated;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackPendingProgressionValidated OnAttackPendingProgressionValidated;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackUnlocked OnAttackUnlocked;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFightingStyleUnlockProgress OnSpecialAbilityUnlockProgress;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnResourceAmountChanged OnResourceAmountChanged;
     
 protected:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPendantIncrement m_OnPendantIncremented;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeathCounterDecrement m_OnDeathCounterDecrement;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStatsDB* m_StatsDB;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeightCategory m_eWeightCategory;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxAge;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bAgeReversed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUsePendant;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowDeathCounterDecrement;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fAIPendingAttackXCancelDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCharacterProgressionDB* m_CharacterProgressionDB;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<int32> m_agingPerPendantCharge;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBaseWeaponData* m_weaponData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FFocusPointsGainStruct> m_FocusPointsGainDefinition;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAbilitySystemComponent* m_AbilitySystem;
     
 public:
     UStatsComponent();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStatsChangedCallback();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPendingAttackXPOpponentEndPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _endPlayReason);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPendingAttackXPOpponentAITimeOut(AFightingCharacter* _ai);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOwnerKilledSomething(AActor* _victim, bool _bIsOnlyAssist, bool _bKillingBlow, AActor* _Instigator, const FDamageInfos& _damage);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMatchStarted();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnEffectAddedOrRemovedCallback(bool _bAdded, UEffectData* _effectData);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     int32 GetXPBonusOnKill(const AActor* _victim) const;
     
     UFUNCTION(BlueprintCallable)
@@ -195,85 +198,85 @@ private:
     void BPF_LockReward(ECharacterProgressionRewardTypes _eReward);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsProgressionRewardUnlocked(const ECharacterProgressionRewardTypes _eReward) const;
     
     UFUNCTION(BlueprintCallable)
     void BPF_IncrementPendantCharge(int32 _iChargesToAdd, AActor* _actorGivingCharge);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetWeightRatio(EStatsWeaponComputingMethod _eStatsComputingMethod, bool _bWithItemEffects) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWeightCategory BPF_GetWeightCategory() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetTotalPendingAttackXP(AFightingCharacter* _attacker);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetStat_Float(ECharacterStat _eStat) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetStat(ECharacterStat _eStat) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetSparePoints() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FText BPF_GetRewardNotificationText(ECharacterProgressionRewardTypes _eReward, UCharacterProgressionUnlockDB* _unlock);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftObjectPtr<UTexture2D> BPF_GetRewardNotificationIcon(ECharacterProgressionRewardTypes _eReward, UCharacterProgressionUnlockDB* _unlock);
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     int32 BPF_GetRequiredXPForLevel(const int32 _iNewWantedLevel) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetPendingAttackXP(AFightingCharacter* _attacker, const FName& _attackName, EPendingttackXPType _eXPType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetPendingAttacks(AFightingCharacter* _attacker, TArray<FName>& _outAttacks);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetGlobalXP() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetGlobalLevel() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFocusPointsRefillBonus(FSCUserDefinedEnumHandler _focusGainEnum) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ECharacterStat BPF_GetCharacterStatFromAttribute(const FGameplayAttribute& _attribute) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCharacterProgressionDB* BPF_GetCharacterProgressionDB();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetCharacterAge() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EAttackLearningState BPF_GetAttackLearningState(const FName& _attackName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetAgeIncrement(int32 _iPendantChargeIdx);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GenerateDeckDetailsForAttack(FCombatDeckDetails& _deckDetails, FName _attack, bool _bIsMirror, EStatsWeaponComputingMethod _eComputingMethod);
     
     UFUNCTION(BlueprintCallable)
     void BPF_DecrementDeathCounter(int32 _iCount, AActor* _actor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EWeightCategory BPF_ComputeWeightCategory(EStatsWeaponComputingMethod _eStatsComputingMethod, bool _bWithItemEffects) const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     float BPF_ComputeDamageOnBlockingSword(float _fAttackDamage, float _fAttackingWeaponWeight, float _fBlockingWeaponWeight, bool _bGuardBroken) const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     float BPF_ComputeDamageOnAttackingSword(float _fAttackDamage, float _fAttackingWeaponWeight, float _fBlockingWeaponWeight, bool _bGuardBroken, bool _bGuarding, float _fHittedCharNormalDefense, float _fHittedCharSpecialDefense) const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPF_ComputeDamage(float _fAttackDamage, float _fEquipmentDefense, bool _bSpecialDamage) const;
     
     UFUNCTION(BlueprintCallable)
@@ -294,16 +297,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_AddAttackXP(const FName& _attackName, int32 _iXP, bool& _bLearnt);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_WeightCategoryChanged(EWeightCategory _eWeightCategory);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_StatChanged(ECharacterStat _eStat, int32 _previousValue, int32 _currentValue);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_SparePointsWin(int32 _iNbSparePointsWin);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetXPGain(AActor* _victim, int32 VictimLevel, int32& XPLevel);
     
 };

@@ -1,6 +1,6 @@
 #include "KeyPass.h"
-#include "Net/UnrealNetwork.h"
 #include "InteractionObjectComponent.h"
+#include "Net/UnrealNetwork.h"
 
 class APlayerController;
 

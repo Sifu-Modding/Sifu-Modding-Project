@@ -4,11 +4,11 @@
 #include "EAttackStates.h"
 #include "AttackStateCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAttackStateCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EAttackStates> m_AllowedStates;
     
     UAttackStateCondition();

@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "FixedCameraWeightComponent.h"
 #include "SCPoolableActorComponent.h"
-#include "StateWeight.h"
 #include "EGlobalBehaviors.h"
+#include "FixedCameraWeightComponent.h"
+#include "StateWeight.h"
 #include "FightingCameraWeightComponent.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UFightingCameraWeightComponent : public UFixedCameraWeightComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bClampAdditiveWeight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxAbsAdditiveWeight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FStateWeight m_fightingStateWeights[9];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDialogInvolvedAdditiveWeight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDialogSpeakerAdditiveWeight;
     
 public:
     UFightingCameraWeightComponent();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnGlobalBehaviorChanged(EGlobalBehaviors _eNewBehavior, const bool _bFromDialog);
     
     

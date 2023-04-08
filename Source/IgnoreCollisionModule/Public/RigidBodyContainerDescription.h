@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FRigidBodyContainerDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPrimitiveComponent> m_Component;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_boneName;
     
     IGNORECOLLISIONMODULE_API FRigidBodyContainerDescription();

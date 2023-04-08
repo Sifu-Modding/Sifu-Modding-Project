@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWeaponStatus.generated.h"
 
-UENUM()
-enum class EWeaponStatus {
+UENUM(BlueprintType)
+enum class EWeaponStatus : uint8 {
     Handled,
     Falling,
     Lying,

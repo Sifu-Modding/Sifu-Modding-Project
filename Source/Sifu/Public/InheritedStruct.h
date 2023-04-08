@@ -2,16 +2,16 @@
 #include "CoreMinimal.h"
 #include "InheritedStruct.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FInheritedStruct {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideParentValue;
     
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsEditable;
     
     FInheritedStruct();

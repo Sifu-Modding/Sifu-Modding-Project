@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPlayerScreenSide.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPlayerScreenSide : uint8 {
     Left,
     Right,

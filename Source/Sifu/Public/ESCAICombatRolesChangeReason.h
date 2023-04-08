@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCAICombatRolesChangeReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCAICombatRolesChangeReason : uint8 {
     AIDeath,
     AITakenDown,

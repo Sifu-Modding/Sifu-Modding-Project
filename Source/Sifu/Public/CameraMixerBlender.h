@@ -11,7 +11,7 @@ class SIFU_API UCameraMixerBlender : public UObject {
 public:
     UCameraMixerBlender();
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_EvaluateBlendRatio(UCameraComponentThird* _camera, float _fDt, float _fOldRatio, bool _bNoDamping) const;
     
 };

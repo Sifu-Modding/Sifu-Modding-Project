@@ -6,13 +6,13 @@
 class UAsyncTaskWait;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UAsyncTaskWait : public UMenuAsyncActionBase {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAsyncTaskWaitDel);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTaskWaitDel OnFinished;
     
     UAsyncTaskWait();

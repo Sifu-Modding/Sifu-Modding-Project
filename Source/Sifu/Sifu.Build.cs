@@ -1,7 +1,9 @@
 using UnrealBuildTool;
 
-public class Sifu : ModuleRules {
-    public Sifu(ReadOnlyTargetRules Target) : base(Target) {
+public class Sifu : ModuleRules
+{
+    public Sifu(ReadOnlyTargetRules Target) : base(Target)
+    {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;

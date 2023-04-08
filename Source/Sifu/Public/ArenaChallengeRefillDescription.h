@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "AIWaveParams.h"
 #include "ArenaChallengeRefillDescription.generated.h"
 
@@ -10,14 +11,20 @@ USTRUCT(BlueprintType)
 struct FArenaChallengeRefillDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<AAIWaveRefillDirector> m_RefillDirector;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIWaveParams> m_Waves;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UDataTable> m_ArchetypeBank;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bUseDistanceForSpawnerEvaluation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FFloatRange m_fDistanceRangeForSpawnerScore;
     
     SIFU_API FArenaChallengeRefillDescription();
 };

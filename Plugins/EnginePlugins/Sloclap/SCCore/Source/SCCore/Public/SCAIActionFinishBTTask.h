@@ -3,15 +3,15 @@
 #include "SCBTTaskNode.h"
 #include "SCAIActionFinishBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCAIActionFinishBTTask : public USCBTTaskNode {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bSucceeded;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_Message;
     
 public:

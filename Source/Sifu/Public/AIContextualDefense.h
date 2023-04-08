@@ -5,11 +5,11 @@
 
 class UAIInfluenceNode;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIContextualDefense : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAIInfluenceNode*> m_Nodes;
     
     UAIContextualDefense();

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESaveValidationResult.generated.h"
 
-UENUM()
-enum class ESaveValidationResult {
+UENUM(BlueprintType)
+enum class ESaveValidationResult : uint8 {
     Valid,
     Empty,
     ContainsNonAlphaNumeric,

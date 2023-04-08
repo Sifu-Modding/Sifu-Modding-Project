@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FOrderServiceClassInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UOrderService> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOrderService* m_Instance;
     
     FOrderServiceClassInstance();

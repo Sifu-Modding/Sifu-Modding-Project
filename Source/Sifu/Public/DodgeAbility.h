@@ -3,7 +3,7 @@
 #include "SCGameplayAbility.h"
 #include "DodgeAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDodgeAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:

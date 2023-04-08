@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWeaponEquipmentSlot.generated.h"
 
-UENUM()
-enum class EWeaponEquipmentSlot {
+UENUM(BlueprintType)
+enum class EWeaponEquipmentSlot : uint8 {
     PrimaryWeapon,
     Legs,
     Arms,

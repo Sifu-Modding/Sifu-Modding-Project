@@ -1,6 +1,6 @@
 #include "EnvQueryGenerator_WallJumps.h"
-#include "GameFramework/Actor.h"
 #include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
+#include "GameFramework/Actor.h"
 
 UEnvQueryGenerator_WallJumps::UEnvQueryGenerator_WallJumps() {
     this->m_RequiredComponentClass = NULL;

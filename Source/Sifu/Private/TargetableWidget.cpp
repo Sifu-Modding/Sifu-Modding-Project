@@ -1,8 +1,8 @@
 #include "TargetableWidget.h"
 
 class AActor;
-class UWidget;
 class USceneComponent;
+class UWidget;
 
 void UTargetableWidget::BPF_SetRelatedActor(AActor* _actor) {
 }

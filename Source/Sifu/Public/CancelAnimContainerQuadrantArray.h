@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCancelAnimContainerQuadrantArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_Array[4];
     
     SIFU_API FCancelAnimContainerQuadrantArray();

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCameraCollisionSideRaycast {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vStartLocal;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vEndLocal;
     
     FCameraCollisionSideRaycast();

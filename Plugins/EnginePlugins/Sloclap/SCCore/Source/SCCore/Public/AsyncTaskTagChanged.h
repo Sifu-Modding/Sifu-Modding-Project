@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
+#include "GameplayTagContainer.h"
 #include "OnTagChangedDelegate.h"
 #include "OnTagUpdateDelegate.h"
-#include "GameplayTagContainer.h"
 #include "AsyncTaskTagChanged.generated.h"
 
-class UAsyncTaskTagChanged;
 class UAbilitySystemComponent;
+class UAsyncTaskTagChanged;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API UAsyncTaskTagChanged : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTagChanged OnTagBegin;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTagUpdate OnTagUpdate;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnTagChanged OnTagEnd;
     
 protected:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAbilitySystemComponent* m_ASC;
     
 public:

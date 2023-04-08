@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EComboAIConditionGroupOperator.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EComboAIConditionGroupOperator : uint8 {
     AND,
     OR,

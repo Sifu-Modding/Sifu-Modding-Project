@@ -25,4 +25,4 @@ If your project building is getting errors along the lines of:
 Then you need to just build it again. Same with first time packaging - package it again.
 
 ### Credits: 
-- [Buckminsterfullerene]("https://github.com/Buckminsterfullerene02") for the text (I copied the text because yours was so easy to understand <3)
+- [Buckminsterfullerene]("https://github.com/Buckminsterfullerene02") for the text (I copied the text because yours was so easier to understand <3)

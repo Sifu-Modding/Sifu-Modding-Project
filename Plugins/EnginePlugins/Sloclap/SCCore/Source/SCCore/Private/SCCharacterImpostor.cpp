@@ -2,6 +2,15 @@
 #include "SkeletalMeshComponentBudgeted.h"
 #include "SCStreamingActorComponent.h"
 
+void ASCCharacterImpostor::BPF_Show() {
+}
+
+void ASCCharacterImpostor::BPF_Hide() {
+}
+
+void ASCCharacterImpostor::BPE_OnHideDueToDisplayLimit_Implementation() {
+}
+
 
 ASCCharacterImpostor::ASCCharacterImpostor() {
     this->m_SpawnTransformType = EImposterSpawnTransformType::Actor;

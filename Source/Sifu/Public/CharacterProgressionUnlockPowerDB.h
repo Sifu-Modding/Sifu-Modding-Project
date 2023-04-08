@@ -3,14 +3,14 @@
 #include "CharacterProgressionUnlockDB.h"
 #include "CharacterProgressionUnlockPowerDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCharacterProgressionUnlockPowerDB : public UCharacterProgressionUnlockDB {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iCharacterBuildPowerIndex;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_NotificationText;
     
     UCharacterProgressionUnlockPowerDB();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETrumpetSkewType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETrumpetSkewType : uint8 {
     HorizontalVertical,
     HorizontalVerticalDiagonals,

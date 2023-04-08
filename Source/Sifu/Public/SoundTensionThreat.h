@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSoundTensionThreat {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AAISituationActor*> m_AiSituations;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iBehaviorsMask;
     
     FSoundTensionThreat();

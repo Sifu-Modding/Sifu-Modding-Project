@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSCAITriggerableActionsArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USCAITriggerableActions*> m_Actions;
     
     SIFU_API FSCAITriggerableActionsArray();

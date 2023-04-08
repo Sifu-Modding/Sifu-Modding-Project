@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EEarnXPInstigator.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EEarnXPInstigator : uint8 {
     AI,
     PLAYER,

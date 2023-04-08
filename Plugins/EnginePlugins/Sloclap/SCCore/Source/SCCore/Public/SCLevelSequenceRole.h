@@ -2,14 +2,14 @@
 #include "CoreMinimal.h"
 #include "SCLevelSequenceRole.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FSCLevelSequenceRole {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_AnchorJoint;
     
     FSCLevelSequenceRole();

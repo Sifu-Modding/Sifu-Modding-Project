@@ -5,7 +5,7 @@
 
 class UWGLevelSequenceDirectorData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWGLevelSequence : public USCLevelSequence {
     GENERATED_BODY()
 public:
@@ -21,7 +21,7 @@ protected:
     void BPF_PopInputContext();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWGLevelSequenceDirectorData* BPF_GetWGData() const;
     
 };

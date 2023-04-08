@@ -1,56 +1,56 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "LevelSequenceDirector.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "ESCSequenceBlendViewState.h"
 #include "ESequenceBindingType.h"
 #include "SCLevelSequence.generated.h"
 
-class ASCSequenceAnchor;
-class UMaterialParameterCollection;
-class UAnimMontage;
-class ALevelSequenceActor;
-class ACameraActor;
-class USCLevelSequenceDirectorData;
 class AActor;
-class APlayerController;
+class ACameraActor;
 class ACharacter;
+class ALevelSequenceActor;
+class APlayerController;
+class ASCSequenceAnchor;
+class UAnimMontage;
 class UAnimSequence;
 class ULevelSequence;
+class UMaterialParameterCollection;
+class USCLevelSequenceDirectorData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCLevelSequence : public ULevelSequenceDirector {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USCLevelSequenceDirectorData* m_DataAsset;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ACameraActor* m_ActorCamera;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASCSequenceAnchor* m_ActorAnchor;
     
 public:
     USCLevelSequence();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPreStop();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPlay();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPause();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnFinished();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAnyCharacterPlayMontage(UAnimMontage* _playedMontageToPlay);
     
     UFUNCTION(BlueprintCallable)
@@ -66,28 +66,28 @@ protected:
     void BPF_RemoveMaterialParameterBinding(int32 _iHandle);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     APlayerController* BPF_PlayerController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESCSequenceBlendViewState BPF_GetViewBlendState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetRoleFromActor(AActor* _actor) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USCLevelSequenceDirectorData* BPF_GetData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ACharacter* BPF_GetCharacterOwner() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ACameraActor* BPF_GetCamera();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAnimSequence* BPF_GetAnimSequenceFromLevelSequence(const ULevelSequence* _levelSequence, FName _roleName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ASCSequenceAnchor* BPF_GetAnchor();
     
 protected:
@@ -98,17 +98,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_BlendToSequenceView(float _fTime);
     
-protected:
     UFUNCTION(BlueprintCallable)
     void BPF_BlendToPlayerView(float _fTime);
     
+protected:
     UFUNCTION(BlueprintCallable)
     int32 BPF_AddMaterialParameterBinding(UMaterialParameterCollection* _collection, FName _parameterName, ESequenceBindingType _eBinding);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnRegisterActor(AActor* _actor, FName _role, ALevelSequenceActor* _sequenceActor, FName& _outAnchorBone);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCreated(ALevelSequenceActor* _sequenceActor, ACharacter* _playerCharacter, ACameraActor* _camera);
     
 };

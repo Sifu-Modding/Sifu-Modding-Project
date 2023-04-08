@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAnimByCardinalThenHeight {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimByHeight m_Array[4];
     
     SIFU_API FAnimByCardinalThenHeight();

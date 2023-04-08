@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIJokerBehaviorAgainstAttacks.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIJokerBehaviorAgainstAttacks : uint8 {
     Ignore,
     CancelAttacksInMoveToState,

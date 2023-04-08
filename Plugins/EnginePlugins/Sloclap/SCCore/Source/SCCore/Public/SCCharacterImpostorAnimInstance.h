@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAnimInstance.h"
 #include "Animation/PoseSnapshot.h"
 #include "CompressedPoseSnapshot.h"
+#include "SCAnimInstance.h"
 #include "SCCharacterImpostorAnimInstance.generated.h"
 
 class UAnimSequence;
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SCCORE_API USCCharacterImpostorAnimInstance : public USCAnimInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     bool m_bHasAnimation;
     
-    UPROPERTY(BlueprintReadOnly, Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     UAnimSequence* m_animation;
     
-    UPROPERTY(BlueprintReadOnly, Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     bool m_bMirrorAnimation;
     
 private:
-    UPROPERTY(BlueprintReadOnly, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPoseSnapshot m_PoseSnapshotToMimic;
     
-    UPROPERTY(ReplicatedUsing=OnRep_CompressedPoseSnapshotToMimic)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CompressedPoseSnapshotToMimic, meta=(AllowPrivateAccess=true))
     FCompressedPoseSnapshot m_CompressedPoseSnapshotToMimic;
     
 public:
@@ -32,7 +32,7 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CompressedPoseSnapshotToMimic();
     
 };

@@ -3,7 +3,7 @@
 #include "OrderService.h"
 #include "DisableCamFadeOnOwnerOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UDisableCamFadeOnOwnerOrderService : public UOrderService {
     GENERATED_BODY()
 public:

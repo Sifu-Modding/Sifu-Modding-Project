@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCameraTransitionEventStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fRatio;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UCameraTransitionEvent> m_Event;
     
     FCameraTransitionEventStruct();

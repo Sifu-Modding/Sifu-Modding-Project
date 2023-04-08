@@ -4,11 +4,11 @@
 #include "ETraversalPhase.h"
 #include "TraversalActorCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTraversalActorCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETraversalPhase m_ePhase;
     
     UTraversalActorCondition();

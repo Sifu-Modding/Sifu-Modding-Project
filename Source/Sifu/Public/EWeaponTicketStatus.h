@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWeaponTicketStatus.generated.h"
 
-UENUM()
-enum class EWeaponTicketStatus {
+UENUM(BlueprintType)
+enum class EWeaponTicketStatus : uint8 {
     Dormant,
     NotUsable,
     InCooldown,

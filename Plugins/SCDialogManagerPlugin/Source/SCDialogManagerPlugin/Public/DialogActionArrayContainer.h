@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FDialogActionArrayContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UDialogActionBase*> m_Array;
     
     SCDIALOGMANAGERPLUGIN_API FDialogActionArrayContainer();

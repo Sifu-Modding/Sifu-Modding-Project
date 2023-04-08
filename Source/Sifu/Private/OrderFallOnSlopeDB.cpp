@@ -21,7 +21,7 @@ UOrderFallOnSlopeDB::UOrderFallOnSlopeDB() {
     this->m_bPlayInstantRecoveryAnimOnPlaneGround = true;
     this->m_PoseSnapshotName = TEXT("RagdollSnapshot");
     this->m_bMirrorFallOnRightSide = true;
-//    this->m_RTCPSpeed = NULL;
+  /*  this->m_RTCPSpeed = NULL;*/
     this->m_bCallRTPCOnSelf = false;
 }
 

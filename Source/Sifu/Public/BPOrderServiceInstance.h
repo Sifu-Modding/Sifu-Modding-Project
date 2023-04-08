@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FBPOrderServiceInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<ABaseCharacter> m_Owner;
     
     SIFU_API FBPOrderServiceInstance();

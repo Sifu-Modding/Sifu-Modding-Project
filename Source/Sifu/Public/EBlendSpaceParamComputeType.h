@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EBlendSpaceParamComputeType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EBlendSpaceParamComputeType : uint8 {
     DistanceFromTarget,
     Count,

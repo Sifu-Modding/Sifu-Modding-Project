@@ -4,23 +4,23 @@
 #include "DialogAsyncOutputPinDelegate.h"
 #include "SCDialogAsyncActionBase.generated.h"
 
-class USCDialogAsyncActionBase;
 class ACharacter;
+class USCDialogAsyncActionBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USCDialogAsyncActionBase : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAsyncOutputPin OnDialogCompleted;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAsyncOutputPin OnDialogCut;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAsyncOutputPin OnLineEnded;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAsyncOutputPin OnInteractiveChoiceSelected;
     
     USCDialogAsyncActionBase();

@@ -1,8 +1,8 @@
 #include "SCGameplayAbility.h"
 
+class AActor;
 class AFightingCharacter;
 class UBaseTargetEvaluation;
-class AActor;
 class USCGameplayAbility;
 class UScriptStruct;
 

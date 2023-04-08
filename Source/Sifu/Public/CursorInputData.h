@@ -3,14 +3,14 @@
 #include "VectorInputData.h"
 #include "CursorInputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCursorInputData : public UVectorInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bNormalize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fNormalizeRegionRadius;
     
     UCursorInputData();

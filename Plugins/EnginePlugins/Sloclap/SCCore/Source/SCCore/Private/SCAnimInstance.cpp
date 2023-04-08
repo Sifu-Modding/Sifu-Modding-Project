@@ -1,8 +1,8 @@
 #include "SCAnimInstance.h"
 #include "Net/UnrealNetwork.h"
 
-class UPoseAsset;
 class UCurveFloat;
+class UPoseAsset;
 
 FTransform USCAnimInstance::GetSavedTransform(FName _savedBone) const {
     return FTransform{};

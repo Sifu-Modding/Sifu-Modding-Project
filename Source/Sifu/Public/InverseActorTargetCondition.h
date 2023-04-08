@@ -4,11 +4,11 @@
 #include "BaseActorTargetConditionInstance.h"
 #include "InverseActorTargetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UInverseActorTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorTargetConditionInstance m_condition;
     
     UInverseActorTargetCondition();

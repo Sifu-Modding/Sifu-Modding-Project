@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERedirectToTargetOrigin.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ERedirectToTargetOrigin : uint8 {
     Root,
     AnimCenter,

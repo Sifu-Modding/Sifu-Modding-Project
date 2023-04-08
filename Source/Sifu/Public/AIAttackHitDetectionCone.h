@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FAIAttackHitDetectionCone {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_fRange;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fAngle;
     
     SIFU_API FAIAttackHitDetectionCone();

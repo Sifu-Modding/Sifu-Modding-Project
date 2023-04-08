@@ -1,8 +1,8 @@
 #include "FightingMovementComponent.h"
 
-class UEffectData;
 class AActor;
 class UBaseMovementDB;
+class UEffectData;
 
 void UFightingMovementComponent::ServerPopDesyncFromServer_Implementation(uint8 _uiResyncID) {
 }
@@ -46,6 +46,10 @@ void UFightingMovementComponent::BPF_OverrideBaseMovementDB(UBaseMovementDB* _ne
 
 bool UFightingMovementComponent::BPF_IsRushing() const {
     return false;
+}
+
+FVector UFightingMovementComponent::BPF_GetTraversalHintPosition() const {
+    return FVector{};
 }
 
 FVector UFightingMovementComponent::BPF_GetLastWantedDir() const {

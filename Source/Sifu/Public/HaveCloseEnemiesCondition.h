@@ -3,14 +3,14 @@
 #include "BaseActorCondition.h"
 #include "HaveCloseEnemiesCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UHaveCloseEnemiesCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTestMaxDist;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxDist;
     
     UHaveCloseEnemiesCondition();

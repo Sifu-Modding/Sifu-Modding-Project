@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FBaseStatBindings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FText m_Text;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FSlateColor m_ComparisonColor;
     
     SIFU_API FBaseStatBindings();

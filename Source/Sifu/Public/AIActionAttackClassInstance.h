@@ -5,14 +5,14 @@
 
 class UAIActionAttack;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FAIActionAttackClassInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAIActionAttack> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAIActionAttack* m_Instance;
     
     FAIActionAttackClassInstance();

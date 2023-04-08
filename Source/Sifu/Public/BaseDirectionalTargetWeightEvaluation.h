@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "BaseDirectionalTargetWeightEvaluation.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API UBaseDirectionalTargetWeightEvaluation : public UObject {
     GENERATED_BODY()
 public:

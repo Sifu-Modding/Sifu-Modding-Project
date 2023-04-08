@@ -5,14 +5,14 @@
 #include "EOrderType.h"
 #include "IsOrderRunningService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UIsOrderRunningService : public UBTService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlackboardKeySelector m_BlackboardKey;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderType m_eOrder;
     
     UIsOrderRunningService();

@@ -5,12 +5,12 @@
 
 class AInteractiveMenu;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UInteractiveCamMenuWidget : public UMenuWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AInteractiveMenu* m_menuHandler;
     
 public:

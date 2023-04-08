@@ -5,15 +5,15 @@
 
 class UCombo;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UComboManager : public UObject {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable)
+   /* UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FComboEndedDelegate m_OnEnded;*/
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCombo* m_Combo;
     
 public:

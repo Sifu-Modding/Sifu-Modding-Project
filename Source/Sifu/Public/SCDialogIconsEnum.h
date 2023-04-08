@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "SCDialogIconsEnum.generated.h"
 
-UENUM()
-enum class SCDialogIconsEnum {
+UENUM(BlueprintType)
+enum class SCDialogIconsEnum : uint8 {
     None,
     Agressive,
 };

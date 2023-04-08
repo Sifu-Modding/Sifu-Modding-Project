@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HUDUserWidget.h"
 #include "EMenuEnum.h"
+#include "HUDUserWidget.h"
 #include "InGameNotification.generated.h"
 
-class UMessageNotification;
-class UProgressionRewardNotification;
-class UBaseNotification;
 class UAttackProgressNotification;
+class UBaseNotification;
 class ULevelUpNotification;
+class UMessageNotification;
 class UProgressionDoorNotification;
+class UProgressionRewardNotification;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UInGameNotification : public UHUDUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBaseNotification*> m_NotificationStack;
     
 public:
     UInGameNotification();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu);
     
 public:
@@ -45,28 +45,28 @@ public:
     void BPF_ClearPendingNotificationOfTypes(TArray<UClass*> _NotificationTypes);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HideCurrentNotification();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HandleProgressionRewardNotification(const UProgressionRewardNotification* _rewardNotification);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HandleProgressionDoorNotification(const UProgressionDoorNotification* _progressionDoorNotification);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HandleNotification(const UBaseNotification* _messageNotification);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HandleMessageNotification(const UMessageNotification* _messageNotification);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HandleLevelUpNotification(const ULevelUpNotification* _levelUpNotification);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HandleAttackProgressNotification(const UAttackProgressNotification* _attackProgressNotification);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAttackProgressNotification* BPE_FindOrCreateAttackProgressNotification(const FName& _attackName);
     
 };

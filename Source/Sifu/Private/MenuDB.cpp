@@ -38,9 +38,9 @@ TSoftObjectPtr<UTexture2D> UMenuDB::BPF_GetAttackAvoidIcon(EAvoidType _eAvoidTyp
 }
 
 UMenuDB::UMenuDB() {
-//    this->m_AudioMove = NULL;
-//    this->m_AudioValidate = NULL;
-//    this->m_AudioBack = NULL;
+    /*this->m_AudioMove = NULL;
+    this->m_AudioValidate = NULL;
+    this->m_AudioBack = NULL;*/
     this->m_QuadrantSelectionIcons[0] = NULL;
     this->m_QuadrantSelectionIcons[1] = NULL;
     this->m_QuadrantSelectionIcons[2] = NULL;

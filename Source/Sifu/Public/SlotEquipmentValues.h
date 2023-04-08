@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSlotEquipmentValues {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EGearRarity, FEquipmentValues> m_EquipmentsValues;
     
     FSlotEquipmentValues();

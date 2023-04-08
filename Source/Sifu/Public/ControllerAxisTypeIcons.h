@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FControllerAxisTypeIcons {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> m_AxisTypeIcons[8];
     
     FControllerAxisTypeIcons();

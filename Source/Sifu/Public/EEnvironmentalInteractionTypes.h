@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EEnvironmentalInteractionTypes.generated.h"
 
-UENUM()
-enum class EEnvironmentalInteractionTypes {
+UENUM(BlueprintType)
+enum class EEnvironmentalInteractionTypes : uint8 {
     None,
     Takedown,
     Push,

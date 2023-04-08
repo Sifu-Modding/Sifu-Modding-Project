@@ -5,14 +5,14 @@
 
 class UAnimSequenceEntryDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAnimSequenceEntitlementDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    FName m_Entitlement;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FName> m_AvailableForEntitlements;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAnimSequenceEntryDB*> m_DBs;
     
     UAnimSequenceEntitlementDB();

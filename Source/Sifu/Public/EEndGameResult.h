@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EEndGameResult.generated.h"
 
-UENUM()
-enum class EEndGameResult {
+UENUM(BlueprintType)
+enum class EEndGameResult : uint8 {
     Victory,
     Defeat,
     Draw,

@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSCStreamingVolumeDependencies {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASCLevelStreamingVolume*> m_Volumes;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCStreamingVolumeDependency> m_VolumeDependencies;
     
     SCCORE_API FSCStreamingVolumeDependencies();

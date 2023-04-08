@@ -1,7 +1,7 @@
 #include "ReplayTimelineContainerBase.h"
 
-class UReplayWidgetHandler;
 class IReplayWidgetHandler;
+class UReplayWidgetHandler;
 
 TScriptInterface<IReplayWidgetHandler> UReplayTimelineContainerBase::BPF_GetWidgetHandler() const {
     return NULL;

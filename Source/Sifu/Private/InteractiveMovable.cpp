@@ -1,8 +1,8 @@
 #include "InteractiveMovable.h"
-#include "MovableInteractionComponent.h"
+#include "SCSaveGameComponent.h"
 #include "SCStreamingActorComponent.h"
 #include "InteractiveDestructionComponent.h"
-#include "SCSaveGameComponent.h"
+#include "MovableInteractionComponent.h"
 
 class AActor;
 

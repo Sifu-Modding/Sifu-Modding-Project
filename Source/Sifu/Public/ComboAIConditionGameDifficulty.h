@@ -3,11 +3,11 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionGameDifficulty.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionGameDifficulty : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     uint32 m_uiGameDifficultyFlags;
     
     UComboAIConditionGameDifficulty();

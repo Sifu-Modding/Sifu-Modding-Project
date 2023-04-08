@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAITriggerableActions.h"
 #include "SCAITicketEnum.h"
+#include "SCAITriggerableActions.h"
 #include "AILaunchAttackTriggerableAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAILaunchAttackTriggerableAction : public USCAITriggerableActions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCAITicketEnum m_ComboStartNodeEnumValue;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCheckCanAttack;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTestTicketAvailable;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bResetTicketCooldown;
     
     UAILaunchAttackTriggerableAction();

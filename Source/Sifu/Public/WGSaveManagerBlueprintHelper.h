@@ -4,13 +4,16 @@
 #include "DuplicatedSaveData.h"
 #include "WGSaveManagerBlueprintHelper.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWGSaveManagerBlueprintHelper : public USaveManagerBlueprintHelper {
     GENERATED_BODY()
 public:
     UWGSaveManagerBlueprintHelper();
     UFUNCTION(BlueprintCallable)
-    static void BPF_SnapshotPartOfSave(int32 _iSaveTypeBitmask);
+    static void BPF_SnapshotPartOfSave(int32 _iSaveTypeBitmask, int32 _iSaveEntryToExclude);
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SetNeedSaveProfile();
     
     UFUNCTION(BlueprintCallable)
     static void BPF_SetNeedSaveGame(int32 _iSaveTypeBitmask);
@@ -39,13 +42,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_OverrideSaveWithSnapshot(int32 _iSaveTypeBitmask);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_HasSnapshotOfMask(int32 _iSaveTypeBitmask);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetSnapshotSavedData(int32 _iSaveTypeBitmask, FDuplicatedSaveData& _snapshotSavedData);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GetForbiddenMask();
     
 };

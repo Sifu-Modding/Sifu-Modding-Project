@@ -4,17 +4,17 @@
 #include "EOrderType.h"
 #include "OrderTargetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOrderTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderType m_eOrderType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTargetShouldTargetSelf;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderType m_eRequiredTargetOrderType;
     
     UOrderTargetCondition();

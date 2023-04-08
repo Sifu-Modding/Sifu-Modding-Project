@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAICustomBehaviorTreeList {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAICustomBehaviorTree> m_DynamicBehaviorList;
     
     SIFU_API FAICustomBehaviorTreeList();

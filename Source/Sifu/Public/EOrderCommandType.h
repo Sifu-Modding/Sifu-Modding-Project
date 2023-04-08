@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOrderCommandType.generated.h"
 
-UENUM()
-enum class EOrderCommandType {
+UENUM(BlueprintType)
+enum class EOrderCommandType : uint8 {
     Play,
     Cancel,
     CancelAll,

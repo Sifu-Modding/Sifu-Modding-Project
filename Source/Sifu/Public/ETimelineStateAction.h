@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETimelineStateAction.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETimelineStateAction : uint8 {
     None,
     Undo,

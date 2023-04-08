@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ComboTransitions.h"
 #include "GameplayTagContainer.h"
-#include "ComboNodeAttackInfos.h"
 #include "GameplayTagContainer.h"
 #include "AIActionAttackClassInstance.h"
 #include "AvailabilityLayerContainer.h"
+#include "ComboNodeAttackInfos.h"
+#include "ComboTransitions.h"
 #include "EComboTransition.h"
 #include "ComboNode.generated.h"
 
@@ -15,40 +15,40 @@ USTRUCT(BlueprintType)
 struct FComboNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer m_RequiredTags;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FComboNodeAttackInfos m_AttackInfos;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, FComboNodeAttackInfos> m_ConditionalAttacks;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UClass* m_AIAttackActionClass;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIActionAttackClassInstance m_AIAttackAction;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FComboTransitions m_Transitions;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_NodeRedirect;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAvailabilityLayerContainer m_NodeRedirectAvailabilityLayer;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EComboTransition> m_NodeRedirectIgnoredTransitions;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UComboEvent* m_Event;
     
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bSkip;
     
     SIFU_API FComboNode();

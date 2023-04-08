@@ -5,14 +5,14 @@
 
 class USCUserDefinedEnumBinding;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FSCUserEnumSetting {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_Enum;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USCUserDefinedEnumBinding> m_Bindings;
     
     SCCORE_API FSCUserEnumSetting();

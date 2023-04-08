@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFightingActionState.h"
 #include "BaseActorCondition.h"
+#include "EFightingActionState.h"
 #include "FightingActionStateCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFightingActionStateCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingActionState m_eActionState;
     
     UFightingActionStateCondition();

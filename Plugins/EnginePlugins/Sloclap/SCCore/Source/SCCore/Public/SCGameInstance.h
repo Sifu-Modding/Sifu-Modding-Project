@@ -4,10 +4,10 @@
 #include "GameplayTagContainer.h"
 #include "SCGameInstance.generated.h"
 
-class UObject;
 class UCurveFloat;
+class UObject;
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SCCORE_API USCGameInstance : public UGameInstance {
     GENERATED_BODY()
 public:
@@ -15,36 +15,36 @@ public:
     DECLARE_DYNAMIC_DELEGATE_OneParam(FLowPerformanceModeChanged, bool, bLowPerformanceMode);
     
 private:
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEnableDevMode;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UObject*> m_ObjectToLoadAtBegining;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_HudOffsetFromBlackBarWhenAboveDefaultRatioRuntime;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_HudOffsetFromBlackBarWhenBelowDefaultRatioRuntime;
     
 public:
     USCGameInstance();
 private:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void UnlockInGameAchievement(const FGameplayTag& _achievementToUnlock);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void UnlockAllInGameAchievements();
     
 public:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void TriggerPGOWriteFile();
     
 private:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void ResetAllInGameAchievements();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void LockInGameAchievement(const FGameplayTag& _achievementToLock);
     
     UFUNCTION(BlueprintCallable)

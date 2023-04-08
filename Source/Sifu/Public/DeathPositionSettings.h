@@ -3,17 +3,17 @@
 #include "BaseCombatPositionSettings.h"
 #include "DeathPositionSettings.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDeathPositionSettings : public UBaseCombatPositionSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHeavySurpriseDistance;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fLightSurpriseDistance;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iProbaToPlayLightSurprise;
     
     UDeathPositionSettings();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPassiveTicketBehaviorAginstJoker.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPassiveTicketBehaviorAginstJoker : uint8 {
     IgnoreAllJokers,
     FailWhenAnyJokerActive,

@@ -4,27 +4,27 @@
 #include "EGlobalBehaviors.h"
 #include "AIBehaviorSwitchActorComponent.generated.h"
 
-class ASpawnerGroup;
 class AActor;
+class ASpawnerGroup;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAIBehaviorSwitchActorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASpawnerGroup*> m_groupsToAlert;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_AlertOnPrimitiveOverlap;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGlobalBehaviors m_eNewBehavior;
     
 public:
     UAIBehaviorSwitchActorComponent();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnComponentStartOverlap(AActor* OverlappedActor, AActor* OtherActor);
     
 public:

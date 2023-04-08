@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDropNotifyApplyMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDropNotifyApplyMode : uint8 {
     OnSelf,
     OnCurrentTarget,

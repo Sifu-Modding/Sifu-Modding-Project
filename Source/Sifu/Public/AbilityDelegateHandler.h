@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAbilityDelegateHandler {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAbilityDynamicDelegate> m_OnActivated;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAbilityDynamicDelegate> m_OnDeactivated;
     
     FAbilityDelegateHandler();

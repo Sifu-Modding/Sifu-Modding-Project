@@ -3,12 +3,12 @@
 #include "SCButton.h"
 #include "EquipmentSelectionButton.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UEquipmentSelectionButton : public USCButton {
     GENERATED_BODY()
 public:
     UEquipmentSelectionButton();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnButtonClicked();
     
 };

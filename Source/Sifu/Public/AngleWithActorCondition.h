@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseActorTargetCondition.h"
 #include "UObject/NoExportTypes.h"
+#include "BaseActorTargetCondition.h"
 #include "EAngleComputeMethod.h"
 #include "AngleWithActorCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAngleWithActorCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAngleComputeMethod m_eMethod;
     
-    UPROPERTY(EditAnywhere)
-    FFloatRange m_AngleRange;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FFloatRange m_angleRange;
     
     UAngleWithActorCondition();
 };

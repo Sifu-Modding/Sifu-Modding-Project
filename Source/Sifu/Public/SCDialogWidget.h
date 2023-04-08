@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SCConversationInteractiveChoice.h"
-#include "SCUserWidget.h"
 #include "SCConversationRule.h"
 #include "SCDialogData.h"
+#include "SCUserWidget.h"
 #include "SCDialogWidget.generated.h"
 
 class USCDialogComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API USCDialogWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bHandleShowSubtitleOption;
     
 public:
@@ -21,7 +21,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveAllDelegates();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsRuleFulfilled(const FSCConversationRule& _rule);
     
     UFUNCTION(BlueprintCallable)
@@ -30,34 +30,34 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_DialogSelected(int32 _iIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_AreRulesFulfilled(const TArray<FSCConversationRule>& _rules);
     
     UFUNCTION(BlueprintCallable)
     void BPF_AddAllDelegates();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ShowBlackBarsRequested();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnNextSegmentHasChoices();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDialogSegmentCompleted(USCDialogComponent* _dialogLauncher, const bool _bGenericSubtitles);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDialogCompleted(USCDialogComponent* _dialogLauncher);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_InteractiveSequenceStarted(const FSCConversationInteractiveChoice& _choice);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_InteractiveDialogInterrupted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_DialogLaunched(USCDialogComponent* _dialogLauncher, const FSCDialogData& _dialogData, const bool _bGenericSubtitles);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_DialogCanceled(USCDialogComponent* _dialogLauncher, const bool _bGenericSubtitles);
     
 };

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EUserDefinedEnums.generated.h"
 
-UENUM()
-enum class EUserDefinedEnums {
+UENUM(BlueprintType)
+enum class EUserDefinedEnums : uint8 {
     HitContexts,
     EnvironmentalImpact,
     AIConditionResults,
@@ -25,6 +25,7 @@ enum class EUserDefinedEnums {
     ComboConditionResult,
     InputMappingProfile,
     InputMappingDrawingStyle,
+    SaveEntry,
     Count,
 };
 

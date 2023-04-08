@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESocialRequest.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESocialRequest : uint8 {
     Coop,
     StopFight,

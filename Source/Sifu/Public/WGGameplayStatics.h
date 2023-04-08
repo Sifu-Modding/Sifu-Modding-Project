@@ -5,8 +5,9 @@
 #include "WGGameplayStatics.generated.h"
 
 class ACharacter;
+class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UWGGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -17,7 +18,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_SetGameDifficulty(EGameDifficulty _eDifficulty);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContext"))
+    static bool BPF_IsGameOver(UObject* _worldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContext"))
+    static bool BPF_IsChallengeGameMode(UObject* _worldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EGameDifficulty BPF_GetGameDifficulty(bool _bNeedSaveGame);
     
     UFUNCTION(BlueprintCallable)

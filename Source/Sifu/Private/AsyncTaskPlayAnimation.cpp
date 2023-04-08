@@ -1,8 +1,8 @@
 #include "AsyncTaskPlayAnimation.h"
 
-class UWidgetAnimation;
-class UObject;
 class UAsyncTaskPlayAnimation;
+class UObject;
+class UWidgetAnimation;
 
 void UAsyncTaskPlayAnimation::OnTransitionFinished() {
 }

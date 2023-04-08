@@ -1,6 +1,6 @@
 #include "SCEnvQueryTest_Trace.h"
-#include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 #include "EnvironmentQuery/Contexts/EnvQueryContext_Item.h"
+#include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 
 USCEnvQueryTest_Trace::USCEnvQueryTest_Trace() {
     this->m_bCustomCollisionResponse = false;

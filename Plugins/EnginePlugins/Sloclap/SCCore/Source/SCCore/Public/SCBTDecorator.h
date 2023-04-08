@@ -3,11 +3,11 @@
 #include "BehaviorTree/BTDecorator.h"
 #include "SCBTDecorator.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SCCORE_API USCBTDecorator : public UBTDecorator {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEvaluateConditionOnTick;
     
     USCBTDecorator();

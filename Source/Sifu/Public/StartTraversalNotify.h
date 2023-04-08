@@ -3,7 +3,7 @@
 #include "SCAnimNotify.h"
 #include "StartTraversalNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UStartTraversalNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:

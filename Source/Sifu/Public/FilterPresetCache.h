@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FFilterPresetCache {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FFilterPresetData> m_Filters;
     
     SIFU_API FFilterPresetCache();

@@ -3,11 +3,11 @@
 #include "ComboTransitionCondition.h"
 #include "ComboTransitionConditionRandom.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboTransitionConditionRandom : public UComboTransitionCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTrueProbability;
     
     UComboTransitionConditionRandom();

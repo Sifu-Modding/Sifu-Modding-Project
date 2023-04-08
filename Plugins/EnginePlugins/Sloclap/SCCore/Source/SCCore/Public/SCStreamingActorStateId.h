@@ -7,12 +7,13 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCStreamingActorStateId {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_ID;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FSCStreamingLevelId m_LevelId;
     
     FSCStreamingActorStateId();
 };
+FORCEINLINE uint32 GetTypeHash(const FSCStreamingActorStateId) { return 0; }
 

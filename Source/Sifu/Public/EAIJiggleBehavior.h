@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAIJiggleBehavior.generated.h"
 
-UENUM()
-enum class EAIJiggleBehavior {
+UENUM(BlueprintType)
+enum class EAIJiggleBehavior : uint8 {
     None,
     JiggleMove,
     JiggleAnim,

@@ -5,13 +5,13 @@
 
 class UPopupWidget;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGenericErrorPopupWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     UGenericErrorPopupWidget();
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UPopupWidget* BPE_GetPopupWidget();
     
 };

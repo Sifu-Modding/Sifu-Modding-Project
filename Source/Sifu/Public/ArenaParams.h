@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FArenaParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UArenaChallengeDescription>> m_ChallengesList;
     
     SIFU_API FArenaParams();

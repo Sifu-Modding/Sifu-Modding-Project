@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FJiggleAnimContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCardinalAnimContainer m_JiggleAnimations;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowWeapons;
     
     SIFU_API FJiggleAnimContainer();

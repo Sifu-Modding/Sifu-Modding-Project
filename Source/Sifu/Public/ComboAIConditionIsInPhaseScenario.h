@@ -5,14 +5,14 @@
 #include "AIPhaseNodeSoftLinkByMCDomination.h"
 #include "ComboAIConditionIsInPhaseScenario.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionIsInPhaseScenario : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIPhaseNodeSoftLink> m_PhasesToTest;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIPhaseNodeSoftLinkByMCDomination> m_Phases;
     
     UComboAIConditionIsInPhaseScenario();

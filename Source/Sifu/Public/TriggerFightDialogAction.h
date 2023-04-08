@@ -3,16 +3,16 @@
 #include "DialogActionBase.h"
 #include "TriggerFightDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTriggerFightDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ActorSentToFight;
     
     UTriggerFightDialogAction();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;
     
 };

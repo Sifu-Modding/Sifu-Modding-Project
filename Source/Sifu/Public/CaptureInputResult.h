@@ -3,11 +3,11 @@
 #include "InputMappingKeySlot.h"
 #include "CaptureInputResult.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCaptureInputResult {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInputMappingKeySlot> m_Slots;
     
     SIFU_API FCaptureInputResult();

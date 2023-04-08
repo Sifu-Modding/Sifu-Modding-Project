@@ -5,15 +5,15 @@
 
 class UOrderAttackParams;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UAIActionAttack : public UWGAiAction {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCheckObstacles;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCheckFriendlyFire;
     
 public:
@@ -22,14 +22,14 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_NotifyAttackStarted() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPreCreateOrderAttackParams(FName _paramsName, UOrderAttackParams* _orderParams);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCreatedOrderAttackParams(FName _paramsName, UOrderAttackParams* _orderParams);
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetAttackRange() const;
     
 };

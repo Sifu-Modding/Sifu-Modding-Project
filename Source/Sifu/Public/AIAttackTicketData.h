@@ -4,14 +4,14 @@
 #include "AttackTicketConfig.h"
 #include "AIAttackTicketData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIAttackTicketData : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackTicketConfig m_Config;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iSerializeVersion;
     
     UAIAttackTicketData();

@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EvaluateTargetCondition.h"
 #include "EConditionGroupOperators.h"
+#include "EvaluateTargetCondition.h"
 #include "TC_ConditionGroup.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTC_ConditionGroup : public UEvaluateTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EConditionGroupOperators m_eOperator;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UEvaluateTargetCondition*> m_Conditions;
     
     UTC_ConditionGroup();

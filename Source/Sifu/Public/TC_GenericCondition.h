@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EvaluateTargetCondition.h"
 #include "BaseActorTargetConditionInstance.h"
+#include "EvaluateTargetCondition.h"
 #include "TC_GenericCondition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTC_GenericCondition : public UEvaluateTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorTargetConditionInstance m_condition;
     
     UTC_GenericCondition();

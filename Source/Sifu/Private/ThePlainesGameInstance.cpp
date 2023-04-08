@@ -1,11 +1,11 @@
 #include "ThePlainesGameInstance.h"
 #include "PredictionManager.h"
 
+class ALevelSequenceActor;
 class ASCPlayerStart;
+class ULocalPlayer;
 class UReplaySystem;
 class USCLocalPlayer;
-class ALevelSequenceActor;
-class ULocalPlayer;
 class UWGGameFlow;
 
 void UThePlainesGameInstance::TriggerTakeKinectResources(bool _bTake) {
@@ -56,6 +56,9 @@ void UThePlainesGameInstance::GoToNextMap() {
 void UThePlainesGameInstance::GoToMapInGameFlow(const FString& _sMapToTravelTo) {
 }
 
+void UThePlainesGameInstance::GiveBestScoreToAllChallenges() {
+}
+
 USCLocalPlayer* UThePlainesGameInstance::GetLocalPlayer() {
     return NULL;
 }
@@ -64,6 +67,10 @@ void UThePlainesGameInstance::DumpWorlds() {
 }
 
 void UThePlainesGameInstance::DumpLoadedLevels() {
+}
+
+bool UThePlainesGameInstance::BPF_WantToDisplayGamerTagOnLoadingScreen() const {
+    return false;
 }
 
 void UThePlainesGameInstance::BPF_StopSequence(ALevelSequenceActor* _levelSequenceActor) {
@@ -106,6 +113,10 @@ ASCPlayerStart* UThePlainesGameInstance::BPF_GetPlayerStartUsedAtSpawn() {
     return NULL;
 }
 
+bool UThePlainesGameInstance::BPF_GetPlayerNameFromControllerID(int32 _iControllerID, FString& _outPlayerName) {
+    return false;
+}
+
 FString UThePlainesGameInstance::BPF_GetPlayerId(ULocalPlayer* _player) {
     return TEXT("");
 }
@@ -134,8 +145,8 @@ void UThePlainesGameInstance::BPF_BeginLoadingScreen() {
 UThePlainesGameInstance::UThePlainesGameInstance() {
     this->m_loadingScreenClass = NULL;
     this->m_loadingScreen = NULL;
-//    this->m_MuteEvent = NULL;
- //   this->m_UnmuteEvent = NULL;
+    //this->m_MuteEvent = NULL;
+    //this->m_UnmuteEvent = NULL;
     this->m_GameFlow = NULL;
     this->m_AntiCheatMapTagName = TEXT("SelectHideout");
     this->m_ItemsDB = NULL;

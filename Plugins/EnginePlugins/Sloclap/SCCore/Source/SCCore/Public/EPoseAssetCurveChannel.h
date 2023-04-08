@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EPoseAssetCurveChannel.generated.h"
 
-UENUM()
-enum class EPoseAssetCurveChannel {
+UENUM(BlueprintType)
+enum class EPoseAssetCurveChannel : uint8 {
     LipSynch,
     AnimNotify,
     Default,

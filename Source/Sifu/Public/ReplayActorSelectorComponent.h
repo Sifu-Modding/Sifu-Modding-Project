@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnReceivedTraceResultSignatureDelegate.h"
 #include "Components/ActorComponent.h"
+#include "OnReceivedTraceResultSignatureDelegate.h"
 #include "ReplayActorSelectorComponent.generated.h"
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UReplayActorSelectorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnReceivedTraceResultSignature m_OnReceiveTraceResult;
     
 public:

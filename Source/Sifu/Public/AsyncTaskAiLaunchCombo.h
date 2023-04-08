@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "SCDelegate.h"
 #include "AIComboLaunchParameters.h"
+#include "Templates/SubclassOf.h"
 #include "AsyncTaskAiLaunchCombo.generated.h"
 
-class UAsyncTaskAiLaunchCombo;
-class UAIFightingComponent;
 class UAIActionLaunchCombo;
+class UAIFightingComponent;
+class UAsyncTaskAiLaunchCombo;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncTaskAiLaunchCombo : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-  /*  UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnSuccess;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnFailure;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnFailure;*/
     
     UAsyncTaskAiLaunchCombo();
     UFUNCTION(BlueprintCallable)

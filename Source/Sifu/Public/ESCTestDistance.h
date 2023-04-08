@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCTestDistance.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCTestDistance : uint8 {
     ItemLocationToContextBounding,
     ItemBoundingBoxToContextLocation,

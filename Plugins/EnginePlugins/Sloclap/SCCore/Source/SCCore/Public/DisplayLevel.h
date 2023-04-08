@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "DisplayLevel.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class DisplayLevel : uint8 {
     NoLogging,
     Fatal,

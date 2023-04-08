@@ -1,33 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
-#include "SCConversationSegment.h"
 #include "SCConversationInteractiveChoice.h"
+#include "SCConversationSegment.h"
 #include "SCConversationSegmentTableRow.generated.h"
 
 class UDialogActionBase;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCDIALOGMANAGERPLUGIN_API FSCConversationSegmentTableRow : public FTableRowBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsBarkContainer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCConversationSegment> ConversationSegments;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UDialogActionBase*> m_DialogActions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName SpeakerId;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ListenerId;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCConversationInteractiveChoice InteractiveChoices;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bIgnoreCharacterCanSpeak;
     
     FSCConversationSegmentTableRow();
 };

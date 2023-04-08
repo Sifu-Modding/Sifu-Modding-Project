@@ -5,11 +5,11 @@
 
 class UMessageNotification;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UMessageNotification : public UBaseNotification {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_Message;
     
     UMessageNotification();

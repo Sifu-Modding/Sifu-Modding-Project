@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "SCDynamicDelegateDelegate.h"
 #include "SCMaterialHelpers.generated.h"
 
-class UMeshComponent;
-class UMaterialParameterCollection;
-class UObject;
-class UCurveBase;
 class ACharacter;
+class UCurveBase;
+class UMaterialParameterCollection;
+class UMeshComponent;
+class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCMaterialHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

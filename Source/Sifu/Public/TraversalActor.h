@@ -1,61 +1,64 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCActor.h"
 #include "UObject/NoExportTypes.h"
-#include "ESimpleAxis.h"
 #include "AnimContainer.h"
+#include "ESimpleAxis.h"
+#include "SCActor.h"
 #include "TraversalActor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ATraversalActor : public ASCActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTraversalActive;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideTraversalEntryAngle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTraversalEntryAngle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideTraversalExitAngle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTraversalExitAngle;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vBoxExtentAllowed;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vBoxExtentForbidden;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bHasForbiddenTraversalPart;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESimpleAxis m_eForbiddenAxis;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseEntryMaxDistFromTraversalCenter;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fEntryMaxDistFromTraversalCenter;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fLengthBetweenTwoNavLinks;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fNavLinkOffsetFromBoxExtents;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_AllowedEntryTypes;
     
 public:
     ATraversalActor();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    FVector BPE_GetTraversalEndPos() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetTraversalAnimation(FAnimContainer& _outResult) const;
     
 };

@@ -5,12 +5,12 @@
 
 class UAbsorbPropertyDB;
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UAbsorbWindowNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAbsorbPropertyDB* m_AbsorbPropertyDB;
     
 public:

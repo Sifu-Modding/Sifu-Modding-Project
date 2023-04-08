@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseActorCondition.h"
 #include "UObject/NoExportTypes.h"
-#include "InputAction.h"
+#include "BaseActorCondition.h"
 #include "EPlayerInputConditionTestMethod.h"
+#include "InputAction.h"
 #include "PlayerInputCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UPlayerInputCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eInput;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCheckAvailabilityLayers;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     EPlayerInputConditionTestMethod m_eTestMethod;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_AllowedVectorProjectedOnForward;
     
     UPlayerInputCondition();

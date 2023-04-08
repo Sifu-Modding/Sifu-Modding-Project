@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIArchetype.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIArchetype : uint8 {
     None,
     Servant,

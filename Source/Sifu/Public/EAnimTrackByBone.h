@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAnimTrackByBone.generated.h"
 
-UENUM()
-enum class EAnimTrackByBone {
+UENUM(BlueprintType)
+enum class EAnimTrackByBone : uint8 {
     Refbox,
 };
 

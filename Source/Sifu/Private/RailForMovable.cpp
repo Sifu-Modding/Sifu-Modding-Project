@@ -1,6 +1,6 @@
 #include "RailForMovable.h"
-#include "Components/SplineComponent.h"
 #include "Components/BoxComponent.h"
+#include "Components/SplineComponent.h"
 
 ARailForMovable::ARailForMovable() {
     this->m_Rail = CreateDefaultSubobject<USplineComponent>(TEXT("SplineComp"));

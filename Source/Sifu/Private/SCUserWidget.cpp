@@ -1,22 +1,22 @@
 #include "SCUserWidget.h"
 
-class UWidgetData;
-class UWidgetAnimation;
-class UWorld;
-class UPanelWidget;
-class UMenuDB;
-class USocialManager;
-class UThePlainesGameInstance;
-class UStatsComponent;
-class USocialComponent;
-class ASCPlayerController;
-class UMenuWidget;
-class UCharacterHealthComponent;
-class USCAbilitySystemComponent;
-class AFightingPlayerController;
 class AFightingCharacter;
-class UDefenseComponent;
+class AFightingPlayerController;
+class ASCPlayerController;
 class UAttackComponent;
+class UCharacterHealthComponent;
+class UDefenseComponent;
+class UMenuDB;
+class UMenuWidget;
+class UPanelWidget;
+class USCAbilitySystemComponent;
+class USocialComponent;
+class USocialManager;
+class UStatsComponent;
+class UThePlainesGameInstance;
+class UWidgetAnimation;
+class UWidgetData;
+class UWorld;
 
 void USCUserWidget::OnDataUpdated() {
 }

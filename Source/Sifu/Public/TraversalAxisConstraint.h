@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FTraversalAxisConstraint {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESimpleAxis m_eAxis;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESimpleAxisSide m_eForbiddenAxisSide;
     
     SIFU_API FTraversalAxisConstraint();

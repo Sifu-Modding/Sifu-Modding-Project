@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-#include "CameraTransitionInfoPairStruct.h"
 #include "CameraDataModifierWithBehavior.h"
+#include "CameraTransitionInfoPairStruct.h"
 #include "AbstractCameraData.generated.h"
 
 class UCameraTransitionInfo;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UAbstractCameraData : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCameraTransitionInfo* m_DefaultCameraTransition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCameraTransitionInfoPairStruct> m_CameraTransitionDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCameraTransitionInfo* m_OutCameraTransition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCameraDataModifierWithBehavior> m_Modifiers;
     
 public:
     UAbstractCameraData();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ClearTransitions();
     
 };

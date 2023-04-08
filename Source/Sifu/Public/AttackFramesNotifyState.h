@@ -5,11 +5,11 @@
 
 class UAttackDB;
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UAttackFramesNotifyState : public UAnimNotifyState {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAttackDB* m_DB;
     
     UAttackFramesNotifyState();

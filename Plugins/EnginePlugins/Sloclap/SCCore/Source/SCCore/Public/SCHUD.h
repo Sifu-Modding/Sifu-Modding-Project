@@ -3,7 +3,7 @@
 #include "GameFramework/HUD.h"
 #include "SCHUD.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SCCORE_API ASCHUD : public AHUD {
     GENERATED_BODY()
 public:

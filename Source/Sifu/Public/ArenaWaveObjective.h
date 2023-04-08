@@ -4,31 +4,20 @@
 #include "EScoringType.h"
 #include "ArenaWaveObjective.generated.h"
 
-class AAISituationActor;
-
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UArenaWaveObjective : public UBaseArenaObjective {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
-    FName m_ObjectiveWaveName;
-    
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iFinalWaveIndex;
     
-    UPROPERTY(EditAnywhere)
-    TSoftObjectPtr<AAISituationActor> m_AIFinalSituation;
-    
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EScoringType m_eScoringType;
     
     UArenaWaveObjective();
 private:
-    UFUNCTION()
-    void OnWaveComplete(int32 _iWaveIndex);
-    
-    UFUNCTION()
-    void OnSituationResolved(AAISituationActor* _situationActor);
+    UFUNCTION(BlueprintCallable)
+    void OnWaveAndSituationComplete(int32 _iWaveIndex);
     
 };
 

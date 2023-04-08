@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EUpdateAngleMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EUpdateAngleMode : uint8 {
     Both,
     OnlyEnd,

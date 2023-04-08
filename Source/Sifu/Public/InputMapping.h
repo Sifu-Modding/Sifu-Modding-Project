@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FInputMapping {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FInputMappingData m_MappingData;
     
     SIFU_API FInputMapping();

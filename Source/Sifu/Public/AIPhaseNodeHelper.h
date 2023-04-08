@@ -4,12 +4,12 @@
 #include "AIPhaseNodeHardLink.h"
 #include "AIPhaseNodeHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAIPhaseNodeHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAIPhaseNodeHelper();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GetPhaseNodeIndex(const FAIPhaseNodeHardLink& _nodeHardLink);
     
 };

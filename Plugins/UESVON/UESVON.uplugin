@@ -12,17 +12,13 @@
 	"SupportURL": "",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [
 		{
 			"Name": "UESVON",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
-		},
-		{
-			"Name": "UESVONEditor",
-			"Type": "Editor",
-			"LoadingPhase":  "PostEngineInit"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPhonemeDictionary.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPhonemeDictionary : uint8 {
     AA,
     AE,

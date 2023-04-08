@@ -3,7 +3,7 @@
 #include "SCAnimNotifyState.h"
 #include "TraversalPushExitNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UTraversalPushExitNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:

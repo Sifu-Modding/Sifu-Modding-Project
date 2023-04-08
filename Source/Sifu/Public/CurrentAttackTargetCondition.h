@@ -3,11 +3,11 @@
 #include "BaseActorTargetCondition.h"
 #include "CurrentAttackTargetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCurrentAttackTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxElapsedTimeSinceLastUpdate;
     
     UCurrentAttackTargetCondition();

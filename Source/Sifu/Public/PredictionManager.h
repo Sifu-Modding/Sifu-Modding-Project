@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "PredictionManager.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UPredictionManager : public UObject {
     GENERATED_BODY()
 public:

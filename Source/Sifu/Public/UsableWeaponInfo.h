@@ -3,18 +3,18 @@
 #include "Templates/SubclassOf.h"
 #include "UsableWeaponInfo.generated.h"
 
-class UWeaponGameplayData;
 class ABaseWeapon;
 class UBaseWeaponData;
+class UWeaponGameplayData;
 
 USTRUCT(BlueprintType)
 struct FUsableWeaponInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UWeaponGameplayData> m_weaponGameplayData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<ABaseWeapon>, TSubclassOf<UBaseWeaponData>> m_WeaponAnimInfos;
     
     SIFU_API FUsableWeaponInfo();

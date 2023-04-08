@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCPoolableActorComponent.h"
 #include "Components/ActorComponent.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=CompressedPoseSnapshot -FallbackName=CompressedPoseSnapshot
+#include "SCPoolableActorComponent.h"
 #include "ReplayablePhysicsComponent.generated.h"
 
 class USkeletalMeshComponent;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UReplayablePhysicsComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
 protected:
-   /* UPROPERTY(ReplicatedUsing=OnRep_LastPoseSnapshot)
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_LastPoseSnapshot, meta=(AllowPrivateAccess=true))
     FCompressedPoseSnapshot m_LastPoseSnapshot;*/
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* m_SkeletalMeshComp;
     
-    UPROPERTY(ReplicatedUsing=OnRep_Active)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Active, meta=(AllowPrivateAccess=true))
     bool m_bActive;
     
 public:
@@ -26,14 +26,14 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_LastPoseSnapshot();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Active();
     
     

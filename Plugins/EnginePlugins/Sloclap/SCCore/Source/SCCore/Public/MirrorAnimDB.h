@@ -6,17 +6,17 @@
 
 class USkeleton;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API UMirrorAnimDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMirrorAnimStruct> m_MirrorAnimStruct;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FMirrorAnimStruct> m_MirrorAnimStructMap;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkeleton* m_UberSkeleton;
     
     UMirrorAnimDB();

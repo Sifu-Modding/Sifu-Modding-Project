@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "TrailNotifyStateExtended.h"
 #include "EWeaponSlot.h"
+#include "TrailNotifyStateExtended.h"
 #include "WeaponTrailsNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UWeaponTrailsNotifyState : public UTrailNotifyStateExtended {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeaponSlot m_eWeaponSlot;
     
 public:

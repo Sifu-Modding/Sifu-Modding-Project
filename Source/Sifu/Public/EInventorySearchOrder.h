@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EInventorySearchOrder.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EInventorySearchOrder : uint8 {
     EquippedFirst,
     MentoringItemFirst,

@@ -5,14 +5,14 @@
 
 class UFilterPresetEntryDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFilterPresetEntitlementDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    FName m_Entitlement;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FName> m_AvailableForEntitlements;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UFilterPresetEntryDB*> m_Filters;
     
     UFilterPresetEntitlementDB();

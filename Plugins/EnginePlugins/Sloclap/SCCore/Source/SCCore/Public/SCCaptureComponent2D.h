@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Components/SceneCaptureComponent2D.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/SceneCaptureComponent2D.h"
 #include "SCCaptureComponent2D.generated.h"
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCCORE_API USCCaptureComponent2D : public USceneCaptureComponent2D {
     GENERATED_BODY()
 public:

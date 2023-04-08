@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraAnimDrivenComputationMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECameraAnimDrivenComputationMethod : uint8 {
     ClosestAngle,
     ClosestDistance,

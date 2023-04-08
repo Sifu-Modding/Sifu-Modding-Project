@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWeaponAction.generated.h"
 
-UENUM()
-enum class EWeaponAction {
+UENUM(BlueprintType)
+enum class EWeaponAction : uint8 {
     Draw,
     Sheathe,
     PickUp,

@@ -3,7 +3,7 @@
 #include "OrderService.h"
 #include "DisableExpulseOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UDisableExpulseOrderService : public UOrderService {
     GENERATED_BODY()
 public:

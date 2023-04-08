@@ -1,9 +1,9 @@
 #include "SCCharacter.h"
 #include "Net/UnrealNetwork.h"
 
+class AActor;
 class UAnimSequence;
 class USkeletalMesh;
-class AActor;
 
 void ASCCharacter::ServerSetGender_Implementation(ECharacterGender _eGender) {
 }
@@ -39,6 +39,9 @@ FName ASCCharacter::BPF_GetImpostorName() const {
 
 ECharacterGender ASCCharacter::BPF_GetGender() const {
     return ECharacterGender::Man;
+}
+
+void ASCCharacter::BPF_ForceCanSpawnImpostor(bool _bCanSpawnImpostor) {
 }
 
 void ASCCharacter::BPF_AddObjectToKeepAttachedOnImpostor(AActor* _actor, EAttachmentRule _eAttachmentRules, FName _boneName) {

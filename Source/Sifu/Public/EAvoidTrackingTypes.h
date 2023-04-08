@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAvoidTrackingTypes.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAvoidTrackingTypes : uint8 {
     TrueTarget,
     FakeTarget,

@@ -7,12 +7,13 @@ USTRUCT(BlueprintType)
 struct SIFU_API FOrderType {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderType m_eOrderType;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_BPOrderID;
     
     FOrderType();
 };
+FORCEINLINE uint32 GetTypeHash(const FOrderType) { return 0; }
 

@@ -3,12 +3,12 @@
 #include "BehaviorTree/BTService.h"
 #include "DetectEnemyBehindTraversalsBTService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDetectEnemyBehindTraversalsBTService : public UBTService {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDetectionDistance;
     
 public:

@@ -4,12 +4,12 @@
 #include "BaseActorConditionInstance.h"
 #include "SCAnimNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API USCAnimNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorConditionInstance m_triggerCondition;
     
 public:

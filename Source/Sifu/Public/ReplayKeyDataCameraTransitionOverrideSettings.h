@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FReplayKeyDataCameraTransitionOverrideSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayKeyDataCameraTarget m_FollowSettings;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayKeyDataCameraTarget m_LookAtSettings;
     
     SIFU_API FReplayKeyDataCameraTransitionOverrideSettings();

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FIntStatBinding : public FBaseStatBindings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 m_iValue;
     
     SIFU_API FIntStatBinding();

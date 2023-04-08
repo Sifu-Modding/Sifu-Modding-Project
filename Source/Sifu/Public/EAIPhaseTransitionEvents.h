@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIPhaseTransitionEvents.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIPhaseTransitionEvents : uint8 {
     SwitchPhase,
 };

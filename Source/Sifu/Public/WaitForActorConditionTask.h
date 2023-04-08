@@ -4,14 +4,14 @@
 #include "BaseActorConditionInstance.h"
 #include "WaitForActorConditionTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWaitForActorConditionTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxWaitDuration;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorConditionInstance m_condition;
     
     UWaitForActorConditionTask();

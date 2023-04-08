@@ -5,11 +5,11 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionTriggerProxy : public UAIActionAttack {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTriggerProxyDirectlyAtStart;
     
     UAIActionTriggerProxy();

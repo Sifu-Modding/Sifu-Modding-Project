@@ -1,12 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCPoolableActorComponent.h"
 #include "Components/ActorComponent.h"
+#include "SCPoolableActorComponent.h"
 #include "HealthComponent.generated.h"
 
+class AActor;
 class UHealthComponent;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UHealthComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
@@ -15,33 +16,33 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FGhostDamageLost);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDeathComponentDelegate);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnDamageDelegate m_OnDamage;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHeathComponentDelegateDynamic m_OnLifeStockLostDyn;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHeathComponentDelegateDynamic m_OnDeathDismissed;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeathComponentDelegate m_OnDeath;
     
-    UPROPERTY(BlueprintReadOnly, Replicated, Transient, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     float m_fHealth;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxHealth;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iLifeStock;
     
 public:
     UHealthComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerHackSetHealth(float _fHealth);
     
     UFUNCTION(BlueprintCallable)
@@ -59,11 +60,14 @@ public:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void BPF_ServerAddHealth(float _fHealth);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetMaxHealth() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetBaseMaxHealth() const;
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_ApplyDamageOnAvoid(AActor* _Instigator);
     
     UFUNCTION(BlueprintCallable)
     void BPF_ApplyDamage(float _fDamage);

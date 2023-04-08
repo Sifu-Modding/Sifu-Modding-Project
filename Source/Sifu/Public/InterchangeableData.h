@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FInterchangeableData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorConditionInstance m_condition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGenericInputData* m_Data;
     
     SIFU_API FInterchangeableData();

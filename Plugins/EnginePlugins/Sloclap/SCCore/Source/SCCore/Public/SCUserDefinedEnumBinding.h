@@ -5,17 +5,17 @@
 
 class UEnum;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCUserDefinedEnumBinding : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEnum* m_CppEnum;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEnum* m_BPEnum;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FName> m_CppToBPBinding;
     
     USCUserDefinedEnumBinding();

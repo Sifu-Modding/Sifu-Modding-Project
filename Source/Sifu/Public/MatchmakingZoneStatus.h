@@ -2,20 +2,20 @@
 #include "CoreMinimal.h"
 #include "MatchmakingZoneStatus.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMatchmakingZoneStatus {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiZoneID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiSubZoneID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiOpenedGates;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiOpenedGhostGates;
     
     SIFU_API FMatchmakingZoneStatus();

@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "MenuAsyncActionBase.h"
 #include "Blueprint/UserWidget.h"
+#include "MenuAsyncActionBase.h"
 #include "AsyncTaskPlayAnimation.generated.h"
 
 class UAsyncTaskPlayAnimation;
-class UWidgetAnimation;
 class UObject;
+class UWidgetAnimation;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UAsyncTaskPlayAnimation : public UMenuAsyncActionBase {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAsyncTaskPlayTransitionAnimation);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTaskPlayTransitionAnimation OnFinished;
     
     UAsyncTaskPlayAnimation();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTransitionFinished();
     
     UFUNCTION(BlueprintCallable)

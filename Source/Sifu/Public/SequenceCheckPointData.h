@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSequenceCheckPointData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPlayBackPosition;
     
     FSequenceCheckPointData();

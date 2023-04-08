@@ -1,5 +1,5 @@
-#include "SCVideoRectLight.h"
-
+//#include "SCVideoRectLight.h"
+//
 //ASCVideoRectLight::ASCVideoRectLight() {
 //}
-
+//

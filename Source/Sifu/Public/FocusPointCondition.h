@@ -3,11 +3,11 @@
 #include "BaseActorCondition.h"
 #include "FocusPointCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFocusPointCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iValue;
     
     UFocusPointCondition();

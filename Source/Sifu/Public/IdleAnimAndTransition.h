@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FIdleAnimAndTransition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_IdleAnimation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_IdleExitTransition[4];
     
     SIFU_API FIdleAnimAndTransition();

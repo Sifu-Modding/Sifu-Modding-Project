@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFidgetMirroringTypes.h"
 #include "SCGestureAndBlendProfile.h"
-#include "EQuadrantTypes.h"
 #include "BaseActorConditionInstance.h"
+#include "EFidgetMirroringTypes.h"
+#include "EQuadrantTypes.h"
 #include "SCConditionnalGestureAndBlendProfile.generated.h"
 
 USTRUCT(BlueprintType)
 struct FSCConditionnalGestureAndBlendProfile {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFidgetMirroringTypes m_eMirrorWithQuadrantHandling;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCGestureAndBlendProfile m_animContainer;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EQuadrantTypes m_eQuadrant;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBaseActorConditionInstance> m_Conditions;
     
     SIFU_API FSCConditionnalGestureAndBlendProfile();

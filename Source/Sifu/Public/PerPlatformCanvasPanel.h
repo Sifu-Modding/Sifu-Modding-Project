@@ -4,7 +4,7 @@
 #include "PerPlatformWidget.h"
 #include "PerPlatformCanvasPanel.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformCanvasPanel : public UCanvasPanel, public IPerPlatformWidget {
     GENERATED_BODY()
 public:

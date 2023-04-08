@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FreeMoveAnimQuadrant {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlendSpaceDirectionContainer m_FreeMoveBlendSpace;
     
     SIFU_API FreeMoveAnimQuadrant();

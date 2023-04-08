@@ -3,7 +3,7 @@
 #include "OrderDB.h"
 #include "OrderHittedDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOrderHittedDB : public UOrderDB {
     GENERATED_BODY()
 public:

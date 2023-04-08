@@ -3,5 +3,5 @@
 #include "AsyncTextureStruct.h"
 #include "GetAsyncTextureAssetDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(FAsyncTextureStruct, FGetAsyncTextureAsset);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(FAsyncTextureStruct, FGetAsyncTextureAsset);
 

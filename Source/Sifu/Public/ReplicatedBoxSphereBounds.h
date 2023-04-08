@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FReplicatedBoxSphereBounds {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsValid;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBoxSphereBounds m_Bounds;
     
     SIFU_API FReplicatedBoxSphereBounds();

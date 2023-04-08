@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCarriedPropsContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCarriedProps m_CarriedProp;
     
     SIFU_API FCarriedPropsContainer();

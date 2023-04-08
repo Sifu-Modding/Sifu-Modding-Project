@@ -3,7 +3,7 @@
 #include "FloatInfluenceTest.h"
 #include "DifficultyInfluenceTest.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDifficultyInfluenceTest : public UFloatInfluenceTest {
     GENERATED_BODY()
 public:

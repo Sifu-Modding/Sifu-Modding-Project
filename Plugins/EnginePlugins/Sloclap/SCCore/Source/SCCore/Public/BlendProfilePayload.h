@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "BlendProfilePayload.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SCCORE_API UBlendProfilePayload : public UObject {
     GENERATED_BODY()
 public:

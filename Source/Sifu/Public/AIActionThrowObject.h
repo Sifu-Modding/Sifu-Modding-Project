@@ -3,7 +3,7 @@
 #include "AIActionAttack.h"
 #include "AIActionThrowObject.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionThrowObject : public UAIActionAttack {
     GENERATED_BODY()
 public:

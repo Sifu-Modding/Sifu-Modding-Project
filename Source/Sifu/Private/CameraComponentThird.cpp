@@ -4,6 +4,7 @@
 class AActor;
 class UAbstractCameraData;
 class UBlackboardComponent;
+class UCurveFloat;
 
 void UCameraComponentThird::BPF_UpdateCachedTargets() {
 }
@@ -36,6 +37,9 @@ void UCameraComponentThird::BPF_SetMirrorCursorValue(float _fValue) {
 void UCameraComponentThird::BPF_SetIsCameraLDMode(bool _bCameraLDMode, const AActor* _replayCameraAnchor) {
 }
 
+void UCameraComponentThird::BPF_SetFramingAlgorithmOverrideTarget(bool _bOverride, FVector _vPosition3D, float _fDurationBlendingIn, UCurveFloat* _dynamicCurveForBlendingIn, float _fDurationBlendingOut, UCurveFloat* _dynamicCurveForBlendingOut) {
+}
+
 void UCameraComponentThird::BPF_SetDialogAspectRatio(bool _bInEnabled) {
 }
 
@@ -58,6 +62,13 @@ void UCameraComponentThird::BPF_RemoveLookAt(int32 _iHandle) {
 }
 
 void UCameraComponentThird::BPF_RemoveAllLookAt() {
+}
+
+int32 UCameraComponentThird::BPF_PushRemoveDampingOnAlgorithms(const FString& _context) {
+    return 0;
+}
+
+void UCameraComponentThird::BPF_PopRemoveDampingOnAlgorithms(int32 _iHandle) {
 }
 
 int32 UCameraComponentThird::BPF_PauseLookAtWithHandle(const FString& _contextString) {
@@ -109,6 +120,10 @@ bool UCameraComponentThird::BPF_IsInCinematic() const {
     return false;
 }
 
+bool UCameraComponentThird::BPF_IsDampingRemovedOnAlgorithm() const {
+    return false;
+}
+
 bool UCameraComponentThird::BPF_IsCurrentCameraAllowingLookAtCollisionExtraction() const {
     return false;
 }
@@ -157,6 +172,10 @@ float UCameraComponentThird::BPF_GetMirrorCursorValue() const {
 
 float UCameraComponentThird::BPF_GetCurrentLookAtRatio() const {
     return 0.0f;
+}
+
+TArray<FDeadZone> UCameraComponentThird::BPF_GetCurrentDeadZones(EDeadZoneTypes _eDeadZoneTypes) {
+    return TArray<FDeadZone>();
 }
 
 ESCSequenceBlendViewState UCameraComponentThird::BPF_GetCurrentCinematicState() const {

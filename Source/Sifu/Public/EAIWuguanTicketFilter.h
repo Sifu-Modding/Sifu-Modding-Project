@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAIWuguanTicketFilter.generated.h"
 
-UENUM()
-enum class EAIWuguanTicketFilter {
+UENUM(BlueprintType)
+enum class EAIWuguanTicketFilter : uint8 {
     HasAttackTicket,
     HasDefinedCircle,
     IsTicketOwned,

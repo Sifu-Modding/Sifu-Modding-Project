@@ -3,7 +3,7 @@
 #include "AIInfluenceTest.h"
 #include "AttackWithWeaponInfluenceTest.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAttackWithWeaponInfluenceTest : public UAIInfluenceTest {
     GENERATED_BODY()
 public:

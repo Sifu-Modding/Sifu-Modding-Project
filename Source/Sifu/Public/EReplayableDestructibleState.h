@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayableDestructibleState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayableDestructibleState : uint8 {
     Unspawned,
     Spawned,

@@ -4,11 +4,11 @@
 #include "LipSync_Pause.h"
 #include "SubtitlesFileSave.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class USubtitlesFileSave : public USaveGame {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FLipSync_Pause> Data;
     
     USubtitlesFileSave();

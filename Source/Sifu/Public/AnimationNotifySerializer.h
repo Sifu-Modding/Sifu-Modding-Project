@@ -4,7 +4,7 @@
 #include "SCAnimNotifyExtraInfo.h"
 #include "AnimationNotifySerializer.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UAnimationNotifySerializer : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

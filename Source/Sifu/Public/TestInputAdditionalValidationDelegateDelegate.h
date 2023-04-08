@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "TestInputAdditionalValidationDelegateDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_RetVal(bool, FTestInputAdditionalValidationDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_RetVal(bool, FTestInputAdditionalValidationDelegate);
 

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FOrientedRotationAnimContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRotationAnimContainer m_leftAnims;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRotationAnimContainer m_rightAnims;
     
     SIFU_API FOrientedRotationAnimContainer();

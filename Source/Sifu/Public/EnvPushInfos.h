@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EnvPushInfos.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FEnvPushInfos {
     GENERATED_BODY()
 public:

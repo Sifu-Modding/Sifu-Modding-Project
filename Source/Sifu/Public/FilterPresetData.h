@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FFilterPresetData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPostProcessSettings m_PostProcessSettings;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_DisplayText;
     
     SIFU_API FFilterPresetData();

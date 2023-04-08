@@ -5,7 +5,7 @@
 #include "OnAbilitySystemComponentTagsChangedDelegateDelegate.h"
 #include "SCAbilitySystemComponentHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API USCAbilitySystemComponentHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

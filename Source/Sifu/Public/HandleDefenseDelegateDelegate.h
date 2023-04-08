@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "HandleDefenseDelegateDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHandleDefenseDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FHandleDefenseDelegate);
 

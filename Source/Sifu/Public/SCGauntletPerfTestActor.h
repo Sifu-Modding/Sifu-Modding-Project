@@ -5,12 +5,12 @@
 
 class ASCTestingLocationsBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASCGauntletPerfTestActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASCTestingLocationsBase*> m_TestingLocations;
     
 public:

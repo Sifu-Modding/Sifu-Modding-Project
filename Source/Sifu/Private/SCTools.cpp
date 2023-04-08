@@ -1,8 +1,8 @@
 #include "SCTools.h"
 
+class UGameInstance;
 class UObject;
 class UWorld;
-class UGameInstance;
 
 EQuadrantTypes USCTools::GetAttackQuadrant(EQuadrantTypes _eQuadrant, bool _bIsMirror) {
     return EQuadrantTypes::FrontLeft;
@@ -21,6 +21,10 @@ bool USCTools::BPF_HasEntitlement(const UObject* _worldContextObject, const FNam
 
 FString USCTools::BPF_GetMapPath(TSoftObjectPtr<UWorld> _map) {
     return TEXT("");
+}
+
+FGameplayTag USCTools::BPF_GetGameplayTagFromName(const FName& _tagName) {
+    return FGameplayTag{};
 }
 
 UGameInstance* USCTools::BPF_GetGameInstanceNoWarning(const UObject* _worldContextObject) {

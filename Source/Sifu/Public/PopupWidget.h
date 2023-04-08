@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EMenuEnum.h"
 #include "InputAction.h"
 #include "SCUserWidget.h"
-#include "EMenuEnum.h"
 #include "PopupWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UPopupWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eValidateAction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eCancelAction;
     
 public:
     UPopupWidget();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu);
     
 public:
@@ -33,10 +33,10 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_SetContent(const FText& _title, const FText& _message, const FText& _choiceA, const FText& _choiceB);
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool BPE_IsUsingChoiceB() const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool BPE_IsUsingChoiceA() const;
     
 };

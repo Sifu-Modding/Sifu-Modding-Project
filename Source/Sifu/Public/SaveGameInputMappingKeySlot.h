@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FSaveGameInputMappingKeySlot {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     EVirtualAction m_eVirtualAction;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FName> m_Actions;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FSaveInputAxisKeyMapping> m_Axis;
     
     SIFU_API FSaveGameInputMappingKeySlot();

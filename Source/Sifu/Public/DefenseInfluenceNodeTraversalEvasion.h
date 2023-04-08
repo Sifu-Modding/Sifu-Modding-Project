@@ -3,7 +3,7 @@
 #include "ContextualDefenseInfluenceNode.h"
 #include "DefenseInfluenceNodeTraversalEvasion.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDefenseInfluenceNodeTraversalEvasion : public UContextualDefenseInfluenceNode {
     GENERATED_BODY()
 public:

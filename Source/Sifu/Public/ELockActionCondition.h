@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELockActionCondition.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ELockActionCondition : uint8 {
     Yes,
     IfNoNMENearMe,

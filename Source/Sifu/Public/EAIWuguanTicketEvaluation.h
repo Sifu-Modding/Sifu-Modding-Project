@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIWuguanTicketEvaluation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIWuguanTicketEvaluation : uint8 {
     IsOnScreen,
     FlyDistance,

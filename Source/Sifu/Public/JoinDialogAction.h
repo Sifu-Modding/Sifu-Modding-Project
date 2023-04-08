@@ -3,19 +3,19 @@
 #include "DialogActionBase.h"
 #include "JoinDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UJoinDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ActorSentToDialog;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bPlayPrefightAnimations;
     
     UJoinDialogAction();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;
     
 };

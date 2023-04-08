@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "HitRequest.h"
+#include "AnimContainer.h"
 #include "HitAnimsPerDataTableContainer.h"
+#include "HitRequest.h"
 #include "HittedAnimContainer.h"
 #include "ImpactResult.h"
-#include "AnimContainer.h"
 #include "HitAnimRequest.generated.h"
 
 class AFightingCharacter;
@@ -16,14 +16,14 @@ class SIFU_API UHitAnimRequest : public UObject {
     GENERATED_BODY()
 public:
     UHitAnimRequest();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_FindCustomHitAnimation(const FHitAnimsPerDataTableContainer& _data, const FHitRequest& _request, const FImpactResult& _Impact, FHittedAnimContainer& _result) const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     TArray<UAnimSequence*> BPE_GetHitDeathAnimations() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetHitAnimation(const FHitRequest& _request, const FImpactResult& _Impact, AFightingCharacter* _defender, FHittedAnimContainer& _result, FAnimContainer& _weaponResult) const;
     
 };

@@ -6,16 +6,16 @@ USTRUCT(BlueprintType)
 struct FMainAttackComboRealNamesDB {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> m_ComboQuadrantsFrontLeftXls;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> m_ComboQuadrantsFrontRightXls;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> m_ComboQuadrantsBackRightXls;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FText> m_ComboQuadrantsBackLeftXls;
     
     SIFU_API FMainAttackComboRealNamesDB();

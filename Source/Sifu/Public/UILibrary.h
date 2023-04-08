@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=SCDynamicDelegate__DelegateSignature -FallbackName=SCDynamicDelegateDelegate
 #include "Blueprint/WidgetBlueprintLibrary.h"
 #include "EIntersectDirection.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=SCDynamicDelegate__DelegateSignature -FallbackName=SCDynamicDelegateDelegate
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "UILibrary.generated.h"
 
 class APlayerController;
+class UObject;
 class UUserWidget;
 class UWidget;
-class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UUILibrary : public UWidgetBlueprintLibrary {
     GENERATED_BODY()
 public:
-   /* UUILibrary();
-    UFUNCTION(BlueprintCallable)
-    static void BPF_ShowPopup(const APlayerController* _playerController, FText _txtMessage, FText _txtConfirm, FText _txtCancel, FSCDynamicDelegate _onConfirm, FSCDynamicDelegate _onCancel);
-    */
+    UUILibrary();
+   /* UFUNCTION(BlueprintCallable)
+    static void BPF_ShowPopup(const APlayerController* _playerController, FText _txtMessage, FText _txtConfirm, FText _txtCancel, FSCDynamicDelegate _onConfirm, FSCDynamicDelegate _onCancel);*/
+    
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     static void BPF_SetAllSCButtonsTintsInUserWidget(UUserWidget* _userWidget, FLinearColor _focusedColor, FLinearColor _noFocusColor);
     
@@ -30,7 +30,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool BPF_Intersect2DPositionWithViewportBounds(APlayerController* _playerController, const FVector2D& _vInPosition, FVector2D& _vOutIntersection, EIntersectDirection& _eOutIntersectDirection);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetWidget2DPosFrom3D(UWidget* _widget, FVector _location, FVector _3DOffset, FVector2D _2DOffset, float _f2DMinY, FVector2D& _2DPos, bool& _2DProjSuccess);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))

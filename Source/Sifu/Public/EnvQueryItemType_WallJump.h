@@ -3,7 +3,7 @@
 #include "EnvironmentQuery/Items/EnvQueryItemType_ActorBase.h"
 #include "EnvQueryItemType_WallJump.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UEnvQueryItemType_WallJump : public UEnvQueryItemType_ActorBase {
     GENERATED_BODY()
 public:

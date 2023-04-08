@@ -1,107 +1,107 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DeveloperSettings.h"
-#include "InputPresetsEnumHandler.h"
-#include "InputAction.h"
-#include "InputPriorityGroup.h"
+#include "ActionMappingCompatibilityRule.h"
 #include "AlwaysCollidingActions.h"
+#include "InputAction.h"
+#include "InputMappingCompatibilityRule.h"
 #include "InputMappingData.h"
 #include "InputMappingProfileEnumHandler.h"
+#include "InputPresetsEnumHandler.h"
+#include "InputPriorityGroup.h"
 #include "MappingProfileList.h"
-#include "InputMappingCompatibilityRule.h"
-#include "RemappingIncompatibilityGroup.h"
-#include "ActionMappingCompatibilityRule.h"
 #include "RemappingClasses.h"
+#include "RemappingIncompatibilityGroup.h"
 #include "SCInputSettings.generated.h"
 
-class UMenuDB;
 class UGenericInputData;
 class UInputMappingProfileDB;
+class UMenuDB;
 
-UCLASS(DefaultConfig, Config=Game)
+UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
 class SIFU_API USCInputSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eInputAction;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eAltInputAction;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bVirtualCursorAcceleration;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fVirtualCursorAcceleration;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fVirtualCursorMaxSpeed;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fVirtualCursorStickySlowdown;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fVirtualCursorDeadZone;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bSnapEnabled;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSnapSpeed;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMenuDB> m_MenuDB;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bActivateRemapping;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInputPriorityGroup> m_InputPriority;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAlwaysCollidingActions> m_AlwaysCollidingActions;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<InputAction> m_ActionPriority;
     
-   /* UPROPERTY(Config)
-    TMap<FInputPresetsEnumHandler, FInputMappingData> m_Mapping;*/
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FInputPresetsEnumHandler, FInputMappingData> m_Mapping;
     
-  /*  UPROPERTY(Config, EditAnywhere)
-    TMap<FInputMappingProfileEnumHandler, FMappingProfileList> m_MappingProfileList;*/
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FInputMappingProfileEnumHandler, FMappingProfileList> m_MappingProfileList;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<InputAction> m_UnremappableActions;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRemappingIncompatibilityGroup> m_IncompatibilityGroups;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<TSoftObjectPtr<UGenericInputData>, FInputMappingCompatibilityRule> m_InputCustomCompatibilityRules;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FActionMappingCompatibilityRule> m_ActionCompatibilityRules;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UGenericInputData> m_EmptyInputData;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRemappingClasses m_BaseRemapClasses;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<InputAction, FRemappingClasses> m_CustomActionRemapping;
     
- /*   UPROPERTY(Config, EditAnywhere)
-    TMap<FInputPresetsEnumHandler, FRemappingClasses> m_CustomPresetRemapping;*/
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FInputPresetsEnumHandler, FRemappingClasses> m_CustomPresetRemapping;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMenuDB* m_CachedMenuDB;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UInputMappingProfileDB*> m_CachedProfiles;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UGenericInputData*> m_CachedInputDatas;
     
 public:

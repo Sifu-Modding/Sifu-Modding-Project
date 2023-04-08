@@ -4,24 +4,24 @@
 #include "SlowMotionTaskDelegateDelegate.h"
 #include "AbilityTask_SlowMotionTask.generated.h"
 
+class UAbilityTask_SlowMotionTask;
 class UCurveFloat;
 class UGameplayAbility;
-class UAbilityTask_SlowMotionTask;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAbilityTask_SlowMotionTask : public UAbilityTask {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_Curve;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlowMotionTaskDelegate m_OnFinish;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlowMotionTaskDelegate m_OnStarted;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlowMotionTaskDelegate m_OnPaused;
     
     UAbilityTask_SlowMotionTask();

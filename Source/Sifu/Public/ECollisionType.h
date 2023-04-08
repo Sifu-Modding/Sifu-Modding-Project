@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECollisionType.generated.h"
 
-UENUM()
-enum class ECollisionType {
+UENUM(BlueprintType)
+enum class ECollisionType : uint8 {
     SameTarget,
     NoTarget,
     DifferentTargetSamePrio,

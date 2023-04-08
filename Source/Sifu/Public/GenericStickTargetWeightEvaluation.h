@@ -6,15 +6,15 @@
 
 class UBaseTargetWeightEvaluation;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGenericStickTargetWeightEvaluation : public UBaseDirectionalTargetWeightEvaluation {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeightBinaryOperator m_eOperator;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UBaseTargetWeightEvaluation*> m_Evaluations;
     
 public:

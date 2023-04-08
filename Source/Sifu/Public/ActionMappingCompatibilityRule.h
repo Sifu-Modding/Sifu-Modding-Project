@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FActionMappingCompatibilityRule {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EInputMappingCompatibilityRuleType m_eRule;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<InputAction> m_Actions;
     
     FActionMappingCompatibilityRule();

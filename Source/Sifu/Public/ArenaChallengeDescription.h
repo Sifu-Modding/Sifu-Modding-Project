@@ -1,83 +1,93 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=AchievementUnlockConditionClassInstance -FallbackName=AchievementUnlockConditionClassInstance
 #include "UObject/Object.h"
-#include "ArenaChallengeScoreUnion.h"
 #include "GameplayTagContainer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=AchievementUnlockConditionClassInstance -FallbackName=AchievementUnlockConditionClassInstance
 #include "ECharacterGender.h"
 #include "ArenaChallengeRefillDescription.h"
 #include "ArenaChallengeDescription.generated.h"
 
-class UWorld;
 class AAIWaveRefillDirector;
+class ABaseWeapon;
+class APlayerStart;
 class UBaseArenaObjective;
+class UWorld;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UArenaChallengeDescription : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_Title;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_Description;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    TArray<FArenaChallengeScoreUnion> m_ScoreThreshold;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag m_ArenaTag;
     
-   /* UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<APlayerStart> m_desiredPlayerStart;
+    
+ /*   UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAchievementUnlockConditionClassInstance m_MasterObjective;*/
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGameplayTag> m_CheatsToActivate;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FGameplayTag, FString> m_CheatsWithArgument;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, FString> m_CheatArguments;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<ABaseWeapon> m_carriedWeapon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iAge;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iDeathCount;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eCharacterGender;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideOutfit;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iOutfitIndex;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bEnableOutfitPropSpawn;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UWorld> m_AIInitialSpawnSublevel;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FArenaChallengeRefillDescription m_RefillDescription;
     
     UArenaChallengeDescription();
-    UFUNCTION(BlueprintPure)
-    FArenaChallengeScoreUnion BPF_GetWantedScore(int32 _iLevel) const;
-    
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AAIWaveRefillDirector* BPF_GetRefillDirector() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetNbWaves() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetDeathCount() const;
     
-    UFUNCTION(BlueprintPure)
-    TArray<FGameplayTag> BPF_GetCheatsToActivate() const;
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TMap<FGameplayTag, FString> BPF_GetCheatsToActivate() const;
     
-    UFUNCTION(BlueprintPure)
-    TMap<FGameplayTag, FString> BPF_GetCheatsArguments() const;
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TSoftClassPtr<ABaseWeapon> BPF_GetCarriedWeapon() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBaseArenaObjective* BPF_GetArenaObjective() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetAge() const;
     
 };

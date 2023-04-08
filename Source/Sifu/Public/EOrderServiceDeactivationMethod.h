@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOrderServiceDeactivationMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOrderServiceDeactivationMethod : uint8 {
     None,
     CleanStop,

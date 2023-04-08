@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "OnSkillConsolidatedDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSkillConsolidated);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSkillConsolidated);
 

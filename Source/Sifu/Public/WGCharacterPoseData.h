@@ -3,7 +3,7 @@
 #include "SCCharacterPoseData.h"
 #include "WGCharacterPoseData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWGCharacterPoseData : public USCCharacterPoseData {
     GENERATED_BODY()
 public:

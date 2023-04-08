@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ELinkWithExternalBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ELinkWithExternalBehavior : uint8 {
     ActiveIfExternalActive,
     ActiveIfExternalInactive,

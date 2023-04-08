@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSkillFilter {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ENullableCondition m_eAcquired;
     
     SIFU_API FSkillFilter();

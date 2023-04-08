@@ -1,36 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "OrderDB.h"
-#include "AnimContainer.h"
 #include "Curves/CurveFloat.h"
+#include "AnimContainer.h"
+#include "OrderDB.h"
+#include "Templates/SubclassOf.h"
 #include "OrderFallOnSlopeEntryDB.generated.h"
 
 class UDetectFallOrderService;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOrderFallOnSlopeEntryDB : public UOrderDB {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_OnHitSlope;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve m_VelocityBlendRatio;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceVelocity;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fForceVelocity;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceVelocityOnPlaneGround;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fForceVelocityOnPlaneGround;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UDetectFallOrderService> m_SlopeDetectionDB;
     
     UOrderFallOnSlopeEntryDB();

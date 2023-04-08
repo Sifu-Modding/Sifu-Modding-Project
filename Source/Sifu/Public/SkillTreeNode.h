@@ -10,13 +10,13 @@ USTRUCT(BlueprintType)
 struct FSkillTreeNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Socket;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USkillGameplayEffect> m_Skill;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkillsChilds* m_Childs;
     
     SIFU_API FSkillTreeNode();

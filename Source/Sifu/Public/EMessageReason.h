@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMessageReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMessageReason : uint8 {
     None,
     LeashMaxDistanceReached,

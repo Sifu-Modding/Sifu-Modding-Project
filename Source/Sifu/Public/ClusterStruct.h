@@ -3,17 +3,17 @@
 #include "Templates/SubclassOf.h"
 #include "ClusterStruct.generated.h"
 
-class UStaticMeshComponent;
 class AThrowableActor;
+class UStaticMeshComponent;
 
 USTRUCT(BlueprintType)
 struct FClusterStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStaticMeshComponent* m_MeshComp;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AThrowableActor> m_ThrowableSubClass;
     
     SIFU_API FClusterStruct();

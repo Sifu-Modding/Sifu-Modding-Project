@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FSpeedStateBlendDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_BlendTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_BlendCurve;
     
     SIFU_API FSpeedStateBlendDescription();

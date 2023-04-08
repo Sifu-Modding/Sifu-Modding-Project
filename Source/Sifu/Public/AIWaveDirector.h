@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EFirstWaveSpawnMethod.h"
 #include "SCActor.h"
+#include "EFirstWaveSpawnMethod.h"
 #include "WaveParams.h"
 #include "Engine/EngineTypes.h"
 #include "AIWaveDirector.generated.h"
 
 class AAISpawner;
-class AActor;
-class UPrimitiveComponent;
 class ASCPlayerVolume;
+class UPrimitiveComponent;
+class AActor;
 
 UCLASS()
 class SIFU_API AAIWaveDirector : public ASCActor {

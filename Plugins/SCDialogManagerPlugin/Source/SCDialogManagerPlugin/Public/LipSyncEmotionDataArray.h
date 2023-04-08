@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FLipSyncEmotionDataArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FLipSyncEmotionData> emotionArray;
     
     SCDIALOGMANAGERPLUGIN_API FLipSyncEmotionDataArray();

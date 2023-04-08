@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayKeyIndexUpdateReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayKeyIndexUpdateReason : uint8 {
     KeyMoved,
     KeyInserted,

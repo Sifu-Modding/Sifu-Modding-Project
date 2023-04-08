@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NetOrderStructPlayAnim.h"
 #include "HitRequest.h"
+#include "NetOrderStructPlayAnim.h"
 #include "NetOrderStructFightingState.generated.h"
 
 class AActor;
@@ -10,10 +10,10 @@ USTRUCT(BlueprintType)
 struct FNetOrderStructFightingState : public FNetOrderStructPlayAnim {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_Instigator;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHitRequest m_Hit;
     
     SIFU_API FNetOrderStructFightingState();

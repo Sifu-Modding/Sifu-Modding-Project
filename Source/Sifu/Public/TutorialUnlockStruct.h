@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FTutorialUnlockStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     ETutorialUnlockState m_eUnlockState;
     
     FTutorialUnlockStruct();

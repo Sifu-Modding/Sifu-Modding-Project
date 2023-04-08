@@ -4,12 +4,12 @@
 #include "EOrderType.h"
 #include "OrderRunningDecorator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UOrderRunningDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EOrderType> m_eOrders;
     
 public:

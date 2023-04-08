@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTService.h"
 #include "MovementFocusUpdateBTService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UMovementFocusUpdateBTService : public UBTService {
     GENERATED_BODY()
 public:

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETransitionGlobalType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETransitionGlobalType : uint8 {
     Start,
     Stop,

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Engine/DataTable.h"
+#include "Templates/SubclassOf.h"
 #include "CarriedPropDataRow.generated.h"
 
 class AActor;
@@ -10,10 +10,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCarriedPropDataRow : public FTableRowBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_LocatorName;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> m_ClassToSpawn;
     
     FCarriedPropDataRow();

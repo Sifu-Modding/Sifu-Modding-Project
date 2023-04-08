@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EItemUseState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EItemUseState : uint8 {
     BuildUp,
     Use,

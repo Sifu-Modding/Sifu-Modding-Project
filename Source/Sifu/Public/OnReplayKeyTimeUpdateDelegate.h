@@ -4,5 +4,5 @@
 
 class UReplayKey;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnReplayKeyTimeUpdate, UReplayKey*, _key, float, _fTime);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnReplayKeyTimeUpdate, UReplayKey*, _key, float, _fTime);
 

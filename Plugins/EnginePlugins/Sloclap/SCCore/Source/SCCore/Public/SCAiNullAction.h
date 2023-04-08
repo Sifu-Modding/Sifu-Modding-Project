@@ -3,7 +3,7 @@
 #include "SCAiAction.h"
 #include "SCAiNullAction.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCAiNullAction : public USCAiAction {
     GENERATED_BODY()
 public:

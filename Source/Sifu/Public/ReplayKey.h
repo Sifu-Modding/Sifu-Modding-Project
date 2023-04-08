@@ -1,56 +1,56 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OnReplayKeySelectionUpdateDelegate.h"
 #include "UObject/Object.h"
-#include "ReplayKeyData.h"
-#include "OnReplayKeyTransitionUpdateDelegate.h"
-#include "OnReplayKeyEventDelegate.h"
-#include "OnReplayKeyIndexUpdateDelegate.h"
 #include "OnReplayKeyDataUpdateDelegate.h"
+#include "OnReplayKeyEventDelegate.h"
 #include "OnReplayKeyHoveredUpdateDelegate.h"
+#include "OnReplayKeyIndexUpdateDelegate.h"
+#include "OnReplayKeySelectionUpdateDelegate.h"
 #include "OnReplayKeyTimeUpdateDelegate.h"
+#include "OnReplayKeyTransitionUpdateDelegate.h"
+#include "ReplayKeyData.h"
 #include "ReplayKey.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UReplayKey : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayKeyData m_Data;
     
 public:
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyEvent m_OnDelete;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyEvent m_OnPostDelete;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyIndexUpdate m_OnIndexUpdate;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyDataUpdate m_OnDataUpdate;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyTransitionUpdate m_OnTransitionUpdate;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeySelectionUpdate m_OnSelectionUpdate;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyHoveredUpdate m_OnHoveredUpdate;
     
-    UPROPERTY(BlueprintAssignable, Transient)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnReplayKeyTimeUpdate m_OnTimeUpdate;
     
     UReplayKey();
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_HasReplayKeyType(int32 _iKeyTypeFlags, int32 _iContainsKeyTypeFlags);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasActiveBlend() const;
     
 };

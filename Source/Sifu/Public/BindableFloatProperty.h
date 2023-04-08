@@ -3,7 +3,7 @@
 #include "BindablePropertyBase.h"
 #include "BindableFloatProperty.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBindableFloatProperty : public UBindablePropertyBase {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetRef(UPARAM(Ref) float& _fValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetValue() const;
     
 };

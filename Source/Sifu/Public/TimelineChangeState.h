@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FTimelineChangeState {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iKeyCountChange;
     
     SIFU_API FTimelineChangeState();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOrderState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOrderState : uint8 {
     None,
     Starting,

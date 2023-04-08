@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayTransitionElement.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayTransitionElement : uint8 {
     TimeDilation,
     CurrentTransition,

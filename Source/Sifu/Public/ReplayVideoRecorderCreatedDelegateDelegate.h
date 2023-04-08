@@ -4,5 +4,5 @@
 
 class AReplayVideoRecorder;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FReplayVideoRecorderCreatedDelegate, AReplayVideoRecorder*, _videoRecorder);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FReplayVideoRecorderCreatedDelegate, AReplayVideoRecorder*, _videoRecorder);
 

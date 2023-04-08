@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayTimelineControlType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayTimelineControlType : uint8 {
     Time,
     KeyPlacement,

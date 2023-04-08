@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EMoveStatus.h"
 #include "BaseActorCondition.h"
+#include "EMoveStatus.h"
 #include "MoveStatusCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UMoveStatusCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMoveStatus m_eMoveStatus;
     
     UMoveStatusCondition();

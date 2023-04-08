@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeveloperSettingsModule.h"
+#include "Engine/DeveloperSettings.h"
 #include "ESCOcclusionMode.h"
 #include "SCSoundOcclusionSettings.generated.h"
 
-UCLASS(DefaultConfig, Config=Game)
+UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
 class SCSOUNDOCCLUSION_API USCSoundOcclusionSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxPathDist;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxPathFactor;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_RTPCOcclusionName;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCOcclusionMode m_eOcclusionMode;
     
     USCSoundOcclusionSettings();

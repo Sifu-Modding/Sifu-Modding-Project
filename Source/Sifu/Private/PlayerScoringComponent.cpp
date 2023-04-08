@@ -1,13 +1,13 @@
 #include "PlayerScoringComponent.h"
 
-class UOrderComponent;
 class AActor;
+class ABaseWeapon;
+class AFightingCharacter;
 class AVitalPointActor;
 class UArchetypeAsset;
-class UCurveFloat;
 class UAttackDB;
-class AFightingCharacter;
-class ABaseWeapon;
+class UCurveFloat;
+class UOrderComponent;
 
 void UPlayerScoringComponent::OnOwnerTakedownStarted(uint8 _iOrderID, UOrderComponent* _OrderComponent) {
 }
@@ -33,6 +33,9 @@ void UPlayerScoringComponent::BPF_SetScoringActive(bool _bActivate) {
 void UPlayerScoringComponent::BPF_SetGlobalMultiplier(float _GlobalMultiplier) {
 }
 
+void UPlayerScoringComponent::BPF_SetFloorScore(float _newFloorScore) {
+}
+
 void UPlayerScoringComponent::BPF_ResetScoringValues() {
 }
 
@@ -40,6 +43,13 @@ void UPlayerScoringComponent::BPF_ResetDiminishingQueue() {
 }
 
 void UPlayerScoringComponent::BPF_OnKnockdownAttackStarted(uint8 _orderID, UOrderComponent* _OrderComponent) {
+}
+
+void UPlayerScoringComponent::BPF_InitializeFromDB() {
+}
+
+float UPlayerScoringComponent::BPF_GetFloorScoreToReachMaxMultiplier() const {
+    return 0.0f;
 }
 
 float UPlayerScoringComponent::BPF_GetCurrentScore() {
@@ -116,6 +126,7 @@ int32 UPlayerScoringComponent::BPE_GetGlobalQueueSize_Implementation() {
     return 0;
 }
 
+
 float UPlayerScoringComponent::BPE_GetFloorScoreGlobalMalusRatioOnMCHit_Implementation() {
     return 0.0f;
 }
@@ -131,7 +142,7 @@ float UPlayerScoringComponent::BPE_GetEfficiencyCoeffInactiveAction_Implementati
     return 0.0f;
 }
 
-void UPlayerScoringComponent::BPE_GetEfficiencyBoundsFromActionType_Implementation(EScoringActionType _ScoringActionType, float& _MinEfficiency, float& _MaxEfficiency) {
+void UPlayerScoringComponent::BPE_GetEfficiencyBoundsFromActionType_Implementation(EScoringActionType _ScoringActionType, bool& _ActionTypeFound, float& _MinEfficiency, float& _MaxEfficiency) {
 }
 
 UCurveFloat* UPlayerScoringComponent::BPE_GetCurveForEfficiencyWeightByPlaceInQueue_Implementation() const {
@@ -146,7 +157,7 @@ float UPlayerScoringComponent::BPE_GetBonusOnPunish_Implementation() {
     return 0.0f;
 }
 
-float UPlayerScoringComponent::BPE_GetBonusOnEnvironmentalKill_Implementation() {
+float UPlayerScoringComponent::BPE_GetBonusOnEnvironmentalKill_Implementation(EScoringKillType _eScoringKillType, float _fTargetHealthBeforeKill) {
     return 0.0f;
 }
 

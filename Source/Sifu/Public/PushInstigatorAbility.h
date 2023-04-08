@@ -6,12 +6,12 @@
 
 class UPushConfiguration;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPushInstigatorAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPushConfiguration* m_PushConfiguration;
     
 public:

@@ -6,13 +6,13 @@ USTRUCT(BlueprintType)
 struct FChargedBuildUpStructGenericInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDurationOfCharging;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fExtraHoldingTimeAfterChargeIscomplete;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowQuadrantToRecompute;
     
     SIFU_API FChargedBuildUpStructGenericInfos();

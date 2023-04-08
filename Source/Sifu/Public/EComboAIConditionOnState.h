@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EComboAIConditionOnState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EComboAIConditionOnState : uint8 {
     Started,
     Ended,

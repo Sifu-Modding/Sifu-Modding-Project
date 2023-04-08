@@ -3,7 +3,7 @@
 #include "SCDialogComponent.h"
 #include "FightingAIDialogComponent.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UFightingAIDialogComponent : public USCDialogComponent {
     GENERATED_BODY()
 public:

@@ -5,15 +5,15 @@
 #include "InputAction.h"
 #include "AsyncWaitForInputAvailability.generated.h"
 
-class UAsyncWaitForInputAvailability;
 class ABaseCharacter;
+class UAsyncWaitForInputAvailability;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncWaitForInputAvailability : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnInputAvailable;*/
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnInputAvailable;*/
     
     UAsyncWaitForInputAvailability();
     UFUNCTION(BlueprintCallable)

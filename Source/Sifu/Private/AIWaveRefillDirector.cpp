@@ -1,13 +1,17 @@
 #include "AIWaveRefillDirector.h"
 
-class AFightingCharacter;
-class ABaseCharacter;
+class AAISituationActor;
+class AAISpawner;
 class AActor;
+class ABaseCharacter;
 
 void AAIWaveRefillDirector::OnSituationAIDeathDetected(ABaseCharacter* _character) {
 }
 
-void AAIWaveRefillDirector::OnAIDeathDetected(const AFightingCharacter* _character, const FDamageInfos& _damageInfos) {
+void AAIWaveRefillDirector::OnRelatedSituationActivated(AAISituationActor* _aiSituationActor) {
+}
+
+void AAIWaveRefillDirector::OnAIDownDetected(AAISpawner* _spawner) {
 }
 
 void AAIWaveRefillDirector::OnAIAbandonDetected(AActor* _actor) {
@@ -34,6 +38,9 @@ bool AAIWaveRefillDirector::BPF_IsWaveInProgress() const {
 
 int32 AAIWaveRefillDirector::BPF_GetAIRemainingInCurrentWave() const {
     return 0;
+}
+
+void AAIWaveRefillDirector::BPF_CancelCurrentWave() {
 }
 
 

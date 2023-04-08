@@ -13,7 +13,7 @@ class SIFU_API UHittableActor : public UInterface {
 class SIFU_API IHittableActor : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool CanBeHitted(AActor* _Instigator);
     
 };

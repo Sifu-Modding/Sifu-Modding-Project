@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FTraversalInputBehavior {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseCharacterVelocityInsteadOfDirOnStick;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxAngleBetweenVelocityAndStickDir;
     
     SIFU_API FTraversalInputBehavior();

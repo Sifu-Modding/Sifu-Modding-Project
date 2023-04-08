@@ -5,17 +5,17 @@
 #include "CharacterStatsValues.h"
 #include "CharacterBuildDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCharacterBuildDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eGender;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterStatsValues m_DefaultStats;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FCharacterStatsValues m_DefaultStatsPerDifficulty[3];
     
     UCharacterBuildDB();

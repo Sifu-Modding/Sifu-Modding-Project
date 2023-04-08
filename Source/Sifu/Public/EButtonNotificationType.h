@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EButtonNotificationType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EButtonNotificationType : uint8 {
     NewTrial_1V1,
     NewTrial_3V3,

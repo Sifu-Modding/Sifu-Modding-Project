@@ -8,19 +8,19 @@ USTRUCT(BlueprintType)
 struct FCharacterSaveDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FString m_SaveName;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FTimespan m_TimePlayed;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FDateTime m_SaveTimeStamp;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bIsABackupSnapshot;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bIsValid;
     
     SCCORE_API FCharacterSaveDescription();

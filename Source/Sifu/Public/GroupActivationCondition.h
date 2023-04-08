@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderServiceActivationConditions.h"
 #include "EConditionGroupOperators.h"
+#include "OrderServiceActivationConditions.h"
 #include "GroupActivationCondition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGroupActivationCondition : public UOrderServiceActivationConditions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EConditionGroupOperators m_eOperator;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UOrderServiceActivationConditions*> m_Conditions;
     
     UGroupActivationCondition();

@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FBlendProfileBySpeedStateStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendProfile* m_BlendProfileBySpeedState[4];
     
     SIFU_API FBlendProfileBySpeedStateStruct();

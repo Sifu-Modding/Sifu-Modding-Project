@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SCCoreTools.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCCoreTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

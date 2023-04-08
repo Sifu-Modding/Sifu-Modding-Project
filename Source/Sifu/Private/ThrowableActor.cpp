@@ -1,17 +1,17 @@
 #include "ThrowableActor.h"
-#include "Templates/SubclassOf.h"
-#include "ReplayablePhysObjectComponent.h"
-#include "Components/BoxComponent.h"
-#include "Components/SphereComponent.h"
-#include "Components/SceneComponent.h"
-#include "PhysicalActorDependencyComponent.h"
-#include "ThrowableObjMovementComponent.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
-#include "ReplayableDestructionComponent.h"
+#include "Components/BoxComponent.h"
+#include "Components/SceneComponent.h"
+#include "Components/SphereComponent.h"
+#include "PhysicalActorDependencyComponent.h"
 #include "HitBoxComponent.h"
+#include "ReplayableDestructionComponent.h"
+#include "ReplayablePhysObjectComponent.h"
+#include "Templates/SubclassOf.h"
+#include "ThrowableObjMovementComponent.h"
 
-class AFightingCharacter;
 class AActor;
+class AFightingCharacter;
 class UThrowableData;
 
 void AThrowableActor::OnWakeUp(bool _bWakesUp) {

@@ -5,11 +5,11 @@
 
 class UMaterialInstance;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASkySphere : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInstance* BaseMaterial;
     
     ASkySphere();

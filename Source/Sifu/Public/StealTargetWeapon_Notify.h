@@ -3,11 +3,11 @@
 #include "SCAnimNotify.h"
 #include "StealTargetWeapon_Notify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UStealTargetWeapon_Notify : public USCAnimNotify {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bMirrorPickup;
     
     UStealTargetWeapon_Notify();

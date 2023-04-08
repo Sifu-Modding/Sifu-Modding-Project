@@ -5,17 +5,17 @@
 
 class UPivotFootData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USpeedPivotFootData : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPivotFootData* m_MoveData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPivotFootData* m_StartData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPivotFootData* m_StopData;
     
     USpeedPivotFootData();

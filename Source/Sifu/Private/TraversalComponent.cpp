@@ -21,6 +21,10 @@ bool UTraversalComponent::BPF_IsAnimDrivenCameraForced() const {
 
 
 UTraversalComponent::UTraversalComponent() {
+    this->m_traversalWaitTimePerCombatRole[0] = 0.00f;
+    this->m_traversalWaitTimePerCombatRole[1] = 0.00f;
+    this->m_traversalWaitTimePerCombatRole[2] = 0.00f;
+    this->m_traversalWaitTimePerCombatRole[3] = 0.00f;
     this->m_bTraversalActive = true;
     this->m_bOverrideTraversalEntryAngle = false;
     this->m_fTraversalEntryAngle = 180.00f;
@@ -37,7 +41,9 @@ UTraversalComponent::UTraversalComponent() {
     this->m_bUseMeshAsTraversalCollider = false;
     this->m_bUseRushInput = false;
     this->m_bForceUseAnimDrivenCamera = false;
+    this->m_bForceDisplayHint = false;
     this->m_bCustomNavLinkCooldownDuration = false;
     this->m_fNavLinkCooldownDuration = 0.00f;
+    this->m_bUseClimbUIForCine = false;
 }
 

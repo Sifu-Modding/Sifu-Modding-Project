@@ -8,7 +8,7 @@ struct SIFU_API FAnimStructSpawn : public FAnimStructBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float m_fPlayRate;
     
 public:

@@ -1,8 +1,8 @@
 #include "ReplayMainUserWidget.h"
 
-class UReplayKey;
 class AActor;
 class AReplayController;
+class UReplayKey;
 
 bool UReplayMainUserWidget::OnTimelineModePressed() {
     return false;
@@ -56,6 +56,10 @@ bool UReplayMainUserWidget::BPF_RemoveSelectedKeyCut() {
 }
 
 bool UReplayMainUserWidget::BPF_RemoveSelectedKey() {
+    return false;
+}
+
+bool UReplayMainUserWidget::BPF_RemoveHoveredKey() {
     return false;
 }
 

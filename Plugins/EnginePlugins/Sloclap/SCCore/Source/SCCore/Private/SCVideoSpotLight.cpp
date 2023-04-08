@@ -1,5 +1,5 @@
-#include "SCVideoSpotLight.h"
-
+//#include "SCVideoSpotLight.h"
+//
 //ASCVideoSpotLight::ASCVideoSpotLight() {
 //}
-
+//

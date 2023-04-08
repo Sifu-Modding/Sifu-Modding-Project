@@ -3,11 +3,11 @@
 #include "SCGameplayAbility.h"
 #include "TraversalAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTraversalAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiEntryTypes;
     
     UTraversalAbility();

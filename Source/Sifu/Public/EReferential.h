@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EReferential.generated.h"
 
-UENUM()
-enum class EReferential {
+UENUM(BlueprintType)
+enum class EReferential : uint8 {
     Absolute,
     Relative,
 };

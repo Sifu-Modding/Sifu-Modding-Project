@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EHitBoxAttackProperties.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EHitBoxAttackProperties : uint8 {
     KnockDown,
     PushBack,

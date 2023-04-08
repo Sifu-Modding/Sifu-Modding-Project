@@ -6,16 +6,16 @@
 class UAsyncTaskWaitForSignIn;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UAsyncTaskWaitForSignIn : public UMenuAsyncActionBase {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAsyncTaskWaitForSignInCompleted, const FText&, _error);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTaskWaitForSignInCompleted OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTaskWaitForSignInCompleted OnFail;
     
     UAsyncTaskWaitForSignIn();

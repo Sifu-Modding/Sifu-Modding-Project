@@ -3,11 +3,11 @@
 #include "UObject/Object.h"
 #include "EvaluateTargetCondition.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API UEvaluateTargetCondition : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bInverseCondition;
     
     UEvaluateTargetCondition();

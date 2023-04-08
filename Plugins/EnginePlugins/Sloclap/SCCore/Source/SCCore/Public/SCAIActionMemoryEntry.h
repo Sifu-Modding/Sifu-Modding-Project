@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "SCAIActionMemoryEntry.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FSCAIActionMemoryEntry {
     GENERATED_BODY()
 public:

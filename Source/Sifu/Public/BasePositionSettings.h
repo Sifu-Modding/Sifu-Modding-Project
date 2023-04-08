@@ -4,11 +4,11 @@
 #include "CombatCircleDescription.h"
 #include "BasePositionSettings.generated.h"
 
-UCLASS(Abstract, DefaultConfig, Config=WuguanAI)
+UCLASS(Abstract, Blueprintable, Config=Engine, DefaultConfig, Config=WuguanAI)
 class SIFU_API UBasePositionSettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCombatCircleDescription> m_CirclesDescriptions;
     
     UBasePositionSettings();

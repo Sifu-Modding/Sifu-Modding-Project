@@ -9,14 +9,14 @@ UCLASS(Abstract, Blueprintable)
 class SIFU_API UBPInfluenceTest : public UAIInfluenceTest {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_NodeName;
     
     UBPInfluenceTest();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_RunBPTest(const UAIFightingComponent* _testedAI) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FText BPE_GetDescriptionDetails() const;
     
 };

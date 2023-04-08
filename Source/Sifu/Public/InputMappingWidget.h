@@ -1,63 +1,63 @@
 #pragma once
 #include "CoreMinimal.h"
+//#include "InputCoreTypes.h"
 #include "AsyncTextureStruct.h"
-#include "SCUserWidget.h"
-#include "ERemappingAllowedInputTypes.h"
 #include "EMappableFieldScaleTypes.h"
-#include "InputCoreTypes.h"
+#include "ERemappingAllowedInputTypes.h"
+#include "SCUserWidget.h"
 #include "InputMappingWidget.generated.h"
 
 class UButtonUserWidget;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UInputMappingWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnInteractionWithRemappingFieldDelegate, FName, _ActionName, EMappableFieldScaleTypes, _ScaleType);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInteractionWithRemappingFieldDelegate m_OnWaitingForRemappingInput;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInteractionWithRemappingFieldDelegate m_OnFocusReceived;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInteractionWithRemappingFieldDelegate m_OnFocusLost;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_MappingStringName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_MappingNameStringNegativeScale;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_MappedKeyName;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_MappedKeyNameNegativeScale;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTextureStruct m_KeyInputTexture;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTextureStruct m_KeyInputTextureNegativeScale;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsMappingFieldForAxis;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceDisplayAsSingleField;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCheckDuplicateKey;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMappableFieldScaleTypes m_eSelectedFieldScaleType;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMappableFieldScaleTypes m_eFocusedFieldScaleType;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERemappingAllowedInputTypes m_eRemappingAllowedType;
     
     UInputMappingWidget();
@@ -76,13 +76,13 @@ public:
     UFUNCTION(BlueprintCallable)
     FName BPF_GetActionName();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ShouldDisplayTextureKeyRatherThanTextKeyForKeyboard(bool _bUseTexture, EMappableFieldScaleTypes _eScaleType);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRemappingStarted(bool _bIsKeyboardRemapping);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRemappingFinished(bool _bIsKeyboardRemapping, FKey _newMappingKey);
     
 };

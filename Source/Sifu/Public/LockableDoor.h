@@ -1,66 +1,69 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
 #include "LockableDoor.generated.h"
 
-class USkeletalMeshComponent;
-class USceneComponent;
+class AFightingCharacter;
+class UAnimationAsset;
 class ULevelSequence;
 class USCSaveGameComponent;
-class UAnimationAsset;
+class USceneComponent;
 class USkeletalMesh;
-class AFightingCharacter;
+class USkeletalMeshComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ALockableDoor : public AActor {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLockableDoorEndClose, const AActor*, _lockableDoorActor);
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* m_SkeletalMeshComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* m_RootComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCloseDistThreshold;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vHandleLocation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USCSaveGameComponent* m_SaveComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bShouldStayOpen;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULevelSequence* m_levelSequenceWay1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULevelSequence* m_levelSequenceWay2;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLockableDoorEndClose m_OnDoorEndClose;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCanLockNavBuild;
     
 private:
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_SkeletalMesh)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_SkeletalMesh, meta=(AllowPrivateAccess=true))
     USkeletalMesh* m_SkeletalMesh;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_HidenMeshComponents, meta=(AllowPrivateAccess=true))
+    TArray<FName> m_HiddenMeshComponents;
+    
 public:
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool m_bLocked;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bOpened;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_sequenceRoleName;
     
     ALockableDoor();
@@ -73,11 +76,14 @@ public:
     void SetLocked(bool bLocked);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bRecording);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SkeletalMesh();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_HidenMeshComponents();
     
 public:
     UFUNCTION(BlueprintCallable)
@@ -101,22 +107,22 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_AddNavBuildLock();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OpenedStatusChanged();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDoorAnimationFinished();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_MustMirrorOpeningAnim(const AFightingCharacter* _Instigator, bool _bInteraction1) const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_LockedStatusChanged();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetOpeningDoorInfo(const AFightingCharacter* _Instigator, bool _bInteraction1, bool& _outPlayAnimOnCharacter, bool& _outMustMirrorAnimOnCharacter) const;
     
 };

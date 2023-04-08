@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FInFightPlayersInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_EnemyActor;
     
     FInFightPlayersInfo();

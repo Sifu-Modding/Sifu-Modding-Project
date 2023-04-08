@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPushableState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPushableState : uint8 {
     Stopped,
     Moving,

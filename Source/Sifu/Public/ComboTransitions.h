@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FComboTransitions {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FComboTransition> m_Transitions;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ParentNodeName;
     
     SIFU_API FComboTransitions();

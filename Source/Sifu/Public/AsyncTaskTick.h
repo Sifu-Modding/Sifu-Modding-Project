@@ -6,16 +6,16 @@
 class UAsyncTaskTick;
 class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UAsyncTaskTick : public UMenuAsyncActionBase {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FAsyncTaskTickDel, UAsyncTaskTick*, _task, float, _fDeltaTime, float, _fProgress, float, _fTotalTime);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTaskTickDel OnTick;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAsyncTaskTickDel OnFinished;
     
     UAsyncTaskTick();

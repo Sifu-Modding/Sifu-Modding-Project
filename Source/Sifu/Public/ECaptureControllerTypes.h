@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECaptureControllerTypes.generated.h"
 
-UENUM()
-enum class ECaptureControllerTypes {
+UENUM(BlueprintType)
+enum class ECaptureControllerTypes : uint8 {
     None,
     Gamepad,
     Keyboard,

@@ -5,12 +5,12 @@
 
 class USkeletalMeshComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCSequenceAnchor : public ASCActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* m_ComponentSkeletalMesh;
     
 public:

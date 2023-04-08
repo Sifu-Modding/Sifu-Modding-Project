@@ -4,11 +4,11 @@
 #include "EFightingState.h"
 #include "EarlyBlendOutNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UEarlyBlendOutNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EFightingState> m_FightingStateActiveConditions;
     
     UEarlyBlendOutNotify();

@@ -1,11 +1,11 @@
 #include "PushableActor.h"
 #include "Components/BoxComponent.h"
+#include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "PushObjMovementComponent.h"
-#include "Components/SceneComponent.h"
 
-class AFightingCharacter;
 class AActor;
+class AFightingCharacter;
 class ASCPlayerController;
 
 void APushableActor::BPF_SetPushableState(EPushableState _eNewState) {

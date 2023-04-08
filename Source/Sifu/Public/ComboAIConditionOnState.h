@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIComboCondition.h"
 #include "UObject/NoExportTypes.h"
+#include "AIComboCondition.h"
 #include "ComboAIConditionOnState.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionOnState : public UAIComboCondition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_RandomDelay;
     
 public:

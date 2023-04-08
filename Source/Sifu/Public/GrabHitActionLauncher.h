@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "HitActionLauncher.h"
+#include "Templates/SubclassOf.h"
 #include "GrabHitActionLauncher.generated.h"
 
 class UDefenseAnimRequest;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGrabHitActionLauncher : public UHitActionLauncher {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UDefenseAnimRequest> m_overridenDefenseRequest;
     
 public:

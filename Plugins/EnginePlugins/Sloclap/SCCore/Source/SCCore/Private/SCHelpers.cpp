@@ -1,11 +1,11 @@
 #include "SCHelpers.h"
 #include "Templates/SubclassOf.h"
 
-class UObject;
-class UCurveFloat;
-class UWorld;
 class AActor;
 class UAbilityTask;
+class UCurveFloat;
+class UObject;
+class UWorld;
 
 bool USCHelpers::BPF_TestExpressionInt(const FSCMathExpressionInteger& _expression, int32 _iInputValue) {
     return false;

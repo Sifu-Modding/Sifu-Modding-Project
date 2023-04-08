@@ -3,7 +3,7 @@
 #include "ThePlainesGameState.h"
 #include "ArenaGameState.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AArenaGameState : public AThePlainesGameState {
     GENERATED_BODY()
 public:

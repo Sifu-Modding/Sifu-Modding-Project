@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTTaskNode.h"
 #include "NotifyAttackFinishedBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UNotifyAttackFinishedBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:

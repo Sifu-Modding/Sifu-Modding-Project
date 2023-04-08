@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FComboOverride {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_DifficultyName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCombo* m_ComboOverride;
     
     SIFU_API FComboOverride();

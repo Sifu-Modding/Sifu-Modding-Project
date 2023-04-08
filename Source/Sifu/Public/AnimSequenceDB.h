@@ -4,14 +4,14 @@
 #include "AnimSequenceDBCache.h"
 #include "AnimSequenceDB.generated.h"
 
-class UAnimSequenceEntitlementDB;
 class ASCPlayerController;
+class UAnimSequenceEntitlementDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAnimSequenceDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UAnimSequenceEntitlementDB*> m_DBs;
     
     UAnimSequenceDB();

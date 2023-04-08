@@ -11,10 +11,10 @@ class SCCORE_API USCPoolableActorComponent : public UInterface {
 class SCCORE_API ISCPoolableActorComponent : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnPoolableOwnerUninitializeComponents();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnPoolableOwnerInitializeComponents();
     
 };

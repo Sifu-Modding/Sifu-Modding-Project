@@ -3,7 +3,7 @@
 #include "DialogActionBase.h"
 #include "TriggerAbandonDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTriggerAbandonDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:

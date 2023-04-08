@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FBlendSpaceDirectionContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlendSpaceContainer m_BlendSpaceFront;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlendSpaceContainer m_BlendSpaceBack;
     
     FBlendSpaceDirectionContainer();

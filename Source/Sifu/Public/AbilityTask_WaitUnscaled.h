@@ -4,14 +4,14 @@
 #include "WaitUnscaledDelegate.h"
 #include "AbilityTask_WaitUnscaled.generated.h"
 
-class UGameplayAbility;
 class UAbilityTask_WaitUnscaled;
+class UGameplayAbility;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAbilityTask_WaitUnscaled : public UAbilityTask {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWaitUnscaled m_OnFinish;
     
     UAbilityTask_WaitUnscaled();

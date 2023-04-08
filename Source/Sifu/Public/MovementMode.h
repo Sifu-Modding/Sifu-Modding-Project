@@ -6,28 +6,28 @@ USTRUCT(BlueprintType)
 struct FMovementMode {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bNone;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bWalking;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bNavWalking;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bFalling;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bSwimming;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bFlying;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bCustom;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     uint8 m_replicatedMvtMode;
     
     SIFU_API FMovementMode();

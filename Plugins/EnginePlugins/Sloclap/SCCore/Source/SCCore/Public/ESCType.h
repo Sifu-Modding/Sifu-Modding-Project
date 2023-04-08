@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCType : uint8 {
     Float,
     Vector,

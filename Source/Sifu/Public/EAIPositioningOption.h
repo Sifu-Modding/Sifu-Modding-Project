@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIPositioningOption.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIPositioningOption : uint8 {
     AllowObstaclesBetweenAgentAndTarget,
     FilterPositionsWithValidPath,

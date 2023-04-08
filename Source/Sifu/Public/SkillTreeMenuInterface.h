@@ -11,7 +11,7 @@ class USkillTreeMenuInterface : public UInterface {
 class ISkillTreeMenuInterface : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_DebugSkillButtonUpdated();
     
 };

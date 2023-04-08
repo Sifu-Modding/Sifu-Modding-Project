@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FWidgetPoolElementArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FWidgetPoolElement> m_Array;
     
     SIFU_API FWidgetPoolElementArray();

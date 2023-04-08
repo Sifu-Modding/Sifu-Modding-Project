@@ -4,14 +4,14 @@
 #include "Components/CanvasPanelSlot.h"
 #include "PerPlatformCanvaPanelSlot.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformCanvaPanelSlot : public UCanvasPanelSlot {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnchorData NormalLayoutData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnchorData SmallScreenLayoutData;
     
     UPerPlatformCanvaPanelSlot();

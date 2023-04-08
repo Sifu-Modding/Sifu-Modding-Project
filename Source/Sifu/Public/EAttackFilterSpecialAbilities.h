@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAttackFilterSpecialAbilities.generated.h"
 
-UENUM()
-enum class EAttackFilterSpecialAbilities {
+UENUM(BlueprintType)
+enum class EAttackFilterSpecialAbilities : uint8 {
     None,
     Parry,
     Avoid,

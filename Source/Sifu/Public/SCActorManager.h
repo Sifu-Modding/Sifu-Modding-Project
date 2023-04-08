@@ -5,13 +5,13 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USCActorManager : public UObject {
     GENERATED_BODY()
 public:
     USCActorManager();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnActorDestroyed(AActor* _actorDestroyed);
     
 };

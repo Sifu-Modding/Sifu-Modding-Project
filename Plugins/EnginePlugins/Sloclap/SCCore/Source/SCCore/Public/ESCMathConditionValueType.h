@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCMathConditionValueType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCMathConditionValueType : uint8 {
     Integer,
     Float,

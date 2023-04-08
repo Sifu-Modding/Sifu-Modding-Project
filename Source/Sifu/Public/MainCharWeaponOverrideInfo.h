@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FMainCharWeaponOverrideInfo : public FBaseWeaponOverrideInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCombo* m_MainCharCombo;
     
     SIFU_API FMainCharWeaponOverrideInfo();

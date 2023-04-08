@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAlertLevelThreshold.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAlertLevelThreshold : uint8 {
     LowerBoundNoClamp,
     UpperBoundNoClamp,

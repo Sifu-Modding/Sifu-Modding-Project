@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCameraTransitionInfoPairStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAbstractCameraData* m_CameraData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCameraTransitionInfo* m_CameraTransitionInfo;
     
     FCameraTransitionInfoPairStruct();

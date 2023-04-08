@@ -1,11 +1,6 @@
 #include "ArenaWaveObjective.h"
 
-class AAISituationActor;
-
-void UArenaWaveObjective::OnWaveComplete(int32 _iWaveIndex) {
-}
-
-void UArenaWaveObjective::OnSituationResolved(AAISituationActor* _situationActor) {
+void UArenaWaveObjective::OnWaveAndSituationComplete(int32 _iWaveIndex) {
 }
 
 UArenaWaveObjective::UArenaWaveObjective() {

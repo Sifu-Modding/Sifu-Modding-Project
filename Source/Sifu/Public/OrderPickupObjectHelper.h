@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserDefinedEnumHandler.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "SCUserDefinedEnumHandler.h"
 #include "OrderPickupObjectHelper.generated.h"
 
-class AFightingCharacter;
 class AActor;
+class AFightingCharacter;
 class UAnimSequence;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UOrderPickupObjectHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

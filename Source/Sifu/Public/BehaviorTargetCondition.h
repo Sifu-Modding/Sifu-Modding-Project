@@ -3,11 +3,11 @@
 #include "BaseActorTargetCondition.h"
 #include "BehaviorTargetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBehaviorTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     uint32 m_uiBehaviorMask;
     
     UBehaviorTargetCondition();

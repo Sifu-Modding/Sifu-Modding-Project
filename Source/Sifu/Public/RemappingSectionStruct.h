@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FRemappingSectionStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_SectionDisplayText;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMappableInputStruct> m_RemappableActions;
     
     FRemappingSectionStruct();

@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FMappingProfileInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EKeyboardLayout m_eKeyboardLayout;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UInputMappingProfileDB> m_Profile;
     
     SIFU_API FMappingProfileInfos();

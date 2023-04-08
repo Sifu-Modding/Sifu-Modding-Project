@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FCombatSpeedTransitionsAnimContainer : public FSpeedTransitionsAnimContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCardinalChangementAnimContainer m_Start_FR;
     
     SIFU_API FCombatSpeedTransitionsAnimContainer();

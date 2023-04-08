@@ -5,16 +5,16 @@
 #include "ReplayKeyWidgetVisualKey.h"
 #include "ReplayKeyWidgetVisualsDB.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UReplayKeyWidgetVisualsDB : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
-  /*  UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    TMap<FReplayKeyWidgetVisualKey, FReplayKeyWidgetVisualData> m_Visuals;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FReplayKeyWidgetVisualKey, FReplayKeyWidgetVisualData> m_Visuals;
     
-   /* UPROPERTY(BlueprintReadOnly, EditAnywhere)
-    FReplayKeyWidgetVisualData m_DefaultVisual;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FReplayKeyWidgetVisualData m_DefaultVisual;
     
 public:
     UReplayKeyWidgetVisualsDB();

@@ -9,23 +9,23 @@ UCLASS(Abstract, Blueprintable)
 class SCCORE_API USCSaveObject : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString m_SaveFilename;
     
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     uint32 m_uiVersion;
     
     USCSaveObject();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString BPE_GetSubtitlesInfoForSaveFile() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UTexture2D* BPE_GetIconForSaveFile() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString BPE_GetDetailsInfoForSaveFile() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_FillSaveWithDefaultValues();
     
 };

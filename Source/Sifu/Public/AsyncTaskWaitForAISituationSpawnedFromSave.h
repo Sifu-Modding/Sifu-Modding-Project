@@ -4,17 +4,17 @@
 #include "OnSpawnedDelegate.h"
 #include "AsyncTaskWaitForAISituationSpawnedFromSave.generated.h"
 
-class UAsyncTaskWaitForAISituationSpawnedFromSave;
 class AAISituationActor;
+class UAsyncTaskWaitForAISituationSpawnedFromSave;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncTaskWaitForAISituationSpawnedFromSave : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSpawned AllSpawned;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSpawned NothingToSpawn;
     
     UAsyncTaskWaitForAISituationSpawnedFromSave();

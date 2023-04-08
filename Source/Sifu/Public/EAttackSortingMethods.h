@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAttackSortingMethods.generated.h"
 
-UENUM()
-enum class EAttackSortingMethods {
+UENUM(BlueprintType)
+enum class EAttackSortingMethods : uint8 {
     ID,
     Damage,
     CurrentDamage,

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCSequenceBlendViewState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCSequenceBlendViewState : uint8 {
     ToSequence,
     Sequence,

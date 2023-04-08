@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EScoringKillType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EScoringKillType : uint8 {
     Standard,
     EnvironmentalFallFromPushed,

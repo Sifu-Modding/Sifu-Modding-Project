@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "SCAITriggerableActions.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API USCAITriggerableActions : public UObject {
     GENERATED_BODY()
 public:

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FGameOptionMappingRange {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_Range;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDefaultValue;
     
     SIFU_API FGameOptionMappingRange();

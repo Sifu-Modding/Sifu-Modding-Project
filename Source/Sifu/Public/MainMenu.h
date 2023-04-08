@@ -3,7 +3,7 @@
 #include "MenuWidget.h"
 #include "MainMenu.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UMainMenu : public UMenuWidget {
     GENERATED_BODY()
 public:

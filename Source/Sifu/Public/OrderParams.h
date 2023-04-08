@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "OrderParams.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class UOrderParams : public UObject {
     GENERATED_BODY()
 public:

@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "ESCLevelStreamingState.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "EProjectionComputeBehavior.h"
+#include "ESCLevelStreamingState.h"
 #include "SCGameplayStatics.generated.h"
 
-class USceneComponent;
-class UParticleSystemComponent;
+class AActor;
+class APawn;
 class APlayerCameraManager;
+class APlayerController;
 class UObject;
 class UParticleSystem;
-class AActor;
+class UParticleSystemComponent;
 class UPrimitiveComponent;
-class APlayerController;
-class APawn;
+class USceneComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -43,34 +43,34 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_SetCurrentPrimitiveDataAsDefault(UPrimitiveComponent* _primitiveComponent);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_ProjectWorldToScreenWithTransform(APlayerController* _player, const FVector& _vWorldPosition, FVector2D& _vOutScreenPosition, FTransform _cameraTransform, bool _bPlayerViewportRelative, EProjectionComputeBehavior _eComputeBehavior);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_ProjectScreenToWorldWithTransform(APlayerController* _player, const FVector2D& _vInScreenPosition, FVector& _vOutWorldPosition, FVector& _vOutWorldDir, FTransform _cameraTransform);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_LoadLevels(const UObject* _context, const TArray<FName>& _levels, bool _bSynchronous, bool _bMakeVisibleAfterLoad);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsPlaySessionPaused();
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="_worldContextObject"))
     static bool BPF_IsGamePaused(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsBuildTest();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsBuildShipping();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AActor* BPF_GetViewTarget(APlayerCameraManager* _cameraManager);
     
-    UFUNCTION(BlueprintPure, meta=(WorldContext="_worldContextObject"))
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContextObject"))
     static APawn* BPF_GetFirstLocalPlayerPawn(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float BPF_GetBlendTimeToGo(APlayerCameraManager* _cameraManager);
     
     UFUNCTION(BlueprintCallable)

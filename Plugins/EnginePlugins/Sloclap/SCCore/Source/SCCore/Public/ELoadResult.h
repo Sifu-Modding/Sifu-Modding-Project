@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ELoadResult.generated.h"
 
-UENUM()
-enum class ELoadResult {
+UENUM(BlueprintType)
+enum class ELoadResult : uint8 {
     Valid,
     Empty,
     HashInvalid,

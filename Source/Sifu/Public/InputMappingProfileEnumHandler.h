@@ -9,4 +9,5 @@ struct FInputMappingProfileEnumHandler : public FSCUserDefinedEnumHandler {
 public:
     SIFU_API FInputMappingProfileEnumHandler();
 };
+FORCEINLINE uint32 GetTypeHash(const FInputMappingProfileEnumHandler) { return 0; }
 

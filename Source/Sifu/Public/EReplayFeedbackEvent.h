@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EReplayFeedbackEvent.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EReplayFeedbackEvent : uint8 {
     RecordingReachedTimeLimit,
     RecordingMinimalTimeNotReached,

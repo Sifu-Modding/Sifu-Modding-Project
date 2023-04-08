@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FIconTextures {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* m_Textures[2];
     
     SIFU_API FIconTextures();

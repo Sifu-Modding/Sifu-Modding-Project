@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FAchievementUnlockConditionSet {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_EditorTitle;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAchievementUnlockConditionClassInstance> m_AchievementSet;
     
     FAchievementUnlockConditionSet();

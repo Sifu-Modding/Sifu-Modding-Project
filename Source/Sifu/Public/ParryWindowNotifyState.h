@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAnimNotifyState.h"
 #include "ParryType.h"
+#include "SCAnimNotifyState.h"
 #include "ParryWindowNotifyState.generated.h"
 
 class UParryPropertyDB;
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UParryWindowNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FParryType> m_ParryTypeArray;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UParryPropertyDB* m_ParryPropertyDB;
     
 public:

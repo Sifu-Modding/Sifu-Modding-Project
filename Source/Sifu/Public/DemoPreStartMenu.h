@@ -3,25 +3,25 @@
 #include "BaseStartMenu.h"
 #include "DemoPreStartMenu.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UDemoPreStartMenu : public UBaseStartMenu {
     GENERATED_BODY()
 public:
     UDemoPreStartMenu();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRetryLoadProfile();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnContinueWithoutSaving();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnConfirmGeneric();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnConfirmCancel();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAudioLanguageSetup();
     
 };

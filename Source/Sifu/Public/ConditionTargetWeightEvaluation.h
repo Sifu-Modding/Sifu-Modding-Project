@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseTargetWeightEvaluation.h"
-#include "EWeightBinaryOperator.h"
 #include "ConditionOnTargetWeightEvaluation.h"
+#include "EWeightBinaryOperator.h"
 #include "ConditionTargetWeightEvaluation.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UConditionTargetWeightEvaluation : public UBaseTargetWeightEvaluation {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeightBinaryOperator m_eOperator;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FConditionOnTargetWeightEvaluation> m_BonusPerCondition;
     
 public:
     UConditionTargetWeightEvaluation();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     static FString GetEditorDesc(const FConditionOnTargetWeightEvaluation& _eval);
     
 };

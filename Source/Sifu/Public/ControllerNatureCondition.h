@@ -4,12 +4,12 @@
 #include "EControllerNature.h"
 #include "ControllerNatureCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UControllerNatureCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EControllerNature m_eControllerNature;
     
 public:

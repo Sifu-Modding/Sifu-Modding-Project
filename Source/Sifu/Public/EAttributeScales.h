@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAttributeScales.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAttributeScales : uint8 {
     S,
     A,

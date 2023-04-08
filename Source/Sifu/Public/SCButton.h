@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/Button.h"
-#include "ButtonUnFocusedDelegate.h"
-#include "ButtonFocusedDelegate.h"
 #include "UObject/NoExportTypes.h"
+#include "Components/Button.h"
+#include "ButtonFocusedDelegate.h"
+#include "ButtonUnFocusedDelegate.h"
 #include "SCButton.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USCButton : public UButton {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FButtonFocused OnFocusReceived;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FButtonUnFocused OnFocusLost;
     
     USCButton();

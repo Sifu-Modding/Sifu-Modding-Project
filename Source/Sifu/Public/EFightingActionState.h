@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFightingActionState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFightingActionState : uint8 {
     None,
     FreeMove,

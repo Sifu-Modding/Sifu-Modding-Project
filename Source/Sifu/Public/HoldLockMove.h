@@ -3,7 +3,7 @@
 #include "SCAnimNotifyState.h"
 #include "HoldLockMove.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UHoldLockMove : public USCAnimNotifyState {
     GENERATED_BODY()
 public:

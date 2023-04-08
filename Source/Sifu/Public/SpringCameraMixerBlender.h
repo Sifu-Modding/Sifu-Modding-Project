@@ -5,20 +5,20 @@
 
 class UCameraComponentThird;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API USpringCameraMixerBlender : public UCameraMixerBlender {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSpeedFactor;
     
 public:
     USpringCameraMixerBlender();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetTargetRatio(UCameraComponentThird* _camera) const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetSpeedFactor(UCameraComponentThird* _camera, float _fTargetRatio, float _fOldRatio) const;
     
 };

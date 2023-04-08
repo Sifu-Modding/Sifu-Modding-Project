@@ -1,7 +1,7 @@
 #include "BaseHitDetectionDB.h"
 
-class USkeletalMeshComponent;
 class ABaseCharacter;
+class USkeletalMeshComponent;
 
 FName UBaseHitDetectionDB::BPF_GetRealBoneName(USkeletalMeshComponent* _meshComponent) const {
     return NAME_None;

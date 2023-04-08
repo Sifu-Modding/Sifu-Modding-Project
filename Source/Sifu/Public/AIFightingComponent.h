@@ -1,46 +1,47 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "AIComponent.h"
-#include "EOrderType.h"
-#include "EMcDominationGaugeSteps.h"
-#include "EOrderState.h"
-#include "EAvoidType.h"
-#include "HitRequest.h"
-#include "SCDelegate.h"
-#include "OnCombatRoleChangedDynamicDelegate.h"
-#include "EGlobalBehaviors.h"
-#include "SCDelegate.h"
-#include "VariableWeightEnumHandler.h"
-#include "AnimContainer.h"
-#include "TurnAnimationArray.h"
-#include "ESCAICombatRoles.h"
 #include "UObject/NoExportTypes.h"
-#include "PhasesTransitionObjectCache.h"
-#include "HitDescription.h"
-#include "EDefenseTactics.h"
-#include "AIPhaseNodeSoftLink.h"
+#include "AnimContainer.h"
+#include "SCDelegate.h"
+#include "SCDelegate.h"
+#include "AIComponent.h"
+#include "AIDefenseTargetAttackInfos.h"
 #include "AIPhaseNodeHardLink.h"
+#include "AIPhaseNodeSoftLink.h"
+#include "CarriedPropDataRow.h"
 #include "EAIContextualDefenseType.h"
 #include "EAlertedReason.h"
-#include "AIDefenseTargetAttackInfos.h"
+#include "EAvoidType.h"
+#include "EDefenseTactics.h"
+#include "EGlobalBehaviors.h"
+#include "EMcDominationGaugeSteps.h"
+#include "EOrderState.h"
+#include "EOrderType.h"
+#include "ESCAICombatRoles.h"
+#include "HitDescription.h"
+#include "HitRequest.h"
+#include "OnCombatRoleChangedDynamicDelegate.h"
+#include "PhasesTransitionObjectCache.h"
+#include "Templates/SubclassOf.h"
+#include "TurnAnimationArray.h"
+#include "VariableWeightEnumHandler.h"
 #include "AIFightingComponent.generated.h"
 
 class AActor;
 class APathPatrol;
-class UFightingMovementComponent;
-class UAIFightingComponent;
-class UOrderComponent;
-class UAttackDB;
 class UAIContextualDefense;
-class UBlendSpace1D;
+class UAIFightingComponent;
 class UAIPhaseScenario;
 class UAIPhaseTransition;
-class UObject;
+class UAttackDB;
 class UAvoidAbility;
+class UBlendSpace1D;
 class UCombo;
+class UFightingMovementComponent;
+class UObject;
+class UOrderComponent;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAIFightingComponent : public UAIComponent {
     GENERATED_BODY()
 public:
@@ -56,170 +57,179 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FAIEnemyOrderStateChanged, EOrderState, _eOrderState, EOrderType, _eOrderType);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAIDominationStepChanged, EMcDominationGaugeSteps, _eNewStep);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnOpponentAvoidedAttack OnOpponentAvoidedAttack;
     
-    /*UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnComboFinished;
+    /*UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnComboFinished;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnComboStarted;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnComboStarted;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnAICalledForHelp;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnAICalledForHelp;*/
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnAIPhaseChangedDynamic OnAIPhaseChangedDynamic;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFetchObjectDelegate OnStartFetchingObject;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FThrowObjectDelegate OnStartThrowingObject;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCombatRoleChangedDynamic OnCombatRoleChangedDynamic;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIGlobalBehaviorChangedDynamic OnGlobalBehaviorChangedDelegate;
     
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FMulticastDelegateActorDyn OnAbandonning;*/
+  /*  UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FMulticastDelegateActorDyn* OnAbandonning;*/
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIGlobalBehaviorChangedDynamic OnPostGlobalBehaviorChangedDelegate;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAINotify OnSeenEnemyDeath;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAINotify OnEnemyRevivalDelegate;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAINotify OnKillSpare;
     
-    /*UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnDefensePreparedDelegate;*/
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnDefensePreparedDelegate;
     
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnDefenseStarted;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnDefenseStarted;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnDefenseCancelled;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnDefenseCancelled;*/
+  /*  
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnDefenseFinished;*/
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnDefenseFinished;*/
-    
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPendantCharge OnPendantChargesAdded;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIEnemyOrderStateChanged m_OnEnemyOrderStateChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeathCounter OnDeathCounterOnKilledChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPrefightLowStructureChanged OnPrefightLowStructureStateChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIDominationStepChanged OnMCDominationStepChangedDelegate;
     
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iDeathCounterDecreaseWhenKilled;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDeathCounterResetWhenKilled;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fChainedDodgeDelay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fLateralDodgeAngle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMemoryValidity;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPickupMaxDist;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fThreatMinDistForPickup;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fAlertPropagationDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCanBeAlerted;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FVariableWeightEnumHandler> m_DisabledVariableWeightsOnSpawnerIdle;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     uint8 m_uiIdleIndex;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_SurprisedAnimation[4];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_HeavySurprisedAnimation[4];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FTurnAnimationArray m_TurnAnimations[4];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBlendSpace1D*> m_AbandoningBlendSpaces;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_fAbandoningPlayRateRange;
     
-    UPROPERTY(Replicated)
+    UPROPERTY(EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAIPhaseScenario> m_PhaseScenario;
     
-    UPROPERTY(Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     int32 m_iCurrentPhaseNodeIndex;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FPhasesTransitionObjectCache m_PhaseTransitionObjects;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UAIPhaseTransition*> m_CurrentPhaseTransitions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CarriedProps, meta=(AllowPrivateAccess=true))
+    TArray<FCarriedPropDataRow> m_carriedPropsInfoRep;
     
 public:
     UAIFightingComponent();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetHitDuringAttack(const FHitDescription& _hitDescription);
     
+    UFUNCTION(BlueprintCallable)
+    void OnRep_CarriedProps();
+    
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOrderTraversalEnded(uint8 _iOrderID, UOrderComponent* _OrderComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOrderGrabbedStarted(uint8 _iOrderID, UOrderComponent* _OrderComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOrderGrabbedEnded(uint8 _iOrderID, UOrderComponent* _OrderComponent);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOrderAvoidedStarted(uint8 _uiOrderId, UOrderComponent* _OrderComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOrderAttackStarted(uint8 _uiOrderId, UOrderComponent* _OrderComponent);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnMoveStatusChanged(UFightingMovementComponent* _movementComponent);
     
+    UFUNCTION(BlueprintCallable)
+    void OnEnemyFalling();
+    
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAIPhaseChangeSequenceFinished();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void HittedDetection(const FHitDescription& _hitDescription);
     
     UFUNCTION(BlueprintCallable)
@@ -250,7 +260,7 @@ public:
     void BPF_SwitchToCombatRole(ESCAICombatRoles _eNewRole);
     
     UFUNCTION(BlueprintCallable)
-    void BPF_SwitchToAbandoning(const bool _bFromDialog);
+    void BPF_SwitchToAbandoning(const bool _bFromDialog, const bool _bShouldStayInAbandonStateForever);
     
     UFUNCTION(BlueprintCallable)
     void BPF_SpawnCarriedProps();
@@ -316,73 +326,73 @@ protected:
     void BPF_OverrideAvoidAbility(const TSubclassOf<UAvoidAbility>& _avoidAbility);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsStructureGaugeVisible() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInPrefightLowStructure() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInLastManPhase() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsHealthGaugeVisible() const;
     
     UFUNCTION(BlueprintCallable)
     bool BPF_HasSpawnerGroupConfrontationDialog();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasPathPatrol() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasAttackTicket() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetXPBonus();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDefenseTactics BPF_GetPreparedDefenseTactic() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetNbOccurencesInStructureBroken() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EAlertedReason BPF_GetLastAlertedReason() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EGlobalBehaviors BPF_GetGlobalBehavior(bool _bWithTimer) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* BPF_GetEnemy() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetDefenseTargetAttackInfos(FAIDefenseTargetAttackInfos& _outTargetAttackInfos) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetDefenseLastDefendedTargetAttackInfos(FAIDefenseTargetAttackInfos& _outTargetAttackInfos) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetCurrentPhaseNodeIndex() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetCurrentPhase(FName& _outName, UAIPhaseScenario*& _outScenario) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDefenseTactics BPF_GetCurrentDefenseTactic() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESCAICombatRoles BPF_GetCurrentCombatRole() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<AActor*> BPF_GetCarriedProps() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetCarriedPendantCharges() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetCanUseReactionAction() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* BPF_GetBlackBoardValueAsObject(FName _key) const;
     
     UFUNCTION(BlueprintCallable)
@@ -394,10 +404,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ForceEnemy(AActor* _Enemy, EGlobalBehaviors _eForcedDetectionReaction);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable)
+    void BPF_EndPendingPhaseTransition();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanTriggerSpare() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void BeforeGhostDamagesReset();
     
 };

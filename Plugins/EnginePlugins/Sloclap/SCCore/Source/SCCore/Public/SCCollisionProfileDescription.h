@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FSCCollisionProfileDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCCollisionResponseTemplate m_Template;
     
     SCCORE_API FSCCollisionProfileDescription();

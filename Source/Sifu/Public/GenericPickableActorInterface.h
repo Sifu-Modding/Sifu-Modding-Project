@@ -14,10 +14,10 @@ class SIFU_API UGenericPickableActorInterface : public UInterface {
 class SIFU_API IGenericPickableActorInterface : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPickedUp(const FNetStructPickUpObject& _pickupObjectOrderStruct, AFightingCharacter* _picker);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnOrderPickupEnd(const FNetStructPickUpObject& _pickupObjectOrderStruct, AFightingCharacter* _picker);
     
 };

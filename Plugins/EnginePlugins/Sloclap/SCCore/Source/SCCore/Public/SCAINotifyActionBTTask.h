@@ -3,12 +3,12 @@
 #include "SCBTTaskNode.h"
 #include "SCAINotifyActionBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCAINotifyActionBTTask : public USCBTTaskNode {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_EventName;
     
 public:

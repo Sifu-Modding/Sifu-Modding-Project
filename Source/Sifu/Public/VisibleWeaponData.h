@@ -4,11 +4,11 @@
 #include "WeaponVisuals.h"
 #include "VisibleWeaponData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UVisibleWeaponData : public UBaseWeaponData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FWeaponVisuals> m_WeaponVisuals;
     
     UVisibleWeaponData();

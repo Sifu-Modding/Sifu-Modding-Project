@@ -4,11 +4,11 @@
 #include "InputAction.h"
 #include "ActionAvailableCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UActionAvailableCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eAction;
     
     UActionAvailableCondition();

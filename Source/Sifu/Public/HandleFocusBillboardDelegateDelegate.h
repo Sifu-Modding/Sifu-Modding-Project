@@ -4,5 +4,5 @@
 
 class AVitalPointActor;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHandleFocusBillboardDelegate, AVitalPointActor*, _target);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHandleFocusBillboardDelegate, AVitalPointActor*, _target);
 

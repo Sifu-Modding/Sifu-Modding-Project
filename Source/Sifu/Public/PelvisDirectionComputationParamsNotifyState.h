@@ -4,12 +4,12 @@
 #include "PelvisDirectionComputationParams.h"
 #include "PelvisDirectionComputationParamsNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UPelvisDirectionComputationParamsNotifyState : public UAnimNotifyState {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPelvisDirectionComputationParams m_Params;
     
 public:

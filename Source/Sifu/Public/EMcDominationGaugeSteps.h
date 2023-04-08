@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMcDominationGaugeSteps.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMcDominationGaugeSteps : uint8 {
     Negative,
     Neutral,

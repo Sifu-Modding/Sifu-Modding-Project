@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAnimStructOverride : public FAnimStructBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     int32 m_iAnimIndex;
     
     FAnimStructOverride();

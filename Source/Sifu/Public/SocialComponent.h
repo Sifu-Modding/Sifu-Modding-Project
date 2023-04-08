@@ -1,81 +1,81 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "EGameModeTypes.h"
-#include "ERelationshipTypes.h"
-#include "InFightPlayersInfo.h"
-#include "NameArray.h"
-#include "EEmoteAction.h"
-#include "ESocialRequest.h"
-#include "CoopGroup.h"
-#include "GameFramework/OnlineReplStructs.h"
 #include "Engine/EngineTypes.h"
+#include "GameFramework/OnlineReplStructs.h"
+#include "CoopGroup.h"
 #include "ECoopGameModeAnswerStatus.h"
 #include "EDangerStates.h"
+#include "EEmoteAction.h"
+#include "EGameModeTypes.h"
+#include "ERelationshipTypes.h"
+#include "ESocialRequest.h"
+#include "InFightPlayersInfo.h"
+#include "NameArray.h"
 #include "SocialComponent.generated.h"
 
-class UDataTable;
 class AActor;
+class UDataTable;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API USocialComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnEquippedEmoteChanged, const FName&, _emoteName, const uint8, _uiEmoteSlotIndex);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnEquippedEmoteChanged OnEquippedEmoteChanged;
     
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* m_EmoteDataTable;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fReceivedRequestTimeout;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fRequestBroadcastRange;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNameArray m_FixedEmoteWheelContent;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNameArray m_DefaultCustomEmotesContent;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FNameArray m_FixedRequestReponseContent[5];
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiHitCountThresholdForWarning;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHealthPercentThresholdForWarning;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiHitCountThresholdForFight;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHealthPercentThresholdForFight;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFightDetectionTimeOut;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFightTimeOut;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFightRange;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCoopResolutionTimeOut;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TMap<TWeakObjectPtr<AActor>, ERelationshipTypes> m_Relationships;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_CoopGroup)
+    UPROPERTY(EditAnywhere, Transient, ReplicatedUsing=OnRep_CoopGroup, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<AActor>> m_CoopGroup;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TArray<FInFightPlayersInfo> m_InFightPlayers;
     
 public:
@@ -83,101 +83,101 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerStopCoop();
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerReadyForCoopMatchMaking(EGameModeTypes _eGameModeType);
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPrepareForCoopMatchMaking(EGameModeTypes _eGameModeType);
     
 private:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPerformEmoteActionWithGameMode(EEmoteAction _eEmoteAction, AActor* _targetActor, EGameModeTypes _eGameModeType);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPerformEmoteAction(EEmoteAction _eEmoteAction, AActor* _targetActor);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPerformBroadcastEmoteActionWithGameMode(EEmoteAction _eEmoteAction, const TArray<AActor*>& _targetActors, EGameModeTypes _eGameModeType);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPerformBroadcastEmoteAction(EEmoteAction _eEmoteAction, const TArray<AActor*>& _targetActors);
     
 public:
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerCoopPvPValidateAnswer(bool _bAccept, EGameModeTypes _eGameModeType);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerCancelRequest(ESocialRequest _eRequest);
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerCancelCoopGameMode(EGameModeTypes _eGameModeType);
     
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerApplyCoop(AActor* _actor);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CoopGroup();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCoopGroupRemoved(const FCoopGroup& _group);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCoopGroupMemberRemoved(const FUniqueNetIdRepl& _netId, AActor* _actor);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnActorRelationshipEndPlayCallBack(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _eEndPlayReason);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastStopCoop();
     
 public:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastRemoveGroupMember(FUniqueNetIdRepl _groupMemberUniqueId, EGameModeTypes _eGameModeType);
     
 private:
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastPrepareForCoopMatchMaking(EGameModeTypes _eGameModeType);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastCoopPvPUpdateAnswer(ECoopGameModeAnswerStatus _eAnswer, EGameModeTypes _eGameModeType);
     
     UFUNCTION(NetMulticast, Reliable)
     void MulticastCoopBondResolution(AActor* _coopGroupMember, const TArray<TWeakObjectPtr<AActor>>& _coopGroup);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastChangeRelationship(AActor* _actor, ERelationshipTypes _eRelation);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastCancelRequest(ESocialRequest _eRequestType);
     
-    UFUNCTION(NetMulticast, Reliable)
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void MulticastCancelCoopGameMode(EGameModeTypes _eGameModeType);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CoopDangerStateChanged(EDangerStates _ePreviousDangerState, EDangerStates _eNewDangerState);
     
 private:
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientSendRequestWithGameMode(AActor* _requestInstigator, ESocialRequest _eSocialRequest, EGameModeTypes _eGameModeType);
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientSendRequest(AActor* _requestInstigator, ESocialRequest _eSocialRequest);
     
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientReadyForCoopMatchMaking(EGameModeTypes _eGameModeType);
     
 public:
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientApplyCoop(AActor* _actor);
     
 private:
-    UFUNCTION(Client, Reliable, WithValidation)
+    UFUNCTION(BlueprintCallable, Client, Reliable, WithValidation)
     void ClientAnswerRequest(AActor* _requestAnswerer, bool _bAccept);
     
 public:
@@ -196,34 +196,34 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_LeaveCoopGroup();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInCoopGroup() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInCoopGameMode() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsEmoteUnlocked(const FName& _name) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsEmoteNew(const FName& _name) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsEmoteEquipped(const FName& _emoteName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasCoopGroupReturningToPvE();
     
     UFUNCTION(BlueprintCallable)
     ERelationshipTypes BPF_GetRelationship(AActor* _actor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetNewEmotesCount() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetCoopPlayerCount();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_CountPlayerWithAnswer(ECoopGameModeAnswerStatus _eAnswer, EGameModeTypes _eGameMode);
     
     UFUNCTION(BlueprintCallable)

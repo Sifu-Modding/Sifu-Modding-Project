@@ -3,21 +3,21 @@
 #include "UObject/Object.h"
 #include "SocialManager.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USocialManager : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCoopResolutionTimeOut;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCoopResolutionReturningPvETimeOut;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_NbNeededPlayersPerGameMode[3];
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_NbMaxPlayersPerGameMode[3];
     
 public:

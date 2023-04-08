@@ -6,17 +6,17 @@
 
 class UAvailabilityLayerData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API USpecialAbilityPropertyDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSuccessGuardGaugeRefill;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_PushLayerOnSuccess;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSpecialAbilityDelayedLayer> m_DelayedLayersOnSuccess;
     
     USpecialAbilityPropertyDB();

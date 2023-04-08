@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EvaluateTargetCondition.h"
 #include "ETargetingPrio.h"
+#include "EvaluateTargetCondition.h"
 #include "TC_ConditionOnTargettingType.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTC_ConditionOnTargettingType : public UEvaluateTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ETargetingPrio m_eTargettingType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDefaultValue;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UEvaluateTargetCondition* m_condition;
     
     UTC_ConditionOnTargettingType();

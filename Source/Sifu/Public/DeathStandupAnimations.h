@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "DeathStandupAnimationFromAnimation.h"
 #include "AnimContainer.h"
+#include "DeathStandupAnimationFromAnimation.h"
 #include "DeathStandupAnimations.generated.h"
 
 USTRUCT(BlueprintType)
 struct FDeathStandupAnimations {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_FaceDown;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_FaceUp;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_SideLeft;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_SideRight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinFaceAngle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDeathStandupAnimationFromAnimation> m_SpecialCases;
     
     SIFU_API FDeathStandupAnimations();

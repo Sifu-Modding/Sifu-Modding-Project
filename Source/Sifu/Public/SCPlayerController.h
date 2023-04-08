@@ -5,11 +5,11 @@
 #include "SCPlayerController.generated.h"
 
 class AActor;
+class UGenericErrorPopupWidget;
 class UInputContextData;
 class UUserWidget;
-class UGenericErrorPopupWidget;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASCPlayerController : public ASCBasePlayerController {
     GENERATED_BODY()
 public:
@@ -17,38 +17,38 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAllActivitiesStarted);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAchievementCompleted, const FString&, _achievementId);
     
-    UPROPERTY(BlueprintReadOnly, Export)
+    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UUserWidget> m_HUD;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> m_ControllerMotionOutputList;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> m_ControllerSecondaryOutputList;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAllActivitiesStarted m_OnAllActivitiesUpdated;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAchievementCompleted m_OnAchievementCompleted;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnQueryAchievementsCompleted m_OnQueryAchievementsCompleted;
     
     ASCPlayerController();
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void UnlockAllAchievements();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void UnlockAchievement(const FString& achievementId);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void ResetAllAchievements();
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void ResetAchievement(const FString& achievementId);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void QueryAchievements();
     
     UFUNCTION(BlueprintCallable)
@@ -57,7 +57,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void PopInputContext(UInputContextData* _inputContextData);
     
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void DebugTriggerEventProgession(const FString& _eventName, const FString& _eventParamName, int32 _iEventParamValue);
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -87,19 +87,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_QueryAchievements();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsAchievementCompleted(const FString& _achievementId);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasUnlockAllAchievements();
     
     UFUNCTION(BlueprintCallable)
     float BPF_GetTimedAchievementElapsed(const FName& _achievementId, int32& _iOutOnGoingOccurences);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* BPF_GetStartSpot() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetLastGamepadControllerType() const;
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -117,10 +117,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UGenericErrorPopupWidget* BPE_GetPopupWidget();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     float BPE_GetMaxAchievementProgress(const FString& _achievementId) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetActivitiesState(TArray<FString>& _activitiesState, TArray<FString>& _tasksToStart, TArray<FString>& _tasksToEnd, TArray<FString>& _subTasks);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

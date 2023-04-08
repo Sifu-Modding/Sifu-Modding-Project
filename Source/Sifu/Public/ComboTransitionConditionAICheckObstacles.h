@@ -3,7 +3,7 @@
 #include "ComboTransitionCondition.h"
 #include "ComboTransitionConditionAICheckObstacles.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboTransitionConditionAICheckObstacles : public UComboTransitionCondition {
     GENERATED_BODY()
 public:

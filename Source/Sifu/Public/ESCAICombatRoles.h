@@ -8,5 +8,6 @@ enum class ESCAICombatRoles : uint8 {
     DirectOpponent,
     IndirectOpponent,
     NonOpponent,
+    Num,
 };
 

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EHitTypeDetected.generated.h"
 
-UENUM()
-enum class EHitTypeDetected {
+UENUM(BlueprintType)
+enum class EHitTypeDetected : uint8 {
     AnyHit,
     HitNotDismissed,
     NoHit,

@@ -4,14 +4,14 @@
 #include "InputBehaviourStruct.h"
 #include "InputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UInputData : public UGenericInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_unrealAction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInputBehaviourStruct m_BehaviourStruct;
     
     UInputData();

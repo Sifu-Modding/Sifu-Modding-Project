@@ -5,7 +5,7 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UOrderTauntHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

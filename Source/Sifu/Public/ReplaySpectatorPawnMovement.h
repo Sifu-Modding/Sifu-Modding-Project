@@ -5,7 +5,7 @@
 #include "ApplyDirectionConstraintSignatureDelegate.h"
 #include "ReplaySpectatorPawnMovement.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UReplaySpectatorPawnMovement : public USpectatorPawnMovement {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetDirectionConstraintDelegate(FApplyDirectionConstraintSignature _delegate);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetConstrainedDirection(const FVector& _vLeashOrigin, const FVector& _vLeashSize, const FVector& _vCurrentLocation, const FVector& _vDirection, bool& _bOutConstrained) const;
     
 };

@@ -1,7 +1,7 @@
 #include "AIActionFetchObject.h"
 
-class UOrderComponent;
 class AActor;
+class UOrderComponent;
 
 void UAIActionFetchObject::OnPickupStarting(uint8 _uiOrderId, UOrderComponent* _OrderComponent) {
 }

@@ -6,14 +6,14 @@
 
 class UVitalPointDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UVitalPointDB : public UInheritedDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UVitalPointDB* m_BaseVitalPoints;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FVitalPointDataDefinition> m_VitalPointDefinitionArray;
     
     UVitalPointDB();

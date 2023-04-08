@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSpeedStateAnimContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_Anims[4];
     
     SIFU_API FSpeedStateAnimContainer();

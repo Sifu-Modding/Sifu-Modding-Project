@@ -6,11 +6,11 @@
 
 class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UReplaySoundReplication : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoundReplicationData m_SoundReplicationData;
     
     UReplaySoundReplication();

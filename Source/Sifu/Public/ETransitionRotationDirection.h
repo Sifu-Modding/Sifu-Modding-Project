@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETransitionRotationDirection.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETransitionRotationDirection : uint8 {
     Left,
     Right,

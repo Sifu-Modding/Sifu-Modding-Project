@@ -5,11 +5,11 @@
 
 class UInheritedDataAsset;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SCCORE_API UInheritedDataAsset : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UInheritedDataAsset* m_Parent;
     
     UInheritedDataAsset();

@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAlertLevel.h"
 #include "GameFramework/Actor.h"
-#include "EGlobalBehaviors.h"
-#include "SpawnerGroupSoundData.h"
-#include "SCImpostorForSave.h"
 #include "AIPhaseTransitionData.h"
 #include "AISituationNamedActor.h"
+#include "EAlertLevel.h"
 #include "EFightingState.h"
+#include "EGlobalBehaviors.h"
+#include "SCImpostorForSave.h"
+#include "SpawnerGroupSoundData.h"
 #include "AISituationActor.generated.h"
 
 class AAISituationActor;
+class AAISpawner;
 class ABaseCharacter;
+class AFightingCharacter;
+class ALockableDoor;
+class ASpawnerGroup;
 class UAIFightingComponent;
 class USCSaveGameComponent;
-class ASpawnerGroup;
-class ALockableDoor;
-class AFightingCharacter;
-class AAISpawner;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AAISituationActor : public AActor {
     GENERATED_BODY()
 public:
@@ -27,94 +27,94 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FAISituationGlobalBehaviorChangedDynamic, AAISituationActor*, SituationChanged, const UAIFightingComponent*, AI, EGlobalBehaviors, NewBehavior);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAISituationDynamicMulticastDelegate, AAISituationActor*, SituationChanged);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAISituationDynamicMulticastDelegate OnSituationActivated;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAISituationDynamicMulticastDelegate OnSituationResolved;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAISituationGlobalBehaviorChangedDynamic OnAnyAiBehaviorChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAISituationDynamicMulticastDelegate OnSituationSpawnedDynamic;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEventWithCharacterDynamic OnAISpawned;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEventWithCharacterDynamic OnAIDeath;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bHasActiveLDVisibilityOverride;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USCSaveGameComponent* m_SaveComponent;
     
 private:
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASpawnerGroup*> m_AssociatedSpawnerGroups;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ALockableDoor*> m_AssociatedLockableDoors;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AActor*> m_PositioningPOIs;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsLastManAllowed;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceLastMan;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMinKillBeforeLastMan;
     
-    UPROPERTY(AdvancedDisplay, EditInstanceOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iLastManGaugeIncrementValue;
     
-    UPROPERTY(AdvancedDisplay, EditInstanceOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iLastManMaxOccuranceCount;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSpawnerGroupSoundData m_SoundData;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bRepeatBarksWhenExhausted;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEnableMaxImpostorsLimit;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FName> m_SpawnerGroupClearedPathName;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FSCImpostorForSave> m_ImpostorToSpawnOnSaveLoaded;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bSpawnRequestedOnSaveLoaded;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     int32 m_iCurrentLastManOccuranceCount;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAutoSpawnedOnSaveLoaded;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     EGlobalBehaviors m_eBehaviorToSetOnSpawn;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_targetForHostileBehaviorsOnSpawn;
     
 public:
     AAISituationActor();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnUpdatedFromSaveCallback();
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FAISituationNamedActor Conv_NameToAISituationNamedActor(FName _name);
     
     UFUNCTION(BlueprintCallable)
@@ -129,19 +129,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SpawnSituation(EGlobalBehaviors _eBehaviorToSetOnSpawn, AActor* _targetForHostileBehaviors, bool _bForce, bool _bSkipBark);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetSpawnersUsedCount(bool _bIncludeAlerted, bool _bOnlyCurrentlyUsed) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetSpawnersUsed(TArray<AAISpawner*>& _outSpawners, bool _bIncludeAlerted, bool _bOnlyCurrentlyUsed) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetSpawnerGroupsUsed(TArray<ASpawnerGroup*>& _outSpawnerGroups) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* BPF_GetNamedActor(const FAISituationNamedActor& _namedActor) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    EGlobalBehaviors BPF_GetBehaviorOverride();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetAis(TArray<UAIFightingComponent*>& _outAiComponents, bool _bIncludeAlertedSpawners, bool _bAppendToArray, bool _bIncludeAbandonningAIs) const;
     
     UFUNCTION(BlueprintCallable)
@@ -150,7 +153,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ChangeAiPerception(bool _bActivate);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_AreAllSpawnerGroupsCleared() const;
     
     UFUNCTION(BlueprintCallable)
@@ -160,23 +163,23 @@ public:
     void BPE_UpdateLDVisibilityOverride(bool _bVisibility);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnStartAIPhaseChanged(AFightingCharacter* _fightingChar, const FAIPhaseTransitionData& _phaseTransition);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnInteractiveDialogInterrupted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnEndAIPhaseChanged(AFightingCharacter* _fightingChar, int32 _iPreviousPhaseIndex, int32 _iCurrentPhaseIndex, FName _currentPhaseName);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnAIPhaseChangeSequenceFinished(AFightingCharacter* _fightingChar, const FAIPhaseTransitionData& _phaseTransition);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnAIFightingStateChanged(AFightingCharacter* _fightingChar, EFightingState _ePreviousFightingState, EFightingState _eNewFightingState);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AlertLevelChangedCallback(EAlertLevel _eNewLevel);
     
 };

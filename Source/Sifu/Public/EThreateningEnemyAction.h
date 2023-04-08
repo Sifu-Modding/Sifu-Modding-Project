@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EThreateningEnemyAction.generated.h"
 
-UENUM()
-enum class EThreateningEnemyAction {
+UENUM(BlueprintType)
+enum class EThreateningEnemyAction : uint8 {
     Attack,
     Traversal,
     Rush,

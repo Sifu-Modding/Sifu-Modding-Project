@@ -3,7 +3,7 @@
 #include "ComboTransitionConditionAILastAttackGuardType.h"
 #include "ComboTransitionConditionLastAttackGuarded.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboTransitionConditionLastAttackGuarded : public UComboTransitionConditionAILastAttackGuardType {
     GENERATED_BODY()
 public:

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECaptureInputStep.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECaptureInputStep : uint8 {
     ActionStep,
     AxisXLeftStep,

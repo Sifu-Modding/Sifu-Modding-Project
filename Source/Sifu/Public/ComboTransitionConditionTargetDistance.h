@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ComboTransitionCondition.h"
 #include "SCMathExpressionFloat.h"
+#include "ComboTransitionCondition.h"
 #include "ComboTransitionConditionTargetDistance.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboTransitionConditionTargetDistance : public UComboTransitionCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCMathExpressionFloat m_condition;
     
     UComboTransitionConditionTargetDistance();

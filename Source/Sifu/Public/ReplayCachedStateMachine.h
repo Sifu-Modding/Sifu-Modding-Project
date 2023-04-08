@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ReplayCachedStateMachine.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplayCachedStateMachine {
     GENERATED_BODY()
 public:

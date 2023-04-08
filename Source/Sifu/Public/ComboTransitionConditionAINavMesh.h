@@ -5,14 +5,14 @@
 #include "NavMeshFreeSquare.h"
 #include "ComboTransitionConditionAINavMesh.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboTransitionConditionAINavMesh : public UComboTransitionConditionAICheckObstacles {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNavMeshFreeRange> m_FreeRanges;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNavMeshFreeSquare> m_FreeSquares;
     
     UComboTransitionConditionAINavMesh();

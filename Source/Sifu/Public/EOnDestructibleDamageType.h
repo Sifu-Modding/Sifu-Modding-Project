@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOnDestructibleDamageType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOnDestructibleDamageType : uint8 {
     FromObject,
     FromCharacter,

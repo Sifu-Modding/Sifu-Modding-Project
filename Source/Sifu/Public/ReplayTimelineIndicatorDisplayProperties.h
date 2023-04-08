@@ -8,25 +8,22 @@ USTRUCT(BlueprintType)
 struct FReplayTimelineIndicatorDisplayProperties {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-    UCurveFloat* m_TimeDilationIndicatorPositionRemappingCurve;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UCurveFloat* m_TimeDilationIndicatorWidthPerDilationValueCurve;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fIndicatorsAlignment;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fIndicatorsHeight;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
-    float m_fIndicatorsFrequency;
-    
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAntiAlias;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fIndicatorsThickness;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fTransitionThickness;
     
     SIFU_API FReplayTimelineIndicatorDisplayProperties();

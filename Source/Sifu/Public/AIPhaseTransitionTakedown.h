@@ -3,7 +3,7 @@
 #include "AIPhaseTransition.h"
 #include "AIPhaseTransitionTakedown.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionTakedown : public UAIPhaseTransition {
     GENERATED_BODY()
 public:

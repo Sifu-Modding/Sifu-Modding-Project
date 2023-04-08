@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ECharacterGender.h"
-#include "Components/ActorComponent.h"
 #include "Navigation/CrowdAgentInterface.h"
-#include "PlayerGenderSpecificData.h"
+#include "Components/ActorComponent.h"
+#include "ECharacterGender.h"
 #include "OutfitData.h"
+#include "PlayerGenderSpecificData.h"
 #include "PlayerFightingComponent.generated.h"
 
-class UEquipmentSelectionData;
 class AActor;
-class USkeletalMesh;
 class UBaseMovementDB;
+class UEquipmentSelectionData;
 class UMaterialInterface;
+class USkeletalMesh;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UPlayerFightingComponent : public UActorComponent, public ICrowdAgentInterface {
     GENERATED_BODY()
 public:
@@ -21,60 +21,60 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMeshChanged, ECharacterGender, _eNewGender, bool, _bMustHandlePropSpawn);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDialogStatusChanged);
     
-    UPROPERTY(BlueprintReadWrite, Transient, ReplicatedUsing=OnRep_Dialog)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_Dialog, meta=(AllowPrivateAccess=true))
     bool m_bIsInDialog;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogStatusChanged OnDialogStatusChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPropAttached OnPropAttached;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnMeshChanged OnMeshChanged;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UEquipmentSelectionData* m_DefaultEquipmentSelection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fLockMoveFadeDuration;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fEnemyBehindDist;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fEnemyBehindCosAngle;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FPlayerGenderSpecificData m_ByGenderData[2];
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<USkeletalMesh> m_ManSkeletalMeshPath;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<USkeletalMesh> m_WomanSkeletalMeshPath;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UBaseMovementDB> m_ManBaseMovementDBPath;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UBaseMovementDB> m_WomanBaseMovementDBPath;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eForcedGender;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bFakePlayer;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_PlayerPositionMPCParameterName;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AActor* m_AttachedProp;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, ReplicatedUsing=OnRep_OutfitIndex)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_OutfitIndex, meta=(AllowPrivateAccess=true))
     int32 m_iOutfitIndex;
     
 public:
@@ -82,27 +82,30 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetPropHidden(bool _bHidden);
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnTargetChangedCallback(AActor* _oldTarget, AActor* _newTarget);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnStatsUpdated();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_OutfitIndex();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_Dialog();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnLanded();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFalling();
     
 public:
     UFUNCTION(BlueprintCallable)
@@ -117,13 +120,19 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetIsInEndOfMovesetTutorial(bool _bActivate);
     
+    UFUNCTION(BlueprintCallable)
+    void BPF_SetIsGameover(bool _bIsGameOver);
+    
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void BPF_ServerSetIsInDialog(bool _bInDialog);
     
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveProp();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_IsGameOver() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FPlayerGenderSpecificData BPF_GetCurrentGenderData() const;
     
     

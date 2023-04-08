@@ -6,15 +6,15 @@
 
 class UCameraData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCameraData : public UAbstractCameraData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraNodeStruct m_CameraNodeStruct;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCameraData* m_ParentCamera;
     
 public:

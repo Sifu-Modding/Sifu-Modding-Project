@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/ScaleBoxSlot.h"
+#include "Types/SlateEnums.h"
+#include "Types/SlateEnums.h"
 #include "Layout/Margin.h"
-#include "Types/SlateEnums.h"
-#include "Types/SlateEnums.h"
+#include "Components/ScaleBoxSlot.h"
 #include "PerPlatformScaleBoxSlot.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformScaleBoxSlot : public UScaleBoxSlot {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin NormalPadding;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMargin SmallScreenPadding;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EHorizontalAlignment> NormalHorizontalAlignment;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EHorizontalAlignment> SmallScreenHorizontalAlignment;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EVerticalAlignment> NormalVerticalAlignment;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EVerticalAlignment> SmallScreenVerticalAlignment;
     
     UPerPlatformScaleBoxSlot();

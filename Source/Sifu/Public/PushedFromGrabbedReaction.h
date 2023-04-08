@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FPushedFromGrabbedReaction {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_Loop;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPropertyReactionMovement m_Movement;
     
     SIFU_API FPushedFromGrabbedReaction();

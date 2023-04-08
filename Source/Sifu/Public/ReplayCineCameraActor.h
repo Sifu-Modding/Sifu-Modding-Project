@@ -5,12 +5,12 @@
 
 class UReplayCineCameraComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AReplayCineCameraActor : public ACineCameraActor {
     GENERATED_BODY()
 public:
-   /* AReplayCineCameraActor();*/
-    UFUNCTION(BlueprintPure)
+    //AReplayCineCameraActor();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReplayCineCameraComponent* BPF_GetReplayCineCameraComponent() const;
     
 };

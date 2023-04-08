@@ -1,6 +1,6 @@
 #include "SCTeleporter.h"
-#include "Components/SceneComponent.h"
 #include "Components/BoxComponent.h"
+#include "Components/SceneComponent.h"
 
 class AActor;
 

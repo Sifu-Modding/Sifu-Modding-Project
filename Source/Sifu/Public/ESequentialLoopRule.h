@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESequentialLoopRule.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESequentialLoopRule : uint8 {
     LoopOnAllInSameOrder,
     LoopOnLast,

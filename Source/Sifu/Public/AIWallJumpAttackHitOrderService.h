@@ -3,7 +3,7 @@
 #include "HitOrderService.h"
 #include "AIWallJumpAttackHitOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIWallJumpAttackHitOrderService : public UHitOrderService {
     GENERATED_BODY()
 public:

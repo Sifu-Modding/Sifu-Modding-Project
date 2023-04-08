@@ -2,11 +2,12 @@
 #include "CoreMinimal.h"
 #include "EWorldTravelLoadSaveStrategy.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWorldTravelLoadSaveStrategy : uint8 {
     Nothing,
     SaveOnly,
     LoadOnly,
     SaveThenLoad,
+    UseDefaultSaveMode,
 };
 

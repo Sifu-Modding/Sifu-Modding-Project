@@ -3,7 +3,7 @@
 #include "BaseActorTargetCondition.h"
 #include "IsLockTargetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UIsLockTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:

@@ -7,5 +7,7 @@ USCTrackingConfig::USCTrackingConfig() {
     this->m_ApiTrackingLevelPath = TEXT("trackinglevel");
     this->m_ApiHealthPath = TEXT("healthepic");
     this->m_ApiKey = TEXT("n9ERUnrwoB1yqttqJLSjSaCzozHMvwIF6FMmFgC2");
+    this->m_ApiHealthPathSteamOverride = TEXT("healthsteam");
+    this->m_ApiEventPathSteamOverride = TEXT("posteventsteam");
 }
 

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDownState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDownState : uint8 {
     Down,
     StandingUp,

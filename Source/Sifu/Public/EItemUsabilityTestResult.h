@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EItemUsabilityTestResult.generated.h"
 
-UENUM()
-enum class EItemUsabilityTestResult {
+UENUM(BlueprintType)
+enum class EItemUsabilityTestResult : uint8 {
     CanUse,
     NotEquipped,
     OnCoolDown,

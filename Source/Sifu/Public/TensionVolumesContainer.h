@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "TensionVolumesContainer.generated.h"
 
-class ASoundTensionVolume;
 class ASoundTensionPortal;
+class ASoundTensionVolume;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTensionVolumesContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<TWeakObjectPtr<ASoundTensionVolume>> m_overlappedTensionVolumes;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<TWeakObjectPtr<ASoundTensionPortal>, bool> m_TensionPortalsCrossed;
     
     SIFU_API FTensionVolumesContainer();

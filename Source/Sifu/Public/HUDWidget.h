@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCUserWidget.h"
 #include "EQuadrantTypes.h"
+#include "SCUserWidget.h"
 #include "HUDWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UHUDWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EQuadrantTypes m_eCurrentQuadrant;
     
     UHUDWidget();
@@ -30,25 +30,25 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnAltAttack(EQuadrantTypes _eNewQuadrant, uint8 _uiCurrentComboIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsAttacking() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ResetFillingsFromQuadrant(EQuadrantTypes _eQuadrant);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_RegularAttack(EQuadrantTypes _eAttackStartQuadrant, EQuadrantTypes _eAttackEndQuadrant, uint8 _uiAttackIndex, bool _bFromEditor);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_RefreshQuadrantError(EQuadrantTypes _eQuadrant, bool _bError);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnRebuild();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ComboStart(EQuadrantTypes _eNewQuadrant);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ComboEnds(EQuadrantTypes _eNewQuadrant);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
@@ -57,7 +57,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_AttackEndsInOtherQuadrant(EQuadrantTypes _eNewQuadrant);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_AlternativeAttack(EQuadrantTypes _eAttackStartQuadrant, EQuadrantTypes _eAttackEndQuadrant, bool _bFromEditor);
     
 };

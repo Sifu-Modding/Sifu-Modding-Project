@@ -3,7 +3,7 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionIsTargetCarryingWeapon.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionIsTargetCarryingWeapon : public UAIComboCondition {
     GENERATED_BODY()
 public:

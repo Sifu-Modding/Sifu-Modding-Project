@@ -5,12 +5,12 @@
 #include "SCSequenceParameters.h"
 #include "SCLevelSequenceHelpers.generated.h"
 
-class APlayerController;
+class AActor;
 class ACharacter;
 class ALevelSequenceActor;
-class AActor;
+class APlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCLevelSequenceHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -33,7 +33,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_PauseSequence(const ALevelSequenceActor* _sequenceActor);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FName BPF_GetTeleportRoleName();
     
     UFUNCTION(BlueprintCallable)

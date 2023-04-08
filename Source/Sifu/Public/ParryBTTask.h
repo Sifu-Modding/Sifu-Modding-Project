@@ -3,7 +3,7 @@
 #include "AIDefenseBTTask.h"
 #include "ParryBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UParryBTTask : public UAIDefenseBTTask {
     GENERATED_BODY()
 public:

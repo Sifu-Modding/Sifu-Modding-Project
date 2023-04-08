@@ -4,11 +4,11 @@
 #include "EGameDifficulty.h"
 #include "SCDebugSettings.generated.h"
 
-UCLASS(Config=User)
+UCLASS(Blueprintable, Config=User)
 class SIFU_API USCDebugSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGameDifficulty m_eForcedDifficulty;
     
     USCDebugSettings();

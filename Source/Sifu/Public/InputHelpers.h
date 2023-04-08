@@ -6,7 +6,7 @@
 
 class ASCPlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UInputHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

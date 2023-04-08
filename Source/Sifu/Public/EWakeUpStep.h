@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EWakeUpStep.generated.h"
 
-UENUM()
-enum class EWakeUpStep {
+UENUM(BlueprintType)
+enum class EWakeUpStep : uint8 {
     JustSleeping,
     Sleeping,
     JustTryingToWakeUp,

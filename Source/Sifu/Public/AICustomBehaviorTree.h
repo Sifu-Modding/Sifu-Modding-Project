@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FAICustomBehaviorTree {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag m_DynamicBehaviorGameplayTag;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBehaviorTree* m_BehaviorToUse;
     
     SIFU_API FAICustomBehaviorTree();

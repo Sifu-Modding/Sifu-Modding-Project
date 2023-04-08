@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NetOrderStructPlayAnim.h"
 #include "EFightingState.h"
+#include "NetOrderStructPlayAnim.h"
 #include "NetOrderStructFightingStateRecovery.generated.h"
 
 USTRUCT(BlueprintType)
 struct FNetOrderStructFightingStateRecovery : public FNetOrderStructPlayAnim {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingState m_eFightingState;
     
     SIFU_API FNetOrderStructFightingStateRecovery();

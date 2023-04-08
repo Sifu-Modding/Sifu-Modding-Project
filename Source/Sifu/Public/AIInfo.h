@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "AIInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAIInfo {
     GENERATED_BODY()
 public:

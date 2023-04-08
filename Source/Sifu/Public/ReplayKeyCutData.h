@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FReplayKeyCutData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EReplayKeyCutType m_eCutType;
     
     SIFU_API FReplayKeyCutData();

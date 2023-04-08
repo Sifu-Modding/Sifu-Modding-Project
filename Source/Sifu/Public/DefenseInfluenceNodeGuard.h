@@ -3,7 +3,7 @@
 #include "ContextualDefenseInfluenceNode.h"
 #include "DefenseInfluenceNodeGuard.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDefenseInfluenceNodeGuard : public UContextualDefenseInfluenceNode {
     GENERATED_BODY()
 public:

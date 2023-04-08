@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EThrowObjectActionType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EThrowObjectActionType : uint8 {
     ObjectPickedUp,
     ObjectOnGround,

@@ -3,7 +3,7 @@
 #include "CameraTransitionModule.h"
 #include "CTM_SynchroMirrorMeleeService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCTM_SynchroMirrorMeleeService : public UCameraTransitionModule {
     GENERATED_BODY()
 public:

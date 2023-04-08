@@ -1,12 +1,21 @@
 #include "WGGameplayStatics.h"
 
 class ACharacter;
+class UObject;
 
 FName UWGGameplayStatics::BPF_StartConversation(ACharacter* _character, FName _startingSegment, const bool _bGenericSubtitles, ACharacter* _secondary, bool _bCutOtherDialogs, bool _bLookAtEnabled, bool _bIgnoreCharacterCanSpeak) {
     return NAME_None;
 }
 
 void UWGGameplayStatics::BPF_SetGameDifficulty(EGameDifficulty _eDifficulty) {
+}
+
+bool UWGGameplayStatics::BPF_IsGameOver(UObject* _worldContext) {
+    return false;
+}
+
+bool UWGGameplayStatics::BPF_IsChallengeGameMode(UObject* _worldContext) {
+    return false;
 }
 
 EGameDifficulty UWGGameplayStatics::BPF_GetGameDifficulty(bool _bNeedSaveGame) {

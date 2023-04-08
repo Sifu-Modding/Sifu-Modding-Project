@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "BPOrderServiceInstance.h"
 #include "OrderService.h"
-#include "UObject/NoExportTypes.h"
 #include "TranslateToTargetOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTranslateToTargetOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseAnimRootMotion;
     
     UTranslateToTargetOrderService();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector BPE_GetTarget(const FBPOrderServiceInstance& _instance) const;
     
 };

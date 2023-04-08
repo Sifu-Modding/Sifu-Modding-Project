@@ -1,24 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "AISpawner.h"
 #include "EAIArchetype.h"
-#include "GameplayTagContainer.h"
 #include "EGlobalBehaviors.h"
 #include "AIWaveSpawner.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AAIWaveSpawner : public AAISpawner {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iArchetypesMask;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag m_WaveTag;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGlobalBehaviors m_eGlobalBehaviorAtSpawn;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bAllowSpawnWhileVisible;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bHasPriorityIfVisible;
     
 public:
     AAIWaveSpawner();

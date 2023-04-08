@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "AISpawnedDescription.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAISpawnedDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiSpawnerGroupIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iSpawnerIndexInLayer;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bKilled;
     
     SIFU_API FAISpawnedDescription();

@@ -5,18 +5,18 @@
 
 class AVitalPointActor;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UVitalPointWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     UVitalPointWidget();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AVitalPointActor* BPF_GetVitalPointActor();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnVitalPointActorSet(AVitalPointActor* _vitalPointOwner);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnVitalPointActorRemove(AVitalPointActor* _vitalPointPreviousOwner);
     
 };

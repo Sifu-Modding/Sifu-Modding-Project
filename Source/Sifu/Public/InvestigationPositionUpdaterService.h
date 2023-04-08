@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTService.h"
 #include "InvestigationPositionUpdaterService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UInvestigationPositionUpdaterService : public UBTService {
     GENERATED_BODY()
 public:

@@ -3,7 +3,7 @@
 #include "SCAnimNotify.h"
 #include "PushObjectNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UPushObjectNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:

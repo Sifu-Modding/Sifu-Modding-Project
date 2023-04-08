@@ -1,14 +1,17 @@
 #include "AIManagerHelpers.h"
 
-class UAIFightingComponent;
-class AActor;
-class AAISituationActor;
 class AAIDirectorActor;
+class AAISituationActor;
+class AActor;
+class UAIFightingComponent;
 
 void UAIManagerHelpers::BPF_SetWantedArchetypeType(EArchetypeType _eWantedType) {
 }
 
 void UAIManagerHelpers::BPF_SetAIPositioningOptionToggled(const AActor* _targetActor, EAIPositioningOption _eOption, bool _bToggled) {
+}
+
+void UAIManagerHelpers::BPF_SetAICanDropWeapon(bool _bCanDropWeapon) {
 }
 
 bool UAIManagerHelpers::BPF_IsAIPositioningOptionToggled(const AActor* _targetActor, EAIPositioningOption _eOption) {

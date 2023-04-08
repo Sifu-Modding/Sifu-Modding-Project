@@ -4,12 +4,12 @@
 #include "AsyncTextureStruct.h"
 #include "AsyncTextureBinding.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncTextureBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
     UAsyncTextureBinding();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     FAsyncTextureStruct GetValue() const;
     
 };

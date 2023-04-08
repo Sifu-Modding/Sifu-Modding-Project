@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Abilities/Tasks/AbilityTask.h"
-#include "EALPriority.h"
 #include "EALBinaryOperation.h"
+#include "EALPriority.h"
 #include "AbilityTask_PushAvailabilityLayers.generated.h"
 
-class UAvailabilityLayerData;
 class UAbilityTask_PushAvailabilityLayers;
+class UAvailabilityLayerData;
 class UGameplayAbility;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAbilityTask_PushAvailabilityLayers : public UAbilityTask {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_availabilityLayerData;
     
     UAbilityTask_PushAvailabilityLayers();

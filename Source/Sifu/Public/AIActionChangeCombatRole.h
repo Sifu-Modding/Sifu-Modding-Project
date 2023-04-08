@@ -4,11 +4,11 @@
 #include "WGAiAction.h"
 #include "AIActionChangeCombatRole.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionChangeCombatRole : public UWGAiAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCAICombatRoles m_eCombatRoleToAssign;
     
     UAIActionChangeCombatRole();

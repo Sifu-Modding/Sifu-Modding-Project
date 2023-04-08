@@ -5,11 +5,11 @@
 
 class UVitalPointData;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionFocusAttackVictim : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UVitalPointData* m_VitalPoint;
     
     UAIPhaseTransitionFocusAttackVictim();

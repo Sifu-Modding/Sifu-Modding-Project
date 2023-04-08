@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FVoiceVariationsAkSwitchContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> m_VoiceVariationsSwitchValues;
     
     SIFU_API FVoiceVariationsAkSwitchContainer();

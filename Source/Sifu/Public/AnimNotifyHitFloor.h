@@ -3,7 +3,7 @@
 #include "SCAnimNotify.h"
 #include "AnimNotifyHitFloor.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UAnimNotifyHitFloor : public USCAnimNotify {
     GENERATED_BODY()
 public:

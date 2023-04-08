@@ -4,10 +4,11 @@
 #include "FCgSdkLedId.h"
 #include "CgSDKBlueprint.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class CGSDK_API UCgSDKBlueprint : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
+    UCgSDKBlueprint();
     UFUNCTION(BlueprintCallable)
     static bool ShowProgressBar(const FString& progressBarName);
     
@@ -53,6 +54,5 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool ClearAllEvents();
     
-    UCgSDKBlueprint();
 };
 

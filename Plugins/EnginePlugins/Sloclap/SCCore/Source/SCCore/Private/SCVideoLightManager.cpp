@@ -1,10 +1,10 @@
 #include "SCVideoLightManager.h"
 
-class UMediaTexture;
-class UMediaSource;
-class UMaterialInterface;
-class ULocalLightComponent;
 class UCurveLinearColor;
+class ULocalLightComponent;
+class UMaterialInterface;
+class UMediaSource;
+class UMediaTexture;
 
 void USCVideoLightManager::PreCache(UMediaTexture* MediaTex, UMediaSource* MediaSource, UMaterialInterface* SamplerMaterialBase) {
 }

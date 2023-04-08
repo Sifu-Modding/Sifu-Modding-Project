@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCPoolableActorsContainerPoolEntry.h"
 #include "GameFramework/Actor.h"
+#include "SCPoolableActorsContainerPoolEntry.h"
+#include "Templates/SubclassOf.h"
 #include "SCPoolableActorsContainer.generated.h"
 
 class ASCCharacterImpostor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCPoolableActorsContainer : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCPoolableActorsContainerPoolEntry> m_Pools;
     
 public:

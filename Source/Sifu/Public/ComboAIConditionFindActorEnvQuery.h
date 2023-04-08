@@ -3,15 +3,15 @@
 #include "ComboAIConditionFindActorsEnvQuery.h"
 #include "ComboAIConditionFindActorEnvQuery.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionFindActorEnvQuery : public UComboAIConditionFindActorsEnvQuery {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_StoreResultInBlackBoardKey;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_StoreResultInBlackBoardKeyVector;
     
 public:

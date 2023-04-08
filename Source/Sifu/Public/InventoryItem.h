@@ -7,25 +7,25 @@ USTRUCT(BlueprintType)
 struct SIFU_API FInventoryItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FEquipmentStruct m_Item;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     int32 m_iItemCount;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bIsEquipped;
     
-    UPROPERTY(EditDefaultsOnly, SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     int8 m_iEquippedItemSlot;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     float m_fDurability;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bBroken;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bIsNew;
     
     FInventoryItem();

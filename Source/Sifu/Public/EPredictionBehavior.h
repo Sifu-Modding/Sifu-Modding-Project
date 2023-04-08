@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPredictionBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPredictionBehavior : uint8 {
     Current,
     Prediction,

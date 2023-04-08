@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderService.h"
 #include "EALBinaryOperation.h"
+#include "OrderService.h"
 #include "AvailabilityLayerOrderService.generated.h"
 
 class UAvailabilityLayerData;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAvailabilityLayerOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_availabilityLayerData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EALBinaryOperation m_eOperation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iPriority;
     
     UAvailabilityLayerOrderService();

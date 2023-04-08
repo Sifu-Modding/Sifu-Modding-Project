@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct FSpeedStateFromGoalDistSelector {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESpeedState m_eNearFromGoalSpeedState;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDistToGoalThresold;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESpeedState m_eFarFromGoalSpeedState;
     
     SIFU_API FSpeedStateFromGoalDistSelector();

@@ -5,12 +5,12 @@
 
 class USCAITriggerableActions;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API USCTriggerableActionsComboEvent : public UComboEvent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USCAITriggerableActions*> m_ActionsToTrigger;
     
 public:

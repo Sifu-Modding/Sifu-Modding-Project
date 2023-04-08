@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SCVisualLoggerHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCVisualLoggerHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

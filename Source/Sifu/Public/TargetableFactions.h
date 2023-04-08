@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FTargetableFactions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_TargetableFactions[6];
     
     SIFU_API FTargetableFactions();

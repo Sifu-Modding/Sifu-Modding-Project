@@ -4,12 +4,12 @@
 #include "EGlobalBehaviors.h"
 #include "ForceGlobalBehaviorBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UForceGlobalBehaviorBTTask : public USCBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGlobalBehaviors m_Behavior;
     
 public:

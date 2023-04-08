@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ETargetingReaction.generated.h"
 
-UENUM()
-enum class ETargetingReaction {
+UENUM(BlueprintType)
+enum class ETargetingReaction : uint8 {
     Guard,
     Deflect,
     Dodge,

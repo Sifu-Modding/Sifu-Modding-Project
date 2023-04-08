@@ -10,10 +10,10 @@ class SIFU_API UComboEvent : public UObject {
     GENERATED_BODY()
 public:
     UComboEvent();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString BPE_GetLog();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_Execute(AFightingCharacter* _character);
     
 };

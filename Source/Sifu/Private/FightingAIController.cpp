@@ -1,7 +1,7 @@
 #include "FightingAIController.h"
 
-class AActor;
 class AAISpawner;
+class AActor;
 
 void AFightingAIController::OnPerceptionUpdate(const TArray<AActor*>& _updatedActors) {
 }

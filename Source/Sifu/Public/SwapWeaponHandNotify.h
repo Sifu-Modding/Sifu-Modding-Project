@@ -3,7 +3,7 @@
 #include "SCAnimNotify.h"
 #include "SwapWeaponHandNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API USwapWeaponHandNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:

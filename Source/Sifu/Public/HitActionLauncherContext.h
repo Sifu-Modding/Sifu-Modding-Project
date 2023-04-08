@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FHitActionLauncherContext : public FGameplayEffectContext {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHitDescription m_hitDescription;
     
     SIFU_API FHitActionLauncherContext();

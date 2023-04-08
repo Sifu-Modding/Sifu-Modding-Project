@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "ECycleDirection.h"
 #include "EUIInputModes.h"
 #include "UIHelper.generated.h"
 
+class UButtonUserWidget;
+class ULocalPlayer;
+class UPanelWidget;
 class UTextBlock;
 class UUserWidget;
 class UWidget;
-class ULocalPlayer;
-class UPanelWidget;
-class UButtonUserWidget;
 class UWidgetAnimation;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UUIHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -59,25 +59,25 @@ public:
     UFUNCTION(BlueprintCallable)
     static UWidget* BPF_GetNextChildWidget(UPanelWidget* container, UWidget* currentWidget, ECycleDirection _eDirection, bool _bSkipDisabled);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EUIInputModes BPF_GetLastNavigationMode();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_GetIsPIE();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_GetIsEditor();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UWidget* BPF_GetFocusedButton();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector2D BPF_GetCursorPosition();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UButtonUserWidget* BPF_FindSelectedChildButton(UPanelWidget* _panel);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UButtonUserWidget* BPF_FindSelectedButtonInArray(const TArray<UWidget*>& _widgets);
     
     UFUNCTION(BlueprintCallable)
@@ -89,7 +89,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_DeselectAllChildButtons(UPanelWidget* _panel);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UWidget* BPF_CycleChildren(UPanelWidget* _panel, UWidget* _currentChild, ECycleDirection _eDirection, bool _bSkipDisabled);
     
     UFUNCTION(BlueprintCallable)

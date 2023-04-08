@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE: CoreUObject Object
+#include "UObject/Object.h"
 #include "LipSync_Phrase.h"
 #include "PhrasesList.generated.h"
 
 class UDataTable;
 
-UCLASS()
+UCLASS(Blueprintable)
 class TEXT2LIPSYNC_API UPhrasesList : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FLipSync_Phrase> Data;
     
 public:
-    UFUNCTION()
+    UPhrasesList();
+    UFUNCTION(BlueprintCallable)
     bool LoadFromDataTable(UDataTable* DataTable);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void GetPhraseFromList(const FName& Key, FLipSync_Phrase& ReturnValue) const;
     
-    UPhrasesList();
 };
 

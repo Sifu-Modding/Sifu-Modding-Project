@@ -4,11 +4,11 @@
 #include "AIPhaseNodeSoftLink.h"
 #include "GotoPhaseBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UGotoPhaseBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIPhaseNodeSoftLink m_phaseSoftLink;
     
     UGotoPhaseBTTask();

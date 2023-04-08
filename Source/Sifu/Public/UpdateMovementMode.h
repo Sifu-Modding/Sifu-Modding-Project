@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTService.h"
 #include "UpdateMovementMode.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UUpdateMovementMode : public UBTService {
     GENERATED_BODY()
 public:

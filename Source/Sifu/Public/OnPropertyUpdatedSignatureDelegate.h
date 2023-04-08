@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "OnPropertyUpdatedSignatureDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPropertyUpdatedSignature);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPropertyUpdatedSignature);
 

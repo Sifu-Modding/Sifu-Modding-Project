@@ -5,12 +5,12 @@
 
 class UMovieSceneRetargetingOverrideSection;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMovieSceneRetargetingOverrideTemplate : public FMovieSceneEvalTemplate {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMovieSceneRetargetingOverrideSection* Section;
     
 public:

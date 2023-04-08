@@ -65,6 +65,7 @@ UArchetypeAsset::UArchetypeAsset() {
     this->m_bCanLeaveAbandon = true;
     this->m_iArchetypeDifficulty = 1;
     this->m_BarksDb = NULL;
+    this->m_BarksDBArena = NULL;
     this->m_VitalPointDB = NULL;
     this->m_eRoleAffinity = ESCAICombatRoles::None;
     this->m_FidgetDBs[0] = NULL;

@@ -3,7 +3,7 @@
 #include "EnvironmentQuery/EnvQueryContext.h"
 #include "EQContext_Enemy.generated.h"
 
-UCLASS(EditInlineNew, MinimalAPI)
+UCLASS(Blueprintable, EditInlineNew, MinimalAPI)
 class UEQContext_Enemy : public UEnvQueryContext {
     GENERATED_BODY()
 public:

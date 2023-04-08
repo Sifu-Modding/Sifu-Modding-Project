@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDeathSequenceEvents.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDeathSequenceEvents : uint8 {
     DisplayMenu,
     Pause,

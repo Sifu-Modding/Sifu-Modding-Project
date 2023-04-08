@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FCameraSafePointConditionalPlacement {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraSafePointCondition m_condition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCameraSafePointPlacement m_placement;
     
     SIFU_API FCameraSafePointConditionalPlacement();

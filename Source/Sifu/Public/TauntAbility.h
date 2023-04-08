@@ -5,12 +5,12 @@
 
 class URandomAnimDB;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTauntAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URandomAnimDB* m_randomAnimDB;
     
 public:

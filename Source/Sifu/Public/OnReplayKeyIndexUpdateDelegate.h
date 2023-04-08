@@ -5,5 +5,5 @@
 
 class UReplayKey;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnReplayKeyIndexUpdate, UReplayKey*, _key, int32, _previousIndex, EReplayKeyIndexUpdateReason, _eReason);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnReplayKeyIndexUpdate, UReplayKey*, _key, int32, _previousIndex, EReplayKeyIndexUpdateReason, _eReason);
 

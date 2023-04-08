@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EProjectionComputeBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EProjectionComputeBehavior : uint8 {
     Raw,
     ClampToBorder,

@@ -4,11 +4,11 @@
 #include "EMenuEnum.h"
 #include "WGGameFlowNextMap.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWGGameFlowNextMap : public UGameFlowNextMap {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMenuEnum m_eMenuToShow;
     
     UWGGameFlowNextMap();

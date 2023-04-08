@@ -3,12 +3,12 @@
 #include "SoundTensionVolume.h"
 #include "SoundTensionPortal.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASoundTensionPortal : public ASoundTensionVolume {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iTensionLevelBackward;
     
 public:

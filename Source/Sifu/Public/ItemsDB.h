@@ -5,11 +5,11 @@
 
 class UBaseItemData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UItemsDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UBaseItemData*> m_Items;
     
     UItemsDB();

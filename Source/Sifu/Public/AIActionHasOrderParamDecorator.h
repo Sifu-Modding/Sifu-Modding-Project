@@ -3,12 +3,12 @@
 #include "SCBTDecorator.h"
 #include "AIActionHasOrderParamDecorator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionHasOrderParamDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_OrderParamsName;
     
 public:

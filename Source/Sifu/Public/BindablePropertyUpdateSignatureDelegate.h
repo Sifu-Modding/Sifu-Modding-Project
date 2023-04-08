@@ -4,5 +4,5 @@
 
 class UBindablePropertyBase;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBindablePropertyUpdateSignature, UBindablePropertyBase*, _property);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBindablePropertyUpdateSignature, UBindablePropertyBase*, _property);
 

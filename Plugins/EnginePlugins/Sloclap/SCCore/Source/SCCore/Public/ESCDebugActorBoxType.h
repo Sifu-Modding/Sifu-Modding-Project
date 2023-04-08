@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCDebugActorBoxType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCDebugActorBoxType : uint8 {
     BoudingBox,
     BottomSquare,

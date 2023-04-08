@@ -3,7 +3,7 @@
 #include "TE_DesignatedPrecise.h"
 #include "TE_DesignatedRough.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UTE_DesignatedRough : public UTE_DesignatedPrecise {
     GENERATED_BODY()
 public:

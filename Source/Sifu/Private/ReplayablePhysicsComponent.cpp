@@ -13,7 +13,7 @@ void UReplayablePhysicsComponent::OnRep_Active() {
 void UReplayablePhysicsComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-  /*  DOREPLIFETIME(UReplayablePhysicsComponent, m_LastPoseSnapshot);
+   /* DOREPLIFETIME(UReplayablePhysicsComponent, m_LastPoseSnapshot);
     DOREPLIFETIME(UReplayablePhysicsComponent, m_bActive);*/
 }
 

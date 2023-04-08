@@ -1,7 +1,7 @@
 #include "ControllerButtonWidget.h"
 
-class UTexture2D;
 class UGenericInputData;
+class UTexture2D;
 
 void UControllerButtonWidget::BPF_SetMappingID(const FMappingID& _mappingID, bool _bRefresh) {
 }

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraTrackingMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECameraTrackingMode : uint8 {
     PlayerRootComponent,
     PlayerPelvisBone,

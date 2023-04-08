@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FReplayReplicatedAnimInstanceAssetPlayers {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iAnimInstanceIndex;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FReplayPlayerAssetAccumulatedTime> m_AssetPlayers;
     
     SIFU_API FReplayReplicatedAnimInstanceAssetPlayers();

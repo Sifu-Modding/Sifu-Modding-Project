@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FTurnAnimationArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FTurnAnimation> m_TurnAnimations;
     
     SIFU_API FTurnAnimationArray();

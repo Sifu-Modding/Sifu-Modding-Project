@@ -2,18 +2,21 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class UFightingMovementComponent;
-class UOrderComponent;
-class UObject;
-class UAvoidAbility;
-class UAttackDB;
+class AActor;
 class APathPatrol;
 class UAIContextualDefense;
-class UCombo;
-class AActor;
 class UAIPhaseScenario;
+class UAttackDB;
+class UAvoidAbility;
+class UCombo;
+class UFightingMovementComponent;
+class UObject;
+class UOrderComponent;
 
 void UAIFightingComponent::OnTargetHitDuringAttack(const FHitDescription& _hitDescription) {
+}
+
+void UAIFightingComponent::OnRep_CarriedProps() {
 }
 
 void UAIFightingComponent::OnOrderTraversalEnded(uint8 _iOrderID, UOrderComponent* _OrderComponent) {
@@ -32,6 +35,9 @@ void UAIFightingComponent::OnOrderAttackStarted(uint8 _uiOrderId, UOrderComponen
 }
 
 void UAIFightingComponent::OnMoveStatusChanged(UFightingMovementComponent* _movementComponent) {
+}
+
+void UAIFightingComponent::OnEnemyFalling() {
 }
 
 void UAIFightingComponent::OnAIPhaseChangeSequenceFinished() {
@@ -70,7 +76,7 @@ void UAIFightingComponent::BPF_SwitchToFriendly(const bool _bFromDialog) {
 void UAIFightingComponent::BPF_SwitchToCombatRole(ESCAICombatRoles _eNewRole) {
 }
 
-void UAIFightingComponent::BPF_SwitchToAbandoning(const bool _bFromDialog) {
+void UAIFightingComponent::BPF_SwitchToAbandoning(const bool _bFromDialog, const bool _bShouldStayInAbandonStateForever) {
 }
 
 void UAIFightingComponent::BPF_SpawnCarriedProps() {
@@ -231,6 +237,9 @@ void UAIFightingComponent::BPF_ForceEnemyReactionBehavior(EGlobalBehaviors _eGlo
 void UAIFightingComponent::BPF_ForceEnemy(AActor* _Enemy, EGlobalBehaviors _eForcedDetectionReaction) {
 }
 
+void UAIFightingComponent::BPF_EndPendingPhaseTransition() {
+}
+
 bool UAIFightingComponent::BPF_CanTriggerSpare() const {
     return false;
 }
@@ -244,6 +253,7 @@ void UAIFightingComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UAIFightingComponent, m_uiIdleIndex);
     DOREPLIFETIME(UAIFightingComponent, m_PhaseScenario);
     DOREPLIFETIME(UAIFightingComponent, m_iCurrentPhaseNodeIndex);
+    DOREPLIFETIME(UAIFightingComponent, m_carriedPropsInfoRep);
 }
 
 UAIFightingComponent::UAIFightingComponent() {

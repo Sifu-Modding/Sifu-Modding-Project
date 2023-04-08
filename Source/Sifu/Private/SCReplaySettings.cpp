@@ -25,13 +25,14 @@ FReplayKeyDataCameraSettings USCReplaySettings::BPF_GetDefaultCameraSettings() {
 USCReplaySettings::USCReplaySettings() {
     this->m_ScreenShotFileName = TEXT("Photomode");
     this->m_ScreenShotDateFormat = TEXT("%Y-%m-%d---%H-%M-%S");
-    this->m_StatesToSaveWhenStartRecording.AddDefaulted(3);
-    this->m_RTPCToSaveWhenStartRecording.AddDefaulted(4);
+    this->m_StatesToSaveWhenStartRecording.AddDefaulted(5);
+    this->m_RTPCToSaveWhenStartRecording.AddDefaulted(5);
     this->m_EventToResetRTPCWhenStartRecording = TEXT("UI_ResetReplayableRTPC");
     this->m_MeshCollisionsChannels.AddDefaulted(2);
     this->m_bReplayEditorBuildEnabled = false;
     this->m_bPhotomodeBuildEnabled = true;
     this->m_bIsReplayEditorAllowedForPlatform = true;
     this->m_iReplaySkipTimeNoLoadingScreenMaxFrames = 89;
+    this->m_fDistanceForObjectTransparency = 200.00f;
 }
 

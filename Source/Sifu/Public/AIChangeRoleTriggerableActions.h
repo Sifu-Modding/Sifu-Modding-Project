@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAITriggerableActions.h"
 #include "ESCAICombatRoles.h"
+#include "SCAITriggerableActions.h"
 #include "AIChangeRoleTriggerableActions.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIChangeRoleTriggerableActions : public USCAITriggerableActions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCAICombatRoles m_eCombatRoleToAssign;
     
     UAIChangeRoleTriggerableActions();

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FConditionOnTargetWeightEvaluation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorTargetConditionInstance m_condition;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fBonus;
     
     FConditionOnTargetWeightEvaluation();

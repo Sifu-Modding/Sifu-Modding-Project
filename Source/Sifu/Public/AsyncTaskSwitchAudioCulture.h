@@ -4,17 +4,17 @@
 #include "OnCultureSwitchedDelegate.h"
 #include "AsyncTaskSwitchAudioCulture.generated.h"
 
-class UObject;
 class UAsyncTaskSwitchAudioCulture;
+class UObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncTaskSwitchAudioCulture : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCultureSwitched CultureSwitched;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCultureSwitched CultureSwitchFailed;
     
     UAsyncTaskSwitchAudioCulture();

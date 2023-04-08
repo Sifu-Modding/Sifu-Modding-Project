@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "CardinalChangementAnimContainer.h"
 #include "CardinalAnimContainer.h"
+#include "CardinalChangementAnimContainer.h"
 #include "OrientedRotationAnimContainer.h"
 #include "SpeedTransitionsAnimContainer.generated.h"
 
@@ -9,16 +9,16 @@ USTRUCT(BlueprintType)
 struct FSpeedTransitionsAnimContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCardinalChangementAnimContainer m_Start_FL;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCardinalAnimContainer m_Stop_FL;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOrientedRotationAnimContainer m_UTurn;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCardinalAnimContainer m_Strafe;
     
     SIFU_API FSpeedTransitionsAnimContainer();

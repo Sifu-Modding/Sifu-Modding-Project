@@ -3,7 +3,7 @@
 #include "BaseActorCondition.h"
 #include "ActorHasAttackTicketCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UActorHasAttackTicketCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:

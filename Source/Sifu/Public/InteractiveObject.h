@@ -3,22 +3,22 @@
 #include "GameFramework/Actor.h"
 #include "InteractiveObject.generated.h"
 
-class UInteractionObjectComponent;
 class APlayerController;
+class UInteractionObjectComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AInteractiveObject : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInteractionObjectComponent* m_InteractionObjectComponent;
     
     AInteractiveObject();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UseInteractiveObjectFailed(APlayerController* _controller, FText _reason);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UseInteractiveObject(APlayerController* _controller);
     
 public:
@@ -28,10 +28,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_Deactivate();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUseFailed(const FText& _reason);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUse();
     
 };

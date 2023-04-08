@@ -4,11 +4,11 @@
 #include "TargetSettings.h"
 #include "TargetSettingsDB.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UTargetSettingsDB : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTargetSettings m_Settings;
     
     UTargetSettingsDB();

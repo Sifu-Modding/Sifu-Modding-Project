@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
-#include "EAIArchetype.h"
 #include "AIWaveBucketDescription.h"
+#include "EAIArchetype.h"
 #include "AIWaveParamsRow.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FAIWaveParamsRow : public FTableRowBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EAIArchetype, FAIWaveBucketDescription> m_ArchetypesBuckets;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxAIInCombatDuringWave;
     
     FAIWaveParamsRow();

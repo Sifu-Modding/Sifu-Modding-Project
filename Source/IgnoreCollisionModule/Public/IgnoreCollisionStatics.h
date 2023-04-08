@@ -5,7 +5,7 @@
 
 class UPrimitiveComponent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class IGNORECOLLISIONMODULE_API UIgnoreCollisionStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

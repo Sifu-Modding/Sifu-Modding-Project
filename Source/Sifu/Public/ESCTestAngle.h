@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCTestAngle.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCTestAngle : uint8 {
     Oriented,
     NoOriented,

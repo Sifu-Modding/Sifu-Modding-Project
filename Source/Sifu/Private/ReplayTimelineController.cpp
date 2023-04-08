@@ -3,11 +3,17 @@
 
 class UReplayKey;
 
+//void UReplayTimelineController::BPF_SaveKeysWithCallback(const FSCDynamicDelegate& _onModelSaved) {
+//}
+
 void UReplayTimelineController::BPF_SaveKeys() {
 }
 
 void UReplayTimelineController::BPF_ResetTransitionContext() {
 }
+
+//void UReplayTimelineController::BPF_ResetModelWithCallback(const FSCDynamicDelegate& _onModelSaved) {
+//}
 
 void UReplayTimelineController::BPF_ResetModel() {
 }

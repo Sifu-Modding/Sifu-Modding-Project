@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EHitDismissReason.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EHitDismissReason : uint8 {
     None,
     Deflect,

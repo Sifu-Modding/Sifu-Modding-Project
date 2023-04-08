@@ -5,12 +5,12 @@
 
 class UParticleSystemComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API UDelegateHolder : public UObject {
     GENERATED_BODY()
 public:
     UDelegateHolder();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SytemCompleted(UParticleSystemComponent* Component);
     
 };

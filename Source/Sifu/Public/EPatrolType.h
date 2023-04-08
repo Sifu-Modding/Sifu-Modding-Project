@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EPatrolType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EPatrolType : uint8 {
     Loop,
     PingPong,

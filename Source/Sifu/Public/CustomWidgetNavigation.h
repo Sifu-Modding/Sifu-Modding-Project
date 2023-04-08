@@ -4,12 +4,12 @@
 #include "CustomWidgetNavigationData.h"
 #include "CustomWidgetNavigation.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UCustomWidgetNavigation : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCustomWidgetNavigationData m_CustomNavigationConfig;
     
 public:
@@ -17,7 +17,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_RestoreNavigationConfig();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsAnalogNavigationEnabled();
     
     UFUNCTION(BlueprintCallable)

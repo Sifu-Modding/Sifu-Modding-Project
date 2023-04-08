@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ELockAction.generated.h"
 
-UENUM()
-enum class ELockAction {
+UENUM(BlueprintType)
+enum class ELockAction : uint8 {
     PreciseLock,
     SwitchTarget,
     LockFromPreviewTargetWhenAttacking,

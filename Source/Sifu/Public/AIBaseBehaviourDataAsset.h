@@ -3,20 +3,20 @@
 #include "Engine/DataAsset.h"
 #include "AIBaseBehaviourDataAsset.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIBaseBehaviourDataAsset : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fProbabilityDepletedPerSecond;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinProbability;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fInitialProbability;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCooldown;
     
     UAIBaseBehaviourDataAsset();

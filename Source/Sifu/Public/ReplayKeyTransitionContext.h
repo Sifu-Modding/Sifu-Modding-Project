@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ReplayKeyTransitionContext.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplayKeyTransitionContext {
     GENERATED_BODY()
 public:

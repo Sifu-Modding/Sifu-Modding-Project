@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderServiceActivationConditions.h"
+#include "BaseActorTargetConditionInstance.h"
 #include "EOrderServiceConditionUpdateFrequency.h"
 #include "EOrderServiceDeactivationMethod.h"
-#include "BaseActorTargetConditionInstance.h"
+#include "OrderServiceActivationConditions.h"
 #include "GenericActivationCondition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGenericActivationCondition : public UOrderServiceActivationConditions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderServiceConditionUpdateFrequency m_eUpdateFrequency;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderServiceDeactivationMethod m_eDeactivationMethd;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorTargetConditionInstance m_GenericCondition;
     
     UGenericActivationCondition();

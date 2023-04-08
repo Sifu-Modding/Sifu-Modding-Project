@@ -3,14 +3,14 @@
 #include "SCSpectatorPawnBase.h"
 #include "SCSpectatorPawn.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASCSpectatorPawn : public ASCSpectatorPawnBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSpeedFactorModifier;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFOVModifier;
     
     ASCSpectatorPawn();

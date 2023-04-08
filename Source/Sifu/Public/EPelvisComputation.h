@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EPelvisComputation.generated.h"
 
-UENUM()
-enum class EPelvisComputation {
+UENUM(BlueprintType)
+enum class EPelvisComputation : uint8 {
     AllowAll,
     AllowForcedDirection,
     AnalogOnly,

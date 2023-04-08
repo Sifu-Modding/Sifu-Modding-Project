@@ -5,15 +5,15 @@
 
 class USplineComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASoundTransitionVolume : public ASCPlayerVolume {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USplineComponent* m_SplineComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_RTPC;
     
 public:

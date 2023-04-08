@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraDataModifierTickBehavior.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECameraDataModifierTickBehavior : uint8 {
     FullyBlended,
     TransitionInOrFullyBlended,

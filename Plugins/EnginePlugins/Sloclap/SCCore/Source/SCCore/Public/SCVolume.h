@@ -1,44 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Volume.h"
-#include "VolumeBounds.h"
 #include "Engine/EngineTypes.h"
+#include "GameFramework/Volume.h"
+#include "VolumeInfo.h"
 #include "SCVolume.generated.h"
 
-class ASCVolume;
 class AActor;
+class ASCVolume;
 class UPrimitiveComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCVolume : public AVolume {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASCVolume*> m_ChildrenVolumes;
     
-    UPROPERTY(BlueprintReadOnly)
-    FVolumeBounds m_CachedVolumeBounds;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVolumeInfo m_VolumeInfo;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ASCVolume* m_ParentVolume;
     
 public:
     ASCVolume();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InternalOnComponentStartOverlap(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _iOtherBodyIndex, bool _bFromSweep, const FHitResult& _sweepResult);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InternalOnComponentEndOverlap(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _iOtherBodyIndex);
     
 public:
-    UFUNCTION(BlueprintPure)
-    FVolumeBounds GetVolumeBounds() const;
-    
-    UFUNCTION(BlueprintCallable)
-    void CacheBounds();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FVolumeInfo GetVolumeInfo() const;
     
 };
 

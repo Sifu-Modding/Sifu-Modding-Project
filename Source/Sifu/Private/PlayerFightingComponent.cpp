@@ -22,6 +22,9 @@ void UPlayerFightingComponent::OnRep_Dialog() {
 void UPlayerFightingComponent::OnLanded() {
 }
 
+void UPlayerFightingComponent::OnFalling() {
+}
+
 void UPlayerFightingComponent::BPF_SwapOutfit(int32 _iNewOutfitIndex, UMaterialInterface* _forcedMaterial, bool _bSpawnProps) {
 }
 
@@ -34,6 +37,9 @@ void UPlayerFightingComponent::BPF_SpawnPropFromCurrentOutfit() {
 void UPlayerFightingComponent::BPF_SetIsInEndOfMovesetTutorial(bool _bActivate) {
 }
 
+void UPlayerFightingComponent::BPF_SetIsGameover(bool _bIsGameOver) {
+}
+
 void UPlayerFightingComponent::BPF_ServerSetIsInDialog_Implementation(bool _bInDialog) {
 }
 bool UPlayerFightingComponent::BPF_ServerSetIsInDialog_Validate(bool _bInDialog) {
@@ -41,6 +47,10 @@ bool UPlayerFightingComponent::BPF_ServerSetIsInDialog_Validate(bool _bInDialog)
 }
 
 void UPlayerFightingComponent::BPF_RemoveProp() {
+}
+
+bool UPlayerFightingComponent::BPF_IsGameOver() const {
+    return false;
 }
 
 FPlayerGenderSpecificData UPlayerFightingComponent::BPF_GetCurrentGenderData() const {

@@ -5,20 +5,20 @@
 
 class USCSaveObject;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USaveUnlockCondition : public UAchievementUnlockCondition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USCSaveObject> m_saveToCheck;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsLastSaveCheck;
     
 public:
     USaveUnlockCondition();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_CheckingSave(const USCSaveObject* _saveToCheck);
     
 };

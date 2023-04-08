@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAnimStructDeath : public FAnimStructBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool m_bCancelled;
     
     FAnimStructDeath();

@@ -3,7 +3,7 @@
 #include "ContextualDefenseInfluenceNode.h"
 #include "DefenseInfluenceNodeParryDeflect.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDefenseInfluenceNodeParryDeflect : public UContextualDefenseInfluenceNode {
     GENERATED_BODY()
 public:

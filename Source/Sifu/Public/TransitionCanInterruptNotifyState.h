@@ -4,40 +4,40 @@
 #include "SCAnimNotifyState.h"
 #include "TransitionCanInterruptNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UTransitionCanInterruptNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FBool m_TransitionAllowance[86];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_BaseName;
     
     UTransitionCanInterruptNotifyState();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InvertUTurn() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InvertTurnInPlace() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InvertStrafe() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InvertStop() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InvertStart() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void InvertAll() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AllowNone() const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void AllowAll() const;
     
 };

@@ -1,38 +1,47 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCActor.h"
 #include "EImposterSpawnTransformType.h"
+#include "SCActor.h"
 #include "SCCharacterImpostor.generated.h"
 
 class ASCCharacter;
-class USCStreamingActorComponent;
-class USCRagdollConfigDB;
-class USkeletalMeshComponentBudgeted;
 class UAnimInstance;
+class USCRagdollConfigDB;
+class USCStreamingActorComponent;
+class USkeletalMeshComponentBudgeted;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCCharacterImpostor : public ASCActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EImposterSpawnTransformType m_SpawnTransformType;
     
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USCRagdollConfigDB* m_RagdollConfig;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponentBudgeted* m_Mesh;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USCStreamingActorComponent* m_StreamingComponent;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAnimInstance* m_AnimInstance;
     
 public:
     ASCCharacterImpostor();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable)
+    void BPF_Show();
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_Hide();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void BPE_OnHideDueToDisplayLimit();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_MimicCharacter(ASCCharacter* _characterToMimic);
     
 };

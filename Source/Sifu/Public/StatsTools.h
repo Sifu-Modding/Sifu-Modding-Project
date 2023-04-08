@@ -4,21 +4,21 @@
 #include "EAttributeScales.h"
 #include "StatsTools.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UStatsTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UStatsTools();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EAttributeScales ConvertFloatToAttributeScale(float _fValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float ConvertAttributeScaleToFloat(EAttributeScales _eAttributeScale);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText BPF_GetTextFromFloatAttributeScale(float _scale);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FText BPF_GetTextFromAttributeScale(EAttributeScales _eScale);
     
 };

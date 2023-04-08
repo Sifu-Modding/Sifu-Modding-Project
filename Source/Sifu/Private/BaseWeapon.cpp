@@ -1,10 +1,10 @@
 #include "BaseWeapon.h"
-#include "Templates/SubclassOf.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "AnimInstanceReplicationComponent.h"
+#include "Templates/SubclassOf.h"
 
-class UWeaponGameplayData;
 class UBaseWeaponData;
+class UWeaponGameplayData;
 
 void ABaseWeapon::BPF_ResetWeaponGameplayData() {
 }

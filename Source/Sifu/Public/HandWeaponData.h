@@ -3,11 +3,11 @@
 #include "BaseWeaponData.h"
 #include "HandWeaponData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UHandWeaponData : public UBaseWeaponData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHandRadius;
     
     UHandWeaponData();

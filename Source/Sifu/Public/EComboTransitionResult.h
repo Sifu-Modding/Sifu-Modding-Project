@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EComboTransitionResult.generated.h"
 
-UENUM()
-enum class EComboTransitionResult {
+UENUM(BlueprintType)
+enum class EComboTransitionResult : uint8 {
     Yes,
     No,
 };

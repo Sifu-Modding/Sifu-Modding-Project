@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIAttackTicketJokerSituation.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIAttackTicketJokerSituation : uint8 {
     TargetTraversal,
     TargetTakedown,

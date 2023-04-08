@@ -4,15 +4,15 @@
 #include "SCGameplayAbility.h"
 #include "ParryFromDownAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UParryFromDownAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bLaunchDownRecovery;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_animRecoveryOverriden;
     
 public:

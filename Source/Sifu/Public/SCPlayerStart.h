@@ -1,69 +1,77 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "GameFramework/PlayerStart.h"
-#include "SCDelegate.h"
 #include "UObject/NoExportTypes.h"
+#include "GameFramework/PlayerStart.h"
 #include "GameplayTagContainer.h"
+#include "SCDelegate.h"
 #include "EPlayerScreenSide.h"
+#include "OnPlayerStartUsedDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "SCPlayerStart.generated.h"
 
+class AController;
 class ULevelSequence;
-class USceneComponent;
 class UMatineeCameraShake;
+class USceneComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASCPlayerStart : public APlayerStart {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnGotoGameplaySequenceStarted;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnGotoGameplaySequenceStarted;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnGotoGameplaySequenceFinished;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnGotoGameplaySequenceFinished;*/
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPlayerStartUsed OnPlayerSpawnedHere;
     
 protected:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> m_levelsNameToLoad;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* m_AnchorSceneComponent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bKeepBackGroundDuringStartupMenu;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vCameraForwardAtIntroEnd;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag m_PlayerStartGameplayTag;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    AController* m_spawnedPlayer;
+    
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForFirstSpawn;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPlayerScreenSide m_ePlayerScreenSide;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULevelSequence* m_IdleStartupSequence;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULevelSequence* m_StartupSequence;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCameraBlendDurationBetweenLoopAndGoto;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UMatineeCameraShake> m_CameraShakeClass;
     
 public:
     ASCPlayerStart();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_WantKeepBackgroundDuringStartupMenu() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_PrepareSequence(int32 _sequenceID);
     
 };

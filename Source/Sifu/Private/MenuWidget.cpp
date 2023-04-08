@@ -1,7 +1,7 @@
 #include "MenuWidget.h"
 
-class UWidgetAnimation;
 class UUserWidget;
+class UWidgetAnimation;
 
 void UMenuWidget::BPF_SetMapTagName(FName _mapTagName) {
 }

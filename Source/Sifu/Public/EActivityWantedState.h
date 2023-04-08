@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EActivityWantedState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EActivityWantedState : uint8 {
     Started,
     StartedThenEnded,

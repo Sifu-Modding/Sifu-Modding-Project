@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOrderSubType.generated.h"
 
-UENUM()
-enum class EOrderSubType {
+UENUM(BlueprintType)
+enum class EOrderSubType : uint8 {
     None,
     Parallelizable,
     BoundToAnimState,

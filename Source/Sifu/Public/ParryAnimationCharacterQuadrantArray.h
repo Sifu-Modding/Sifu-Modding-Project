@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FParryAnimationCharacterQuadrantArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FParryAnimationParryQuadrantArray m_Array[4];
     
     SIFU_API FParryAnimationCharacterQuadrantArray();

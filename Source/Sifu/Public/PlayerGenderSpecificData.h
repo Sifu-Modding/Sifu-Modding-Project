@@ -10,13 +10,13 @@ USTRUCT(BlueprintType)
 struct FPlayerGenderSpecificData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FOutfitData> m_Outfits;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UBaseMovementDB> m_BaseMovementDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USCCharacterPoseData> m_PoseData;
     
     SIFU_API FPlayerGenderSpecificData();

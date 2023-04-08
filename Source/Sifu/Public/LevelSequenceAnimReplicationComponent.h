@@ -1,29 +1,29 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ReplicatedSequencerAnimMontagePosition.h"
-#include "ReplicatedSequencerAnimMontage.h"
-#include "SCPoolableActorComponent.h"
 #include "Components/ActorComponent.h"
+#include "SCPoolableActorComponent.h"
+#include "ReplicatedSequencerAnimMontage.h"
+#include "ReplicatedSequencerAnimMontagePosition.h"
 #include "LevelSequenceAnimReplicationComponent.generated.h"
 
 class ALevelSequenceActor;
 class ULevelSequenceDirector;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API ULevelSequenceAnimReplicationComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TArray<FReplicatedSequencerAnimMontage> m_SequencerMontages;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_SequencerMontagesPosition)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_SequencerMontagesPosition, meta=(AllowPrivateAccess=true))
     TArray<FReplicatedSequencerAnimMontagePosition> m_SequencerAnimMontagesPosition;
     
-    UPROPERTY(Transient, ReplicatedUsing=OnRep_CinematicSlotWeight)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=OnRep_CinematicSlotWeight, meta=(AllowPrivateAccess=true))
     float m_fCinematicSlotWeight;
     
-    UPROPERTY(Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     int32 m_iPlayingSequenceId;
     
 public:
@@ -31,14 +31,14 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SequencerMontagesPosition();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_CinematicSlotWeight();
     
 public:

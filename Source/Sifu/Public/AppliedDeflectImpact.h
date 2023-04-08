@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAppliedDeflectImpact : public FAppliedHitImpact {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_KnockBackDynamic;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSelfStructureDamage;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSelfSuperDizzyDamage;
     
     FAppliedDeflectImpact();

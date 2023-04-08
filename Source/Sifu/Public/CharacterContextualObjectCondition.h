@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "BaseActorCondition.h"
 #include "BaseActorTargetConditionInstance.h"
+#include "Templates/SubclassOf.h"
 #include "CharacterContextualObjectCondition.generated.h"
 
 class UInteractionObjectComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCharacterContextualObjectCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bHasContextualObjectInRange;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorTargetConditionInstance m_ConditionOnObject;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UInteractionObjectComponent> m_CheckType;
     
     UCharacterContextualObjectCondition();

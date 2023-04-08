@@ -11,7 +11,7 @@ class SIFU_API UEnvironmentalImpactComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UEnvironmentalImpactComponent();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnImpact(AActor* _Instigator, uint8 _uiImpactType, const FHitResult& _hit);
     
 };

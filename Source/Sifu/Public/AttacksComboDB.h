@@ -4,11 +4,11 @@
 #include "AttackComboDB.h"
 #include "AttacksComboDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAttacksComboDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackComboDB m_Struct;
     
     UAttacksComboDB();

@@ -3,7 +3,7 @@
 #include "AttributeSet.h"
 #include "SCAttributeSet.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCAttributeSet : public UAttributeSet {
     GENERATED_BODY()
 public:

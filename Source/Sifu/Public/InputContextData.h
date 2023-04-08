@@ -1,50 +1,50 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "InputAction.h"
+#include "InputActionData.h"
 #include "InputContext.h"
 #include "InputMappingGroup.h"
-#include "InputActionData.h"
-#include "InputAction.h"
 #include "InputContextData.generated.h"
 
 class UGenericInputData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UInputContextData : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputContext m_contextType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_disableOther;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bPauseOther;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<InputAction, FInputActionData> m_InputActionSettings;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UGenericInputData*> m_inputActions;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInputMappingGroup> m_DefaultGamepadMapping;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FInputMappingGroup> m_DefaultKeyboadMapping;
     
     UInputContextData();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void CreateOwners();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ClearUnUsedInputs();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Clear();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Build();
     
 };

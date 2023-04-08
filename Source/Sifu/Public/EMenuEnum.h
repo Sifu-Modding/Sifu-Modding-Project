@@ -54,6 +54,8 @@ enum class EMenuEnum : uint8 {
     ArenaMain,
     ArenaOutro,
     Training_ModeSelection,
+    ArenaPauseMenu,
+    LessonMenu,
     Count,
     None,
 };

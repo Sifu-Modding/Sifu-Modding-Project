@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameplayTagContainer.h"
+#include "Templates/SubclassOf.h"
 #include "SequenceRoleTypeDescription.generated.h"
 
-class UNameHandler;
 class UAssociatedActorGetter;
+class UNameHandler;
 
 USTRUCT(BlueprintType)
 struct SCCORE_API FSequenceRoleTypeDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UNameHandler> m_NameHandler;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, TSubclassOf<UAssociatedActorGetter>> m_RoleGettersMap;
     
     FSequenceRoleTypeDescription();

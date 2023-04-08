@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SCLipSyncTools.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCLipSyncTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

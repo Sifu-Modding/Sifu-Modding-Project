@@ -6,20 +6,20 @@
 class UBaseWeaponData;
 class USkeletalMesh;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UEquipmentSelectionData : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int8 m_EquipmentMaterials[9];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBaseWeaponData* m_Weapon;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkeletalMesh* m_CharacterMesh;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiSkinToneIndex;
     
     UEquipmentSelectionData();

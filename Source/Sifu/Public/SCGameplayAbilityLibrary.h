@@ -6,7 +6,7 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class USCGameplayAbilityLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -14,7 +14,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_SetFloatAttribute(const AActor* _actor, FGameplayAttribute _attribute, float _fDefaultValue);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static float BPF_GetFloatAttribute(const AActor* _actor, FGameplayAttribute _attribute, float _fDefaultValue);
     
 };

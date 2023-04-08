@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FInputMappingCompatibilityRule {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EInputMappingCompatibilityRuleType m_eRule;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UGenericInputData>> m_Classes;
     
     FInputMappingCompatibilityRule();

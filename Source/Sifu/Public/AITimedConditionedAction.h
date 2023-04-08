@@ -4,14 +4,14 @@
 #include "AIConditionedAction.h"
 #include "AITimedConditionedAction.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAITimedConditionedAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_TimeRange;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIConditionedAction m_Action;
     
     SIFU_API FAITimedConditionedAction();

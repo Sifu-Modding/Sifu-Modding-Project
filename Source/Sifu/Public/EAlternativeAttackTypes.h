@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAlternativeAttackTypes.generated.h"
 
-UENUM()
-enum class EAlternativeAttackTypes {
+UENUM(BlueprintType)
+enum class EAlternativeAttackTypes : uint8 {
     Stun,
     Knockdown,
     Pushback,

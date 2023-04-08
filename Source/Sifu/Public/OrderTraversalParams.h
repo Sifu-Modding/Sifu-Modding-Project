@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ETraversalEntryType.h"
-#include "OrderParams.h"
 #include "NetOrderStructTraversal.h"
+#include "OrderParams.h"
 #include "OrderTraversalParams.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UOrderTraversalParams : public UOrderParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNetOrderStructTraversal m_Params;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNetOrderStructTraversal m_TransientParams;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     ETraversalEntryType m_eForceEntryType;
     
     UOrderTraversalParams();

@@ -1,38 +1,38 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "CharacterSaveDescription.h"
 #include "MappingSave.h"
-#include "GameplayTagContainer.h"
-#include "GameplayTagContainer.h"
 #include "SCProfileData.generated.h"
 
 USTRUCT(BlueprintType)
 struct FSCProfileData {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FDateTime m_SaveTimeStamp;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FCharacterSaveDescription> m_SaveListNames;
     
-    UPROPERTY(BlueprintReadOnly, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FString m_FirstSave;
     
-    UPROPERTY(SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FMappingSave> m_Mapping;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FString m_AudioCulture;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FString m_TextCulture;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer m_UnlockedAchievements;
     
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, FGameplayTagContainer> m_NewlyUnlockedAchievements;
     
     SCCORE_API FSCProfileData();

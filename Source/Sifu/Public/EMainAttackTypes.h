@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMainAttackTypes.generated.h"
 
-UENUM()
-enum class EMainAttackTypes {
+UENUM(BlueprintType)
+enum class EMainAttackTypes : uint8 {
     Light,
     Heavy,
     Count,

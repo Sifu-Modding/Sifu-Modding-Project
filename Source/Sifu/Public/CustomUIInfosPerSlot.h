@@ -3,14 +3,14 @@
 #include "EControllerIconAxisTypes.h"
 #include "CustomUIInfosPerSlot.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FCustomUIInfosPerSlot {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iSlotIndex;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EControllerIconAxisTypes m_AxisTypes;
     
     FCustomUIInfosPerSlot();

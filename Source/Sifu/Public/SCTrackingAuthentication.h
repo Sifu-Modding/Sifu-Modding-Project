@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "SCTrackingAuthentication.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class USCTrackingAuthentication : public UObject {
     GENERATED_BODY()
 public:

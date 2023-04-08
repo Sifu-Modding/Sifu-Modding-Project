@@ -3,20 +3,20 @@
 #include "BaseTargetEvaluation.h"
 #include "TE_Nearest.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTE_Nearest : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fOutOfSightTimer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fAutoSelectTargetCooldown;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bWantKeepPreviousTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAutoResetBestTarget;
     
     UTE_Nearest();

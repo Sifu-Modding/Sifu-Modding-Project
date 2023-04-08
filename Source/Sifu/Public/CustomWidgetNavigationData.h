@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FCustomWidgetNavigationData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAnalogNavigation;
     
     SIFU_API FCustomWidgetNavigationData();

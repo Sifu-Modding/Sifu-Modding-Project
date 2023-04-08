@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCLevelStreamingState.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCLevelStreamingState : uint8 {
     Loaded,
     Visible,

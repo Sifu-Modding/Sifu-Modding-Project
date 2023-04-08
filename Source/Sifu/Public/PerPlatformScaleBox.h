@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Widgets/Layout/SScaleBox.h"
+#include "Widgets/Layout/SScaleBox.h"
 #include "Components/ScaleBox.h"
 #include "PerPlatformWidget.h"
-#include "Widgets/Layout/SScaleBox.h"
-#include "Widgets/Layout/SScaleBox.h"
 #include "PerPlatformScaleBox.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformScaleBox : public UScaleBox, public IPerPlatformWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EStretch::Type> NormalStretch;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EStretch::Type> SmallScreenStretch;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EStretchDirection::Type> NormalStretchDirection;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EStretchDirection::Type> SmallScreenStretchDirection;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NormalUserSpecifiedScale;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float SmallScreenUserSpecifiedScale;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool NormalIgnoreInheritedScale;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SmallScreenIgnoreInheritedScale;
     
     UPerPlatformScaleBox();

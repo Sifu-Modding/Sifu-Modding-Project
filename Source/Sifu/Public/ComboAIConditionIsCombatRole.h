@@ -3,12 +3,12 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionIsCombatRole.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionIsCombatRole : public UAIComboCondition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_eCombatRolesMask;
     
 public:

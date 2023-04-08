@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FWidgetPoolElement {
     GENERATED_BODY()
 public:
-    UPROPERTY(Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     USCUserWidget* m_Widget;
     
     SIFU_API FWidgetPoolElement();

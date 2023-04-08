@@ -2,10 +2,10 @@
 
 class AActor;
 class AFightingCharacter;
-class UEffectData;
-class UCharacterProgressionUnlockDB;
-class UTexture2D;
 class UCharacterProgressionDB;
+class UCharacterProgressionUnlockDB;
+class UEffectData;
+class UTexture2D;
 
 void UStatsComponent::OnStatsChangedCallback() {
 }
@@ -190,6 +190,7 @@ UStatsComponent::UStatsComponent() {
     this->m_StatsDB = NULL;
     this->m_eWeightCategory = EWeightCategory::None;
     this->m_iMaxAge = 70;
+    this->m_bAgeReversed = false;
     this->m_bUsePendant = true;
     this->m_bAllowDeathCounterDecrement = true;
     this->m_fAIPendingAttackXCancelDelay = 10.00f;

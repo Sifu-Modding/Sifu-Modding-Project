@@ -1,7 +1,7 @@
 #include "InputsMappingMenu.h"
 
-class UPanelWidget;
 class UButtonUserWidget;
+class UPanelWidget;
 
 void UInputsMappingMenu::OnRemappingStarted(FName _ActionName, EMappableFieldScaleTypes _eScaleType) {
 }

@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAnimNotifyState.h"
 #include "EALBinaryOperation.h"
+#include "SCAnimNotifyState.h"
 #include "AvailabilityLayerNotifyState.generated.h"
 
 class UAvailabilityLayerData;
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UAvailabilityLayerNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_availabilityLayerData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EALBinaryOperation m_eOperation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iPriority;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_alName;
     
     UAvailabilityLayerNotifyState();

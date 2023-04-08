@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FSCAnimPoseArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCPoseAssetSelection> m_Poses;
     
     SCCORE_API FSCAnimPoseArray();

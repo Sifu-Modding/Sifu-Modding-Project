@@ -1,32 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "SCTypedValue.h"
-#include "SCAIActionMemoryEntryHandler.h"
-#include "EAIActionScheduleCondition.h"
 #include "UObject/NoExportTypes.h"
+#include "EAIActionScheduleCondition.h"
+#include "SCAIActionMemoryEntryHandler.h"
+#include "SCTypedValue.h"
 #include "SCAiAction.generated.h"
 
 class ASCCharacter;
 class UBehaviorTree;
-class USCAIComponent;
 class UBlackboardComponent;
+class USCAIComponent;
 
 UCLASS(Abstract, Blueprintable)
 class SCCORE_API USCAiAction : public UObject, public ISCAIActionMemoryEntryHandler {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBehaviorTree* m_BehaviorTreeAsset;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAIActionScheduleCondition m_eScheduleCondition;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bCanForceCancel;
     
 public:
     USCAiAction();
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_SetBlackBoardValueAsVector(FName _key, const FVector& _vValue) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
@@ -41,33 +44,33 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_SetBlackBoardValueAsBool(FName _key, bool _bValue) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USCAIComponent* BPF_GetOwnerAiComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ASCCharacter* BPF_GetOwner() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetEnvQueryParameterValue(FName _paramName, const ASCCharacter* _owner, FSCTypedValue& _outValue) const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetBlackBoardValueAsVector(FName _key) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UObject* BPF_GetBlackBoardValueAsObject(FName _key) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetBlackBoardValueAsInt(FName _key) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetBlackBoardValueAsFloat(FName _key) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetBlackBoardValueAsBool(FName _key) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBlackboardComponent* BPF_GetBlackBoardComponent() const;
     
 public:
@@ -75,40 +78,40 @@ public:
     void BPF_Finish(bool _bSucceeded, const FString& _message);
     
     UFUNCTION(BlueprintCallable)
-    static void BPF_CancelPendingActions(USCAIComponent* _aiComponent);
+    static void BPF_CancelPendingActions(USCAIComponent* _aiComponent, const FString& _reasonForDebug);
     
     UFUNCTION(BlueprintCallable)
     void BPF_Cancel(const FString& _message);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnOrderStarted(FName _orderParamsName, uint8 _uiOrderId);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnOrderFinished(FName _orderParamsName, uint8 _uiOrderId);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnNamedEvent(FName _eventName);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnFinished(bool _bSucceeded);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnBehaviorTreeInjected(UBlackboardComponent* _blackBoardComponent);
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString BPE_GetName() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetEnvQueryParameterValue(FName _paramName, const ASCCharacter* _owner, FSCTypedValue& _outValue) const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_Execute(UBlackboardComponent* _blackBoardComponent);
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_CanPerform(const USCAIComponent* _aiComponent) const;
     
     

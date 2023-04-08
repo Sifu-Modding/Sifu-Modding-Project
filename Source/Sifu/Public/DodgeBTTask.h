@@ -3,7 +3,7 @@
 #include "AIDefenseBTTask.h"
 #include "DodgeBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDodgeBTTask : public UAIDefenseBTTask {
     GENERATED_BODY()
 public:

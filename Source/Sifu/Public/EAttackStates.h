@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAttackStates.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAttackStates : uint8 {
     BuildUp,
     Strike,

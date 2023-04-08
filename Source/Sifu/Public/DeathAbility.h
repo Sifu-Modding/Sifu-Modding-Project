@@ -3,7 +3,7 @@
 #include "SCGameplayAbility.h"
 #include "DeathAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDeathAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:

@@ -3,17 +3,17 @@
 #include "EquipmentStruct.h"
 #include "EquipmentPreset.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FEquipmentPreset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FEquipmentStruct m_Items[9];
     
-    UPROPERTY(EditAnywhere, SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     uint8 m_IsEmpty[9];
     
-    UPROPERTY(EditAnywhere, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_Init;
     
     FEquipmentPreset();

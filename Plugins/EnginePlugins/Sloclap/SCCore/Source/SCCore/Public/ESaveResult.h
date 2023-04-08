@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESaveResult.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESaveResult : uint8 {
     Valid,
     Empty,

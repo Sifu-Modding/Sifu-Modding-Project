@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCVolumeClusterMaterialsPath {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_RootMaterial;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_ChildrenMaterial;
     
     FSCVolumeClusterMaterialsPath();

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EMCDominationGaugeAsFlag.generated.h"
 
-UENUM()
-enum class EMCDominationGaugeAsFlag {
+UENUM(BlueprintType)
+enum class EMCDominationGaugeAsFlag : uint8 {
     None,
     Negative,
     Neutral,

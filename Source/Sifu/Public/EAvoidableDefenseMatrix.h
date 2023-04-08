@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAvoidableDefenseMatrix.generated.h"
 
-UENUM()
-enum class EAvoidableDefenseMatrix {
+UENUM(BlueprintType)
+enum class EAvoidableDefenseMatrix : uint8 {
     None,
     Jump,
     Duck,

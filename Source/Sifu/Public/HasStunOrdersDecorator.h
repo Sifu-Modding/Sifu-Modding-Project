@@ -3,7 +3,7 @@
 #include "SCBTDecorator.h"
 #include "HasStunOrdersDecorator.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UHasStunOrdersDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:

@@ -4,11 +4,11 @@
 #include "EMenuEnum.h"
 #include "BaseNotification.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UBaseNotification : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMenuEnum m_eOpenMenu;
     
     UBaseNotification();

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FFloatStatBinding : public FBaseStatBindings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float m_fValue;
     
     SIFU_API FFloatStatBinding();

@@ -1,31 +1,31 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "ScreenTextureData.h"
 #include "EScreenLocation.h"
+#include "ScreenTextureData.h"
 #include "ReplayHUD.generated.h"
 
-class UTexture2D;
 class UObject;
+class UTexture2D;
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SIFU_API AReplayHUD : public AHUD {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FScreenTextureData m_TextureToDraw;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UTexture2D* m_CurrentTexture;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UTexture2D>> m_LoadingTextures;
     
 public:
     AReplayHUD();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnAssetsLoaded(const TArray<TSoftObjectPtr<UObject>>& _items);
     
 public:

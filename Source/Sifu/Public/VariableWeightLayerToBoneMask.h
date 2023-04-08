@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FVariableWeightLayerToBoneMask {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_LayerEnum;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendProfile* m_BoneMask;
     
     FVariableWeightLayerToBoneMask();

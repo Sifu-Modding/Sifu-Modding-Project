@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EDirections.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EDirections : uint8 {
     Left,
     Right,

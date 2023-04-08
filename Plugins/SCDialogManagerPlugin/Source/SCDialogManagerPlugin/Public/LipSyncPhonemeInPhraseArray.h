@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FLipSyncPhonemeInPhraseArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FLipSyncPhonemeInPhrase> phonemeArray;
     
     SCDIALOGMANAGERPLUGIN_API FLipSyncPhonemeInPhraseArray();

@@ -1,6 +1,9 @@
 #include "WGSaveManagerBlueprintHelper.h"
 
-void UWGSaveManagerBlueprintHelper::BPF_SnapshotPartOfSave(int32 _iSaveTypeBitmask) {
+void UWGSaveManagerBlueprintHelper::BPF_SnapshotPartOfSave(int32 _iSaveTypeBitmask, int32 _iSaveEntryToExclude) {
+}
+
+void UWGSaveManagerBlueprintHelper::BPF_SetNeedSaveProfile() {
 }
 
 void UWGSaveManagerBlueprintHelper::BPF_SetNeedSaveGame(int32 _iSaveTypeBitmask) {

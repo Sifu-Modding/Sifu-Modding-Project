@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFirstSpawnMethod.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFirstSpawnMethod : uint8 {
     AtTheBeginning,
     WithATimer,

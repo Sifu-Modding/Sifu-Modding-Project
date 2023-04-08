@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FTraversalComponentMargin {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fNegAxisMargin;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPosAxisMargin;
     
     SIFU_API FTraversalComponentMargin();

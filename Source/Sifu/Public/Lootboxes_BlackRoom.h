@@ -6,7 +6,7 @@
 class UMaterialInstanceDynamic;
 class UTexture2D;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ALootboxes_BlackRoom : public AActor {
     GENERATED_BODY()
 public:

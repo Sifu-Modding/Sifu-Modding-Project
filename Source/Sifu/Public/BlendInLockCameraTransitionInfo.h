@@ -3,11 +3,11 @@
 #include "CameraTransitionInfo.h"
 #include "BlendInLockCameraTransitionInfo.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBlendInLockCameraTransitionInfo : public UCameraTransitionInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseDefaultTargetReachDurationAsFallback;
     
     UBlendInLockCameraTransitionInfo();

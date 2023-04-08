@@ -3,24 +3,24 @@
 #include "ReplayableStaticObjectComponent.h"
 #include "ReplayablePhysObjectComponent.generated.h"
 
-class UPrimitiveComponent;
 class AActor;
+class UPrimitiveComponent;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UReplayablePhysObjectComponent : public UReplayableStaticObjectComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(ReplicatedUsing=OnRep_IsReplicatingMovement)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsReplicatingMovement, meta=(AllowPrivateAccess=true))
     bool m_bIsReplicatingMovement;
     
-    UPROPERTY(EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDebugDisabled;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceNetUpdateOnBodyAwake;
     
-    UPROPERTY(ReplicatedUsing=OnRep_AttachmentChanged)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AttachmentChanged, meta=(AllowPrivateAccess=true))
     AActor* m_AttachedActor;
     
 public:
@@ -28,20 +28,20 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_IsReplicatingMovement();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_AttachmentChanged();
     
 public:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnComponentWake(UPrimitiveComponent* _wakingComponent, FName _boneName);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnComponentSleep(UPrimitiveComponent* _wakingComponent, FName _boneName);
     
 };

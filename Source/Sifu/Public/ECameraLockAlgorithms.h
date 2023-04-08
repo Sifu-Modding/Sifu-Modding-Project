@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ECameraLockAlgorithms.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ECameraLockAlgorithms : uint8 {
     LockOnTarget,
     FollowingOwnerMovement,

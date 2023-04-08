@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FBool {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bBool;
     
     SCCORE_API FBool();

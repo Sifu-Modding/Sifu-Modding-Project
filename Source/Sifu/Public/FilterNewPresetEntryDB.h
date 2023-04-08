@@ -4,11 +4,11 @@
 #include "FilterPresetData.h"
 #include "FilterNewPresetEntryDB.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFilterNewPresetEntryDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFilterPresetData m_Data;
     
     UFilterNewPresetEntryDB();

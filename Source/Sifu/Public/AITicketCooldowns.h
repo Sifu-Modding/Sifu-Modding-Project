@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAITicketCooldowns {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTimerAndOffset m_Cooldowns[4];
     
     SIFU_API FAITicketCooldowns();

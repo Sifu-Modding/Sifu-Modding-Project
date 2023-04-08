@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderParams.h"
 #include "NetOrderStructPlayAnim.h"
+#include "OrderParams.h"
 #include "OrderPlayAnimParams.generated.h"
 
-UCLASS(BlueprintType, EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class UOrderPlayAnimParams : public UOrderParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNetOrderStructPlayAnim m_Params;
     
-    UPROPERTY(BlueprintReadWrite, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FNetOrderStructPlayAnim m_TransientParams;
     
     UOrderPlayAnimParams();

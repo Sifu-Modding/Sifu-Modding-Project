@@ -1,7 +1,7 @@
 #include "OrderComponent.h"
 
-class UOrderDelegateHandler;
 class UOrderDB;
+class UOrderDelegateHandler;
 
 void UOrderComponent::ServerUpdateOrder_Implementation(uint8 _uiOrderId, EOrderType _eOrderType, FBuffer _ReplicatedBuffer, FUniqueNetIdRepl _callerPlayerId) {
 }

@@ -3,14 +3,14 @@
 #include "InheritedDataAsset.h"
 #include "SCLevelSequenceRoleData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCLevelSequenceRoleData : public UInheritedDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_AnchorBoneName;
     
     USCLevelSequenceRoleData();

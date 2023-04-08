@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FOrderInfosInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FOrderServiceInfos> m_Services;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UOrderDB* m_DB;
     
     FOrderInfosInstance();

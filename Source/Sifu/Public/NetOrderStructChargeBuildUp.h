@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NetOrderStructPlayAnim.h"
 #include "EQuadrantTypes.h"
+#include "NetOrderStructPlayAnim.h"
 #include "NetOrderStructChargeBuildUp.generated.h"
 
 USTRUCT(BlueprintType)
 struct FNetOrderStructChargeBuildUp : public FNetOrderStructPlayAnim {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiCapLevel;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EQuadrantTypes m_eAttackQuadrant;
     
     SIFU_API FNetOrderStructChargeBuildUp();

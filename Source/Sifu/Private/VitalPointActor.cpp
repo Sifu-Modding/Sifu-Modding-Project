@@ -1,7 +1,7 @@
 #include "VitalPointActor.h"
 
-class AAimingBillboardActor;
 class AActor;
+class AAimingBillboardActor;
 
 void AVitalPointActor::OnBillBoardSelectionChanged(bool _bSelected, AAimingBillboardActor* _billboard) {
 }

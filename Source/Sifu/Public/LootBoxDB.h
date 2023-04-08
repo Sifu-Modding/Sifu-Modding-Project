@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ELootBoxType.h"
 #include "Engine/DataAsset.h"
-#include "LootBoxStaticData.h"
-#include "LootBoxInstancedData.h"
+#include "ELootBoxType.h"
 #include "LootBaseItemStruct.h"
+#include "LootBoxInstancedData.h"
+#include "LootBoxStaticData.h"
 #include "LootBoxDB.generated.h"
 
 class UDataTable;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API ULootBoxDB : public UDataAsset {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ELootBoxType, FLootBoxStaticData> m_LootBoxTypes;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* m_SmallLootDataTable;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UDataTable*> m_BigLootDataTables;
     
 public:

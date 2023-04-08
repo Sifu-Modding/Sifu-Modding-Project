@@ -1,9 +1,9 @@
 #include "UILibrary.h"
 
 class APlayerController;
-class UWidget;
-class UUserWidget;
 class UObject;
+class UUserWidget;
+class UWidget;
 
 //void UUILibrary::BPF_ShowPopup(const APlayerController* _playerController, FText _txtMessage, FText _txtConfirm, FText _txtCancel, FSCDynamicDelegate _onConfirm, FSCDynamicDelegate _onCancel) {
 //}
@@ -30,6 +30,6 @@ void UUILibrary::BPF_Get2DPosFrom3D(APlayerController* _playerController, FVecto
 void UUILibrary::BPF_ClosePopup(const APlayerController* _playerController) {
 }
 
-//UUILibrary::UUILibrary() {
-//}
+UUILibrary::UUILibrary() {
+}
 

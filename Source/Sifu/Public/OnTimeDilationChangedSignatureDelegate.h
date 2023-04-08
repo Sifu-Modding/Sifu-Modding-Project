@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "OnTimeDilationChangedSignatureDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnTimeDilationChangedSignature, float, _fPreviousTimeDilation, float, _fCurrentTimeDilation);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnTimeDilationChangedSignature, float, _fPreviousTimeDilation, float, _fCurrentTimeDilation);
 

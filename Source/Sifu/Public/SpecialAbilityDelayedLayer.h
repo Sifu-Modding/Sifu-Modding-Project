@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSpecialAbilityDelayedLayer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_PushLayerOnSuccess;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPushLayerDelay;
     
     FSpecialAbilityDelayedLayer();

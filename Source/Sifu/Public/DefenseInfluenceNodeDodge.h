@@ -4,15 +4,15 @@
 #include "EDodgeDirectionType.h"
 #include "DefenseInfluenceNodeDodge.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDefenseInfluenceNodeDodge : public UContextualDefenseInfluenceNode {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideDirection;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDodgeDirectionType m_eDirectionTypeOverride;
     
 public:

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "CameraNodeStructInherited.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FCameraNodeStructInherited {
     GENERATED_BODY()
 public:

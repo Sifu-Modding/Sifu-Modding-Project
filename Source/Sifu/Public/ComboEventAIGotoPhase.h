@@ -5,15 +5,15 @@
 #include "SCAITicketEnum.h"
 #include "ComboEventAIGotoPhase.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboEventAIGotoPhase : public UComboEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIPhaseNodeSoftLink m_Link;
     
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCAITicketEnum> m_ResetTickets;
     
 public:

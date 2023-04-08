@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "StreamingLevelStateBase.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FStreamingLevelStateBase {
     GENERATED_BODY()
 public:

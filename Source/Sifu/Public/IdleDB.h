@@ -3,14 +3,14 @@
 #include "Engine/DataAsset.h"
 #include "IdleDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UIdleDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fReorientationTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fReorientationTimeForEarlyBlendOutFromAttack;
     
     UIdleDB();

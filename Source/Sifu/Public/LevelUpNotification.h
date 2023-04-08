@@ -5,11 +5,11 @@
 
 class ULevelUpNotification;
 
-UCLASS()
+UCLASS(Blueprintable)
 class ULevelUpNotification : public UBaseNotification {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iLevel;
     
     ULevelUpNotification();

@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GenericInputData.h"
 #include "CombinationInput.h"
+#include "GenericInputData.h"
 #include "CombinationInputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCombinationInputData : public UGenericInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bResetChildHoldToggleOnActivation;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCombinationInput> m_IncludedInputs;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCombinationInput> m_ExcludedInputs;
     
     UCombinationInputData();

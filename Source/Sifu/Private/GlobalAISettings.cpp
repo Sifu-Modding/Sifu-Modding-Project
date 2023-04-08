@@ -58,7 +58,7 @@ UGlobalAISettings::UGlobalAISettings() {
     this->m_fTauntDifficultyBonus = 90.00f;
     this->m_iTauntTicketBehaviorMask = 1;
     this->m_ForbiddenOrdersForDirectOpponent.AddDefaulted(6);
-    this->m_fCombatRolesRedistributionFallHeight = 140.00f;
+    this->m_fCombatRolesRedistributionFallHeight = 30.00f;
     this->m_fCombatRoleRedistributionRushInitialDelay = 1.00f;
     this->m_fCombatRoleRedistributionRushUpdateDelay = 2.40f;
     this->m_bActivateCancelDamagesOnWeaponsForAI = false;

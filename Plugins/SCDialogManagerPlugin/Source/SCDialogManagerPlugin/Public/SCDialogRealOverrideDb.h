@@ -4,14 +4,14 @@
 #include "DialogActionArrayContainer.h"
 #include "SCDialogRealOverrideDb.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCDIALOGMANAGERPLUGIN_API USCDialogRealOverrideDb : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDialogActionArrayContainer> m_FirstLinesActions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogActionArrayContainer m_LastLineActions;
     
     USCDialogRealOverrideDb();

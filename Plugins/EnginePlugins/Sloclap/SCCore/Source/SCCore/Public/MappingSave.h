@@ -6,16 +6,16 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FMappingSave {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_KeyName;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName m_ActionName;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_bIsAxis;
     
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     float m_fScale;
     
     FMappingSave();

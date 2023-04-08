@@ -26,7 +26,7 @@ bool UWGSaveObjectGameData::BPE_SynchronizeAchievementProgress_Implementation(co
     return false;
 }
 
-FString UWGSaveObjectGameData::BPE_SnapshotSaveMask_Implementation(int32 _iSaveMaskToBackup) {
+FString UWGSaveObjectGameData::BPE_SnapshotSaveMask_Implementation(int32 _iSaveMaskToBackup, int32 _iSaveEntryToExclude) {
     return TEXT("");
 }
 

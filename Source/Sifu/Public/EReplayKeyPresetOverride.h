@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EReplayKeyPresetOverride.generated.h"
 
-UENUM()
-enum class EReplayKeyPresetOverride {
+UENUM(BlueprintType)
+enum class EReplayKeyPresetOverride : uint8 {
     None,
     Blend,
     CameraMode,

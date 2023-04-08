@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AddVariableWeightOrderService.h"
 #include "SCUserDefinedEnumHandler.h"
+#include "AddVariableWeightOrderService.h"
 #include "AddWeaponIdleVariableWeightOrderService.generated.h"
 
 class UBaseWeaponData;
 class UBlendProfile;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAddWeaponIdleVariableWeightOrderService : public UAddVariableWeightOrderService {
     GENERATED_BODY()
 public:
     UAddWeaponIdleVariableWeightOrderService();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FSCUserDefinedEnumHandler BPE_GetEnumLayerForWeapon(const UBaseWeaponData* _weaponData) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UBlendProfile* BPE_GetBlendProfileForWeapon(const UBaseWeaponData* _weaponData) const;
     
 };

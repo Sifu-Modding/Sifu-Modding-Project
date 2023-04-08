@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FInputSequenceStep {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UGenericInputData* m_Input;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_DelayBeforeNextAction;
     
     SIFU_API FInputSequenceStep();

@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "HitBox.h"
 #include "NetOrderStruct.h"
 #include "TraversalInfo.h"
-#include "HitBox.h"
 #include "NetOrderStructTraversal.generated.h"
 
 USTRUCT(BlueprintType)
 struct FNetOrderStructTraversal : public FNetOrderStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTraversalInfo m_TraversalInfo;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHitBox m_FallHit;
     
     SIFU_API FNetOrderStructTraversal();

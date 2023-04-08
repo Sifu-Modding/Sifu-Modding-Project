@@ -4,15 +4,15 @@
 #include "PelvisDirectionComputationParams.h"
 #include "PelvisDirectionComputationParamsOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UPelvisDirectionComputationParamsOrderService : public UOrderService {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseLastFrameLocation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPelvisDirectionComputationParams m_Params;
     
 public:

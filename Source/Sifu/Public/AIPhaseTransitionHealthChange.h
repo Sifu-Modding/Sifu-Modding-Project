@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIPhaseTransition.h"
 #include "SCMathExpressionFloat.h"
+#include "AIPhaseTransition.h"
 #include "AIPhaseTransitionHealthChange.generated.h"
 
 class UHealthComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionHealthChange : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCMathExpressionFloat m_Expression;
     
 public:
     UAIPhaseTransitionHealthChange();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDeathDismiss(UHealthComponent* _healthComponent);
     
 };

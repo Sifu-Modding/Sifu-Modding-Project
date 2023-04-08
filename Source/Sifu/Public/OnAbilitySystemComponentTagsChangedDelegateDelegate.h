@@ -5,5 +5,5 @@
 
 class USCAbilitySystemComponent;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_ThreeParams(FOnAbilitySystemComponentTagsChangedDelegate, USCAbilitySystemComponent*, _abilityComponent, const FGameplayTag&, _tag, int32, _iCount);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_ThreeParams(FOnAbilitySystemComponentTagsChangedDelegate, USCAbilitySystemComponent*, _abilityComponent, const FGameplayTag&, _tag, int32, _iCount);
 

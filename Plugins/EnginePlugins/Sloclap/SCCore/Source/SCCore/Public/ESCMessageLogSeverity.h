@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCMessageLogSeverity.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCMessageLogSeverity : uint8 {
     Info,
     Warning,

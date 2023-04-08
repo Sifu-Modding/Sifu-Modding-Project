@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCStreamingActorState {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<uint8> m_Data;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FSCTransform52 m_Transform;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     uint64 m_uiTimestamp;
     
     FSCStreamingActorState();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EGlobalBehaviors.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EGlobalBehaviors : uint8 {
     Idle,
     Suspicious,

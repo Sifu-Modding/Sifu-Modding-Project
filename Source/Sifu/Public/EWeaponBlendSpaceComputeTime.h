@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWeaponBlendSpaceComputeTime.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWeaponBlendSpaceComputeTime : uint8 {
     AtOrderStart,
     OnOrderUpdate,

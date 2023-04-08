@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCoopGroup {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FCoopGroupMemberInfo> m_GroupMemberInfos;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EGameModeTypes m_eGameModeType;
     
     FCoopGroup();

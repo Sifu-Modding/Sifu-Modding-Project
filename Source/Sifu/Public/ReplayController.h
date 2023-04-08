@@ -1,107 +1,107 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "OnReplayGoToTimeDelegate.h"
-#include "BaseReplayController.h"
 #include "SCDelegate.h"
-#include "ReplayTimelineControllerData.h"
+#include "BaseReplayController.h"
+#include "EReplayCameraMode.h"
+#include "EReplayKeyTransition.h"
+#include "OnReplayCameraModeChangedDelegate.h"
+#include "OnReplayGoToTimeDelegate.h"
 #include "ReplayCameraSettings.h"
 #include "ReplayOverrideMPCParameter.h"
-#include "OnReplayCameraModeChangedDelegate.h"
-#include "EReplayKeyTransition.h"
-#include "EReplayCameraMode.h"
+#include "ReplayTimelineControllerData.h"
 #include "ReplayVideoRecorderCreatedDelegateDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "ReplayController.generated.h"
 
-class UReplayTimelineController;
-class UReplayFightingCharacterComponent;
-class UCurveFloat;
 class AActor;
+class AReplayVideoRecorder;
+class AReplayingCamera;
+class UCurveFloat;
+class UObject;
+class UReplayCineCameraComponent;
+class UReplayFightingCharacterComponent;
+class UReplayKey;
 class UReplayLoadingScreenWidget;
 class UReplayMainUserWidget;
-class AReplayVideoRecorder;
-class UReplayKey;
-class UReplayTimelineModel;
 class UReplaySystem;
-class UObject;
-class AReplayingCamera;
-class UReplayCineCameraComponent;
+class UReplayTimelineController;
+class UReplayTimelineModel;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AReplayController : public ABaseReplayController {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayTimelineControllerData m_TimelineControllerData;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UReplayTimelineController* m_TimelineController;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayCameraSettings m_DefaultCameraSettings;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayCameraSettings m_SequenceCameraSettings;
+    /*
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* m_OnGoToTimeCompleted;*/
     
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast m_OnGoToTimeCompleted;*/
-    
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fGoToTimeCompletedTimeS;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTimeDilationZeroedOnGoToTime;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnReplayCameraModeChanged m_OnCameraModeChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnReplayGoToTime m_OnGoToTimeInitiated;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDebugEnabled;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EReplayKeyTransition, UCurveFloat*> m_TransitionProfiles;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EReplayCameraMode m_eCurrentCameraMode;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> m_VirtualCameraClass;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UReplayLoadingScreenWidget> m_LoadingScreenWidgetClass;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FReplayOverrideMPCParameter> m_MPCParametersOverride;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UReplayMainUserWidget* m_MainUserWidget;
     
-    UPROPERTY(BlueprintReadOnly, Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UReplayLoadingScreenWidget* m_LoadingScreenWidgetInstance;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AActor* m_VirtualCamera;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AReplayVideoRecorder> m_VideoRecorderClass;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AReplayVideoRecorder* m_VideoRecorder;
     
 public:
     AReplayController();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnKeysLoaded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnKeyMoved(UReplayKey* _key);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnGoToTimeCompleted();
     
 public:
@@ -115,7 +115,7 @@ public:
     void GotoTimeInSeconds(float _fTime, bool _bUnselectKey);
     
 protected:
-    UFUNCTION(Exec)
+    UFUNCTION(BlueprintCallable, Exec)
     void DebugReplayFillReplayTimeline(int32 _iStringsLength);
     
 public:
@@ -149,20 +149,20 @@ public:
     void BPF_LeaveReplay();
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsRecordingVideo() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsCameraEditable() const;
     
     UFUNCTION(BlueprintCallable)
     void BPF_GoToLastKeyTime();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCurveFloat* BPF_GetTransitionProfile(EReplayKeyTransition _eTransitionType) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReplayTimelineModel* BPF_GetTimelineModel() const;
     
 protected:
@@ -176,29 +176,29 @@ protected:
     UReplaySystem* BPF_GetReplaySystem();
     
 public:
-    UFUNCTION(BlueprintPure, meta=(WorldContext="_worldContextObject"))
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContextObject"))
     UReplayFightingCharacterComponent* BPF_GetReplayFightingCharacterComponent(const UObject* _worldContextObject) const;
     
-    UFUNCTION(BlueprintPure, meta=(WorldContext="_worldContextObject"))
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContextObject"))
     AReplayingCamera* BPF_GetReplayFightingCharacterCameraDummy(const UObject* _worldContextObject) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReplayCineCameraComponent* BPF_GetReplayCineCameraComponent(EReplayCameraMode _eCameraMode) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UReplayCineCameraComponent* BPF_GetCurrentCineCameraComponent() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnReplayCameraModeChanged(EReplayCameraMode _eCameraMode);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPlayingBeginPlay();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeyRemoved(UReplayKey* _key);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnGoToTimeCompleted();
     
 };

@@ -5,17 +5,17 @@
 
 class UProgressionDoorData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UQuestItemData : public UBaseItemData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_Description;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UProgressionDoorData* m_ProgressionDoor;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ScalarParameterName;
     
     UQuestItemData();

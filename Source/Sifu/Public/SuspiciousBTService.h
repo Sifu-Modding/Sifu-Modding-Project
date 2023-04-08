@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTService.h"
 #include "SuspiciousBTService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USuspiciousBTService : public UBTService {
     GENERATED_BODY()
 public:

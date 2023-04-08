@@ -5,19 +5,19 @@
 
 class USCLevelSequence;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SCCORE_API USCBaseUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USCBaseUserWidget();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSynchronizeProperties();
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCinematicStarted(const USCLevelSequence* _inSequence);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCinematicFinished(const USCLevelSequence* _inSequence);
     
 };

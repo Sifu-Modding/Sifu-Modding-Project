@@ -5,14 +5,14 @@
 
 class UBaseTargetEvaluation;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FTargetEvaluationDBInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBaseTargetEvaluation> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBaseTargetEvaluation* m_Instance;
     
     FTargetEvaluationDBInstance();

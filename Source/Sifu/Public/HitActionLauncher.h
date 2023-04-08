@@ -4,11 +4,11 @@
 #include "BaseActorTargetConditionInstance.h"
 #include "HitActionLauncher.generated.h"
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API UHitActionLauncher : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorTargetConditionInstance m_hitActionCondition;
     
     UHitActionLauncher();

@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SCDIALOGMANAGERPLUGIN_API FSCDialogLineTableRow : public FTableRowBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCDialogData> DialogsVariations;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 LinePriority;
     
     FSCDialogLineTableRow();

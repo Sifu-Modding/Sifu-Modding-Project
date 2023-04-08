@@ -1,15 +1,15 @@
 #include "FightingPlayerController.h"
-#include "Net/UnrealNetwork.h"
-#include "WidgetPoolComponent.h"
-#include "TargetableWidgetUpdaterComponent.h"
 #include "ASMDetectionComponent.h"
+#include "Net/UnrealNetwork.h"
+#include "TargetableWidgetUpdaterComponent.h"
+#include "WidgetPoolComponent.h"
 
-class UInteractionObjectComponent;
 class AAISpawner;
 class AActor;
 class UCharacterProgressionUnlockDB;
-class UPanelWidget;
+class UInteractionObjectComponent;
 class UMenuWidget;
+class UPanelWidget;
 class UPopupWidget;
 class UUserWidget;
 
@@ -341,6 +341,7 @@ AFightingPlayerController::AFightingPlayerController() {
     this->m_InteractionUseLockText = false;
     this->m_MenuSkillTree = NULL;
     this->m_bShowAltAttackStartQuadrant = false;
+    this->m_bAppIsBackgrounded = false;
     this->m_bEnvDeathRespawn = false;
     this->m_bDebugDisplayAttackLearning = false;
     this->m_bHideNonInteractableObjectComponent = false;
@@ -396,6 +397,8 @@ AFightingPlayerController::AFightingPlayerController() {
     this->m_MenuInstances[47] = NULL;
     this->m_MenuInstances[48] = NULL;
     this->m_MenuInstances[49] = NULL;
+    this->m_MenuInstances[50] = NULL;
+    this->m_MenuInstances[51] = NULL;
     this->m_OutlineMaterial = NULL;
     this->m_PopupYesNo = NULL;
     this->m_fTimeSinceLastNonRedundantUserInput = 0.00f;

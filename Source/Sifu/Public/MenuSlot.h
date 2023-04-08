@@ -3,11 +3,11 @@
 #include "SCUserWidget.h"
 #include "MenuSlot.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UMenuSlot : public USCUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowSoundPlaying;
     
     UMenuSlot();

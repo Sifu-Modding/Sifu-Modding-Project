@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ReplayAnimGraphCachedContext.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplayAnimGraphCachedContext {
     GENERATED_BODY()
 public:

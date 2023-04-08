@@ -1,7 +1,7 @@
 #include "AsyncTaskSwapGender.h"
 
-class UPlayerFightingComponent;
 class UAsyncTaskSwapGender;
+class UPlayerFightingComponent;
 
 UAsyncTaskSwapGender* UAsyncTaskSwapGender::BPF_SwapGender(UPlayerFightingComponent* _playerComponent, ECharacterGender _eNewGender) {
     return NULL;

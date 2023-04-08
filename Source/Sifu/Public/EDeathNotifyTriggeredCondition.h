@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EDeathNotifyTriggeredCondition.generated.h"
 
-UENUM()
-enum class EDeathNotifyTriggeredCondition {
+UENUM(BlueprintType)
+enum class EDeathNotifyTriggeredCondition : uint8 {
     IfGoesToRagdoll,
     IfAnimOrNoUnspawn,
 };

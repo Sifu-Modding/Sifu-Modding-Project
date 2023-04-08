@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FDeltaTransformAudioStep {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinDistance;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinDeltaAngle;
     
-   /* UPROPERTY(EditAnywhere)
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* m_akEvent;*/
     
     SIFU_API FDeltaTransformAudioStep();

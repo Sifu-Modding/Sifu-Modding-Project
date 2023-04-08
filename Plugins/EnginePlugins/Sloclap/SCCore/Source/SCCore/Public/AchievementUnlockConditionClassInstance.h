@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FAchievementUnlockConditionClassInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAchievementUnlockCondition> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAchievementUnlockCondition* m_Instance;
     
     FAchievementUnlockConditionClassInstance();

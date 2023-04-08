@@ -5,15 +5,15 @@
 #include "InputAction.h"
 #include "InputManagerHelpers.generated.h"
 
-class UInputPad;
 class ASCPlayerController;
+class UInputPad;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UInputManagerHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UInputManagerHelpers();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UInputPad* BPF_GetControllerInputPad(ASCPlayerController* _playerController);
     
     UFUNCTION(BlueprintCallable)

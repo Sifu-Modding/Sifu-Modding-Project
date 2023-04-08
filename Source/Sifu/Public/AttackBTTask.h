@@ -3,7 +3,7 @@
 #include "AIBTTaskNode.h"
 #include "AttackBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAttackBTTask : public UAIBTTaskNode {
     GENERATED_BODY()
 public:

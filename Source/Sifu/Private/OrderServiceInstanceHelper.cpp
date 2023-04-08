@@ -1,8 +1,8 @@
 #include "OrderServiceInstanceHelper.h"
 #include "Templates/SubclassOf.h"
 
-class UOrderService;
 class UOrderComponent;
+class UOrderService;
 
 void UOrderServiceInstanceHelper::BPF_GetOrderInstanceInfos(const FBPOrderServiceInstance& _orderServiceInstance, uint8& _uiOutOrder, EOrderType& _eOutType, UOrderComponent*& _OrderComponent) {
 }

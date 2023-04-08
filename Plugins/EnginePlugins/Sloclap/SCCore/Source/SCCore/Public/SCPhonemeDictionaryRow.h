@@ -4,11 +4,11 @@
 #include "EPhonemeDictionary.h"
 #include "SCPhonemeDictionaryRow.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SCCORE_API FSCPhonemeDictionaryRow : public FTableRowBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EPhonemeDictionary> m_Phonemes;
     
     FSCPhonemeDictionaryRow();

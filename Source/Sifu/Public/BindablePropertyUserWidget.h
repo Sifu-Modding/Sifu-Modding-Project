@@ -1,43 +1,43 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
-#include "SCUserWidget.h"
 #include "OnInputUpdateSignatureDelegate.h"
 #include "OnPropertyUpdatedSignatureDelegate.h"
+#include "SCUserWidget.h"
+#include "Templates/SubclassOf.h"
 #include "BindablePropertyUserWidget.generated.h"
 
 class UBindablePropertyBase;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UBindablePropertyUserWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnInputUpdateSignature m_OnInputUpdate;
     
-    UPROPERTY(BlueprintAssignable, EditAnywhere)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPropertyUpdatedSignature m_OnPropertyUpdated;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bSelfBindingProperty;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bConstructProperty;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBindablePropertyBase> m_PropertyClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_PropertyName;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UBindablePropertyBase* m_Property;
     
 public:
     UBindablePropertyUserWidget();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnPropertyUpdated(UBindablePropertyBase* _property);
     
     UFUNCTION(BlueprintCallable)
@@ -49,7 +49,7 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_CreateProperty();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSelfBinding();
     
 };

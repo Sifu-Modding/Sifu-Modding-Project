@@ -3,7 +3,7 @@
 #include "BaseTargetEvaluation.h"
 #include "TE_LockMoveTarget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTE_LockMoveTarget : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:

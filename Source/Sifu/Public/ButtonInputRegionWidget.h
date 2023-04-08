@@ -3,7 +3,7 @@
 #include "Components/Spacer.h"
 #include "ButtonInputRegionWidget.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UButtonInputRegionWidget : public USpacer {
     GENERATED_BODY()
 public:

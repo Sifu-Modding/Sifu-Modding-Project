@@ -4,19 +4,19 @@
 #include "InputAction.h"
 #include "InputManager.generated.h"
 
+class ASCPlayerController;
 class UInputPad;
 class UInputsDB;
-class ASCPlayerController;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UInputManager : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UInputsDB* m_inputsDB;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UInputPad*> m_pads;
     
 public:

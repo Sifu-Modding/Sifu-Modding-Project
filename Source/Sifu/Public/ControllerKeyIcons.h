@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InputCoreTypes.h"
+//#include "InputCoreTypes.h"
 #include "ControllerKeyIcons.generated.h"
 
 class UTexture2D;
@@ -9,16 +9,16 @@ USTRUCT(BlueprintType)
 struct SIFU_API FControllerKeyIcons {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FKey m_Key;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> m_Icons[3];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bShowText;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_ReplacementText;
     
     FControllerKeyIcons();

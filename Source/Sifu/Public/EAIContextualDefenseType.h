@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIContextualDefenseType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIContextualDefenseType : uint8 {
     Default,
     Throwable,

@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTTaskNode.h"
 #include "OutsideCirclesLifeBTTaskNode.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOutsideCirclesLifeBTTaskNode : public UBTTaskNode {
     GENERATED_BODY()
 public:

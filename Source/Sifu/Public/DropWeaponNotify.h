@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAnimNotify.h"
 #include "UObject/NoExportTypes.h"
 #include "ECoordinateSystem.h"
 #include "EDropNotifyApplyMode.h"
 #include "EDropReason.h"
+#include "SCAnimNotify.h"
 #include "DropWeaponNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UDropWeaponNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vImpulse;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bImpulseInLocalSocketSpace;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECoordinateSystem m_eImpulseCharacterSpace;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDropNotifyApplyMode m_ApplyMode;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDropReason m_eDropReason;
     
 public:

@@ -3,12 +3,12 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionIsCharacterOnScreen.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionIsCharacterOnScreen : public UAIComboCondition {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinTimeOnScreen;
     
 public:

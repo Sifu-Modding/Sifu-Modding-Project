@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FHitAnimsPerDataTableContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<UDataTable*, FHitAnimsPerDataTable> m_Data;
     
     FHitAnimsPerDataTableContainer();

@@ -3,15 +3,15 @@
 #include "SCFootIkRaycast.h"
 #include "SCFootIkCliffRaycast.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCFootIkCliffRaycast : public USCFootIkRaycast {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCliffTraceOffset;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCliffOffset;
     
 public:

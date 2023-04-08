@@ -1,10 +1,10 @@
 #include "AsyncTaskWaitForInput.h"
 #include "Templates/SubclassOf.h"
 
+class UAsyncTaskWaitForInput;
+class UCurveFloat;
 class UObject;
 class USCGameplayAbility;
-class UCurveFloat;
-class UAsyncTaskWaitForInput;
 
 UAsyncTaskWaitForInput* UAsyncTaskWaitForInput::BPF_WaitForInputWithFreezeExtraValidationDelegate(UObject* _context, float _fDelayBeforeFreeze, float _fDelayBeforeAllowingInput, FTestInputAdditionalValidationDelegate _additionalDelegate, TSubclassOf<USCGameplayAbility> _abilityToTest, TArray<InputAction> _specificActionsToTest, TArray<InputAction> _extraAvailableActions, ESCBlendType _eBlendType, UCurveFloat* _curveDynamic, float _fCameraSlomotionFactor, bool _bLaunchOnlyIfAvailable) {
     return NULL;

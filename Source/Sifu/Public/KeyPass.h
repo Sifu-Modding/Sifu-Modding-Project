@@ -3,22 +3,22 @@
 #include "GameFramework/Actor.h"
 #include "KeyPass.generated.h"
 
-class UInteractionObjectComponent;
 class APlayerController;
+class UInteractionObjectComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AKeyPass : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, Instanced, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInteractionObjectComponent* m_InteractionObjectComponent;
     
 private:
-    UPROPERTY(Transient, ReplicatedUsing=On_RepCollected)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, ReplicatedUsing=On_RepCollected, meta=(AllowPrivateAccess=true))
     bool m_bCollected;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForAllPlayers;
     
 public:
@@ -26,17 +26,17 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void UseInteractiveObject(APlayerController* _controller);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void On_RepCollected();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnKeyCollected();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_KeyLareadyCollected();
     
 };

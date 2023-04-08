@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAIAttackHitDetectionVolume {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIAttackHitDetectionCone> m_RangedCones;
     
     SIFU_API FAIAttackHitDetectionVolume();

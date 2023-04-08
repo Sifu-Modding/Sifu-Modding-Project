@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCSaveObject.h"
-#include "SCProfileData.h"
 #include "CharacterSaveDescription.h"
+#include "SCProfileData.h"
+#include "SCSaveObject.h"
 #include "SCSaveObjectPlayerProfile.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API USCSaveObjectPlayerProfile : public USCSaveObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, SaveGame, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FSCProfileData m_BaseProfileData;
     
     USCSaveObjectPlayerProfile();
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveSave(const FString& _saveName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsSaveValid(const FString& _saveName, bool _bTreatBackup) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FCharacterSaveDescription BPF_FindSaveByFileName(const FString& _fileName, bool& _bFound) const;
     
 };

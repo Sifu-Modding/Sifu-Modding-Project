@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FSCAnimInstanceRef {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     USCAnimInstanceBase* m_AnimInstance;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
     SCCORE_API FSCAnimInstanceRef();

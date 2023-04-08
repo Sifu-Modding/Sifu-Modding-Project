@@ -3,7 +3,7 @@
 #include "AIPhaseTransitionBossKill.h"
 #include "AIPhaseTransitionBossSpare.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionBossSpare : public UAIPhaseTransitionBossKill {
     GENERATED_BODY()
 public:

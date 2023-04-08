@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderService.h"
 #include "Engine/EngineTypes.h"
+#include "OrderService.h"
 #include "MovementModeOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UMovementModeOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EMovementMode> m_eMovementMode;
     
     UMovementModeOrderService();

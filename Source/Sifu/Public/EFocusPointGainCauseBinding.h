@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EFocusPointGainCauseBinding.generated.h"
 
-UENUM()
-enum class EFocusPointGainCauseBinding {
+UENUM(BlueprintType)
+enum class EFocusPointGainCauseBinding : uint8 {
     Avoid,
     Deflect,
 };

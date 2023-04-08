@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCPoseAssetSelection {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FSmartName m_PoseName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fWeight;
     
     FSCPoseAssetSelection();

@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIPhaseTransition.h"
 #include "SCMathExpressionFloat.h"
+#include "AIPhaseTransition.h"
 #include "AIPhaseTransitionDifficultyLevelChanged.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionDifficultyLevelChanged : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCMathExpressionFloat m_Expression;
     
 public:

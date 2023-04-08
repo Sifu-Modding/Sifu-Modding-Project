@@ -3,11 +3,11 @@
 #include "DialogActionBase.h"
 #include "TriggerGenericEventDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTriggerGenericEventDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_EventName;
     
     UTriggerGenericEventDialogAction();

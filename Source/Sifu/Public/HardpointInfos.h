@@ -2,20 +2,20 @@
 #include "CoreMinimal.h"
 #include "HardpointInfos.generated.h"
 
-class AArenaHardpointAreaActor;
 class AAISituationActor;
+class AArenaHardpointAreaActor;
 
 USTRUCT(BlueprintType)
 struct FHardpointInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_HardpointAreaName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<AArenaHardpointAreaActor> m_HardPointAreaActor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<AAISituationActor> m_AISituationLinkedToHardpoint;
     
     SIFU_API FHardpointInfos();

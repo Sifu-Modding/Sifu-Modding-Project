@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EEmotionTagType.generated.h"
 
-UENUM()
-enum class EEmotionTagType {
+UENUM(BlueprintType)
+enum class EEmotionTagType : uint8 {
     TagStart,
     TagEnd,
     ShortTag,

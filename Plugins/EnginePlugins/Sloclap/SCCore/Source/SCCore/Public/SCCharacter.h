@@ -1,66 +1,66 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "GameFramework/Character.h"
-#include "SCPoolableActor.h"
-#include "SCDebugNamedOject.h"
-#include "ECharacterGender.h"
-#include "Kismet/KismetTextLibrary.h"
 #include "Engine/EngineTypes.h"
+#include "Kismet/KismetTextLibrary.h"
+#include "ECharacterGender.h"
+#include "SCDebugNamedOject.h"
+#include "SCPoolableActor.h"
+#include "Templates/SubclassOf.h"
 #include "SCCharacter.generated.h"
 
-class UAnimSequence;
+class AActor;
 class ASCCharacterImpostor;
+class UAnimSequence;
 class USCCharacterPoseData;
 class USkeletalMesh;
-class AActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCCharacter : public ACharacter, public ISCPoolableActor, public ISCDebugNamedOject {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FImpostorDelegate, ASCCharacterImpostor*, ImpostorActor);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FImpostorDelegate OnSpawnedImpostorDynamic;
     
 private:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ImpostorName;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCanUnspawn;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCanSpawnImpostor;
     
-    UPROPERTY(VisibleInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsPooled;
     
-    UPROPERTY(ReplicatedUsing=OnRep_PooledActorActive)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_PooledActorActive, meta=(AllowPrivateAccess=true))
     bool m_bPooledActorActive;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USCCharacterPoseData> m_PoseDataClass;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDontCreateClotOnLowerEndPlatforms;
     
-    UPROPERTY(EditAnywhere, ReplicatedUsing=OnRep_SetGender)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_SetGender, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eGender;
     
 public:
     ASCCharacter();
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
     
-    UFUNCTION(Reliable, Server, WithValidation)
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetGender(ECharacterGender _eGender);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_SetGender();
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnRep_PooledActorActive();
     
 public:
@@ -76,19 +76,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetCollisionEnabled(bool _bEnabled, bool _bKeepStaticMeshCollisions);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ETextGender BPF_GetTextGender() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetImpostorName() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ECharacterGender BPF_GetGender() const;
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_ForceCanSpawnImpostor(bool _bCanSpawnImpostor);
     
     UFUNCTION(BlueprintCallable)
     void BPF_AddObjectToKeepAttachedOnImpostor(AActor* _actor, EAttachmentRule _eAttachmentRules, FName _boneName);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_SetGender(ECharacterGender _eGender);
     
     

@@ -14,13 +14,13 @@ protected:
     UFUNCTION(BlueprintCallable)
     bool BPF_GotoNextPhase();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnParentPhaseStarted(UAIFightingComponent* _aiComponent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnParentPhaseEnded(UAIFightingComponent* _aiComponent);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FString BPE_GetLog() const;
     
 };

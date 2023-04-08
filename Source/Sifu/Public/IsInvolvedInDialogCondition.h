@@ -3,7 +3,7 @@
 #include "BaseActorCondition.h"
 #include "IsInvolvedInDialogCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UIsInvolvedInDialogCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:

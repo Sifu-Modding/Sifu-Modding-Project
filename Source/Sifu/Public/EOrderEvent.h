@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOrderEvent.generated.h"
 
-UENUM()
-enum class EOrderEvent {
+UENUM(BlueprintType)
+enum class EOrderEvent : uint8 {
     Starting,
     Started,
     Ending,

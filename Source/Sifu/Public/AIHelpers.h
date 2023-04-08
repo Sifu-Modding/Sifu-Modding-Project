@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SCUserDefinedEnumHandler.h"
-#include "SCAITicketEnum.h"
 #include "AIConditionClassInstance.h"
 #include "EAIAttackTicketJokerSituation.h"
-#include "UObject/NoExportTypes.h"
+#include "SCAITicketEnum.h"
 #include "AIHelpers.generated.h"
 
-class UAIFightingComponent;
-class APawn;
-class AFightingCharacter;
-class UObject;
 class AAISpawner;
 class AActor;
+class AFightingCharacter;
+class APawn;
+class UAIFightingComponent;
+class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAIHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FFightingAIDelegate, UAIFightingComponent*, AIComponent);
     
     UAIHelpers();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FSCAITicketEnum Conv_SCEnumToAITicketEnum(const FSCUserDefinedEnumHandler& _scEnum);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAIFightingComponent* Conv_PawnToAiComponent(APawn* _pawn);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAIFightingComponent* Conv_AISpawnerToAiComponent(AAISpawner* _spawner);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static AFightingCharacter* Conv_AiComponentToFightingCharacter(UAIFightingComponent* _aiComponent);
     
     UFUNCTION(BlueprintCallable)

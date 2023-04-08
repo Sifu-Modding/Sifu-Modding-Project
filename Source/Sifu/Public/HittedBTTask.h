@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTTaskNode.h"
 #include "HittedBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UHittedBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:

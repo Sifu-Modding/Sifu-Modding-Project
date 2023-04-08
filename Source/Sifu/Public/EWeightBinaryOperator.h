@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EWeightBinaryOperator.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EWeightBinaryOperator : uint8 {
     Multiply,
     Add,

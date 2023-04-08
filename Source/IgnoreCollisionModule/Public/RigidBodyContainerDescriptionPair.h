@@ -3,14 +3,14 @@
 #include "RigidBodyContainerDescription.h"
 #include "RigidBodyContainerDescriptionPair.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FRigidBodyContainerDescriptionPair {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRigidBodyContainerDescription m_first;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRigidBodyContainerDescription m_second;
     
     IGNORECOLLISIONMODULE_API FRigidBodyContainerDescriptionPair();

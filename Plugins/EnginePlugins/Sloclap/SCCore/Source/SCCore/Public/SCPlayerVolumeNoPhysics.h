@@ -3,15 +3,15 @@
 #include "SCVolume.h"
 #include "SCPlayerVolumeNoPhysics.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCPlayerVolumeNoPhysics : public ASCVolume {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTestOverlap;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFullyInsideTolerances;
     
 public:

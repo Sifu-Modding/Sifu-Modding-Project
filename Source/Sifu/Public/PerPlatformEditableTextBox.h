@@ -4,14 +4,14 @@
 #include "PerPlatformWidget.h"
 #include "PerPlatformEditableTextBox.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformEditableTextBox : public UEditableTextBox, public IPerPlatformWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 NormalSize;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SmallScreenSize;
     
     UPerPlatformEditableTextBox();

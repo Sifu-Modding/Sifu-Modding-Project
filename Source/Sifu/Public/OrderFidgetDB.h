@@ -1,55 +1,55 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderDB.h"
-#include "FidgetDBDescription.h"
 #include "SCUserDefinedEnumHandler.h"
 #include "EditableOrderType.h"
+#include "FidgetDBDescription.h"
+#include "OrderDB.h"
 #include "OrderFidgetDB.generated.h"
 
-class UFidgetDB;
 class UDataTable;
+class UFidgetDB;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UOrderFidgetDB : public UOrderDB {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_VariableWeightLayer;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* m_BlendProfileBySpeedStateTable;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSyncFidgetMirrorWithQuadrantCooldown;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FFidgetDBDescription m_FidgetDBs[2];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFidgetDB* m_TakeOutWeaponFidgetDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHideWeaponPostBlendRatio;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FEditableOrderType> m_eTakeOutWeaponPostOrderList;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bPlayAlertFidgetIfMoveStatusMatch;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bPlayAlertFidgetIfMoveStatusDoesntMatch;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFidgetDefaultBlendInDuration;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFidgetMaxBlendInDurationByAnimPercent;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFidgetDefaultBlendOutDuration;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFidgetQuickBlendOutDuration;
     
     UOrderFidgetDB();

@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FSafeZoneBonePair {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_bone1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_bone2;
     
     SIFU_API FSafeZoneBonePair();

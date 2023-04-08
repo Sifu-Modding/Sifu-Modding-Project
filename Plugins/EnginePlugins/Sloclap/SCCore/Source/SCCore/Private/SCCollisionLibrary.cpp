@@ -1,7 +1,7 @@
 #include "SCCollisionLibrary.h"
 
-class UStaticMesh;
 class UPrimitiveComponent;
+class UStaticMesh;
 
 void USCCollisionLibrary::BPF_VisualLogCollision(UPrimitiveComponent* _primitiveComponent, const FName& _categoryName) {
 }

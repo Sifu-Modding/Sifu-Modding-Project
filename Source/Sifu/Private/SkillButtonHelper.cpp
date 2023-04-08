@@ -1,7 +1,7 @@
 #include "SkillButtonHelper.h"
 
-class USkillsDB;
 class USkillButton;
+class USkillsDB;
 
 void USkillButtonHelper::BPF_RebuildDBFromButtons(USkillsDB* _db, USkillButton* _root) {
 }

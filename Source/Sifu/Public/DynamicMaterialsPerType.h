@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "DynamicMaterialsPerType.generated.h"
 
-class UMaterialInstanceDynamic;
 class UMaterialInstance;
+class UMaterialInstanceDynamic;
 
 USTRUCT(BlueprintType)
 struct FDynamicMaterialsPerType {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInstanceDynamic*> m_DynamicMaterials;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<UMaterialInstance*> m_RefMaterials;
     
     SIFU_API FDynamicMaterialsPerType();

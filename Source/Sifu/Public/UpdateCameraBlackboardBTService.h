@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "BehaviorTree/Services/BTService_BlueprintBase.h"
-#include "EFightingActionState.h"
-#include "PlayerStatesStatus.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "EDirections.h"
+#include "EFightingActionState.h"
 #include "EOrderType.h"
+#include "PlayerStatesStatus.h"
 #include "UpdateCameraBlackboardBTService.generated.h"
 
 class AFightingCharacter;
-class UPlayerFightingComponent;
 class UASMComponent;
-class UCameraComponentThird;
 class UAttackComponent;
+class UCameraComponentThird;
+class UPlayerFightingComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UUpdateCameraBlackboardBTService : public UBTService_BlueprintBase {
     GENERATED_BODY()
 public:
@@ -28,37 +28,37 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_UpdateIsDuckingKey(FBlackboardKeySelector _DuckingKey);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FPlayerStatesStatus BPF_GetPlayerStateStatus(EFightingActionState _eFightingState) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPlayerFightingComponent* BPF_GetPlayerFightingComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFightingCharacter* BPF_GetFightingCharOwner() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EDirections BPF_GetCharacterSideOnScreen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCameraComponentThird* BPF_GetCameraComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAttackComponent* BPF_GetAttackComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UASMComponent* BPF_GetASMComponent() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnOrderStarting(EOrderType _eOrderType, uint8 _orderID);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnOrderEnding(EOrderType _eOrderType, uint8 _orderID);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ExitState(EFightingActionState _eStateEntered);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_EnterState(EFightingActionState _eStateEntered);
     
 };

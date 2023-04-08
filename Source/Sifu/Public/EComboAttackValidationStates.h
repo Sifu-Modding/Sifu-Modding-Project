@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EComboAttackValidationStates.generated.h"
 
-UENUM()
-enum class EComboAttackValidationStates {
+UENUM(BlueprintType)
+enum class EComboAttackValidationStates : uint8 {
     Success,
     WrongEndQuadrant,
     PreviousAttackIsEmpty,

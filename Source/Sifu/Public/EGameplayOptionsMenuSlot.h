@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EGameplayOptionsMenuSlot.generated.h"
 
-UENUM()
-enum class EGameplayOptionsMenuSlot {
+UENUM(BlueprintType)
+enum class EGameplayOptionsMenuSlot : uint8 {
     Gameplay,
     Audio,
 };

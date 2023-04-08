@@ -3,11 +3,11 @@
 #include "InputData.h"
 #include "AnalogInputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAnalogInputData : public UInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_validityThreshold;
     
     UAnalogInputData();

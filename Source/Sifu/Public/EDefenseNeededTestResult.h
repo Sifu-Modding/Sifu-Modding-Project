@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EDefenseNeededTestResult.generated.h"
 
-UENUM()
-enum class EDefenseNeededTestResult {
+UENUM(BlueprintType)
+enum class EDefenseNeededTestResult : uint8 {
     Yes,
     No_Instigator_Will_Hit_First,
     No_Incoming_Hit,

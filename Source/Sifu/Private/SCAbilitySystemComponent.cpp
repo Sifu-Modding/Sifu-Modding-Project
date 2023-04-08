@@ -1,9 +1,9 @@
 #include "SCAbilitySystemComponent.h"
 #include "Templates/SubclassOf.h"
 
-class USkillGameplayEffect;
 class UGameplayAbility;
 class UGameplayEffect;
+class USkillGameplayEffect;
 
 void USCAbilitySystemComponent::BPF_UnlockSkill(TSubclassOf<USkillGameplayEffect> _effect, bool _bForce) {
 }
@@ -15,6 +15,9 @@ void USCAbilitySystemComponent::BPF_UnlockAllSkills(const FString& _path) {
 }
 
 void USCAbilitySystemComponent::BPF_ResetShrineEffects() {
+}
+
+void USCAbilitySystemComponent::BPF_RemoveLooseGameplayTag(FGameplayTag _tag) {
 }
 
 void USCAbilitySystemComponent::BPF_RemoveAndSaveGameplayTag(const FGameplayTagContainer& _tag) {
@@ -73,6 +76,9 @@ bool USCAbilitySystemComponent::BPF_CanConsolidatekSkill(TSubclassOf<USkillGamep
 }
 
 void USCAbilitySystemComponent::BPF_AddShrineEffect(TSubclassOf<UGameplayEffect> _effect) {
+}
+
+void USCAbilitySystemComponent::BPF_AddLooseGameplayTag(FGameplayTag _tag) {
 }
 
 void USCAbilitySystemComponent::BPF_AddAndSaveGameplayTag(const FGameplayTagContainer& _tag, bool _bNeedSaveGame) {

@@ -3,7 +3,7 @@
 #include "Engine/GameViewportClient.h"
 #include "SCGameViewportClient.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SIFU_API USCGameViewportClient : public UGameViewportClient {
     GENERATED_BODY()
 public:

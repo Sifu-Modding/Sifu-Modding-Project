@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "SCSpawnImpostorInfos.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FSCSpawnImpostorInfos {
     GENERATED_BODY()
 public:

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FHandPoseBlendStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fLength;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCBlendType m_eBlendType;
     
     FHandPoseBlendStruct();

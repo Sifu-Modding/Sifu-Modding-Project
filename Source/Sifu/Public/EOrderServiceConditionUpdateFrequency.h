@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOrderServiceConditionUpdateFrequency.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOrderServiceConditionUpdateFrequency : uint8 {
     OncePerOrder,
     OnDemand,

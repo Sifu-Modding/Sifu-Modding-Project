@@ -4,5 +4,5 @@
 
 class UGameplayAbility;
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FAbilityDynamicDelegate, UGameplayAbility*, _ability);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FAbilityDynamicDelegate, UGameplayAbility*, _ability);
 

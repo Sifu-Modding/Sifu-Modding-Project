@@ -1,7 +1,7 @@
 #include "DebugMenu.h"
 
-class UPanelWidget;
 class ULoadSlot;
+class UPanelWidget;
 
 void UDebugMenu::BPF_ShowSaves(UPanelWidget* _boxToFill) {
 }

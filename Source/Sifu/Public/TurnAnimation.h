@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FTurnAnimation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_animContainer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCRotationWay m_eRotationWay;
     
     SIFU_API FTurnAnimation();

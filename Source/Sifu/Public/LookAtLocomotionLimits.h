@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESpeedState.h"
 #include "EMoveStatus.h"
+#include "ESpeedState.h"
 #include "LookAtLimits.h"
 #include "LookAtLocomotionLimits.generated.h"
 
@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct FLookAtLocomotionLimits {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESpeedState m_eSpeedState;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMoveStatus m_eMoveStatus;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLookAtLimits m_limits;
     
     SIFU_API FLookAtLocomotionLimits();

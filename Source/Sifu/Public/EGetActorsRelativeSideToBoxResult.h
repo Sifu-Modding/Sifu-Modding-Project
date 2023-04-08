@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EGetActorsRelativeSideToBoxResult.generated.h"
 
-UENUM()
-enum class EGetActorsRelativeSideToBoxResult {
+UENUM(BlueprintType)
+enum class EGetActorsRelativeSideToBoxResult : uint8 {
     AxisX,
     AxisY,
     No,

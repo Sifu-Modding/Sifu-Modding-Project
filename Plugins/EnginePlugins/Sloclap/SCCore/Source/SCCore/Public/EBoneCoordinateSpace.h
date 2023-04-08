@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EBoneCoordinateSpace.generated.h"
 
-UENUM()
-enum class EBoneCoordinateSpace {
+UENUM(BlueprintType)
+enum class EBoneCoordinateSpace : uint8 {
     Component,
     Actor,
     World,

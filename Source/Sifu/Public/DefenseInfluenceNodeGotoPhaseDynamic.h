@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ContextualDefenseInfluenceNode.h"
 #include "AIPhaseNodeSoftLink.h"
+#include "ContextualDefenseInfluenceNode.h"
 #include "DefenseInfluenceNodeGotoPhaseDynamic.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDefenseInfluenceNodeGotoPhaseDynamic : public UContextualDefenseInfluenceNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIPhaseNodeSoftLink m_phaseSoftLink;
     
     UDefenseInfluenceNodeGotoPhaseDynamic();

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FReplayKeyDataWorldTarget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString m_ID;
     
     SIFU_API FReplayKeyDataWorldTarget();

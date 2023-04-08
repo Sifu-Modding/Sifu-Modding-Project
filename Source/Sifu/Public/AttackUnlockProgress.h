@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAttackUnlockProgress {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     int32 m_iXP;
     
     FAttackUnlockProgress();

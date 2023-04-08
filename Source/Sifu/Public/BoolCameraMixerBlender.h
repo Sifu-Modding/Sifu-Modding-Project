@@ -1,40 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OverTimeCameraMixerBlender.h"
 #include "ESCBlendType.h"
+#include "OverTimeCameraMixerBlender.h"
 #include "BoolCameraMixerBlender.generated.h"
 
-class UCurveFloat;
 class UCameraComponentThird;
+class UCurveFloat;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UBoolCameraMixerBlender : public UOverTimeCameraMixerBlender {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bInversed;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDuration;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCBlendType m_eBlendType;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_Curve;
     
-    UPROPERTY(AdvancedDisplay, EditDefaultsOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bConstantSpeed;
     
 public:
     UBoolCameraMixerBlender();
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetOldValue() const;
     
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_GetBool(UCameraComponentThird* _camera, bool _bNoDamping) const;
     
 };

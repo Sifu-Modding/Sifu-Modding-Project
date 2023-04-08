@@ -3,7 +3,7 @@
 #include "HitRequestAdditionalInfo.h"
 #include "BlendSpaceHitRequestAdditionalInfo.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct SIFU_API FBlendSpaceHitRequestAdditionalInfo : public FHitRequestAdditionalInfo {
     GENERATED_BODY()
 public:

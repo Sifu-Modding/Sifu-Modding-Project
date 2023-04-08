@@ -3,7 +3,7 @@
 #include "GameFramework/GameState.h"
 #include "SCGameState.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCGameState : public AGameState {
     GENERATED_BODY()
 public:

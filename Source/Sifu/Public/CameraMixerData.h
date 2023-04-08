@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "AbstractCameraData.h"
+#include "Templates/SubclassOf.h"
 #include "CameraMixerData.generated.h"
 
 class UCameraMixerBlender;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCameraMixerData : public UAbstractCameraData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAbstractCameraData* m_StartCamera;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAbstractCameraData* m_EndCamera;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UCameraMixerBlender> m_BlenderClass;
     
-    UPROPERTY(AdvancedDisplay, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseEndCamForTransition;
     
     UCameraMixerData();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ImportTransitionsFromStartCam();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ImportTransitionsFromEndCam();
     
 };

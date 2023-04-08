@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTTaskNode.h"
 #include "ChangePhaseBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UChangePhaseBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:

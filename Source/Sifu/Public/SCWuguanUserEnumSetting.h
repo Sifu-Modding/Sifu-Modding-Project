@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSCWuguanUserEnumSetting {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_Enum;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<USCUserDefinedEnumBinding> m_Bindings;
     
     SIFU_API FSCWuguanUserEnumSetting();

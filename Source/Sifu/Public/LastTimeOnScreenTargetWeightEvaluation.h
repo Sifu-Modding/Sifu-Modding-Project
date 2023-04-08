@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseTargetWeightEvaluation.h"
 #include "Curves/CurveFloat.h"
+#include "BaseTargetWeightEvaluation.h"
 #include "LastTimeOnScreenTargetWeightEvaluation.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API ULastTimeOnScreenTargetWeightEvaluation : public UBaseTargetWeightEvaluation {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRuntimeFloatCurve m_TimeCurve;
     
 public:

@@ -3,22 +3,22 @@
 #include "DialogActionBase.h"
 #include "ConfrontationDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UConfrontationDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ActorSentToConfrontation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iCircleIndex;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bPlayPrefightAnimations;
     
     UConfrontationDialogAction();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;
     
 };

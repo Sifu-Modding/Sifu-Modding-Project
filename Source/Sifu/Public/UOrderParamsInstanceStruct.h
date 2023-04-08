@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FUOrderParamsInstanceStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOrderParams* m_Instance;
     
     FUOrderParamsInstanceStruct();

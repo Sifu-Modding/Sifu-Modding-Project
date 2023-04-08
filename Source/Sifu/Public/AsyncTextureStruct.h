@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAsyncTextureStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UTexture2D> m_AsyncAsset;
     
     FAsyncTextureStruct();

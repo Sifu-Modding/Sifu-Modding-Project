@@ -1,8 +1,8 @@
 #include "SCPlayerController.h"
 
-class UUserWidget;
-class UInputContextData;
 class AActor;
+class UInputContextData;
+class UUserWidget;
 
 void ASCPlayerController::UnlockAllAchievements() {
 }

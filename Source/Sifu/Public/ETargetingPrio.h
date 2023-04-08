@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ETargetingPrio.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ETargetingPrio : uint8 {
     DesignatedPrecise,
     DesignatedRough,

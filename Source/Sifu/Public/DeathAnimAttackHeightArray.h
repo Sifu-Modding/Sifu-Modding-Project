@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FDeathAnimAttackHeightArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FDeathAnimAttackCardinalArray m_Array[3];
     
     SIFU_API FDeathAnimAttackHeightArray();

@@ -7,18 +7,18 @@
 class ACharacter;
 class ULevelSequence;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ASCLevelSequenceActor : public ALevelSequenceActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSequenceBinding> m_SequenceBindings;
     
-  /*  ASCLevelSequenceActor();*/
-    UFUNCTION(BlueprintCallable)
-    void BPF_Play();
+    //ASCLevelSequenceActor();
+  /*  UFUNCTION(BlueprintCallable)
+    void BPF_Play();*/
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     ULevelSequence* BPF_GetOverridingLevelSequence(ACharacter* _characterOwner) const;
     
 };

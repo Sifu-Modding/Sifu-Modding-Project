@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSCAnimOrderServiceSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UOrderService> m_OrderService;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDisable;
     
     SIFU_API FSCAnimOrderServiceSettings();

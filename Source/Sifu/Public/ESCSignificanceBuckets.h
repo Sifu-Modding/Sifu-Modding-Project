@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCSignificanceBuckets.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCSignificanceBuckets : uint8 {
     None,
     High,

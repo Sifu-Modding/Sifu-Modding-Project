@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EALPriority.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EALPriority : uint8 {
     Default,
     BlockingFightingState,

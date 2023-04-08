@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSkinToneGender {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInterface* m_SkinTones[2];
     
     SIFU_API FSkinToneGender();

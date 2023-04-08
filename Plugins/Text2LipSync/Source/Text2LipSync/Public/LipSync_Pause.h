@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FLipSync_Pause {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FLipSync_Interval> Pauses;
     
     TEXT2LIPSYNC_API FLipSync_Pause();

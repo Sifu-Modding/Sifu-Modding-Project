@@ -13,7 +13,7 @@ class SCCORE_API USCPoolableActorSpawner : public UInterface {
 class SCCORE_API ISCPoolableActorSpawner : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnGeneratePoolActors(ASCPoolableActorsContainer* _container);
     
 };

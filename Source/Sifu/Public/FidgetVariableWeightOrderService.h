@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderService.h"
 #include "SCUserDefinedEnumHandler.h"
 #include "ESpeedState.h"
 #include "EditableOrderType.h"
+#include "OrderService.h"
 #include "FidgetVariableWeightOrderService.generated.h"
 
 class UBlendProfile;
 
-UCLASS(Abstract, EditInlineNew)
+UCLASS(Abstract, Blueprintable, EditInlineNew)
 class SIFU_API UFidgetVariableWeightOrderService : public UOrderService {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_EnumLayer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlendProfile* m_DefaultBoneMask;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FEditableOrderType m_OrderType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESpeedState m_eRefSpeedState;
     
     UFidgetVariableWeightOrderService();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCRotationWay.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCRotationWay : uint8 {
     ClockWise,
     CounterClockWise,

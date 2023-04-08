@@ -1,40 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "ArchetypeSituationDescription.h"
 #include "ThePlainesLevel.h"
 #include "WeaponSituationDescription.h"
-#include "ArchetypeSituationDescription.h"
 #include "ThePlainesLDLevel.generated.h"
 
-class UDataTable;
 class UArchetypeSituationDB;
+class UDataTable;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AThePlainesLDLevel : public AThePlainesLevel {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UDataTable* m_dynamicPropsDataTable;
     
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 m_uiEncouterZone;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iLastManGaugeThresold;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FArchetypeSituationDescription> m_ArchetypesInSituation;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UArchetypeSituationDB* m_ArchetypesInSituationDB;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FWeaponSituationDescription> m_WeaponsInSituation;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMinMaxGenericWeapons;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxMaxGenericWeapons;
     
 public:

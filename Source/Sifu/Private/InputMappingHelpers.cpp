@@ -1,8 +1,8 @@
 #include "InputMappingHelpers.h"
 
 class ASCPlayerController;
-class UInputMappingProfileDB;
 class UGenericInputData;
+class UInputMappingProfileDB;
 
 bool UInputMappingHelpers::ValidateMappingForPreset(const FInputMappingProfileData& _mappingContext, const FInputMappingGroup& _context, const FInputPresetsEnumHandler& _preset, InputContext _eContext, const FInputMappingData& _mapping, TArray<FMappingValidationError>& _outErrors, bool _bDetectCollisions) {
     return false;
@@ -75,8 +75,8 @@ bool UInputMappingHelpers::BPF_IsDependencyBrokenWithPreset(const FInputMappingP
 void UInputMappingHelpers::BPF_GetMappingResult(const FInputMappingProfileData& _mappingContext, const FMappingID& _ID, FInputMappingNode& _outResultNode) {
 }
 
-//void UInputMappingHelpers::BPF_GetMappingProfiles(TMap<FInputMappingProfileEnumHandler, UInputMappingProfileDB*>& _outResult, bool _bGamePad) {
-//}
+void UInputMappingHelpers::BPF_GetMappingProfiles(TMap<FInputMappingProfileEnumHandler, UInputMappingProfileDB*>& _outResult, bool _bGamePad) {
+}
 
 UInputMappingProfileDB* UInputMappingHelpers::BPF_GetMappingProfileDB(const FInputMappingProfileEnumHandler& _profileID) {
     return NULL;

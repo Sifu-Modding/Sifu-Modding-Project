@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseActorCondition.h"
 #include "ECharacterGender.h"
+#include "BaseActorCondition.h"
 #include "GenderCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UGenderCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterGender m_eGender;
     
     UGenderCondition();

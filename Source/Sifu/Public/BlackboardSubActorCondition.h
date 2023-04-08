@@ -3,11 +3,11 @@
 #include "BaseActorCondition.h"
 #include "BlackboardSubActorCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBlackboardSubActorCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_BlackboardKey;
     
     UBlackboardSubActorCondition();

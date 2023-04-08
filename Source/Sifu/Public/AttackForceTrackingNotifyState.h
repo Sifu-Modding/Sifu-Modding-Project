@@ -3,7 +3,7 @@
 #include "SCAnimNotifyState.h"
 #include "AttackForceTrackingNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UAttackForceTrackingNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:

@@ -3,36 +3,36 @@
 #include "Blueprint/UserWidget.h"
 #include "MovieWidget.generated.h"
 
+class UImage;
 class UMediaPlayer;
 class UMediaTexture;
-class UImage;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UMovieWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEndReached);
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMediaTexture* m_MediaTexture;
     
-    UPROPERTY(BlueprintReadWrite, Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UImage* m_WidgetTorender;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnEndReached OnEndReached;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMediaPlayer* m_MediaPlayer;
     
 public:
     UMovieWidget();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void MediaOpenedCallback(const FString& _url);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void MediaEndCallback();
     
 public:

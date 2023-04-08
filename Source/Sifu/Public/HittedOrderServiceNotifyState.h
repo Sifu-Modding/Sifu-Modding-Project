@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoneReferenceContainerInterface -FallbackName=BoneReferenceContainerInterface
-#include "OrderServiceNotifyState.h"
 #include "HittedServiceInfos.h"
+#include "OrderServiceNotifyState.h"
 #include "HittedOrderServiceNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UHittedOrderServiceNotifyState : public UOrderServiceNotifyState {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHittedServiceInfos m_Infos;
     
     UHittedOrderServiceNotifyState();

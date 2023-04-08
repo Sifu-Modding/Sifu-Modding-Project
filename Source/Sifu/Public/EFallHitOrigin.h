@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EFallHitOrigin.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFallHitOrigin : uint8 {
     FromPush,
     FromFall,

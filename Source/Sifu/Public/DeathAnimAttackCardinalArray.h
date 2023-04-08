@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FDeathAnimAttackCardinalArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* m_Array[4];
     
     SIFU_API FDeathAnimAttackCardinalArray();

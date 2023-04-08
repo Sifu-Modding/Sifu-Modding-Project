@@ -3,7 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "SCBlenderManager.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SCCORE_API ASCBlenderManager : public AActor {
     GENERATED_BODY()
 public:

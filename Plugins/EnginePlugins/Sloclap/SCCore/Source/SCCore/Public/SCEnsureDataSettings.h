@@ -1,34 +1,34 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DeveloperSettings.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/DeveloperSettings.h"
 #include "AdvisersStruct.h"
 #include "SCEnsureDataSettings.generated.h"
 
-UCLASS(DefaultConfig, Config=SCCore)
+UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=SCCore)
 class SCCORE_API USCEnsureDataSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_Enums[2];
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_adviserTooltipText;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_buildLog;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FAdvisersStruct> m_ensureCategoryAdvisers;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseNameInsteadOfPath;
     
 protected:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bRegroupUnderOneCategory;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_mainCategoryName;
     
 public:

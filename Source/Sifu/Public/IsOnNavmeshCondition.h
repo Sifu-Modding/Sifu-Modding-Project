@@ -3,11 +3,11 @@
 #include "BaseActorCondition.h"
 #include "IsOnNavmeshCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UIsOnNavmeshCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDistTolerance;
     
     UIsOnNavmeshCondition();

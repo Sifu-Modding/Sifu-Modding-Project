@@ -4,11 +4,11 @@
 #include "EFightingState.h"
 #include "FightingStateCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFightingStateCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingState m_eFightingState;
     
     UFightingStateCondition();

@@ -1,24 +1,24 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "Engine/DataAsset.h"
 #include "DeltaTransformAudioStep.h"
-#include "UObject/NoExportTypes.h"
 #include "DeltaTransformAudioData.generated.h"
 
 class UAkAudioEvent;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UDeltaTransformAudioData : public UDataAsset {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(EditAnywhere)
-    UAkAudioEvent* m_defaultAkEvent;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAkAudioEvent* m_defaultAkEvent;*/
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FDeltaTransformAudioStep> m_Steps;
     
-    UDeltaTransformAudioData();
-    UFUNCTION(BlueprintPure)
+   /* UDeltaTransformAudioData();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAkAudioEvent* GetAudioEvent(FTransform _from, FTransform _to) const;*/
     
 };

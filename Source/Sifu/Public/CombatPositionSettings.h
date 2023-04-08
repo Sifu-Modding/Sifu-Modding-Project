@@ -3,11 +3,11 @@
 #include "BaseCombatPositionSettings.h"
 #include "CombatPositionSettings.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCombatPositionSettings : public UBaseCombatPositionSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPositionEliminationAngle;
     
     UCombatPositionSettings();

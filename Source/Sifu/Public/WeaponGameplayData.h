@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "UObject/Object.h"
 #include "MainCharWeaponOverrideInfo.h"
+#include "Templates/SubclassOf.h"
 #include "WeaponGameplayData.generated.h"
 
 class AFightingCharacter;
-class UTargetSettingsDB;
 class UCurveFloat;
+class UTargetSettingsDB;
 
 UCLASS(Blueprintable)
 class SIFU_API UWeaponGameplayData : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UTargetSettingsDB> m_throwFromPickUpTargetSettingsDB;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_afDamageReceiveFromAttackPower[3];
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_SlowMotionCurve;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fSlowMotionScale;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMainCharWeaponOverrideInfo m_MainCharOverrides;
     
     UWeaponGameplayData();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_WeaponDataRef();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure=false)

@@ -4,11 +4,11 @@
 #include "WGAiAction.h"
 #include "AIActionDropObject.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionDropObject : public UWGAiAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vDropImpulse;
     
     UAIActionDropObject();

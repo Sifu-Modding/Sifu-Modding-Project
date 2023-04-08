@@ -3,11 +3,11 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionFindProxyNearPlayer.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionFindProxyNearPlayer : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinimumDistance;
     
     UComboAIConditionFindProxyNearPlayer();

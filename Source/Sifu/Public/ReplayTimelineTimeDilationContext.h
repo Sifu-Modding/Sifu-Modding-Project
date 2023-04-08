@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FReplayTimelineTimeDilationContext {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FReplayTimelineTimeDilationData> m_Transitions;
     
     SIFU_API FReplayTimelineTimeDilationContext();

@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FComboNodeAttackInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Attacks[4];
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FChargedAttackNameByQuadrants> m_ChargedAttacks;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FChargedBuildUpStructByQuadrant> m_BuildUpForChargedAttack;
     
     SIFU_API FComboNodeAttackInfos();

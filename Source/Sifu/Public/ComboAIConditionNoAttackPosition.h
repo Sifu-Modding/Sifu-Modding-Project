@@ -3,7 +3,7 @@
 #include "AIComboCondition.h"
 #include "ComboAIConditionNoAttackPosition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionNoAttackPosition : public UAIComboCondition {
     GENERATED_BODY()
 public:

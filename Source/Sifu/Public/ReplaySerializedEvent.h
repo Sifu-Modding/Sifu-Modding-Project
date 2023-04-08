@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ReplaySerializedEvent.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FReplaySerializedEvent {
     GENERATED_BODY()
 public:

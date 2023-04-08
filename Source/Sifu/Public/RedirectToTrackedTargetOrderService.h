@@ -3,7 +3,7 @@
 #include "RedirectToTargetOrderService.h"
 #include "RedirectToTrackedTargetOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API URedirectToTrackedTargetOrderService : public URedirectToTargetOrderService {
     GENERATED_BODY()
 public:

@@ -3,12 +3,12 @@
 #include "BoolCameraMixerBlender.h"
 #include "BlackboardBoolCameraMixerBlender.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UBlackboardBoolCameraMixerBlender : public UBoolCameraMixerBlender {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_KeyName;
     
 public:

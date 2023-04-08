@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIInfluenceTest.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIInfluenceTest : uint8 {
     Superior,
     Inferior,

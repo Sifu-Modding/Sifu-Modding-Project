@@ -3,18 +3,18 @@
 #include "BaseHitDetectionDB.h"
 #include "LineHitDetectionDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API ULineHitDetectionDB : public UBaseHitDetectionDB {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fHalfHeight;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iNumLines;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOneSided;
     
 public:

@@ -1,103 +1,130 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SCDelegate.h"
-#include "VolumesArray.h"
-#include "EDownState.h"
 #include "Engine/EngineTypes.h"
+#include "SCDelegate.h"
+#include "EDownState.h"
+#include "VolumesArray.h"
 #include "ArenaHardpointAreaActor.generated.h"
 
-class UPrimitiveComponent;
-class UCharacterHealthComponent;
-class USceneComponent;
+class AAISituationActor;
 class AFightingCharacter;
 class ASCVolume;
-class AAISituationActor;
+class UCharacterHealthComponent;
+class UPrimitiveComponent;
+class USceneComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AArenaHardpointAreaActor : public AActor {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnScoreMultiplierChanged;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnScoreMultiplierChanged;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnEnemyPresenceInsideHardpointChanged;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnEnemyPresenceInsideHardpointChanged;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnScoreDecreaseStarted;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnScoreDecreaseEnded;*/
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText m_HardpointAreaName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASCVolume*> m_ChildrenVolumes;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsActive;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fCurrentScoreMultiplier;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsAnyEnemyInsideHardpoint;
     
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USceneComponent* m_RootComponent;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<AFightingCharacter*, FVolumesArray> m_overlappedVolumesPerEnemy;
     
 public:
     AArenaHardpointAreaActor();
+    UFUNCTION(BlueprintCallable)
+    void UpdateVolumeBounds();
+    
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnOverlappingEnemyDown(UCharacterHealthComponent* _healthComponent, EDownState _eState);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnHardpointSituationResolved(AAISituationActor* _situationChanged);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnChildComponentStartOverlap(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _iOtherBodyIndex, bool _bFromSweep, const FHitResult& _sweepResult);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnChildComponentEndOverlap(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _iOtherBodyIndex);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<ASCVolume*> GetAreaVolumes() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_IsScoreDecreasing() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_IsPlayerCapturing() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasBeenCaptured() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetIsActive() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FText BPF_GetHardpointAreaName() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCurrentCaptureRatio() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCaptureValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetAreaName() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable)
+    void BPF_ForceCapture();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnStopCapturing();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnStartCapturing(float _CurrentScore);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnScoreCaptureValueChanged(float _fCurrentValue, float _fMaxValue);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnReactivate();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnHardpointCaptured();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDeactivate();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnActivate();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float BFF_GetCurrentCaptureScore() const;
     
 };
 

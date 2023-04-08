@@ -3,12 +3,12 @@
 #include "OrderServiceActivationConditions.h"
 #include "OrderServiceHasHitTargetActivationCondition.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UOrderServiceHasHitTargetActivationCondition : public UOrderServiceActivationConditions {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bMustBeSucessful;
     
 public:

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FComboConditionValueToNodeMap {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<uint8, uint8> m_Map;
     
     SIFU_API FComboConditionValueToNodeMap();

@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ESCGameInstanceState.h"
 #include "UObject/NoExportTypes.h"
+#include "ESCGameInstanceState.h"
 #include "SCGameFlowMap.generated.h"
 
 USTRUCT(BlueprintType)
 struct SCCORE_API FSCGameFlowMap {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCGameInstanceState m_State;
     
-    UPROPERTY(BlueprintReadOnly, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_StateName;
     
-    UPROPERTY(BlueprintReadOnly, Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSoftObjectPath m_Map;
     
     FSCGameFlowMap();

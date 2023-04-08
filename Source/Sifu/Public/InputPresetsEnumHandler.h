@@ -9,4 +9,5 @@ struct FInputPresetsEnumHandler : public FSCUserDefinedEnumHandler {
 public:
     SIFU_API FInputPresetsEnumHandler();
 };
+FORCEINLINE uint32 GetTypeHash(const FInputPresetsEnumHandler) { return 0; }
 

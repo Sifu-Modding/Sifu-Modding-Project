@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FBaseHitBoxConditionInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UHitBoxCondition> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHitBoxCondition* m_Instance;
     
     FBaseHitBoxConditionInstance();

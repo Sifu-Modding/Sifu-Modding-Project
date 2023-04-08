@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECinematicsEnum.generated.h"
 
-UENUM()
-enum class ECinematicsEnum {
+UENUM(BlueprintType)
+enum class ECinematicsEnum : uint8 {
     None,
     Kuretz,
     Cargal,

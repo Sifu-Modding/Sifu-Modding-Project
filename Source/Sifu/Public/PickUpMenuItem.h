@@ -3,7 +3,7 @@
 #include "Blueprint/UserWidget.h"
 #include "PickUpMenuItem.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UPickUpMenuItem : public UUserWidget {
     GENERATED_BODY()
 public:

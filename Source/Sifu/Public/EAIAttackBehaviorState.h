@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAIAttackBehaviorState.generated.h"
 
-UENUM()
-enum class EAIAttackBehaviorState {
+UENUM(BlueprintType)
+enum class EAIAttackBehaviorState : uint8 {
     None,
     Cancelled,
     MoveToTarget,

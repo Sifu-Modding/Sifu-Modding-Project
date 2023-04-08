@@ -10,14 +10,19 @@ UCLASS(Blueprintable)
 class SCCORE_API UCheatData : public UObject {
     GENERATED_BODY()
 public:
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString m_sUsedArgument;
+    
+public:
     UCheatData();
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCheatDeactivated(APlayerController* _playerController) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCheatActivated(APlayerController* _playerController, const FString& _argument) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_CanApplyCheat(UGameInstance* _gameInstance, APlayerController* _playerController) const;
     
 };

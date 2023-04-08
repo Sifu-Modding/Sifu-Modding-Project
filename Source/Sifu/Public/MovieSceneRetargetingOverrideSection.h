@@ -5,11 +5,11 @@
 
 class UWGRetargetingOverrideData;
 
-UCLASS(MinimalAPI)
+UCLASS(Blueprintable, MinimalAPI)
 class UMovieSceneRetargetingOverrideSection : public UMovieSceneSection {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UWGRetargetingOverrideData* m_RetargetingOverrideData;
     
     UMovieSceneRetargetingOverrideSection();

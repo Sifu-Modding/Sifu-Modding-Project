@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "OrderServiceActivationConditions.h"
+#include "Templates/SubclassOf.h"
 #include "OrderServiceIsPlayingActivationCondition.generated.h"
 
 class UOrderService;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UOrderServiceIsPlayingActivationCondition : public UOrderServiceActivationConditions {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UOrderService> m_InstanceClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bStopWhenOrderServiceRunning;
     
     UOrderServiceIsPlayingActivationCondition();

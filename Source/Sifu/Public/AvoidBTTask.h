@@ -3,7 +3,7 @@
 #include "AIDefenseBTTask.h"
 #include "AvoidBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAvoidBTTask : public UAIDefenseBTTask {
     GENERATED_BODY()
 public:

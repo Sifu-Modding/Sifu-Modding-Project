@@ -4,12 +4,12 @@
 #include "TargetableFactions.h"
 #include "FactionsManager.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFactionsManager : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FTargetableFactions m_FactionsTargetTable[6];
     
 public:

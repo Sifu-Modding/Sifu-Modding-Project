@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "ECameraDataModifierTickBehavior.h"
+#include "Templates/SubclassOf.h"
 #include "CameraDataModifierWithBehavior.generated.h"
 
 class UCameraDataModifier;
@@ -10,10 +10,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FCameraDataModifierWithBehavior {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UCameraDataModifier> m_Modifier;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECameraDataModifierTickBehavior m_eBehavior;
     
     FCameraDataModifierWithBehavior();

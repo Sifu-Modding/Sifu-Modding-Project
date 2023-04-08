@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOpenedStatus.generated.h"
 
-UENUM()
-enum class EOpenedStatus {
+UENUM(BlueprintType)
+enum class EOpenedStatus : uint8 {
     Open,
     Close,
 };

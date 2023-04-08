@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FGeneratedWallInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(Instanced, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, Transient, meta=(AllowPrivateAccess=true))
     UCustomBoundingBoxComponent* m_Component;
     
     SIFU_API FGeneratedWallInfos();

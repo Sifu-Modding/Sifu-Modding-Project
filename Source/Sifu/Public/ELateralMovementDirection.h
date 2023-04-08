@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ELateralMovementDirection.generated.h"
 
-UENUM()
-enum class ELateralMovementDirection {
+UENUM(BlueprintType)
+enum class ELateralMovementDirection : uint8 {
     Left,
     Right,
     None,

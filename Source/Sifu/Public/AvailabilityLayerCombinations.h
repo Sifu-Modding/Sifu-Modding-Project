@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FAvailabilityLayerCombinations {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_LayerData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EALBinaryOperation m_eOperator;
     
     FAvailabilityLayerCombinations();

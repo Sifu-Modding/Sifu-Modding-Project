@@ -19,5 +19,13 @@ UTraversalDB::UTraversalDB() {
     this->m_uiAllowedEntryTypes = 0;
     this->m_fEvasionMaxDistBetweenInstigatorAndTarget = 200.00f;
     this->m_fEvasionDetectionDistance = 100.00f;
+    this->m_uiTraversalTypeToDisplayHint = 0;
+    this->m_bUseCamDirForVisualHintDisplay = false;
+    this->m_fRaycastDistForVisualOnly = 600.00f;
+    this->m_fMinTraversalClimbHeightForHint = 130.00f;
+    this->m_fStrideLengthTraversalHint = 50.00f;
+    this->m_fClimbHeightOffsetToDisplayHint = 100.00f;
+    this->m_fClimbOnEdgeOffsetToDisplayHint = 0.00f;
+    this->m_fCineHeightOffsetToDisplayHint = 40.00f;
 }
 

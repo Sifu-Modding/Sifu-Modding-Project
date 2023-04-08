@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VectorInputData.h"
 #include "InputBehaviourStruct.h"
+#include "VectorInputData.h"
 #include "BehaviourVectorInputData.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UBehaviourVectorInputData : public UVectorInputData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInputBehaviourStruct m_BehaviourStruct;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bConsiderChangingValueAsNewPress;
     
     UBehaviourVectorInputData();

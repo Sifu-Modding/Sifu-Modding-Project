@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAIConditionTraceOffsetContext.h"
 #include "UObject/NoExportTypes.h"
+#include "EAIConditionTraceOffsetContext.h"
 #include "AIConditionTraceOffset.generated.h"
 
 USTRUCT(BlueprintType)
 struct FAIConditionTraceOffset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAIConditionTraceOffsetContext m_eRelativeTo;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vOffset;
     
     SIFU_API FAIConditionTraceOffset();

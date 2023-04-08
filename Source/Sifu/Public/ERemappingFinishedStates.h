@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ERemappingFinishedStates.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ERemappingFinishedStates : uint8 {
     Fail_UnauthorizeKeyPressed,
     Fail_ExpectKeyboardMouseKey,

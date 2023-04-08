@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FAddVariableWeightInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bMirror;
     
     SIFU_API FAddVariableWeightInfo();

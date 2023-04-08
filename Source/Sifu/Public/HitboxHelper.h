@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "HitBoxMetaDataClassInstance.h"
 #include "HitBox.h"
+#include "HitBoxMetaDataClassInstance.h"
 #include "HitboxDataRow.h"
 #include "HitboxHelper.generated.h"
 
 class UHitBoxMetaData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UHitboxHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -25,13 +25,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_SetHitboxDamage(const FHitBox& _hitbox, FHitBox& _outHitbox, float _fDamage);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_MirrorAvoidDefenseMatrix(int32 _iDefenseMatrix, int32& _iOutResult, bool _bMirror);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UHitBoxMetaData* BPF_GetHitboxMetaDataInstance(const FHitBoxMetaDataClassInstance& _instance);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FHitboxDataRow BPF_GetHitboxDataRow(const FHitBox& _hitbox);
     
 };

@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayTagAssetInterface.h"
 #include "UObject/Object.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagAssetInterface.h"
 #include "GameplayTagContainer.h"
 #include "GameFlow.generated.h"
 
-class UGameFlowNodeMap;
 class UGameFlowController;
+class UGameFlowNodeMap;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API UGameFlow : public UObject, public IGameplayTagAssetInterface {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UGameFlowNodeMap* m_currentNode;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UGameFlowNodeMap* m_pendingNode;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_defaultMapTag;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, UGameFlowNodeMap*> m_MapNodes;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftClassPtr<UGameFlowController> m_Controller;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UClass* m_ControllerClass;
     
 public:
@@ -40,7 +40,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveMapOption(FGameplayTag _optionToRemove);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FGameplayTagContainer BPF_GetMapOptions() const;
     
     UFUNCTION(BlueprintCallable)

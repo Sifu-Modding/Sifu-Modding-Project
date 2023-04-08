@@ -4,17 +4,17 @@
 
 class UObject;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FSCActorInfoGameArchive {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     UObject* m_Actor;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     UClass* m_ActorClass;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<uint8> m_Data;
     
     SCCORE_API FSCActorInfoGameArchive();

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAIConditionTraceContext.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAIConditionTraceContext : uint8 {
     Instigator,
     Target,

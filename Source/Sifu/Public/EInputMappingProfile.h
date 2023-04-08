@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EInputMappingProfile.generated.h"
 
-UENUM()
-enum class EInputMappingProfile {
+UENUM(BlueprintType)
+enum class EInputMappingProfile : uint8 {
     DefaultGamepad,
     DefaultKeyboard,
     CustomGamepad,

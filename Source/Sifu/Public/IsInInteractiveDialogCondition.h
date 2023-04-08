@@ -3,11 +3,11 @@
 #include "BaseActorCondition.h"
 #include "IsInInteractiveDialogCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UIsInInteractiveDialogCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxChoicesCount;
     
     UIsInInteractiveDialogCondition();

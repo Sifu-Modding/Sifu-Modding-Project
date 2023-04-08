@@ -1,7 +1,7 @@
 #include "AsyncTaskTagChanged.h"
 
-class UAsyncTaskTagChanged;
 class UAbilitySystemComponent;
+class UAsyncTaskTagChanged;
 
 UAsyncTaskTagChanged* UAsyncTaskTagChanged::ListenForTagsChange(UAbilitySystemComponent* _abilitySystemComponent, FGameplayTagContainer _tags) {
     return NULL;

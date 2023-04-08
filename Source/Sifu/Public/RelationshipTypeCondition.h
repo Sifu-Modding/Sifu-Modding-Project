@@ -4,11 +4,11 @@
 #include "ERelationshipTypes.h"
 #include "RelationshipTypeCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API URelationshipTypeCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ERelationshipTypes> m_AllowedRelationshipTypes;
     
     URelationshipTypeCondition();

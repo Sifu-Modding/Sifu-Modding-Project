@@ -1,7 +1,7 @@
 #include "AsyncImage.h"
 
-class UTexture2D;
 class UMaterialInterface;
+class UTexture2D;
 
 void UAsyncImage::BPF_SetTexture(UTexture2D* _asset, bool _bMatchSize) {
 }

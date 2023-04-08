@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ERotationType.generated.h"
 
-UENUM()
-enum class ERotationType {
+UENUM(BlueprintType)
+enum class ERotationType : uint8 {
     Horizontal,
     Vertical,
 };

@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAnimInstance.h"
 #include "UObject/NoExportTypes.h"
-#include "PropertyFloorBoneRepartition.h"
+#include "SCAnimInstance.h"
 #include "IKPropertyEvaluation.h"
+#include "PropertyFloorBoneRepartition.h"
 #include "IKSubAnimInstance.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class SIFU_API UIKSubAnimInstance : public USCAnimInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_SlopeCurveName;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, Replicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     FRotator m_FloorAngleToTarget;
     
 public:

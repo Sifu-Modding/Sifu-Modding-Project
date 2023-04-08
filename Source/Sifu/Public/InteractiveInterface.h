@@ -13,7 +13,7 @@ class SIFU_API UInteractiveInterface : public UInterface {
 class SIFU_API IInteractiveInterface : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool CanInteract(APawn* _Instigator, FText& _outReason);
     
 };

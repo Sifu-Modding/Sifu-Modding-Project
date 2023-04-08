@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct SCCORE_API FSCAiActionClassInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USCAiAction> m_DefaultClassObject;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USCAiAction* m_Instance;
     
     FSCAiActionClassInstance();

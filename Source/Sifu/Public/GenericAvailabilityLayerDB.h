@@ -6,14 +6,14 @@
 
 class UAvailabilityLayerData;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UGenericAvailabilityLayerDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_availabilityLayerData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EALBinaryOperation m_eALBinaryOperation;
     
     UGenericAvailabilityLayerDB();

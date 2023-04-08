@@ -5,11 +5,11 @@
 
 class UCharacterBuildDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UCharacterBuildListDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UCharacterBuildDB*> m_CharacterBuilds;
     
     UCharacterBuildListDB();

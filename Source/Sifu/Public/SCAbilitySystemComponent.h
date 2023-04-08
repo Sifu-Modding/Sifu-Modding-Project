@@ -1,29 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "AbilitySystemComponent.h"
-#include "AbilityDynamicDelegateDelegate.h"
-#include "AbilityDelegateHandler.h"
-#include "OnSkillConsolidatedDelegate.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
+#include "AbilityDelegateHandler.h"
+#include "AbilityDynamicDelegateDelegate.h"
+#include "OnSkillConsolidatedDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "SCAbilitySystemComponent.generated.h"
 
+class UGameplayAbility;
 class UGameplayEffect;
 class USkillGameplayEffect;
-class UGameplayAbility;
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API USCAbilitySystemComponent : public UAbilitySystemComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UGameplayEffect>> m_StartEffects;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSkillConsolidated m_OnSkillConsolidated;
     
 private:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TMap<TSubclassOf<UGameplayAbility>, FAbilityDelegateHandler> m_OrderDelegateHandler;
     
 public:
@@ -39,6 +40,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void BPF_ResetShrineEffects();
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_RemoveLooseGameplayTag(FGameplayTag _tag);
     
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveAndSaveGameplayTag(const FGameplayTagContainer& _tag);
@@ -58,22 +62,22 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_LockAllSkills(bool _bResetSave);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsSkillUnlocked(TSubclassOf<USkillGameplayEffect> _effect);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInStartEffects(TSubclassOf<USkillGameplayEffect> _effect);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsAbilityActive(TSubclassOf<UGameplayAbility> _abilityClass) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<USkillGameplayEffect>> BPF_GetUnlockedSkills() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetNotificationsEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetCooldownRemainingForTag(FGameplayTagContainer _inCooldownTags, float& _fTimeRemaining, float& _fCooldownDuration);
     
     UFUNCTION(BlueprintCallable)
@@ -82,14 +86,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ClearAndSaveGameplayTag();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanUnlockSkill(TSubclassOf<USkillGameplayEffect> _effect);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanConsolidatekSkill(TSubclassOf<USkillGameplayEffect> _effect);
     
     UFUNCTION(BlueprintCallable)
     void BPF_AddShrineEffect(TSubclassOf<UGameplayEffect> _effect);
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_AddLooseGameplayTag(FGameplayTag _tag);
     
     UFUNCTION(BlueprintCallable)
     void BPF_AddAndSaveGameplayTag(const FGameplayTagContainer& _tag, bool _bNeedSaveGame);

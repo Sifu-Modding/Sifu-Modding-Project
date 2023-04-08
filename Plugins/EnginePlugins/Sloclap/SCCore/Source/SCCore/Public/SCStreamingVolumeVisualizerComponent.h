@@ -3,7 +3,7 @@
 #include "SCVolumeVisualizerComponent.h"
 #include "SCStreamingVolumeVisualizerComponent.generated.h"
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCCORE_API USCStreamingVolumeVisualizerComponent : public USCVolumeVisualizerComponent {
     GENERATED_BODY()
 public:

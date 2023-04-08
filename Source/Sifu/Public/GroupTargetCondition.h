@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseActorTargetCondition.h"
-#include "EConditionGroupOperators.h"
 #include "BaseActorTargetConditionInstance.h"
+#include "EConditionGroupOperators.h"
 #include "GroupTargetCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UGroupTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EConditionGroupOperators m_eOperator;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBaseActorTargetConditionInstance> m_Conditions;
     
     UGroupTargetCondition();

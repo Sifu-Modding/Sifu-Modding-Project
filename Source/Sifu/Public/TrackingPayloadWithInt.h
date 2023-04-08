@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "TrackingPayloadWithInt.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTrackingPayloadWithInt {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int64 m_Int;
     
     SIFU_API FTrackingPayloadWithInt();

@@ -1,7 +1,7 @@
 #include "BaseActorConditionHelpers.h"
 
-class UObject;
 class AActor;
+class UObject;
 
 UObject* UBaseActorConditionHelpers::BPF_GetInstance(const FBaseActorConditionInstance& _instance) {
     return NULL;

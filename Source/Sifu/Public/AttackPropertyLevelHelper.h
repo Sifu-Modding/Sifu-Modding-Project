@@ -5,12 +5,12 @@
 #include "EHitBoxAttackProperties.h"
 #include "AttackPropertyLevelHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAttackPropertyLevelHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAttackPropertyLevelHelper();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GetAttackPropertyLevel(const FAttackPropertyLevel& _attackPropertyLevel, EHitBoxAttackProperties _eProperty);
     
 };

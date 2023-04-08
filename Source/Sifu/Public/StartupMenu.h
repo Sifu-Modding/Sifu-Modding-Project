@@ -1,40 +1,41 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseStartMenu.h"
-#include "EStartupMenuState.h"
-#include "EPlayerScreenSide.h"
 #include "EMenuEnum.h"
+#include "EPlayerScreenSide.h"
+#include "EStartupMenuState.h"
 #include "StartupMenu.generated.h"
 
 class AActor;
+class ASCBasePlayerController;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UStartupMenu : public UBaseStartMenu {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EStartupMenuState m_eCurrentState;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMenuEnum m_eEnumType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iShowPopupOnLoadResultMask;
     
 public:
     UStartupMenu();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnSequenceFinished();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnContinueWithoutSavingConfirm();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnConfirmGeneric();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnConfirmCancel();
     
 protected:
@@ -44,46 +45,49 @@ protected:
     UFUNCTION(BlueprintCallable)
     void BPF_NewGame();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable)
+    void BPF_LaunchIdlingStartupSequence(const ASCBasePlayerController* _controller);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsCameraShakeNeeded() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasSaveGames();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* BPF_GetStartSpot() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EPlayerScreenSide BPF_GetPlayerScreenSide() const;
     
     UFUNCTION(BlueprintCallable)
     void BPF_ContinueGame();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanLaunchDirectly(bool _bLaunchDirectly) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_AreAllImpostorsStable() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_UserNameChanged(const FString& _name);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ShowState(EStartupMenuState _eState);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUserPressedStart(int32 UserIndex);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSaveLoaded();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSaveCreated();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnAllImpostorsStabilized();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_HandleNavigationBack();
     
 };

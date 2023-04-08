@@ -5,7 +5,7 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCActorHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIConditionedAction.h"
 #include "SCMathExpressionFloat.h"
+#include "AIConditionedAction.h"
 #include "AILocalizedConditionedAction.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAILocalizedConditionedAction : public FAIConditionedAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCMathExpressionFloat m_DistanceTestExpression;
     
     SIFU_API FAILocalizedConditionedAction();

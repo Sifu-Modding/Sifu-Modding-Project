@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FSCChannelCollisionResponse {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ECollisionChannel> m_eChannel;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ECollisionResponse> m_eCollisionResponse;
     
     SCCORE_API FSCChannelCollisionResponse();

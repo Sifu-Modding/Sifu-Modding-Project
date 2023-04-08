@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FRemappingIncompatibilityGroup {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDetectChildCollisions;
     
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UGenericInputData>> m_Classes;
     
     FRemappingIncompatibilityGroup();

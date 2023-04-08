@@ -3,7 +3,7 @@
 #include "SCAnimNotifyState.h"
 #include "TransitionCanTurnNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UTransitionCanTurnNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:

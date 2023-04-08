@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESanctuaryCharacterStatus.generated.h"
 
-UENUM()
-enum class ESanctuaryCharacterStatus {
+UENUM(BlueprintType)
+enum class ESanctuaryCharacterStatus : uint8 {
     None,
     FrozenBySanctuary,
     AssignedToSanctuary,

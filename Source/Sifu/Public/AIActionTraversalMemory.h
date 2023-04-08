@@ -3,7 +3,7 @@
 #include "SCAIActionMemoryEntry.h"
 #include "AIActionTraversalMemory.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FAIActionTraversalMemory : public FSCAIActionMemoryEntry {
     GENERATED_BODY()
 public:

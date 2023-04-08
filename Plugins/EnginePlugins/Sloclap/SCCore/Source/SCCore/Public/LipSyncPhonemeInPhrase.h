@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FLipSyncPhonemeInPhrase {
     GENERATED_BODY()
 public:
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPhoneme Value;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 Flag;
     
     SCCORE_API FLipSyncPhonemeInPhrase();

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ETargetFilters.generated.h"
 
-UENUM()
-enum class ETargetFilters {
+UENUM(BlueprintType)
+enum class ETargetFilters : uint8 {
     None,
     Character,
     Environment,

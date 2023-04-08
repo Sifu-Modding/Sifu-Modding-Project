@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "BaseActorCondition.generated.h"
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class SIFU_API UBaseActorCondition : public UObject {
     GENERATED_BODY()
 public:

@@ -1,8 +1,8 @@
 #include "AIComboCondition.h"
 
+class AActor;
 class ASCCharacter;
 class UAIFightingComponent;
-class AActor;
 
 void UAIComboCondition::BPF_GetEnvQueryParameterValue(FName _paramName, const ASCCharacter* _owner, FSCTypedValue& _outValue) const {
 }

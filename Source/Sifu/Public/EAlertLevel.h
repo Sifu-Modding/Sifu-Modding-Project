@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAlertLevel.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAlertLevel : uint8 {
     Normal,
     Suspicious,

@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "ComboNode.h"
 #include "SCUserDefinedEnumHandler.h"
+#include "ComboNode.h"
 #include "ComboStartNode.h"
 #include "Combo.generated.h"
 
 class UAttackDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UCombo : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_DefaultStartState;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FComboNode> m_Nodes;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, UAttackDB*> m_Attacks;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FComboStartNode> m_ComboStartNodesContainer;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_StartStatesEnum;
     
-    UPROPERTY(VisibleAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_DefaultAttacks[21];
     
     UCombo();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FComboNode BPF_GetNode(int32 _ID) const;
     
 };

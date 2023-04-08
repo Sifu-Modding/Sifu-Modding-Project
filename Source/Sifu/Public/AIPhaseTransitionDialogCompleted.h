@@ -3,18 +3,18 @@
 #include "AIPhaseTransition.h"
 #include "AIPhaseTransitionDialogCompleted.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionDialogCompleted : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_DialogToWaitFor;
     
 public:
     UAIPhaseTransitionDialogCompleted();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnInteractiveDialogInterrupted();
     
 };

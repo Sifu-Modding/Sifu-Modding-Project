@@ -1,28 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WGAiAction.h"
 #include "Engine/EngineTypes.h"
+#include "WGAiAction.h"
 #include "AIActionPlaySequence.generated.h"
 
-class ALevelSequenceActor;
 class AActor;
+class ALevelSequenceActor;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIActionPlaySequence : public UWGAiAction {
     GENERATED_BODY()
 public:
-protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<ALevelSequenceActor> m_LevelSequenceActor;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ALevelSequenceActor* m_CreatedLevelSequenceActor;
     
 public:
     UAIActionPlaySequence();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnCreatedSequenceActorEndedPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _endPlayReason);
     
 };

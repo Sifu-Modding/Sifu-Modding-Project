@@ -5,13 +5,13 @@
 
 class UAIFightingComponent;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionBossKill : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
     UAIPhaseTransitionBossKill();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnKillSpare(UAIFightingComponent* _aiComponent);
     
 };

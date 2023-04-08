@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EHandPoses.generated.h"
 
-UENUM()
-enum class EHandPoses {
+UENUM(BlueprintType)
+enum class EHandPoses : uint8 {
     HammerGrip,
     BrokenGrip,
     ReverseHammerGrip,

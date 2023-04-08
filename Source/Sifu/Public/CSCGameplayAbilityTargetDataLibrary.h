@@ -6,12 +6,12 @@
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class UCSCGameplayAbilityTargetDataLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UCSCGameplayAbilityTargetDataLibrary();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGameplayAbilityTargetDataHandle BP_AbilityTargetDataWithTarget(AActor* _target);
     
 };

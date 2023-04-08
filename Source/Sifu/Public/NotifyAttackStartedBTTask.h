@@ -3,7 +3,7 @@
 #include "SCBTTaskNode.h"
 #include "NotifyAttackStartedBTTask.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UNotifyAttackStartedBTTask : public USCBTTaskNode {
     GENERATED_BODY()
 public:

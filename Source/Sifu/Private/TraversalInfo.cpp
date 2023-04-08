@@ -7,5 +7,6 @@ FTraversalInfo::FTraversalInfo() {
     this->m_eType = ECharacterTraversalType::Locomotion;
     this->m_bClimbWithFence = false;
     this->m_bTraversalOnStaticMesh = false;
+    this->m_bValidStartPos = false;
 }
 

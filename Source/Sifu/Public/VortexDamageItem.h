@@ -3,11 +3,11 @@
 #include "UsableItem.h"
 #include "VortexDamageItem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AVortexDamageItem : public AUsableItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxDistanceToTarget;
     
     AVortexDamageItem();

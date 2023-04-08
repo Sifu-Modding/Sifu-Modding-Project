@@ -3,18 +3,18 @@
 #include "AIPhaseTransition.h"
 #include "AIPhaseTransitionPhaseDuration.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAIPhaseTransitionPhaseDuration : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDuration;
     
 public:
     UAIPhaseTransitionPhaseDuration();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnComboFinished();
     
 };

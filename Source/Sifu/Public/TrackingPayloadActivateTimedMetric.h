@@ -2,11 +2,11 @@
 #include "CoreMinimal.h"
 #include "TrackingPayloadActivateTimedMetric.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FTrackingPayloadActivateTimedMetric {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     int64 offsetPlaytime;
     
     SIFU_API FTrackingPayloadActivateTimedMetric();

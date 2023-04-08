@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ETransitionOptionsBehavior.generated.h"
 
-UENUM()
-enum class ETransitionOptionsBehavior {
+UENUM(BlueprintType)
+enum class ETransitionOptionsBehavior : uint8 {
     UseAsStandardMapOption,
     UseAsReturnCondition,
     Count,

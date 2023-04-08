@@ -1,17 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ReplaySizeManagement.h"
 #include "ReplayInfo.h"
+#include "ReplaySizeManagement.h"
 #include "ReplayListInfo.generated.h"
 
 USTRUCT(BlueprintType)
 struct FReplayListInfo {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplaySizeManagement m_ReplaySizeManagement;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FReplayInfo> m_ReplayInfos;
     
     SIFU_API FReplayListInfo();

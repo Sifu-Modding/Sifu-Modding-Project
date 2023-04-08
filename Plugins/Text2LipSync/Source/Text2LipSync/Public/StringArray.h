@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FStringArray {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> m_StringArray;
     
     TEXT2LIPSYNC_API FStringArray();

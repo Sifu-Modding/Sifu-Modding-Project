@@ -3,7 +3,7 @@
 #include "EnvQueryGenerator_ActorClassFromManager.h"
 #include "EnvQueryGenerator_FightingCharacters.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UEnvQueryGenerator_FightingCharacters : public UEnvQueryGenerator_ActorClassFromManager {
     GENERATED_BODY()
 public:

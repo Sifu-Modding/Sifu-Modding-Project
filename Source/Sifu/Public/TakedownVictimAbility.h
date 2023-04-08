@@ -3,7 +3,7 @@
 #include "SCGameplayAbility.h"
 #include "TakedownVictimAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTakedownVictimAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:

@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FLocomotionPaceSelector {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FSpeedStateFromGoalDistSelector m_speedStateFromGoalDistSelectors[3];
     
     SIFU_API FLocomotionPaceSelector();

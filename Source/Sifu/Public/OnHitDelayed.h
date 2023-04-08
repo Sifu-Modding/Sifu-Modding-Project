@@ -3,11 +3,11 @@
 #include "HitDescription.h"
 #include "OnHitDelayed.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FOnHitDelayed {
     GENERATED_BODY()
 public:
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FHitDescription m_Hit;
     
     SIFU_API FOnHitDelayed();

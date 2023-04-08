@@ -7,16 +7,16 @@ USTRUCT(BlueprintType)
 struct FMoveStatus {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bExploration;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bCombat;
     
-    UPROPERTY(BlueprintReadOnly, NotReplicated, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, NotReplicated, Transient, meta=(AllowPrivateAccess=true))
     bool m_bNone;
     
-    UPROPERTY(BlueprintReadOnly, Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     EMoveStatus m_eMoveStatus;
     
     SIFU_API FMoveStatus();

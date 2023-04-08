@@ -3,7 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "ReplayingCamera.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API AReplayingCamera : public AActor {
     GENERATED_BODY()
 public:

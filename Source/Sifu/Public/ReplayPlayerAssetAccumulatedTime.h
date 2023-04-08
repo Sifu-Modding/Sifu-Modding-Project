@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FReplayPlayerAssetAccumulatedTime {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fAccumulatedTime;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iCachedContainerIndex;
     
     SIFU_API FReplayPlayerAssetAccumulatedTime();

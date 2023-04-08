@@ -3,7 +3,7 @@
 #include "BehaviorTree/BTService.h"
 #include "AIReactionActionService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIReactionActionService : public UBTService {
     GENERATED_BODY()
 public:

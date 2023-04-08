@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EIntersectDirection.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EIntersectDirection : uint8 {
     Top,
     Bottom,

@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseActorTargetCondition.h"
 #include "BaseActorConditionInstance.h"
+#include "BaseActorTargetCondition.h"
 #include "SelfCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USelfCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorConditionInstance m_condition;
     
     USelfCondition();

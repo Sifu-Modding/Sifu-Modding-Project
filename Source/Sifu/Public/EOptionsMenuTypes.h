@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EOptionsMenuTypes.generated.h"
 
-UENUM()
-enum class EOptionsMenuTypes {
+UENUM(BlueprintType)
+enum class EOptionsMenuTypes : uint8 {
     CameraX,
     CameraY,
     Count,

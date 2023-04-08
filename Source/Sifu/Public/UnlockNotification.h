@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "LootBaseItemStruct.h"
-#include "SCUserWidget.h"
-#include "ProgressionDoorStruct.h"
-#include "LootBoxTypeCountStruct.h"
 #include "ECharacterProgressionRewardTypes.h"
+#include "LootBaseItemStruct.h"
+#include "LootBoxTypeCountStruct.h"
+#include "ProgressionDoorStruct.h"
+#include "SCUserWidget.h"
 #include "UnlockNotification.generated.h"
 
-class UQuestItemData;
 class UCharacterProgressionUnlockDB;
+class UQuestItemData;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UUnlockNotification : public USCUserWidget {
     GENERATED_BODY()
 public:

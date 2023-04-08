@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FRotationAnimContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_Anims[3];
     
     SIFU_API FRotationAnimContainer();

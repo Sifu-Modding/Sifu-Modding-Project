@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EAudioOutputType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EAudioOutputType : uint8 {
     Mono,
     Speakers,

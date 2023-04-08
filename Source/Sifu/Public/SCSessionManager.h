@@ -5,12 +5,12 @@
 
 class USCTrackingAuthentication;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USCSessionManager : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USCTrackingAuthentication* m_TrackingAuthenticationComponent;
     
 public:

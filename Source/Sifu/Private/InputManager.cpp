@@ -1,7 +1,7 @@
 #include "InputManager.h"
 
-class UObject;
 class ASCPlayerController;
+class UObject;
 
 void UInputManager::BPF_ResetAction(UObject* _requester, const ASCPlayerController* _playerController, InputAction _eInputAction) {
 }

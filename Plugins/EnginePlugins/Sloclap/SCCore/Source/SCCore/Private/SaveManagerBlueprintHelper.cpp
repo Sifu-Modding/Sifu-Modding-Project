@@ -1,8 +1,8 @@
 #include "SaveManagerBlueprintHelper.h"
 
-class USaveManagerDelegateHandler;
-class USCSaveObjectPlayerProfile;
 class USCSaveObjectGameData;
+class USCSaveObjectPlayerProfile;
+class USaveManagerDelegateHandler;
 
 void USaveManagerBlueprintHelper::BPF_WriteSaveGameToDisk() {
 }

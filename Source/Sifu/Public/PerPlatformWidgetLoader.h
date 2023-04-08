@@ -4,7 +4,7 @@
 #include "PerPlatformWidget.h"
 #include "PerPlatformWidgetLoader.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UPerPlatformWidgetLoader : public UPanelWidget, public IPerPlatformWidget {
     GENERATED_BODY()
 public:

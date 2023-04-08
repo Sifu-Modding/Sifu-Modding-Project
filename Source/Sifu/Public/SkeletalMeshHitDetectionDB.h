@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BaseHitDetectionDB.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoneReferenceContainerInterface -FallbackName=BoneReferenceContainerInterface
+#include "BaseHitDetectionDB.h"
 #include "BoneHitDBInfo.h"
 #include "SkeletalMeshHitDetectionDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USkeletalMeshHitDetectionDB : public UBaseHitDetectionDB {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBoneHitDBInfo> m_bonesToWatch;
     
 public:

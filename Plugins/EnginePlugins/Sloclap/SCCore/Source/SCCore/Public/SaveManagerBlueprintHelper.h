@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "SaveManagerBlueprintHelper.generated.h"
 
-class USaveManagerDelegateHandler;
-class USCSaveObjectPlayerProfile;
 class USCSaveObjectGameData;
+class USCSaveObjectPlayerProfile;
+class USaveManagerDelegateHandler;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USaveManagerBlueprintHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -16,7 +16,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_WriteSaveGameToDisk();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString BPF_SwapSaveNameToAndFromBackup(const FString& _currentSaveName);
     
     UFUNCTION(BlueprintCallable)
@@ -31,37 +31,37 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_SetNeedCreateSaveGame(int32 _iSaveIndex, bool _bWriteToDisk);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsUsingDebugSaveLevelInPIE();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsUsingDebugGameFlowInPie();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsSaveSystemEnabled();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FTimespan BPF_GetTimePlayedInCurrentSave();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static USaveManagerDelegateHandler* BPF_GetSaveManagerDelegateHandler();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString BPF_GetSaveBackupSuffix();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GetPlayerSavesCount(bool _bValidOnly);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static USCSaveObjectPlayerProfile* BPF_GetCurrentSaveProfile();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static USCSaveObjectGameData* BPF_GetCurrentSaveGame();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString BPF_GenerateSaveNameFromIndex(int32 _iIndex);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GenerateIndexFromSaveName(const FString& _saveName);
     
 };

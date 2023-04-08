@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EOperationType.h"
 #include "BaseActorCondition.h"
 #include "ESpeedState.h"
-#include "EOperationType.h"
 #include "SpeedCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API USpeedCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESpeedState m_eSpeedState;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAcceptMoveTransitions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOperationType m_eOperation;
     
     USpeedCondition();

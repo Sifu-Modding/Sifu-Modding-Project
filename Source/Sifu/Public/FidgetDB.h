@@ -1,28 +1,28 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
 #include "UObject/NoExportTypes.h"
-#include "SCConditionnalGestureAndBlendProfile.h"
-#include "SCUserDefinedEnumHandler.h"
+#include "Engine/DataAsset.h"
 #include "SCGestureAndBlendProfile.h"
+#include "SCUserDefinedEnumHandler.h"
+#include "SCConditionnalGestureAndBlendProfile.h"
 #include "FidgetDB.generated.h"
 
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFidgetDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_fTimerRange;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCConditionnalGestureAndBlendProfile> m_Anims;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_VariableWeightLayer;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bAllowSyncFidgetMirrorWithQuadrant;
     
     UFidgetDB();
@@ -32,7 +32,7 @@ public:
     UFUNCTION(BlueprintCallable)
     FSCConditionnalGestureAndBlendProfile BPF_GetConditionnalGestureContainer(AActor* _requester);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_ComputeTimer() const;
     
 };

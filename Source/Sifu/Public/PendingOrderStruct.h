@@ -5,14 +5,14 @@
 
 class UOrderComponent;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FPendingOrderStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EOrderType OrderType;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOrderComponent* OrderComponent;
     
     SIFU_API FPendingOrderStruct();

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EEquipmentQuality.generated.h"
 
-UENUM()
-enum class EEquipmentQuality {
+UENUM(BlueprintType)
+enum class EEquipmentQuality : uint8 {
     Clean,
     Dirty,
     Gold,

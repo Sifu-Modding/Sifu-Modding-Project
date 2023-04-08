@@ -6,17 +6,17 @@
 
 class UAvailabilityLayerData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAvailabilityKeyValuePair : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingActionState m_eFightingActionState;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAvailabilityLayerData* m_Data;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOverrideAllLayers;
     
     UAvailabilityKeyValuePair();

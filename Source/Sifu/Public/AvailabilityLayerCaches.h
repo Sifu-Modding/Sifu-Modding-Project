@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FAvailabilityLayerCaches {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iPriority;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAvailabilityLayerCache> m_layers;
     
     SIFU_API FAvailabilityLayerCaches();

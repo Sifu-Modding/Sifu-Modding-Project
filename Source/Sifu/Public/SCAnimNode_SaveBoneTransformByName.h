@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSCAnimNode_SaveBoneTransformByName : public FSCAnimNode_SaveBoneTransform {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName mSaveBone;
     
     FSCAnimNode_SaveBoneTransformByName();

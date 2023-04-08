@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EEquipmentStatType.generated.h"
 
-UENUM()
-enum class EEquipmentStatType {
+UENUM(BlueprintType)
+enum class EEquipmentStatType : uint8 {
     VitalityBonus,
     StaminaBonus,
     Weight,

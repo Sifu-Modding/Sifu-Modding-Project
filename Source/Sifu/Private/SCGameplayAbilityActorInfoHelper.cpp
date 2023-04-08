@@ -1,8 +1,8 @@
 #include "SCGameplayAbilityActorInfoHelper.h"
 
+class AFightingCharacter;
 class AFightingPlayerController;
 class USCAbilitySystemComponent;
-class AFightingCharacter;
 
 USCAbilitySystemComponent* USCGameplayAbilityActorInfoHelper::BPF_GetSCAbilitySystem(const FSCGameplayAbilityActorInfo& _info) {
     return NULL;

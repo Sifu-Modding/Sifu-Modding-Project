@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "AchievementUnlockConditionStruct.h"
-#include "GameplayTagContainer.h"
-#include "GameplayTagContainer.h"
 #include "SCInGameAchievementsManagerBlueprintHelper.generated.h"
 
 class UAchievementUnlockCondition;
 class USCInGameAchievementsManagerSettings;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCInGameAchievementsManagerBlueprintHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -35,22 +35,22 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool BPF_IsAchievementUnlocked(FGameplayTag _achievementTag);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_GetObjectUnlockInfo(FGameplayTag _ObjectTag, FAchievementUnlockConditionStruct& _outObjectUnlockCondition);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGameplayTagContainer BPF_GetObjectsNewlyUnlocked(FGameplayTag _newlyUnlockCategory);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<UAchievementUnlockCondition*> BPF_GetCurrentAchievementsToUnlock();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static TArray<UAchievementUnlockCondition*> BPF_GetAllAchievementsToUnlock();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static USCInGameAchievementsManagerSettings* BPF_GetAchievementManagerSettings();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UAchievementUnlockCondition* BPF_GetAchievementConditionFromTag(FGameplayTag _achievementTag);
     
     UFUNCTION(BlueprintCallable)

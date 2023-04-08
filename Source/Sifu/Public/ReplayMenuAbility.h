@@ -3,7 +3,7 @@
 #include "SCGameplayAbility.h"
 #include "ReplayMenuAbility.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UReplayMenuAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:

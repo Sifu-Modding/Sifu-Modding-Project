@@ -6,7 +6,7 @@ void UWGGameFlow::TravelToPendingMapInternal(EWorldTravelLoadSaveStrategy _eLoad
 void UWGGameFlow::OnControllerReconnectConfirm() {
 }
 
-void UWGGameFlow::BPF_TravelToPendingMap(bool _bSaveBefore, int32 _iSnapshotToOverrideFrom, bool _bDeleteWorldStateSave, bool _bReloadFirstSaveBefore, int32 _iPartOfSaveToResetMask, float _fFadeDuration, bool _bKeepCheats) {
+void UWGGameFlow::BPF_TravelToPendingMap(bool _bSaveBefore, int32 _iSnapshotToOverrideFrom, bool _bDeleteWorldStateSave, bool _bReloadFirstSaveBefore, int32 _iPartOfSaveToResetMask, float _fFadeDuration, bool _bKeepCheats, bool _bUseDefaultSave) {
 }
 
 void UWGGameFlow::BPF_RestartCurrentMap() {
@@ -28,10 +28,10 @@ bool UWGGameFlow::BPF_IsPendingTravel() {
     return false;
 }
 
-void UWGGameFlow::BPF_GoToNextMap(bool _bSaveBefore, bool _bReloadSaveBefore) {
+void UWGGameFlow::BPF_GoToNextMap(bool _bWantsToSave, bool _bWantsToReloadSave, bool _bUseDefaultSave) {
 }
 
-bool UWGGameFlow::BPF_GotoMap(FName _mapTag, FGameplayTagContainer _specificMapOptions, bool _bSaveBefore, int32 _iSnapshotToOverrideFrom, bool _bDeleteWorldStateSave, EMenuEnum _eMenuToShow, bool _bReloadFirstSaveBefore, int32 _iPartOfSaveToResetMask, bool _bKeepCheats) {
+bool UWGGameFlow::BPF_GotoMap(FName _mapTag, FGameplayTagContainer _specificMapOptions, bool _bWantsToSave, int32 _iSnapshotToOverrideFrom, bool _bDeleteWorldStateSave, EMenuEnum _eMenuToShow, bool _bWantsToReloadSave, int32 _iPartOfSaveToResetMask, bool _bKeepCheats, bool _bUseDefaultSave) {
     return false;
 }
 

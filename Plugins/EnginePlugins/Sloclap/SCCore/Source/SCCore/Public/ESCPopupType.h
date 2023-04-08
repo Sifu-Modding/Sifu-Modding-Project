@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESCPopupType.generated.h"
 
-UENUM()
-enum class ESCPopupType {
+UENUM(BlueprintType)
+enum class ESCPopupType : uint8 {
     None,
     Generic,
     InvalidSave,

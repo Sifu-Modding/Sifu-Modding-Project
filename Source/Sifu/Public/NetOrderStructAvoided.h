@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FNetOrderStructAvoided : public FNetOrderStruct {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOrderOverAttackInfo m_AvoidInfo;
     
     SIFU_API FNetOrderStructAvoided();

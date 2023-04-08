@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "ESCOcclusionMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class ESCOcclusionMode : uint8 {
     Generic,
     RTPC,

@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FInputHandleContainer {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBPInputHandleSignature m_Delegate;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eAction;
     
     SIFU_API FInputHandleContainer();

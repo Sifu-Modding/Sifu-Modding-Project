@@ -3,7 +3,7 @@
 #include "SCAnimNotify.h"
 #include "SnapObjectNotify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API USnapObjectNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:

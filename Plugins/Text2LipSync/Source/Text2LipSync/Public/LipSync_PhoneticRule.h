@@ -3,23 +3,23 @@
 #include "EPhoneme.h"
 #include "LipSync_PhoneticRule.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FLipSync_PhoneticRule {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCondition_IsFirst;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCondition_IsLast;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Condition_NextSymbol;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EPhoneme> Result_Replace;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bResult_RemoveNext;
     
     TEXT2LIPSYNC_API FLipSync_PhoneticRule();

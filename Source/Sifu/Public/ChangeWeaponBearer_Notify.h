@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "SCAnimNotify.h"
 #include "EWeaponOrientationConstraint.h"
+#include "SCAnimNotify.h"
 #include "ChangeWeaponBearer_Notify.generated.h"
 
-UCLASS(CollapseCategories)
+UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UChangeWeaponBearer_Notify : public USCAnimNotify {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_sBoneToAttachWeaponTo;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeaponOrientationConstraint m_eWeaponConstraint;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bKeepAttachedOnImpostor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_sBoneToAttachWeaponToOnImpostor;
     
     UChangeWeaponBearer_Notify();

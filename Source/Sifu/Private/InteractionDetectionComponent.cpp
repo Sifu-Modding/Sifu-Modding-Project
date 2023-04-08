@@ -1,8 +1,8 @@
 #include "InteractionDetectionComponent.h"
 #include "Templates/SubclassOf.h"
 
-class UInteractionObjectComponent;
 class AActor;
+class UInteractionObjectComponent;
 
 TMap<UInteractionObjectComponent*, FInteractionHintInfo> UInteractionDetectionComponent::BPF_GetInteractionHintInfos() const {
     return TMap<UInteractionObjectComponent*, FInteractionHintInfo>();

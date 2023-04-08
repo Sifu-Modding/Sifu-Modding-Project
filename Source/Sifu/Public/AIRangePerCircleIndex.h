@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAIRangePerCircleIndex {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<int32, FFloatRange> m_RangePerCircle;
     
     SIFU_API FAIRangePerCircleIndex();

@@ -4,12 +4,12 @@
 #include "EBossKillingWay.h"
 #include "TriggerBossKillSpareDialogAction.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UTriggerBossKillSpareDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EBossKillingWay m_eBossKillingWay;
     
 public:

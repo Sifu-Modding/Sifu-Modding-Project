@@ -1,5 +1,20 @@
 #include "TrackingBlueprintHelper.h"
 
+void UTrackingBlueprintHelper::BPF_SendTrackingEventTU4Launched() {
+}
+
+void UTrackingBlueprintHelper::BPF_SendTrackingEventChallengeStart(const FText _sChallengeName) {
+}
+
+void UTrackingBlueprintHelper::BPF_SendTrackingEventChallengeEnd(const FText _sChallengeName, const int32 _iHighScore, const uint8 _uiNumberStars) {
+}
+
+void UTrackingBlueprintHelper::BPF_SendTrackingEventAccessedArenaFirstTimeAfterBeatingYang() {
+}
+
+void UTrackingBlueprintHelper::BPF_SendTrackingEventAccessedArena() {
+}
+
 void UTrackingBlueprintHelper::BPF_SendTrackingEvent_UnlockAllSkillsPermanently(int64 _iTimePlayed) {
 }
 

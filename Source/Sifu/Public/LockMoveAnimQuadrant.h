@@ -8,13 +8,13 @@ USTRUCT(BlueprintType)
 struct FLockMoveAnimQuadrant {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_LockMoveAnimContainer[4];
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlendSpaceDirectionContainer m_LockMoveBlendSpace;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBlendSpaceDirectionContainer m_LockMoveUpperBodyBlendSpace;
     
     SIFU_API FLockMoveAnimQuadrant();

@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "SCDynamicDelegateDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE(FSCDynamicDelegate);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE(FSCDynamicDelegate);
 

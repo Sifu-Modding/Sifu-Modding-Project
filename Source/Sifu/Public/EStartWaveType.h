@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EStartWaveType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EStartWaveType : uint8 {
     Automatic,
     OnAnEvent,

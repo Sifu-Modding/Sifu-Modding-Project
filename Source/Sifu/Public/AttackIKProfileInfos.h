@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FAttackIKProfileInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_Profile;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_AnimCurveName;
     
     SIFU_API FAttackIKProfileInfos();

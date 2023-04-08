@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAvailabilityLayerWindowConditions.generated.h"
 
-UENUM()
-enum class EAvailabilityLayerWindowConditions {
+UENUM(BlueprintType)
+enum class EAvailabilityLayerWindowConditions : uint8 {
     None,
     NoHit,
     Hit,

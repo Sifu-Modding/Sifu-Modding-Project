@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "WGLevelSequence.h"
 #include "EDeathSequenceEvents.h"
+#include "WGLevelSequence.h"
 #include "DeathLevelSequence.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UDeathLevelSequence : public UWGLevelSequence {
     GENERATED_BODY()
 public:

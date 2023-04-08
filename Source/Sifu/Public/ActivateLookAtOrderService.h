@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "OrderService.h"
 #include "LookAtLimits.h"
+#include "OrderService.h"
 #include "ActivateLookAtOrderService.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UActivateLookAtOrderService : public UOrderService {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLookAtLimits m_lookAtLimit;
     
 public:

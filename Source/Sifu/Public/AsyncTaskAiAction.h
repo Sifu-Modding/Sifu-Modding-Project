@@ -1,23 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "SCDelegate.h"
+#include "Templates/SubclassOf.h"
 #include "AsyncTaskAiAction.generated.h"
 
+class UAIFightingComponent;
 class UAsyncTaskAiAction;
 class USCAiAction;
-class UAIFightingComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAsyncTaskAiAction : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnSuccess;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnSuccess;
     
-    UPROPERTY(BlueprintAssignable)
-    USCDelegate::FDynamicMulticast OnFailure;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    USCDelegate::FDynamicMulticast* OnFailure;*/
     
     UAsyncTaskAiAction();
     UFUNCTION(BlueprintCallable)

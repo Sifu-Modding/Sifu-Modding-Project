@@ -1,44 +1,44 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "InheritedDataAsset.h"
-#include "PushPropertyReaction.h"
-#include "AttackPropertyResistanceMatrixByFightingState.h"
 #include "AnimContainer.h"
+#include "InheritedDataAsset.h"
+#include "AttackPropertyResistanceMatrixByFightingState.h"
+#include "DizzyReaction.h"
 #include "PropertyReaction.h"
+#include "PushPropertyReaction.h"
 #include "StructureBrokenReaction.h"
 #include "SuperDizzyReaction.h"
-#include "DizzyReaction.h"
 #include "AttackPropertiesResistanceDB.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAttackPropertiesResistanceDB : public UInheritedDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAttackPropertyResistanceMatrixByFightingState m_ResistanceMatrix;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsConsidereredAsKnockdownThreat;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bInterruptDownWhenAlone;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPropertyReaction m_DownReaction;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStructureBrokenReaction m_StructureBrokenReaction;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDizzyReaction m_DizzyReaction;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSuperDizzyReaction m_SuperDizzyReaction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPushPropertyReaction m_PushedReaction;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAnimContainer m_FallFromPushedAnim;
     
     UAttackPropertiesResistanceDB();

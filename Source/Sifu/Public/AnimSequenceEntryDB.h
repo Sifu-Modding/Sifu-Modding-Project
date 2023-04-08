@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
 #include "Engine/DataAsset.h"
 #include "AnimSequenceDBEntry.h"
+#include "Templates/SubclassOf.h"
 #include "AnimSequenceEntryDB.generated.h"
 
 class ABaseWeapon;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UAnimSequenceEntryDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ABaseWeapon> m_WeaponClass;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAnimSequenceDBEntry> m_AnimSequences;
     
     UAnimSequenceEntryDB();

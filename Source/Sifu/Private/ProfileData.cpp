@@ -44,5 +44,6 @@ FProfileData::FProfileData() {
     this->m_GameOptions[40] = 0.00f;
     this->m_bInputHoldToggleActivated = false;
     this->m_iCheatUnlockPoints = 0;
+    this->m_eChallengeGender = ECharacterGender::Man;
 }
 

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESCPlayerVolumeNoPhysicsState.generated.h"
 
-UENUM()
-enum class ESCPlayerVolumeNoPhysicsState {
+UENUM(BlueprintType)
+enum class ESCPlayerVolumeNoPhysicsState : uint8 {
     Overlapping,
     OverlappingThisVolume,
     FullyInside,

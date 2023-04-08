@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "FCgSdkLedId.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum FCgSdkLedId {
     Invalid,
     K_Escape,

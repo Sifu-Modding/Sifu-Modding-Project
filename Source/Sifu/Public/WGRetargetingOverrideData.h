@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoneReferenceContainerInterface -FallbackName=BoneReferenceContainerInterface
-#include "Animation/Skeleton.h"
 #include "BoneContainer.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoneReferenceContainerInterface -FallbackName=BoneReferenceContainerInterface
+#include "Engine/DataAsset.h"
+#include "Animation/Skeleton.h"
 #include "WGRetargetingOverrideData.generated.h"
 
 class USkeleton;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UWGRetargetingOverrideData : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(AssetRegistrySearchable, EditAnywhere)
+    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkeleton* m_Skeleton;
     
-  /*  UPROPERTY(EditAnywhere)
+    /*UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FBoneReference, TEnumAsByte<EBoneTranslationRetargetingMode::Type>> m_BoneRetargetingOverrideMap;*/
     
     UWGRetargetingOverrideData();

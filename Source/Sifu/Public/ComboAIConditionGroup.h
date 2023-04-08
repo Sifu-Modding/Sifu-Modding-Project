@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "AIComboCondition.h"
-#include "EComboAIConditionGroupOperator.h"
 #include "AIConditionClassInstance.h"
+#include "EComboAIConditionGroupOperator.h"
 #include "ComboAIConditionGroup.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UComboAIConditionGroup : public UAIComboCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EComboAIConditionGroupOperator m_eOperator;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceTestAllConditions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIConditionClassInstance> m_Conditions;
     
     UComboAIConditionGroup();

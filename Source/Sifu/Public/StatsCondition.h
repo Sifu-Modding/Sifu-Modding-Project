@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SCMathExpressionInteger.h"
 #include "BaseActorCondition.h"
 #include "ECharacterStat.h"
-#include "SCMathExpressionInteger.h"
 #include "StatsCondition.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UStatsCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECharacterStat m_eStat;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCMathExpressionInteger m_MathExpression;
     
     UStatsCondition();

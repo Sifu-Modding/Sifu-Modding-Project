@@ -4,5 +4,5 @@
 
 class UReplayKeyWidget;
 
-UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FReplayKeyWidgetStateChanged, const UReplayKeyWidget*, _widget);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FReplayKeyWidgetStateChanged, const UReplayKeyWidget*, _widget);
 

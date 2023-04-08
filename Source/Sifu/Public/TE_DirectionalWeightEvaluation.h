@@ -1,26 +1,26 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseTargetEvaluation.h"
-#include "InputAction.h"
 #include "EWeightBinaryOperator.h"
+#include "InputAction.h"
 #include "TE_DirectionalWeightEvaluation.generated.h"
 
 class UBaseDirectionalTargetWeightEvaluation;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UTE_DirectionalWeightEvaluation : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eAction;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bBlockWhenActionIsInactive;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EWeightBinaryOperator m_eOperator;
     
-    UPROPERTY(EditAnywhere, Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UBaseDirectionalTargetWeightEvaluation*> m_Evaluations;
     
     UTE_DirectionalWeightEvaluation();

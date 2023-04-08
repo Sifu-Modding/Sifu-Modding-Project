@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FAIAttackJokerSituationConfigsPerDominationStep {
     GENERATED_BODY()
 public:
-    UPROPERTY(Config, EditAnywhere)
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIAttackJokerSituationConfig m_Configs[4];
     
     SIFU_API FAIAttackJokerSituationConfigsPerDominationStep();

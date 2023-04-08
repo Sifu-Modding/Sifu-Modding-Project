@@ -4,18 +4,18 @@
 #include "BaseActorConditionInstance.h"
 #include "SCAnimNotifyState.generated.h"
 
-UCLASS(Abstract, CollapseCategories, EditInlineNew)
+UCLASS(Abstract, Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API USCAnimNotifyState : public UAnimNotifyState {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bRectifiedActivationConditions;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bDebugLogActivationTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBaseActorConditionInstance m_triggerCondition;
     
 public:

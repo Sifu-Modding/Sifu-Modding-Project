@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct SIFU_API FSortMethodData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_Name;
     
     FSortMethodData();

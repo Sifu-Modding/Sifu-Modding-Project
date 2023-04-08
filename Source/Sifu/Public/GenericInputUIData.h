@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "GenericInputUIData.generated.h"
 
-UCLASS(Abstract, CollapseCategories, EditInlineNew)
+UCLASS(Abstract, Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API UGenericInputUIData : public UObject {
     GENERATED_BODY()
 public:

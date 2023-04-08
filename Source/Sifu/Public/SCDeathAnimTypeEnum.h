@@ -9,4 +9,5 @@ struct FSCDeathAnimTypeEnum : public FSCUserDefinedEnumHandler {
 public:
     SIFU_API FSCDeathAnimTypeEnum();
 };
+FORCEINLINE uint32 GetTypeHash(const FSCDeathAnimTypeEnum) { return 0; }
 

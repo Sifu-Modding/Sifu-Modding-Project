@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EPendingttackXPType.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "EPendingttackXPType.h"
 #include "PendingAttackXP.h"
 #include "FOpponentAttackXPHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFOpponentAttackXPHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UFOpponentAttackXPHelper();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GetXPValueByType(const FPendingAttackXP& _XP, EPendingttackXPType _eType);
     
 };

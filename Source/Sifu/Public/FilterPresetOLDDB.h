@@ -5,11 +5,11 @@
 
 class UFilterPresetEntryDB;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFilterPresetOLDDB : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UFilterPresetEntryDB*> m_Filters;
     
     UFilterPresetOLDDB();

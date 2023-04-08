@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FDisabledTargetInfos {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EActionType m_eActionType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bTargettableWhenAlone;
     
     FDisabledTargetInfos();

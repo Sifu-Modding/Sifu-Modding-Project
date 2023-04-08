@@ -1,39 +1,39 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AIInfluenceNode.h"
 #include "GameplayTagContainer.h"
 #include "AIConditionedAction.h"
+#include "AIInfluenceNode.h"
 #include "ContextualDefenseInfluenceNode.generated.h"
 
 class USCAITriggerableActions;
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UContextualDefenseInfluenceNode : public UAIInfluenceNode {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer m_TagsToFlushOnSuccess;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer m_TagsToRaiseOnSuccess;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bFlushThrowAttackMemory;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMemoryFlushLimit;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bLaunchDefaultActions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_InfluenceNodeName;
     
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<USCAITriggerableActions*> m_ActionsToTriggerOnValidation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIConditionedAction> m_ActionsOnSuccess;
     
 public:

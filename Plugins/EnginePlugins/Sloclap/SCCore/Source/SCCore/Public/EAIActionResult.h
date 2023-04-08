@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EAIActionResult.generated.h"
 
-UENUM()
-enum class EAIActionResult {
+UENUM(BlueprintType)
+enum class EAIActionResult : uint8 {
     Scheduled,
     Succeeded,
     Failed,

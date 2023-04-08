@@ -1,13 +1,20 @@
 #include "ReplayHelperLibrary.h"
 
 class ABaseReplayController;
-class UObject;
 class ABaseWeapon;
+class UObject;
 
 void UReplayHelperLibrary::BPF_SetScreenMessagesEnabled(bool _bEnabled) {
 }
 
+void UReplayHelperLibrary::BPF_SaveReplayFilterProperties(const FFilterProperties& _inProperties, ABaseReplayController* _controller) {
+}
+
 void UReplayHelperLibrary::BPF_SaveFilterPreset(int32 _iSlot, const FFilterProperties& _inProperties, ABaseReplayController* _controller) {
+}
+
+FFilterProperties UReplayHelperLibrary::BPF_LoadReplayFilterProperties(ABaseReplayController* _controller, bool& _bOutIsDefault) {
+    return FFilterProperties{};
 }
 
 FFilterProperties UReplayHelperLibrary::BPF_LoadFilterPreset(int32 _iSlot, bool& _bIsValid) {

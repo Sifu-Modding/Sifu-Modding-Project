@@ -5,7 +5,7 @@
 
 class UMenuAsyncActionBase;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UMenuAsyncActionBaseHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

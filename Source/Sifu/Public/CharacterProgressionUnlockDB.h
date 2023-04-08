@@ -3,7 +3,7 @@
 #include "Engine/DataAsset.h"
 #include "CharacterProgressionUnlockDB.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UCharacterProgressionUnlockDB : public UDataAsset {
     GENERATED_BODY()
 public:

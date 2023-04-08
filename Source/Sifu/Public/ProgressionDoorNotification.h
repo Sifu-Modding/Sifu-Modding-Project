@@ -4,17 +4,17 @@
 #include "ProgressionDoorStruct.h"
 #include "ProgressionDoorNotification.generated.h"
 
-class UQuestItemData;
 class UProgressionDoorNotification;
+class UQuestItemData;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UProgressionDoorNotification : public UBaseNotification {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UQuestItemData* m_LastFulfilledQuest;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FProgressionDoorStruct m_ProgressionDoorStruct;
     
     UProgressionDoorNotification();

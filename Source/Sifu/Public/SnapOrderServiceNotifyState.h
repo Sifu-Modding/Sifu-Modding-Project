@@ -3,7 +3,7 @@
 #include "OrderServiceNotifyState.h"
 #include "SnapOrderServiceNotifyState.generated.h"
 
-UCLASS(CollapseCategories, EditInlineNew)
+UCLASS(Blueprintable, CollapseCategories, EditInlineNew)
 class SIFU_API USnapOrderServiceNotifyState : public UOrderServiceNotifyState {
     GENERATED_BODY()
 public:

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ECameraService.generated.h"
 
-UENUM()
-enum class ECameraService {
+UENUM(BlueprintType)
+enum class ECameraService : uint8 {
     Comfort,
     Collision,
     Following,

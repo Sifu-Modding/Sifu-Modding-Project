@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "EIKLimbTypes.generated.h"
 
-UENUM()
-enum class EIKLimbTypes {
+UENUM(BlueprintType)
+enum class EIKLimbTypes : uint8 {
     LeftArm,
     RightArm,
     LeftLeg,

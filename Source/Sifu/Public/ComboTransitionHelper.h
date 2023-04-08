@@ -5,15 +5,15 @@
 #include "InputAction.h"
 #include "ComboTransitionHelper.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UComboTransitionHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UComboTransitionHelper();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static EComboTransition BPF_GetTransitionFromInput(InputAction _eInput);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static InputAction BPF_GetInputFromTransition(EComboTransition _eTransition);
     
 };

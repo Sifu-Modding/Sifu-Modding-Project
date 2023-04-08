@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EMovableType.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EMovableType : uint8 {
     Pushable,
     Throwable,

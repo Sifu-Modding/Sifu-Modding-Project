@@ -1,19 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "FilterProperties.h"
 #include "AnimSequenceDBCache.h"
-#include "AvailabilityLayerCache.h"
-#include "InputHandleContainer.h"
 #include "AnimSequenceDBEntry.h"
+#include "AvailabilityLayerCache.h"
 #include "AvailabilityLayerCaches.h"
+#include "FilterProperties.h"
+#include "InputHandleContainer.h"
 #include "ReplayHelperLibrary.generated.h"
 
 class ABaseReplayController;
 class ABaseWeapon;
 class UObject;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UReplayHelperLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -22,7 +22,13 @@ public:
     static void BPF_SetScreenMessagesEnabled(bool _bEnabled);
     
     UFUNCTION(BlueprintCallable)
+    static void BPF_SaveReplayFilterProperties(const FFilterProperties& _inProperties, ABaseReplayController* _controller);
+    
+    UFUNCTION(BlueprintCallable)
     static void BPF_SaveFilterPreset(int32 _iSlot, const FFilterProperties& _inProperties, ABaseReplayController* _controller);
+    
+    UFUNCTION(BlueprintCallable)
+    static FFilterProperties BPF_LoadReplayFilterProperties(ABaseReplayController* _controller, bool& _bOutIsDefault);
     
     UFUNCTION(BlueprintCallable)
     static FFilterProperties BPF_LoadFilterPreset(int32 _iSlot, bool& _bIsValid);
@@ -36,13 +42,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static void BPF_GetAnimSequences(UPARAM(Ref) TArray<FAnimSequenceDBEntry>& _outSequencesDB, const FAnimSequenceDBCache& _sequencesCache, const ABaseWeapon* _weapon);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_FilterPresetComparison(const FFilterProperties& _first, const FFilterProperties& _second);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="_worldContextObject"))
     static void BPF_CancelAnyViewportFade(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_AreScreenMessagesEnabled();
     
     UFUNCTION(BlueprintCallable)

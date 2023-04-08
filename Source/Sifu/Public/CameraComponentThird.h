@@ -1,75 +1,78 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "Camera/CameraComponent.h"
+#include "ESCBlendType.h"
+#include "ESCSequenceBlendViewState.h"
 #include "BaseComponent.h"
 #include "CameraLookAtServiceBehavior.h"
-#include "ECameraTransitionState.h"
-#include "ECameraLockAlgorithms.h"
-#include "ESCBlendType.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "CameraRepulsionConfig.h"
-#include "CameraLookAtServiceBehaviorTime.h"
-#include "UObject/NoExportTypes.h"
 #include "CameraLookAtServiceBehaviorConfig.h"
-#include "CameraTargetPosition.h"
+#include "CameraLookAtServiceBehaviorTime.h"
 #include "CameraMirrorManagementConfig.h"
-#include "ESCSequenceBlendViewState.h"
+#include "CameraRepulsionConfig.h"
+#include "CameraTargetPosition.h"
+#include "DeadZone.h"
+#include "ECameraLockAlgorithms.h"
+#include "ECameraTransitionState.h"
+#include "EDeadZoneTypes.h"
 #include "CameraComponentThird.generated.h"
 
-class UCameraLagStruct;
-class UCameraDB;
-class USCLevelSequence;
-class UMaterialParameterCollection;
-class UAbstractCameraData;
 class AActor;
+class UAbstractCameraData;
 class UBlackboardComponent;
+class UCameraDB;
+class UCameraLagStruct;
+class UCurveFloat;
+class UMaterialParameterCollection;
+class USCLevelSequence;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UCameraComponentThird : public UCameraComponent, public IBaseComponent {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSequenceViewBlendChange, USCLevelSequence*, _levelSequence);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCameraAnimDrivenStateChanged, ECameraTransitionState, _eNewState);
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCameraLagStruct* m_sActualLagParameters;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSequenceViewBlendChange OnLevelSequenceViewBlendStateChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCameraAnimDrivenStateChanged OnCameraAnimDrivenStateChanged;
     
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCameraDB* m_CameraDB;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMouseYawScale;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMousePitchScale;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialParameterCollection* m_MaterialParameterCollectionCameraDither;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_CameraDistanceMPCParameterName;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDialogAspectRatio;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDialogAspectRatioBlendDuration;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCBlendType m_eDialogAspectRatioBlendType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_CameraFadeMaterialParam;
     
-    UPROPERTY(Replicated)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     bool m_bCameraLDMode;
     
 public:
@@ -94,7 +97,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_UnFreezeCameraDeadZoneRepulsion(int32 _iHandle);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_TransformInputVector(FVector2D _vInputVector) const;
     
     UFUNCTION(BlueprintCallable)
@@ -105,6 +108,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void BPF_SetIsCameraLDMode(bool _bCameraLDMode, const AActor* _replayCameraAnchor);
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_SetFramingAlgorithmOverrideTarget(bool _bOverride, FVector _vPosition3D, float _fDurationBlendingIn, UCurveFloat* _dynamicCurveForBlendingIn, float _fDurationBlendingOut, UCurveFloat* _dynamicCurveForBlendingOut);
     
     UFUNCTION(BlueprintCallable)
     void BPF_SetDialogAspectRatio(bool _bInEnabled);
@@ -131,6 +137,12 @@ public:
     void BPF_RemoveAllLookAt();
     
     UFUNCTION(BlueprintCallable)
+    int32 BPF_PushRemoveDampingOnAlgorithms(const FString& _context);
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_PopRemoveDampingOnAlgorithms(int32 _iHandle);
+    
+    UFUNCTION(BlueprintCallable)
     int32 BPF_PauseLookAtWithHandle(const FString& _contextString);
     
     UFUNCTION(BlueprintCallable)
@@ -154,88 +166,94 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_LaunchNewMirrorTarget(const FCameraMirrorManagementConfig& _newMirrorTarget);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsWorldLocationInFront(const FVector& _vLocation) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsSleepingFromManualInput() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsLookAtActive(int32 _iHandle) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsLockAlgoActiveAndRunning(ECameraLockAlgorithms _eAlgo) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsLockActiveAndRunning() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsInCinematic() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_IsDampingRemovedOnAlgorithm() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsCurrentCameraAllowingLookAtCollisionExtraction() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsCurrentCameraAllowingDodgeMirrorChange() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsColliding() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsAnimDrivenInMixerNode(bool _bAllowSearchInBlenderStartNode) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsAnimDriven() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_HasLookAt() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetValidTarget(bool _bIncludeAllPotentialAlertedTarget, TArray<AActor*>& _arrayOfTarget) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetTimeSinceNoInput() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetNumberOfValidTarget(bool _bIncludeAllPotentialAlertedTarget) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetNearestColDirection() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetMirrorFarTargettedPosition(TArray<FCameraTargetPosition>& _outTargetPosition) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetMirrorCursorValue() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCurrentLookAtRatio() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<FDeadZone> BPF_GetCurrentDeadZones(EDeadZoneTypes _eDeadZoneTypes);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESCSequenceBlendViewState BPF_GetCurrentCinematicState() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCollisionMinDist() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform BPF_GetCameraTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCameraShakeFactor() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCameraCollisionTargetRatio() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCameraCollisionRatio() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBlackboardComponent* BPF_GetBlackBoardComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetBlackBarScreenRatio();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetAngleDiffFromAnimDriven(float& _fOutYawDeg, float& _fOutPitchDeg);
     
     UFUNCTION(BlueprintCallable)
@@ -250,7 +268,7 @@ public:
     UFUNCTION(BlueprintCallable)
     int32 BPF_FreezeCameraDeadZoneRepulsion(const FString& _contextString);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_ComputeIsMirrorFromCharacterPosOnScreen() const;
     
     UFUNCTION(BlueprintCallable)

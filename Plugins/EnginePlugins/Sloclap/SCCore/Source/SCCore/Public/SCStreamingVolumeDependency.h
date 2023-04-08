@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FSCStreamingVolumeDependency {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ASCLevelStreamingVolume* m_Volume;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bRecursive;
     
     SCCORE_API FSCStreamingVolumeDependency();

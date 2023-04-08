@@ -1,18 +1,18 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HUDUserWidget.h"
 #include "GetPercentageDelegateDelegate.h"
+#include "HUDUserWidget.h"
 #include "Gauge.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UGauge : public UHUDUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fPercentage;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGetPercentageDelegate m_fPercentageDelegate;
     
 public:

@@ -4,15 +4,15 @@
 #include "EAIFidgetTypes.h"
 #include "FidgetPlayerBTService.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFidgetPlayerBTService : public UBTService {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EAIFidgetTypes m_eFidgetType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bRestoreTypeOnCeaseRelevant;
     
 public:

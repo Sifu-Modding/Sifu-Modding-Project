@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "EOrderAccessMode.generated.h"
 
-UENUM()
+UENUM(BlueprintType)
 enum class EOrderAccessMode : uint8 {
     RunningOnly,
     PendingOnly,

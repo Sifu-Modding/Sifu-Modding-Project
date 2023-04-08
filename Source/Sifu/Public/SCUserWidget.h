@@ -1,33 +1,33 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Templates/SubclassOf.h"
+//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EPlatform -FallbackName=EPlatform
 #include "SCBaseUserWidget.h"
 #include "Components/SlateWrapperTypes.h"
 #include "Blueprint/UserWidget.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EPlatform -FallbackName=EPlatform
 #include "EUIInputModes.h"
+#include "Templates/SubclassOf.h"
 #include "SCUserWidget.generated.h"
 
-class USCUserWidget;
-class UWidgetData;
-class UWidgetAnimation;
-class UWorld;
-class UPanelWidget;
+class AFightingCharacter;
+class AFightingPlayerController;
+class ASCPlayerController;
+class UAttackComponent;
+class UCharacterHealthComponent;
+class UDefenseComponent;
 class UMenuDB;
+class UMenuWidget;
+class UPanelWidget;
+class USCAbilitySystemComponent;
+class USCUserWidget;
+class USocialComponent;
+class USocialManager;
 class UStatsComponent;
 class UThePlainesGameInstance;
-class USocialManager;
-class USocialComponent;
-class ASCPlayerController;
-class UMenuWidget;
-class UCharacterHealthComponent;
-class USCAbilitySystemComponent;
-class AFightingPlayerController;
-class AFightingCharacter;
-class UDefenseComponent;
-class UAttackComponent;
+class UWidgetAnimation;
+class UWidgetData;
+class UWorld;
 
-UCLASS(EditInlineNew, Config=Game)
+UCLASS(Blueprintable, EditInlineNew, Config=Game)
 class SIFU_API USCUserWidget : public USCBaseUserWidget {
     GENERATED_BODY()
 public:
@@ -35,63 +35,63 @@ public:
     DECLARE_DYNAMIC_DELEGATE_OneParam(FInitializeWidgetDelegate, USCUserWidget*, _widget);
     DECLARE_DYNAMIC_DELEGATE_RetVal(UWidgetData*, FGetDataDelegate);
     
-    UPROPERTY(BlueprintAssignable, EditAnywhere)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVisibilityChanged m_OnVisible;
     
-    UPROPERTY(BlueprintAssignable, EditAnywhere)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVisibilityChanged m_OnHidden;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESlateVisibility m_ActiveVisibility;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGetDataDelegate m_GetDataDelegate;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInitializeWidgetDelegate m_InitializeDelegate;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UWidgetData* m_Data;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UWidgetData> m_DataClass;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESlateVisibility m_eControllerInputModeVisibility;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESlateVisibility m_eMouseInputModeVisibility;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bGiveFocusIfNeededWithKeyboard;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESlateVisibility m_eFocusedVisibility;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bOnGiveFocusButtonOnly;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bNotifyPawnChanged;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bNotifyUIInputModeChanged;
     
-    UPROPERTY(Config)
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceGamepadUI;
     
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUpdateDataOnCharacterProgression;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUpdateDataOnVisible;
     
 public:
     USCUserWidget();
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnDataUpdated();
     
 public:
@@ -107,14 +107,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_NotifyDataUpdated();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsVisibleInTree();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsPlayerLeaderInPvpAndHasAllies() const;
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsCursorNavigationEnabled() const;
     
 public:
@@ -122,87 +122,87 @@ public:
     void BPF_GiveFocusIfNeeded();
     
 protected:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EUIInputModes BPF_GetUIInputMode() const;
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UThePlainesGameInstance* BPF_GetThePlainesGameInstance() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UStatsComponent* BPF_GetStatsComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USocialManager* BPF_GetSocialManager() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USocialComponent* BPF_GetSocialComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ASCPlayerController* BPF_GetPlayerController() const;
     
-   /* UFUNCTION(BlueprintPure)
+   /* UFUNCTION(BlueprintCallable, BlueprintPure)
     EPlatform BPF_GetPlatform() const;*/
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMenuWidget* BPF_GetParentMenu() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMenuDB* BPF_GetMenuDB();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCharacterHealthComponent* BPF_GetHealthComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFightingPlayerController* BPF_GetFightingPlayerController() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AFightingCharacter* BPF_GetFightingCharacter() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UDefenseComponent* BPF_GetDefenseComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWidgetData* BPF_GetData();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UWorld* BPF_GetCurrentWorld() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAttackComponent* BPF_GetAttackComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USCAbilitySystemComponent* BPF_GetAbilitySystemComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CheckControllerHasAnyFocus() const;
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_UnbindFromDelegates();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnVisible();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUIInputModeChanged(EUIInputModes _eMode, bool _bInit);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnReturnToPool();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnPawnChanged(AFightingCharacter* _character);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnHidden();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnGetFromPool();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnDataUpdated();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnCultureChanged();
     
 public:
@@ -210,10 +210,10 @@ public:
     void BPE_GiveFocus();
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UWidgetData* BPE_CreateData();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_BindToDelegates(bool _bPawnOnly);
     
 };

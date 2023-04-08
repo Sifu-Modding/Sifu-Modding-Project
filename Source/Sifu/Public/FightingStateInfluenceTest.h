@@ -4,12 +4,12 @@
 #include "EFightingState.h"
 #include "FightingStateInfluenceTest.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UFightingStateInfluenceTest : public UAIInfluenceTest {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFightingState m_eFightingState;
     
 public:

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FNavMeshFreeRange {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCCardinalPoints m_eOrientation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fRange;
     
     SIFU_API FNavMeshFreeRange();

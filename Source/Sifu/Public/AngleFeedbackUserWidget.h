@@ -3,13 +3,13 @@
 #include "SCUserWidget.h"
 #include "AngleFeedbackUserWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UAngleFeedbackUserWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     UAngleFeedbackUserWidget();
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_DisplayAngleFeedback(float _fAngle);
     
 };

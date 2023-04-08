@@ -4,7 +4,7 @@
 #include "ESCMessageLogSeverity.h"
 #include "SCErrorHelpers.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SCCORE_API USCErrorHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

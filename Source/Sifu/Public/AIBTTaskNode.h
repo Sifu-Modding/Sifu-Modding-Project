@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "SCBTTaskNode.h"
-#include "InputAction.h"
 #include "BTTaskNodeRelevancyCondition.h"
+#include "InputAction.h"
 #include "AIBTTaskNode.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class SIFU_API UAIBTTaskNode : public USCBTTaskNode {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBTTaskNodeRelevancyCondition> m_RelevancyConditions;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     InputAction m_eCancelTaskOnAvailableInput;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCancelWaitedOrdersOnFinish;
     
 public:

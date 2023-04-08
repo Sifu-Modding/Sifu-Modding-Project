@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "ReplayInitialStateToggleEventDelegateDelegate.generated.h"
 
-UDELEGATE() DECLARE_DYNAMIC_DELEGATE_OneParam(FReplayInitialStateToggleEventDelegate, bool, _bToggle);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_DELEGATE_OneParam(FReplayInitialStateToggleEventDelegate, bool, _bToggle);
 

@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct FAISituationNamedActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_Name;
     
     SIFU_API FAISituationNamedActor();

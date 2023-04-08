@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimContainer.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "AnimContainer.h"
 #include "FightingCharacterHelpers.generated.h"
 
 class UAnimSequence;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class SIFU_API UFightingCharacterHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

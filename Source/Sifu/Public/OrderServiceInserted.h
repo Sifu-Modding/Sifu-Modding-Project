@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct SIFU_API FOrderServiceInserted {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iInsertionIndex;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOrderServiceInfos m_OrderService;
     
     FOrderServiceInserted();
