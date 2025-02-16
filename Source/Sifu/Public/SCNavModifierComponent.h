@@ -7,7 +7,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API USCNavModifierComponent : public UNavModifierComponent {
     GENERATED_BODY()
 public:
-    USCNavModifierComponent();
+    USCNavModifierComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_CalcAndCacheBounds();
     

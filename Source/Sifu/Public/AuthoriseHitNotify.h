@@ -8,5 +8,6 @@ class SIFU_API UAuthoriseHitNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     UAuthoriseHitNotify();
+
 };
 

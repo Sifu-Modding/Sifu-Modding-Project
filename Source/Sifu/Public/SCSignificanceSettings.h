@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "SCSignificanceSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SIFU_API USCSignificanceSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -17,5 +17,6 @@ public:
     float m_fMediumBucketDist;
     
     USCSignificanceSettings();
+
 };
 

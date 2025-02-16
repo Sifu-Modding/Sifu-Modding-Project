@@ -20,7 +20,8 @@ protected:
     float m_fLookSpeed;
     
 public:
-    ASCSpectatorPawnBase();
+    ASCSpectatorPawnBase(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnAnyInputConsumed();

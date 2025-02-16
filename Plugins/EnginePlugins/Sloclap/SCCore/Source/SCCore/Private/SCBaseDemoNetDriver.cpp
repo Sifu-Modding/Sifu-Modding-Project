@@ -1,5 +1,7 @@
 //#include "SCBaseDemoNetDriver.h"
 //
-////USCBaseDemoNetDriver::USCBaseDemoNetDriver() {
-////}
+//USCBaseDemoNetDriver::USCBaseDemoNetDriver() {
+//    this->ChannelDefinitions.AddDefaulted(2);
+//}
+//
 //

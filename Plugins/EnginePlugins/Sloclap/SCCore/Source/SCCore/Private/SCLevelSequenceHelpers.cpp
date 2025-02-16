@@ -1,9 +1,7 @@
 #include "SCLevelSequenceHelpers.h"
 
-class AActor;
-class ACharacter;
-class ALevelSequenceActor;
-class APlayerController;
+USCLevelSequenceHelpers::USCLevelSequenceHelpers() {
+}
 
 void USCLevelSequenceHelpers::BPF_UnbindOnSequenceViewBlendStateChanged(const FSCLevelSequenceDynamicDelegate& _delegate) {
 }
@@ -38,6 +36,4 @@ int32 USCLevelSequenceHelpers::BPF_CreateSequence(ACharacter* _characterOwner, A
 void USCLevelSequenceHelpers::BPF_BindOnSequenceViewBlendStateChanged(const FSCLevelSequenceDynamicDelegate& _delegate) {
 }
 
-USCLevelSequenceHelpers::USCLevelSequenceHelpers() {
-}
 

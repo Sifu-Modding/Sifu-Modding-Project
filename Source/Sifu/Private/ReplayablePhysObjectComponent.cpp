@@ -1,7 +1,12 @@
 #include "ReplayablePhysObjectComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class UPrimitiveComponent;
+UReplayablePhysObjectComponent::UReplayablePhysObjectComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bIsReplicatingMovement = false;
+    this->m_bDebugDisabled = false;
+    this->m_bForceNetUpdateOnBodyAwake = true;
+    this->m_AttachedActor = NULL;
+}
 
 void UReplayablePhysObjectComponent::OnReplaySystemRecordingChanged(bool _bIsRecording) {
 }
@@ -25,10 +30,4 @@ void UReplayablePhysObjectComponent::GetLifetimeReplicatedProps(TArray<FLifetime
     DOREPLIFETIME(UReplayablePhysObjectComponent, m_AttachedActor);
 }
 
-UReplayablePhysObjectComponent::UReplayablePhysObjectComponent() {
-    this->m_bIsReplicatingMovement = false;
-    this->m_bDebugDisabled = false;
-    this->m_bForceNetUpdateOnBodyAwake = true;
-    this->m_AttachedActor = NULL;
-}
 

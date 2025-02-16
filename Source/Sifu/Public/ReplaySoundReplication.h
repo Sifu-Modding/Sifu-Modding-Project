@@ -14,6 +14,7 @@ public:
     FSoundReplicationData m_SoundReplicationData;
     
     UReplaySoundReplication();
+
     UFUNCTION()
     void SetRTPCValue(uint32 _rtpc, const FString& _rtpcName, float _akRtpcValue, int32 _iInterpolationTimeMs, AActor* _actor);
     

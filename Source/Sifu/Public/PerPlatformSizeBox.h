@@ -21,7 +21,8 @@ public:
     float SmallScreenHeightOverride;
     
     UPerPlatformSizeBox();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

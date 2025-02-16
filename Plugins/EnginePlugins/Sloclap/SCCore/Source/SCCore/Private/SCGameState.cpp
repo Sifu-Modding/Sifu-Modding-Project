@@ -1,5 +1,6 @@
 #include "SCGameState.h"
 
-ASCGameState::ASCGameState() {
+ASCGameState::ASCGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

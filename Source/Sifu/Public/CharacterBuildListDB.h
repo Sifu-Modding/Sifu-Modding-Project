@@ -13,5 +13,6 @@ public:
     TArray<UCharacterBuildDB*> m_CharacterBuilds;
     
     UCharacterBuildListDB();
+
 };
 

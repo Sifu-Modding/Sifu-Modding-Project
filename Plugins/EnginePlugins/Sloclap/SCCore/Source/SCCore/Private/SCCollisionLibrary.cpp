@@ -1,7 +1,7 @@
 #include "SCCollisionLibrary.h"
 
-class UPrimitiveComponent;
-class UStaticMesh;
+USCCollisionLibrary::USCCollisionLibrary() {
+}
 
 void USCCollisionLibrary::BPF_VisualLogCollision(UPrimitiveComponent* _primitiveComponent, const FName& _categoryName) {
 }
@@ -58,6 +58,4 @@ float USCCollisionLibrary::BPF_CalculateStaticMeshMass(UStaticMesh* _staticMesh)
     return 0.0f;
 }
 
-USCCollisionLibrary::USCCollisionLibrary() {
-}
 

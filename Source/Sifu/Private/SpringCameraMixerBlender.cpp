@@ -1,6 +1,8 @@
 #include "SpringCameraMixerBlender.h"
 
-class UCameraComponentThird;
+USpringCameraMixerBlender::USpringCameraMixerBlender() {
+    this->m_fSpeedFactor = 2.00f;
+}
 
 float USpringCameraMixerBlender::BPE_GetTargetRatio_Implementation(UCameraComponentThird* _camera) const {
     return 0.0f;
@@ -10,7 +12,4 @@ float USpringCameraMixerBlender::BPE_GetSpeedFactor_Implementation(UCameraCompon
     return 0.0f;
 }
 
-USpringCameraMixerBlender::USpringCameraMixerBlender() {
-    this->m_fSpeedFactor = 2.00f;
-}
 

@@ -26,5 +26,6 @@ public:
     uint32 m_uiDeathTriggeredConditionMask;
     
     UHittedDeathOrderService();
+
 };
 

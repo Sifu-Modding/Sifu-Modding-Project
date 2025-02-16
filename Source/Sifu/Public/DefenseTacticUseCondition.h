@@ -9,6 +9,7 @@ class SIFU_API UDefenseTacticUseCondition : public UBaseUseCondition {
     GENERATED_BODY()
 public:
     UDefenseTacticUseCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     EDefenseTactics BPE_SelectBestDefenseTactic(bool& _bOutTriggerCounter);
     

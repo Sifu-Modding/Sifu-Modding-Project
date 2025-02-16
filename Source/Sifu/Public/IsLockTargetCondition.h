@@ -8,5 +8,6 @@ class SIFU_API UIsLockTargetCondition : public UBaseActorTargetCondition {
     GENERATED_BODY()
 public:
     UIsLockTargetCondition();
+
 };
 

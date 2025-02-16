@@ -24,6 +24,7 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_windMaxGustName;
     
-    ASCWindDirectionalSource();
+    ASCWindDirectionalSource(const FObjectInitializer& ObjectInitializer);
+
 };
 

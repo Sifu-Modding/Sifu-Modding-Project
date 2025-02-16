@@ -17,5 +17,6 @@ public:
     UMaterialInterface* m_BaseFXMaterials[10];
     
     USkinTonesDB();
+
 };
 

@@ -11,6 +11,7 @@ class SIFU_API UOrderServiceFrameRangeRequest : public UObject {
     GENERATED_BODY()
 public:
     UOrderServiceFrameRangeRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FFloatRange BPE_GetFrameRange(uint8 _uiOrderId, const ABaseCharacter* _owner) const;
     

@@ -22,7 +22,8 @@ private:
     TArray<UTargetableWidget*> m_WidgetPool;
     
 public:
-    UTargetableWidgetUpdaterComponent();
+    UTargetableWidgetUpdaterComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UnRegisterTargetActor(AActor* _actor);
     

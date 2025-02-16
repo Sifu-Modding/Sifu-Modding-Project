@@ -12,6 +12,7 @@ protected:
     float m_fFixedWeight;
     
 public:
-    UFixedCameraWeightComponent();
+    UFixedCameraWeightComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -18,5 +18,6 @@ public:
     TArray<TSubclassOf<UAISense>> m_Senses;
     
     UCheckTargetPerceptionDecorator();
+
 };
 

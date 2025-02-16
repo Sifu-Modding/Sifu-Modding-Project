@@ -10,14 +10,19 @@ class AAIDirectorActor;
 class AAISituationActor;
 class AActor;
 class UAIFightingComponent;
+class UWorld;
 
 UCLASS(Blueprintable)
 class SIFU_API UAIManagerHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAIManagerHelpers();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetWantedArchetypeType(EArchetypeType _eWantedType);
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SetForceLastManPhase(const bool _bForceLastManPhase);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_SetAIPositioningOptionToggled(const AActor* _targetActor, EAIPositioningOption _eOption, bool _bToggled);
@@ -42,6 +47,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void BPF_GetAllAiSituations(TArray<AAISituationActor*>& _outAiSituations);
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_GetAllAIFightingComponent(UWorld* _world, TArray<UAIFightingComponent*>& _outAIs);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_GetAllActiveAiSituations(TArray<AAISituationActor*>& _outAiSituations);

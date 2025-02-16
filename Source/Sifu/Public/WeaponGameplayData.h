@@ -29,11 +29,15 @@ public:
     FMainCharWeaponOverrideInfo m_MainCharOverrides;
     
     UWeaponGameplayData();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_WeaponDataRef();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure=false)
     void BPE_OnChangeCombo(AFightingCharacter* _owner, bool _bDroppingWeapon) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    bool BPE_CanBeDrop() const;
     
 };
 

@@ -8,5 +8,6 @@ class SIFU_API UInputMappingProfileUIData : public UObject {
     GENERATED_BODY()
 public:
     UInputMappingProfileUIData();
+
 };
 

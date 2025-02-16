@@ -12,5 +12,6 @@ public:
     ECharacterGender m_eGender;
     
     UGenderCondition();
+
 };
 

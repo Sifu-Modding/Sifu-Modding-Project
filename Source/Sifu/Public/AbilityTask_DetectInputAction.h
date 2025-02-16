@@ -17,6 +17,7 @@ public:
     FDetectInputActionDelegate m_OnInputActionDetected;
     
     UAbilityTask_DetectInputAction();
+
     UFUNCTION(BlueprintCallable)
     static UAbilityTask_DetectInputAction* BPF_DetectInputAction(UGameplayAbility* _owningAbility, InputAction _eAction, bool _bDetectDeactivation, bool _bEndTaskOnDetected, InputContext _eInputContext);
     

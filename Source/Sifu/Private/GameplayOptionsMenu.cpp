@@ -1,5 +1,8 @@
 #include "GameplayOptionsMenu.h"
 
+UGameplayOptionsMenu::UGameplayOptionsMenu() {
+}
+
 void UGameplayOptionsMenu::BPF_SetGameOptionValue(EGameOptionTypes _eOptionType, float _fOptionValue) {
 }
 
@@ -23,6 +26,4 @@ void UGameplayOptionsMenu::BPF_ApplyCurrentOptionsToDefault() {
 }
 
 
-UGameplayOptionsMenu::UGameplayOptionsMenu() {
-}
 

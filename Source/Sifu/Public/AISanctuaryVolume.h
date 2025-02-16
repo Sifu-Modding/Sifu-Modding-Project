@@ -13,7 +13,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAISanctuaryComponent* m_SanctuaryComponent;
     
-    AAISanctuaryVolume();
+    AAISanctuaryVolume(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnSanctuaryAssignmentUpdated();

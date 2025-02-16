@@ -1,8 +1,7 @@
 #include "AsyncTaskPlayAnimation.h"
 
-class UAsyncTaskPlayAnimation;
-class UObject;
-class UWidgetAnimation;
+UAsyncTaskPlayAnimation::UAsyncTaskPlayAnimation() {
+}
 
 void UAsyncTaskPlayAnimation::OnTransitionFinished() {
 }
@@ -11,6 +10,4 @@ UAsyncTaskPlayAnimation* UAsyncTaskPlayAnimation::BPF_PlayTransitionAnimationAsy
     return NULL;
 }
 
-UAsyncTaskPlayAnimation::UAsyncTaskPlayAnimation() {
-}
 

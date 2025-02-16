@@ -69,5 +69,6 @@ public:
     UTextureRenderTarget2D* m_ProxyDilationTexture;
     
     UDynamicTextureMaskDB();
+
 };
 

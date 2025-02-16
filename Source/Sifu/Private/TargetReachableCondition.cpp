@@ -9,3 +9,4 @@ UTargetReachableCondition::UTargetReachableCondition() {
     this->m_fMaxVerticalDistanceFromProjection = 50.00f;
 }
 
+

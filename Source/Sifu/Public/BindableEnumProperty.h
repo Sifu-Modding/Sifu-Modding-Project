@@ -8,6 +8,7 @@ class SIFU_API UBindableEnumProperty : public UBindablePropertyBase {
     GENERATED_BODY()
 public:
     UBindableEnumProperty();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetValue(uint8 _uiValue);
     

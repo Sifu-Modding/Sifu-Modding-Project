@@ -8,5 +8,6 @@ class SIFU_API UMoveInterruptAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UMoveInterruptAbility();
+
 };
 

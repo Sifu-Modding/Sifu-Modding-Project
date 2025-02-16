@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxDistanceToTarget;
     
-    AVortexDamageItem();
+    AVortexDamageItem(const FObjectInitializer& ObjectInitializer);
+
 };
 

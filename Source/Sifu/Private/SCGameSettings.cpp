@@ -1,6 +1,7 @@
 #include "SCGameSettings.h"
 
 USCGameSettings::USCGameSettings() {
+    this->m_AchievementsToIgnoreWhenCheckingPlatinum.AddDefaulted(18);
     this->m_bFilterByOrderServiceOnTeleport = true;
     this->m_FilteringOrderServicesOnTeleport.AddDefaulted(1);
     this->m_DefaultPoseAssetNotifyStateEaseIn = 0.10f;
@@ -11,4 +12,5 @@ USCGameSettings::USCGameSettings() {
     this->m_bAllowPredictionOnMovement = true;
     this->m_bDetachAvoidCapsuleWhenNoAvoidWindow = true;
 }
+
 

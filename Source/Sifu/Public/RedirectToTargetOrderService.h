@@ -56,6 +56,7 @@ public:
     EOrientationApplyMethod m_eOrientationApplyMethod;
     
     URedirectToTargetOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetRedirectionOrigin(const FVector& _target, const FBPOrderServiceInstance& _instance) const;
     

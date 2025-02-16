@@ -90,6 +90,7 @@ private:
     
 public:
     USCUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnDataUpdated();
@@ -141,7 +142,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ASCPlayerController* BPF_GetPlayerController() const;
     
-   /* UFUNCTION(BlueprintCallable, BlueprintPure)
+  /*  UFUNCTION(BlueprintCallable, BlueprintPure)
     EPlatform BPF_GetPlatform() const;*/
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

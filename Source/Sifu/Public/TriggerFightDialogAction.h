@@ -11,6 +11,7 @@ public:
     FName m_ActorSentToFight;
     
     UTriggerFightDialogAction();
+
 protected:
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;

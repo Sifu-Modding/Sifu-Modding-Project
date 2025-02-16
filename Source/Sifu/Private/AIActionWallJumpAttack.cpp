@@ -1,10 +1,14 @@
 #include "AIActionWallJumpAttack.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class AFightingCharacter;
-class UAIActionWallJumpAttack;
-class UAIFightingComponent;
+UAIActionWallJumpAttack::UAIActionWallJumpAttack() {
+    this->m_fQueryResultLifetime = 0.30f;
+    this->m_fQueryExecuteFrequency = 0.30f;
+    this->m_QueryTemplate = NULL;
+    this->m_iDeprecationVersion = 0;
+    this->m_fMaxJumpHeightWhenPossible = 100.00f;
+    this->m_bAddBoxHalfHeightToJumpPoint = true;
+}
 
 bool UAIActionWallJumpAttack::BPF_PrepareWallJumpAttack(UAIFightingComponent* _aiComponent, TSubclassOf<UAIActionWallJumpAttack> _action, AActor* _wallJumpActor, const FVector& _vSnapLocation, const AActor* _target, bool _bIgnoreAngleConstraint) {
     return false;
@@ -18,12 +22,4 @@ bool UAIActionWallJumpAttack::BPF_ComputeWallJumpStartLocation(FVector& _vOutLoc
     return false;
 }
 
-UAIActionWallJumpAttack::UAIActionWallJumpAttack() {
-    this->m_fQueryResultLifetime = 0.30f;
-    this->m_fQueryExecuteFrequency = 0.30f;
-    this->m_QueryTemplate = NULL;
-    this->m_iDeprecationVersion = 0;
-    this->m_fMaxJumpHeightWhenPossible = 100.00f;
-    this->m_bAddBoxHalfHeightToJumpPoint = true;
-}
 

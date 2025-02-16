@@ -11,5 +11,6 @@ public:
     float m_fDuration;
     
     UAIActionWait();
+
 };
 

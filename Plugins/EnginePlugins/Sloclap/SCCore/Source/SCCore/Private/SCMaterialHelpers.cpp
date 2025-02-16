@@ -1,10 +1,7 @@
 #include "SCMaterialHelpers.h"
 
-class ACharacter;
-class UCurveBase;
-class UMaterialParameterCollection;
-class UMeshComponent;
-class UObject;
+USCMaterialHelpers::USCMaterialHelpers() {
+}
 
 void USCMaterialHelpers::BPF_SetMPCVectorParameterValue(const UObject* _worldContext, UMaterialParameterCollection* _collection, FName _parameter, FVector _vValue) {
 }
@@ -67,6 +64,4 @@ int32 USCMaterialHelpers::BPF_BindMPCParamToCharacterSocketLocation(ACharacter* 
     return 0;
 }
 
-USCMaterialHelpers::USCMaterialHelpers() {
-}
 

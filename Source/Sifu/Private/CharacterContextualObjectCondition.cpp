@@ -5,3 +5,4 @@ UCharacterContextualObjectCondition::UCharacterContextualObjectCondition() {
     this->m_CheckType = NULL;
 }
 
+

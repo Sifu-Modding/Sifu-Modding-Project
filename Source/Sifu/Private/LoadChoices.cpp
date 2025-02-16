@@ -1,6 +1,8 @@
 #include "LoadChoices.h"
 
-class UWidget;
+ULoadChoices::ULoadChoices() {
+    this->m_LoadingButtonClass = NULL;
+}
 
 void ULoadChoices::BPF_SetFocusedIndex(uint8 _uiIndex) {
 }
@@ -14,7 +16,4 @@ void ULoadChoices::BPF_FillLoadChoices() {
 void ULoadChoices::BPF_DeleteSelectedSave() {
 }
 
-ULoadChoices::ULoadChoices() {
-    this->m_LoadingButtonClass = NULL;
-}
 

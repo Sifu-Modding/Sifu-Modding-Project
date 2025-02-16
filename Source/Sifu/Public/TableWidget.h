@@ -101,6 +101,7 @@ protected:
     
 public:
     UTableWidget();
+
     UFUNCTION(BlueprintCallable)
     void OnItemSelected(UButtonUserWidget* _button, UButtonUserWidget* _prevButton);
     

@@ -8,5 +8,6 @@ class SIFU_API UComboTransitionConditionLastAttackHit : public UComboTransitionC
     GENERATED_BODY()
 public:
     UComboTransitionConditionLastAttackHit();
+
 };
 

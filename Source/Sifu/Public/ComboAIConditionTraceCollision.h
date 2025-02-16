@@ -50,6 +50,7 @@ private:
     
 public:
     UComboAIConditionTraceCollision();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_TestEQCondition(const UAIFightingComponent* _aiComponent, const AActor* _target) const;
     

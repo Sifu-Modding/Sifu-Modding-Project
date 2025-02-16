@@ -6,3 +6,4 @@ UMovementCapsuleOrderService::UMovementCapsuleOrderService() {
     this->m_Blend = NULL;
 }
 
+

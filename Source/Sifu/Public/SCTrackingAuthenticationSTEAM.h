@@ -8,5 +8,6 @@ class USCTrackingAuthenticationSTEAM : public USCTrackingAuthentication {
     GENERATED_BODY()
 public:
     USCTrackingAuthenticationSTEAM();
+
 };
 

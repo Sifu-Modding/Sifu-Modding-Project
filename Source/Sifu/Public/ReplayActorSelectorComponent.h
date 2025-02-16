@@ -13,7 +13,8 @@ protected:
     FOnReceivedTraceResultSignature m_OnReceiveTraceResult;
     
 public:
-    UReplayActorSelectorComponent();
+    UReplayActorSelectorComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_RequestTrace();

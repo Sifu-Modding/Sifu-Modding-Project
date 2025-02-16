@@ -1,6 +1,9 @@
 #include "SCSaveObject.h"
 
-class UTexture2D;
+USCSaveObject::USCSaveObject() {
+    this->m_SaveFilename = TEXT("Default");
+    this->m_uiVersion = 4294967295;
+}
 
 FString USCSaveObject::BPE_GetSubtitlesInfoForSaveFile_Implementation() const {
     return TEXT("");
@@ -17,8 +20,4 @@ FString USCSaveObject::BPE_GetDetailsInfoForSaveFile_Implementation() const {
 void USCSaveObject::BPE_FillSaveWithDefaultValues_Implementation() {
 }
 
-USCSaveObject::USCSaveObject() {
-    this->m_SaveFilename = TEXT("Default");
-    this->m_uiVersion = 4294967295;
-}
 

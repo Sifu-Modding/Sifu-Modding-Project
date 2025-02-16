@@ -1,17 +1,11 @@
 #include "ArenaSettings.h"
 
-float UArenaSettings::BPF_GetCaptureSpeedMultiplierPerScoreMultiplier(int32 _iScoreMultiplierIndex) const {
-    return 0.0f;
-}
-
 UArenaSettings::UArenaSettings() {
     this->m_fObjectiveStartTimerValue = 3.00f;
     this->m_eArenaUnlockingBehavior = EArenaUnlockingBehavior::AllStarsCount;
     this->m_iMaxStarCountThatUnlocksBatch = 3;
     this->m_iMaxStarCountThatGrantsCurrency = 3;
-    this->m_iCurrencyPerStar = 50;
     this->m_iMaxNumberOfDifferentCharacterBP = 5;
-    this->m_iNbImpostorPerClasses = 5;
     this->m_fOutsideVolumeCaptureTimeDelay = 0.50f;
     this->m_fBaseCaptureSpeedPerSecond = 1.00f;
     this->m_fCaptureSpeedMultiplierPerScoreMultiplier[0] = 1.00f;
@@ -27,4 +21,9 @@ UArenaSettings::UArenaSettings() {
     this->m_fAIDespawnDistance = 2000.00f;
     this->m_fAIDespawnDelayWhileNotRendered = 3.00f;
 }
+
+float UArenaSettings::BPF_GetCaptureSpeedMultiplierPerScoreMultiplier(int32 _iScoreMultiplierIndex) const {
+    return 0.0f;
+}
+
 

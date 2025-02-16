@@ -1,11 +1,13 @@
 #include "WGAiAction.h"
 
-class AFightingAIController;
-class AFightingCharacter;
-class AFightingPlayerController;
-class UAIFightingComponent;
-class UOrderParams;
-class USCCrowdFollowingComponent;
+UWGAiAction::UWGAiAction() {
+    this->m_eDesiredSpeedState = ESpeedState::None;
+    this->m_bLockSpeedStateOnSchedule = false;
+    this->m_bCancelOnGlobalBehaviorChange = false;
+    this->m_bCancellable = true;
+    this->m_CancelConditionOperator = EComboAIConditionGroupOperator::OR;
+    this->m_bForceIdleExit = true;
+}
 
 void UWGAiAction::OnGlobalBehaviorChanged(EGlobalBehaviors _eBehavior, const bool _bFromDialog) {
 }
@@ -51,12 +53,4 @@ void UWGAiAction::BPF_AddAbilitySystemGameplayTag(const FGameplayTag& _tag) {
 void UWGAiAction::BPE_OnCreatedOrderParams_Implementation(FName _paramsName, UOrderParams* _orderParams) {
 }
 
-UWGAiAction::UWGAiAction() {
-    this->m_eDesiredSpeedState = ESpeedState::None;
-    this->m_bLockSpeedStateOnSchedule = false;
-    this->m_bCancelOnGlobalBehaviorChange = false;
-    this->m_bCancellable = true;
-    this->m_CancelConditionOperator = EComboAIConditionGroupOperator::OR;
-    this->m_bForceIdleExit = true;
-}
 

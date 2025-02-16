@@ -8,5 +8,6 @@ class SIFU_API UFlyModeAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UFlyModeAbility();
+
 };
 

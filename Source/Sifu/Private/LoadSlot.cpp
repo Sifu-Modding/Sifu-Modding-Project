@@ -1,6 +1,7 @@
 #include "LoadSlot.h"
 
-class ULoadChoices;
+ULoadSlot::ULoadSlot() {
+}
 
 uint8 ULoadSlot::BPF_GetSlotIndex() {
     return 0;
@@ -19,6 +20,4 @@ ULoadChoices* ULoadSlot::BPF_GetLoadPanel() {
 }
 
 
-ULoadSlot::ULoadSlot() {
-}
 

@@ -40,5 +40,6 @@ public:
     TSubclassOf<UDodgeAnimRequest> m_animRequest;
     
     UDodgeDB();
+
 };
 

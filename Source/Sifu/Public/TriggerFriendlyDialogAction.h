@@ -8,5 +8,6 @@ class SIFU_API UTriggerFriendlyDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
     UTriggerFriendlyDialogAction();
+
 };
 

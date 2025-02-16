@@ -27,5 +27,6 @@ public:
     TArray<EControllerIconAxisTypes> m_UIAxis;
     
     UAnalogInputSequenceData();
+
 };
 

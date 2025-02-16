@@ -12,6 +12,7 @@ class SIFU_API UWGGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UWGGameplayStatics();
+
     UFUNCTION(BlueprintCallable)
     static FName BPF_StartConversation(ACharacter* _character, FName _startingSegment, const bool _bGenericSubtitles, ACharacter* _secondary, bool _bCutOtherDialogs, bool _bLookAtEnabled, bool _bIgnoreCharacterCanSpeak);
     
@@ -23,6 +24,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContext"))
     static bool BPF_IsChallengeGameMode(UObject* _worldContext);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static EGameDifficulty BPF_GetGameDifficultyInSave();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EGameDifficulty BPF_GetGameDifficulty(bool _bNeedSaveGame);

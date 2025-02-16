@@ -28,5 +28,6 @@ public:
     TSubclassOf<UEnvQueryContext> ThreatsToEvaluate;
     
     UEnvQueryTest_AngleBetween();
+
 };
 

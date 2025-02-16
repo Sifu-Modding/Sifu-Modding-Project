@@ -1,10 +1,9 @@
 #include "AIPhaseTransitionHealthChange.h"
 
-class UHealthComponent;
+UAIPhaseTransitionHealthChange::UAIPhaseTransitionHealthChange() {
+}
 
 void UAIPhaseTransitionHealthChange::OnDeathDismiss(UHealthComponent* _healthComponent) {
 }
 
-UAIPhaseTransitionHealthChange::UAIPhaseTransitionHealthChange() {
-}
 

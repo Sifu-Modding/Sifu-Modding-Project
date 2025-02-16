@@ -4,3 +4,4 @@ UAIInfluenceTest::UAIInfluenceTest() {
     this->m_bInverted = false;
 }
 
+

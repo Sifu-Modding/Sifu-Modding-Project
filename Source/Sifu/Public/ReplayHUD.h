@@ -23,7 +23,8 @@ protected:
     TArray<TSoftObjectPtr<UTexture2D>> m_LoadingTextures;
     
 public:
-    AReplayHUD();
+    AReplayHUD(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnAssetsLoaded(const TArray<TSoftObjectPtr<UObject>>& _items);

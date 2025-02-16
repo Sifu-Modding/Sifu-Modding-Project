@@ -7,3 +7,4 @@ UAvailabilityLayerDB::UAvailabilityLayerDB() {
     this->m_FallLayerData = NULL;
 }
 
+

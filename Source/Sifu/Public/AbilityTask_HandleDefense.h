@@ -12,6 +12,7 @@ class SIFU_API UAbilityTask_HandleDefense : public UAbilityTask {
     GENERATED_BODY()
 public:
     UAbilityTask_HandleDefense();
+
     UFUNCTION(BlueprintCallable)
     static UAbilityTask_HandleDefense* BPF_HandleDefense(UGameplayAbility* _owningAbility, EHitDismissReason _eDismissReason);
     

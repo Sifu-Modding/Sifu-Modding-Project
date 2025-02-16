@@ -1,5 +1,8 @@
 #include "AIPhaseTransition.h"
 
+UAIPhaseTransition::UAIPhaseTransition() {
+}
+
 bool UAIPhaseTransition::BPF_GotoNextPhase() {
     return false;
 }
@@ -7,6 +10,4 @@ bool UAIPhaseTransition::BPF_GotoNextPhase() {
 
 
 
-UAIPhaseTransition::UAIPhaseTransition() {
-}
 

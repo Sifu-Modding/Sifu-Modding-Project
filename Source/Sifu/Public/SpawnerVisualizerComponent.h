@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API USpawnerVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    USpawnerVisualizerComponent();
+    USpawnerVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

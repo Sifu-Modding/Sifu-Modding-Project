@@ -19,5 +19,6 @@ public:
     ETraversalEntryType m_eForceEntryType;
     
     UOrderTraversalParams();
+
 };
 

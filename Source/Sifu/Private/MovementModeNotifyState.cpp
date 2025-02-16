@@ -5,3 +5,4 @@ UMovementModeNotifyState::UMovementModeNotifyState() {
     this->m_eExitMovementMode = MOVE_None;
 }
 
+

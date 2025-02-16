@@ -23,6 +23,7 @@ public:
     bool m_bAllowSoundPlaying;
     
     UMenuItem();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnChangeNextWidget(UWidget* _widgetToHide, UWidget* _previousWidget, UWidget* _widgetToFocusOnCancel);
     

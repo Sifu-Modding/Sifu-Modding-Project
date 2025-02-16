@@ -4,3 +4,4 @@ UInheritedDataAsset::UInheritedDataAsset() {
     this->m_Parent = NULL;
 }
 
+

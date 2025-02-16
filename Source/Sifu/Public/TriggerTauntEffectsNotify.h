@@ -8,5 +8,6 @@ class SIFU_API UTriggerTauntEffectsNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
     UTriggerTauntEffectsNotify();
+
 };
 

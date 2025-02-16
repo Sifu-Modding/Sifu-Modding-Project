@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "ButtonUserWidget.h"
 #include "EControllerIconAxisTypes.h"
 #include "EControllerIconStyles.h"
@@ -48,6 +48,7 @@ protected:
     
 public:
     UControllerButtonWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetMappingID(const FMappingID& _mappingID, bool _bRefresh);
     

@@ -35,6 +35,7 @@ protected:
     
 public:
     USCLevelSequence();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnPreStop();

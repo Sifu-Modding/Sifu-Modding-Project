@@ -12,5 +12,6 @@ public:
     FAIPhaseNodeSoftLink m_phaseSoftLink;
     
     UDefenseInfluenceNodeGotoPhaseDynamic();
+
 };
 

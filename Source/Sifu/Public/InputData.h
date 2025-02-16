@@ -15,5 +15,6 @@ public:
     FInputBehaviourStruct m_BehaviourStruct;
     
     UInputData();
+
 };
 

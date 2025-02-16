@@ -8,5 +8,6 @@ class SIFU_API UAIWallJumpAttackHitOrderService : public UHitOrderService {
     GENERATED_BODY()
 public:
     UAIWallJumpAttackHitOrderService();
+
 };
 

@@ -1,8 +1,17 @@
 #include "InteractionDetectionComponent.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class UInteractionObjectComponent;
+UInteractionDetectionComponent::UInteractionDetectionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_fAngleThresholdWalking = 0.00f;
+    this->m_fAngleThresholdRunning = 0.00f;
+    this->m_fCatchFrontRangeWalking = 0.00f;
+    this->m_fCatchBackRangeWalking = 0.00f;
+    this->m_fCatchFrontRangeRunning = 0.00f;
+    this->m_fCatchBackRangeRunning = 0.00f;
+    this->m_fInteractionHintDist = 0.00f;
+    this->m_bShowOnlyVisibleHint = true;
+    this->m_bShowOnlyUsableHint = true;
+}
 
 TMap<UInteractionObjectComponent*, FInteractionHintInfo> UInteractionDetectionComponent::BPF_GetInteractionHintInfos() const {
     return TMap<UInteractionObjectComponent*, FInteractionHintInfo>();
@@ -26,15 +35,4 @@ void UInteractionDetectionComponent::BPF_DisableInteractionWithObjects(TSubclass
 void UInteractionDetectionComponent::BPF_AllowInteractionWithObjects(TSubclassOf<AActor> _actorToEnable) {
 }
 
-UInteractionDetectionComponent::UInteractionDetectionComponent() {
-    this->m_fAngleThresholdWalking = 0.00f;
-    this->m_fAngleThresholdRunning = 0.00f;
-    this->m_fCatchFrontRangeWalking = 0.00f;
-    this->m_fCatchBackRangeWalking = 0.00f;
-    this->m_fCatchFrontRangeRunning = 0.00f;
-    this->m_fCatchBackRangeRunning = 0.00f;
-    this->m_fInteractionHintDist = 0.00f;
-    this->m_bShowOnlyVisibleHint = true;
-    this->m_bShowOnlyUsableHint = true;
-}
 

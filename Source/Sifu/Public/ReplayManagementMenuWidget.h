@@ -16,6 +16,7 @@ protected:
     
 public:
     UReplayManagementMenuWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_PlayReplay(const FReplayInfo& _info);

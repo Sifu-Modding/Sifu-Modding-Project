@@ -1,5 +1,22 @@
 #include "TextLipSync.h"
 
+UTextLipSync::UTextLipSync(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_LipSyncDB = NULL;
+    this->ControlledMesh = NULL;
+    this->bIsInitialized = false;
+    this->bIsSpeaking = false;
+    this->bIsSpeakingPhonemeInAudio = false;
+    this->bSubtitleWasChanged = false;
+    this->PauseTime = 0.00f;
+    this->CurrentTime = 0.00f;
+    this->EnvelopeVolumeMultiplier = 0.00f;
+    this->PhraseDuration = 0.00f;
+    this->PreviousPhonemeIndex = 0;
+    this->CurrentPhonemeIndex = 0;
+    this->NextNotifyIndex = 0;
+    this->CurrentIntervalDuration = 0.10f;
+}
+
 bool UTextLipSync::StopSpeaking(bool bStopPlayingSound) {
     return false;
 }
@@ -48,20 +65,4 @@ FString UTextLipSync::GetActiveMorphTargets() const {
 void UTextLipSync::BuildPhraseData(const FLipsyncData& _lipsyncData) {
 }
 
-UTextLipSync::UTextLipSync() {
-    this->m_LipSyncDB = NULL;
-    this->ControlledMesh = NULL;
-    this->bIsInitialized = false;
-    this->bIsSpeaking = false;
-    this->bIsSpeakingPhonemeInAudio = false;
-    this->bSubtitleWasChanged = false;
-    this->PauseTime = 0.00f;
-    this->CurrentTime = 0.00f;
-    this->EnvelopeVolumeMultiplier = 0.00f;
-    this->PhraseDuration = 0.00f;
-    this->PreviousPhonemeIndex = 0;
-    this->CurrentPhonemeIndex = 0;
-    this->NextNotifyIndex = 0;
-    this->CurrentIntervalDuration = 0.10f;
-}
 

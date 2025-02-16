@@ -7,6 +7,7 @@ UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableCompo
 class SIFU_API UBasicSpawningComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UBasicSpawningComponent();
+    UBasicSpawningComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -5,3 +5,4 @@ UComboAIConditionGroup::UComboAIConditionGroup() {
     this->m_bForceTestAllConditions = false;
 }
 
+

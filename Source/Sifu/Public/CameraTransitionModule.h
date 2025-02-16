@@ -10,6 +10,7 @@ class SIFU_API UCameraTransitionModule : public UObject {
     GENERATED_BODY()
 public:
     UCameraTransitionModule();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnStop(UCameraComponentThird* _cameraComponent, float _fTimeElapsed) const;
     

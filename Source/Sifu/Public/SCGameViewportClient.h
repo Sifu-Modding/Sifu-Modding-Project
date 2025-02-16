@@ -8,5 +8,6 @@ class SIFU_API USCGameViewportClient : public UGameViewportClient {
     GENERATED_BODY()
 public:
     USCGameViewportClient();
+
 };
 

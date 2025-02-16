@@ -86,6 +86,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEnableMaxImpostorsLimit;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bDespawnEnabled;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FName> m_SpawnerGroupClearedPathName;
     
@@ -104,11 +107,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     EGlobalBehaviors m_eBehaviorToSetOnSpawn;
     
-    UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_targetForHostileBehaviorsOnSpawn;
     
 public:
-    AAISituationActor();
+    AAISituationActor(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnUpdatedFromSaveCallback();
@@ -119,6 +123,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void BPF_UnSpawnSituation();
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_SwitchToSuperAbandonState();
     
     UFUNCTION(BlueprintCallable)
     void BPF_SwitchToFriendly(bool _bFriendly);

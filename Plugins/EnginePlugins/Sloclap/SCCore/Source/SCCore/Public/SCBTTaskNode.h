@@ -8,5 +8,6 @@ class SCCORE_API USCBTTaskNode : public UBTTaskNode {
     GENERATED_BODY()
 public:
     USCBTTaskNode();
+
 };
 

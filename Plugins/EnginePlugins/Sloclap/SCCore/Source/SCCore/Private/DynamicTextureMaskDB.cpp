@@ -22,3 +22,4 @@ UDynamicTextureMaskDB::UDynamicTextureMaskDB() {
     this->m_ProxyDilationTexture = NULL;
 }
 
+

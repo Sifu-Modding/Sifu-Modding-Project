@@ -8,5 +8,6 @@ class USCTrackingAuthenticationEOS : public USCTrackingAuthentication {
     GENERATED_BODY()
 public:
     USCTrackingAuthenticationEOS();
+
 };
 

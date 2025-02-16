@@ -7,7 +7,7 @@ enum class EMCDominationGaugeAsFlag : uint8 {
     None,
     Negative,
     Neutral,
-    Positive = 0x4,
-    PositivePlus = 0x8,
+    Positive = 4,
+    PositivePlus = 8,
 };
 

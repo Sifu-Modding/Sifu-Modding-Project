@@ -15,5 +15,6 @@ public:
     int32 m_iSerializeVersion;
     
     UAIAttackTicketData();
+
 };
 

@@ -6,3 +6,4 @@ UAbilityHitActionLauncher::UAbilityHitActionLauncher() {
     this->m_bApplyFreezeFrame = true;
 }
 
+

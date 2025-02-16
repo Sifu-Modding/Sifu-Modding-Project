@@ -11,6 +11,7 @@ class SCCORE_API USCUserDefinedEnumHandlerHelper : public UBlueprintFunctionLibr
     GENERATED_BODY()
 public:
     USCUserDefinedEnumHandlerHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetEnumValue(UPARAM(Ref) FSCUserDefinedEnumHandler& _enum, uint8 _uiEnumValue);
     

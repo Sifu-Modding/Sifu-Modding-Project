@@ -27,5 +27,6 @@ public:
     TSubclassOf<UOrderService> m_OrderSerice;
     
     UUseFrameRangeFromOrderService();
+
 };
 

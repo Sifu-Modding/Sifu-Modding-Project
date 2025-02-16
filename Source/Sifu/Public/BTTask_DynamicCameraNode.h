@@ -15,5 +15,6 @@ public:
     FBlackboardKeySelector m_ActorRefBlackboardKeySelector;
     
     UBTTask_DynamicCameraNode();
+
 };
 

@@ -3,7 +3,6 @@
 #include "UObject/NoExportTypes.h"
 #include "Styling/SlateBrush.h"
 #include "Components/Widget.h"
-#include "Components/Widget.h"
 #include "TriangleStatsWidget.generated.h"
 
 UCLASS(Blueprintable)
@@ -47,6 +46,7 @@ public:
     float m_fCrossLineWidth;
     
     UTriangleStatsWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetUpValue(float _fValue);
     

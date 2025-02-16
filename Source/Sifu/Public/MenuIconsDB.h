@@ -39,6 +39,7 @@ public:
     FEquipmentCategoryInfos m_EmptyWeaponFamilyInfos;
     
     UMenuIconsDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FControllerIcons GetControllerIcons(FName _controllerType) const;
     

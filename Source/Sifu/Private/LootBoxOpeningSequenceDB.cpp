@@ -7,3 +7,4 @@ ULootBoxOpeningSequenceDB::ULootBoxOpeningSequenceDB() {
     this->m_fLoopPlayBackEndPosition = 0.00f;
 }
 
+

@@ -10,7 +10,7 @@
 class UAIAttackTicketData;
 class UOrderDB;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=WuguanAI)
+UCLASS(Blueprintable, DefaultConfig, Config=WuguanAI)
 class SIFU_API UTicketSettings : public UObject {
     GENERATED_BODY()
 public:
@@ -71,5 +71,6 @@ private:
     
 public:
     UTicketSettings();
+
 };
 

@@ -22,6 +22,7 @@ protected:
     
 public:
     UVitalPointCheckCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool BPE_CanActivate(const AFightingCharacter* _attacker, const AFightingCharacter* _defender) const;
     

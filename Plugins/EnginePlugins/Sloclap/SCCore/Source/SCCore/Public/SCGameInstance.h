@@ -7,12 +7,16 @@
 class UCurveFloat;
 class UObject;
 
-UCLASS(Blueprintable, NonTransient)
+UCLASS(Blueprintable, NonTransient, Config=Engine)
 class SCCORE_API USCGameInstance : public UGameInstance {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCheatsUpdated, bool, _bApplied);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLowPerformanceModeChangedDelegate, bool, bLowPerformanceMode);
     DECLARE_DYNAMIC_DELEGATE_OneParam(FLowPerformanceModeChanged, bool, bLowPerformanceMode);
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnCheatsUpdated m_OnCheatsUpdated;
     
 private:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -29,6 +33,7 @@ private:
     
 public:
     USCGameInstance();
+
 private:
     UFUNCTION(BlueprintCallable, Exec)
     void UnlockInGameAchievement(const FGameplayTag& _achievementToUnlock);

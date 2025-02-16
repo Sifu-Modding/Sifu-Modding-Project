@@ -12,5 +12,6 @@ public:
     FBaseActorConditionInstance m_condition;
     
     UTargetCondition();
+
 };
 

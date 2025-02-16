@@ -21,6 +21,5 @@ enum class EPhoneme : uint8 {
     V_Other,
     V_OtherVowel,
     V_Pause,
-    V_Max,
 };
 

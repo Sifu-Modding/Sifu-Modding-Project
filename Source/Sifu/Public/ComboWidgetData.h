@@ -50,5 +50,6 @@ public:
     USpecialAttackData* m_SpecialAttackData;
     
     UComboWidgetData();
+
 };
 

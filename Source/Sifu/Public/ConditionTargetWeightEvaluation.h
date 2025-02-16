@@ -18,6 +18,7 @@ private:
     
 public:
     UConditionTargetWeightEvaluation();
+
 private:
     UFUNCTION(BlueprintCallable)
     static FString GetEditorDesc(const FConditionOnTargetWeightEvaluation& _eval);

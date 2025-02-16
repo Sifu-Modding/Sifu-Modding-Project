@@ -36,5 +36,6 @@ public:
     bool m_bHandleEnvironmentalInteractionComponents;
     
     UTakedownInstigatorAbility();
+
 };
 

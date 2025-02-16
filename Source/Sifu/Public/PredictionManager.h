@@ -8,5 +8,6 @@ class SIFU_API UPredictionManager : public UObject {
     GENERATED_BODY()
 public:
     UPredictionManager();
+
 };
 

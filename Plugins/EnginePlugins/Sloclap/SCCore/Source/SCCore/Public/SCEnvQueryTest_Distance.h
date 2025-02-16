@@ -21,5 +21,6 @@ public:
     TSubclassOf<UEnvQueryContext> m_ToContext;
     
     USCEnvQueryTest_Distance();
+
 };
 

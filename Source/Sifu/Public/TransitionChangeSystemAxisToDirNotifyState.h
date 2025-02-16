@@ -8,5 +8,6 @@ class SIFU_API UTransitionChangeSystemAxisToDirNotifyState : public USCAnimNotif
     GENERATED_BODY()
 public:
     UTransitionChangeSystemAxisToDirNotifyState();
+
 };
 

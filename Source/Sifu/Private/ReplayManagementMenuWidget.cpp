@@ -1,5 +1,8 @@
 #include "ReplayManagementMenuWidget.h"
 
+UReplayManagementMenuWidget::UReplayManagementMenuWidget() {
+}
+
 void UReplayManagementMenuWidget::BPF_PlayReplay(const FReplayInfo& _info) {
 }
 
@@ -19,6 +22,4 @@ void UReplayManagementMenuWidget::BPF_DeleteReplay(const FReplayInfo& _info) {
 
 
 
-UReplayManagementMenuWidget::UReplayManagementMenuWidget() {
-}
 

@@ -65,7 +65,8 @@ private:
     TArray<UAnimSequence*> m_LastDodgeAnims;
     
 public:
-    UFightingMovementComponent();
+    UFightingMovementComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerPopDesyncFromServer(uint8 _uiResyncID);
     
@@ -132,7 +133,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ESpeedState BPF_GetCurrentSpeedState() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

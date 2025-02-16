@@ -39,9 +39,10 @@ protected:
     int32 m_iLifeStock;
     
 public:
-    UHealthComponent();
+    UHealthComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerHackSetHealth(float _fHealth);
     
@@ -72,7 +73,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ApplyDamage(float _fDamage);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

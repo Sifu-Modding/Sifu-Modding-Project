@@ -25,5 +25,6 @@ public:
     ESpeedState m_eRefSpeedState;
     
     UFidgetVariableWeightOrderService();
+
 };
 

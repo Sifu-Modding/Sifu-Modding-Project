@@ -1,17 +1,5 @@
 #include "BaseMovementDB.h"
 
-float UBaseMovementDB::BPF_GetFreeMoveSpeed(const FVector& _vLocalDir, const float _fGlobalIntensity, const ESpeedState _eSpeedState) const {
-    return 0.0f;
-}
-
-float UBaseMovementDB::BPF_GetFreeMoveOverallAnimSpeed(ESpeedState _eSpeedState) const {
-    return 0.0f;
-}
-
-float UBaseMovementDB::BPF_GetFreeMoveAnimSpeed(ESpeedState _eSpeedState) const {
-    return 0.0f;
-}
-
 UBaseMovementDB::UBaseMovementDB() {
     this->m_DetailedMoveTransitionDB = NULL;
     this->m_TransitionAnimRequest = NULL;
@@ -82,4 +70,17 @@ UBaseMovementDB::UBaseMovementDB() {
     this->m_LockMovePivotFootParams = NULL;
     this->m_DodgeDB = NULL;
 }
+
+float UBaseMovementDB::BPF_GetFreeMoveSpeed(const FVector& _vLocalDir, const float _fGlobalIntensity, const ESpeedState _eSpeedState) const {
+    return 0.0f;
+}
+
+float UBaseMovementDB::BPF_GetFreeMoveOverallAnimSpeed(ESpeedState _eSpeedState) const {
+    return 0.0f;
+}
+
+float UBaseMovementDB::BPF_GetFreeMoveAnimSpeed(ESpeedState _eSpeedState) const {
+    return 0.0f;
+}
+
 

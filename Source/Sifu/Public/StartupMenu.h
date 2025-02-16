@@ -25,6 +25,7 @@ protected:
     
 public:
     UStartupMenu();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnSequenceFinished();

@@ -9,6 +9,7 @@ class UMenuAsyncActionBase : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
     UMenuAsyncActionBase();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnCurrentMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu);

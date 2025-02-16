@@ -11,5 +11,6 @@ public:
     bool m_bOnlyRelevantForOneTarget;
     
     UTE_CameraTarget();
+
 };
 

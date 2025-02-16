@@ -19,7 +19,8 @@ private:
     UBoxComponent* m_BoxComponent;
     
 public:
-    AKillzone();
+    AKillzone(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnBoxTouched(UPrimitiveComponent* _OverlappedComp, AActor* _Other, UPrimitiveComponent* _otherComp, int32 _otherBodyIndex, bool _bFromSweep, const FHitResult& _sweepResult);

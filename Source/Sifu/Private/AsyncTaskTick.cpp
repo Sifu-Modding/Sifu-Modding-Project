@@ -1,7 +1,7 @@
 #include "AsyncTaskTick.h"
 
-class UAsyncTaskTick;
-class UObject;
+UAsyncTaskTick::UAsyncTaskTick() {
+}
 
 UAsyncTaskTick* UAsyncTaskTick::BPF_Tick(UAsyncTaskTick* _existingTask, UObject* _menu, float _fFrequency, float _fDuration) {
     return NULL;
@@ -10,6 +10,4 @@ UAsyncTaskTick* UAsyncTaskTick::BPF_Tick(UAsyncTaskTick* _existingTask, UObject*
 void UAsyncTaskTick::BPF_Stop() {
 }
 
-UAsyncTaskTick::UAsyncTaskTick() {
-}
 

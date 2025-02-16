@@ -1,6 +1,16 @@
 #include "ReplayableDestructibleComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UReplayableDestructibleComponent::UReplayableDestructibleComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bCreatePhysicsStateAtStart = true;
+    this->m_fDelayNotifyHitEvent = 0.00f;
+    this->m_bOnFirstDestructionEnableChunksCollision = true;
+    this->m_bReplayUpdateChunksOnTick = false;
+    this->m_ReplayableStaticObjectComponent = NULL;
+    this->m_bCreatePhysicsState = true;
+    this->m_eReplayableDestructibleState = EReplayableDestructibleState::Unspawned;
+}
+
 void UReplayableDestructibleComponent::OnReplayTimeDilationChanged(float _fDilation) {
 }
 
@@ -46,13 +56,4 @@ void UReplayableDestructibleComponent::GetLifetimeReplicatedProps(TArray<FLifeti
     DOREPLIFETIME(UReplayableDestructibleComponent, m_eReplayableDestructibleState);
 }
 
-UReplayableDestructibleComponent::UReplayableDestructibleComponent() {
-    this->m_bCreatePhysicsStateAtStart = true;
-    this->m_fDelayNotifyHitEvent = 0.00f;
-    this->m_bOnFirstDestructionEnableChunksCollision = true;
-    this->m_bReplayUpdateChunksOnTick = false;
-    this->m_ReplayableStaticObjectComponent = NULL;
-    this->m_bCreatePhysicsState = true;
-    this->m_eReplayableDestructibleState = EReplayableDestructibleState::Unspawned;
-}
 

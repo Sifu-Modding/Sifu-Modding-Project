@@ -8,5 +8,6 @@ class SIFU_API UMovementFocusUpdateBTService : public UBTService {
     GENERATED_BODY()
 public:
     UMovementFocusUpdateBTService();
+
 };
 

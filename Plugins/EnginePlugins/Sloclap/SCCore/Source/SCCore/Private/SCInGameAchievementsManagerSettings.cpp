@@ -1,6 +1,7 @@
 #include "SCInGameAchievementsManagerSettings.h"
 
-class UAchievementUnlockCondition;
+USCInGameAchievementsManagerSettings::USCInGameAchievementsManagerSettings() {
+}
 
 FAchievementUnlockConditionStruct USCInGameAchievementsManagerSettings::BPF_GetUnlockConditionStructFromTag(const FGameplayTag& _ObjectTag) const {
     return FAchievementUnlockConditionStruct{};
@@ -18,6 +19,4 @@ TArray<FAchievementUnlockConditionStruct> USCInGameAchievementsManagerSettings::
     return TArray<FAchievementUnlockConditionStruct>();
 }
 
-USCInGameAchievementsManagerSettings::USCInGameAchievementsManagerSettings() {
-}
 

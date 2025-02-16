@@ -2,18 +2,27 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class APathPatrol;
-class UAIContextualDefense;
-class UAIPhaseScenario;
-class UAttackDB;
-class UAvoidAbility;
-class UCombo;
-class UFightingMovementComponent;
-class UObject;
-class UOrderComponent;
+UAIFightingComponent::UAIFightingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_iDeathCounterDecreaseWhenKilled = 0;
+    this->m_bDeathCounterResetWhenKilled = false;
+    this->m_fChainedDodgeDelay = 1.00f;
+    this->m_fLateralDodgeAngle = 75.00f;
+    this->m_fMemoryValidity = 10.00f;
+    this->m_fPickupMaxDist = 500.00f;
+    this->m_fThreatMinDistForPickup = 150.00f;
+    this->m_fAlertPropagationDistance = 1000.00f;
+    this->m_bCanBeAlerted = true;
+    this->m_bChangementOnComboAllowed = true;
+    this->m_uiIdleIndex = 255;
+    this->m_PhaseScenario = NULL;
+    this->m_iCurrentPhaseNodeIndex = -1;
+    this->m_iLastPhaseNodeIndex = 0;
+}
 
 void UAIFightingComponent::OnTargetHitDuringAttack(const FHitDescription& _hitDescription) {
+}
+
+void UAIFightingComponent::OnRep_CurrentPhaseNodeIndex() {
 }
 
 void UAIFightingComponent::OnRep_CarriedProps() {
@@ -77,6 +86,9 @@ void UAIFightingComponent::BPF_SwitchToCombatRole(ESCAICombatRoles _eNewRole) {
 }
 
 void UAIFightingComponent::BPF_SwitchToAbandoning(const bool _bFromDialog, const bool _bShouldStayInAbandonStateForever) {
+}
+
+void UAIFightingComponent::BPF_SwapOutfitForAI(FOutfitData _outfitData) {
 }
 
 void UAIFightingComponent::BPF_SpawnCarriedProps() {
@@ -256,17 +268,4 @@ void UAIFightingComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(UAIFightingComponent, m_carriedPropsInfoRep);
 }
 
-UAIFightingComponent::UAIFightingComponent() {
-    this->m_iDeathCounterDecreaseWhenKilled = 0;
-    this->m_bDeathCounterResetWhenKilled = false;
-    this->m_fChainedDodgeDelay = 1.00f;
-    this->m_fLateralDodgeAngle = 75.00f;
-    this->m_fMemoryValidity = 10.00f;
-    this->m_fPickupMaxDist = 500.00f;
-    this->m_fThreatMinDistForPickup = 150.00f;
-    this->m_fAlertPropagationDistance = 1000.00f;
-    this->m_bCanBeAlerted = true;
-    this->m_uiIdleIndex = 255;
-    this->m_iCurrentPhaseNodeIndex = -1;
-}
 

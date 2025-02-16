@@ -10,6 +10,7 @@ class SIFU_API USCActorManager : public UObject {
     GENERATED_BODY()
 public:
     USCActorManager();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnActorDestroyed(AActor* _actorDestroyed);

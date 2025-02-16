@@ -13,6 +13,7 @@ protected:
     
 public:
     UAIPhaseTransitionPhaseDuration();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnComboFinished();

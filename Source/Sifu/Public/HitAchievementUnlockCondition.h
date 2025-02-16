@@ -11,6 +11,7 @@ class SIFU_API UHitAchievementUnlockCondition : public UWGAchievementUnlockCondi
     GENERATED_BODY()
 public:
     UHitAchievementUnlockCondition();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnMCHit(AFightingCharacter* _fightingCharHitted, const FHitDescription& _hitDescription);

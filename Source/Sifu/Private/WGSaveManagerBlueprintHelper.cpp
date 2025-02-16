@@ -1,9 +1,15 @@
 #include "WGSaveManagerBlueprintHelper.h"
 
+UWGSaveManagerBlueprintHelper::UWGSaveManagerBlueprintHelper() {
+}
+
 void UWGSaveManagerBlueprintHelper::BPF_SnapshotPartOfSave(int32 _iSaveTypeBitmask, int32 _iSaveEntryToExclude) {
 }
 
 void UWGSaveManagerBlueprintHelper::BPF_SetNeedSaveProfile() {
+}
+
+void UWGSaveManagerBlueprintHelper::BPF_SetNeedSaveGameWithCallback(int32 _iSaveTypeBitmask, FOnSaveCompleted _OnSaveCompleted) {
 }
 
 void UWGSaveManagerBlueprintHelper::BPF_SetNeedSaveGame(int32 _iSaveTypeBitmask) {
@@ -45,6 +51,4 @@ int32 UWGSaveManagerBlueprintHelper::BPF_GetForbiddenMask() {
     return 0;
 }
 
-UWGSaveManagerBlueprintHelper::UWGSaveManagerBlueprintHelper() {
-}
 

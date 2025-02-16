@@ -30,6 +30,7 @@ public:
     FSlateColor m_ScaleTint;
     
     UPreviewData();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FSlateColor BPF_GetColorForScaleComparison(float _fBase, float _fPreview) const;
     

@@ -9,7 +9,7 @@ class UBlackboardData;
 class UDataTable;
 class USCDialogRealOverrideDb;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SCDIALOGMANAGERPLUGIN_API USCDialogSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -46,7 +46,7 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bUseChineseDictionary;
     
-  /*  UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+   /* UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     ELipSyncLanguage m_eWantedLanguageDictionary;*/
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -86,5 +86,6 @@ public:
     FDirectoryPath m_DialogEnvelopeFilesPathForCantonese;
     
     USCDialogSettings();
+
 };
 

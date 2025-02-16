@@ -1,6 +1,11 @@
 #include "SCAnimInstanceBase.h"
 #include "Net/UnrealNetwork.h"
 
+USCAnimInstanceBase::USCAnimInstanceBase() {
+    this->m_bIsReplayScrubSnapshotCompatible = false;
+    this->m_bAnimInstanceUpdateEnabled = false;
+}
+
 void USCAnimInstanceBase::OnRep_AnimInstanceUpdateEnable() {
 }
 
@@ -10,8 +15,4 @@ void USCAnimInstanceBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
     DOREPLIFETIME(USCAnimInstanceBase, m_bAnimInstanceUpdateEnabled);
 }
 
-USCAnimInstanceBase::USCAnimInstanceBase() {
-    this->m_bIsReplayScrubSnapshotCompatible = false;
-    this->m_bAnimInstanceUpdateEnabled = false;
-}
 

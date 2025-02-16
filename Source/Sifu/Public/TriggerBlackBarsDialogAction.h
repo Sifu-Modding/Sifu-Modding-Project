@@ -8,5 +8,6 @@ class SIFU_API UTriggerBlackBarsDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
     UTriggerBlackBarsDialogAction();
+
 };
 

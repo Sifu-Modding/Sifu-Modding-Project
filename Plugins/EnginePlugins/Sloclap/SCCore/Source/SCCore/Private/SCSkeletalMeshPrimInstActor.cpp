@@ -1,5 +1,6 @@
 #include "SCSkeletalMeshPrimInstActor.h"
 
-ASCSkeletalMeshPrimInstActor::ASCSkeletalMeshPrimInstActor() {
+ASCSkeletalMeshPrimInstActor::ASCSkeletalMeshPrimInstActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

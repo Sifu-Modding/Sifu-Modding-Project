@@ -5,3 +5,4 @@ UFidgetVariableWeightOrderService::UFidgetVariableWeightOrderService() {
     this->m_eRefSpeedState = ESpeedState::V1;
 }
 
+

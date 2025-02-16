@@ -4,3 +4,4 @@ UTraversalCameraTransitionInfo::UTraversalCameraTransitionInfo() {
     this->m_bApplyCurveToDynamicRatio = false;
 }
 
+

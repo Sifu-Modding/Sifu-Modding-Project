@@ -5,3 +5,4 @@ UBaseTargetEvaluation::UBaseTargetEvaluation() {
     this->m_eTargettingType = ETargetingPrio::DesignatedPrecise;
 }
 
+

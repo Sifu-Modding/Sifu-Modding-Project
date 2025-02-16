@@ -1,6 +1,7 @@
 #include "WGLevelSequence.h"
 
-class UWGLevelSequenceDirectorData;
+UWGLevelSequence::UWGLevelSequence() {
+}
 
 void UWGLevelSequence::BPF_SetCharacterPickedObjectVisibility(FName _roleName, bool _bVisible) {
 }
@@ -15,6 +16,4 @@ UWGLevelSequenceDirectorData* UWGLevelSequence::BPF_GetWGData() const {
     return NULL;
 }
 
-UWGLevelSequence::UWGLevelSequence() {
-}
 

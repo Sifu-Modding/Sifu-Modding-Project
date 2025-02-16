@@ -58,6 +58,7 @@ private:
     
 public:
     UAIActionWallJumpAttack();
+
     UFUNCTION(BlueprintCallable)
     static bool BPF_PrepareWallJumpAttack(UAIFightingComponent* _aiComponent, TSubclassOf<UAIActionWallJumpAttack> _action, AActor* _wallJumpActor, const FVector& _vSnapLocation, const AActor* _target, bool _bIgnoreAngleConstraint);
     

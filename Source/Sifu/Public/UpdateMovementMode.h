@@ -8,5 +8,6 @@ class SIFU_API UUpdateMovementMode : public UBTService {
     GENERATED_BODY()
 public:
     UUpdateMovementMode();
+
 };
 

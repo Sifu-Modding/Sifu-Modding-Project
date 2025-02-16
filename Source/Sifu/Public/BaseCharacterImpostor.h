@@ -5,7 +5,7 @@
 #include "ESCSignificanceBuckets.h"
 #include "BaseCharacterImpostor.generated.h"
 
-class UAkAudioEvent;
+//class UAkAudioEvent;
 class UAkRtpc;
 class UCurveFloat;
 
@@ -17,14 +17,14 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESCSignificanceBuckets m_eMoanMinBucket;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_MoanEvent;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_MoanEvent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    /*UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAkExternalSourceInfo> m_MoanExternalSourceInfos;*/
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkRtpc* m_MoanIntensityRTPC;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkRtpc* m_MoanIntensityRTPC;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_MoanIntensityRTPCName;
@@ -42,6 +42,7 @@ protected:
     float m_MoanIntensityThresold;
     
 public:
-    ABaseCharacterImpostor();
+    ABaseCharacterImpostor(const FObjectInitializer& ObjectInitializer);
+
 };
 

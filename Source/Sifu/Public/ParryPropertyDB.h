@@ -8,5 +8,6 @@ class SIFU_API UParryPropertyDB : public USpecialAbilityPropertyDB {
     GENERATED_BODY()
 public:
     UParryPropertyDB();
+
 };
 

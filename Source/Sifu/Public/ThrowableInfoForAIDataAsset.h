@@ -14,5 +14,6 @@ public:
     TArray<TSubclassOf<AThrowableActor>> m_ThrowableInfo;
     
     UThrowableInfoForAIDataAsset();
+
 };
 

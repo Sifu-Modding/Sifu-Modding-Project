@@ -4,3 +4,4 @@ UAttackDB::UAttackDB() {
     this->m_iVersionNumber = -1;
 }
 
+

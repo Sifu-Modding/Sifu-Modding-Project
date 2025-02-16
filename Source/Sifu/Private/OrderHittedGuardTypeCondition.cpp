@@ -9,3 +9,4 @@ UOrderHittedGuardTypeCondition::UOrderHittedGuardTypeCondition() {
     this->m_eGuardType = EGuardType::None;
 }
 
+

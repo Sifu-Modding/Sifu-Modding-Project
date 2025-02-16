@@ -1,6 +1,9 @@
 #include "PushedObstacleComponent.h"
 
-class AFightingCharacter;
+UPushedObstacleComponent::UPushedObstacleComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bActive = true;
+    this->m_ePushReaction = EPushObstacleReaction::ObstacleDestructionByHitbox;
+}
 
 
 EPushObstacleReaction UPushedObstacleComponent::BPE_GetPushReaction_Implementation(AFightingCharacter* _pushedPlayer) {
@@ -11,8 +14,4 @@ bool UPushedObstacleComponent::BPE_GetPushInterruptionHit_Implementation(AFighti
     return false;
 }
 
-UPushedObstacleComponent::UPushedObstacleComponent() {
-    this->m_bActive = true;
-    this->m_ePushReaction = EPushObstacleReaction::ObstacleDestructionByHitbox;
-}
 

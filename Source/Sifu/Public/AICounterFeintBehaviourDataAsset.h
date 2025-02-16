@@ -8,5 +8,6 @@ class SIFU_API UAICounterFeintBehaviourDataAsset : public UAIBaseBehaviourDataAs
     GENERATED_BODY()
 public:
     UAICounterFeintBehaviourDataAsset();
+
 };
 

@@ -1,14 +1,8 @@
 #include "SCCoreSettings.h"
 
-class UCurveFloat;
-
-UCurveFloat* USCCoreSettings::BPF_GetHUDOffsetFromBlackBarRatioCurve() {
-    return NULL;
-}
-
 USCCoreSettings::USCCoreSettings() {
     this->m_fLevelSequenceForcedClothSimulationDuration = 1.00f;
-    this->m_DefaultActorPools.AddDefaulted(8);
+    this->m_DefaultActorPools.AddDefaulted(9);
     this->m_AiAttackSubActionBehaviorTags.AddDefaulted(1);
     this->m_StreamingDebugTrackedActors.AddDefaulted(6);
     this->m_bSaveStreamingActors = false;
@@ -24,4 +18,9 @@ USCCoreSettings::USCCoreSettings() {
     this->m_iMaxAIImpostors = 99;
     this->m_bActorPoolsEnabled = true;
 }
+
+UCurveFloat* USCCoreSettings::BPF_GetHUDOffsetFromBlackBarRatioCurve() {
+    return NULL;
+}
+
 

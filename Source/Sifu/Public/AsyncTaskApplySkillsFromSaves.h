@@ -16,6 +16,7 @@ public:
     FOnSavesApplied SavesApplied;
     
     UAsyncTaskApplySkillsFromSaves();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskApplySkillsFromSaves* BPF_ApplySavesSkillOnCurrentSave(UObject* _context, USCAbilitySystemComponent* _abilitySystemComponent, TArray<int32> _indicesOfSave);
     

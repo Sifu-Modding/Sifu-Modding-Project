@@ -5,3 +5,4 @@ USCFootIkPredictionByVelocity::USCFootIkPredictionByVelocity() {
     this->m_bUseLastGroundNormal = true;
 }
 
+

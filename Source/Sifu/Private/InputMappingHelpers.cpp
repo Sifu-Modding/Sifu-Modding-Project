@@ -1,8 +1,7 @@
 #include "InputMappingHelpers.h"
 
-class ASCPlayerController;
-class UGenericInputData;
-class UInputMappingProfileDB;
+UInputMappingHelpers::UInputMappingHelpers() {
+}
 
 bool UInputMappingHelpers::ValidateMappingForPreset(const FInputMappingProfileData& _mappingContext, const FInputMappingGroup& _context, const FInputPresetsEnumHandler& _preset, InputContext _eContext, const FInputMappingData& _mapping, TArray<FMappingValidationError>& _outErrors, bool _bDetectCollisions) {
     return false;
@@ -133,6 +132,4 @@ void UInputMappingHelpers::BPF_ApplyInputRemapping(ASCPlayerController* _control
 void UInputMappingHelpers::BPF_ApplyCurrentInputMapping(ASCPlayerController* _controller) {
 }
 
-UInputMappingHelpers::UInputMappingHelpers() {
-}
 

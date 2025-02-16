@@ -8,5 +8,6 @@ class SIFU_API UDodgeBTTask : public UAIDefenseBTTask {
     GENERATED_BODY()
 public:
     UDodgeBTTask();
+
 };
 

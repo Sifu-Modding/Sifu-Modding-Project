@@ -15,6 +15,7 @@ public:
     TArray<UFilterPresetEntitlementDB*> m_DBs;
     
     UFilterPresetDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_GetFilters(ASCPlayerController* _controller, UPARAM(Ref) FFilterPresetCache& _outCache) const;
     

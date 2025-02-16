@@ -26,6 +26,7 @@ private:
     
 public:
     UOrderServiceNotifyState();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UOrderService> GetServiceClass(bool _bIncludeInstanced) const;
     

@@ -1,6 +1,7 @@
 #include "SCSkeletalMeshVLogDebugDrawComponent.h"
 
-USCSkeletalMeshVLogDebugDrawComponent::USCSkeletalMeshVLogDebugDrawComponent() {
+USCSkeletalMeshVLogDebugDrawComponent::USCSkeletalMeshVLogDebugDrawComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_bRecordVLog = true;
 }
+
 

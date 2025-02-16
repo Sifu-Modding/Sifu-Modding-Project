@@ -1,6 +1,13 @@
 #include "InputMappingWidget.h"
 
-class UButtonUserWidget;
+UInputMappingWidget::UInputMappingWidget() {
+    this->m_bIsMappingFieldForAxis = false;
+    this->m_bForceDisplayAsSingleField = false;
+    this->m_bCheckDuplicateKey = true;
+    this->m_eSelectedFieldScaleType = EMappableFieldScaleTypes::PositiveScale;
+    this->m_eFocusedFieldScaleType = EMappableFieldScaleTypes::None;
+    this->m_eRemappingAllowedType = ERemappingAllowedInputTypes::Both;
+}
 
 void UInputMappingWidget::BPF_WaitingKeyInput(EMappableFieldScaleTypes _eScaleType) {
 }
@@ -21,12 +28,4 @@ FName UInputMappingWidget::BPF_GetActionName() {
 
 
 
-UInputMappingWidget::UInputMappingWidget() {
-    this->m_bIsMappingFieldForAxis = false;
-    this->m_bForceDisplayAsSingleField = false;
-    this->m_bCheckDuplicateKey = true;
-    this->m_eSelectedFieldScaleType = EMappableFieldScaleTypes::PositiveScale;
-    this->m_eFocusedFieldScaleType = EMappableFieldScaleTypes::None;
-    this->m_eRemappingAllowedType = ERemappingAllowedInputTypes::Both;
-}
 

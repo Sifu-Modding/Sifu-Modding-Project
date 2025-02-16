@@ -15,5 +15,6 @@ public:
     EGearRarity m_eRarity;
     
     UResourceItemData();
+
 };
 

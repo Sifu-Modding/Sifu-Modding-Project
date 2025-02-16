@@ -8,5 +8,6 @@ class SIFU_API UOutsideCirclesLifeBTTaskNode : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UOutsideCirclesLifeBTTaskNode();
+
 };
 

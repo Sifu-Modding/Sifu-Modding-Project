@@ -10,6 +10,7 @@ class SIFU_API UAIPhaseTransition : public UObject {
     GENERATED_BODY()
 public:
     UAIPhaseTransition();
+
 protected:
     UFUNCTION(BlueprintCallable)
     bool BPF_GotoNextPhase();

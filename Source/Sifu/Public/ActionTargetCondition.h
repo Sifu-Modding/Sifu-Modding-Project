@@ -12,5 +12,6 @@ public:
     EActionType m_eAction;
     
     UActionTargetCondition();
+
 };
 

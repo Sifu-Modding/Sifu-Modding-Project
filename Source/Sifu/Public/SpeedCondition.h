@@ -19,5 +19,6 @@ public:
     EOperationType m_eOperation;
     
     USpeedCondition();
+
 };
 

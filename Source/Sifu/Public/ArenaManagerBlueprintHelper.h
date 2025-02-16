@@ -4,7 +4,6 @@
 #include "GameplayTagContainer.h"
 #include "ArenaBatch.h"
 #include "ArenaBatchProgressionInfo.h"
-#include "ArenaParams.h"
 #include "ArenaProgressionInfo.h"
 #include "ArenaManagerBlueprintHelper.generated.h"
 
@@ -17,17 +16,15 @@ class SIFU_API UArenaManagerBlueprintHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UArenaManagerBlueprintHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetCurrentArena(int32 _iBatchIndex, int32 _iChallengeIndex);
     
     UFUNCTION(BlueprintCallable)
-    static void BPF_SetChallengeIndex(int32 _iChallengeIndex);
+    static void BPF_SetArenaCustomOutfit(int32 _outfitIndex);
     
     UFUNCTION(BlueprintCallable)
-    static void BPF_SetArena(FGameplayTag _arenaTag);
-    
-    UFUNCTION(BlueprintCallable)
-    static void BPF_OnCurrentChallengeSpecificLevelShown();
+    static void BPF_ResetArenaCustomOutfit();
     
     UFUNCTION(BlueprintCallable)
     static void BPF_OnCurrentChallengeSpecificLevelLoaded();
@@ -37,6 +34,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsDebugChallenge();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static bool BPF_IsArenaCustomModeEnabled();
     
     UFUNCTION(BlueprintCallable)
     static bool BPF_HasChallengeBeenSeen(const UArenaChallengeDescription* _challengeDescription);
@@ -51,9 +51,6 @@ public:
     static int32 BPF_GetLastSelectedBatchIndex();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FArenaParams BPF_GetCurrentParams();
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     static UBaseArenaObjective* BPF_GetCurrentMasterObjective();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -61,6 +58,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UArenaChallengeDescription* BPF_GetCurrentChallenge();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FGameplayTag BPF_GetCurrentBatchCategory();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGameplayTag BPF_GetCurrentArena();
@@ -74,17 +74,26 @@ public:
     UFUNCTION(BlueprintCallable)
     static UArenaSettings* BPF_GetArenaSettings();
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 BPF_GetArenaCustomModeOutfit();
+    
     UFUNCTION(BlueprintCallable)
-    static TArray<FArenaBatch> BPF_GetArenaBatches(FGameplayTag _restrictionTag);
+    static TArray<FArenaBatch> BPF_GetArenaBatches(FGameplayTag _restrictionTag, FGameplayTag _filterTag);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_EnableProgressionSystem(bool _bEnabled);
     
     UFUNCTION(BlueprintCallable)
+    static void BPF_EnableArenaCustomMode(bool _bEnabled);
+    
+    UFUNCTION(BlueprintCallable)
     static FArenaBatchProgressionInfo BPF_ComputeBatchProgression(const FArenaBatch& _ArenaBatch);
     
     UFUNCTION(BlueprintCallable)
-    static FArenaProgressionInfo BPF_ComputeArenaProgression(FGameplayTag _restrictionTag);
+    static FArenaProgressionInfo BPF_ComputeArenaProgression(FGameplayTag _restrictionTag, FGameplayTag _filterTag);
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_ComputeArenaFinished(FGameplayTag _restrictionTag, FGameplayTag _filterTag, uint8& _outuiArenaFinished, uint8& _outuiTotalArena);
     
 };
 

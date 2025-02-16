@@ -54,7 +54,8 @@ protected:
     uint8 m_AllowedEntryTypes;
     
 public:
-    ATraversalActor();
+    ATraversalActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FVector BPE_GetTraversalEndPos() const;
     

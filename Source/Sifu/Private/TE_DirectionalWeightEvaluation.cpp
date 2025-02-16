@@ -6,3 +6,4 @@ UTE_DirectionalWeightEvaluation::UTE_DirectionalWeightEvaluation() {
     this->m_eOperator = EWeightBinaryOperator::Add;
 }
 
+

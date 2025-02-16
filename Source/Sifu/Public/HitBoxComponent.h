@@ -43,7 +43,8 @@ private:
     TMap<TWeakObjectPtr<AActor>, float> m_Recoveries;
     
 public:
-    UHitBoxComponent();
+    UHitBoxComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetOwningCharacter(AFightingCharacter* _owningCharacter);
     

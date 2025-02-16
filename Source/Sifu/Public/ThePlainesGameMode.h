@@ -42,7 +42,8 @@ private:
     float m_fGMDamageMultiplier;
     
 public:
-    AThePlainesGameMode();
+    AThePlainesGameMode(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Exec)
     void KillAllAis();
     

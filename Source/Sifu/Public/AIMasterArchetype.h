@@ -25,5 +25,6 @@ public:
     TArray<FAIActionReaction> m_ReactionActions;
     
     UAIMasterArchetype();
+
 };
 

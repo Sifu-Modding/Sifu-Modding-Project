@@ -1,6 +1,9 @@
 #include "AIBehaviorSwitchActorComponent.h"
 
-class AActor;
+UAIBehaviorSwitchActorComponent::UAIBehaviorSwitchActorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_AlertOnPrimitiveOverlap = true;
+    this->m_eNewBehavior = EGlobalBehaviors::Alerted;
+}
 
 void UAIBehaviorSwitchActorComponent::OnComponentStartOverlap(AActor* OverlappedActor, AActor* OtherActor) {
 }
@@ -8,8 +11,4 @@ void UAIBehaviorSwitchActorComponent::OnComponentStartOverlap(AActor* Overlapped
 void UAIBehaviorSwitchActorComponent::BPF_TriggerBehaviorChangeToAssociatedGroups(AActor* _actorTriggeringTheAlert, bool _bSkipBark) const {
 }
 
-UAIBehaviorSwitchActorComponent::UAIBehaviorSwitchActorComponent() {
-    this->m_AlertOnPrimitiveOverlap = true;
-    this->m_eNewBehavior = EGlobalBehaviors::Alerted;
-}
 

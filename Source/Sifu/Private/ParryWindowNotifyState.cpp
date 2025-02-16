@@ -4,3 +4,4 @@ UParryWindowNotifyState::UParryWindowNotifyState() {
     this->m_ParryPropertyDB = NULL;
 }
 
+

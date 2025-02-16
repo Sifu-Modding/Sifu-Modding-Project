@@ -12,5 +12,6 @@ public:
     FBaseActorTargetConditionInstance m_condition;
     
     UComboTransitionConditionGeneric();
+
 };
 

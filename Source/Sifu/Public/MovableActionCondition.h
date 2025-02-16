@@ -15,5 +15,6 @@ public:
     bool m_bIgnoreNonMovables;
     
     UMovableActionCondition();
+
 };
 

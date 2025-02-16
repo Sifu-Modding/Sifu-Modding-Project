@@ -1,11 +1,10 @@
 #include "InputHelpers.h"
 
-class ASCPlayerController;
+UInputHelpers::UInputHelpers() {
+}
 
 float UInputHelpers::BPF_GetInputActionPressedDurationNormalized(ASCPlayerController* _playerController, InputAction _eInputAction) {
     return 0.0f;
 }
 
-UInputHelpers::UInputHelpers() {
-}
 

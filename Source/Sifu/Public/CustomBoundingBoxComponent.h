@@ -10,6 +10,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_UsableSides;
     
-    UCustomBoundingBoxComponent();
+    UCustomBoundingBoxComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

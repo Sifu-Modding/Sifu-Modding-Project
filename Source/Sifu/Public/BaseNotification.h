@@ -12,5 +12,6 @@ public:
     EMenuEnum m_eOpenMenu;
     
     UBaseNotification();
+
 };
 

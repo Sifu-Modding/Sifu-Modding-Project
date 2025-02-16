@@ -15,6 +15,7 @@ public:
     TArray<FSCConditionnalAnimContainer> m_Anims;
     
     URandomAnimDB();
+
     UFUNCTION(BlueprintCallable)
     FAnimContainer BPF_PickRandomAnim(AActor* _requester);
     

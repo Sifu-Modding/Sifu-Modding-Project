@@ -1,9 +1,5 @@
 #include "Combo.h"
 
-FComboNode UCombo::BPF_GetNode(int32 _ID) const {
-    return FComboNode{};
-}
-
 UCombo::UCombo() {
     this->m_DefaultAttacks[0] = 0;
     this->m_DefaultAttacks[1] = 0;
@@ -27,4 +23,9 @@ UCombo::UCombo() {
     this->m_DefaultAttacks[19] = 0;
     this->m_DefaultAttacks[20] = 0;
 }
+
+FComboNode UCombo::BPF_GetNode(int32 _ID) const {
+    return FComboNode{};
+}
+
 

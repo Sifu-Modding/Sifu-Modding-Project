@@ -18,5 +18,6 @@ public:
     TArray<FAnimSequenceDBEntry> m_AnimSequences;
     
     UAnimSequenceEntryDB();
+
 };
 

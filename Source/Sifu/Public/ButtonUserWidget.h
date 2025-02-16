@@ -185,6 +185,7 @@ protected:
     
 public:
     UButtonUserWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetSelected(bool _bSelected, bool _bForce);
     

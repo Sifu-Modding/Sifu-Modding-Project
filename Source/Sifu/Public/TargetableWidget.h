@@ -20,6 +20,7 @@ protected:
     
 public:
     UTargetableWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetRelatedActor(AActor* _actor);
     

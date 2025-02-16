@@ -4,3 +4,4 @@ UTraversalActorCondition::UTraversalActorCondition() {
     this->m_ePhase = ETraversalPhase::None;
 }
 
+

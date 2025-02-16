@@ -1,7 +1,5 @@
 #include "WeaponGameplayData.h"
 
-
-
 UWeaponGameplayData::UWeaponGameplayData() {
     this->m_throwFromPickUpTargetSettingsDB = NULL;
     this->m_afDamageReceiveFromAttackPower[0] = 0.00f;
@@ -10,4 +8,8 @@ UWeaponGameplayData::UWeaponGameplayData() {
     this->m_SlowMotionCurve = NULL;
     this->m_fSlowMotionScale = 1.00f;
 }
+
+
+
+
 

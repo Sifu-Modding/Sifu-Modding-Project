@@ -24,5 +24,6 @@ public:
     bool m_bApplyFreezeFrame;
     
     UAbilityHitActionLauncher();
+
 };
 

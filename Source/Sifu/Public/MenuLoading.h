@@ -8,6 +8,7 @@ class SIFU_API UMenuLoading : public USCUserWidget {
     GENERATED_BODY()
 public:
     UMenuLoading();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_Reinit();
     

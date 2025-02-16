@@ -1,10 +1,23 @@
 #include "BaseReplayController.h"
 #include "ReplaySpectatorPawn.h"
 
-class AReplayHUD;
-class IHandleInput;
-class UHandleInput;
-class UReplayCineCameraComponent;
+ABaseReplayController::ABaseReplayController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ClickEventKeys.AddDefaulted(1);
+    this->bShouldPerformFullTickWhenPaused = true;
+    this->m_bFixedSpectatorMode = false;
+    this->m_eMainInputContext = InputContext::PhotoModeMenu;
+    this->m_SpectatorClass = AReplaySpectatorPawn::StaticClass();
+    this->m_HUDClass = NULL;
+    this->m_MenuClass = NULL;
+    this->m_Menu = NULL;
+    this->m_AvailabilityDefaultLayerDB = NULL;
+    this->m_RollFeedbackClass = NULL;
+    this->m_ZoomFeedbackClass = NULL;
+    this->m_SaveGameWidgetClass = NULL;
+    this->m_RollFeedbackInstance = NULL;
+    this->m_ZoomFeedbackInstance = NULL;
+    this->m_SaveGameWidgetInstance = NULL;
+}
 
 void ABaseReplayController::OnSaveGameStatusChanged(bool _bSaveInProgress, ESaveResult _eSaveResult) {
 }
@@ -50,19 +63,4 @@ UReplayCineCameraComponent* ABaseReplayController::BPF_GetCineCameraComponent() 
 void ABaseReplayController::BPF_ForceInputAvailabilityUpdate() {
 }
 
-ABaseReplayController::ABaseReplayController() {
-    this->m_bFixedSpectatorMode = false;
-    this->m_eMainInputContext = InputContext::PhotoModeMenu;
-    this->m_SpectatorClass = AReplaySpectatorPawn::StaticClass();
-    this->m_HUDClass = NULL;
-    this->m_MenuClass = NULL;
-    this->m_Menu = NULL;
-    this->m_AvailabilityDefaultLayerDB = NULL;
-    this->m_RollFeedbackClass = NULL;
-    this->m_ZoomFeedbackClass = NULL;
-    this->m_SaveGameWidgetClass = NULL;
-    this->m_RollFeedbackInstance = NULL;
-    this->m_ZoomFeedbackInstance = NULL;
-    this->m_SaveGameWidgetInstance = NULL;
-}
 

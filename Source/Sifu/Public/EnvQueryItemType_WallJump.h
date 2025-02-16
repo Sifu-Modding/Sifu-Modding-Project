@@ -8,5 +8,6 @@ class UEnvQueryItemType_WallJump : public UEnvQueryItemType_ActorBase {
     GENERATED_BODY()
 public:
     UEnvQueryItemType_WallJump();
+
 };
 

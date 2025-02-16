@@ -12,6 +12,7 @@ protected:
     bool m_bUseLegacyCollisionSystem;
     
 public:
-    ASCWorldSettings();
+    ASCWorldSettings(const FObjectInitializer& ObjectInitializer);
+
 };
 

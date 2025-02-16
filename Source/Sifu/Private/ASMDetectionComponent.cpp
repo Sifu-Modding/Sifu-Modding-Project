@@ -1,5 +1,6 @@
 #include "ASMDetectionComponent.h"
 
-UASMDetectionComponent::UASMDetectionComponent() {
+UASMDetectionComponent::UASMDetectionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

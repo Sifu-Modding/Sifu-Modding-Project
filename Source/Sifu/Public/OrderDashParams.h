@@ -15,5 +15,6 @@ public:
     FNetOrderStructDash m_TransientParams;
     
     UOrderDashParams();
+
 };
 

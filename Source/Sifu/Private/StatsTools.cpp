@@ -1,5 +1,8 @@
 #include "StatsTools.h"
 
+UStatsTools::UStatsTools() {
+}
+
 EAttributeScales UStatsTools::ConvertFloatToAttributeScale(float _fValue) {
     return EAttributeScales::S;
 }
@@ -16,6 +19,4 @@ FText UStatsTools::BPF_GetTextFromAttributeScale(EAttributeScales _eScale) {
     return FText::GetEmpty();
 }
 
-UStatsTools::UStatsTools() {
-}
 

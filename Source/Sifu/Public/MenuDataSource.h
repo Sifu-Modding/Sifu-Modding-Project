@@ -8,5 +8,6 @@ class SIFU_API UMenuDataSource : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UMenuDataSource();
+
 };
 

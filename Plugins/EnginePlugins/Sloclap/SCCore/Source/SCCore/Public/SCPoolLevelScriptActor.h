@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SCCORE_API ASCPoolLevelScriptActor : public ASCLevelScriptActor {
     GENERATED_BODY()
 public:
-    ASCPoolLevelScriptActor();
+    ASCPoolLevelScriptActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

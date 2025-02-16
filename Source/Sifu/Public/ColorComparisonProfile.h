@@ -15,5 +15,6 @@ public:
     FSlateColor m_MalusTint;
     
     UColorComparisonProfile();
+
 };
 

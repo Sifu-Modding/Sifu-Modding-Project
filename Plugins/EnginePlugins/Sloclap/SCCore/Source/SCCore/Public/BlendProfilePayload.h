@@ -8,5 +8,6 @@ class SCCORE_API UBlendProfilePayload : public UObject {
     GENERATED_BODY()
 public:
     UBlendProfilePayload();
+
 };
 

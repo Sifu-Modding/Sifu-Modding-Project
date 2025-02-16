@@ -11,6 +11,7 @@ public:
     FName m_ActorKey;
     
     UStopLowStructureOnPrefightAction();
+
 protected:
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;

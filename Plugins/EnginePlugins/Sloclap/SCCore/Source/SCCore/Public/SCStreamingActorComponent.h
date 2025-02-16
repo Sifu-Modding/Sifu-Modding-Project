@@ -28,8 +28,9 @@ protected:
     FName m_OverlapShapeComponentName;
     
 public:
-    USCStreamingActorComponent();
-    
+    USCStreamingActorComponent(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

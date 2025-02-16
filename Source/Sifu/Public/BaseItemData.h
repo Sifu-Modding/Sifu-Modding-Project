@@ -35,5 +35,6 @@ public:
     bool m_bCanBeDyed;
     
     UBaseItemData();
+
 };
 

@@ -15,5 +15,6 @@ public:
     float m_fVelocity;
     
     UVelocityCondition();
+
 };
 

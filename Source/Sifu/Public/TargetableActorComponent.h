@@ -46,11 +46,12 @@ protected:
     bool m_bCanBeTargetedByLockMove;
     
 public:
-    UTargetableActorComponent();
+    UTargetableActorComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetShouldDisplay(bool _bSHould);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

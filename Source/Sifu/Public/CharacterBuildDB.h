@@ -19,5 +19,6 @@ public:
     FCharacterStatsValues m_DefaultStatsPerDifficulty[3];
     
     UCharacterBuildDB();
+
 };
 

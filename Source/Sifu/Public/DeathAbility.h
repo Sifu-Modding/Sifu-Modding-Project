@@ -8,5 +8,6 @@ class SIFU_API UDeathAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UDeathAbility();
+
 };
 

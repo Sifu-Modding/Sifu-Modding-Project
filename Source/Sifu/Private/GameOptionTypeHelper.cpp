@@ -1,5 +1,8 @@
 #include "GameOptionTypeHelper.h"
 
+UGameOptionTypeHelper::UGameOptionTypeHelper() {
+}
+
 void UGameOptionTypeHelper::BPF_SetUserSettingValue(EGameOptionTypes _eSetting, float _fValue) {
 }
 
@@ -58,6 +61,4 @@ float UGameOptionTypeHelper::BPF_GetDefaultValue(EGameOptionTypes _eInOption) {
     return 0.0f;
 }
 
-UGameOptionTypeHelper::UGameOptionTypeHelper() {
-}
 

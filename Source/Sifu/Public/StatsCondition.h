@@ -16,5 +16,6 @@ public:
     FSCMathExpressionInteger m_MathExpression;
     
     UStatsCondition();
+
 };
 

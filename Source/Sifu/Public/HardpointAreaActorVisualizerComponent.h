@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UHardpointAreaActorVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UHardpointAreaActorVisualizerComponent();
+    UHardpointAreaActorVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

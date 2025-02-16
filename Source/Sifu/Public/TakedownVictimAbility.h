@@ -8,5 +8,6 @@ class SIFU_API UTakedownVictimAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UTakedownVictimAbility();
+
 };
 

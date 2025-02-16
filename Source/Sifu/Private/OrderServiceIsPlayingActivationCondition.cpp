@@ -5,3 +5,4 @@ UOrderServiceIsPlayingActivationCondition::UOrderServiceIsPlayingActivationCondi
     this->m_bStopWhenOrderServiceRunning = true;
 }
 
+

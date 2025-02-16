@@ -8,5 +8,6 @@ class SIFU_API UDisableWalkOffLedgesOrderService : public UOrderService {
     GENERATED_BODY()
 public:
     UDisableWalkOffLedgesOrderService();
+
 };
 

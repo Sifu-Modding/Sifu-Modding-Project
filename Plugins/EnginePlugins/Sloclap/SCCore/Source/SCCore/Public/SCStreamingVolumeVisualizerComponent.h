@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCCORE_API USCStreamingVolumeVisualizerComponent : public USCVolumeVisualizerComponent {
     GENERATED_BODY()
 public:
-    USCStreamingVolumeVisualizerComponent();
+    USCStreamingVolumeVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

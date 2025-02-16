@@ -8,5 +8,6 @@ class SIFU_API UAttackWithWeaponInfluenceTest : public UAIInfluenceTest {
     GENERATED_BODY()
 public:
     UAttackWithWeaponInfluenceTest();
+
 };
 

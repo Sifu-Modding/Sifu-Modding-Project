@@ -5,7 +5,7 @@
 #include "AudioOutput.h"
 #include "SoundSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SIFU_API USoundSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -45,8 +45,8 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_AdvancedVibrationStateOFF;
     
-   /* UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AkChannelConfiguration m_eDefaultChannelConfig;*/
+    // UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // AkChannelConfiguration m_eDefaultChannelConfig;
     
     UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAudioOutput m_AudioOutputList[4];
@@ -70,5 +70,6 @@ public:
     FName m_VoiceGenderSwitchValues[2];
     
     USoundSettings();
+
 };
 

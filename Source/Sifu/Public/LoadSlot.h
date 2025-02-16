@@ -11,6 +11,7 @@ class SIFU_API ULoadSlot : public UMenuSlot {
     GENERATED_BODY()
 public:
     ULoadSlot();
+
     UFUNCTION(BlueprintCallable)
     uint8 BPF_GetSlotIndex();
     

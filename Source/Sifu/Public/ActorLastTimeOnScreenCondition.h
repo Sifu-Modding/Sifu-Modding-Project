@@ -12,5 +12,6 @@ public:
     FFloatRange m_ValidTimeRangeCondition;
     
     UActorLastTimeOnScreenCondition();
+
 };
 

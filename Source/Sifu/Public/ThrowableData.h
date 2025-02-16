@@ -114,5 +114,6 @@ protected:
     
 public:
     UThrowableData();
+
 };
 

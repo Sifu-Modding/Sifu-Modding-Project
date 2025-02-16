@@ -10,7 +10,8 @@ UCLASS(Blueprintable)
 class SIFU_API AGameplayPhotoModeController : public ABaseReplayController {
     GENERATED_BODY()
 public:
-    AGameplayPhotoModeController();
+    AGameplayPhotoModeController(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, Exec)
     void BPF_LeavePhotoMode();

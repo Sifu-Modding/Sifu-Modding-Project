@@ -7,3 +7,4 @@ UPerPlatformScaleBoxSlot::UPerPlatformScaleBoxSlot() {
     this->SmallScreenVerticalAlignment = VAlign_Fill;
 }
 
+

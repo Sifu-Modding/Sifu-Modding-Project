@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "ControllerAxisTypeIcons.h"
 #include "ControllerAxisIcons.generated.h"
 

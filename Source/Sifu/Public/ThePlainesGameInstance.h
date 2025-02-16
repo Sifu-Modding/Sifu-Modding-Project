@@ -10,7 +10,7 @@
 
 class ALevelSequenceActor;
 class ASCPlayerStart;
-class UAkAudioEvent;
+//class UAkAudioEvent;
 class UCinematicManager;
 class UFactionsManager;
 class UInputManager;
@@ -49,17 +49,17 @@ public:
     UUserWidget* m_loadingScreen;
     
 protected:
-  /*  UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_MuteEvent;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_MuteEvent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FAkExternalSourceInfo> m_MuteExternalSourceInfos;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // TArray<FAkExternalSourceInfo> m_MuteExternalSourceInfos;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_UnmuteEvent;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_UnmuteEvent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FAkExternalSourceInfo> m_UnmuteExternalSourceInfos;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // TArray<FAkExternalSourceInfo> m_UnmuteExternalSourceInfos;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -100,6 +100,7 @@ private:
     
 public:
     UThePlainesGameInstance();
+
     UFUNCTION(BlueprintCallable, Exec)
     void TriggerTakeKinectResources(bool _bTake);
     
@@ -152,7 +153,7 @@ public:
     
 private:
     UFUNCTION(BlueprintCallable, Exec)
-    void GiveBestScoreToAllChallenges();
+    void GiveBestScoreToAllChallenges(const FString& _batchCategory);
     
 public:
     UFUNCTION(BlueprintCallable)

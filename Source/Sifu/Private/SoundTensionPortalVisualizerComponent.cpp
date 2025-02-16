@@ -1,5 +1,6 @@
 #include "SoundTensionPortalVisualizerComponent.h"
 
-USoundTensionPortalVisualizerComponent::USoundTensionPortalVisualizerComponent() {
+USoundTensionPortalVisualizerComponent::USoundTensionPortalVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

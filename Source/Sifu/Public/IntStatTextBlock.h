@@ -35,5 +35,6 @@ public:
     bool m_bCanBeNegative;
     
     UIntStatTextBlock();
+
 };
 

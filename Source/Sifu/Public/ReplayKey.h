@@ -45,6 +45,7 @@ public:
     FOnReplayKeyTimeUpdate m_OnTimeUpdate;
     
     UReplayKey();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_HasReplayKeyType(int32 _iKeyTypeFlags, int32 _iContainsKeyTypeFlags);

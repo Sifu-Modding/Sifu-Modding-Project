@@ -28,6 +28,7 @@ private:
     
 public:
     UDebugMenu();
+
     UFUNCTION(BlueprintCallable)
     void BPF_ShowSaves(UPanelWidget* _boxToFill);
     

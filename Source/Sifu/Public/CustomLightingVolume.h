@@ -9,10 +9,11 @@ class SIFU_API ACustomLightingVolume : public ASCPlayerVolumeNoPhysics {
     GENERATED_BODY()
 public:
 private:
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FWuguanCustomLightingUserParameters m_Parameters;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FWuguanCustomLightingUserParameters m_Parameters;*/
     
 public:
-    ACustomLightingVolume();
+    ACustomLightingVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

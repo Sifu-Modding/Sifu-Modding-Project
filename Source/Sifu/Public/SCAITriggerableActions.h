@@ -8,5 +8,6 @@ class SIFU_API USCAITriggerableActions : public UObject {
     GENERATED_BODY()
 public:
     USCAITriggerableActions();
+
 };
 

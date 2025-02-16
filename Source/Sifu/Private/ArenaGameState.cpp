@@ -1,5 +1,6 @@
 #include "ArenaGameState.h"
 
-AArenaGameState::AArenaGameState() {
+AArenaGameState::AArenaGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

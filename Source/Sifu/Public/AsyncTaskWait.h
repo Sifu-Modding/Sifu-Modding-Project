@@ -16,6 +16,7 @@ public:
     FAsyncTaskWaitDel OnFinished;
     
     UAsyncTaskWait();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskWait* BPF_Wait(UObject* _menu, float _fDuration);
     

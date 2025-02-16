@@ -18,6 +18,7 @@ public:
     FOnCultureSwitched CultureSwitchFailed;
     
     UAsyncTaskSwitchAudioCulture();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskSwitchAudioCulture* BPF_SwitchAudioCulture(UObject* _context, const FString& _cultureName);
     

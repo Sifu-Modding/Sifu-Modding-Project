@@ -13,6 +13,7 @@ public:
     int32 m_iLevel;
     
     ULevelUpNotification();
+
     UFUNCTION(BlueprintCallable)
     ULevelUpNotification* BPF_Init(int32 _iLevel);
     

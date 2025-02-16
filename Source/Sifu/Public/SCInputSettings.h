@@ -18,7 +18,7 @@ class UGenericInputData;
 class UInputMappingProfileDB;
 class UMenuDB;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SIFU_API USCInputSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -106,5 +106,6 @@ private:
     
 public:
     USCInputSettings();
+
 };
 

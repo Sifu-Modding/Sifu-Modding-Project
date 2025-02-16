@@ -32,6 +32,7 @@ public:
     FRotator m_RotationOffset;
     
     UBaseHitDetectionDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetRealBoneName(USkeletalMeshComponent* _meshComponent) const;
     

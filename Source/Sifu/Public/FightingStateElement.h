@@ -46,7 +46,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESubFightingState m_eSubFightingState;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAttackPropertiesResistanceDB> m_specialResistanceDB;
     
     SIFU_API FFightingStateElement();

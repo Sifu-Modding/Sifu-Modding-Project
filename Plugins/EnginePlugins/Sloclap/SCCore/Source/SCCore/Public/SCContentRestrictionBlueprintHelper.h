@@ -9,6 +9,7 @@ class SCCORE_API USCContentRestrictionBlueprintHelper : public UBlueprintFunctio
     GENERATED_BODY()
 public:
     USCContentRestrictionBlueprintHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsContentAvailable(FGameplayTag _wantedContentType);
     

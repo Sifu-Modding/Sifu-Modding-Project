@@ -25,11 +25,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ECameraAnimDrivenComputationMethod m_eComputationMethod;
     
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UCameraComponentThird> m_cameraComponent;
     
 public:
     UAnimDrivenCameraOrderBTService();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     UAbstractCameraData* GetCameraData() const;

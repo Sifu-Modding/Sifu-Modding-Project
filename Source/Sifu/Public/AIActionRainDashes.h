@@ -32,6 +32,7 @@ public:
     TSubclassOf<UAIActionDash> m_FinalDash;
     
     UAIActionRainDashes();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_OnFinishDash();

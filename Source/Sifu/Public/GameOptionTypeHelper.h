@@ -10,6 +10,7 @@ class SIFU_API UGameOptionTypeHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UGameOptionTypeHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetUserSettingValue(EGameOptionTypes _eSetting, float _fValue);
     

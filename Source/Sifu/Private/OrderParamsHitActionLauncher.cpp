@@ -6,3 +6,4 @@ UOrderParamsHitActionLauncher::UOrderParamsHitActionLauncher() {
     this->m_bApplyFreezeFrame = true;
 }
 
+

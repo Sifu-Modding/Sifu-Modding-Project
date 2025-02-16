@@ -26,7 +26,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FPushSignature m_OnPushDetected;
     
-    UPushedObstacleComponent();
+    UPushedObstacleComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPushInterruption(AFightingCharacter* _interruptedCharacter);

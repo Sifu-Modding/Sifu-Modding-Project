@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SC3DNAV_API ASC3DnavTester : public AActor {
     GENERATED_BODY()
 public:
-    ASC3DnavTester();
+    ASC3DnavTester(const FObjectInitializer& ObjectInitializer);
+
 };
 

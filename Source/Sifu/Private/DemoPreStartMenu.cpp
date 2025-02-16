@@ -1,5 +1,8 @@
 #include "DemoPreStartMenu.h"
 
+UDemoPreStartMenu::UDemoPreStartMenu() {
+}
+
 void UDemoPreStartMenu::OnRetryLoadProfile() {
 }
 
@@ -15,6 +18,4 @@ void UDemoPreStartMenu::OnConfirmCancel() {
 void UDemoPreStartMenu::OnAudioLanguageSetup() {
 }
 
-UDemoPreStartMenu::UDemoPreStartMenu() {
-}
 

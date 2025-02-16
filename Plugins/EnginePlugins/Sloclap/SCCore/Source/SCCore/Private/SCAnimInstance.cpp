@@ -1,8 +1,14 @@
 #include "SCAnimInstance.h"
 #include "Net/UnrealNetwork.h"
 
-class UCurveFloat;
-class UPoseAsset;
+USCAnimInstance::USCAnimInstance() {
+    this->m_fCinematicOverallWeight = 0.00f;
+    this->m_fCinematicLayerTypesCursor = 0.00f;
+    this->m_fPreviewCinematicLayerTypesCursor = 0.00f;
+    this->m_MirrorAnimDB = NULL;
+    this->m_CachedCurrentPoseAsset = NULL;
+    this->m_bIsInCinematic = false;
+}
 
 FTransform USCAnimInstance::GetSavedTransform(FName _savedBone) const {
     return FTransform{};
@@ -31,12 +37,4 @@ void USCAnimInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutL
     DOREPLIFETIME(USCAnimInstance, m_ActionToLocoBlendForRep);
 }
 
-USCAnimInstance::USCAnimInstance() {
-    this->m_fCinematicOverallWeight = 0.00f;
-    this->m_fCinematicLayerTypesCursor = 0.00f;
-    this->m_fPreviewCinematicLayerTypesCursor = 0.00f;
-    this->m_MirrorAnimDB = NULL;
-    this->m_CachedCurrentPoseAsset = NULL;
-    this->m_bIsInCinematic = false;
-}
 

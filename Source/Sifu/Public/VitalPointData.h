@@ -54,5 +54,6 @@ public:
     TSubclassOf<UVitalPointCheckCondition> m_CheckConditionBlueprint;
     
     UVitalPointData();
+
 };
 

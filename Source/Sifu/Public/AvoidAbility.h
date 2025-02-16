@@ -17,6 +17,7 @@ class SIFU_API UAvoidAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UAvoidAbility();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FAutoAvoidInfos BPF_GetAutoAvoidInfos() const;
     

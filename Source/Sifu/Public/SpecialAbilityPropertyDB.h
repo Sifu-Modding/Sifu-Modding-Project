@@ -20,5 +20,6 @@ public:
     TArray<FSpecialAbilityDelayedLayer> m_DelayedLayersOnSuccess;
     
     USpecialAbilityPropertyDB();
+
 };
 

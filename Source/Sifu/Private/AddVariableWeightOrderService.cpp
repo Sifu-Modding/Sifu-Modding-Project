@@ -6,3 +6,4 @@ UAddVariableWeightOrderService::UAddVariableWeightOrderService() {
     this->m_bRemoveOnOrderServiceStop = true;
 }
 
+

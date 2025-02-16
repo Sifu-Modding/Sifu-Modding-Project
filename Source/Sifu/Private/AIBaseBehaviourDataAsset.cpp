@@ -7,3 +7,4 @@ UAIBaseBehaviourDataAsset::UAIBaseBehaviourDataAsset() {
     this->m_fCooldown = 1.00f;
 }
 
+

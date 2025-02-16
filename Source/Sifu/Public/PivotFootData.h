@@ -35,5 +35,6 @@ public:
     FFloatRange m_TransitionAllowanceOnAccelRange;
     
     UPivotFootData();
+
 };
 

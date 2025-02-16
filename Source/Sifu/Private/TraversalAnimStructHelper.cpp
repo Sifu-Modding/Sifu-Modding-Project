@@ -1,11 +1,10 @@
 #include "TraversalAnimStructHelper.h"
 
-class UPlayerAnim;
+UTraversalAnimStructHelper::UTraversalAnimStructHelper() {
+}
 
 FAnimContainer UTraversalAnimStructHelper::BPF_GetAnimContainerFromPhase(UPlayerAnim* _playerAnim, const FAnimStructTraversal& _animStructTraversal, ETraversalPhase _eTraversalPhase) {
     return FAnimContainer{};
 }
 
-UTraversalAnimStructHelper::UTraversalAnimStructHelper() {
-}
 

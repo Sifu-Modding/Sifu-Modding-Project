@@ -16,6 +16,7 @@ protected:
     
 public:
     UReplayCutManagement();
+
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveCut(UReplayKey* _key);
     

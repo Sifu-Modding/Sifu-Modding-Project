@@ -16,5 +16,6 @@ public:
     TArray<FNavMeshFreeSquare> m_FreeSquares;
     
     UComboTransitionConditionAINavMesh();
+
 };
 

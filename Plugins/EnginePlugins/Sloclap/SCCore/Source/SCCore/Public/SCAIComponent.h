@@ -8,8 +8,9 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCCORE_API USCAIComponent : public UActorComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
-    USCAIComponent();
-    
+    USCAIComponent(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

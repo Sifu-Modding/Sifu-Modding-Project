@@ -29,7 +29,7 @@ class UNavArea;
 class UNavigationQueryFilter;
 class UTraversalDB;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=WuguanAI)
+UCLASS(Blueprintable, DefaultConfig, Config=WuguanAI)
 class SIFU_API UGlobalAISettings : public UObject {
     GENERATED_BODY()
 public:
@@ -301,5 +301,6 @@ public:
     int32 m_iArenaMaxAICharactersPerPool;
     
     UGlobalAISettings();
+
 };
 

@@ -12,5 +12,6 @@ public:
     TEnumAsByte<EMovementMode> m_eMovementMode;
     
     UMovementModeOrderService();
+
 };
 

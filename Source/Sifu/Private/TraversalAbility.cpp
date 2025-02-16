@@ -4,3 +4,4 @@ UTraversalAbility::UTraversalAbility() {
     this->m_uiEntryTypes = 0;
 }
 
+

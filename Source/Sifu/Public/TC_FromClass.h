@@ -12,5 +12,6 @@ public:
     TSubclassOf<UEvaluateTargetCondition> m_Class;
     
     UTC_FromClass();
+
 };
 

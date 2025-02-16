@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UCharacterHitBoxComponent : public UHitBoxComponent {
     GENERATED_BODY()
 public:
-    UCharacterHitBoxComponent();
+    UCharacterHitBoxComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -35,6 +35,7 @@ public:
     TArray<FInputMappingGroup> m_DefaultKeyboadMapping;
     
     UInputContextData();
+
     UFUNCTION(BlueprintCallable)
     void CreateOwners();
     

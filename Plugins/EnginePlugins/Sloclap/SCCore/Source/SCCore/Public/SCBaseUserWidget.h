@@ -10,6 +10,7 @@ class SCCORE_API USCBaseUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     USCBaseUserWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnSynchronizeProperties();
     

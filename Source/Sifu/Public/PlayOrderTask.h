@@ -8,5 +8,6 @@ class SIFU_API UPlayOrderTask : public USCBTTaskNode {
     GENERATED_BODY()
 public:
     UPlayOrderTask();
+
 };
 

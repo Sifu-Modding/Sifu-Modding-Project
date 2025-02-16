@@ -5,3 +5,4 @@ UCameraBlendToOffsetRatioNotifyState::UCameraBlendToOffsetRatioNotifyState() {
     this->m_BlendCurve = NULL;
 }
 
+

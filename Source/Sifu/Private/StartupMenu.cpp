@@ -1,7 +1,10 @@
 #include "StartupMenu.h"
 
-class AActor;
-class ASCBasePlayerController;
+UStartupMenu::UStartupMenu() {
+    this->m_eCurrentState = EStartupMenuState::IIS;
+    this->m_eEnumType = EMenuEnum::StartupMenu;
+    this->m_iShowPopupOnLoadResultMask = -1;
+}
 
 void UStartupMenu::OnSequenceFinished() {
 }
@@ -58,9 +61,4 @@ bool UStartupMenu::BPF_AreAllImpostorsStable() const {
 
 
 
-UStartupMenu::UStartupMenu() {
-    this->m_eCurrentState = EStartupMenuState::IIS;
-    this->m_eEnumType = EMenuEnum::StartupMenu;
-    this->m_iShowPopupOnLoadResultMask = -1;
-}
 

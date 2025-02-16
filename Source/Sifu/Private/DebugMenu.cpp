@@ -1,7 +1,11 @@
 #include "DebugMenu.h"
 
-class ULoadSlot;
-class UPanelWidget;
+UDebugMenu::UDebugMenu() {
+    this->m_CharacterBuildPath = TEXT("/Game/DB/Characters/Builds");
+    this->m_DummyCharcterBuild = NULL;
+    this->m_CharacterBuildList = NULL;
+    this->m_LoadingButtonClass = NULL;
+}
 
 void UDebugMenu::BPF_ShowSaves(UPanelWidget* _boxToFill) {
 }
@@ -27,10 +31,4 @@ void UDebugMenu::BPF_CreateNewSave(const FString& _charaName) {
 void UDebugMenu::BPF_CreateBackup(const FString& _backupName) {
 }
 
-UDebugMenu::UDebugMenu() {
-    this->m_CharacterBuildPath = TEXT("/Game/DB/Characters/Builds");
-    this->m_DummyCharcterBuild = NULL;
-    this->m_CharacterBuildList = NULL;
-    this->m_LoadingButtonClass = NULL;
-}
 

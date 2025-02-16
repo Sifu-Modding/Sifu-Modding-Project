@@ -5,3 +5,4 @@ USpecialAbilityPropertyDB::USpecialAbilityPropertyDB() {
     this->m_PushLayerOnSuccess = NULL;
 }
 
+

@@ -1,12 +1,23 @@
 #include "ThePlainesGameInstance.h"
 #include "PredictionManager.h"
 
-class ALevelSequenceActor;
-class ASCPlayerStart;
-class ULocalPlayer;
-class UReplaySystem;
-class USCLocalPlayer;
-class UWGGameFlow;
+UThePlainesGameInstance::UThePlainesGameInstance() {
+    this->m_loadingScreenClass = NULL;
+    this->m_loadingScreen = NULL;
+//    this->m_MuteEvent = NULL;
+  //  this->m_UnmuteEvent = NULL;
+    this->m_GameFlow = NULL;
+    this->m_AntiCheatMapTagName = TEXT("SelectHideout");
+    this->m_ItemsDB = NULL;
+    this->m_InputManager = NULL;
+    this->m_FactionsManager = NULL;
+    this->m_PredictionManagerClass = UPredictionManager::StaticClass();
+    this->m_CinematicManager = NULL;
+    this->m_MessageManager = NULL;
+    this->m_sessionManager = NULL;
+    this->m_SessionTimeManager = NULL;
+    this->m_ReplaySystem = NULL;
+}
 
 void UThePlainesGameInstance::TriggerTakeKinectResources(bool _bTake) {
 }
@@ -56,7 +67,7 @@ void UThePlainesGameInstance::GoToNextMap() {
 void UThePlainesGameInstance::GoToMapInGameFlow(const FString& _sMapToTravelTo) {
 }
 
-void UThePlainesGameInstance::GiveBestScoreToAllChallenges() {
+void UThePlainesGameInstance::GiveBestScoreToAllChallenges(const FString& _batchCategory) {
 }
 
 USCLocalPlayer* UThePlainesGameInstance::GetLocalPlayer() {
@@ -142,21 +153,4 @@ void UThePlainesGameInstance::BPF_BeginLoadingScreen() {
 
 
 
-UThePlainesGameInstance::UThePlainesGameInstance() {
-    this->m_loadingScreenClass = NULL;
-    this->m_loadingScreen = NULL;
-    //this->m_MuteEvent = NULL;
-    //this->m_UnmuteEvent = NULL;
-    this->m_GameFlow = NULL;
-    this->m_AntiCheatMapTagName = TEXT("SelectHideout");
-    this->m_ItemsDB = NULL;
-    this->m_InputManager = NULL;
-    this->m_FactionsManager = NULL;
-    this->m_PredictionManagerClass = UPredictionManager::StaticClass();
-    this->m_CinematicManager = NULL;
-    this->m_MessageManager = NULL;
-    this->m_sessionManager = NULL;
-    this->m_SessionTimeManager = NULL;
-    this->m_ReplaySystem = NULL;
-}
 

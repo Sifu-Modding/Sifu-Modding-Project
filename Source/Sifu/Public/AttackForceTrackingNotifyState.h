@@ -8,5 +8,6 @@ class SIFU_API UAttackForceTrackingNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
     UAttackForceTrackingNotifyState();
+
 };
 

@@ -1,6 +1,9 @@
 #include "SCComboBoxButton.h"
 
-class UButtonUserWidget;
+USCComboBoxButton::USCComboBoxButton() {
+    this->m_iSelectedItem = 0;
+    this->m_ScrolllistClass = NULL;
+}
 
 void USCComboBoxButton::OnRightClick(UButtonUserWidget* _button, bool _bWithMouse) {
 }
@@ -22,8 +25,4 @@ void USCComboBoxButton::BPF_InitList(TArray<FString> _items) {
 }
 
 
-USCComboBoxButton::USCComboBoxButton() {
-    this->m_iSelectedItem = 0;
-    this->m_ScrolllistClass = NULL;
-}
 

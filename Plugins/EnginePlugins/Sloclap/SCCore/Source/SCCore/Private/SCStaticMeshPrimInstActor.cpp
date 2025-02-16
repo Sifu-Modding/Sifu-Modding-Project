@@ -1,5 +1,7 @@
 #include "SCStaticMeshPrimInstActor.h"
 
-ASCStaticMeshPrimInstActor::ASCStaticMeshPrimInstActor() {
+ASCStaticMeshPrimInstActor::ASCStaticMeshPrimInstActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bCanBeInCluster = false;
 }
+
 

@@ -4,3 +4,4 @@ UOrderServiceHasHitTargetActivationCondition::UOrderServiceHasHitTargetActivatio
     this->m_bMustBeSucessful = false;
 }
 
+

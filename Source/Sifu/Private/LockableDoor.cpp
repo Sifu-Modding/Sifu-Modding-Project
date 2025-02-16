@@ -4,8 +4,24 @@
 #include "SCSaveGameComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AFightingCharacter;
-class UAnimationAsset;
+ALockableDoor::ALockableDoor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComp"));
+    this->m_SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMeshComponent"));
+    this->m_RootComponent = (USceneComponent*)RootComponent;
+    this->m_fCloseDistThreshold = 500.00f;
+    this->m_SaveComponent = CreateDefaultSubobject<USCSaveGameComponent>(TEXT("SaveComponent"));
+    this->m_bShouldStayOpen = false;
+    this->m_levelSequenceWay1 = NULL;
+    this->m_levelSequenceWay2 = NULL;
+    this->m_bCanLockNavBuild = true;
+    this->m_SkeletalMesh = NULL;
+    this->m_bLocked = false;
+    this->m_bOpened = false;
+    this->m_SkeletalMeshComponent->SetupAttachment(RootComponent);
+}
 
 void ALockableDoor::SetOpened(bool bOpened) {
 }
@@ -52,17 +68,4 @@ void ALockableDoor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
     DOREPLIFETIME(ALockableDoor, m_HiddenMeshComponents);
 }
 
-ALockableDoor::ALockableDoor() {
-    this->m_SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMeshComponent"));
-    this->m_RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComp"));
-    this->m_fCloseDistThreshold = 500.00f;
-    this->m_SaveComponent = CreateDefaultSubobject<USCSaveGameComponent>(TEXT("SaveComponent"));
-    this->m_bShouldStayOpen = false;
-    this->m_levelSequenceWay1 = NULL;
-    this->m_levelSequenceWay2 = NULL;
-    this->m_bCanLockNavBuild = true;
-    this->m_SkeletalMesh = NULL;
-    this->m_bLocked = false;
-    this->m_bOpened = false;
-}
 

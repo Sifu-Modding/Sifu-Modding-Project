@@ -1,7 +1,7 @@
 #include "OrderComponent.h"
 
-class UOrderDB;
-class UOrderDelegateHandler;
+UOrderComponent::UOrderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void UOrderComponent::ServerUpdateOrder_Implementation(uint8 _uiOrderId, EOrderType _eOrderType, FBuffer _ReplicatedBuffer, FUniqueNetIdRepl _callerPlayerId) {
 }
@@ -105,6 +105,4 @@ UOrderDelegateHandler* UOrderComponent::BPF_GetBPOrderDelegates(FName _BPOrderTy
 void UOrderComponent::BPF_CancelAllOrders() {
 }
 
-UOrderComponent::UOrderComponent() {
-}
 

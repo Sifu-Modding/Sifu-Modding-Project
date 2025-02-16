@@ -36,10 +36,11 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnAIDeathDetected OnAIDeathDetected;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnDifficultyLevelChanged;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // USCDelegate::FDynamicMulticast OnDifficultyLevelChanged;
     
-    AAIDirectorActor();
+    AAIDirectorActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     static void BPF_UnbindFromAlertLevelChanged(AAIDirectorActor::FAlertLevelChanged Delegate);
     

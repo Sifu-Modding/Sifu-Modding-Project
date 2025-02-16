@@ -26,7 +26,8 @@ protected:
     bool m_bDebug;
     
 public:
-    AAimingBillboardActor();
+    AAimingBillboardActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetScore() const;
     

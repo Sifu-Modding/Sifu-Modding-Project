@@ -5,3 +5,4 @@ UPerPlatformRichTextBlock::UPerPlatformRichTextBlock() : URichTextBlock(FObjectI
     this->SmallScreenTextStyleSet = NULL;
 }
 
+

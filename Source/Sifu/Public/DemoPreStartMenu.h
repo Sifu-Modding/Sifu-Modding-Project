@@ -8,6 +8,7 @@ class SIFU_API UDemoPreStartMenu : public UBaseStartMenu {
     GENERATED_BODY()
 public:
     UDemoPreStartMenu();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnRetryLoadProfile();

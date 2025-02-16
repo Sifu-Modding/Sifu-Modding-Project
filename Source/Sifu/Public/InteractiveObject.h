@@ -13,7 +13,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInteractionObjectComponent* m_InteractionObjectComponent;
     
-    AInteractiveObject();
+    AInteractiveObject(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void UseInteractiveObjectFailed(APlayerController* _controller, FText _reason);

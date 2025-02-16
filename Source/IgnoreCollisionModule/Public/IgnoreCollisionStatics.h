@@ -10,6 +10,7 @@ class IGNORECOLLISIONMODULE_API UIgnoreCollisionStatics : public UBlueprintFunct
     GENERATED_BODY()
 public:
     UIgnoreCollisionStatics();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetCollisionIgnored(UPrimitiveComponent* _ComponentA, FName _boneNameA, UPrimitiveComponent* _ComponentB, FName _boneNameB, bool _bIgnoreCollision);
     

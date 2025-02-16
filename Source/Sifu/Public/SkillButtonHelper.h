@@ -11,6 +11,7 @@ class USkillButtonHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USkillButtonHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_RebuildDBFromButtons(USkillsDB* _db, USkillButton* _root);
     

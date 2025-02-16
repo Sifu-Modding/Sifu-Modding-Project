@@ -6,3 +6,4 @@ UWeaponDB::UWeaponDB() {
     this->m_fDurabilityDamageRateOnParried = 0.15f;
 }
 
+

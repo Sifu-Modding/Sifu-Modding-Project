@@ -22,7 +22,8 @@ private:
     UDataTable* m_WorldConversationSegments;
     
 public:
-    ASCLevelScriptActor();
+    ASCLevelScriptActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnUpdatedFromSave();
     

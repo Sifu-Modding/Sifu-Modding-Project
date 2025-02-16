@@ -8,13 +8,14 @@ UCLASS(Blueprintable)
 class SIFU_API AVoiceOverActor : public ALevelSequenceActor {
     GENERATED_BODY()
 public:
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //FVoiceOver m_CurrentVoiceOver;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVoiceOver m_CurrentVoiceOver;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDelayBetweenVoiceOvers;
     
-    //AVoiceOverActor();
+    AVoiceOverActor(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnLoadingCompleted();

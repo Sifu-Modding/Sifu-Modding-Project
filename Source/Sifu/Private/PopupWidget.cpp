@@ -1,5 +1,10 @@
 #include "PopupWidget.h"
 
+UPopupWidget::UPopupWidget() {
+    this->m_eValidateAction = InputAction::MenuAction;
+    this->m_eCancelAction = InputAction::MenuCancel;
+}
+
 void UPopupWidget::OnMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu) {
 }
 
@@ -18,8 +23,4 @@ bool UPopupWidget::BPE_IsUsingChoiceA_Implementation() const {
     return false;
 }
 
-UPopupWidget::UPopupWidget() {
-    this->m_eValidateAction = InputAction::MenuAction;
-    this->m_eCancelAction = InputAction::MenuCancel;
-}
 

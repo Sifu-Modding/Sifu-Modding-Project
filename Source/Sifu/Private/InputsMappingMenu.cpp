@@ -1,7 +1,10 @@
 #include "InputsMappingMenu.h"
 
-class UButtonUserWidget;
-class UPanelWidget;
+UInputsMappingMenu::UInputsMappingMenu() {
+    this->m_MappableInputsDB = NULL;
+    this->m_InputMappingWidgetClass = NULL;
+    this->m_bIsRemappingOccured = false;
+}
 
 void UInputsMappingMenu::OnRemappingStarted(FName _ActionName, EMappableFieldScaleTypes _eScaleType) {
 }
@@ -61,9 +64,4 @@ void UInputsMappingMenu::BPF_ApplyMapping(ERemappingAllowedInputTypes _eRemappin
 
 
 
-UInputsMappingMenu::UInputsMappingMenu() {
-    this->m_MappableInputsDB = NULL;
-    this->m_InputMappingWidgetClass = NULL;
-    this->m_bIsRemappingOccured = false;
-}
 

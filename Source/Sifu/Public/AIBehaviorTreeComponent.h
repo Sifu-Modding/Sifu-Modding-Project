@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAIBehaviorTreeComponent : public USCBehaviorTreeComponent {
     GENERATED_BODY()
 public:
-    UAIBehaviorTreeComponent();
+    UAIBehaviorTreeComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

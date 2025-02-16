@@ -18,11 +18,11 @@ UCLASS(Blueprintable)
 class SIFU_API ASCPlayerStart : public APlayerStart {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnGotoGameplaySequenceStarted;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnGotoGameplaySequenceStarted;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnGotoGameplaySequenceFinished;*/
+    FDynamicMulticast OnGotoGameplaySequenceFinished;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPlayerStartUsed OnPlayerSpawnedHere;
@@ -66,7 +66,8 @@ private:
     TSubclassOf<UMatineeCameraShake> m_CameraShakeClass;
     
 public:
-    ASCPlayerStart();
+    ASCPlayerStart(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_WantKeepBackgroundDuringStartupMenu() const;
     

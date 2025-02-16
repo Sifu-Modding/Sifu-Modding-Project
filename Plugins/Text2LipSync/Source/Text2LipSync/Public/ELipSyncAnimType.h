@@ -7,6 +7,5 @@ enum class ELipSyncAnimType : uint8 {
     T_MorphTargets,
     T_AnimCurves,
     T_PoseAsset,
-    T_Max,
 };
 

@@ -1,11 +1,10 @@
 #include "InputPad.h"
 
-class UGenericInputData;
+UInputPad::UInputPad() {
+}
 
 UGenericInputData* UInputPad::BPF_GetInputDataForAction(InputAction _eAction) const {
     return NULL;
 }
 
-UInputPad::UInputPad() {
-}
 

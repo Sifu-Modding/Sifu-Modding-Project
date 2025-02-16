@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API USoundTensionPortalVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    USoundTensionPortalVisualizerComponent();
+    USoundTensionPortalVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

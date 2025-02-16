@@ -1,5 +1,9 @@
 #include "IgnoreCollisionDirector.h"
 
-AIgnoreCollisionDirector::AIgnoreCollisionDirector() {
+AIgnoreCollisionDirector::AIgnoreCollisionDirector(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
 }
+
 

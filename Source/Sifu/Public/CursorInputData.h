@@ -14,5 +14,6 @@ public:
     float m_fNormalizeRegionRadius;
     
     UCursorInputData();
+
 };
 

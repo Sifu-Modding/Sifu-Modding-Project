@@ -1,26 +1,8 @@
 #include "ButtonUserWidget.h"
 
-void UButtonUserWidget::BPF_SetSelected(bool _bSelected, bool _bForce) {
-}
-
-bool UButtonUserWidget::BPF_IsActionEnabled(const FButtonAction& _action) const {
-    return false;
-}
-
-bool UButtonUserWidget::BPF_GetIsSelected() {
-    return false;
-}
-
-float UButtonUserWidget::BPF_GetHoldProgress() const {
-    return 0.0f;
-}
-
-
-
-
-
-
 UButtonUserWidget::UButtonUserWidget() {
+    this->Visibility = ESlateVisibility::Visible;
+    this->bIsFocusable = true;
     this->m_bUseFocusStateBrush = false;
     this->m_eClickMethod = EButtonClickMethod::DownAndUp;
     this->m_fHoldDuration = 0.00f;
@@ -41,4 +23,25 @@ UButtonUserWidget::UButtonUserWidget() {
     this->m_bIsMouseOver = false;
     this->m_bIsMouseDown = false;
 }
+
+void UButtonUserWidget::BPF_SetSelected(bool _bSelected, bool _bForce) {
+}
+
+bool UButtonUserWidget::BPF_IsActionEnabled(const FButtonAction& _action) const {
+    return false;
+}
+
+bool UButtonUserWidget::BPF_GetIsSelected() {
+    return false;
+}
+
+float UButtonUserWidget::BPF_GetHoldProgress() const {
+    return 0.0f;
+}
+
+
+
+
+
+
 

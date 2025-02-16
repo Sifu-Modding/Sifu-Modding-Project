@@ -8,5 +8,6 @@ class SIFU_API UAIPhaseTransitionTakedown : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
     UAIPhaseTransitionTakedown();
+
 };
 

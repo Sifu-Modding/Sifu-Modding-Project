@@ -15,5 +15,6 @@ public:
     TArray<FVector> m_TargetRelativeLocation;
     
     UAISizeDb();
+
 };
 

@@ -14,6 +14,9 @@ public:
     int32 m_iTotalStarsCount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 m_iGoldenStarCount;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FArenaBatchProgressionInfo> m_ArenaBatchesInfo;
     
     SIFU_API FArenaProgressionInfo();

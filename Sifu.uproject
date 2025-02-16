@@ -7,12 +7,50 @@
 		{
 			"Name": "Sifu",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PostEngineInit",
+			"AdditionalDependencies": [
+				"AIModule",
+				"Engine",
+				"UMG",
+				"CoreUObject",
+				"LevelSequence",
+				"NavigationSystem",
+				"SCCore",
+				"Text2LipSync"
+			]
+		},
+		{
+			"Name": "IgnoreCollisionModule",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit",
+			"AdditionalDependencies": [
+				"Engine",
+				"CoreUObject"
+			]
 		}
 	],
 	"Plugins": [
 		{
-			"Name": "PythonScriptPlugin",
+			"Name": "WinDualShock",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+			]
+		},
+		{
+			"Name": "ApexDestruction",
+			"Enabled": true
+		},
+		{
+			"Name": "SteamVR",
+			"Enabled": false
+		},
+		{
+			"Name": "OnlineSubsystemSteam",
+			"Enabled": false
+		},
+		{
+			"Name": "MfMedia",
 			"Enabled": true
 		},
 		{
@@ -21,9 +59,152 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/8901af6d589b40b68d763b44c9ced66c"
 		},
 		{
+			"Name": "CutsceneTools",
+			"Enabled": true
+		},
+		{
+			"Name": "EditorTests",
+			"Enabled": true
+		},
+		{
+			"Name": "FunctionalTestingEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "RuntimeTests",
+			"Enabled": true
+		},
+		{
+			"Name": "RenderDocPlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "Paper2D",
+			"Enabled": false
+		},
+		{
+			"Name": "OnlineSubsystemGooglePlay",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Android"
+			]
+		},
+		{
+			"Name": "AndroidPermission",
+			"Enabled": false
+		},
+		{
+			"Name": "MagicLeapMedia",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Lumin"
+			]
+		},
+		{
+			"Name": "MagicLeap",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Lumin"
+			]
+		},
+		{
+			"Name": "LocationServicesBPLibrary",
+			"Enabled": false
+		},
+		{
+			"Name": "UObjectPlugin",
+			"Enabled": false
+		},
+		{
+			"Name": "AppleVision",
+			"Enabled": false
+		},
+		{
+			"Name": "AppleImageUtils",
+			"Enabled": false
+		},
+		{
+			"Name": "MobilePatchingUtils",
+			"Enabled": false
+		},
+		{
+			"Name": "AndroidMoviePlayer",
+			"Enabled": false
+		},
+		{
+			"Name": "AppleMoviePlayer",
+			"Enabled": false
+		},
+		{
+			"Name": "OnlineSubsystemIOS",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"IOS",
+				"TVOS"
+			]
+		},
+		{
+			"Name": "OculusVR",
+			"Enabled": false
+		},
+		{
+			"Name": "AnimationBudgetAllocator",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
 			"Name": "Text2LipSync",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5836e4e379884207985a5496789e82e1"
-		}
+		},
+		{
+			"Name": "ControlRig",
+			"Enabled": true
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		},
+		{
+			"Name": "MovieRenderPipeline",
+			"Enabled": true
+		},
+		{
+			"Name": "Gauntlet",
+			"Enabled": true
+		},
+		{
+			"Name": "SC3DNav",
+			"Enabled": true
+		},
+		{
+			"Name": "SCDialogManagerPlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "SCSoundOcclusion",
+			"Enabled": true
+		},
+		{
+			"Name": "SCCore",
+			"Enabled": true
+		},
+		{
+			"Name": "SCTracking",
+			"Enabled": true
+		},
+	],
+	"TargetPlatforms": [
+		"PS4",
+		"Windows",
+		"XboxOne",
+		"WindowsNoEditor",
+		"PS5",
+		"Switch",
+		"XSX",
+		"XboxOneGDK",
 	]
 }

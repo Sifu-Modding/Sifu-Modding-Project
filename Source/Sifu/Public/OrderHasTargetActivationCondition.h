@@ -8,5 +8,6 @@ class SIFU_API UOrderHasTargetActivationCondition : public UOrderServiceActivati
     GENERATED_BODY()
 public:
     UOrderHasTargetActivationCondition();
+
 };
 

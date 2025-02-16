@@ -1,11 +1,10 @@
 #include "SCActorHelpers.h"
 
-class AActor;
+USCActorHelpers::USCActorHelpers() {
+}
 
 AActor* USCActorHelpers::BPF_GetClosestActor(AActor* _target, TArray<AActor*> _actors) {
     return NULL;
 }
 
-USCActorHelpers::USCActorHelpers() {
-}
 

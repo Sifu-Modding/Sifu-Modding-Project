@@ -10,7 +10,7 @@ class UArenaSettings;
 class UMirrorAnimDB;
 class UOrderService;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, Config=Engine)
 class SIFU_API USCGameSettings : public USCBaseGameSettings {
     GENERATED_BODY()
 public:
@@ -60,5 +60,6 @@ public:
     TSoftClassPtr<UArenaSettings> m_ArenaSettings;
     
     USCGameSettings();
+
 };
 

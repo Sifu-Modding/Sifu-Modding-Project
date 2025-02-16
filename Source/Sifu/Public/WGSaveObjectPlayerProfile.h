@@ -13,6 +13,7 @@ public:
     FProfileData m_WGProfileData;
     
     UWGSaveObjectPlayerProfile();
+
     UFUNCTION(BlueprintCallable)
     void BPF_AddUnlockedCheat(FGameplayTag _tagToAdd);
     

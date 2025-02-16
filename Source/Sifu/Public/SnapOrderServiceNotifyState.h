@@ -8,5 +8,6 @@ class SIFU_API USnapOrderServiceNotifyState : public UOrderServiceNotifyState {
     GENERATED_BODY()
 public:
     USnapOrderServiceNotifyState();
+
 };
 

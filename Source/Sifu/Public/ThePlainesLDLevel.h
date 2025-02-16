@@ -38,6 +38,7 @@ private:
     int32 m_iMaxMaxGenericWeapons;
     
 public:
-    AThePlainesLDLevel();
+    AThePlainesLDLevel(const FObjectInitializer& ObjectInitializer);
+
 };
 

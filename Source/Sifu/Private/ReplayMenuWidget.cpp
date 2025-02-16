@@ -1,8 +1,14 @@
 #include "ReplayMenuWidget.h"
 #include "Templates/SubclassOf.h"
 
-class UReplaySubMenuWidget;
-class UReplayUIModeUserWidget;
+UReplayMenuWidget::UReplayMenuWidget() {
+    this->m_ScreenshotWidgetClass = NULL;
+    this->m_HideUIModeClass = NULL;
+    this->m_ScreenshotWidget = NULL;
+    this->m_UIModeDB = NULL;
+    this->m_Controller = NULL;
+    this->m_bUpdateUIModeOnMenuPushed = true;
+}
 
 void UReplayMenuWidget::BPF_RestoreOverlay() {
 }
@@ -76,12 +82,4 @@ bool UReplayMenuWidget::BPE_OnHideUIPressed_Implementation() {
 
 
 
-UReplayMenuWidget::UReplayMenuWidget() {
-    this->m_ScreenshotWidgetClass = NULL;
-    this->m_HideUIModeClass = NULL;
-    this->m_ScreenshotWidget = NULL;
-    this->m_UIModeDB = NULL;
-    this->m_Controller = NULL;
-    this->m_bUpdateUIModeOnMenuPushed = true;
-}
 

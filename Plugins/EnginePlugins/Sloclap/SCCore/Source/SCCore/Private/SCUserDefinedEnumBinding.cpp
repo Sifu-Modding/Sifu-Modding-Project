@@ -5,3 +5,4 @@ USCUserDefinedEnumBinding::USCUserDefinedEnumBinding() {
     this->m_BPEnum = NULL;
 }
 
+

@@ -8,5 +8,6 @@ class SIFU_API UComboTransitionConditionAICheckObstacles : public UComboTransiti
     GENERATED_BODY()
 public:
     UComboTransitionConditionAICheckObstacles();
+
 };
 

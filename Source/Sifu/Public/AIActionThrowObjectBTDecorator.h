@@ -8,5 +8,6 @@ class SIFU_API UAIActionThrowObjectBTDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:
     UAIActionThrowObjectBTDecorator();
+
 };
 

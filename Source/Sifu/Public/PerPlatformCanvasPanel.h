@@ -9,7 +9,8 @@ class UPerPlatformCanvasPanel : public UCanvasPanel, public IPerPlatformWidget {
     GENERATED_BODY()
 public:
     UPerPlatformCanvasPanel();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

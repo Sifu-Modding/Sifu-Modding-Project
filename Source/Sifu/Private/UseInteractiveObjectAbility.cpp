@@ -5,3 +5,4 @@ UUseInteractiveObjectAbility::UUseInteractiveObjectAbility() {
     this->m_eMovableInputs.AddDefaulted(4);
 }
 
+

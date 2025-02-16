@@ -7,3 +7,4 @@ UStaminaOrderService::UStaminaOrderService() {
     this->m_fImpactCostOnStop = 0.00f;
 }
 
+

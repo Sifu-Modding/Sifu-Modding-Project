@@ -5,3 +5,4 @@ UChangeWeaponBearer_Notify::UChangeWeaponBearer_Notify() {
     this->m_bKeepAttachedOnImpostor = false;
 }
 
+

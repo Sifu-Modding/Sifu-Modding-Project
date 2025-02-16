@@ -11,6 +11,7 @@ class SIFU_API UInputPad : public UObject {
     GENERATED_BODY()
 public:
     UInputPad();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UGenericInputData* BPF_GetInputDataForAction(InputAction _eAction) const;
     

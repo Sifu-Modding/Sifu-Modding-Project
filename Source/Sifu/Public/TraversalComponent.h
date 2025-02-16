@@ -108,7 +108,8 @@ private:
     TArray<TSoftObjectPtr<AActor>> m_ActorsWithReferencedInNavLinkComponent;
     
 public:
-    UTraversalComponent();
+    UTraversalComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void ComputeTraversalAIInfo();
     

@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class IGNORECOLLISIONMODULE_API AIgnoreCollisionDirector : public AActor {
     GENERATED_BODY()
 public:
-    AIgnoreCollisionDirector();
+    AIgnoreCollisionDirector(const FObjectInitializer& ObjectInitializer);
+
 };
 

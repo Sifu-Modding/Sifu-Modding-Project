@@ -1,5 +1,8 @@
 #include "CgSDKBlueprint.h"
 
+UCgSDKBlueprint::UCgSDKBlueprint() {
+}
+
 bool UCgSDKBlueprint::ShowProgressBar(const FString& progressBarName) {
     return false;
 }
@@ -59,6 +62,4 @@ bool UCgSDKBlueprint::ClearAllEvents() {
     return false;
 }
 
-UCgSDKBlueprint::UCgSDKBlueprint() {
-}
 

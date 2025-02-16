@@ -29,7 +29,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector m_vExpectedLocation;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAnimSequence> m_DummyAnim;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -39,5 +39,6 @@ public:
     bool m_bDummyAnimMirror;
     
     UEditorPreviewPostProcessAnimInstance();
+
 };
 

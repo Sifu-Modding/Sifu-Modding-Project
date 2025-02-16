@@ -44,6 +44,7 @@ protected:
     
 public:
     UReplayKeyWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnSelectionUpdate(UReplayKey* _key, bool _bIsSelected);

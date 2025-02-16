@@ -1,3 +1,3 @@
-#include "Modules/ModuleManager.h"
-
-IMPLEMENT_MODULE(FDefaultGameModuleImpl, CustomAnimNode);
+//#include "Modules/ModuleManager.h"
+//
+//IMPLEMENT_MODULE(FDefaultGameModuleImpl, CustomAnimNode);

@@ -15,6 +15,7 @@ public:
     EScoringType m_eScoringType;
     
     UArenaWaveObjective();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnWaveAndSituationComplete(int32 _iWaveIndex);

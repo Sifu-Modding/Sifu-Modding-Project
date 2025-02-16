@@ -12,5 +12,6 @@ public:
     FSCMathExpressionFloat m_condition;
     
     UComboAIConditionEnemyDistance();
+
 };
 

@@ -1,5 +1,6 @@
 #include "SCSaveGameComponent.h"
 
-USCSaveGameComponent::USCSaveGameComponent() {
+USCSaveGameComponent::USCSaveGameComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

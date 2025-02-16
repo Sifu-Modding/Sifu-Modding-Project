@@ -18,6 +18,7 @@ public:
     FAsyncTaskPlayTransitionAnimation OnFinished;
     
     UAsyncTaskPlayAnimation();
+
     UFUNCTION(BlueprintCallable)
     void OnTransitionFinished();
     

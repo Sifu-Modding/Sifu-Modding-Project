@@ -9,6 +9,7 @@ class SCCORE_API USCErrorHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCErrorHelpers();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_ShowMessageLog(ESCMessageLogSeverity _eSeverity, const FString& _textContent, FName _categoryName, bool _bNotify);
     

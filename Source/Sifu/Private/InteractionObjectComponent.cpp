@@ -1,7 +1,23 @@
 #include "InteractionObjectComponent.h"
 
-class UPrimitiveComponent;
-class USceneComponent;
+UInteractionObjectComponent::UInteractionObjectComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bUseCustomWalkInteractionDist = false;
+    this->m_fCustomWalkInteractionDist = 0.00f;
+    this->m_bUseCustomRunInteractionDist = false;
+    this->m_fCustomRunInteractionDist = 0.00f;
+    this->m_bIgnoreOwnerOnHint = true;
+    this->m_bIgnoreChildActorsOnTrace = false;
+    this->m_orderParams = NULL;
+    this->m_bVisibleOnlyWhenUsable = false;
+    this->m_bIsUsable = true;
+    this->m_bUseLockedText = false;
+    this->m_bUseGenericUI = true;
+    this->m_iPriority = 0;
+    this->m_bUseInteractionHint = false;
+    this->m_bOverrideInteractionHintDistance = false;
+    this->m_fInteractionHintDistanceOverride = 0.00f;
+    this->m_bConstraintToViewport = false;
+}
 
 void UInteractionObjectComponent::ForceUse() {
 }
@@ -38,22 +54,4 @@ FInteractionTextStruct UInteractionObjectComponent::BPF_GetInteractionTextStruct
     return FInteractionTextStruct{};
 }
 
-UInteractionObjectComponent::UInteractionObjectComponent() {
-    this->m_bUseCustomWalkInteractionDist = false;
-    this->m_fCustomWalkInteractionDist = 0.00f;
-    this->m_bUseCustomRunInteractionDist = false;
-    this->m_fCustomRunInteractionDist = 0.00f;
-    this->m_bIgnoreOwnerOnHint = true;
-    this->m_bIgnoreChildActorsOnTrace = false;
-    this->m_orderParams = NULL;
-    this->m_bVisibleOnlyWhenUsable = false;
-    this->m_bIsUsable = true;
-    this->m_bUseLockedText = false;
-    this->m_bUseGenericUI = true;
-    this->m_iPriority = 0;
-    this->m_bUseInteractionHint = false;
-    this->m_bOverrideInteractionHintDistance = false;
-    this->m_fInteractionHintDistanceOverride = 0.00f;
-    this->m_bConstraintToViewport = false;
-}
 

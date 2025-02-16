@@ -1,6 +1,7 @@
 #include "CheatManagerBlueprintHelper.h"
 
-class USCCheatManagerSettings;
+UCheatManagerBlueprintHelper::UCheatManagerBlueprintHelper() {
+}
 
 void UCheatManagerBlueprintHelper::BPF_UnapplyCheats() {
 }
@@ -18,6 +19,10 @@ bool UCheatManagerBlueprintHelper::BPF_IsCheatActivated(FGameplayTag _cheatToFin
 
 bool UCheatManagerBlueprintHelper::BPF_HasAppliedCheats() {
     return false;
+}
+
+TMap<FGameplayTag, FString> UCheatManagerBlueprintHelper::BPF_GetRandomCheats(int32 _iNumMin, int32 _iNumMax, FGameplayTagContainer _BannedCheats) {
+    return TMap<FGameplayTag, FString>();
 }
 
 USCCheatManagerSettings* UCheatManagerBlueprintHelper::BPF_GetCheatDefaultSettings() {
@@ -52,7 +57,7 @@ bool UCheatManagerBlueprintHelper::BPF_AreCheatsAllowed() {
 void UCheatManagerBlueprintHelper::BPF_ApplyCheats(bool _bForceApply) {
 }
 
-void UCheatManagerBlueprintHelper::BPF_ApplyCheat(FGameplayTag _cheatTag) {
+void UCheatManagerBlueprintHelper::BPF_ApplyCheat(FGameplayTag _cheatTag, bool _bForceApply) {
 }
 
 void UCheatManagerBlueprintHelper::BPF_ActivateCheats(FGameplayTagContainer _cheatsToActivate, const FString& _argument) {
@@ -61,6 +66,4 @@ void UCheatManagerBlueprintHelper::BPF_ActivateCheats(FGameplayTagContainer _che
 void UCheatManagerBlueprintHelper::BPF_ActivateCheat(FGameplayTag _cheatToActivate, const FString& _argument) {
 }
 
-UCheatManagerBlueprintHelper::UCheatManagerBlueprintHelper() {
-}
 

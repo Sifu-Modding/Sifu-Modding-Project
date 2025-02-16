@@ -6,3 +6,4 @@ UContextualDefenseInfluenceNode::UContextualDefenseInfluenceNode() {
     this->m_bLaunchDefaultActions = true;
 }
 
+

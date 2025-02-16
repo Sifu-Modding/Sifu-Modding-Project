@@ -1,6 +1,11 @@
 #include "AttackProgressNotification.h"
 
-class UAttackProgressNotification;
+UAttackProgressNotification::UAttackProgressNotification() {
+    this->m_bDiscovered = false;
+    this->m_bUnlocked = false;
+    this->m_iBaseXP = 0;
+    this->m_iGainedXP = 0;
+}
 
 UAttackProgressNotification* UAttackProgressNotification::BPF_InitUnlocked(FName _attack) {
     return NULL;
@@ -14,10 +19,4 @@ UAttackProgressNotification* UAttackProgressNotification::BPF_InitDiscovered(FNa
     return NULL;
 }
 
-UAttackProgressNotification::UAttackProgressNotification() {
-    this->m_bDiscovered = false;
-    this->m_bUnlocked = false;
-    this->m_iBaseXP = 0;
-    this->m_iGainedXP = 0;
-}
 

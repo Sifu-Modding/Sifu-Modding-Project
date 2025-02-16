@@ -17,7 +17,8 @@ public:
     UDataTable* SmallScreenTextStyleSet;
     
     UPerPlatformRichTextBlock();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -9,7 +9,7 @@ UCLASS(Blueprintable)
 class SIFU_API UComboManager : public UObject {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    /*UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FComboEndedDelegate m_OnEnded;*/
     
 private:
@@ -18,5 +18,6 @@ private:
     
 public:
     UComboManager();
+
 };
 

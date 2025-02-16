@@ -10,6 +10,7 @@ class SIFU_API UOrderTauntHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOrderTauntHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BP_TriggerTauntEffects(AActor* _Instigator);
     

@@ -8,8 +8,9 @@ UCLASS(Blueprintable)
 class SCCORE_API ASCBasePlayerController : public APlayerController, public IVisualLoggerDebugSnapshotInterface {
     GENERATED_BODY()
 public:
-    ASCBasePlayerController();
-    
+    ASCBasePlayerController(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

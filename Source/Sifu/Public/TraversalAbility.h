@@ -11,5 +11,6 @@ public:
     uint8 m_uiEntryTypes;
     
     UTraversalAbility();
+
 };
 

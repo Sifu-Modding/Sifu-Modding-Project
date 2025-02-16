@@ -1,7 +1,21 @@
 #include "ThePlainesGameMode.h"
+#include "FightingCharacter.h"
+#include "FightingPlayerController.h"
+#include "FightingPlayerState.h"
+#include "ThePlainesGameState.h"
 
-class AController;
-class APlayerController;
+AThePlainesGameMode::AThePlainesGameMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->GameStateClass = AThePlainesGameState::StaticClass();
+    this->PlayerControllerClass = AFightingPlayerController::StaticClass();
+    this->PlayerStateClass = AFightingPlayerState::StaticClass();
+    this->DefaultPawnClass = AFightingCharacter::StaticClass();
+    this->m_bOverrideAITraversalInfo = false;
+    this->m_bIsTraversalUniversalLockEnabled = true;
+    this->m_fTraversalLockTime = 1.00f;
+    this->m_fTraversalCooldownPerAI = 5.00f;
+    this->m_bAllowInitialOverlappingAllButQueryOnly = false;
+    this->m_fGMDamageMultiplier = 1.00f;
+}
 
 void AThePlainesGameMode::KillAllAis() {
 }
@@ -26,12 +40,4 @@ bool AThePlainesGameMode::BPE_IsStartupGameMode_Implementation() const {
 void AThePlainesGameMode::AllAisSetFightingState(EFightingState _eFightingState, float _fDuration) {
 }
 
-AThePlainesGameMode::AThePlainesGameMode() {
-    this->m_bOverrideAITraversalInfo = false;
-    this->m_bIsTraversalUniversalLockEnabled = true;
-    this->m_fTraversalLockTime = 1.00f;
-    this->m_fTraversalCooldownPerAI = 5.00f;
-    this->m_bAllowInitialOverlappingAllButQueryOnly = false;
-    this->m_fGMDamageMultiplier = 1.00f;
-}
 

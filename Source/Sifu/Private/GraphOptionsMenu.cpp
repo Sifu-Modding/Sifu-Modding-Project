@@ -1,5 +1,10 @@
 #include "GraphOptionsMenu.h"
 
+UGraphOptionsMenu::UGraphOptionsMenu() {
+    this->m_iCurrentResIndex = -1;
+    this->m_bSetCameraInStartIdlePosition = false;
+}
+
 void UGraphOptionsMenu::OnRequestUIChange() {
 }
 
@@ -16,8 +21,4 @@ void UGraphOptionsMenu::BPF_AutoDetectSettings() {
 void UGraphOptionsMenu::BPF_AcceptSetting() {
 }
 
-UGraphOptionsMenu::UGraphOptionsMenu() {
-    this->m_iCurrentResIndex = -1;
-    this->m_bSetCameraInStartIdlePosition = false;
-}
 

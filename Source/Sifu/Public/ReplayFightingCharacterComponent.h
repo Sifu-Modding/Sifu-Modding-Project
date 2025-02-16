@@ -22,9 +22,10 @@ protected:
     AReplayingCamera* m_CameraDummy;
     
 public:
-    UReplayFightingCharacterComponent();
+    UReplayFightingCharacterComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_VoiceInfos() const;

@@ -8,5 +8,6 @@ class SIFU_API UAttackPreview : public UObject {
     GENERATED_BODY()
 public:
     UAttackPreview();
+
 };
 

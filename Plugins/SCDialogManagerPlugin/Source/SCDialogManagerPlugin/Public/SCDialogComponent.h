@@ -12,19 +12,20 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SCDIALOGMANAGERPLUGIN_API USCDialogComponent : public UBlackboardComponent, public ISCPoolableActorComponent {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FGenericDialogEventDelegate OnGenericDialogEvent;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGenericDialogEventDelegate OnGenericDialogEvent;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UDataTable* m_ContextualDb;
     
 public:
-    USCDialogComponent();
+    USCDialogComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_InitBlackBoardFromAsset(UBlackboardData* _data);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

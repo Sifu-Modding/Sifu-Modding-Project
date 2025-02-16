@@ -8,5 +8,6 @@ class SIFU_API UCharacterProgressionUnlockDB : public UDataAsset {
     GENERATED_BODY()
 public:
     UCharacterProgressionUnlockDB();
+
 };
 

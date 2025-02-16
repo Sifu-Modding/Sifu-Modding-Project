@@ -17,6 +17,7 @@ public:
     FHandleFocusBillboardDelegate m_OnVitalPointSelected;
     
     UAbilityTask_HandleFocusBillboard();
+
     UFUNCTION(BlueprintCallable)
     static UAbilityTask_HandleFocusBillboard* BPF_HandleFocusBillboard(UGameplayAbility* _owningAbility, const FTargetForSlotsEnumHandler& _focusTargetSlot);
     

@@ -1,5 +1,9 @@
 #include "ReplaySpectatorPawnMovement.h"
 
+UReplaySpectatorPawnMovement::UReplaySpectatorPawnMovement(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bIgnoreTimeDilation = true;
+}
+
 void UReplaySpectatorPawnMovement::BPF_SetDirectionConstraintDelegate(FApplyDirectionConstraintSignature _delegate) {
 }
 
@@ -7,6 +11,4 @@ FVector UReplaySpectatorPawnMovement::BPF_GetConstrainedDirection(const FVector&
     return FVector{};
 }
 
-UReplaySpectatorPawnMovement::UReplaySpectatorPawnMovement() {
-}
 

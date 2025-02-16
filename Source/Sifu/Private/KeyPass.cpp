@@ -2,7 +2,14 @@
 #include "InteractionObjectComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class APlayerController;
+AKeyPass::AKeyPass(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->m_InteractionObjectComponent = CreateDefaultSubobject<UInteractionObjectComponent>(TEXT("InteractionObjectComponent"));
+    this->m_bCollected = false;
+    this->m_bForAllPlayers = true;
+}
 
 void AKeyPass::UseInteractiveObject(APlayerController* _controller) {
 }
@@ -18,9 +25,4 @@ void AKeyPass::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetime
     DOREPLIFETIME(AKeyPass, m_bCollected);
 }
 
-AKeyPass::AKeyPass() {
-    this->m_InteractionObjectComponent = CreateDefaultSubobject<UInteractionObjectComponent>(TEXT("InteractionObjectComponent"));
-    this->m_bCollected = false;
-    this->m_bForAllPlayers = true;
-}
 

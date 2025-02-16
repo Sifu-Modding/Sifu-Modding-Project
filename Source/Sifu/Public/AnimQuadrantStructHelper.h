@@ -10,6 +10,7 @@ class UAnimQuadrantStructHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAnimQuadrantStructHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_MakeAnimQuadrantStruct(EQuadrantTypes _eQuadrant, FAnimQuadrantStruct& _outStruct);
     

@@ -1,5 +1,8 @@
 #include "AvoidMatchCondition.h"
 
+UAvoidMatchCondition::UAvoidMatchCondition() {
+}
+
 EAvoidTrackingTypes UAvoidMatchCondition::BPE_GetAttackTrackingResponseFromAvoidType_Implementation(EAvoidType _eAvoidType) const {
     return EAvoidTrackingTypes::TrueTarget;
 }
@@ -12,6 +15,4 @@ bool UAvoidMatchCondition::BPE_DoesAvoidDismissesHit_Implementation(EAvoidType _
     return false;
 }
 
-UAvoidMatchCondition::UAvoidMatchCondition() {
-}
 

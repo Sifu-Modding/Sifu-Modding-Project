@@ -9,7 +9,8 @@ class UPerPlatformWidgetLoader : public UPanelWidget, public IPerPlatformWidget 
     GENERATED_BODY()
 public:
     UPerPlatformWidgetLoader();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

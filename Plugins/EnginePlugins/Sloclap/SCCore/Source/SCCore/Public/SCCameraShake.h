@@ -8,5 +8,6 @@ class SCCORE_API USCCameraShake : public UMatineeCameraShake {
     GENERATED_BODY()
 public:
     USCCameraShake();
+
 };
 

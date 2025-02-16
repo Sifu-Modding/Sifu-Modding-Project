@@ -20,5 +20,6 @@ public:
     FFloatRange m_ValidTimeRange;
     
     UOrderTimeCondition();
+
 };
 

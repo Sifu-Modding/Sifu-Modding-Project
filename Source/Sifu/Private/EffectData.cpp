@@ -25,3 +25,4 @@ UEffectData::UEffectData() {
     this->m_fImpactOnWeaponDurabilityMultiplier = 1.00f;
 }
 
+

@@ -7,6 +7,6 @@ enum class EReplayKeyPresetOverride : uint8 {
     None,
     Blend,
     CameraMode,
-    Fading = 0x4,
+    Fading = 4,
 };
 

@@ -10,6 +10,7 @@ class SIFU_API USCAbilitySystemComponentHelper : public UBlueprintFunctionLibrar
     GENERATED_BODY()
 public:
     USCAbilitySystemComponentHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_AssignOnPlayerTagsChangedDelegate(const FGameplayTag& _matching, const FOnAbilitySystemComponentTagsChangedDelegate& _delegate);
     

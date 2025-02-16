@@ -8,3 +8,4 @@ UOrderFallOnSlopeEntryDB::UOrderFallOnSlopeEntryDB() {
     this->m_SlopeDetectionDB = NULL;
 }
 
+

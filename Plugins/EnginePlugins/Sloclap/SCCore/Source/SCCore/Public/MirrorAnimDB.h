@@ -20,6 +20,7 @@ public:
     USkeleton* m_UberSkeleton;
     
     UMirrorAnimDB();
+
     UFUNCTION(BlueprintCallable)
     FName BPF_GetTwinsBoneName(const FName& _boneName);
     

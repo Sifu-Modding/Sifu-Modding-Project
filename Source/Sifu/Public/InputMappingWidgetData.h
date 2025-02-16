@@ -16,5 +16,6 @@ public:
     EInputMappingForceController m_eControllerType;
     
     UInputMappingWidgetData();
+
 };
 

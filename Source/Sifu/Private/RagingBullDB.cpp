@@ -11,3 +11,4 @@ URagingBullDB::URagingBullDB() {
     this->m_fDistanceToSwitchAnimation = 0.00f;
 }
 
+

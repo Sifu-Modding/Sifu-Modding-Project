@@ -12,5 +12,6 @@ public:
     FBlendProfileBySpeedStateStruct m_BlendProfiles;
     
     UBlendProfileBySpeedStatePayload();
+
 };
 

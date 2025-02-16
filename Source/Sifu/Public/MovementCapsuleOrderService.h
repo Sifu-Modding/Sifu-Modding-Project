@@ -19,5 +19,6 @@ public:
     UCurveFloat* m_Blend;
     
     UMovementCapsuleOrderService();
+
 };
 

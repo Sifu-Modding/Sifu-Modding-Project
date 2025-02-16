@@ -18,6 +18,7 @@ public:
     TArray<FSkillTreeNode> m_Skills;
     
     USkillsChilds();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_GetParent(const FSkillTreeNode& _node, FSkillTreeNode& _parent) const;
     

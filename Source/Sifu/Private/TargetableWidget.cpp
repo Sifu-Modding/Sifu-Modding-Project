@@ -1,8 +1,9 @@
 #include "TargetableWidget.h"
 
-class AActor;
-class USceneComponent;
-class UWidget;
+UTargetableWidget::UTargetableWidget() {
+    this->m_bNotifyPawnChanged = true;
+    this->m_bSetVisibleWhenRelatedActorSet = true;
+}
 
 void UTargetableWidget::BPF_SetRelatedActor(AActor* _actor) {
 }
@@ -21,7 +22,4 @@ void UTargetableWidget::BPF_AddAttachedWidget(UWidget* _widget, FVector _vOffset
 
 
 
-UTargetableWidget::UTargetableWidget() {
-    this->m_bSetVisibleWhenRelatedActorSet = true;
-}
 

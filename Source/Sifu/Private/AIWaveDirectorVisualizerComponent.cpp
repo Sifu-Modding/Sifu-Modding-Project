@@ -1,5 +1,6 @@
 #include "AIWaveDirectorVisualizerComponent.h"
 
-UAIWaveDirectorVisualizerComponent::UAIWaveDirectorVisualizerComponent() {
+UAIWaveDirectorVisualizerComponent::UAIWaveDirectorVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

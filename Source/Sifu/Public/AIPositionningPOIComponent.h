@@ -5,6 +5,7 @@
 #include "AIPositionningPOIComponent.generated.h"
 
 class AAISpawner;
+class AFightingCharacter;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAIPositionningPOIComponent : public UActorComponent {
@@ -18,9 +19,13 @@ private:
     TArray<AAISpawner*> m_AllowedSpawners;
     
 public:
-    UAIPositionningPOIComponent();
+    UAIPositionningPOIComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetData(const FAIPositionningPOI& _data, const TArray<AAISpawner*>& _allowedSpawners);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AFightingCharacter* BPF_GetOccupant() const;
     
 };
 

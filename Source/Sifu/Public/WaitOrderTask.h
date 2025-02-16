@@ -12,5 +12,6 @@ public:
     TArray<EOrderType> m_Orders;
     
     UWaitOrderTask();
+
 };
 

@@ -54,9 +54,10 @@ private:
     float m_RecoveryRateByDangerState[3];
     
 public:
-    UCharacterHealthComponent();
+    UCharacterHealthComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnRepSetIsDown();

@@ -14,13 +14,14 @@ UCLASS(Blueprintable)
 class SIFU_API UAsyncTaskAiLaunchCombo : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnSuccess;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnSuccess;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnFailure;*/
+    FDynamicMulticast OnFailure;
     
     UAsyncTaskAiLaunchCombo();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskAiLaunchCombo* BPF_AIAction_LaunchCombo(UAIFightingComponent* _aiComponent, TSubclassOf<UAIActionLaunchCombo> _actionClass, const FAIComboLaunchParameters& _parameters, UAIActionLaunchCombo*& _action);
     

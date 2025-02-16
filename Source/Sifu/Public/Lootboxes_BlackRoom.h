@@ -10,7 +10,8 @@ UCLASS(Blueprintable)
 class SIFU_API ALootboxes_BlackRoom : public AActor {
     GENERATED_BODY()
 public:
-    ALootboxes_BlackRoom();
+    ALootboxes_BlackRoom(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void LoadTextureAsyncForMaterial(TSoftObjectPtr<UTexture2D> _texture, UMaterialInstanceDynamic* _material, FName _paramName);
     

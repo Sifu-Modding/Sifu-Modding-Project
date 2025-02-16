@@ -31,6 +31,7 @@ public:
     FCharacterStatsBindings m_CurrentCharacterStats;
     
     UCharacterStatsWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_UpdateStats();
     

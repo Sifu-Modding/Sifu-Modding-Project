@@ -16,10 +16,11 @@ public:
     FVector2D SmallScreenSize;
     
     UPerPlatformImage();
+
     UFUNCTION(BlueprintCallable)
     void RefreshGUIs();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

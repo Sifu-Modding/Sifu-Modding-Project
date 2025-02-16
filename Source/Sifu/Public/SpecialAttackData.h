@@ -27,6 +27,7 @@ public:
     UTexture2D* m_AbsorbPicto;
     
     USpecialAttackData();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* GetParryPicto(EParrySide _eParryType);
     

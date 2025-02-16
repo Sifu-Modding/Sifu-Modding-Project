@@ -14,5 +14,6 @@ public:
     FText m_NotificationText;
     
     UCharacterProgressionUnlockPowerDB();
+
 };
 

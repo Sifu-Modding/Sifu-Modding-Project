@@ -8,5 +8,6 @@ class SIFU_API USCDemoNetDriver : public UObject {
     GENERATED_BODY()
 public:
     USCDemoNetDriver();
+
 };
 

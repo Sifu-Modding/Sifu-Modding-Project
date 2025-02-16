@@ -16,5 +16,6 @@ public:
     ELevelSequenceAIBehavior m_ForcedAIBehavior;
     
     UWGLevelSequenceRoleData();
+
 };
 

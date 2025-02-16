@@ -25,6 +25,7 @@ private:
     ELinkWithExternalBehavior m_eExternalLinkBehavior;
     
 public:
-    UTraversalNavLinkCustomComponent();
+    UTraversalNavLinkCustomComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

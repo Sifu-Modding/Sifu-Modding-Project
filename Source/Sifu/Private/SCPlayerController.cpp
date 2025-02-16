@@ -1,8 +1,8 @@
 #include "SCPlayerController.h"
 
-class AActor;
-class UInputContextData;
-class UUserWidget;
+ASCPlayerController::ASCPlayerController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ClickEventKeys.AddDefaulted(1);
+}
 
 void ASCPlayerController::UnlockAllAchievements() {
 }
@@ -59,7 +59,7 @@ bool ASCPlayerController::BPF_IsAchievementCompleted(const FString& _achievement
     return false;
 }
 
-bool ASCPlayerController::BPF_HasUnlockAllAchievements() {
+bool ASCPlayerController::BPF_HasUnlockAllAchievements(TArray<FString> _achievementsToIgnore) {
     return false;
 }
 
@@ -85,6 +85,4 @@ void ASCPlayerController::BPF_ChangeActivityAvailability(const FString& _activit
 
 
 
-ASCPlayerController::ASCPlayerController() {
-}
 

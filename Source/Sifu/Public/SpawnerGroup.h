@@ -68,9 +68,10 @@ private:
     EEnemyPresenceKnownType m_eMCPresenceKnownType;
     
 public:
-    ASpawnerGroup();
+    ASpawnerGroup(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_TriggerBehaviorChange(AActor* _alertedBy, const EGlobalBehaviors _eNewBehavior, bool _bSkipBark) const;
     

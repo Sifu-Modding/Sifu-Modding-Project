@@ -13,6 +13,7 @@ private:
     
 public:
     UTabWidget();
+
     UFUNCTION(BlueprintCallable)
     uint8 BPF_GetEnumValue();
     

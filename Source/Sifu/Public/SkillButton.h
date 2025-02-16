@@ -30,6 +30,7 @@ public:
     USkillsDB* m_DB;
     
     USkillButton();
+
     UFUNCTION(BlueprintCallable)
     void BPF_UpdateButtonLocation(ASkillTree* SkillTree);
     

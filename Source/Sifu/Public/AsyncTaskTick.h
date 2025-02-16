@@ -19,6 +19,7 @@ public:
     FAsyncTaskTickDel OnFinished;
     
     UAsyncTaskTick();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskTick* BPF_Tick(UAsyncTaskTick* _existingTask, UObject* _menu, float _fFrequency, float _fDuration);
     

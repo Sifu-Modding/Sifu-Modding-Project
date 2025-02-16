@@ -10,6 +10,7 @@ class SIFU_API USoundGroundAnimNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
     USoundGroundAnimNotify();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_NotifyGround(USkeletalMeshComponent* _meshComp, uint8 _surface) const;
     

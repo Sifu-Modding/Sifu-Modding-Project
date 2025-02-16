@@ -21,7 +21,8 @@ protected:
     UBoxComponent* m_ExitBoxComponent;
     
 public:
-    ASCTeleporter();
+    ASCTeleporter(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveActorToTeleport(AActor* _leavingActor);
     

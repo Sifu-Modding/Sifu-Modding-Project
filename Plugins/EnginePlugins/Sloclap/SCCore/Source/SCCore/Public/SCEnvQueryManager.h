@@ -8,5 +8,6 @@ class SCCORE_API USCEnvQueryManager : public UEnvQueryManager {
     GENERATED_BODY()
 public:
     USCEnvQueryManager();
+
 };
 

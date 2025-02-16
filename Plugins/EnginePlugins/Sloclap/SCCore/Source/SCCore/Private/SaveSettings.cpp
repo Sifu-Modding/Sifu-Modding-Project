@@ -13,3 +13,4 @@ USaveSettings::USaveSettings() {
     this->m_fMaxBlockingSaveDuration = 4.00f;
 }
 
+

@@ -5,3 +5,4 @@ UGenericAvailabilityLayerDB::UGenericAvailabilityLayerDB() {
     this->m_eALBinaryOperation = EALBinaryOperation::AND;
 }
 
+

@@ -35,7 +35,8 @@ public:
     bool SmallScreenIgnoreInheritedScale;
     
     UPerPlatformScaleBox();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

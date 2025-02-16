@@ -1,10 +1,9 @@
 #include "SCActorManager.h"
 
-class AActor;
+USCActorManager::USCActorManager() {
+}
 
 void USCActorManager::OnActorDestroyed(AActor* _actorDestroyed) {
 }
 
-USCActorManager::USCActorManager() {
-}
 

@@ -14,6 +14,7 @@ private:
     TArray<ASCTestingLocationsBase*> m_TestingLocations;
     
 public:
-    ASCGauntletPerfTestActor();
+    ASCGauntletPerfTestActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

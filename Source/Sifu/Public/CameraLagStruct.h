@@ -36,5 +36,6 @@ public:
     FVector2D m_vInputLagConstantIncrementFadeOut;
     
     UCameraLagStruct();
+
 };
 

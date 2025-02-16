@@ -1,5 +1,8 @@
 #include "TransitionCanInterruptNotifyState.h"
 
+UTransitionCanInterruptNotifyState::UTransitionCanInterruptNotifyState() {
+}
+
 void UTransitionCanInterruptNotifyState::InvertUTurn() const {
 }
 
@@ -24,6 +27,4 @@ void UTransitionCanInterruptNotifyState::AllowNone() const {
 void UTransitionCanInterruptNotifyState::AllowAll() const {
 }
 
-UTransitionCanInterruptNotifyState::UTransitionCanInterruptNotifyState() {
-}
 

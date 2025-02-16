@@ -8,5 +8,6 @@ class SIFU_API UParriedBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UParriedBTTask();
+
 };
 

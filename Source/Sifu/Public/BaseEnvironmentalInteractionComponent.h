@@ -25,7 +25,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_uiAllowedInteractionTypes;
     
-    UBaseEnvironmentalInteractionComponent();
+    UBaseEnvironmentalInteractionComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnTakedownStarted(AFightingCharacter* _Instigator, AFightingCharacter* _takenDown);
     

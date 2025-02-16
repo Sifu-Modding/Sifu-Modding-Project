@@ -45,6 +45,8 @@ enum class EGameOptionTypes : uint8 {
     UIDarkMode,
     AudioOutput,
     CameraAnimDrivenSurrounding,
+    ReduceEffectIntensity,
+    UseSmallScreenSize,
     Count,
     None,
 };

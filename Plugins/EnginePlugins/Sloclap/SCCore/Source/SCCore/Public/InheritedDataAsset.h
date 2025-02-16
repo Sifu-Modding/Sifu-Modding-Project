@@ -13,5 +13,6 @@ public:
     UInheritedDataAsset* m_Parent;
     
     UInheritedDataAsset();
+
 };
 

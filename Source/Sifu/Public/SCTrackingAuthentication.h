@@ -8,5 +8,6 @@ class USCTrackingAuthentication : public UObject {
     GENERATED_BODY()
 public:
     USCTrackingAuthentication();
+
 };
 

@@ -8,5 +8,6 @@ class SCCORE_API UGameFlowController : public UObject {
     GENERATED_BODY()
 public:
     UGameFlowController();
+
 };
 

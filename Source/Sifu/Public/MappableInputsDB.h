@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "RemappingSectionStruct.h"
 #include "MappableInputsDB.generated.h"
 
@@ -33,5 +33,6 @@ public:
     TArray<FRemappingSectionStruct> m_MappableInputsSection;
     
     UMappableInputsDB();
+
 };
 

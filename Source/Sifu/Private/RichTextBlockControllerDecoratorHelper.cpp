@@ -1,5 +1,8 @@
 #include "RichTextBlockControllerDecoratorHelper.h"
 
+URichTextBlockControllerDecoratorHelper::URichTextBlockControllerDecoratorHelper() {
+}
+
 FString URichTextBlockControllerDecoratorHelper::BPF_GetInputActionValueName(InputAction _eAction) {
     return TEXT("");
 }
@@ -12,6 +15,4 @@ FString URichTextBlockControllerDecoratorHelper::BPF_GetControllerIconAxisTypesV
     return TEXT("");
 }
 
-URichTextBlockControllerDecoratorHelper::URichTextBlockControllerDecoratorHelper() {
-}
 

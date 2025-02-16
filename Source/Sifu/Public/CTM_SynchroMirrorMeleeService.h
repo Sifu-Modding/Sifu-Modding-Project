@@ -8,5 +8,6 @@ class SIFU_API UCTM_SynchroMirrorMeleeService : public UCameraTransitionModule {
     GENERATED_BODY()
 public:
     UCTM_SynchroMirrorMeleeService();
+
 };
 

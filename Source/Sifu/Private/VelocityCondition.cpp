@@ -5,3 +5,4 @@ UVelocityCondition::UVelocityCondition() {
     this->m_fVelocity = 100.00f;
 }
 
+

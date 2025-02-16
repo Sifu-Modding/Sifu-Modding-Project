@@ -24,6 +24,7 @@ protected:
     
 public:
     USCFootIkRaycast();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoRaycast(FHitResult& _outHitResult, USCFootIkAnimInstance* _footAnimInstance, const FVector& _vStart, const FVector& _vEnd) const;
     

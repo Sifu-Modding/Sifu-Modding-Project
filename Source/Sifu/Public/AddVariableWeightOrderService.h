@@ -23,5 +23,6 @@ public:
     bool m_bRemoveOnOrderServiceStop;
     
     UAddVariableWeightOrderService();
+
 };
 

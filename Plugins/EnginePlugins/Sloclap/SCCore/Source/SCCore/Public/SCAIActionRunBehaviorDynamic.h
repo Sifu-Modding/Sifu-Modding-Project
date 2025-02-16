@@ -8,5 +8,6 @@ class SCCORE_API USCAIActionRunBehaviorDynamic : public UBTTask_RunBehaviorDynam
     GENERATED_BODY()
 public:
     USCAIActionRunBehaviorDynamic();
+
 };
 

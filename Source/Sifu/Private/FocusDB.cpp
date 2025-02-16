@@ -16,3 +16,4 @@ UFocusDB::UFocusDB() {
     this->m_fVitalPointsFXFadeInDuration = 0.15f;
 }
 
+

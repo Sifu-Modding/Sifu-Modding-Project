@@ -14,3 +14,4 @@ USCLevelSequenceDirectorData::USCLevelSequenceDirectorData() {
     this->m_eCinematicLayerType = ECinematicLayerTypes::CinematicLayer1;
 }
 
+

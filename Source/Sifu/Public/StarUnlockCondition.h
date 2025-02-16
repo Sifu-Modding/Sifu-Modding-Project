@@ -10,8 +10,12 @@ class SIFU_API UStarUnlockCondition : public UObject {
     GENERATED_BODY()
 public:
     UStarUnlockCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_VerifyCondition() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BPE_RemoveCallbacks(AFightingCharacter* _FightingCharacter);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_BindCallbacks(AFightingCharacter* _FightingCharacter);

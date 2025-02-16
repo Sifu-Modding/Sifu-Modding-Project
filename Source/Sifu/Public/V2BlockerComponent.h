@@ -9,7 +9,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UV2BlockerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UV2BlockerComponent();
+    UV2BlockerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnActorEndOverlap(AActor* _overlappedActor, AActor* _otherActor);
     

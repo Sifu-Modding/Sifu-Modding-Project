@@ -12,5 +12,6 @@ public:
     InputAction m_eAction;
     
     UActionAvailableCondition();
+
 };
 

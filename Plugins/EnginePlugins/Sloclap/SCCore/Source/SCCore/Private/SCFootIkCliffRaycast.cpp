@@ -5,3 +5,4 @@ USCFootIkCliffRaycast::USCFootIkCliffRaycast() {
     this->m_fCliffOffset = 10.00f;
 }
 
+

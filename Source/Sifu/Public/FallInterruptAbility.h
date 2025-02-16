@@ -8,5 +8,6 @@ class SIFU_API UFallInterruptAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UFallInterruptAbility();
+
 };
 

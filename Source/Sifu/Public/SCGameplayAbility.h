@@ -79,6 +79,7 @@ private:
     
 public:
     USCGameplayAbility();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UBaseTargetEvaluation* BPF_GetTargetEvaluationFromTargetResult(const AFightingCharacter* _character, const FTargetResult& _targetInfos) const;
     

@@ -5,7 +5,7 @@
 #include "InputContext.h"
 #include "WGLevelSequenceDirectorData.generated.h"
 
-class UAkAudioEvent;
+//class UAkAudioEvent;
 
 UCLASS(Blueprintable, CollapseCategories)
 class SIFU_API UWGLevelSequenceDirectorData : public USCLevelSequenceDirectorData {
@@ -26,12 +26,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bForceOutOfIdle;
     
-  /*  UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<UAkAudioEvent*> m_AudioEventsOnStart;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // TArray<UAkAudioEvent*> m_AudioEventsOnStart;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<UAkAudioEvent*> m_AudioEventsOnFinish;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // TArray<UAkAudioEvent*> m_AudioEventsOnFinish;
     
     UWGLevelSequenceDirectorData();
+
 };
 

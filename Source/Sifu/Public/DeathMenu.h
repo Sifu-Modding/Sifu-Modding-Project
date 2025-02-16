@@ -8,6 +8,7 @@ class SIFU_API UDeathMenu : public UMenuWidget {
     GENERATED_BODY()
 public:
     UDeathMenu();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_StandBackUp();

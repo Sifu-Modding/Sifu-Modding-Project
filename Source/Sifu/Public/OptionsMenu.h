@@ -8,5 +8,6 @@ class SIFU_API UOptionsMenu : public UMenuWidget {
     GENERATED_BODY()
 public:
     UOptionsMenu();
+
 };
 

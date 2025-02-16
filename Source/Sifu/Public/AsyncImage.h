@@ -40,6 +40,7 @@ protected:
     
 public:
     UAsyncImage();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetTexture(UTexture2D* _asset, bool _bMatchSize);
     

@@ -10,9 +10,41 @@
 #include "Templates/SubclassOf.h"
 #include "ThrowableObjMovementComponent.h"
 
-class AActor;
-class AFightingCharacter;
-class UThrowableData;
+AThrowableActor::AThrowableActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxColl"));
+    this->m_bEnableSreamingEvents = true;
+    this->m_bIsPickedupFromSpawning = false;
+    this->m_ThrowAnimRequest = NULL;
+    this->m_BoxColl = (UBoxComponent*)RootComponent;
+    this->m_BreakableProximity = CreateDefaultSubobject<USphereComponent>(TEXT("BreakableProximity"));
+    this->m_ThrowPivot = CreateDefaultSubobject<USceneComponent>(TEXT("ThrowPivot"));
+    this->m_PhysicalActorDependencyComponent = CreateDefaultSubobject<UPhysicalActorDependencyComponent>(TEXT("PhysicalDependencyComp"));
+    this->m_fDistToThrow = 200.00f;
+    this->m_MovementComponent = CreateDefaultSubobject<UThrowableObjMovementComponent>(TEXT("MovementComponent"));
+    this->m_PerceptionStimuli = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("PerceptionStimuliComponent"));
+    this->m_ReplayablePhysObjectComponent = CreateDefaultSubobject<UReplayablePhysObjectComponent>(TEXT("ReplayablePhysObjectComponent"));
+    this->m_ReplayableDestructionComponent = CreateDefaultSubobject<UReplayableDestructionComponent>(TEXT("ReplayableDestructionComponent"));
+    this->m_throwHitBox = CreateDefaultSubobject<UHitBoxComponent>(TEXT("ThrowHitBoxComponent"));
+    this->m_fTimeIgnoreFloor = 0.50f;
+    this->m_fOnTargetHitSpeedReduction = 3.00f;
+    this->m_fMissingSpeedReduc = 2.00f;
+    this->m_fMissedDistance = 50.00f;
+    this->m_bApplyGravityWhenFlyingFreely = true;
+    this->m_eBounceType = EBounceType::SimpleBounce;
+    this->m_eCurrentBounceType = EBounceType::SimpleBounce;
+    this->m_BounceBackAngle = NULL;
+    this->m_bSimulatePhysicOnSpawn = true;
+    this->m_eTargettedHeight = EHeight::None;
+    this->m_eAltTargettedHeight = EHeight::Low;
+    this->m_fHeightLimitForFootAnimation = 20.00f;
+    this->m_bUseAlternateHeightForFreeThrow = false;
+    this->m_fOffsetDistTrace = 20.00f;
+    this->m_fDistToCheckCollOnPathFreely = 400.00f;
+    this->m_fSoundNoiseRadius = 1000.00f;
+    this->m_bDestroyActorOnBreak = false;
+    this->m_throwableData = NULL;
+    this->m_eState = EThrowableState::None;
+}
 
 void AThrowableActor::OnWakeUp(bool _bWakesUp) {
 }
@@ -61,40 +93,8 @@ EDebugTargetState AThrowableActor::BPF_GetDebugTargetState(const AFightingCharac
 
 
 
+
 void AThrowableActor::BPE_GetHitBox_Implementation(FHitBox& _outHitbox, AActor* _actorHit) {
 }
 
-AThrowableActor::AThrowableActor() {
-    this->m_bIsPickedupFromSpawning = false;
-    this->m_ThrowAnimRequest = NULL;
-    this->m_BoxColl = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxColl"));
-    this->m_BreakableProximity = CreateDefaultSubobject<USphereComponent>(TEXT("BreakableProximity"));
-    this->m_ThrowPivot = CreateDefaultSubobject<USceneComponent>(TEXT("ThrowPivot"));
-    this->m_PhysicalActorDependencyComponent = CreateDefaultSubobject<UPhysicalActorDependencyComponent>(TEXT("PhysicalDependencyComp"));
-    this->m_fDistToThrow = 200.00f;
-    this->m_MovementComponent = CreateDefaultSubobject<UThrowableObjMovementComponent>(TEXT("MovementComponent"));
-    this->m_PerceptionStimuli = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("PerceptionStimuliComponent"));
-    this->m_ReplayablePhysObjectComponent = CreateDefaultSubobject<UReplayablePhysObjectComponent>(TEXT("ReplayablePhysObjectComponent"));
-    this->m_ReplayableDestructionComponent = CreateDefaultSubobject<UReplayableDestructionComponent>(TEXT("ReplayableDestructionComponent"));
-    this->m_throwHitBox = CreateDefaultSubobject<UHitBoxComponent>(TEXT("ThrowHitBoxComponent"));
-    this->m_fTimeIgnoreFloor = 0.50f;
-    this->m_fOnTargetHitSpeedReduction = 3.00f;
-    this->m_fMissingSpeedReduc = 2.00f;
-    this->m_fMissedDistance = 50.00f;
-    this->m_bApplyGravityWhenFlyingFreely = true;
-    this->m_eBounceType = EBounceType::SimpleBounce;
-    this->m_eCurrentBounceType = EBounceType::SimpleBounce;
-    this->m_BounceBackAngle = NULL;
-    this->m_bSimulatePhysicOnSpawn = true;
-    this->m_eTargettedHeight = EHeight::None;
-    this->m_eAltTargettedHeight = EHeight::Low;
-    this->m_fHeightLimitForFootAnimation = 20.00f;
-    this->m_bUseAlternateHeightForFreeThrow = false;
-    this->m_fOffsetDistTrace = 20.00f;
-    this->m_fDistToCheckCollOnPathFreely = 400.00f;
-    this->m_fSoundNoiseRadius = 1000.00f;
-    this->m_bDestroyActorOnBreak = false;
-    this->m_throwableData = NULL;
-    this->m_eState = EThrowableState::None;
-}
 

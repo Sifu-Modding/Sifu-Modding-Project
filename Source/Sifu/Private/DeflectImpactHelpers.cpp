@@ -1,6 +1,7 @@
 #include "DeflectImpactHelpers.h"
 
-class AFightingCharacter;
+UDeflectImpactHelpers::UDeflectImpactHelpers() {
+}
 
 FAppliedHitImpact UDeflectImpactHelpers::BPF_MakeAppliedHitImpact(const FHitImpact& _hitImpact, const AFightingCharacter* _defender) {
     return FAppliedHitImpact{};
@@ -10,6 +11,4 @@ FAppliedDeflectImpact UDeflectImpactHelpers::BPF_MakeAppliedDeflectImpact(const 
     return FAppliedDeflectImpact{};
 }
 
-UDeflectImpactHelpers::UDeflectImpactHelpers() {
-}
 

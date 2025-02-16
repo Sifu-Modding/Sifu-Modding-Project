@@ -6,3 +6,4 @@ UOrderTargetCondition::UOrderTargetCondition() {
     this->m_eRequiredTargetOrderType = EOrderType::None;
 }
 
+

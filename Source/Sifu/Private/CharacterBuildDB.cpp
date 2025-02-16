@@ -4,3 +4,4 @@ UCharacterBuildDB::UCharacterBuildDB() {
     this->m_eGender = ECharacterGender::Woman;
 }
 
+

@@ -13,6 +13,7 @@ class USCGameplayAbilityActorInfoHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCGameplayAbilityActorInfoHelper();
+
 private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static USCAbilitySystemComponent* BPF_GetSCAbilitySystem(const FSCGameplayAbilityActorInfo& _info);

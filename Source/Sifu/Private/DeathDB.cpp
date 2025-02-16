@@ -15,3 +15,4 @@ UDeathDB::UDeathDB() {
     this->m_bCameraTargetPelvis = false;
 }
 
+

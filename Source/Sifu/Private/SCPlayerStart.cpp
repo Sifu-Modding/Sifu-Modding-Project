@@ -1,12 +1,7 @@
 #include "SCPlayerStart.h"
 #include "Components/SceneComponent.h"
 
-bool ASCPlayerStart::BPF_WantKeepBackgroundDuringStartupMenu() const {
-    return false;
-}
-
-
-ASCPlayerStart::ASCPlayerStart() : APlayerStart(FObjectInitializer::Get()) {
+ASCPlayerStart::ASCPlayerStart(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_AnchorSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("AnchorForSequence"));
     this->m_bKeepBackGroundDuringStartupMenu = false;
     this->m_spawnedPlayer = NULL;
@@ -16,5 +11,12 @@ ASCPlayerStart::ASCPlayerStart() : APlayerStart(FObjectInitializer::Get()) {
     this->m_StartupSequence = NULL;
     this->m_fCameraBlendDurationBetweenLoopAndGoto = 0.50f;
     this->m_CameraShakeClass = NULL;
+    this->m_AnchorSceneComponent->SetupAttachment(RootComponent);
 }
+
+bool ASCPlayerStart::BPF_WantKeepBackgroundDuringStartupMenu() const {
+    return false;
+}
+
+
 

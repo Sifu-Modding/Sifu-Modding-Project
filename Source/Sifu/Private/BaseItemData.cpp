@@ -9,3 +9,4 @@ UBaseItemData::UBaseItemData() {
     this->m_bCanBeDyed = true;
 }
 
+

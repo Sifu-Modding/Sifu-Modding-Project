@@ -1,7 +1,7 @@
 #include "WGGameplayStatics.h"
 
-class ACharacter;
-class UObject;
+UWGGameplayStatics::UWGGameplayStatics() {
+}
 
 FName UWGGameplayStatics::BPF_StartConversation(ACharacter* _character, FName _startingSegment, const bool _bGenericSubtitles, ACharacter* _secondary, bool _bCutOtherDialogs, bool _bLookAtEnabled, bool _bIgnoreCharacterCanSpeak) {
     return NAME_None;
@@ -16,6 +16,10 @@ bool UWGGameplayStatics::BPF_IsGameOver(UObject* _worldContext) {
 
 bool UWGGameplayStatics::BPF_IsChallengeGameMode(UObject* _worldContext) {
     return false;
+}
+
+EGameDifficulty UWGGameplayStatics::BPF_GetGameDifficultyInSave() {
+    return EGameDifficulty::Normal;
 }
 
 EGameDifficulty UWGGameplayStatics::BPF_GetGameDifficulty(bool _bNeedSaveGame) {
@@ -52,6 +56,4 @@ bool UWGGameplayStatics::BPF_CorsairClearAllStates() {
     return false;
 }
 
-UWGGameplayStatics::UWGGameplayStatics() {
-}
 

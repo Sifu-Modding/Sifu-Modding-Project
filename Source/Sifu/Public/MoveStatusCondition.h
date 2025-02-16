@@ -12,5 +12,6 @@ public:
     EMoveStatus m_eMoveStatus;
     
     UMoveStatusCondition();
+
 };
 

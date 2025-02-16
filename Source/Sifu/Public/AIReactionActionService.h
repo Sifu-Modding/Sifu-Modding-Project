@@ -8,5 +8,6 @@ class SIFU_API UAIReactionActionService : public UBTService {
     GENERATED_BODY()
 public:
     UAIReactionActionService();
+
 };
 

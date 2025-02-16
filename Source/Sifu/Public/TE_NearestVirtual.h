@@ -8,5 +8,6 @@ class SIFU_API UTE_NearestVirtual : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:
     UTE_NearestVirtual();
+
 };
 

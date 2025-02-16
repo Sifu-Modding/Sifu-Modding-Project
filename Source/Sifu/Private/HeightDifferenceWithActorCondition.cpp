@@ -4,3 +4,4 @@ UHeightDifferenceWithActorCondition::UHeightDifferenceWithActorCondition() {
     this->m_HeightDiffCurve = NULL;
 }
 
+

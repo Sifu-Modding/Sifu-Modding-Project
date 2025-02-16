@@ -8,5 +8,6 @@ class SIFU_API UComboAIConditionIsInLastManPhaseScenario : public UAIComboCondit
     GENERATED_BODY()
 public:
     UComboAIConditionIsInLastManPhaseScenario();
+
 };
 

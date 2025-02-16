@@ -12,10 +12,11 @@ UCLASS(Blueprintable)
 class SIFU_API UAsyncWaitForInputAvailability : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnInputAvailable;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnInputAvailable;
     
     UAsyncWaitForInputAvailability();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncWaitForInputAvailability* BPF_WaitForInputAvailability(ABaseCharacter* _inCharacter, InputAction _eInInputAction);
     

@@ -172,9 +172,10 @@ private:
     UAttackPropertiesResistanceDB* m_AttackPropertyResistanceDB;
     
 public:
-    UDefenseComponent();
+    UDefenseComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetGuardValue(float _fGuard);
     
@@ -344,7 +345,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     uint8 AbsorbStacksLeft(bool _bInPrediction) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

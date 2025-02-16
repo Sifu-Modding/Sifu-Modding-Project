@@ -13,6 +13,7 @@ public:
     TArray<FInputMappingGroup> m_MappingGroups;
     
     UInputMappingProfileContextDB();
+
     UFUNCTION(BlueprintCallable)
     FString BPF_GetInputMappingDesc(const FInputMapping& _mapping);
     

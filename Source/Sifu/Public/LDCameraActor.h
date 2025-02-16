@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SIFU_API ALDCameraActor : public ASCActor {
     GENERATED_BODY()
 public:
-    ALDCameraActor();
+    ALDCameraActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

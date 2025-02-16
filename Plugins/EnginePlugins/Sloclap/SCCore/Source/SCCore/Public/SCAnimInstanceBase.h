@@ -16,8 +16,9 @@ protected:
     
 public:
     USCAnimInstanceBase();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_AnimInstanceUpdateEnable();

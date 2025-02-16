@@ -50,6 +50,7 @@ protected:
     
 public:
     UReplayMenuWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_RestoreOverlay();
@@ -145,7 +146,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnAnyInputConsumed();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

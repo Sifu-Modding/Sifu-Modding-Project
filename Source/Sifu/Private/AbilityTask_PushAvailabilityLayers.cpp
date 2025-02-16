@@ -1,8 +1,8 @@
 #include "AbilityTask_PushAvailabilityLayers.h"
 
-class UAbilityTask_PushAvailabilityLayers;
-class UAvailabilityLayerData;
-class UGameplayAbility;
+UAbilityTask_PushAvailabilityLayers::UAbilityTask_PushAvailabilityLayers() {
+    this->m_availabilityLayerData = NULL;
+}
 
 UAbilityTask_PushAvailabilityLayers* UAbilityTask_PushAvailabilityLayers::BPF_PushAvailabilityLayerWithContext(UGameplayAbility* _owningAbility, UAvailabilityLayerData* _AvailabilityLayerData, EALBinaryOperation _eOperation, int32 m_iPriority, bool _bPushContext, EALPriority _eContextPriority) {
     return NULL;
@@ -12,7 +12,4 @@ UAbilityTask_PushAvailabilityLayers* UAbilityTask_PushAvailabilityLayers::BPF_Pu
     return NULL;
 }
 
-UAbilityTask_PushAvailabilityLayers::UAbilityTask_PushAvailabilityLayers() {
-    this->m_availabilityLayerData = NULL;
-}
 

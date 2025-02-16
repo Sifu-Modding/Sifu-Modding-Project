@@ -1,6 +1,10 @@
 #include "ReplayableDestructionComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UReplayableDestructionComponent::UReplayableDestructionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bBroken = false;
+}
+
 void UReplayableDestructionComponent::OnRep_BrokenStateUpdate() {
 }
 
@@ -10,7 +14,4 @@ void UReplayableDestructionComponent::GetLifetimeReplicatedProps(TArray<FLifetim
     DOREPLIFETIME(UReplayableDestructionComponent, m_bBroken);
 }
 
-UReplayableDestructionComponent::UReplayableDestructionComponent() {
-    this->m_bBroken = false;
-}
 

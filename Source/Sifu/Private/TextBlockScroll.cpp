@@ -1,7 +1,12 @@
 #include "TextBlockScroll.h"
 
-class URetainerBox;
-class UTextBlock;
+UTextBlockScroll::UTextBlockScroll() {
+    this->m_fRestartDelay = 2.00f;
+    this->m_fPixelPerSeconds = 20.00f;
+    this->m_MaterialInstance = NULL;
+    this->m_Material = NULL;
+    this->m_fMargin = 25.00f;
+}
 
 void UTextBlockScroll::BPF_SetOpacity_Implementation(const float& _fOpacity) {
 }
@@ -15,11 +20,4 @@ void UTextBlockScroll::BPF_RestartScroll() {
 
 
 
-UTextBlockScroll::UTextBlockScroll() {
-    this->m_fRestartDelay = 2.00f;
-    this->m_fPixelPerSeconds = 20.00f;
-    this->m_MaterialInstance = NULL;
-    this->m_Material = NULL;
-    this->m_fMargin = 25.00f;
-}
 

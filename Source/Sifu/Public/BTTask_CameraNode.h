@@ -13,5 +13,6 @@ public:
     UAbstractCameraData* m_CameraData;
     
     UBTTask_CameraNode();
+
 };
 

@@ -30,5 +30,6 @@ public:
     bool m_bShouldEndCombo;
     
     UAvoidPropertyDB();
+
 };
 

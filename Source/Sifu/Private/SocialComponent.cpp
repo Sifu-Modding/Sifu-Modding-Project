@@ -1,7 +1,19 @@
 #include "SocialComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
+USocialComponent::USocialComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_EmoteDataTable = NULL;
+    this->m_fReceivedRequestTimeout = 10.00f;
+    this->m_fRequestBroadcastRange = 1500.00f;
+    this->m_uiHitCountThresholdForWarning = 2;
+    this->m_fHealthPercentThresholdForWarning = 0.05f;
+    this->m_uiHitCountThresholdForFight = 3;
+    this->m_fHealthPercentThresholdForFight = 0.10f;
+    this->m_fFightDetectionTimeOut = 10.00f;
+    this->m_fFightTimeOut = 10.00f;
+    this->m_fFightRange = 1500.00f;
+    this->m_fCoopResolutionTimeOut = 10.00f;
+}
 
 void USocialComponent::ServerStopCoop_Implementation() {
 }
@@ -210,17 +222,4 @@ void USocialComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(USocialComponent, m_InFightPlayers);
 }
 
-USocialComponent::USocialComponent() {
-    this->m_EmoteDataTable = NULL;
-    this->m_fReceivedRequestTimeout = 10.00f;
-    this->m_fRequestBroadcastRange = 1500.00f;
-    this->m_uiHitCountThresholdForWarning = 2;
-    this->m_fHealthPercentThresholdForWarning = 0.05f;
-    this->m_uiHitCountThresholdForFight = 3;
-    this->m_fHealthPercentThresholdForFight = 0.10f;
-    this->m_fFightDetectionTimeOut = 10.00f;
-    this->m_fFightTimeOut = 10.00f;
-    this->m_fFightRange = 1500.00f;
-    this->m_fCoopResolutionTimeOut = 10.00f;
-}
 

@@ -11,7 +11,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FAIDebugSpawnerInstance> m_Spawners;
     
-    UAIDebugSpawnerComponent();
+    UAIDebugSpawnerComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SpawnAIs(int32 _iCoun);
     

@@ -8,5 +8,6 @@ class SCCORE_API USCAIPerceptionSystem : public UAIPerceptionSystem {
     GENERATED_BODY()
 public:
     USCAIPerceptionSystem();
+
 };
 

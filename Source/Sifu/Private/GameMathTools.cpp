@@ -1,7 +1,7 @@
 #include "GameMathTools.h"
 
-class AActor;
-class AFightingCharacter;
+UGameMathTools::UGameMathTools() {
+}
 
 EQuadrantTypes UGameMathTools::GetQuadrantTowardTarget(AFightingCharacter* _originChar, AActor* _target) {
     return EQuadrantTypes::FrontLeft;
@@ -34,6 +34,4 @@ ESCRotationWay UGameMathTools::ComputeBlendWay(const EQuadrantTypes _eStartQuadr
     return ESCRotationWay::ClockWise;
 }
 
-UGameMathTools::UGameMathTools() {
-}
 

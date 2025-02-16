@@ -1,6 +1,7 @@
 #include "SCDialogGameplayStatics.h"
 
-class ACharacter;
+USCDialogGameplayStatics::USCDialogGameplayStatics() {
+}
 
 void USCDialogGameplayStatics::BPF_PlayDialogLine(ACharacter* _character, FName _line, const bool _bGenericSubtitles) {
 }
@@ -13,6 +14,4 @@ bool USCDialogGameplayStatics::BPF_IsInvolvedInConversation(const ACharacter* _c
     return false;
 }
 
-USCDialogGameplayStatics::USCDialogGameplayStatics() {
-}
 

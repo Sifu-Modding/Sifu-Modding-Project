@@ -8,5 +8,6 @@ class SIFU_API UOverwriteDropOnBreakMomentNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     UOverwriteDropOnBreakMomentNotify();
+
 };
 

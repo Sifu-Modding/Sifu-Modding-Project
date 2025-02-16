@@ -27,7 +27,8 @@ private:
     bool m_bHasPriorityIfVisible;
     
 public:
-    AAIWaveSpawner();
+    AAIWaveSpawner(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetArchetypeToSpawn(EAIArchetype _eArchetype);
     

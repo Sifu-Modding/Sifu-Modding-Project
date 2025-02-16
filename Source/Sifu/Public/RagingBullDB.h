@@ -53,5 +53,6 @@ public:
     FRagingBullAnimContainer m_exitAnimContainer;
     
     URagingBullDB();
+
 };
 

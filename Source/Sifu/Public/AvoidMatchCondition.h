@@ -12,6 +12,7 @@ class SIFU_API UAvoidMatchCondition : public UObject {
     GENERATED_BODY()
 public:
     UAvoidMatchCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     EAvoidTrackingTypes BPE_GetAttackTrackingResponseFromAvoidType(EAvoidType _eAvoidType) const;
     

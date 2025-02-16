@@ -51,6 +51,7 @@ protected:
     
 public:
     UWGAiAction();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnGlobalBehaviorChanged(EGlobalBehaviors _eBehavior, const bool _bFromDialog);

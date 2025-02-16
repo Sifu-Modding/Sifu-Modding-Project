@@ -1,5 +1,8 @@
 #include "BindableFlagProperty.h"
 
+UBindableFlagProperty::UBindableFlagProperty() {
+}
+
 void UBindableFlagProperty::BPF_RemoveFlags(int32 _iFlags) {
 }
 
@@ -14,6 +17,4 @@ bool UBindableFlagProperty::BPF_HasAllFlags(int32 _iFlags) const {
 void UBindableFlagProperty::BPF_AddFlags(int32 _iFlags) {
 }
 
-UBindableFlagProperty::UBindableFlagProperty() {
-}
 

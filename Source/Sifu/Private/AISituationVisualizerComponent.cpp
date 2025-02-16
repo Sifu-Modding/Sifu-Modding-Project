@@ -1,5 +1,6 @@
 #include "AISituationVisualizerComponent.h"
 
-UAISituationVisualizerComponent::UAISituationVisualizerComponent() {
+UAISituationVisualizerComponent::UAISituationVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

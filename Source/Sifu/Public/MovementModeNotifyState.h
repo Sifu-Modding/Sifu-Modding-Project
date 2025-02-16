@@ -15,5 +15,6 @@ public:
     TEnumAsByte<EMovementMode> m_eExitMovementMode;
     
     UMovementModeNotifyState();
+
 };
 

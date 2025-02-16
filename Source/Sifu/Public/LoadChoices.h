@@ -13,7 +13,7 @@ UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API ULoadChoices : public UMenuItem {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPanelWidget> m_SlotsBox;
     
 private:
@@ -25,6 +25,7 @@ private:
     
 public:
     ULoadChoices();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetFocusedIndex(uint8 _uiIndex);
     

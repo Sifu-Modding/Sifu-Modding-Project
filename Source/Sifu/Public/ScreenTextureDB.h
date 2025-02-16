@@ -12,5 +12,6 @@ public:
     TArray<FScreenTextureData> m_ScreenTextures;
     
     UScreenTextureDB();
+
 };
 

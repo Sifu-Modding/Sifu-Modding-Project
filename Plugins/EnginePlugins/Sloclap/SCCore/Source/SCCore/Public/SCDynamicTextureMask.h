@@ -142,7 +142,8 @@ protected:
     UMaterialInstanceDynamic* m_BakedPositionHitDrawerInstanceDynamic;
     
 public:
-    USCDynamicTextureMask();
+    USCDynamicTextureMask(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void SetupLocalBoundsOffline();

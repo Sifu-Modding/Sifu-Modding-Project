@@ -4,3 +4,4 @@ UAttackHitBoxTargetInfluenceTest::UAttackHitBoxTargetInfluenceTest() {
     this->m_eHitTarget = EAttackTarget::None;
 }
 
+

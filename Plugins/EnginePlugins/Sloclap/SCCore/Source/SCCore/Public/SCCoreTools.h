@@ -8,5 +8,6 @@ class SCCORE_API USCCoreTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCCoreTools();
+
 };
 

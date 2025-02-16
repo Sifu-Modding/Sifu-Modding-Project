@@ -51,6 +51,7 @@ public:
     TArray<InputAction> m_HoldToggleResetOnGuardLost;
     
     UGuardAbility();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_CanActivateTakedown(AFightingCharacter* _owner) const;
     

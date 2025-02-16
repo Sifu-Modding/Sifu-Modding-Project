@@ -1,6 +1,10 @@
 #include "ReplayFightingCharacterComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UReplayFightingCharacterComponent::UReplayFightingCharacterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_CameraDummy = NULL;
+}
+
 void UReplayFightingCharacterComponent::OnRep_VoiceInfos() const {
 }
 
@@ -14,7 +18,4 @@ void UReplayFightingCharacterComponent::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(UReplayFightingCharacterComponent, m_CameraTransform);
 }
 
-UReplayFightingCharacterComponent::UReplayFightingCharacterComponent() {
-    this->m_CameraDummy = NULL;
-}
 

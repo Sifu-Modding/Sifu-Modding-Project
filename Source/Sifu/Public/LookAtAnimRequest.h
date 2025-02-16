@@ -11,6 +11,7 @@ class SIFU_API ULookAtAnimRequest : public UObject {
     GENERATED_BODY()
 public:
     ULookAtAnimRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FAimOffsetStruct BPE_GetLookAtAimOffset(ULookAtAnimInstance* _animInstance) const;
     

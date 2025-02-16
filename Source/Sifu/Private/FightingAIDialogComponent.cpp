@@ -1,5 +1,6 @@
 #include "FightingAIDialogComponent.h"
 
-UFightingAIDialogComponent::UFightingAIDialogComponent() {
+UFightingAIDialogComponent::UFightingAIDialogComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

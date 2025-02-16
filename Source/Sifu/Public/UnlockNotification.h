@@ -15,6 +15,7 @@ class SIFU_API UUnlockNotification : public USCUserWidget {
     GENERATED_BODY()
 public:
     UUnlockNotification();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_InitWithProgressionDoorStruct(const FProgressionDoorStruct& _progressionDoorStruct, const UQuestItemData* _lastFulfilledQuest);
     

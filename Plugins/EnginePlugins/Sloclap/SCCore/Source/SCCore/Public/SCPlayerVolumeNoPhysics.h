@@ -15,6 +15,7 @@ protected:
     float m_fFullyInsideTolerances;
     
 public:
-    ASCPlayerVolumeNoPhysics();
+    ASCPlayerVolumeNoPhysics(const FObjectInitializer& ObjectInitializer);
+
 };
 

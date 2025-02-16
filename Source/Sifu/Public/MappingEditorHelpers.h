@@ -16,6 +16,7 @@ class UMappingEditorHelpers : public UClass {
     GENERATED_BODY()
 public:
     UMappingEditorHelpers();
+
     UFUNCTION(BlueprintCallable)
     static FString BPF_GetInputPriorityGroupDesc(const FInputPriorityGroup& _group);
     

@@ -8,5 +8,6 @@ class UHasStunOrdersDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:
     UHasStunOrdersDecorator();
+
 };
 

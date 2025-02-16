@@ -23,6 +23,7 @@ public:
     FGameplayTagContainer m_IgnoringGameplayTagContainer;
     
     UParryToHitActionOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnParryFailed(FBPOrderServiceInstance _description) const;
     

@@ -1,23 +1,21 @@
 using UnrealBuildTool;
 
-public class Sifu : ModuleRules
-{
-    public Sifu(ReadOnlyTargetRules Target) : base(Target)
-    {
+public class Sifu : ModuleRules {
+    public Sifu(ReadOnlyTargetRules Target) : base(Target) {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Slate", "SlateCore", "UMG", "AIModule",
-          "AnimGraphRuntime",
+        
+        PublicDependencyModuleNames.AddRange(new string[] {
+            "AIModule",
+           // "AkAudio",
+            "AnimGraphRuntime",
             "AnimationBudgetAllocator",
-            "AnimationCore",
-             "ApexDestruction",
-            "AudioMixer",
-            "Chaos",
+            "ApexDestruction",
             "CinematicCamera",
             "Core",
             "CoreUObject",
+            //"DLSSBlueprint",
             "DeveloperSettings",
             "Engine",
             "GameplayAbilities",
@@ -27,16 +25,16 @@ public class Sifu : ModuleRules
             "InputCore",
             "LevelSequence",
             "MediaAssets",
-            "MediaUtils",
             "MovieScene",
-            "MovieSceneTracks",
             "NavigationSystem",
             "PhysicsCore",
-            "PropertyPath",
             "SCCore",
             "SCDialogManagerPlugin",
             "SignificanceManager",
-              "Text2LipSync",
-            });
+            "Slate",
+            "SlateCore",
+            "Text2LipSync",
+            "UMG",
+        });
     }
 }

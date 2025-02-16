@@ -9,7 +9,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UReplaySpectatorPawnMovement : public USpectatorPawnMovement {
     GENERATED_BODY()
 public:
-    UReplaySpectatorPawnMovement();
+    UReplaySpectatorPawnMovement(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetDirectionConstraintDelegate(FApplyDirectionConstraintSignature _delegate);

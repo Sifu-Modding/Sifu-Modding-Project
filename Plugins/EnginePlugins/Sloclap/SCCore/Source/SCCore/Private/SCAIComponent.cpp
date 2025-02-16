@@ -1,5 +1,6 @@
 #include "SCAIComponent.h"
 
-USCAIComponent::USCAIComponent() {
+USCAIComponent::USCAIComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

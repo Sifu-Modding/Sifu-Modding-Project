@@ -8,5 +8,6 @@ class SIFU_API UHoldLockMove : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
     UHoldLockMove();
+
 };
 

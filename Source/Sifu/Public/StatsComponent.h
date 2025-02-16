@@ -138,7 +138,8 @@ private:
     UAbilitySystemComponent* m_AbilitySystem;
     
 public:
-    UStatsComponent();
+    UStatsComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnStatsChangedCallback();

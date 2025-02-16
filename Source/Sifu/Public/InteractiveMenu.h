@@ -34,7 +34,8 @@ protected:
     USceneComponent* m_RootComponent;
     
 public:
-    AInteractiveMenu();
+    AInteractiveMenu(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_OpenMenu(AFightingPlayerController* _controller, float _fBlendTime, ESlateVisibility _eMenuVisibility);
     

@@ -51,7 +51,8 @@ protected:
     TMap<UInteractionObjectComponent*, FInteractionHintInfo> m_interactionHintInfos;
     
 public:
-    UInteractionDetectionComponent();
+    UInteractionDetectionComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<UInteractionObjectComponent*, FInteractionHintInfo> BPF_GetInteractionHintInfos() const;
     

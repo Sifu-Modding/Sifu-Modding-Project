@@ -1,6 +1,7 @@
 #include "SCUserDefinedEnumHandlerHelper.h"
 
-class UEnum;
+USCUserDefinedEnumHandlerHelper::USCUserDefinedEnumHandlerHelper() {
+}
 
 void USCUserDefinedEnumHandlerHelper::BPF_SetEnumValue(FSCUserDefinedEnumHandler& _enum, uint8 _uiEnumValue) {
 }
@@ -25,6 +26,4 @@ FSCUserDefinedEnumHandler USCUserDefinedEnumHandlerHelper::BPF_ConvertEnumToSCUs
     return FSCUserDefinedEnumHandler{};
 }
 
-USCUserDefinedEnumHandlerHelper::USCUserDefinedEnumHandlerHelper() {
-}
 

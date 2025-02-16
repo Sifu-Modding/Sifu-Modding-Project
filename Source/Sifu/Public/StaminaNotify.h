@@ -8,5 +8,6 @@ class SIFU_API UStaminaNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
     UStaminaNotify();
+
 };
 

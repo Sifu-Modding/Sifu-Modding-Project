@@ -16,6 +16,7 @@ public:
     FRarityData m_DirtRarityData;
     
     URarityDB();
+
     UFUNCTION(BlueprintCallable)
     void BPF_GetRarityData(EGearRarity _rarity, FRarityData& _outRarityData);
     

@@ -8,5 +8,6 @@ class SCCORE_API USCEnvQueryTest : public UEnvQueryTest {
     GENERATED_BODY()
 public:
     USCEnvQueryTest();
+
 };
 

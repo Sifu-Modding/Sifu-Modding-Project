@@ -53,5 +53,6 @@ public:
     float m_fFidgetQuickBlendOutDuration;
     
     UOrderFidgetDB();
+
 };
 

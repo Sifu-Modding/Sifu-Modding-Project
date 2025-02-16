@@ -18,5 +18,6 @@ public:
     EQuadrantTypes m_eQuadrantToTarget;
     
     UForceQuadrantOrderService();
+
 };
 

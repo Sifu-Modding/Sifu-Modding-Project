@@ -8,5 +8,6 @@ class SIFU_API UStartTraversalNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     UStartTraversalNotify();
+
 };
 

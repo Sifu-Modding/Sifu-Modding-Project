@@ -8,5 +8,6 @@ class SIFU_API UDefenseInfluenceNodeInvalid : public UContextualDefenseInfluence
     GENERATED_BODY()
 public:
     UDefenseInfluenceNodeInvalid();
+
 };
 

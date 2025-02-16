@@ -1,8 +1,9 @@
 #include "SCPositionBakeSceneCapture.h"
 #include "SCCaptureComponent2D.h"
 
-ASCPositionBakeSceneCapture::ASCPositionBakeSceneCapture() {
-    this->m_SceneCaptureComponent = CreateDefaultSubobject<USCCaptureComponent2D>(TEXT("SceneCaptureComponent_BakePosition"));
+ASCPositionBakeSceneCapture::ASCPositionBakeSceneCapture(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USCCaptureComponent2D>(TEXT("SceneCaptureComponent_BakePosition"));
+    this->m_SceneCaptureComponent = (USCCaptureComponent2D*)RootComponent;
     this->m_iDebugSwitch = 0;
     this->m_iBakedPositionTextureSize = 1024;
     this->m_BakedLocalPositionDrawer = NULL;
@@ -17,4 +18,5 @@ ASCPositionBakeSceneCapture::ASCPositionBakeSceneCapture() {
     this->m_BakedLocalPositionDrawerInstanceDynamic = NULL;
     this->m_BakedPreSkinnedPositionDrawerInstanceDynamic = NULL;
 }
+
 

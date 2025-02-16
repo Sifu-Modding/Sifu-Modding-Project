@@ -21,6 +21,7 @@ protected:
     
 public:
     UInGameNotification();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu);

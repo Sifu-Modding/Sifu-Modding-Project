@@ -1,12 +1,7 @@
 #include "UIHelper.h"
 
-class UButtonUserWidget;
-class ULocalPlayer;
-class UPanelWidget;
-class UTextBlock;
-class UUserWidget;
-class UWidget;
-class UWidgetAnimation;
+UUIHelper::UUIHelper() {
+}
 
 void UUIHelper::UpdateXPProgressBar(int32 _iCurrentLevelXP, int32 _iNextLevelXP, int32 _iStartXP, int32 _iIncrementXP, float _fProgress, float _fDuration, float _fDelta, float& _fNewProgress, float& _fLevelProgress, int32& _iCurrentXP) {
 }
@@ -94,6 +89,4 @@ UWidget* UUIHelper::BPF_CycleChildren(UPanelWidget* _panel, UWidget* _currentChi
 void UUIHelper::BPF_ClearUserFocus() {
 }
 
-UUIHelper::UUIHelper() {
-}
 

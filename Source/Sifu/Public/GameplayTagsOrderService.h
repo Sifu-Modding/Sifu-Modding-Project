@@ -18,5 +18,6 @@ public:
     bool m_bOnAbilityComponent;
     
     UGameplayTagsOrderService();
+
 };
 

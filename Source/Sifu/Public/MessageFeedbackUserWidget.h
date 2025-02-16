@@ -19,6 +19,7 @@ protected:
     
 public:
     UMessageFeedbackUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsActive() const;

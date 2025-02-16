@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SIFU_API ASCTestingLocationsBase : public AActor {
     GENERATED_BODY()
 public:
-    ASCTestingLocationsBase();
+    ASCTestingLocationsBase(const FObjectInitializer& ObjectInitializer);
+
 };
 

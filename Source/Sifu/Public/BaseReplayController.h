@@ -89,7 +89,8 @@ protected:
     TArray<UMessageFeedbackUserWidget*> m_MessageFeedbackInstances;
     
 public:
-    ABaseReplayController();
+    ABaseReplayController(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnSaveGameStatusChanged(bool _bSaveInProgress, ESaveResult _eSaveResult);
@@ -133,7 +134,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ForceInputAvailabilityUpdate();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

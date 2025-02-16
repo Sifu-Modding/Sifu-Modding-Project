@@ -12,7 +12,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<AAISpawner>> m_Targets;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bHideTargetIndicatorsWhileNotFighting;
+    
     UArenaTargetsObjective();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSoftObjectPtr<AAISpawner>> BPF_GetTargets() const;
     

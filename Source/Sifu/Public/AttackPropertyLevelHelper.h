@@ -10,6 +10,7 @@ class SIFU_API UAttackPropertyLevelHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAttackPropertyLevelHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 BPF_GetAttackPropertyLevel(const FAttackPropertyLevel& _attackPropertyLevel, EHitBoxAttackProperties _eProperty);
     

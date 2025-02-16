@@ -15,6 +15,7 @@ class SCCORE_API USCLevelSequenceHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCLevelSequenceHelpers();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_UnbindOnSequenceViewBlendStateChanged(const FSCLevelSequenceDynamicDelegate& _delegate);
     

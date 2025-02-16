@@ -1,11 +1,10 @@
 #include "BoxWithNavComponent.h"
 #include "Templates/SubclassOf.h"
 
-class UNavArea;
+UBoxWithNavComponent::UBoxWithNavComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void UBoxWithNavComponent::BPF_SetAreaClass(TSubclassOf<UNavArea> _navArea) {
 }
 
-UBoxWithNavComponent::UBoxWithNavComponent() {
-}
 

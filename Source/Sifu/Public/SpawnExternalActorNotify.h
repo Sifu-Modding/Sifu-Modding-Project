@@ -26,5 +26,6 @@ private:
     
 public:
     USpawnExternalActorNotify();
+
 };
 

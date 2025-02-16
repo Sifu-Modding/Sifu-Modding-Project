@@ -34,5 +34,6 @@ public:
     TSubclassOf<UDetectFallOrderService> m_SlopeDetectionDB;
     
     UOrderFallOnSlopeEntryDB();
+
 };
 

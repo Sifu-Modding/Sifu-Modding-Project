@@ -18,6 +18,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* m_lookAtTarget;
     
-    APathPatrol();
+    APathPatrol(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -24,6 +24,7 @@ protected:
     FStateWeight m_ticketStateWeight;
     
 public:
-    UAIFightingCameraWeightComponent();
+    UAIFightingCameraWeightComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

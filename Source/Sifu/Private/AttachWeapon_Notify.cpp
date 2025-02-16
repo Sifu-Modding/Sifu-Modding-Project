@@ -6,3 +6,4 @@ UAttachWeapon_Notify::UAttachWeapon_Notify() {
     this->m_bAttachInFakieIfCancelledFromThisNotify = false;
 }
 
+

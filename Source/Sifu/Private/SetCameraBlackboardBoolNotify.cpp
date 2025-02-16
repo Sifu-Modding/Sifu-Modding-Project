@@ -4,3 +4,4 @@ USetCameraBlackboardBoolNotify::USetCameraBlackboardBoolNotify() {
     this->m_bValueToApply = false;
 }
 
+

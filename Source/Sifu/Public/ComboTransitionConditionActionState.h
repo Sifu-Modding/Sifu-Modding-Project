@@ -12,5 +12,6 @@ public:
     EFightingActionState m_ActionState;
     
     UComboTransitionConditionActionState();
+
 };
 

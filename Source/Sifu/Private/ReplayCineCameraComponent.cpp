@@ -11,4 +11,3 @@ UReplayCineCameraComponent::UReplayCineCameraComponent() {
     this->m_fZoomSpeed = 1.00f;
     this->m_ZoomSpeedCurve = NULL;
 }
-

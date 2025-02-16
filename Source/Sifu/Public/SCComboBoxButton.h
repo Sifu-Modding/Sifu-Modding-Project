@@ -22,6 +22,7 @@ private:
     
 public:
     USCComboBoxButton();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnRightClick(UButtonUserWidget* _button, bool _bWithMouse);

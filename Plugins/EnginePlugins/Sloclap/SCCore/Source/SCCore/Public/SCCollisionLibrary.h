@@ -20,6 +20,7 @@ class SCCORE_API USCCollisionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCCollisionLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_VisualLogCollision(UPrimitiveComponent* _primitiveComponent, const FName& _categoryName);
     

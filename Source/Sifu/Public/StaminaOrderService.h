@@ -21,5 +21,6 @@ public:
     float m_fImpactCostOnStop;
     
     UStaminaOrderService();
+
 };
 

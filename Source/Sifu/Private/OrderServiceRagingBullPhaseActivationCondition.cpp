@@ -4,3 +4,4 @@ UOrderServiceRagingBullPhaseActivationCondition::UOrderServiceRagingBullPhaseAct
     this->m_uiAllowedPhases = 0;
 }
 
+

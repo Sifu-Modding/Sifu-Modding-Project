@@ -12,5 +12,6 @@ public:
     TArray<EAttackStates> m_AllowedStates;
     
     UAttackStateCondition();
+
 };
 

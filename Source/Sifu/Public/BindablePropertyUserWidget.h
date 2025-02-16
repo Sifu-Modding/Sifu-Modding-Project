@@ -36,6 +36,7 @@ protected:
     
 public:
     UBindablePropertyUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnPropertyUpdated(UBindablePropertyBase* _property);

@@ -1,9 +1,5 @@
 #include "DetectFallOrderService.h"
 
-FVector UDetectFallOrderService::BPE_GetDirection_Implementation(const FBPOrderServiceInstance& _instance) const {
-    return FVector{};
-}
-
 UDetectFallOrderService::UDetectFallOrderService() {
     this->m_IgnoreWhenDead = true;
     this->m_bProjectVelocityOnDirection = true;
@@ -18,4 +14,9 @@ UDetectFallOrderService::UDetectFallOrderService() {
     this->m_fFarSlopeHAngleMinDegree = 22.00f;
     this->m_eFarSlopeHAngleReaction = ESlopeReaction::FallOnSlope;
 }
+
+FVector UDetectFallOrderService::BPE_GetDirection_Implementation(const FBPOrderServiceInstance& _instance) const {
+    return FVector{};
+}
+
 

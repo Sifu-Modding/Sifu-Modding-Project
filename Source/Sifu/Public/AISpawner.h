@@ -4,8 +4,6 @@
 #include "AnimContainer.h"
 #include "SCAiActionClassInstance.h"
 #include "SCDelegate.h"
-#include "SCDelegate.h"
-#include "SCDelegate.h"
 #include "AICharacterSpawnParams.h"
 #include "CarriedProps.h"
 #include "EFactionsEnums.h"
@@ -43,17 +41,17 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAIPatrolCompleted OnPatrolCompleted;
     
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //USCDelegate::FGenericDialogEventDelegate* OnGenericDialogEvent;
-    //
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //USCDelegate::FDynamicMulticast* OnDialogCompleted;
-    //
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //USCDelegate::FDynamicMulticast* OnDialogCut;
-    //
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //USCDelegate::FDialogLineEvent* OnLineEnded;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGenericDialogEventDelegate OnGenericDialogEvent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnDialogCompleted;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnDialogCut;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDialogLineEvent OnLineEnded;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FAICharacterGlobalBehaviorChanged OnGlobalBehaviorChanged;
@@ -160,7 +158,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<float> m_rawCustomPrimitiveData;
     
-    AAISpawner();
+    AAISpawner(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnAiBehaviorChanged(EGlobalBehaviors _eNewBehavior, const bool _bFromDialog);

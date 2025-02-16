@@ -6,3 +6,4 @@ UPlayerInputCondition::UPlayerInputCondition() {
     this->m_eTestMethod = EPlayerInputConditionTestMethod::IsBestActionAvailable;
 }
 
+

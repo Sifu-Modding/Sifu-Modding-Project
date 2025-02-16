@@ -13,5 +13,6 @@ public:
     TArray<UAIInfluenceNode*> m_Nodes;
     
     UAIContextualDefense();
+
 };
 

@@ -56,10 +56,11 @@ public:
     TArray<FPropertyFloorBoneRepartition> m_OverrideSlopeBoneRepartition;
     
     USCAnimMetaData();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPlay(uint8 _uiOrderId, ABaseCharacter* _character) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

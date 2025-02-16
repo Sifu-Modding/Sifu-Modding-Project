@@ -26,5 +26,6 @@ public:
     UAvailabilityLayerData* m_FallLayerData;
     
     UAvailabilityLayerDB();
+
 };
 

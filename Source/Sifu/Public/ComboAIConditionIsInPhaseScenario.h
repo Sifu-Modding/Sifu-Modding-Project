@@ -16,5 +16,6 @@ public:
     TArray<FAIPhaseNodeSoftLinkByMCDomination> m_Phases;
     
     UComboAIConditionIsInPhaseScenario();
+
 };
 

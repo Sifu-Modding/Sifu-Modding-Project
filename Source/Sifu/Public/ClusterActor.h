@@ -30,7 +30,8 @@ private:
     float m_fSoundNoiseRadius;
     
 public:
-    AClusterActor();
+    AClusterActor(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void BPF_SpawnActorFromMesh();
@@ -41,7 +42,7 @@ private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector BPF_GetImpulseVector() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -2,9 +2,20 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "AnimInstanceReplicationComponent.h"
 #include "Templates/SubclassOf.h"
+#include "WeaponDestructionComponent.h"
 
-class UBaseWeaponData;
-class UWeaponGameplayData;
+ABaseWeapon::ABaseWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UWeaponDestructionComponent>(TEXT("DestructibleComponent"))) {
+    this->m_throwFromPickUpTargetSettingsDB = NULL;
+    this->m_weaponData = NULL;
+    this->m_weaponGameplayData = NULL;
+    this->m_SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BaseWeaponSkeletal"));
+    this->m_AnimInstanceReplicationComponent = CreateDefaultSubobject<UAnimInstanceReplicationComponent>(TEXT("AnimInstanceReplicationComponent"));
+    this->m_ThrowingFromPickupAvaibilityLayer = NULL;
+    this->m_bAttachedFakie = false;
+    this->m_fWeaponTicketMaxDistance = 500.00f;
+    this->m_bAvailableForIA = true;
+    this->m_SkeletalMeshComponent->SetupAttachment(RootComponent);
+}
 
 void ABaseWeapon::BPF_ResetWeaponGameplayData() {
 }
@@ -36,15 +47,4 @@ void ABaseWeapon::BPF_ApplyDamage(EOnDestructibleDamageType _eDamageType, const 
 }
 
 
-ABaseWeapon::ABaseWeapon() {
-    this->m_throwFromPickUpTargetSettingsDB = NULL;
-    this->m_weaponData = NULL;
-    this->m_weaponGameplayData = NULL;
-    this->m_SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BaseWeaponSkeletal"));
-    this->m_AnimInstanceReplicationComponent = CreateDefaultSubobject<UAnimInstanceReplicationComponent>(TEXT("AnimInstanceReplicationComponent"));
-    this->m_ThrowingFromPickupAvaibilityLayer = NULL;
-    this->m_bAttachedFakie = false;
-    this->m_fWeaponTicketMaxDistance = 500.00f;
-    this->m_bAvailableForIA = true;
-}
 

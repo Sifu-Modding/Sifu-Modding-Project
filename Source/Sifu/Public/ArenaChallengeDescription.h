@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "GameplayTagContainer.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=AchievementUnlockConditionClassInstance -FallbackName=AchievementUnlockConditionClassInstance
+#include "AchievementUnlockConditionClassInstance.h"
 #include "ECharacterGender.h"
 #include "ArenaChallengeRefillDescription.h"
 #include "ArenaChallengeDescription.generated.h"
@@ -29,8 +29,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<APlayerStart> m_desiredPlayerStart;
     
- /*   UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FAchievementUnlockConditionClassInstance m_MasterObjective;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FAchievementUnlockConditionClassInstance m_MasterObjective;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGameplayTag> m_CheatsToActivate;
@@ -69,6 +69,7 @@ public:
     FArenaChallengeRefillDescription m_RefillDescription;
     
     UArenaChallengeDescription();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     AAIWaveRefillDirector* BPF_GetRefillDirector() const;
     

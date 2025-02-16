@@ -32,6 +32,7 @@ protected:
     
 public:
     UHUDUserWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_UpdateHUDOffset();
     

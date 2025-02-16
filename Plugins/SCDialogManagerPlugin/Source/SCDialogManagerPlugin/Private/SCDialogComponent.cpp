@@ -1,12 +1,11 @@
 #include "SCDialogComponent.h"
 
-class UBlackboardData;
+USCDialogComponent::USCDialogComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_ContextualDb = NULL;
+}
 
 bool USCDialogComponent::BPF_InitBlackBoardFromAsset(UBlackboardData* _data) {
     return false;
 }
 
-USCDialogComponent::USCDialogComponent() {
-    this->m_ContextualDb = NULL;
-}
 

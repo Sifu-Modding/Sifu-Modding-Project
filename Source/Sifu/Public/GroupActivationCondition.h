@@ -15,5 +15,6 @@ public:
     TArray<UOrderServiceActivationConditions*> m_Conditions;
     
     UGroupActivationCondition();
+
 };
 

@@ -1,11 +1,12 @@
 #include "AIManagerHelpers.h"
 
-class AAIDirectorActor;
-class AAISituationActor;
-class AActor;
-class UAIFightingComponent;
+UAIManagerHelpers::UAIManagerHelpers() {
+}
 
 void UAIManagerHelpers::BPF_SetWantedArchetypeType(EArchetypeType _eWantedType) {
+}
+
+void UAIManagerHelpers::BPF_SetForceLastManPhase(const bool _bForceLastManPhase) {
 }
 
 void UAIManagerHelpers::BPF_SetAIPositioningOptionToggled(const AActor* _targetActor, EAIPositioningOption _eOption, bool _bToggled) {
@@ -36,6 +37,9 @@ float UAIManagerHelpers::BPF_GetDifficultyLevelGauge() {
 void UAIManagerHelpers::BPF_GetAllAiSituations(TArray<AAISituationActor*>& _outAiSituations) {
 }
 
+void UAIManagerHelpers::BPF_GetAllAIFightingComponent(UWorld* _world, TArray<UAIFightingComponent*>& _outAIs) {
+}
+
 void UAIManagerHelpers::BPF_GetAllActiveAiSituations(TArray<AAISituationActor*>& _outAiSituations) {
 }
 
@@ -49,6 +53,4 @@ void UAIManagerHelpers::BPF_GetAiSituationActors(TArray<AAISituationActor*>& _ou
 void UAIManagerHelpers::BPF_AllowStructureDamageOnAI(bool _bAllowStructureDamage) {
 }
 
-UAIManagerHelpers::UAIManagerHelpers() {
-}
 

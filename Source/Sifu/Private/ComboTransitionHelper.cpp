@@ -1,5 +1,8 @@
 #include "ComboTransitionHelper.h"
 
+UComboTransitionHelper::UComboTransitionHelper() {
+}
+
 EComboTransition UComboTransitionHelper::BPF_GetTransitionFromInput(InputAction _eInput) {
     return EComboTransition::Light;
 }
@@ -8,6 +11,4 @@ InputAction UComboTransitionHelper::BPF_GetInputFromTransition(EComboTransition 
     return InputAction::AttackLight;
 }
 
-UComboTransitionHelper::UComboTransitionHelper() {
-}
 

@@ -15,6 +15,7 @@ private:
     bool m_bRecordVLog;
     
 public:
-    USCSkeletalMeshVLogDebugDrawComponent();
+    USCSkeletalMeshVLogDebugDrawComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

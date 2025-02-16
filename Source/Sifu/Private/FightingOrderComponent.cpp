@@ -1,5 +1,6 @@
 #include "FightingOrderComponent.h"
 
-UFightingOrderComponent::UFightingOrderComponent() {
+UFightingOrderComponent::UFightingOrderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

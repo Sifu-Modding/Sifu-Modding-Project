@@ -13,8 +13,6 @@ UArchetypeAsset::UArchetypeAsset() {
     this->m_fSuperDizzyRecoveryCooldownWhenComplete = 3.00f;
     this->m_fSuperDizzyGaugeRatioAfterSuperDizzy = 0.00f;
     this->m_fSuperDizzyRecoveryPerSec = -20.00f;
-    this->m_fSpeed = 1.00f;
-    this->m_bIsSpecial = false;
     this->m_fDamageMultiplier = 1.00f;
     this->m_bInvincible = false;
     this->m_bHideHealthGauge = false;
@@ -83,4 +81,5 @@ UArchetypeAsset::UArchetypeAsset() {
     this->m_fStructureMultiplier[1] = 1.00f;
     this->m_fStructureMultiplier[2] = 1.00f;
 }
+
 

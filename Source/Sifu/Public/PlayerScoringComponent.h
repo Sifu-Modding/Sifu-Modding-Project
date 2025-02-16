@@ -25,7 +25,8 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UPlayerScoringComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UPlayerScoringComponent();
+    UPlayerScoringComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnOwnerTakedownStarted(uint8 _iOrderID, UOrderComponent* _OrderComponent);

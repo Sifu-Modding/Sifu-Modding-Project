@@ -4,3 +4,4 @@ UDetailedMoveTransitionDB::UDetailedMoveTransitionDB() {
     this->m_TransitionList.AddDefaulted(96);
 }
 
+

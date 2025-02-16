@@ -18,6 +18,7 @@ protected:
     
 public:
     UAIActionAttack();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_NotifyAttackStarted() const;

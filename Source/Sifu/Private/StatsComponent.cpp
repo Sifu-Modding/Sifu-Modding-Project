@@ -1,11 +1,17 @@
 #include "StatsComponent.h"
 
-class AActor;
-class AFightingCharacter;
-class UCharacterProgressionDB;
-class UCharacterProgressionUnlockDB;
-class UEffectData;
-class UTexture2D;
+UStatsComponent::UStatsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_StatsDB = NULL;
+    this->m_eWeightCategory = EWeightCategory::None;
+    this->m_iMaxAge = 70;
+    this->m_bAgeReversed = false;
+    this->m_bUsePendant = true;
+    this->m_bAllowDeathCounterDecrement = true;
+    this->m_fAIPendingAttackXCancelDelay = 10.00f;
+    this->m_CharacterProgressionDB = NULL;
+    this->m_weaponData = NULL;
+    this->m_AbilitySystem = NULL;
+}
 
 void UStatsComponent::OnStatsChangedCallback() {
 }
@@ -186,16 +192,4 @@ void UStatsComponent::BPF_AddAttackXP(const FName& _attackName, int32 _iXP, bool
 
 
 
-UStatsComponent::UStatsComponent() {
-    this->m_StatsDB = NULL;
-    this->m_eWeightCategory = EWeightCategory::None;
-    this->m_iMaxAge = 70;
-    this->m_bAgeReversed = false;
-    this->m_bUsePendant = true;
-    this->m_bAllowDeathCounterDecrement = true;
-    this->m_fAIPendingAttackXCancelDelay = 10.00f;
-    this->m_CharacterProgressionDB = NULL;
-    this->m_weaponData = NULL;
-    this->m_AbilitySystem = NULL;
-}
 

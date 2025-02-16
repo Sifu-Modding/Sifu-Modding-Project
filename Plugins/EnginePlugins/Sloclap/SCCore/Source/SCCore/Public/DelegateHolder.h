@@ -10,6 +10,7 @@ class SCCORE_API UDelegateHolder : public UObject {
     GENERATED_BODY()
 public:
     UDelegateHolder();
+
     UFUNCTION(BlueprintCallable)
     void SytemCompleted(UParticleSystemComponent* Component);
     

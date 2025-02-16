@@ -14,5 +14,6 @@ protected:
     
 public:
     UCDM_SwitchCameraTrackingMode();
+
 };
 

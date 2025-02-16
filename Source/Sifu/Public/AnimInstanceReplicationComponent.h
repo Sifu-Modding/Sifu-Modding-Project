@@ -37,14 +37,15 @@ protected:
     USCAnimInstance* m_AnimInstance;
     
 public:
-    UAnimInstanceReplicationComponent();
+    UAnimInstanceReplicationComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -10,6 +10,7 @@ class SCCORE_API USCReplayHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCReplayHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContextObject"))
     static bool BPF_IsReplayRecording(const UObject* _worldContextObject);
     

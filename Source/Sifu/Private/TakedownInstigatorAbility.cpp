@@ -11,3 +11,4 @@ UTakedownInstigatorAbility::UTakedownInstigatorAbility() {
     this->m_bHandleEnvironmentalInteractionComponents = false;
 }
 
+

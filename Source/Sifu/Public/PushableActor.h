@@ -57,7 +57,8 @@ protected:
     float m_fUsabilityAngleRestriction;
     
 public:
-    APushableActor();
+    APushableActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetPushableState(EPushableState _eNewState);
     

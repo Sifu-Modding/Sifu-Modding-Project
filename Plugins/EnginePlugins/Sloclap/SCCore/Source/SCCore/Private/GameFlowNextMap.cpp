@@ -5,3 +5,4 @@ UGameFlowNextMap::UGameFlowNextMap() {
     this->m_NextMapNode = NULL;
 }
 
+

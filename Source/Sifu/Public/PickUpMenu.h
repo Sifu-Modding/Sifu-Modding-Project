@@ -15,6 +15,7 @@ private:
     
 public:
     UPickUpMenu();
+
     UFUNCTION(BlueprintCallable)
     void LoadPictoCallback();
     

@@ -13,6 +13,7 @@ class SIFU_API UDefenseAnimRequest : public UObject {
     GENERATED_BODY()
 public:
     UDefenseAnimRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetHitDefenseAnimation(const FHitDescription& _hitDescription, AFightingCharacter* _grabber, FDefenderAnimInfos& _outDefenderAnims, FDefenseAnimInfos& _outDefendeeAnims) const;
     

@@ -1,7 +1,7 @@
 #include "SCTraceLibrary.h"
 
-class AActor;
-class UObject;
+USCTraceLibrary::USCTraceLibrary() {
+}
 
 bool USCTraceLibrary::SphereTraceSingle(UObject* WorldContextObject, const FVector Start, const FVector End, float Radius, TEnumAsByte<ECollisionChannel> CollisionChannel, const FCollisionResponseContainer& CollisionResponse, bool bTraceComplex, const TArray<AActor*>& ActorsToIgnore, TEnumAsByte<EDrawDebugTrace::Type> DrawDebugType, FHitResult& OutHit, bool bIgnoreSelf, FLinearColor TraceColor, FLinearColor TraceHitColor, float DrawTime) {
     return false;
@@ -35,6 +35,4 @@ bool USCTraceLibrary::BoxTraceMulti(UObject* WorldContextObject, const FVector S
     return false;
 }
 
-USCTraceLibrary::USCTraceLibrary() {
-}
 

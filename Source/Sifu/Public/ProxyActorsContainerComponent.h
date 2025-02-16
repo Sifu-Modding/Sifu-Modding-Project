@@ -16,7 +16,8 @@ private:
     FOnTriggerProxy OnTriggerProxyActor;
     
 public:
-    UProxyActorsContainerComponent();
+    UProxyActorsContainerComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void UnregisterProxyActor(AActor* _proxyActor);

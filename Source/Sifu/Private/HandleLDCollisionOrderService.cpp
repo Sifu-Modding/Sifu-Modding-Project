@@ -1,19 +1,5 @@
 #include "HandleLDCollisionOrderService.h"
 
-
-void UHandleLDCollisionOrderService::BPE_GetWallHitBox_Implementation(const FBPOrderServiceInstance& _orderServiceInstance, FHitBox& _hitbox) const {
-}
-
-FHittedAnimContainer UHandleLDCollisionOrderService::BPE_GetHittedAnimContainer_Implementation(const FBPOrderServiceInstance& _orderServiceInstance) const {
-    return FHittedAnimContainer{};
-}
-
-void UHandleLDCollisionOrderService::BPE_GetHitBox_Implementation(const FBPOrderServiceInstance& _orderServiceInstance, FHitBox& _hitbox) const {
-}
-
-void UHandleLDCollisionOrderService::BPE_GetDirection_Implementation(const FBPOrderServiceInstance& _orderServiceInstance, FVector& _vOutDir) const {
-}
-
 UHandleLDCollisionOrderService::UHandleLDCollisionOrderService() {
     this->m_bHandleHittedByEnvironment = true;
     this->m_bWallHitMinAngleDegUseCurve = false;
@@ -33,4 +19,19 @@ UHandleLDCollisionOrderService::UHandleLDCollisionOrderService() {
     this->m_eTraversalSpeedState = ESpeedState::V0;
     this->m_bSetTargetAsOwningChar = true;
 }
+
+
+void UHandleLDCollisionOrderService::BPE_GetWallHitBox_Implementation(const FBPOrderServiceInstance& _orderServiceInstance, FHitBox& _hitbox) const {
+}
+
+FHittedAnimContainer UHandleLDCollisionOrderService::BPE_GetHittedAnimContainer_Implementation(const FBPOrderServiceInstance& _orderServiceInstance) const {
+    return FHittedAnimContainer{};
+}
+
+void UHandleLDCollisionOrderService::BPE_GetHitBox_Implementation(const FBPOrderServiceInstance& _orderServiceInstance, FHitBox& _hitbox) const {
+}
+
+void UHandleLDCollisionOrderService::BPE_GetDirection_Implementation(const FBPOrderServiceInstance& _orderServiceInstance, FVector& _vOutDir) const {
+}
+
 

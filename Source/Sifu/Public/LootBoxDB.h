@@ -25,6 +25,7 @@ protected:
     
 public:
     ULootBoxDB();
+
     UFUNCTION(BlueprintCallable)
     void BPF_GetLoot(const FLootBoxInstancedData& _LootBoxData, TArray<FLootBaseItemStruct>& Out_LootedItems);
     

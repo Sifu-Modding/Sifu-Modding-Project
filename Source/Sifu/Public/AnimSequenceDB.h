@@ -15,6 +15,7 @@ public:
     TArray<UAnimSequenceEntitlementDB*> m_DBs;
     
     UAnimSequenceDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_GetSequences(ASCPlayerController* _controller, UPARAM(Ref) FAnimSequenceDBCache& _outCache) const;
     

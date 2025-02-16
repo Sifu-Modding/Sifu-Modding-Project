@@ -1,6 +1,8 @@
 #include "FidgetDB.h"
 
-class AActor;
+UFidgetDB::UFidgetDB() {
+    this->m_bAllowSyncFidgetMirrorWithQuadrant = true;
+}
 
 FSCGestureAndBlendProfile UFidgetDB::BPF_GetGestureContainer(AActor* _requester) {
     return FSCGestureAndBlendProfile{};
@@ -14,7 +16,4 @@ float UFidgetDB::BPF_ComputeTimer() const {
     return 0.0f;
 }
 
-UFidgetDB::UFidgetDB() {
-    this->m_bAllowSyncFidgetMirrorWithQuadrant = true;
-}
 

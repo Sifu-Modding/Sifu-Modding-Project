@@ -1,13 +1,7 @@
 #include "PlayerScoringComponent.h"
 
-class AActor;
-class ABaseWeapon;
-class AFightingCharacter;
-class AVitalPointActor;
-class UArchetypeAsset;
-class UAttackDB;
-class UCurveFloat;
-class UOrderComponent;
+UPlayerScoringComponent::UPlayerScoringComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void UPlayerScoringComponent::OnOwnerTakedownStarted(uint8 _iOrderID, UOrderComponent* _OrderComponent) {
 }
@@ -173,6 +167,4 @@ float UPlayerScoringComponent::BPE_GetAILifeBonus_Implementation(AFightingCharac
 }
 
 
-UPlayerScoringComponent::UPlayerScoringComponent() {
-}
 

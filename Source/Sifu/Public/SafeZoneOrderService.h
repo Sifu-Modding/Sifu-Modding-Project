@@ -37,5 +37,6 @@ public:
     FName m_TargetBone;
     
     USafeZoneOrderService();
+
 };
 

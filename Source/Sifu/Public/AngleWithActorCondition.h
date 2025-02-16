@@ -16,5 +16,6 @@ public:
     FFloatRange m_angleRange;
     
     UAngleWithActorCondition();
+
 };
 

@@ -1,10 +1,9 @@
 #include "AIPhaseTransitionBossKill.h"
 
-class UAIFightingComponent;
+UAIPhaseTransitionBossKill::UAIPhaseTransitionBossKill() {
+}
 
 void UAIPhaseTransitionBossKill::OnKillSpare(UAIFightingComponent* _aiComponent) {
 }
 
-UAIPhaseTransitionBossKill::UAIPhaseTransitionBossKill() {
-}
 

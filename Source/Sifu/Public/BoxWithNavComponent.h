@@ -10,7 +10,8 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class SIFU_API UBoxWithNavComponent : public UBoxComponent {
     GENERATED_BODY()
 public:
-    UBoxWithNavComponent();
+    UBoxWithNavComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetAreaClass(TSubclassOf<UNavArea> _navArea);
     

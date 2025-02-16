@@ -1,11 +1,10 @@
 #include "RandomAnimDB.h"
 
-class AActor;
+URandomAnimDB::URandomAnimDB() {
+}
 
 FAnimContainer URandomAnimDB::BPF_PickRandomAnim(AActor* _requester) {
     return FAnimContainer{};
 }
 
-URandomAnimDB::URandomAnimDB() {
-}
 

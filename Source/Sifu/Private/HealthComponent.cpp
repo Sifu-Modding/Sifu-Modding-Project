@@ -1,7 +1,11 @@
 #include "HealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
+UHealthComponent::UHealthComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_fHealth = 750.00f;
+    this->m_fMaxHealth = 750.00f;
+    this->m_iLifeStock = 0;
+}
 
 void UHealthComponent::ServerHackSetHealth_Implementation(float _fHealth) {
 }
@@ -50,9 +54,4 @@ void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(UHealthComponent, m_fHealth);
 }
 
-UHealthComponent::UHealthComponent() {
-    this->m_fHealth = 750.00f;
-    this->m_fMaxHealth = 750.00f;
-    this->m_iLifeStock = 0;
-}
 

@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UVitalPointData* m_VitalPointData;
     
-    UVitalPointAttachComponent();
+    UVitalPointAttachComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

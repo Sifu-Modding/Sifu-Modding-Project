@@ -28,6 +28,7 @@ protected:
     
 public:
     UAsyncTaskTagChanged();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskTagChanged* ListenForTagsChange(UAbilitySystemComponent* _abilitySystemComponent, FGameplayTagContainer _tags);
     

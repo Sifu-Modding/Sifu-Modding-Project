@@ -8,5 +8,6 @@ class SIFU_API UHitBoxCondition : public UObject {
     GENERATED_BODY()
 public:
     UHitBoxCondition();
+
 };
 

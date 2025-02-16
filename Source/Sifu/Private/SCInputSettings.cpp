@@ -20,3 +20,4 @@ USCInputSettings::USCInputSettings() {
     this->m_CachedInputDatas.AddDefaulted(9);
 }
 
+

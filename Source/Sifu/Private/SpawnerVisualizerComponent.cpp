@@ -1,5 +1,6 @@
 #include "SpawnerVisualizerComponent.h"
 
-USpawnerVisualizerComponent::USpawnerVisualizerComponent() {
+USpawnerVisualizerComponent::USpawnerVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

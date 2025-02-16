@@ -7,6 +7,5 @@ enum class EDynamicTextureMask_DrawType : uint8 {
     DT_Additive,
     DT_OpaqueColor,
     DT_OpaqueAlpha,
-    DT_MAX UMETA(Hidden),
 };
 

@@ -13,6 +13,7 @@ public:
     FSortMethodData m_SortMethodData[10];
     
     USortMethodDB();
+
     UFUNCTION(BlueprintCallable)
     void BPF_GetSortMethodData(EInventorySearchOrder _sortMethod, FSortMethodData& _outSortMethodData);
     

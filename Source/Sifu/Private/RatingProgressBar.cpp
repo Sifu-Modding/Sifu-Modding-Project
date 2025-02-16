@@ -5,3 +5,4 @@ URatingProgressBar::URatingProgressBar() {
     this->m_iSteps = 10;
 }
 
+

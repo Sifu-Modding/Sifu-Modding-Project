@@ -19,5 +19,6 @@ public:
     UPivotFootData* m_StopData;
     
     USpeedPivotFootData();
+
 };
 

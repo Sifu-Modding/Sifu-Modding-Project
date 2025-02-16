@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FRigidBodyContainerDescription {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UPrimitiveComponent> m_Component;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

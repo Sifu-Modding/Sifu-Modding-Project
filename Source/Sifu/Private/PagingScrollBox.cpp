@@ -1,7 +1,9 @@
 #include "PagingScrollBox.h"
 
-class UButtonUserWidget;
-class UUserWidget;
+UPagingScrollBox::UPagingScrollBox() {
+    this->m_iLoadedRowCount = 4;
+    this->m_CellClass = NULL;
+}
 
 void UPagingScrollBox::OnItemSelected(UButtonUserWidget* _button, UButtonUserWidget* _prevButton) {
 }
@@ -53,8 +55,4 @@ int32 UPagingScrollBox::BPF_GetDataIndexFromWidget(UUserWidget* _widget) {
     return 0;
 }
 
-UPagingScrollBox::UPagingScrollBox() {
-    this->m_iLoadedRowCount = 4;
-    this->m_CellClass = NULL;
-}
 

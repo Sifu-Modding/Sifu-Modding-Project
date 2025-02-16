@@ -21,6 +21,7 @@ protected:
     float m_fSpeedThreshold;
     
 public:
-    ARailForMovable();
+    ARailForMovable(const FObjectInitializer& ObjectInitializer);
+
 };
 

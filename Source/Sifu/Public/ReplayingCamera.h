@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SIFU_API AReplayingCamera : public AActor {
     GENERATED_BODY()
 public:
-    AReplayingCamera();
+    AReplayingCamera(const FObjectInitializer& ObjectInitializer);
+
 };
 

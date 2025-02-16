@@ -9,3 +9,4 @@ UPivotFootData::UPivotFootData() {
     this->m_OrientationCurve = NULL;
 }
 
+

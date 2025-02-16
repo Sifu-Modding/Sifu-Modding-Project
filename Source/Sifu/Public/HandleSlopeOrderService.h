@@ -26,5 +26,6 @@ public:
     float m_fInterpSpeed;
     
     UHandleSlopeOrderService();
+
 };
 

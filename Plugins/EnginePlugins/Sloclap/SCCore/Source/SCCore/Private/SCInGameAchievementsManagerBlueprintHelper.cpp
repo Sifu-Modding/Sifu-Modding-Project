@@ -1,7 +1,7 @@
 #include "SCInGameAchievementsManagerBlueprintHelper.h"
 
-class UAchievementUnlockCondition;
-class USCInGameAchievementsManagerSettings;
+USCInGameAchievementsManagerBlueprintHelper::USCInGameAchievementsManagerBlueprintHelper() {
+}
 
 void USCInGameAchievementsManagerBlueprintHelper::BPF_TriggerSaveAchievements() {
 }
@@ -55,6 +55,4 @@ UAchievementUnlockCondition* USCInGameAchievementsManagerBlueprintHelper::BPF_Ge
 void USCInGameAchievementsManagerBlueprintHelper::BPF_AllowOnObjectUnlockedBroadcast(bool _bAllowBroadcast) {
 }
 
-USCInGameAchievementsManagerBlueprintHelper::USCInGameAchievementsManagerBlueprintHelper() {
-}
 

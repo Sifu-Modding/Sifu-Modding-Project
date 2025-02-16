@@ -1,7 +1,7 @@
 #include "InGameNotification.h"
 
-class UAttackProgressNotification;
-class UBaseNotification;
+UInGameNotification::UInGameNotification() {
+}
 
 void UInGameNotification::OnMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu) {
 }
@@ -35,6 +35,4 @@ UAttackProgressNotification* UInGameNotification::BPE_FindOrCreateAttackProgress
     return NULL;
 }
 
-UInGameNotification::UInGameNotification() {
-}
 

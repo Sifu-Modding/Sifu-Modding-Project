@@ -21,6 +21,7 @@ private:
     float m_fRotationCoeff;
     
 public:
-    UAnimDrivenMovementComponent();
+    UAnimDrivenMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -11,3 +11,4 @@ USCRagdollConfigDB::USCRagdollConfigDB() {
     this->m_fDelayBeforeSleep = 3.00f;
 }
 
+

@@ -71,8 +71,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnAttackHitFilteredDynamic m_OnAttackHitFilteredDynamic;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* m_OnAttackLaunchedDynamic;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast m_OnAttackLaunchedDynamic;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnNewAttacksChanged m_OnNewAttacksChanged;
@@ -168,7 +168,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveFloat* m_VirtualTargetRemapCurve;
     
-    UPROPERTY(EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_Target;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -271,9 +271,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UFocusDB* m_FocusDB;
     
-    UAttackComponent();
+    UAttackComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void SetWantsComboRestart(bool _bWantsRestart);
     
@@ -415,7 +416,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_AddFocusPointRefill(FSCUserDefinedEnumHandler _focusGainEnum);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

@@ -24,5 +24,6 @@ public:
     TEnumAsByte<ECollisionChannel> m_eCollisionChannel;
     
     UEnvironmentalAttackDetectionDB();
+
 };
 

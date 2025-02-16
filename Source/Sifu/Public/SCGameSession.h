@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SIFU_API ASCGameSession : public AGameSession {
     GENERATED_BODY()
 public:
-    ASCGameSession();
+    ASCGameSession(const FObjectInitializer& ObjectInitializer);
+
 };
 

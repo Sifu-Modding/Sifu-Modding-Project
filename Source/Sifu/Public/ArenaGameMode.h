@@ -3,6 +3,8 @@
 #include "ThePlainesGameMode.h"
 #include "ArenaGameMode.generated.h"
 
+class UOrderComponent;
+
 UCLASS(Blueprintable, NonTransient)
 class SIFU_API AArenaGameMode : public AThePlainesGameMode {
     GENERATED_BODY()
@@ -17,7 +19,16 @@ private:
     float m_fEndArenaDelay;
     
 public:
-    AArenaGameMode();
+    AArenaGameMode(const FObjectInitializer& ObjectInitializer);
+
+private:
+    UFUNCTION(BlueprintCallable)
+    void ShowArenaOutro(uint8 _iOrderID, UOrderComponent* _OrderComponent);
+    
+public:
+    UFUNCTION(BlueprintCallable, Exec)
+    void ForceHardpointCapture();
+    
     UFUNCTION(BlueprintCallable)
     void BPF_TriggerEndArena();
     

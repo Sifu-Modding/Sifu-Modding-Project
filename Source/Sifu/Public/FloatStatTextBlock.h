@@ -59,5 +59,6 @@ public:
     bool m_bCanBeNegative;
     
     UFloatStatTextBlock();
+
 };
 

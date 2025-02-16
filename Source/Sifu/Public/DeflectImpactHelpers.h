@@ -14,6 +14,7 @@ class UDeflectImpactHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UDeflectImpactHelpers();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FAppliedHitImpact BPF_MakeAppliedHitImpact(const FHitImpact& _hitImpact, const AFightingCharacter* _defender);
     

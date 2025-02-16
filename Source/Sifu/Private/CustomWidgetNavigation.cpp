@@ -1,5 +1,8 @@
 #include "CustomWidgetNavigation.h"
 
+UCustomWidgetNavigation::UCustomWidgetNavigation() {
+}
+
 void UCustomWidgetNavigation::BPF_RestoreNavigationConfig() {
 }
 
@@ -10,6 +13,4 @@ bool UCustomWidgetNavigation::BPF_IsAnalogNavigationEnabled() {
 void UCustomWidgetNavigation::BPF_ApplyNavigationConfig() {
 }
 
-UCustomWidgetNavigation::UCustomWidgetNavigation() {
-}
 

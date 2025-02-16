@@ -4,3 +4,4 @@ UCollisionNotifyState::UCollisionNotifyState() {
     this->m_bDisableCollisions = true;
 }
 
+

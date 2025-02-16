@@ -13,6 +13,7 @@ public:
     FSCProfileData m_BaseProfileData;
     
     USCSaveObjectPlayerProfile();
+
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveSave(const FString& _saveName);
     

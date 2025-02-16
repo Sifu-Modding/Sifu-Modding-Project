@@ -13,7 +13,8 @@ public:
     FHittedServiceInfos m_Infos;
     
     UHittedOrderServiceNotifyState();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

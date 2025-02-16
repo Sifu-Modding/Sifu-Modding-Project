@@ -12,5 +12,6 @@ public:
     FAIComboLaunchParameters m_Parameters;
     
     UAIActionLaunchCombo();
+
 };
 

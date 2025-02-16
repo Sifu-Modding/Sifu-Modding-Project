@@ -1,8 +1,7 @@
 #include "SCTools.h"
 
-class UGameInstance;
-class UObject;
-class UWorld;
+USCTools::USCTools() {
+}
 
 EQuadrantTypes USCTools::GetAttackQuadrant(EQuadrantTypes _eQuadrant, bool _bIsMirror) {
     return EQuadrantTypes::FrontLeft;
@@ -45,6 +44,8 @@ void USCTools::BPF_FadeWithoutWait(UObject* WorldContextObject, const float _fDu
 void USCTools::BPF_Fade(UObject* WorldContextObject, const float _fDuration, const bool _bToBlack, FLatentActionInfo LatentInfo) {
 }
 
-USCTools::USCTools() {
+FText USCTools::BPF_AsCultureInvariant(FText _textToChange) {
+    return FText::GetEmpty();
 }
+
 

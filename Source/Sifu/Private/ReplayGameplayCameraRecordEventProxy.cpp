@@ -1,10 +1,9 @@
 #include "ReplayGameplayCameraRecordEventProxy.h"
 
-class UObject;
+UReplayGameplayCameraRecordEventProxy::UReplayGameplayCameraRecordEventProxy() {
+}
 
 void UReplayGameplayCameraRecordEventProxy::BPF_DeserializeGameplayCameraEvent(const UObject* _worldContextObject, FReplayGameplayCameraRecordEventDelegate _callback) {
 }
 
-UReplayGameplayCameraRecordEventProxy::UReplayGameplayCameraRecordEventProxy() {
-}
 

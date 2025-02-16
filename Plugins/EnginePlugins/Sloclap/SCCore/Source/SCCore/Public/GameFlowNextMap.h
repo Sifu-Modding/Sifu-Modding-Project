@@ -27,5 +27,6 @@ public:
     FGameplayTagContainer m_ReturnConditions;
     
     UGameFlowNextMap();
+
 };
 

@@ -4,9 +4,17 @@
 #include "Components/StaticMeshComponent.h"
 #include "PushObjMovementComponent.h"
 
-class AActor;
-class AFightingCharacter;
-class ASCPlayerController;
+APushableActor::APushableActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
+    this->m_fFallingVelocityReduc = 2.00f;
+    this->m_StaticMeshComponent = (UStaticMeshComponent*)RootComponent;
+    this->m_MovementComponent = CreateDefaultSubobject<UPushObjMovementComponent>(TEXT("MovementComponent"));
+    this->m_InteractionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Interaction box"));
+    this->m_PivotLoc = CreateDefaultSubobject<USceneComponent>(TEXT("PivotLocComponent"));
+    this->m_fUsabilityAngleRestriction = 90.00f;
+    this->m_InteractionBox->SetupAttachment(RootComponent);
+    this->m_PivotLoc->SetupAttachment(RootComponent);
+}
 
 void APushableActor::BPF_SetPushableState(EPushableState _eNewState) {
 }
@@ -33,12 +41,4 @@ float APushableActor::BPF_AngleBetweenMoveInputAndObject(const AFightingCharacte
 
 
 
-APushableActor::APushableActor() {
-    this->m_fFallingVelocityReduc = 2.00f;
-    this->m_StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
-    this->m_MovementComponent = CreateDefaultSubobject<UPushObjMovementComponent>(TEXT("MovementComponent"));
-    this->m_InteractionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Interaction box"));
-    this->m_PivotLoc = CreateDefaultSubobject<USceneComponent>(TEXT("PivotLocComponent"));
-    this->m_fUsabilityAngleRestriction = 90.00f;
-}
 

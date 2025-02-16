@@ -8,3 +8,4 @@ UCameraLagStruct::UCameraLagStruct() {
     this->m_fInputLagMouseMultiplier = 1.50f;
 }
 
+

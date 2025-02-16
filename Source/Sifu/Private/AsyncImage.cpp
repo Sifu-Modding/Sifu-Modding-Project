@@ -1,7 +1,10 @@
 #include "AsyncImage.h"
 
-class UMaterialInterface;
-class UTexture2D;
+UAsyncImage::UAsyncImage() {
+    this->m_fApparitionDuration = 0.20f;
+    this->m_bMatchSize = true;
+    this->m_bHideOnLoadStart = true;
+}
 
 void UAsyncImage::BPF_SetTexture(UTexture2D* _asset, bool _bMatchSize) {
 }
@@ -18,9 +21,4 @@ void UAsyncImage::BPF_LoadMaterialAssetAsync(TSoftObjectPtr<UMaterialInterface> 
 void UAsyncImage::BPF_Clear() {
 }
 
-UAsyncImage::UAsyncImage() {
-    this->m_fApparitionDuration = 0.20f;
-    this->m_bMatchSize = true;
-    this->m_bHideOnLoadStart = true;
-}
 

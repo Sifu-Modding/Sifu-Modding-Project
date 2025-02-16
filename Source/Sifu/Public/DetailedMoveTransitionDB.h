@@ -17,5 +17,6 @@ public:
     TMap<ETransitionGlobalType, EMoveStatus> m_NeededMoveStatusMap;
     
     UDetailedMoveTransitionDB();
+
 };
 

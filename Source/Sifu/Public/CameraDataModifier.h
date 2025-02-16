@@ -10,6 +10,7 @@ class SIFU_API UCameraDataModifier : public UObject {
     GENERATED_BODY()
 public:
     UCameraDataModifier();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_ReceiveOnStop(UCameraComponentThird* _cameraComponent) const;
     

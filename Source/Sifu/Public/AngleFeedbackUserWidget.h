@@ -8,6 +8,7 @@ class SIFU_API UAngleFeedbackUserWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     UAngleFeedbackUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_DisplayAngleFeedback(float _fAngle);

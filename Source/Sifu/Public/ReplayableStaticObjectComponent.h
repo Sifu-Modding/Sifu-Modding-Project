@@ -14,6 +14,7 @@ protected:
     UPrimitiveComponent* m_RootPrimComp;
     
 public:
-    UReplayableStaticObjectComponent();
+    UReplayableStaticObjectComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

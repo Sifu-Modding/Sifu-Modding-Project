@@ -16,6 +16,7 @@ protected:
     
 public:
     UPushInstigatorAbility();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_HandleDefaultPush(const FSCGameplayAbilityActivationInfo& _activationInfo);

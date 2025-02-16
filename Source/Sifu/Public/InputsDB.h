@@ -25,5 +25,6 @@ public:
     float m_fStickThresholdBetweenV1V2;
     
     UInputsDB();
+
 };
 

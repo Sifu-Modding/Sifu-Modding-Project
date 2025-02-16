@@ -1,6 +1,7 @@
 #include "WGSaveObjectGameData.h"
 
-class USCSaveObjectGameData;
+UWGSaveObjectGameData::UWGSaveObjectGameData() {
+}
 
 void UWGSaveObjectGameData::ReloadDefaultStatsFromDataTable() {
 }
@@ -42,6 +43,4 @@ int32 UWGSaveObjectGameData::BPE_GenerateGlobalAllowedSaveMask_Implementation() 
 void UWGSaveObjectGameData::BPE_CopyToSaveWithMask_Implementation(USCSaveObjectGameData* _inSaveTo, int32 _iTestMask) {
 }
 
-UWGSaveObjectGameData::UWGSaveObjectGameData() {
-}
 

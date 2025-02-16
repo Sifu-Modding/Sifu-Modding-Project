@@ -8,5 +8,6 @@ class SIFU_API UDefenseInfluenceNodeGuard : public UContextualDefenseInfluenceNo
     GENERATED_BODY()
 public:
     UDefenseInfluenceNodeGuard();
+
 };
 

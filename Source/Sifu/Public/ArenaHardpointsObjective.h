@@ -19,8 +19,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FHardpointInfos> m_HardpointsInfos;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnAllHardpointsClearedOnce;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnAllHardpointsClearedOnce;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnHardpointCaptured OnHardpointCapturedDelegate;
@@ -43,6 +43,7 @@ protected:
     
 public:
     UArenaHardpointsObjective();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetTotalNumberOfHardpoints() const;
     

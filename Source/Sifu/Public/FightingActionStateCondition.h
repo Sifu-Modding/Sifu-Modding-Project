@@ -12,5 +12,6 @@ public:
     EFightingActionState m_eActionState;
     
     UFightingActionStateCondition();
+
 };
 

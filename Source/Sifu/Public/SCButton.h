@@ -17,6 +17,7 @@ public:
     FButtonUnFocused OnFocusLost;
     
     USCButton();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetOverrideFocusTints(FLinearColor _focusedColor, FLinearColor _noFocusColor);
     

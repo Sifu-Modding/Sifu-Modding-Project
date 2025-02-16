@@ -15,5 +15,6 @@ public:
     FNetOrderStructWallJumpAttack m_TransientParams;
     
     UOrderWallJumpAttackParams();
+
 };
 

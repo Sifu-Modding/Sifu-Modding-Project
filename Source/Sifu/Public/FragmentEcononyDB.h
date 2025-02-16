@@ -24,6 +24,7 @@ public:
     int32 m_iApperacenChangeCost;
     
     UFragmentEcononyDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetRepairCost(EEquipmentSlot _eSlot, EGearRarity _eRarity) const;
     

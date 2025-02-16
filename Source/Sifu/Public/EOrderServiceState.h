@@ -7,7 +7,7 @@ enum class EOrderServiceState : uint8 {
     None,
     Running,
     Pending,
-    Finished = 0x4,
-    All = 0x7,
+    Finished = 4,
+    All = 7,
 };
 

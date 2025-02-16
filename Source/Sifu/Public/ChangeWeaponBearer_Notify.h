@@ -21,5 +21,6 @@ public:
     FName m_sBoneToAttachWeaponToOnImpostor;
     
     UChangeWeaponBearer_Notify();
+
 };
 

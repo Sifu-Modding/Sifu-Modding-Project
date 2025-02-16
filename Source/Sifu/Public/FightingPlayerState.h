@@ -39,9 +39,10 @@ private:
     uint8 m_bQuitter: 1;
     
 public:
-    AFightingPlayerState();
+    AFightingPlayerState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnRep_TeamNumber();

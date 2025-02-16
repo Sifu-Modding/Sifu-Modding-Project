@@ -16,5 +16,6 @@ public:
     TSoftObjectPtr<UTexture2D> m_FragmentTexture;
     
     UResourcesTexturesData();
+
 };
 

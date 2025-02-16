@@ -90,7 +90,8 @@ protected:
     float CurrentIntervalDuration;
     
 public:
-    UTextLipSync();
+    UTextLipSync(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool StopSpeaking(bool bStopPlayingSound);
     

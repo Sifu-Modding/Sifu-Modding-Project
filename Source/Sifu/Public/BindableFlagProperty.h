@@ -8,6 +8,7 @@ class SIFU_API UBindableFlagProperty : public UBindableIntProperty {
     GENERATED_BODY()
 public:
     UBindableFlagProperty();
+
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveFlags(int32 _iFlags);
     

@@ -31,6 +31,7 @@ public:
     int32 m_DefaultAttacks[21];
     
     UCombo();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FComboNode BPF_GetNode(int32 _ID) const;
     

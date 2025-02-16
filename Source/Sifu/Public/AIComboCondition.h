@@ -14,6 +14,7 @@ class SIFU_API UAIComboCondition : public UComboTransitionCondition, public ISCA
     GENERATED_BODY()
 public:
     UAIComboCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetEnvQueryParameterValue(FName _paramName, const ASCCharacter* _owner, FSCTypedValue& _outValue) const;
     
@@ -24,7 +25,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetEnvQueryParameterValue(FName _paramName, const ASCCharacter* _owner, FSCTypedValue& _outValue) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

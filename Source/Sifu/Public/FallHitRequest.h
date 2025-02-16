@@ -13,6 +13,7 @@ class SIFU_API UFallHitRequest : public UObject {
     GENERATED_BODY()
 public:
     UFallHitRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetFallHitOnSlope(const AFightingCharacter* _character, const FHitResult& _hitResult, FHitBox& _outHitbox) const;
     

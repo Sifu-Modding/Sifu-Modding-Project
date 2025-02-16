@@ -15,6 +15,7 @@ class SIFU_API UTraversalAnimRequest : public UObject {
     GENERATED_BODY()
 public:
     UTraversalAnimRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetTraversalAnimations(const FTraversalInfo& _request, ESCCardinalPoints _eCardinalPoint, ESpeedState _eSpeedState, FTraversalAnimContainer& _outResult) const;
     

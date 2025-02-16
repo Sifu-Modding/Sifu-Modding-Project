@@ -8,5 +8,6 @@ class SIFU_API UDisableTargetTrackingNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
     UDisableTargetTrackingNotifyState();
+
 };
 

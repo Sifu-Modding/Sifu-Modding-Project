@@ -16,5 +16,6 @@ public:
     EDropReason m_eDropReason;
     
     UDropWeaponOrderService();
+
 };
 

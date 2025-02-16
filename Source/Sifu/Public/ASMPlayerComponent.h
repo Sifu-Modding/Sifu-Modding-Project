@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UASMPlayerComponent : public UASMComponent {
     GENERATED_BODY()
 public:
-    UASMPlayerComponent();
+    UASMPlayerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

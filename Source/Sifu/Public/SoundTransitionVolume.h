@@ -17,6 +17,7 @@ private:
     FName m_RTPC;
     
 public:
-    ASoundTransitionVolume();
+    ASoundTransitionVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -2,8 +2,8 @@
 #include "CoreMinimal.h"
 #include "ESlopeReaction.generated.h"
 
-UENUM(BlueprintType)
-enum class ESlopeReaction : uint8 {
+UENUM()
+enum class ESlopeReaction : int32 {
     FallFromPushed,
     FallOnSlope,
     None,

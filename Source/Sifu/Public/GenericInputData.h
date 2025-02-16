@@ -70,5 +70,6 @@ public:
     UGenericInputUIData* m_UIData;
     
     UGenericInputData();
+
 };
 

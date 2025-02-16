@@ -4,3 +4,4 @@ UParryFromDownAbility::UParryFromDownAbility() {
     this->m_bLaunchDownRecovery = true;
 }
 
+

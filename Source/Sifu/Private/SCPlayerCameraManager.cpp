@@ -1,5 +1,7 @@
 #include "SCPlayerCameraManager.h"
 
-ASCPlayerCameraManager::ASCPlayerCameraManager() {
+ASCPlayerCameraManager::ASCPlayerCameraManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DefaultModifiers.AddDefaulted(1);
 }
+
 

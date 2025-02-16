@@ -11,3 +11,4 @@ UPerPlatformScaleBox::UPerPlatformScaleBox() {
     this->SmallScreenIgnoreInheritedScale = false;
 }
 
+

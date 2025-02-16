@@ -12,5 +12,6 @@ public:
     FVector m_Extent;
     
     UBoxHitDetectionDB();
+
 };
 

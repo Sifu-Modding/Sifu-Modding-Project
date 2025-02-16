@@ -43,8 +43,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnObjectUnlockedDynamic m_OnObjectUnlocked;
     
-   /* UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast m_OnObjectsUnlockedFinished;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // USCDelegate::FDynamicMulticast m_OnObjectsUnlockedFinished;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSaveCheckFinished m_OnSaveCheckFinished;
@@ -53,6 +53,7 @@ public:
     FOnAchievementsInit m_OnAchievementsInit;
     
     USCInGameAchievementsManagerSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FAchievementUnlockConditionStruct BPF_GetUnlockConditionStructFromTag(const FGameplayTag& _ObjectTag) const;
     

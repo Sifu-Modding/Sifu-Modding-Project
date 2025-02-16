@@ -6,3 +6,4 @@ USCSignificanceSettings::USCSignificanceSettings() {
     this->m_fMediumBucketDist = 5000.00f;
 }
 
+

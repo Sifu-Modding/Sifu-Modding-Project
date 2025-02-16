@@ -12,6 +12,7 @@ class SIFU_API UParryMatch : public UObject {
     GENERATED_BODY()
 public:
     UParryMatch();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_DoesParrySideMatch(EParrySide _eParrySide, EAttackTarget _eAttackTarget, EAttackOrigin _eAttackOrigin) const;
     

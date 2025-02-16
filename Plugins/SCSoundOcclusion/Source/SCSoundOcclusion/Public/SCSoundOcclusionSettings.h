@@ -4,7 +4,7 @@
 #include "ESCOcclusionMode.h"
 #include "SCSoundOcclusionSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SCSOUNDOCCLUSION_API USCSoundOcclusionSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -21,5 +21,6 @@ public:
     ESCOcclusionMode m_eOcclusionMode;
     
     USCSoundOcclusionSettings();
+
 };
 

@@ -4,3 +4,4 @@ UAIPhaseTransitionFocusAttackVictim::UAIPhaseTransitionFocusAttackVictim() {
     this->m_VitalPoint = NULL;
 }
 
+

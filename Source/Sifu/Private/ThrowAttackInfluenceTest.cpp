@@ -5,3 +5,4 @@ UThrowAttackInfluenceTest::UThrowAttackInfluenceTest() {
     this->m_WeaponDataTypeToTest = NULL;
 }
 
+

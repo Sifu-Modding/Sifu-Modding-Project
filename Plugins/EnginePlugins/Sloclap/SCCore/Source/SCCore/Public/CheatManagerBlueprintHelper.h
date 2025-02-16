@@ -12,6 +12,7 @@ class SCCORE_API UCheatManagerBlueprintHelper : public UBlueprintFunctionLibrary
     GENERATED_BODY()
 public:
     UCheatManagerBlueprintHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_UnapplyCheats();
     
@@ -26,6 +27,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static bool BPF_HasAppliedCheats();
+    
+    UFUNCTION(BlueprintCallable)
+    static TMap<FGameplayTag, FString> BPF_GetRandomCheats(int32 _iNumMin, int32 _iNumMax, FGameplayTagContainer _BannedCheats);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static USCCheatManagerSettings* BPF_GetCheatDefaultSettings();
@@ -55,7 +59,7 @@ public:
     static void BPF_ApplyCheats(bool _bForceApply);
     
     UFUNCTION(BlueprintCallable)
-    static void BPF_ApplyCheat(FGameplayTag _cheatTag);
+    static void BPF_ApplyCheat(FGameplayTag _cheatTag, bool _bForceApply);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_ActivateCheats(FGameplayTagContainer _cheatsToActivate, const FString& _argument);

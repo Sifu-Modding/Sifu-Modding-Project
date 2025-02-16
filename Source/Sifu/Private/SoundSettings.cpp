@@ -13,7 +13,7 @@ USoundSettings::USoundSettings() {
     this->m_AdvancedVibrationState = TEXT("MotionFeedback");
     this->m_AdvancedVibrationStateON = TEXT("On");
     this->m_AdvancedVibrationStateOFF = TEXT("Off");
-  /*  this->m_eDefaultChannelConfig = AkChannelConfiguration::Ak_2_0;*/
+    //this->m_eDefaultChannelConfig = AkChannelConfiguration::Ak_2_0;
     this->m_Audio3DRTPC = TEXT("RTPC_Audio3D");
     this->m_HandlingMonoBusList.AddDefaulted(4);
     this->m_VoiceArchetypeSwitchGroup = TEXT("Voice_Archetype");
@@ -22,4 +22,5 @@ USoundSettings::USoundSettings() {
     this->m_VoiceGenderSwitchValues[0] = TEXT("Male");
     this->m_VoiceGenderSwitchValues[1] = TEXT("Male");
 }
+
 

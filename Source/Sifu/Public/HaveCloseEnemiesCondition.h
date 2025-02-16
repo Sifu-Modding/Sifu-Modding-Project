@@ -14,5 +14,6 @@ public:
     float m_fMaxDist;
     
     UHaveCloseEnemiesCondition();
+
 };
 

@@ -29,6 +29,7 @@ protected:
     
 public:
     UNewNotificationWidget();
+
     UFUNCTION(BlueprintCallable)
     void OnStatsChanged();
     

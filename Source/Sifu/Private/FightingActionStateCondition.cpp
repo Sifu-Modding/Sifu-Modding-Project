@@ -4,3 +4,4 @@ UFightingActionStateCondition::UFightingActionStateCondition() {
     this->m_eActionState = EFightingActionState::None;
 }
 
+

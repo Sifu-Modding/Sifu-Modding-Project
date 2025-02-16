@@ -1,7 +1,10 @@
 #include "BaseHitDetectionDB.h"
 
-class ABaseCharacter;
-class USkeletalMeshComponent;
+UBaseHitDetectionDB::UBaseHitDetectionDB() {
+    this->m_bUseBoneTransform = false;
+    this->m_bIsSocket = false;
+    this->m_bOnTargetOnly = false;
+}
 
 FName UBaseHitDetectionDB::BPF_GetRealBoneName(USkeletalMeshComponent* _meshComponent) const {
     return NAME_None;
@@ -11,9 +14,4 @@ FName UBaseHitDetectionDB::BPF_GetBoneOnCharacter(ABaseCharacter* _character, bo
     return NAME_None;
 }
 
-UBaseHitDetectionDB::UBaseHitDetectionDB() {
-    this->m_bUseBoneTransform = false;
-    this->m_bIsSocket = false;
-    this->m_bOnTargetOnly = false;
-}
 

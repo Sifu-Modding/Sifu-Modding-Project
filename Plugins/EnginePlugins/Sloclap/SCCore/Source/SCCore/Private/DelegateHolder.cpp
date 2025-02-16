@@ -1,10 +1,9 @@
 #include "DelegateHolder.h"
 
-class UParticleSystemComponent;
+UDelegateHolder::UDelegateHolder() {
+}
 
 void UDelegateHolder::SytemCompleted(UParticleSystemComponent* Component) {
 }
 
-UDelegateHolder::UDelegateHolder() {
-}
 

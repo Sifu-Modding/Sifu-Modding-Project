@@ -1,8 +1,7 @@
 #include "ReplayHelperLibrary.h"
 
-class ABaseReplayController;
-class ABaseWeapon;
-class UObject;
+UReplayHelperLibrary::UReplayHelperLibrary() {
+}
 
 void UReplayHelperLibrary::BPF_SetScreenMessagesEnabled(bool _bEnabled) {
 }
@@ -47,6 +46,4 @@ bool UReplayHelperLibrary::BPF_AreAvailabilityLayersPushed(const FAvailabilityLa
     return false;
 }
 
-UReplayHelperLibrary::UReplayHelperLibrary() {
-}
 

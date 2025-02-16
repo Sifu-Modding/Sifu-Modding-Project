@@ -9,6 +9,7 @@ class SIFU_API UStatsTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UStatsTools();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EAttributeScales ConvertFloatToAttributeScale(float _fValue);
     

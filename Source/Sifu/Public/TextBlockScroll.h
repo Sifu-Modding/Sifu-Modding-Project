@@ -28,6 +28,7 @@ public:
     float m_fMargin;
     
     UTextBlockScroll();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPF_SetOpacity(const float& _fOpacity);
     

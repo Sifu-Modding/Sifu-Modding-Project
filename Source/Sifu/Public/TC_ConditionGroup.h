@@ -15,5 +15,6 @@ public:
     TArray<UEvaluateTargetCondition*> m_Conditions;
     
     UTC_ConditionGroup();
+
 };
 

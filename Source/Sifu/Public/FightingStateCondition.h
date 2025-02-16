@@ -12,5 +12,6 @@ public:
     EFightingState m_eFightingState;
     
     UFightingStateCondition();
+
 };
 

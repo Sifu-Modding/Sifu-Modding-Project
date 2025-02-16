@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SIFU_API ALevelSequenceRoot : public AActor {
     GENERATED_BODY()
 public:
-    ALevelSequenceRoot();
+    ALevelSequenceRoot(const FObjectInitializer& ObjectInitializer);
+
 };
 

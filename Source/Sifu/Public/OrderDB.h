@@ -72,6 +72,7 @@ public:
     FOrderServiceInfosList m_OrderServices;
     
     UOrderDB();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnOrderStopped(uint8 _uiOrderId, UOrderComponent* _component) const;
     

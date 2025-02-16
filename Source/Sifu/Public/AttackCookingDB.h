@@ -8,5 +8,6 @@ class SIFU_API UAttackCookingDB : public UDataAsset {
     GENERATED_BODY()
 public:
     UAttackCookingDB();
+
 };
 

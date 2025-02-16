@@ -91,3 +91,4 @@ UGlobalAISettings::UGlobalAISettings() {
     this->m_iArenaMaxAICharactersPerPool = 10;
 }
 
+

@@ -107,7 +107,8 @@ private:
     FVector2D m_vViewportConstraint;
     
 public:
-    UInteractionObjectComponent();
+    UInteractionObjectComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ForceUse();
@@ -140,7 +141,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FInteractionTextStruct BPF_GetInteractionTextStruct() const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

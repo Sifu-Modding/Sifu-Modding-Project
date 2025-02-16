@@ -8,5 +8,6 @@ class SIFU_API UParryBTTask : public UAIDefenseBTTask {
     GENERATED_BODY()
 public:
     UParryBTTask();
+
 };
 

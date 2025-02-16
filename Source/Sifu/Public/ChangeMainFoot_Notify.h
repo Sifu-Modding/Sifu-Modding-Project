@@ -8,5 +8,6 @@ class SIFU_API UChangeMainFoot_Notify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     UChangeMainFoot_Notify();
+
 };
 

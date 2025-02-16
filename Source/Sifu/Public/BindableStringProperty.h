@@ -8,6 +8,7 @@ class SIFU_API UBindableStringProperty : public UBindablePropertyBase {
     GENERATED_BODY()
 public:
     UBindableStringProperty();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetValue(const FString& _value);
     

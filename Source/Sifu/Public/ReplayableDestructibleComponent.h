@@ -18,8 +18,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bCreatePhysicsStateAtStart;
     
-    /*UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnReCreatedPhysicsState;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnReCreatedPhysicsState;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayableDestructibleStateChangeDelegate OnRepDestructibleStateChange;
@@ -54,9 +54,10 @@ private:
     EReplayableDestructibleState m_eReplayableDestructibleState;
     
 public:
-    UReplayableDestructibleComponent();
+    UReplayableDestructibleComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnReplayTimeDilationChanged(float _fDilation);

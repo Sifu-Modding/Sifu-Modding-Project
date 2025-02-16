@@ -14,3 +14,4 @@ UWallEnvironmentalAttackSettings::UWallEnvironmentalAttackSettings() {
     this->m_animRequest = NULL;
 }
 
+

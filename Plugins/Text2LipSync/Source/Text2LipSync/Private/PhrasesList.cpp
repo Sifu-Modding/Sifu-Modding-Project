@@ -1,6 +1,7 @@
 #include "PhrasesList.h"
 
-class UDataTable;
+UPhrasesList::UPhrasesList() {
+}
 
 bool UPhrasesList::LoadFromDataTable(UDataTable* DataTable) {
     return false;
@@ -9,6 +10,4 @@ bool UPhrasesList::LoadFromDataTable(UDataTable* DataTable) {
 void UPhrasesList::GetPhraseFromList(const FName& Key, FLipSync_Phrase& ReturnValue) const {
 }
 
-UPhrasesList::UPhrasesList() {
-}
 

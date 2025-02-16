@@ -13,5 +13,6 @@ public:
     UVitalPointData* m_VitalPoint;
     
     UAIPhaseTransitionFocusAttackVictim();
+
 };
 

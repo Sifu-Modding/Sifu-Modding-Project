@@ -8,5 +8,6 @@ class SIFU_API USCAbilitySystemGlobals : public UAbilitySystemGlobals {
     GENERATED_BODY()
 public:
     USCAbilitySystemGlobals();
+
 };
 

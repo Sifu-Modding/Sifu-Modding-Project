@@ -9,6 +9,7 @@ class SIFU_API UCameraZoneBlueprintHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UCameraZoneBlueprintHelper();
+
 private:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetSafeZoneListFromDeadZones(TArray<FDeadZone>& _outListOfSafeZones, const TArray<FDeadZone>& _inDeadZones);

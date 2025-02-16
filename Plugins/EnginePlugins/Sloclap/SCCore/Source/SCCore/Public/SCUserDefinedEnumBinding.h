@@ -19,5 +19,6 @@ public:
     TMap<FName, FName> m_CppToBPBinding;
     
     USCUserDefinedEnumBinding();
+
 };
 

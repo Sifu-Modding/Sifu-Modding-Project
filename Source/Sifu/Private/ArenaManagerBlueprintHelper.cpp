@@ -1,19 +1,15 @@
 #include "ArenaManagerBlueprintHelper.h"
 
-class UArenaChallengeDescription;
-class UArenaSettings;
-class UBaseArenaObjective;
+UArenaManagerBlueprintHelper::UArenaManagerBlueprintHelper() {
+}
 
 void UArenaManagerBlueprintHelper::BPF_SetCurrentArena(int32 _iBatchIndex, int32 _iChallengeIndex) {
 }
 
-void UArenaManagerBlueprintHelper::BPF_SetChallengeIndex(int32 _iChallengeIndex) {
+void UArenaManagerBlueprintHelper::BPF_SetArenaCustomOutfit(int32 _outfitIndex) {
 }
 
-void UArenaManagerBlueprintHelper::BPF_SetArena(FGameplayTag _arenaTag) {
-}
-
-void UArenaManagerBlueprintHelper::BPF_OnCurrentChallengeSpecificLevelShown() {
+void UArenaManagerBlueprintHelper::BPF_ResetArenaCustomOutfit() {
 }
 
 void UArenaManagerBlueprintHelper::BPF_OnCurrentChallengeSpecificLevelLoaded() {
@@ -23,6 +19,10 @@ void UArenaManagerBlueprintHelper::BPF_MarkChallengeAsSeen(const UArenaChallenge
 }
 
 bool UArenaManagerBlueprintHelper::BPF_IsDebugChallenge() {
+    return false;
+}
+
+bool UArenaManagerBlueprintHelper::BPF_IsArenaCustomModeEnabled() {
     return false;
 }
 
@@ -42,10 +42,6 @@ int32 UArenaManagerBlueprintHelper::BPF_GetLastSelectedBatchIndex() {
     return 0;
 }
 
-FArenaParams UArenaManagerBlueprintHelper::BPF_GetCurrentParams() {
-    return FArenaParams{};
-}
-
 UBaseArenaObjective* UArenaManagerBlueprintHelper::BPF_GetCurrentMasterObjective() {
     return NULL;
 }
@@ -56,6 +52,10 @@ int32 UArenaManagerBlueprintHelper::BPF_GetCurrentChallengeIndex() {
 
 UArenaChallengeDescription* UArenaManagerBlueprintHelper::BPF_GetCurrentChallenge() {
     return NULL;
+}
+
+FGameplayTag UArenaManagerBlueprintHelper::BPF_GetCurrentBatchCategory() {
+    return FGameplayTag{};
 }
 
 FGameplayTag UArenaManagerBlueprintHelper::BPF_GetCurrentArena() {
@@ -74,21 +74,29 @@ UArenaSettings* UArenaManagerBlueprintHelper::BPF_GetArenaSettings() {
     return NULL;
 }
 
-TArray<FArenaBatch> UArenaManagerBlueprintHelper::BPF_GetArenaBatches(FGameplayTag _restrictionTag) {
+int32 UArenaManagerBlueprintHelper::BPF_GetArenaCustomModeOutfit() {
+    return 0;
+}
+
+TArray<FArenaBatch> UArenaManagerBlueprintHelper::BPF_GetArenaBatches(FGameplayTag _restrictionTag, FGameplayTag _filterTag) {
     return TArray<FArenaBatch>();
 }
 
 void UArenaManagerBlueprintHelper::BPF_EnableProgressionSystem(bool _bEnabled) {
 }
 
+void UArenaManagerBlueprintHelper::BPF_EnableArenaCustomMode(bool _bEnabled) {
+}
+
 FArenaBatchProgressionInfo UArenaManagerBlueprintHelper::BPF_ComputeBatchProgression(const FArenaBatch& _ArenaBatch) {
     return FArenaBatchProgressionInfo{};
 }
 
-FArenaProgressionInfo UArenaManagerBlueprintHelper::BPF_ComputeArenaProgression(FGameplayTag _restrictionTag) {
+FArenaProgressionInfo UArenaManagerBlueprintHelper::BPF_ComputeArenaProgression(FGameplayTag _restrictionTag, FGameplayTag _filterTag) {
     return FArenaProgressionInfo{};
 }
 
-UArenaManagerBlueprintHelper::UArenaManagerBlueprintHelper() {
+void UArenaManagerBlueprintHelper::BPF_ComputeArenaFinished(FGameplayTag _restrictionTag, FGameplayTag _filterTag, uint8& _outuiArenaFinished, uint8& _outuiTotalArena) {
 }
+
 

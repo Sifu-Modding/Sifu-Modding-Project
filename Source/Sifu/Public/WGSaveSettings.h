@@ -6,7 +6,7 @@
 
 class UCharacterBuildDB;
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, Config=Engine)
 class SIFU_API UWGSaveSettings : public USaveSettings {
     GENERATED_BODY()
 public:
@@ -14,8 +14,9 @@ public:
     TSoftObjectPtr<UCharacterBuildDB> m_DefaultBuild;
     
     UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameOptionMappingRange m_GameOptionValue[41];
+    FGameOptionMappingRange m_GameOptionValue[43];
     
     UWGSaveSettings();
+
 };
 

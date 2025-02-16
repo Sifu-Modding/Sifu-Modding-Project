@@ -1,7 +1,13 @@
 #include "ControllerButtonWidget.h"
 
-class UGenericInputData;
-class UTexture2D;
+UControllerButtonWidget::UControllerButtonWidget() {
+    this->m_iInputSlotIndex = 0;
+    this->m_eInputContext = InputContext::Invalid;
+    this->m_eAxisType = EControllerIconAxisTypes::HorizontalAndVertical;
+    this->m_bUpdateOnControllerTypeChanged = true;
+    this->m_IconStyle = EControllerIconStyles::Small;
+    this->m_eAction = InputAction::None;
+}
 
 void UControllerButtonWidget::BPF_SetMappingID(const FMappingID& _mappingID, bool _bRefresh) {
 }
@@ -38,12 +44,4 @@ FText UControllerButtonWidget::BPF_GetKeyDisplayName(const FKey& _key) {
 void UControllerButtonWidget::BPF_GetInputNode(FInputMappingNode& Node) {
 }
 
-UControllerButtonWidget::UControllerButtonWidget() {
-    this->m_iInputSlotIndex = 0;
-    this->m_eInputContext = InputContext::Invalid;
-    this->m_eAxisType = EControllerIconAxisTypes::HorizontalAndVertical;
-    this->m_bUpdateOnControllerTypeChanged = true;
-    this->m_IconStyle = EControllerIconStyles::Small;
-    this->m_eAction = InputAction::None;
-}
 

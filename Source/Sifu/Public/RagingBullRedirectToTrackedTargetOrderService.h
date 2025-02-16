@@ -8,5 +8,6 @@ class SIFU_API URagingBullRedirectToTrackedTargetOrderService : public URedirect
     GENERATED_BODY()
 public:
     URagingBullRedirectToTrackedTargetOrderService();
+
 };
 

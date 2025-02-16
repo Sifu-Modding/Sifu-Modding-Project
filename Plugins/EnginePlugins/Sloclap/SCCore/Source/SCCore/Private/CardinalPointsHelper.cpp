@@ -1,5 +1,8 @@
 #include "CardinalPointsHelper.h"
 
+UCardinalPointsHelper::UCardinalPointsHelper() {
+}
+
 ESCCardinalPoints UCardinalPointsHelper::BPF_Mirror(ESCCardinalPoints _eCardinalPoint, bool _bMirror, bool _bIgnoreVertical) {
     return ESCCardinalPoints::North;
 }
@@ -12,6 +15,4 @@ ESCCardinalPoints UCardinalPointsHelper::BPF_GetCardinalPointFromAngle(float _fA
     return ESCCardinalPoints::North;
 }
 
-UCardinalPointsHelper::UCardinalPointsHelper() {
-}
 

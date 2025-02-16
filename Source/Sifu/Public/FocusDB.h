@@ -74,5 +74,6 @@ public:
     float m_fVitalPointsFXFadeInDuration;
     
     UFocusDB();
+
 };
 

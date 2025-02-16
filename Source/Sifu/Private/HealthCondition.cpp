@@ -5,3 +5,4 @@ UHealthCondition::UHealthCondition() {
     this->m_fValue = 0.00f;
 }
 
+

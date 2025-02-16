@@ -28,6 +28,7 @@ protected:
     
 public:
     USCAiAction();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_SetBlackBoardValueAsVector(FName _key, const FVector& _vValue) const;
@@ -114,7 +115,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool BPE_CanPerform(const USCAIComponent* _aiComponent) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

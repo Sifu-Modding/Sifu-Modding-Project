@@ -11,5 +11,6 @@ public:
     FName m_EventName;
     
     UTriggerGenericEventDialogAction();
+
 };
 

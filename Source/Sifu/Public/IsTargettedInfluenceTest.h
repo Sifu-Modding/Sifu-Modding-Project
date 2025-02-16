@@ -8,5 +8,6 @@ class SIFU_API UIsTargettedInfluenceTest : public UAIInfluenceTest {
     GENERATED_BODY()
 public:
     UIsTargettedInfluenceTest();
+
 };
 

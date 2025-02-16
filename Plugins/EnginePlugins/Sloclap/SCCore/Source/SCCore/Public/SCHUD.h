@@ -7,6 +7,7 @@ UCLASS(Blueprintable, NonTransient)
 class SCCORE_API ASCHUD : public AHUD {
     GENERATED_BODY()
 public:
-    ASCHUD();
+    ASCHUD(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -5,5 +5,6 @@
 UENUM(BlueprintType)
 enum class EWGGameFlowMapOption : uint8 {
     UseGameDifficulty,
+    IsArenaMenuMap,
 };
 

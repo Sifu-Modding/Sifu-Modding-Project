@@ -8,7 +8,7 @@
 #include "OrderDB.h"
 #include "OrderFallOnSlopeDB.generated.h"
 
-class UAkRtpc;
+//class UAkRtpc;
 class UAnimSequence;
 class UObject;
 class UPhysicalMaterial;
@@ -84,8 +84,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bMirrorFallOnRightSide;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkRtpc* m_RTCPSpeed;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkRtpc* m_RTCPSpeed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_RTCPMinMaxVelocity;
@@ -97,6 +97,7 @@ public:
     bool m_bCallRTPCOnSelf;
     
     UOrderFallOnSlopeDB();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_StopBodyRollLoop(UObject* _owner, uint8 _uiOrderId) const;
     

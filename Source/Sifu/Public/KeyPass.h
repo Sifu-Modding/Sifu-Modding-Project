@@ -22,9 +22,10 @@ private:
     bool m_bForAllPlayers;
     
 public:
-    AKeyPass();
+    AKeyPass(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable)
     void UseInteractiveObject(APlayerController* _controller);

@@ -19,5 +19,6 @@ public:
     TMap<TSubclassOf<ABaseWeapon>, FUsableWeaponInfo> m_WeaponsGameplayInfo;
     
     UWeaponInfoForAIDataAsset();
+
 };
 

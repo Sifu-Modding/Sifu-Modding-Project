@@ -9,6 +9,7 @@ class SIFU_API UGameplayOptionsMenu : public UMenuWidget {
     GENERATED_BODY()
 public:
     UGameplayOptionsMenu();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetGameOptionValue(EGameOptionTypes _eOptionType, float _fOptionValue);
     

@@ -13,14 +13,15 @@ class SIFU_API UOrderTypeHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOrderTypeHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FOrderType MakeOrderTypeFromEnum(EOrderType _eOrderType);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FOrderType MakeOrderTypeFromBP(const ABaseCharacter* _owner, FName _OrderType);
     
-  /*  UFUNCTION(BlueprintCallable, BlueprintPure)
-    static FOrderType MakeFromEditableOrderType(const ABaseCharacter*& _owner, const FEditableOrderType& _OrderType);*/
+    // UFUNCTION(BlueprintCallable, BlueprintPure)
+    // static FOrderType MakeFromEditableOrderType(const ABaseCharacter*& _owner, const FEditableOrderType& _OrderType);
     
 };
 

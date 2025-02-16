@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SCCORE_API ASCSkeletalMeshPrimInstActor : public ASkeletalMeshActor {
     GENERATED_BODY()
 public:
-    ASCSkeletalMeshPrimInstActor();
+    ASCSkeletalMeshPrimInstActor(const FObjectInitializer& ObjectInitializer);
+
 };
 

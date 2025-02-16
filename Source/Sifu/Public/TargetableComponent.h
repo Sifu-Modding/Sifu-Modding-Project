@@ -11,11 +11,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool m_bShouldDisplayBP;
     
-    UTargetableComponent();
+    UTargetableComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetShouldDisplay(bool _bSHould);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

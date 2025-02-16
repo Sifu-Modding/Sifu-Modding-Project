@@ -15,5 +15,6 @@ public:
     FNetOrderStructAttack m_TransientParams;
     
     UOrderAttackParams();
+
 };
 

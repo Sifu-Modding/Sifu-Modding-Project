@@ -4,3 +4,4 @@ UIsInInteractiveDialogCondition::UIsInInteractiveDialogCondition() {
     this->m_iMaxChoicesCount = 3;
 }
 
+

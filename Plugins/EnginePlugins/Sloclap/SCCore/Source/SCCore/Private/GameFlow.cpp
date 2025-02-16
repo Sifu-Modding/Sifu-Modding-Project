@@ -1,5 +1,11 @@
 #include "GameFlow.h"
 
+UGameFlow::UGameFlow() {
+    this->m_currentNode = NULL;
+    this->m_pendingNode = NULL;
+    this->m_ControllerClass = NULL;
+}
+
 void UGameFlow::BPF_ResetMapOption() {
 }
 
@@ -13,9 +19,4 @@ FGameplayTagContainer UGameFlow::BPF_GetMapOptions() const {
 void UGameFlow::BPF_AddMapOption(FGameplayTag _optionToAdd) {
 }
 
-UGameFlow::UGameFlow() {
-    this->m_currentNode = NULL;
-    this->m_pendingNode = NULL;
-    this->m_ControllerClass = NULL;
-}
 

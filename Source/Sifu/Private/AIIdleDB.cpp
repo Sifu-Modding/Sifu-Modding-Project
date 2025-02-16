@@ -6,3 +6,4 @@ UAIIdleDB::UAIIdleDB() {
     this->m_eLookAtApplyMode = ELookAtApplyMode::Procedural_Spine;
 }
 
+

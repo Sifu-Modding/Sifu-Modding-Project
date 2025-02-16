@@ -6,3 +6,4 @@ UTC_ConditionOnTargettingType::UTC_ConditionOnTargettingType() {
     this->m_condition = NULL;
 }
 
+

@@ -12,5 +12,6 @@ public:
     FAIPhaseNodeHardLink m_phaseHardLink;
     
     UDefenseInfluenceNodeGotoPhase();
+
 };
 

@@ -16,6 +16,7 @@ protected:
     
 public:
     UAIPhaseTransitionHealthChange();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnDeathDismiss(UHealthComponent* _healthComponent);

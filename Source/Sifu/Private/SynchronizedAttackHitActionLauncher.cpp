@@ -1,13 +1,5 @@
 #include "SynchronizedAttackHitActionLauncher.h"
 
-class AFightingCharacter;
-
-bool USynchronizedAttackHitActionLauncher::BPF_AreHitLethal(AFightingCharacter* _victimChar, const TArray<FOverridingHitBox>& _hitsToApply) {
-    return false;
-}
-
-
-
 USynchronizedAttackHitActionLauncher::USynchronizedAttackHitActionLauncher() {
     this->m_bMirrorByQuadrant = false;
     this->m_eInstigatorOrderType = EOrderType::SynchronizedAttackInstigator;
@@ -19,4 +11,11 @@ USynchronizedAttackHitActionLauncher::USynchronizedAttackHitActionLauncher() {
     this->m_eStartQuadrant = EQuadrantTypes::FrontLeft;
     this->m_bMirrorOnBackFrontQuadrant = true;
 }
+
+bool USynchronizedAttackHitActionLauncher::BPF_AreHitLethal(AFightingCharacter* _victimChar, const TArray<FOverridingHitBox>& _hitsToApply) {
+    return false;
+}
+
+
+
 

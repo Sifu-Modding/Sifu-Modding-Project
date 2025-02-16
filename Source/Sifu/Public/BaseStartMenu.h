@@ -8,6 +8,7 @@ class SIFU_API UBaseStartMenu : public UMenuWidget {
     GENERATED_BODY()
 public:
     UBaseStartMenu();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsDebugPIEEnabled() const;

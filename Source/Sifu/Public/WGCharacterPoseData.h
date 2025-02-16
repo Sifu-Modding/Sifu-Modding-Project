@@ -8,5 +8,6 @@ class SIFU_API UWGCharacterPoseData : public USCCharacterPoseData {
     GENERATED_BODY()
 public:
     UWGCharacterPoseData();
+
 };
 

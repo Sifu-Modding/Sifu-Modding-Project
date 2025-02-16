@@ -25,6 +25,7 @@ class SCCORE_API USCGameplayStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCGameplayStatics();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_UnloadLevels(const UObject* _context, const TArray<FName>& _levels, bool _bSynchronous);
     

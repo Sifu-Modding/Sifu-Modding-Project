@@ -11,6 +11,7 @@ class UTargetActionTypeRequest : public UObject {
     GENERATED_BODY()
 public:
     UTargetActionTypeRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     EActionType BPE_GetTargetActionType(const AActor* _owner) const;
     

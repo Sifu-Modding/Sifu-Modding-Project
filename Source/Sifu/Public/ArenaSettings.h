@@ -5,6 +5,7 @@
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
 #include "ArenaBatch.h"
+#include "ArenaBatchCategory.h"
 #include "EArenaUnlockingBehavior.h"
 #include "ArenaSettings.generated.h"
 
@@ -14,6 +15,9 @@ UCLASS(Blueprintable)
 class SIFU_API UArenaSettings : public UObject {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FGameplayTag, FArenaBatchCategory> m_ArenaBatchCategories;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, FGameplayTagContainer> m_ArenasPerType;
     
@@ -33,13 +37,13 @@ public:
     int32 m_iMaxStarCountThatGrantsCurrency;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 m_iCurrencyPerStar;
+    FGameplayTag m_LockAllSkillsCheat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag m_UnlockAllSkillsCheat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iMaxNumberOfDifferentCharacterBP;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 m_iNbImpostorPerClasses;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FFloatRange m_fDelayBetweenSpawns;
@@ -81,6 +85,7 @@ public:
     float m_fAIDespawnDelayWhileNotRendered;
     
     UArenaSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetCaptureSpeedMultiplierPerScoreMultiplier(int32 _iScoreMultiplierIndex) const;
     

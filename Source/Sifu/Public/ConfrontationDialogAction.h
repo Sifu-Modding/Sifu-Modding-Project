@@ -17,6 +17,7 @@ public:
     bool m_bPlayPrefightAnimations;
     
     UConfrontationDialogAction();
+
 protected:
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;

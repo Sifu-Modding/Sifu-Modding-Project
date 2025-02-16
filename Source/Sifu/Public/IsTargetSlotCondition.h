@@ -12,5 +12,6 @@ public:
     FSCUserDefinedEnumHandler m_Slot;
     
     UIsTargetSlotCondition();
+
 };
 

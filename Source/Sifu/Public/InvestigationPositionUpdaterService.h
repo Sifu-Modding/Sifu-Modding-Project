@@ -8,5 +8,6 @@ class SIFU_API UInvestigationPositionUpdaterService : public UBTService {
     GENERATED_BODY()
 public:
     UInvestigationPositionUpdaterService();
+
 };
 

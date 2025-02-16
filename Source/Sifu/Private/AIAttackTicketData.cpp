@@ -4,3 +4,4 @@ UAIAttackTicketData::UAIAttackTicketData() {
     this->m_iSerializeVersion = 0;
 }
 
+

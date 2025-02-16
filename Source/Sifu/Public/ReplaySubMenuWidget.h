@@ -25,6 +25,7 @@ protected:
     
 public:
     UReplaySubMenuWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsSubMenuAvailable(const UReplaySubMenuWidget* _menu) const;

@@ -1,7 +1,12 @@
 #include "AnimInstanceWithDependancy.h"
 #include "Net/UnrealNetwork.h"
 
-class USCAnimInstance;
+UAnimInstanceWithDependancy::UAnimInstanceWithDependancy() {
+    this->m_MasterAnimInstance = NULL;
+    this->m_bAnyAnimInProgress = false;
+    this->m_eTransitionType = EMoveTransitionType::None;
+    this->m_VariableWeightMasterStateName = TEXT("Master");
+}
 
 void UAnimInstanceWithDependancy::Update(float _fDt) {
 }
@@ -30,10 +35,4 @@ void UAnimInstanceWithDependancy::GetLifetimeReplicatedProps(TArray<FLifetimePro
     DOREPLIFETIME(UAnimInstanceWithDependancy, m_V3Info);
 }
 
-UAnimInstanceWithDependancy::UAnimInstanceWithDependancy() {
-    this->m_MasterAnimInstance = NULL;
-    this->m_bAnyAnimInProgress = false;
-    this->m_eTransitionType = EMoveTransitionType::None;
-    this->m_VariableWeightMasterStateName = TEXT("Master");
-}
 

@@ -1,8 +1,14 @@
 #include "ReplayMainUserWidget.h"
 
-class AActor;
-class AReplayController;
-class UReplayKey;
+UReplayMainUserWidget::UReplayMainUserWidget() {
+    this->m_bUIInitialized = false;
+    this->m_bAutoSelectKeyOnAdd = true;
+    this->m_bOnlyApplyPersistentSettingsOnCustomCameraKeys = true;
+    this->m_bOnApplyCameraSettingsSetCameraModeToCustom = true;
+    this->m_bSelectKeyOnGoToTimeCompleted = false;
+    this->m_bOnSelectFailDefaultToSelectedKey = true;
+    this->m_TimelineWidget = NULL;
+}
 
 bool UReplayMainUserWidget::OnTimelineModePressed() {
     return false;
@@ -187,13 +193,4 @@ void UReplayMainUserWidget::BPE_OnCutCreated_Implementation() {
 
 
 
-UReplayMainUserWidget::UReplayMainUserWidget() {
-    this->m_bUIInitialized = false;
-    this->m_bAutoSelectKeyOnAdd = true;
-    this->m_bOnlyApplyPersistentSettingsOnCustomCameraKeys = true;
-    this->m_bOnApplyCameraSettingsSetCameraModeToCustom = true;
-    this->m_bSelectKeyOnGoToTimeCompleted = false;
-    this->m_bOnSelectFailDefaultToSelectedKey = true;
-    this->m_TimelineWidget = NULL;
-}
 

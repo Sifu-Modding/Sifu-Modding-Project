@@ -27,7 +27,8 @@ public:
     int32 SmallScreenLetterSpacing;
     
     UPerPlatformTextBlock();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

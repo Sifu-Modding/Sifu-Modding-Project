@@ -13,6 +13,7 @@ class SIFU_API UParryAnimRequest : public UObject {
     GENERATED_BODY()
 public:
     UParryAnimRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetPickupOnParryAnim(const FHitRequest& _request, AFightingCharacter* _character, FAnimContainer& _outAnim) const;
     

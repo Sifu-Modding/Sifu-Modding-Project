@@ -7,3 +7,4 @@ UEnvironmentalAttackDetectionDB::UEnvironmentalAttackDetectionDB() {
     this->m_eCollisionChannel = ECC_WorldStatic;
 }
 
+

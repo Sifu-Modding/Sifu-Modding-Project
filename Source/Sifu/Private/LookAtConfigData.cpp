@@ -11,3 +11,4 @@ ULookAtConfigData::ULookAtConfigData() {
     this->m_fMaxClampedPitch = -1.00f;
 }
 
+

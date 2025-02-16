@@ -30,5 +30,6 @@ public:
     UCurveFloat* m_MaxZDiff;
     
     ULockDB();
+
 };
 

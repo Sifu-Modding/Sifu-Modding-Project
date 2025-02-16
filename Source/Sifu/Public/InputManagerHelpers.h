@@ -13,6 +13,7 @@ class SIFU_API UInputManagerHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UInputManagerHelpers();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UInputPad* BPF_GetControllerInputPad(ASCPlayerController* _playerController);
     

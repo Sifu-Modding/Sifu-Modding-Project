@@ -12,6 +12,7 @@ class SCCORE_API USCCharacterHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCCharacterHelpers();
+
     UFUNCTION(BlueprintCallable)
     static bool BPF_TryGetRootBoneTransform(const ACharacter* _character, FTransform& _outBoneTransform, bool _bComponentSpace);
     

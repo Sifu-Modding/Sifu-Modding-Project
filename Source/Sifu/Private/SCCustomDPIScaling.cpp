@@ -6,3 +6,4 @@ USCCustomDPIScaling::USCCustomDPIScaling() {
     this->m_CurveAboveRatio = NULL;
 }
 
+

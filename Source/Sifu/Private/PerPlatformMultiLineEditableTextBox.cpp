@@ -5,3 +5,4 @@ UPerPlatformMultiLineEditableTextBox::UPerPlatformMultiLineEditableTextBox() {
     this->SmallScreenSize = 0;
 }
 
+

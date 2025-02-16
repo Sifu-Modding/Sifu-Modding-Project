@@ -38,7 +38,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnWaveAIDeath OnWaveAIDeath;
     
-    AAIWaveRefillDirector();
+    AAIWaveRefillDirector(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnSituationAIDeathDetected(ABaseCharacter* _character);

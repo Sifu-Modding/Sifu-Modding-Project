@@ -13,6 +13,7 @@ public:
     bool m_bTriggerProxyDirectlyAtStart;
     
     UAIActionTriggerProxy();
+
     UFUNCTION(BlueprintCallable)
     void BPF_TriggerProxy();
     

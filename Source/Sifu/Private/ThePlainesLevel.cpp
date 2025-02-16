@@ -1,6 +1,10 @@
 #include "ThePlainesLevel.h"
 
-class AActor;
+AThePlainesLevel::AThePlainesLevel(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_BlenderManager = NULL;
+    this->m_StartupSequence = NULL;
+    this->m_bInChargeOfSoundSave = false;
+}
 
 void AThePlainesLevel::UnregisterFromSignificanceOnActorEndPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _eEndPlayReason) {
 }
@@ -17,9 +21,4 @@ void AThePlainesLevel::BPF_InitSoundState(const FString& _StateGroup, const FStr
 
 
 
-AThePlainesLevel::AThePlainesLevel() {
-    this->m_BlenderManager = NULL;
-    this->m_StartupSequence = NULL;
-    this->m_bInChargeOfSoundSave = false;
-}
 

@@ -17,8 +17,9 @@ private:
     bool m_bIsPooled;
     
 public:
-    ASCActor();
-    
+    ASCActor(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

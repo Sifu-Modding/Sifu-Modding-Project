@@ -24,5 +24,6 @@ public:
     float m_fFallVelocityVariation;
     
     UOrderTraversalPushDB();
+
 };
 

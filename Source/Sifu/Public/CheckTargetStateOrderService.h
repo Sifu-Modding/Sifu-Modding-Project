@@ -68,5 +68,6 @@ public:
     FHitBox m_Hit;
     
     UCheckTargetStateOrderService();
+
 };
 

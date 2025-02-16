@@ -8,5 +8,6 @@ class SIFU_API USCSignificanceManager : public USignificanceManager {
     GENERATED_BODY()
 public:
     USCSignificanceManager();
+
 };
 

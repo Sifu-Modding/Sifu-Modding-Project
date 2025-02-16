@@ -11,3 +11,4 @@ UWCollisionSettings::UWCollisionSettings() {
     this->m_eSpectatorCollisionChannel = ECC_GameTraceChannel14;
 }
 
+

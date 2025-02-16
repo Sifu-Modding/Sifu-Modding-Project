@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
+#include "GameplayTagContainer.h"
 #include "CheatData.generated.h"
 
 class APlayerController;
@@ -16,11 +17,15 @@ protected:
     
 public:
     UCheatData();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCheatDeactivated(APlayerController* _playerController) const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCheatActivated(APlayerController* _playerController, const FString& _argument) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    FString BPE_GetArgument(const FGameplayTag& _tag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_CanApplyCheat(UGameInstance* _gameInstance, APlayerController* _playerController) const;

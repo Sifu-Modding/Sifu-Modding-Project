@@ -56,5 +56,6 @@ public:
     TArray<FMaterialParameterBlendSettings> m_MaterialParameterBlendSettingsList;
     
     USCLevelSequenceDirectorData();
+
 };
 

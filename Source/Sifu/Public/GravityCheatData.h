@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=CheatData -FallbackName=CheatData
+#include "CheatData.h"
 #include "GravityCheatData.generated.h"
 
 UCLASS(Blueprintable)
-class SIFU_API UGravityCheatData : public UObject {
+class SIFU_API UGravityCheatData : public UCheatData {
     GENERATED_BODY()
 public:
 protected:
@@ -16,5 +16,6 @@ protected:
     
 public:
     UGravityCheatData();
+
 };
 

@@ -15,3 +15,4 @@ UTicketSettings::UTicketSettings() {
     this->m_fPathNavlinkWeight = 500.00f;
 }
 
+

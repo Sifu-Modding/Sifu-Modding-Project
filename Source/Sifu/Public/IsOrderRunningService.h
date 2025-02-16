@@ -16,5 +16,6 @@ public:
     EOrderType m_eOrder;
     
     UIsOrderRunningService();
+
 };
 

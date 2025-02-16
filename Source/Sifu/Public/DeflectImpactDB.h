@@ -12,5 +12,6 @@ public:
     FDeflectImpact m_DeflectImpact;
     
     UDeflectImpactDB();
+
 };
 

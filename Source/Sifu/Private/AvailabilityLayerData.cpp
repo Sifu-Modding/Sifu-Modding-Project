@@ -5,3 +5,4 @@ UAvailabilityLayerData::UAvailabilityLayerData() {
     this->m_bInvertSelection = false;
 }
 
+

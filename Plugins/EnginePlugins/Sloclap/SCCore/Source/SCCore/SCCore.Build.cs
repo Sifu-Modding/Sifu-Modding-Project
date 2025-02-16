@@ -9,8 +9,6 @@ public class SCCore : ModuleRules {
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AnimationBudgetAllocator",
-            "AudioMixer",
-            "Chaos",
             "Core",
             "CoreUObject",
             "DeveloperSettings",
@@ -21,14 +19,6 @@ public class SCCore : ModuleRules {
             "InputCore",
             "LevelSequence",
             "MediaAssets",
-            "MediaUtils",
-            "MovieScene",
-            "MovieSceneTracks",
-            "NavigationSystem",
-            "PhysicsCore",
-            "PropertyPath",
-            "Slate",
-            "SlateCore",
             "UMG",
         });
     }

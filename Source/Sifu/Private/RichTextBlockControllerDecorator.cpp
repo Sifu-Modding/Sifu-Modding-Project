@@ -8,3 +8,4 @@ URichTextBlockControllerDecorator::URichTextBlockControllerDecorator() : URichTe
     this->m_MetaData = TEXT("action");
 }
 
+

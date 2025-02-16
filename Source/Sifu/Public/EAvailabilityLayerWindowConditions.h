@@ -7,8 +7,8 @@ enum class EAvailabilityLayerWindowConditions : uint8 {
     None,
     NoHit,
     Hit,
-    Deflect = 0x4,
-    Guard = 0x8,
-    Avoided = 0x10,
+    Deflect = 4,
+    Guard = 8,
+    Avoided = 16,
 };
 

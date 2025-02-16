@@ -7,3 +7,4 @@ UPerPlatformSizeBox::UPerPlatformSizeBox() {
     this->SmallScreenHeightOverride = 0.00f;
 }
 
+

@@ -1,5 +1,6 @@
 #include "BasicSpawningComponent.h"
 
-UBasicSpawningComponent::UBasicSpawningComponent() {
+UBasicSpawningComponent::UBasicSpawningComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

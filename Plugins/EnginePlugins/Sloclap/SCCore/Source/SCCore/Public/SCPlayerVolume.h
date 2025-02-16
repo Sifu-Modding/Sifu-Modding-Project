@@ -9,12 +9,13 @@ UCLASS(Blueprintable)
 class SCCORE_API ASCPlayerVolume : public ASCVolume {
     GENERATED_BODY()
 public:
-    /*UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+   /* UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVolumeBeginOverlapSignature OnPlayerBeginOverlap;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVolumeEndOverlapSignature OnPlayerEndOverlap;*/
     
-    ASCPlayerVolume();
+    ASCPlayerVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

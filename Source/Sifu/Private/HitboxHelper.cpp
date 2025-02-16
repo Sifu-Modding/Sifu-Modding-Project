@@ -1,6 +1,7 @@
 #include "HitboxHelper.h"
 
-class UHitBoxMetaData;
+UHitboxHelper::UHitboxHelper() {
+}
 
 void UHitboxHelper::BPF_SetHitboxStructureDamage(const FHitBox& _hitbox, FHitBox& _outHitbox, float _fDamage) {
 }
@@ -25,6 +26,4 @@ FHitboxDataRow UHitboxHelper::BPF_GetHitboxDataRow(const FHitBox& _hitbox) {
     return FHitboxDataRow{};
 }
 
-UHitboxHelper::UHitboxHelper() {
-}
 

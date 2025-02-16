@@ -8,5 +8,6 @@ class SIFU_API UDisableExpulseOrderService : public UOrderService {
     GENERATED_BODY()
 public:
     UDisableExpulseOrderService();
+
 };
 

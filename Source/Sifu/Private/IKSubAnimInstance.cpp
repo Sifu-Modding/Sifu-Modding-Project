@@ -1,6 +1,10 @@
 #include "IKSubAnimInstance.h"
 #include "Net/UnrealNetwork.h"
 
+UIKSubAnimInstance::UIKSubAnimInstance() {
+    this->m_SlopeCurveName = TEXT("SlopeCurve");
+}
+
 void UIKSubAnimInstance::BPF_BindRepartitionProperty(FPropertyFloorBoneRepartition& _property) {
 }
 
@@ -13,7 +17,4 @@ void UIKSubAnimInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(UIKSubAnimInstance, m_FloorAngleToTarget);
 }
 
-UIKSubAnimInstance::UIKSubAnimInstance() {
-    this->m_SlopeCurveName = TEXT("SlopeCurve");
-}
 

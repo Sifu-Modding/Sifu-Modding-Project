@@ -1,5 +1,6 @@
 #include "SCStreamingVolumeVisualizerComponent.h"
 
-USCStreamingVolumeVisualizerComponent::USCStreamingVolumeVisualizerComponent() {
+USCStreamingVolumeVisualizerComponent::USCStreamingVolumeVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

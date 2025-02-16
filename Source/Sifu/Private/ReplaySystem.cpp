@@ -1,13 +1,12 @@
 #include "ReplaySystem.h"
 
-class AActor;
-class AFightingCharacter;
-class APlayerController;
-class AReplayController;
-class UObject;
-class UReplayManagement;
-class UReplaySystem;
-class USCDemoNetDriver;
+UReplaySystem::UReplaySystem() {
+    this->m_bTimeDilationReplicated = false;
+    this->m_bPauserPlayerStateReplicated = false;
+    this->m_GameInstance = NULL;
+    this->m_fReplayStartVislogTimeS = 0.00f;
+    this->m_DefaultImpostorClass = NULL;
+}
 
 void UReplaySystem::BPF_StopRecordingAndContinueWith(APlayerController* _controller, FStopRecordingContinue _onContinue, const EReplayStopRecordingReason _eReason) {
 }
@@ -148,10 +147,4 @@ bool UReplaySystem::BPF_CanStartRecording(const UObject* _worldContextObject) {
     return false;
 }
 
-UReplaySystem::UReplaySystem() {
-    this->m_bTimeDilationReplicated = false;
-    this->m_bPauserPlayerStateReplicated = false;
-    this->m_GameInstance = NULL;
-    this->m_fReplayStartVislogTimeS = 0.00f;
-}
 

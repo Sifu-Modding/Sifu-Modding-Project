@@ -54,5 +54,6 @@ public:
     FAIDataProviderFloatValue m_MaxTargetToWallJumpDist;
     
     UEnvQueryGenerator_WallJumps();
+
 };
 

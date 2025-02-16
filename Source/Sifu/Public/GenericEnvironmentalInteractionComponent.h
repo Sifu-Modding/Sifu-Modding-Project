@@ -28,6 +28,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSCUserDefinedEnumHandler m_EnvType;
     
-    UGenericEnvironmentalInteractionComponent();
+    UGenericEnvironmentalInteractionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

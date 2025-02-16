@@ -1,5 +1,8 @@
 #include "SCSaveObjectPlayerProfile.h"
 
+USCSaveObjectPlayerProfile::USCSaveObjectPlayerProfile() {
+}
+
 void USCSaveObjectPlayerProfile::BPF_RemoveSave(const FString& _saveName) {
 }
 
@@ -11,6 +14,4 @@ FCharacterSaveDescription USCSaveObjectPlayerProfile::BPF_FindSaveByFileName(con
     return FCharacterSaveDescription{};
 }
 
-USCSaveObjectPlayerProfile::USCSaveObjectPlayerProfile() {
-}
 

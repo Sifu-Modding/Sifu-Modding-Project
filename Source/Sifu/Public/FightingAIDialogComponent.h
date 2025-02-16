@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UFightingAIDialogComponent : public USCDialogComponent {
     GENERATED_BODY()
 public:
-    UFightingAIDialogComponent();
+    UFightingAIDialogComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -8,5 +8,6 @@ class SIFU_API UTransitionCanTurnNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
     UTransitionCanTurnNotifyState();
+
 };
 

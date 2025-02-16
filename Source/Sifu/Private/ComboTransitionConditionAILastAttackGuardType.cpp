@@ -6,3 +6,4 @@ UComboTransitionConditionAILastAttackGuardType::UComboTransitionConditionAILastA
     this->m_bAvoided = false;
 }
 
+

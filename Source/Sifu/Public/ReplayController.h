@@ -43,9 +43,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FReplayCameraSettings m_SequenceCameraSettings;
-    /*
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* m_OnGoToTimeCompleted;*/
+    FDynamicMulticast m_OnGoToTimeCompleted;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fGoToTimeCompletedTimeS;
@@ -93,7 +93,8 @@ protected:
     AReplayVideoRecorder* m_VideoRecorder;
     
 public:
-    AReplayController();
+    AReplayController(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnKeysLoaded();

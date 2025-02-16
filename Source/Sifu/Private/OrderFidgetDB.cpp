@@ -13,3 +13,4 @@ UOrderFidgetDB::UOrderFidgetDB() {
     this->m_fFidgetQuickBlendOutDuration = 0.20f;
 }
 
+

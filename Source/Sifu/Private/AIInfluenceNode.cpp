@@ -5,3 +5,4 @@ UAIInfluenceNode::UAIInfluenceNode() {
     this->m_iNodeIndex = 0;
 }
 
+

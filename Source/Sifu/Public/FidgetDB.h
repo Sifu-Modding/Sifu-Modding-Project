@@ -26,6 +26,7 @@ public:
     bool m_bAllowSyncFidgetMirrorWithQuadrant;
     
     UFidgetDB();
+
     UFUNCTION(BlueprintCallable)
     FSCGestureAndBlendProfile BPF_GetGestureContainer(AActor* _requester);
     

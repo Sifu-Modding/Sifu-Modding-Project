@@ -32,6 +32,9 @@ protected:
     FName m_ChosenMusicForExport;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool m_bMusicBackgroundMuted;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UReplayKey*> m_Keys;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -39,6 +42,7 @@ protected:
     
 public:
     UReplayTimelineModel();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_UpdateKeyLocationData(UReplayKey* _key, const FVector& _vLocation, const FQuat& _qRotation);
     
@@ -49,6 +53,9 @@ public:
     void BPF_SetMusicForExport(FName _wantedMusic);
     
     UFUNCTION(BlueprintCallable)
+    void BPF_SetMusicBackgroundMuted(const bool _bIsMuted);
+    
+    UFUNCTION(BlueprintCallable)
     void BPF_SaveState();
     
 protected:
@@ -56,6 +63,9 @@ protected:
     void BPF_RecalcDilatedTimes(int32 _iStartingIndex);
     
 public:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_IsMusicBackgroundMuted() const;
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsLastKey(const UReplayKey* _key) const;
     

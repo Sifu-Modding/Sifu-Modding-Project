@@ -7,7 +7,7 @@
 #include "LipSyncPhonemeInPhraseArray.h"
 #include "SCDialogData.generated.h"
 
-class UAkAudioEvent;
+//class UAkAudioEvent;
 
 USTRUCT(BlueprintType)
 struct SCDIALOGMANAGERPLUGIN_API FSCDialogData {
@@ -52,11 +52,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLipSyncEmotionDataArray m_emotionForTest;
     
-    /*UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* AkEventObj;
+   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAkAudioEvent* AkEventObj;*/
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName AkEventAltName;*/
+    FName AkEventAltName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<float, float> EnvelopeAlt;
@@ -67,7 +67,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<float, float> EnvelopeAltForCantonese;
     
-    /*UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+ /*   UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* AkEventAltObj;*/
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

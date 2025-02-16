@@ -4,7 +4,17 @@
 #include "InteractiveDestructionComponent.h"
 #include "MovableInteractionComponent.h"
 
-class AActor;
+AInteractiveMovable::AInteractiveMovable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_StreamingComponent = CreateDefaultSubobject<USCStreamingActorComponent>(TEXT("StreamingActorComponent"));
+    this->m_bEnableSreamingEvents = false;
+    this->m_InteractionComponent = CreateDefaultSubobject<UMovableInteractionComponent>(TEXT("InteractionObjectComponent"));
+    this->m_DestructibleComponent = CreateDefaultSubobject<UInteractiveDestructionComponent>(TEXT("DestructibleComponent"));
+    this->m_SaveComponent = CreateDefaultSubobject<USCSaveGameComponent>(TEXT("SaveGameComponent"));
+    this->m_fAngularFallingSpeedThreshold = 0.00f;
+    this->m_fLinearFallingSpeedThreshold = 0.00f;
+    this->m_bIsBreakSilent = false;
+    this->m_throwTargetSettingsDB = NULL;
+}
 
 void AInteractiveMovable::OnUpdatedFromSaveCallback() {
 }
@@ -45,15 +55,4 @@ EDebugMovableState AInteractiveMovable::BPF_GetDebugMovableState() const {
 
 
 
-AInteractiveMovable::AInteractiveMovable() {
-    this->m_StreamingComponent = CreateDefaultSubobject<USCStreamingActorComponent>(TEXT("StreamingActorComponent"));
-    this->m_bEnableSreamingEvents = false;
-    this->m_InteractionComponent = CreateDefaultSubobject<UMovableInteractionComponent>(TEXT("InteractionObjectComponent"));
-    this->m_DestructibleComponent = CreateDefaultSubobject<UInteractiveDestructionComponent>(TEXT("DestructibleComponent"));
-    this->m_SaveComponent = CreateDefaultSubobject<USCSaveGameComponent>(TEXT("SaveGameComponent"));
-    this->m_fAngularFallingSpeedThreshold = 0.00f;
-    this->m_fLinearFallingSpeedThreshold = 0.00f;
-    this->m_bIsBreakSilent = false;
-    this->m_throwTargetSettingsDB = NULL;
-}
 

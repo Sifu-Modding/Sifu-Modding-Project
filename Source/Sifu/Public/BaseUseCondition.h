@@ -12,6 +12,7 @@ class SIFU_API UBaseUseCondition : public UObject {
     GENERATED_BODY()
 public:
     UBaseUseCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool IsFulfilled();
     

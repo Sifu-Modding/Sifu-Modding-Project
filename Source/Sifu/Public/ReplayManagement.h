@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=SCDynamicDelegate__DelegateSignature -FallbackName=SCDynamicDelegateDelegate
+#include "SCDynamicDelegateDelegate.h"
 #include "EReplayOpenState.h"
 #include "OnTaskStateChangedSignatureDelegate.h"
 #include "ReplaySizeManagement.h"
@@ -22,6 +22,7 @@ protected:
     
 public:
     UReplayManagement();
+
     UFUNCTION(BlueprintCallable)
     void OnStreamingCompleteQuitReplayManagement();
     
@@ -31,8 +32,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_SetReplayOpenState(const EReplayOpenState _eOpenState);
     
-   /* UFUNCTION(BlueprintCallable)
-    void BPF_ResetReplayEditorMetaDataWithCallback(const FString& _replayID, const FSCDynamicDelegate& _callback);*/
+    UFUNCTION(BlueprintCallable)
+    void BPF_ResetReplayEditorMetaDataWithCallback(const FString& _replayID, const FSCDynamicDelegate& _callback);
     
     UFUNCTION(BlueprintCallable)
     void BPF_ResetReplayEditorMetaData(const FString& _replayID);

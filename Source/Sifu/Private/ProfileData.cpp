@@ -42,8 +42,12 @@ FProfileData::FProfileData() {
     this->m_GameOptions[38] = 0.00f;
     this->m_GameOptions[39] = 0.00f;
     this->m_GameOptions[40] = 0.00f;
+    this->m_GameOptions[41] = 0.00f;
+    this->m_GameOptions[42] = 0.00f;
     this->m_bInputHoldToggleActivated = false;
     this->m_iCheatUnlockPoints = 0;
+    this->m_iArenaCustomOutfitIndex = 0;
     this->m_eChallengeGender = ECharacterGender::Man;
+    this->m_CarriedPropDataTable = NULL;
 }
 

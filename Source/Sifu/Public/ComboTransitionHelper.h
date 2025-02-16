@@ -10,6 +10,7 @@ class SIFU_API UComboTransitionHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UComboTransitionHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EComboTransition BPF_GetTransitionFromInput(InputAction _eInput);
     

@@ -6,3 +6,4 @@ ULineHitDetectionDB::ULineHitDetectionDB() {
     this->m_bOneSided = false;
 }
 
+

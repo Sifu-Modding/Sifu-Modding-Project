@@ -8,5 +8,6 @@ class SIFU_API USuspiciousBTService : public UBTService {
     GENERATED_BODY()
 public:
     USuspiciousBTService();
+
 };
 

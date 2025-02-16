@@ -17,6 +17,7 @@ class SCCORE_API USCAnimationHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCAnimationHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool HasInvalidNotifies(UAnimSequenceBase* _sequence, const FString& _inNotifyName);
     

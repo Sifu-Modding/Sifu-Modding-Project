@@ -6,3 +6,4 @@ USessionTimeManager::USessionTimeManager() {
     this->m_fScaleTime = 1.00f;
 }
 
+

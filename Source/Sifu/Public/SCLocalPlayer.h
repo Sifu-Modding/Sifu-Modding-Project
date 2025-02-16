@@ -8,5 +8,6 @@ class SIFU_API USCLocalPlayer : public ULocalPlayer {
     GENERATED_BODY()
 public:
     USCLocalPlayer();
+
 };
 

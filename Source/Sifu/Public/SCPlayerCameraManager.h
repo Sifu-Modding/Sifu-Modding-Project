@@ -13,6 +13,7 @@ private:
     TArray<FTViewTarget> m_ForcedViewTargetToUpdateUnderneath;
     
 public:
-    ASCPlayerCameraManager();
+    ASCPlayerCameraManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

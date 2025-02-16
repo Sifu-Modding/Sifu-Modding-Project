@@ -4,3 +4,4 @@ UAIFightingStateBTTask::UAIFightingStateBTTask() {
     this->m_eFightingState = EFightingState::None;
 }
 
+

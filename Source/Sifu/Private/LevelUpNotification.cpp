@@ -1,12 +1,13 @@
 #include "LevelUpNotification.h"
+#include "EMenuEnum.h"
 
-class ULevelUpNotification;
+ULevelUpNotification::ULevelUpNotification() {
+    this->m_eOpenMenu = EMenuEnum::InGameMenu;
+    this->m_iLevel = 0;
+}
 
 ULevelUpNotification* ULevelUpNotification::BPF_Init(int32 _iLevel) {
     return NULL;
 }
 
-ULevelUpNotification::ULevelUpNotification() {
-    this->m_iLevel = 0;
-}
 

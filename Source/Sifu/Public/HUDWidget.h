@@ -12,6 +12,7 @@ public:
     EQuadrantTypes m_eCurrentQuadrant;
     
     UHUDWidget();
+
     UFUNCTION(BlueprintCallable)
     void OnRegularAttack(EQuadrantTypes _eStartQuadrant, EQuadrantTypes _eEndQuadrant, uint8 _uiNewIndex);
     

@@ -25,6 +25,7 @@ protected:
     
 public:
     UBindableMaterialWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetMaterialInstance(UMaterialInstanceDynamic* _materialInstance);

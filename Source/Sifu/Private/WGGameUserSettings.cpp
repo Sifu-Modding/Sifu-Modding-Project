@@ -1,6 +1,8 @@
-#include "WGGameUserSettings.h"
-
-UWGGameUserSettings::UWGGameUserSettings() {
-   /* this->DLSSQuality = UDLSSMode::Auto;*/
-}
-
+//#include "WGGameUserSettings.h"
+//
+//UWGGameUserSettings::UWGGameUserSettings() {
+//    this->bUseVSync = false;
+//    this->DLSSQuality = UDLSSMode::Auto;
+//}
+//
+//

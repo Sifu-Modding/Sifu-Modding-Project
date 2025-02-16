@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SIFU_API AArenaGameState : public AThePlainesGameState {
     GENERATED_BODY()
 public:
-    AArenaGameState();
+    AArenaGameState(const FObjectInitializer& ObjectInitializer);
+
 };
 

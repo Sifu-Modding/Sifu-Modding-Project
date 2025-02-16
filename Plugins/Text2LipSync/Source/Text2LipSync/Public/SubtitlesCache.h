@@ -18,6 +18,7 @@ private:
     
 public:
     USubtitlesCache();
+
     UFUNCTION(BlueprintCallable)
     int32 SaveToDisk(const FString& Filename) const;
     

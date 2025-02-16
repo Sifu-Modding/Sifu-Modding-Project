@@ -8,5 +8,6 @@ class SIFU_API UCameraCutNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
     UCameraCutNotifyState();
+
 };
 

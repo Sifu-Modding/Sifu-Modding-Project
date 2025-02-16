@@ -13,5 +13,6 @@ public:
     TSoftClassPtr<AActor> m_Class;
     
     UActorHasAttachedActorCondition();
+
 };
 

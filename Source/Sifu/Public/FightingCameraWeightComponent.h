@@ -27,11 +27,12 @@ protected:
     float m_fDialogSpeakerAdditiveWeight;
     
 public:
-    UFightingCameraWeightComponent();
+    UFightingCameraWeightComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnGlobalBehaviorChanged(EGlobalBehaviors _eNewBehavior, const bool _bFromDialog);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

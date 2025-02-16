@@ -96,5 +96,6 @@ public:
     int32 m_iBonusXPWhenPendantIsFull;
     
     UStatsDB();
+
 };
 

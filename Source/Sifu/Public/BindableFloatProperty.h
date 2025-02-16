@@ -8,6 +8,7 @@ class SIFU_API UBindableFloatProperty : public UBindablePropertyBase {
     GENERATED_BODY()
 public:
     UBindableFloatProperty();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetValue(float _fValue);
     

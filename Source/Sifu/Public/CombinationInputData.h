@@ -18,5 +18,6 @@ public:
     TArray<FCombinationInput> m_ExcludedInputs;
     
     UCombinationInputData();
+
 };
 

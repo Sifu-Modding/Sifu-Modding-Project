@@ -1,6 +1,12 @@
 #include "AnimInstanceReplicationComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UAnimInstanceReplicationComponent::UAnimInstanceReplicationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_uiReplicatedAnimGraphVersionHash = 0;
+    this->m_AllowedReplicatedTypes.AddDefaulted(3);
+    this->m_AnimInstance = NULL;
+}
+
 void UAnimInstanceReplicationComponent::OnReplaySystemRecordingChanged(bool _bIsRecording) {
 }
 
@@ -14,9 +20,4 @@ void UAnimInstanceReplicationComponent::GetLifetimeReplicatedProps(TArray<FLifet
     DOREPLIFETIME(UAnimInstanceReplicationComponent, m_AnimInstance);
 }
 
-UAnimInstanceReplicationComponent::UAnimInstanceReplicationComponent() {
-    this->m_uiReplicatedAnimGraphVersionHash = 0;
-    this->m_AllowedReplicatedTypes.AddDefaulted(3);
-    this->m_AnimInstance = NULL;
-}
 

@@ -8,5 +8,6 @@ class SIFU_API UTE_AllInRange : public UBaseTargetEvaluation {
     GENERATED_BODY()
 public:
     UTE_AllInRange();
+
 };
 

@@ -29,5 +29,6 @@ public:
     float m_fVerticalOffsetTargetDirection;
     
     UThrowMultipleObjectsNotify();
+
 };
 

@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAIWaveDirectorVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UAIWaveDirectorVisualizerComponent();
+    UAIWaveDirectorVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

@@ -211,6 +211,7 @@ enum class InputAction : uint8 {
     NavigationMode,
     BlendType,
     CameraType,
+    SortModifiers,
     Count,
     None,
 };

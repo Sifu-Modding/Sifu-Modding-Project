@@ -56,6 +56,7 @@ protected:
     UMaterialInstanceDynamic* m_BakedPreSkinnedPositionDrawerInstanceDynamic;
     
 public:
-    ASCPositionBakeSceneCapture();
+    ASCPositionBakeSceneCapture(const FObjectInitializer& ObjectInitializer);
+
 };
 

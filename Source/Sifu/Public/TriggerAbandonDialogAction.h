@@ -8,5 +8,6 @@ class SIFU_API UTriggerAbandonDialogAction : public UDialogActionBase {
     GENERATED_BODY()
 public:
     UTriggerAbandonDialogAction();
+
 };
 

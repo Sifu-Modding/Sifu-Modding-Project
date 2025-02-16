@@ -26,7 +26,8 @@ protected:
     int32 m_iMatchesWithAvoid;
     
 public:
-    AUsableItem();
+    AUsableItem(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EItemUseState BPF_GetItemUseState() const;
     

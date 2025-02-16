@@ -26,6 +26,7 @@ private:
     
 public:
     UBlendableWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_StartTimerBlend(bool _bReverse);
     

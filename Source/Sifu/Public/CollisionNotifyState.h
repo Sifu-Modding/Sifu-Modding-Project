@@ -14,5 +14,6 @@ public:
     bool m_bDisableCollisions;
     
     UCollisionNotifyState();
+
 };
 

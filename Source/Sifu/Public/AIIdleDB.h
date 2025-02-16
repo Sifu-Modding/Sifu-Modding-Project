@@ -23,5 +23,6 @@ public:
     ELookAtApplyMode m_eLookAtApplyMode;
     
     UAIIdleDB();
+
 };
 

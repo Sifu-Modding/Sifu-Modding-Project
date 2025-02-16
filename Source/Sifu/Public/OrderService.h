@@ -9,6 +9,7 @@ class SIFU_API UOrderService : public UObject {
     GENERATED_BODY()
 public:
     UOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnInit(const FBPOrderServiceInstance& _instance);
     

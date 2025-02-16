@@ -5,3 +5,4 @@ UPlayerTargetCondition::UPlayerTargetCondition() {
     this->m_bUpdateTarget = true;
 }
 
+

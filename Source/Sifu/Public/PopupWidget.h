@@ -18,6 +18,7 @@ protected:
     
 public:
     UPopupWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnMenuChanged(EMenuEnum _ePrevMenu, EMenuEnum _eNewMenu);

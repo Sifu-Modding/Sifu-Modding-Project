@@ -9,6 +9,7 @@ class SIFU_API UTargettingHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UTargettingHelper();
+
 private:
     UFUNCTION(BlueprintCallable)
     FString GetEditorTitle(const FTargetEvaluationSettings& _settings);

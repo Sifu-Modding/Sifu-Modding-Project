@@ -19,6 +19,7 @@ class SIFU_API UUpdateCameraBlackboardBTService : public UBTService_BlueprintBas
     GENERATED_BODY()
 public:
     UUpdateCameraBlackboardBTService();
+
     UFUNCTION(BlueprintCallable)
     void BPF_UpdateIsInFlyModeKey(FBlackboardKeySelector _IsInFlyModeKey);
     

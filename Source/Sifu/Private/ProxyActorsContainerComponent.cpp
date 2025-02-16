@@ -1,6 +1,7 @@
 #include "ProxyActorsContainerComponent.h"
 
-class AActor;
+UProxyActorsContainerComponent::UProxyActorsContainerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void UProxyActorsContainerComponent::UnregisterProxyActor(AActor* _proxyActor) {
 }
@@ -8,6 +9,4 @@ void UProxyActorsContainerComponent::UnregisterProxyActor(AActor* _proxyActor) {
 void UProxyActorsContainerComponent::RegisterProxyActor(AActor* _proxyActor) {
 }
 
-UProxyActorsContainerComponent::UProxyActorsContainerComponent() {
-}
 

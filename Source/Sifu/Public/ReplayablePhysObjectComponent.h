@@ -24,9 +24,10 @@ protected:
     AActor* m_AttachedActor;
     
 public:
-    UReplayablePhysObjectComponent();
+    UReplayablePhysObjectComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);

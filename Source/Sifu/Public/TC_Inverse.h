@@ -11,5 +11,6 @@ public:
     UEvaluateTargetCondition* m_condition;
     
     UTC_Inverse();
+
 };
 

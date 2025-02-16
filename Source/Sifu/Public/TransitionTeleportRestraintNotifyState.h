@@ -8,5 +8,6 @@ class SIFU_API UTransitionTeleportRestraintNotifyState : public USCAnimNotifySta
     GENERATED_BODY()
 public:
     UTransitionTeleportRestraintNotifyState();
+
 };
 

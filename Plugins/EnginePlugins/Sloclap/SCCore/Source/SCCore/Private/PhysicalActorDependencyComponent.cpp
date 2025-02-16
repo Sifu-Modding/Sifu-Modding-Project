@@ -1,5 +1,6 @@
 #include "PhysicalActorDependencyComponent.h"
 
-UPhysicalActorDependencyComponent::UPhysicalActorDependencyComponent() {
+UPhysicalActorDependencyComponent::UPhysicalActorDependencyComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

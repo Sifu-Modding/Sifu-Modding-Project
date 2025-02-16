@@ -4,3 +4,4 @@ UBehaviourVectorInputData::UBehaviourVectorInputData() {
     this->m_bConsiderChangingValueAsNewPress = false;
 }
 
+

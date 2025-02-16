@@ -5,3 +5,4 @@ UMovableActionCondition::UMovableActionCondition() {
     this->m_bIgnoreNonMovables = true;
 }
 
+

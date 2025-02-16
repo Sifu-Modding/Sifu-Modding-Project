@@ -60,6 +60,7 @@ protected:
     
 public:
     USynchronizedAttackHitActionLauncher();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_AreHitLethal(AFightingCharacter* _victimChar, const TArray<FOverridingHitBox>& _hitsToApply);
     

@@ -26,6 +26,7 @@ class UInputMappingHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UInputMappingHelpers();
+
     UFUNCTION(BlueprintCallable)
     static bool ValidateMappingForPreset(const FInputMappingProfileData& _mappingContext, const FInputMappingGroup& _context, const FInputPresetsEnumHandler& _preset, InputContext _eContext, const FInputMappingData& _mapping, TArray<FMappingValidationError>& _outErrors, bool _bDetectCollisions);
     

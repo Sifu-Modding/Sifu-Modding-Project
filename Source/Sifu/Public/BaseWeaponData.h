@@ -70,6 +70,7 @@ public:
     TMap<EOrderType, FVariableWeightLayerToBoneMask> m_variableWeightLayerByOrder;
     
     UBaseWeaponData();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure=false)
     void BPE_PrePickUpWeapon(AFightingCharacter* _owner, UPlayerAnim* _animGraph, const ABaseWeapon* _weapon, bool _bMirror) const;
     

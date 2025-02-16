@@ -5,3 +5,4 @@ UResourceItemData::UResourceItemData() {
     this->m_eRarity = EGearRarity::Common;
 }
 
+

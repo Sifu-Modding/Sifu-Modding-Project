@@ -1,5 +1,9 @@
 #include "HUDWidget.h"
 
+UHUDWidget::UHUDWidget() {
+    this->m_eCurrentQuadrant = EQuadrantTypes::None;
+}
+
 void UHUDWidget::OnRegularAttack(EQuadrantTypes _eStartQuadrant, EQuadrantTypes _eEndQuadrant, uint8 _uiNewIndex) {
 }
 
@@ -31,7 +35,4 @@ bool UHUDWidget::BPF_IsAttacking() const {
 
 
 
-UHUDWidget::UHUDWidget() {
-    this->m_eCurrentQuadrant = EQuadrantTypes::None;
-}
 

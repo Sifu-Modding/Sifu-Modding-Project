@@ -10,6 +10,7 @@ class UFootIkDataStatics : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UFootIkDataStatics();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool BPF_IsFootPlanted(const FSCFootIkData& _inFootIkData);
     

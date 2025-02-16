@@ -5,3 +5,4 @@ UCapsuleHitDetectionDB::UCapsuleHitDetectionDB() {
     this->m_fHalfHeight = 0.00f;
 }
 
+

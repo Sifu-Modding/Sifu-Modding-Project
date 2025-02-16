@@ -7,6 +7,7 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class USVONVolumeRenderingComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    USVONVolumeRenderingComponent();
+    USVONVolumeRenderingComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

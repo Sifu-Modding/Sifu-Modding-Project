@@ -79,5 +79,6 @@ public:
     float AudioMinTreshold;
     
     ULipSyncDB();
+
 };
 

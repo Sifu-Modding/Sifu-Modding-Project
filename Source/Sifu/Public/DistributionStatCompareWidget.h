@@ -16,6 +16,7 @@ private:
     
 public:
     UDistributionStatCompareWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UStatsComponent* BPF_GetStatsComponent();
     

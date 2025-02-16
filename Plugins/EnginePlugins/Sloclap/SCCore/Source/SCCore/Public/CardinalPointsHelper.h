@@ -9,6 +9,7 @@ class SCCORE_API UCardinalPointsHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UCardinalPointsHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static ESCCardinalPoints BPF_Mirror(ESCCardinalPoints _eCardinalPoint, bool _bMirror, bool _bIgnoreVertical);
     

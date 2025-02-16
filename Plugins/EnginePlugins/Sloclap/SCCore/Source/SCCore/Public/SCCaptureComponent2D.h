@@ -9,7 +9,8 @@ UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnable
 class SCCORE_API USCCaptureComponent2D : public USceneCaptureComponent2D {
     GENERATED_BODY()
 public:
-    USCCaptureComponent2D();
+    USCCaptureComponent2D(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     bool BPF_ProjectWorldLocationToPixelCoordinates(const FVector& _vLocation, FVector2D& _vOutPixelLocation, FVector2D& _vOutUvLocation);
     

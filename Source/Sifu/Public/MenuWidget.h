@@ -66,6 +66,7 @@ protected:
     
 public:
     UMenuWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetMapTagName(FName _mapTagName);
@@ -177,7 +178,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_OnActionButtonPressed();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

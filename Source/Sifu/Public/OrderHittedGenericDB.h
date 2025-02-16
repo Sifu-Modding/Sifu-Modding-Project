@@ -8,5 +8,6 @@ class SIFU_API UOrderHittedGenericDB : public UOrderDB {
     GENERATED_BODY()
 public:
     UOrderHittedGenericDB();
+
 };
 

@@ -17,5 +17,6 @@ public:
     float m_fDurabilityDamageRateOnParried;
     
     UWeaponDB();
+
 };
 

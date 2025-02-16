@@ -4,3 +4,4 @@ UBindableAsyncImage::UBindableAsyncImage() : UUserWidget(FObjectInitializer::Get
     this->m_AsyncImage = NULL;
 }
 
+

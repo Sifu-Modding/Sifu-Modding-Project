@@ -1,6 +1,12 @@
 #include "TrackingBlueprintHelper.h"
 
+UTrackingBlueprintHelper::UTrackingBlueprintHelper() {
+}
+
 void UTrackingBlueprintHelper::BPF_SendTrackingEventTU4Launched() {
+}
+
+void UTrackingBlueprintHelper::BPF_SendTrackingEventCustomChallengeStarted() {
 }
 
 void UTrackingBlueprintHelper::BPF_SendTrackingEventChallengeStart(const FText _sChallengeName) {
@@ -50,6 +56,4 @@ FString UTrackingBlueprintHelper::BPF_OpenTrackingContext_AISituation(const FStr
 void UTrackingBlueprintHelper::BPF_CloseTrackingContext(const FString& _GuidString) {
 }
 
-UTrackingBlueprintHelper::UTrackingBlueprintHelper() {
-}
 

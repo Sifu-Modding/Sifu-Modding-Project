@@ -16,6 +16,7 @@ private:
     TMap<EOrderType, TSubclassOf<UOrderDB>> m_ExtraOrderInfos;
     
 public:
-    USwitchableOrderComponent();
+    USwitchableOrderComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

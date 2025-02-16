@@ -8,5 +8,6 @@ class SIFU_API UTraversalPushExitNotifyState : public USCAnimNotifyState {
     GENERATED_BODY()
 public:
     UTraversalPushExitNotifyState();
+
 };
 

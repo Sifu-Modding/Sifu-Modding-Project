@@ -14,6 +14,7 @@ class SIFU_API UOrderServiceInstanceHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UOrderServiceInstanceHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_GetOrderInstanceInfos(const FBPOrderServiceInstance& _orderServiceInstance, uint8& _uiOutOrder, EOrderType& _eOutType, UOrderComponent*& _OrderComponent);
     

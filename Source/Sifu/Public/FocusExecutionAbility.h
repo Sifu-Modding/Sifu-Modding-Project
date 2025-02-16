@@ -15,5 +15,6 @@ public:
     FEditableOrderType m_VictimOrderType;
     
     UFocusExecutionAbility();
+
 };
 

@@ -17,6 +17,7 @@ protected:
     UCurveFloat* m_KnockbackCoefOverDistToInstig;
     
 public:
-    ATargetAOEItem();
+    ATargetAOEItem(const FObjectInitializer& ObjectInitializer);
+
 };
 

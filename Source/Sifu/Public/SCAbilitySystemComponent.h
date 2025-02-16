@@ -28,7 +28,8 @@ private:
     TMap<TSubclassOf<UGameplayAbility>, FAbilityDelegateHandler> m_OrderDelegateHandler;
     
 public:
-    USCAbilitySystemComponent();
+    USCAbilitySystemComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_UnlockSkill(TSubclassOf<USkillGameplayEffect> _effect, bool _bForce);
     

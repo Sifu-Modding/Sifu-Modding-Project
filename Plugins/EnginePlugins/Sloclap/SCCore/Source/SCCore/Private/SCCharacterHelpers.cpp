@@ -1,6 +1,7 @@
 #include "SCCharacterHelpers.h"
 
-class ACharacter;
+USCCharacterHelpers::USCCharacterHelpers() {
+}
 
 bool USCCharacterHelpers::BPF_TryGetRootBoneTransform(const ACharacter* _character, FTransform& _outBoneTransform, bool _bComponentSpace) {
     return false;
@@ -14,6 +15,4 @@ FVector USCCharacterHelpers::BPF_GetFloorNormal(const ACharacter* _character) {
     return FVector{};
 }
 
-USCCharacterHelpers::USCCharacterHelpers() {
-}
 

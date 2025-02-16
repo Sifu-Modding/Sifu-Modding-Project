@@ -21,6 +21,7 @@ class SCCORE_API USCHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCHelpers();
+
     UFUNCTION(BlueprintCallable)
     static bool BPF_TestExpressionInt(const FSCMathExpressionInteger& _expression, int32 _iInputValue);
     

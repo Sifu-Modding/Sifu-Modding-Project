@@ -12,5 +12,6 @@ public:
     FBaseActorTargetConditionInstance m_condition;
     
     UTC_GenericCondition();
+
 };
 

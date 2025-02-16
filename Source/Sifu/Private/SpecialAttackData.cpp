@@ -1,15 +1,5 @@
 #include "SpecialAttackData.h"
 
-class UTexture2D;
-
-UTexture2D* USpecialAttackData::GetParryPicto(EParrySide _eParryType) {
-    return NULL;
-}
-
-UTexture2D* USpecialAttackData::GetAvoidPicto(EAvoidType _eAvoidType) {
-    return NULL;
-}
-
 USpecialAttackData::USpecialAttackData() {
     this->m_AvoidPictos[0] = NULL;
     this->m_AvoidPictos[1] = NULL;
@@ -24,4 +14,13 @@ USpecialAttackData::USpecialAttackData() {
     this->m_InterruptPicto = NULL;
     this->m_AbsorbPicto = NULL;
 }
+
+UTexture2D* USpecialAttackData::GetParryPicto(EParrySide _eParryType) {
+    return NULL;
+}
+
+UTexture2D* USpecialAttackData::GetAvoidPicto(EAvoidType _eAvoidType) {
+    return NULL;
+}
+
 

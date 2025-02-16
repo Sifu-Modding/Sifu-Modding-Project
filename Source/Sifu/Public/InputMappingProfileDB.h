@@ -25,5 +25,6 @@ public:
     TMap<InputContext, UInputMappingProfileContextDB*> m_MappingPerContext;
     
     UInputMappingProfileDB();
+
 };
 

@@ -42,6 +42,7 @@ protected:
     
 public:
     UReplayTimelineTransition();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnKeyHoverOrSelectStateChanged(const UReplayKeyWidget* _widget);

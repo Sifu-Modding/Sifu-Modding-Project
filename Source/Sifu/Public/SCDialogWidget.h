@@ -18,6 +18,7 @@ protected:
     
 public:
     USCDialogWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_RemoveAllDelegates();
     

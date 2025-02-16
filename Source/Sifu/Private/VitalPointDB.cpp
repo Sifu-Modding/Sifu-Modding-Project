@@ -4,3 +4,4 @@ UVitalPointDB::UVitalPointDB() {
     this->m_BaseVitalPoints = NULL;
 }
 
+

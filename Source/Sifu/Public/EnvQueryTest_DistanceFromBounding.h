@@ -18,5 +18,6 @@ public:
     TSubclassOf<UEnvQueryContext> DistanceTo;
     
     UEnvQueryTest_DistanceFromBounding();
+
 };
 

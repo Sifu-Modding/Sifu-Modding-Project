@@ -15,6 +15,7 @@ public:
     float m_fMinHitboxTimeLeft;
     
     UTE_NextHit();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_TryGetTargetExtraInfos(const AFightingCharacter* _character, const FTargetResult& _targetInfos, FETS_NextHitExtraInfos& _infos) const;
     

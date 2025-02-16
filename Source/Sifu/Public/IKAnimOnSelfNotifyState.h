@@ -8,5 +8,6 @@ class SIFU_API UIKAnimOnSelfNotifyState : public UIKProfileAnimNotifyState {
     GENERATED_BODY()
 public:
     UIKAnimOnSelfNotifyState();
+
 };
 

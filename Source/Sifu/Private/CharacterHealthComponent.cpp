@@ -1,6 +1,24 @@
 #include "CharacterHealthComponent.h"
 #include "Net/UnrealNetwork.h"
 
+UCharacterHealthComponent::UCharacterHealthComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bCanRecoverHealth = true;
+    this->m_fMaxHealthMultiplier[0] = 1.00f;
+    this->m_fMaxHealthMultiplier[1] = 1.00f;
+    this->m_fMaxHealthMultiplier[2] = 1.00f;
+    this->m_fRecoveryRate = 0.00f;
+    this->m_fRecoveryCooldownInit = 0.00f;
+    this->m_fGhostDamageRecoveryRate = 5.00f;
+    this->m_fGhostDamage = 0.00f;
+    this->m_bIsDown = false;
+    this->m_eDownState = EDownState::None;
+    this->m_iTimeRespawnNoDown = 0;
+    this->m_bCanUnspawnCharacter = true;
+    this->m_RecoveryRateByDangerState[0] = 0.00f;
+    this->m_RecoveryRateByDangerState[1] = 0.00f;
+    this->m_RecoveryRateByDangerState[2] = 0.00f;
+}
+
 void UCharacterHealthComponent::OnRepSetIsDown() {
 }
 
@@ -23,21 +41,4 @@ void UCharacterHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimePrope
     DOREPLIFETIME(UCharacterHealthComponent, m_iTimeRespawnNoDown);
 }
 
-UCharacterHealthComponent::UCharacterHealthComponent() {
-    this->m_bCanRecoverHealth = true;
-    this->m_fMaxHealthMultiplier[0] = 1.00f;
-    this->m_fMaxHealthMultiplier[1] = 1.00f;
-    this->m_fMaxHealthMultiplier[2] = 1.00f;
-    this->m_fRecoveryRate = 0.00f;
-    this->m_fRecoveryCooldownInit = 0.00f;
-    this->m_fGhostDamageRecoveryRate = 5.00f;
-    this->m_fGhostDamage = 0.00f;
-    this->m_bIsDown = false;
-    this->m_eDownState = EDownState::None;
-    this->m_iTimeRespawnNoDown = 0;
-    this->m_bCanUnspawnCharacter = true;
-    this->m_RecoveryRateByDangerState[0] = 0.00f;
-    this->m_RecoveryRateByDangerState[1] = 0.00f;
-    this->m_RecoveryRateByDangerState[2] = 0.00f;
-}
 

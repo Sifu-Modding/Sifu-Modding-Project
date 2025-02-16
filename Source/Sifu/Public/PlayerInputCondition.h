@@ -23,5 +23,6 @@ public:
     FFloatRange m_AllowedVectorProjectedOnForward;
     
     UPlayerInputCondition();
+
 };
 

@@ -16,6 +16,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInstanceDynamic* m_SamplerMaterialInstanceDynamic;
     
-    USCVideoLightManagerDebugger();
+    USCVideoLightManagerDebugger(const FObjectInitializer& ObjectInitializer);
+
 };
 

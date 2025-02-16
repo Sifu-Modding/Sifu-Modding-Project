@@ -20,5 +20,6 @@ public:
     FBaseActorTargetConditionInstance m_GenericCondition;
     
     UGenericActivationCondition();
+
 };
 

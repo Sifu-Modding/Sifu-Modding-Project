@@ -1,13 +1,6 @@
 #include "InteractiveDestructionComponent.h"
 
-void UInteractiveDestructionComponent::OnReplaySystemRecordingChanged(bool _bIsRecording) {
-}
-
-int32 UInteractiveDestructionComponent::BPF_GetStateIndex() const {
-    return 0;
-}
-
-UInteractiveDestructionComponent::UInteractiveDestructionComponent() {
+UInteractiveDestructionComponent::UInteractiveDestructionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_iHitByCharaDamage = 1;
     this->m_iHitByObjectDamage = 1;
     this->m_DestroyedStaticMesh = NULL;
@@ -15,4 +8,12 @@ UInteractiveDestructionComponent::UInteractiveDestructionComponent() {
     this->m_bUseCustomCollisionProfile = false;
     this->m_fChunkDeactivationDelay = 3.00f;
 }
+
+void UInteractiveDestructionComponent::OnReplaySystemRecordingChanged(bool _bIsRecording) {
+}
+
+int32 UInteractiveDestructionComponent::BPF_GetStateIndex() const {
+    return 0;
+}
+
 

@@ -17,7 +17,8 @@ protected:
     UBoxComponent* m_TriggerCheckpointEnter;
     
 public:
-    ACheckPoint();
+    ACheckPoint(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnBeginOverlap(UPrimitiveComponent* _overlappedComponent, AActor* _otherActor, UPrimitiveComponent* _otherComp, int32 _iOtherBodyIndex, bool _bFromSweep, const FHitResult& _sweepResult);

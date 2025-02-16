@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=SCDynamicDelegate__DelegateSignature -FallbackName=SCDynamicDelegateDelegate
+#include "SCDynamicDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "SkillTree.generated.h"
 
@@ -16,10 +16,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkillsDB* m_SkillsDB;
     
-    ASkillTree();
-    /*UFUNCTION(BlueprintCallable)
+    ASkillTree(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
     void BPF_UpdateTreeOverTime(const TArray<TSubclassOf<USkillGameplayEffect>>& _prevUnlockedSkills, const TArray<TSubclassOf<USkillGameplayEffect>>& _newUnlockedSkills, float _fDuration, UCurveFloat* _floatCurve, FSCDynamicDelegate _onFinished);
-    */
+    
     UFUNCTION(BlueprintCallable)
     void BPF_SetTreeState(const TArray<TSubclassOf<USkillGameplayEffect>>& _unlockedSkills);
     

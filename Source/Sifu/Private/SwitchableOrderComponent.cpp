@@ -1,5 +1,6 @@
 #include "SwitchableOrderComponent.h"
 
-USwitchableOrderComponent::USwitchableOrderComponent() {
+USwitchableOrderComponent::USwitchableOrderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

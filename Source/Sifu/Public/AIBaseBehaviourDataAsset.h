@@ -20,5 +20,6 @@ public:
     float m_fCooldown;
     
     UAIBaseBehaviourDataAsset();
+
 };
 

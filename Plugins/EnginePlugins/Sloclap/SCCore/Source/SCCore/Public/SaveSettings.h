@@ -7,7 +7,7 @@
 class USCSaveObjectGameData;
 class USCSaveObjectPlayerProfile;
 
-UCLASS(Abstract, Blueprintable, Config=Engine, DefaultConfig, Config=Save)
+UCLASS(Abstract, Blueprintable, DefaultConfig, Config=Save)
 class SCCORE_API USaveSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -36,5 +36,6 @@ public:
     float m_fMaxBlockingSaveDuration;
     
     USaveSettings();
+
 };
 

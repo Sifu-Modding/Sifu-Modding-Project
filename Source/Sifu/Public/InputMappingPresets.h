@@ -13,5 +13,6 @@ public:
     TMap<FInputPresetsEnumHandler, FInputMappingData> m_Presets;
     
     UInputMappingPresets();
+
 };
 

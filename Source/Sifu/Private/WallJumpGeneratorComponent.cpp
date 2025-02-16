@@ -1,6 +1,7 @@
 #include "WallJumpGeneratorComponent.h"
 
-UWallJumpGeneratorComponent::UWallJumpGeneratorComponent() {
+UWallJumpGeneratorComponent::UWallJumpGeneratorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAutoActivate = true;
     this->m_fMinWallLength = 100.00f;
     this->m_fDetectionDistance = 1000.00f;
     this->m_fMaxSegmentVerticalAngle = 8.00f;
@@ -9,4 +10,5 @@ UWallJumpGeneratorComponent::UWallJumpGeneratorComponent() {
     this->m_iWallActorCount = 5;
     this->m_ActorClass = NULL;
 }
+
 

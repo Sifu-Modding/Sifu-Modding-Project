@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=EPlatform -FallbackName=EPlatform
 #include "GameplayTagContainer.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=AchievementUnlockCondition -FallbackName=AchievementUnlockCondition
+#include "AchievementUnlockCondition.h"
 #include "EOrderType.h"
 #include "ERunType.h"
 #include "WGAchievementUnlockCondition.generated.h"
@@ -12,7 +12,7 @@ class ASpawnerGroup;
 class UOrderComponent;
 
 UCLASS(Blueprintable)
-class SIFU_API UWGAchievementUnlockCondition : public UObject {
+class SIFU_API UWGAchievementUnlockCondition : public UAchievementUnlockCondition {
     GENERATED_BODY()
 public:
 protected:
@@ -65,8 +65,9 @@ protected:
     int32 m_AuthorizedPlatform;
     
 public:
-    /*UWGAchievementUnlockCondition();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UWGAchievementUnlockCondition();
+
+   /* UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsPlatformAuthorized(EPlatform _ePlatform) const;*/
     
 protected:

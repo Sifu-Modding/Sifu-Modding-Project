@@ -12,7 +12,7 @@ class UOrderComponent;
 class UStarUnlockCondition;
 
 UCLASS(Abstract, Blueprintable)
-class SIFU_API UBaseArenaObjective : public UObject {
+class SIFU_API UBaseArenaObjective : public UWGAchievementUnlockCondition {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnStarsCountChanged, int32, _newCount, int32, _oldCount);
@@ -24,11 +24,11 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnScoreChanged m_OnScoreChanged;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnObjectiveStart;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnObjectiveStart;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* ObjectiveStartTimerElapsedDelegate;*/
+    FDynamicMulticast ObjectiveStartTimerElapsedDelegate;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -52,12 +52,16 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsArenaObjectiveComplete;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 m_iAlmostCompleteRemainingStepCount;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_iStarCount;
     
 public:
     UBaseArenaObjective();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldShowScoreAsTime() const;
     
@@ -80,6 +84,12 @@ protected:
     int32 CountObtainedStars(int32 _iScore, bool _bCountGoldenStar) const;
     
 public:
+    UFUNCTION(BlueprintCallable)
+    void BPF_ResumeChrono();
+    
+    UFUNCTION(BlueprintCallable)
+    void BPF_PauseChrono();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool BPF_IsValidLevel(int32 _iLevel) const;
     
@@ -107,6 +117,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ComputeHighScore(int32& _iOutSavedHighScore, bool& _bOutIsNewHighScore);
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BPE_SetObjectiveAlmostCompleted();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPlayerPawnReady();
     

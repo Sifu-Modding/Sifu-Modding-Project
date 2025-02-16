@@ -1,5 +1,6 @@
 #include "SCPoolLevelScriptActor.h"
 
-ASCPoolLevelScriptActor::ASCPoolLevelScriptActor() {
+ASCPoolLevelScriptActor::ASCPoolLevelScriptActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

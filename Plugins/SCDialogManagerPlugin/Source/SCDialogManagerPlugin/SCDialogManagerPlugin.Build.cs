@@ -8,29 +8,13 @@ public class SCDialogManagerPlugin : ModuleRules {
         
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
-            "AnimationBudgetAllocator",
-            "AudioMixer",
-            "Chaos",
+            //"AkAudio",
             "Core",
             "CoreUObject",
             "DeveloperSettings",
             "Engine",
-            "GameplayAbilities",
             "GameplayTags",
-            "GameplayTasks",
-            "InputCore",
-            "LevelSequence",
-            "MediaAssets",
-            "MediaUtils",
-            "MovieScene",
-            "MovieSceneTracks",
-            "NavigationSystem",
-            "PhysicsCore",
-            "PropertyPath",
             "SCCore",
-            "Slate",
-            "SlateCore",
-            "UMG",
         });
     }
 }

@@ -27,5 +27,6 @@ public:
     EGuardType m_eGuardType;
     
     UOrderHittedGuardTypeCondition();
+
 };
 

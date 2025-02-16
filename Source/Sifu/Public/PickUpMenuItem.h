@@ -8,5 +8,6 @@ class SIFU_API UPickUpMenuItem : public UUserWidget {
     GENERATED_BODY()
 public:
     UPickUpMenuItem();
+
 };
 

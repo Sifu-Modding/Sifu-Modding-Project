@@ -1,8 +1,14 @@
 #include "BaseArenaObjective.h"
 
-class UCharacterHealthComponent;
-class UOrderComponent;
-class UStarUnlockCondition;
+UBaseArenaObjective::UBaseArenaObjective() {
+    this->m_eScoreComparisonType = EScoreComparisonType::GreaterThanOrEquals;
+    this->m_iScore = 0;
+    this->m_bUseChrono = false;
+    this->m_bPauseChronoOnTakeDown = true;
+    this->m_bIsArenaObjectiveComplete = false;
+    this->m_iAlmostCompleteRemainingStepCount = 1;
+    this->m_iStarCount = 0;
+}
 
 bool UBaseArenaObjective::ShouldShowScoreAsTime() const {
     return false;
@@ -22,6 +28,12 @@ void UBaseArenaObjective::OnGiveInitialControlToPlayer() {
 
 int32 UBaseArenaObjective::CountObtainedStars(int32 _iScore, bool _bCountGoldenStar) const {
     return 0;
+}
+
+void UBaseArenaObjective::BPF_ResumeChrono() {
+}
+
+void UBaseArenaObjective::BPF_PauseChrono() {
 }
 
 bool UBaseArenaObjective::BPF_IsValidLevel(int32 _iLevel) const {
@@ -59,12 +71,5 @@ void UBaseArenaObjective::BPF_ComputeHighScore(int32& _iOutSavedHighScore, bool&
 }
 
 
-UBaseArenaObjective::UBaseArenaObjective() {
-    this->m_eScoreComparisonType = EScoreComparisonType::GreaterThanOrEquals;
-    this->m_iScore = 0;
-    this->m_bUseChrono = false;
-    this->m_bPauseChronoOnTakeDown = true;
-    this->m_bIsArenaObjectiveComplete = false;
-    this->m_iStarCount = 0;
-}
+
 

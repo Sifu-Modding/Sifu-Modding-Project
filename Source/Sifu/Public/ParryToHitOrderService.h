@@ -20,6 +20,7 @@ public:
     float m_fFreezeFrames;
     
     UParryToHitOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetParryAnimations(const FHitDescription& _hitDescription, AFightingCharacter* _parriyer, FAnimContainer& _outParryierAnim, FHittedAnimContainer& _outParriedAnim) const;
     

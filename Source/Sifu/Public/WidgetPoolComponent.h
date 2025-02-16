@@ -20,7 +20,8 @@ private:
     TMap<FName, FWidgetPoolElementArray> m_WidgetPool;
     
 public:
-    UWidgetPoolComponent();
+    UWidgetPoolComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_ReleaseWidget(const FSCUserDefinedEnumHandler& _userEnum, USCUserWidget* _userWidget);
     

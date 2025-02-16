@@ -4,3 +4,4 @@ UChangeCollisionNotify::UChangeCollisionNotify() {
     this->m_bEnableCollisions = true;
 }
 
+

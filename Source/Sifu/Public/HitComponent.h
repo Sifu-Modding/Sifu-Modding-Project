@@ -91,7 +91,8 @@ private:
     float m_fDisarmGaugeRegenRateWhileHoldingWeapon;
     
 public:
-    UHitComponent();
+    UHitComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnDangerStateChangedCallback(EDangerStates _ePreviousDangerState, EDangerStates _eNewDangerState);
     
@@ -117,6 +118,9 @@ public:
     UHitAnimRequest* BPF_GetHitAnimRequest() const;
     
     UFUNCTION(BlueprintCallable)
+    void BPF_GenerateForeignImpact(const FHitResult& _hitResult, const FHitRequest& _inHitRequest);
+    
+    UFUNCTION(BlueprintCallable)
     void BPF_GenerateFakeImpact(const FHitResult& _hitResult, const FHitRequest& _inHitRequest);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
@@ -125,7 +129,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnHit(const FHitDescription& _description);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

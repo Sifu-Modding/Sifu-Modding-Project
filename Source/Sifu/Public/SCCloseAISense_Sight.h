@@ -8,5 +8,6 @@ class SIFU_API USCCloseAISense_Sight : public UAISense_Sight {
     GENERATED_BODY()
 public:
     USCCloseAISense_Sight();
+
 };
 

@@ -10,7 +10,7 @@ class SCCORE_API USaveUnlockCondition : public UAchievementUnlockCondition {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<USCSaveObject> m_saveToCheck;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -18,6 +18,7 @@ protected:
     
 public:
     USaveUnlockCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_CheckingSave(const USCSaveObject* _saveToCheck);
     

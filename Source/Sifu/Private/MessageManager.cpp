@@ -5,3 +5,4 @@ UMessageManager::UMessageManager() {
     this->m_MessengerComponent = CreateDefaultSubobject<UMessengerComponent>(TEXT("MessengerComponent"));
 }
 
+

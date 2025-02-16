@@ -11,6 +11,7 @@ class SIFU_API UReplayTimelineContainerBase : public UUserWidget {
     GENERATED_BODY()
 public:
     UReplayTimelineContainerBase();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TScriptInterface<IReplayWidgetHandler> BPF_GetWidgetHandler() const;

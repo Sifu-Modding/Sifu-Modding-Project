@@ -29,6 +29,7 @@ public:
     UCanvas* m_CanvasTarget;
     
     USCVideoLightManager();
+
     UFUNCTION(BlueprintCallable)
     static void PreCache(UMediaTexture* MediaTex, UMediaSource* MediaSource, UMaterialInterface* SamplerMaterialBase);
     

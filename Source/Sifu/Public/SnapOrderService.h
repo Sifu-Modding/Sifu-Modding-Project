@@ -107,6 +107,7 @@ public:
     FVector m_vWorldOffsetOnTargetPos;
     
     USnapOrderService();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetCustomSnapOrderServiceTransform(const FTransform& _transform, TSubclassOf<USnapOrderService> _serviceClass, const AFightingCharacter* _character, uint8 _uiOrderId);
     

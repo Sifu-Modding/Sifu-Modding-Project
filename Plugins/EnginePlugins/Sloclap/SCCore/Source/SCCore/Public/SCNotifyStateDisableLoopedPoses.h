@@ -8,5 +8,6 @@ class SCCORE_API USCNotifyStateDisableLoopedPoses : public UAnimNotifyState {
     GENERATED_BODY()
 public:
     USCNotifyStateDisableLoopedPoses();
+
 };
 

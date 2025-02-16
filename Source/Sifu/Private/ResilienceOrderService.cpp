@@ -4,3 +4,4 @@ UResilienceOrderService::UResilienceOrderService() {
     this->m_iBonus = 0;
 }
 
+

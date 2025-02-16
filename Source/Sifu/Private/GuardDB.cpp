@@ -1,27 +1,5 @@
 #include "GuardDB.h"
 
-class AFightingCharacter;
-class UAnimSequence;
-
-void UGuardDB::BPF_GetPickupOnParryAnim(const FHitRequest& _request, AFightingCharacter* _character, FAnimContainer& _outAnim) const {
-}
-
-UAnimSequence* UGuardDB::BPF_GetHittedGuardAnimWeapon(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
-    return NULL;
-}
-
-UAnimSequence* UGuardDB::BPF_GetHittedGuardAnim(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
-    return NULL;
-}
-
-UAnimSequence* UGuardDB::BPF_GetHittedDeflectAnimWeapon(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
-    return NULL;
-}
-
-UAnimSequence* UGuardDB::BPF_GetHittedDeflectAnim(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
-    return NULL;
-}
-
 UGuardDB::UGuardDB() {
     this->m_aGuardAnimations[0] = NULL;
     this->m_aGuardAnimations[1] = NULL;
@@ -60,4 +38,24 @@ UGuardDB::UGuardDB() {
     this->m_DefenseAnimRequest = NULL;
     this->m_ParryAnimRequest = NULL;
 }
+
+void UGuardDB::BPF_GetPickupOnParryAnim(const FHitRequest& _request, AFightingCharacter* _character, FAnimContainer& _outAnim) const {
+}
+
+UAnimSequence* UGuardDB::BPF_GetHittedGuardAnimWeapon(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
+    return NULL;
+}
+
+UAnimSequence* UGuardDB::BPF_GetHittedGuardAnim(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
+    return NULL;
+}
+
+UAnimSequence* UGuardDB::BPF_GetHittedDeflectAnimWeapon(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
+    return NULL;
+}
+
+UAnimSequence* UGuardDB::BPF_GetHittedDeflectAnim(EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, EHeight _eHeight) const {
+    return NULL;
+}
+
 

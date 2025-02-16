@@ -29,6 +29,7 @@ protected:
     
 public:
     USynchronizedAttackLoopHitActionLauncher();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetSynchronizedAttackLoopAnims(const FHitDescription& _hitDescription, AFightingCharacter* _victimChar, bool& _bOutIsLethal, FAnimSyncContainer& _outAnimsEntry, FAnimSyncContainer& _outAnimsLoop, FAnimSyncContainer& _outAnimsExit, FWeaponAnimInfo& _outAttackerWeaponAnimEntry, FWeaponAnimInfo& _outAttackerWeaponAnimLoop, FWeaponAnimInfo& _outAttackerWeaponAnimExit, TArray<FOverridingHitBox>& _outHitsToApply) const;
     

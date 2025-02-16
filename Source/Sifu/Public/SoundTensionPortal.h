@@ -12,6 +12,7 @@ private:
     int32 m_iTensionLevelBackward;
     
 public:
-    ASoundTensionPortal();
+    ASoundTensionPortal(const FObjectInitializer& ObjectInitializer);
+
 };
 

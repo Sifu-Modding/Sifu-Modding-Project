@@ -38,5 +38,6 @@ public:
     float m_fDelayBeforeSleep;
     
     USCRagdollConfigDB();
+
 };
 

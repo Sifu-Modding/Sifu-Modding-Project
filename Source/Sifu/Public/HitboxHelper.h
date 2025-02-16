@@ -13,6 +13,7 @@ class SIFU_API UHitboxHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UHitboxHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetHitboxStructureDamage(const FHitBox& _hitbox, FHitBox& _outHitbox, float _fDamage);
     

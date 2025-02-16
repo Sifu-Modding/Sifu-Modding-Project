@@ -1,5 +1,8 @@
 #include "SCVisualLoggerHelper.h"
 
+USCVisualLoggerHelper::USCVisualLoggerHelper() {
+}
+
 bool USCVisualLoggerHelper::BPF_TakeVisualLoggerSnapshot(const FString& _fileName, FText& _outError) {
     return false;
 }
@@ -7,6 +10,4 @@ bool USCVisualLoggerHelper::BPF_TakeVisualLoggerSnapshot(const FString& _fileNam
 void USCVisualLoggerHelper::BPF_SetVisualLoggerPaused(bool _bPaused) {
 }
 
-USCVisualLoggerHelper::USCVisualLoggerHelper() {
-}
 

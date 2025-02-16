@@ -4,3 +4,4 @@ UTargetActionTypePerCondition::UTargetActionTypePerCondition() {
     this->m_eDefaultValue = EActionType::None;
 }
 
+

@@ -1,19 +1,6 @@
 #include "SnapOrderService.h"
 #include "Templates/SubclassOf.h"
 
-class AFightingCharacter;
-class USnapOrderService;
-
-void USnapOrderService::BPF_SetCustomSnapOrderServiceTransform(const FTransform& _transform, TSubclassOf<USnapOrderService> _serviceClass, const AFightingCharacter* _character, uint8 _uiOrderId) {
-}
-
-void USnapOrderService::BPF_BindTargetTransformDelegate(const FBPOrderServiceInstance& _self, const FBPOrderServiceInstance& _targetServiceInstance, const FTargetTransformDelegate& _delegate) {
-}
-
-FTransform USnapOrderService::BPE_GetTargetTransform_Implementation(const FBPOrderServiceInstance& _instance, float _fDt, bool& _bOutTargetReady) const {
-    return FTransform{};
-}
-
 USnapOrderService::USnapOrderService() {
     this->m_bNeedTargetActor = true;
     this->m_bTickBeforeTargetActor = true;
@@ -45,4 +32,15 @@ USnapOrderService::USnapOrderService() {
     this->m_fMaxAngularSpeed = -1.00f;
     this->m_fMaxDistanceToNavmesh = 30.00f;
 }
+
+void USnapOrderService::BPF_SetCustomSnapOrderServiceTransform(const FTransform& _transform, TSubclassOf<USnapOrderService> _serviceClass, const AFightingCharacter* _character, uint8 _uiOrderId) {
+}
+
+void USnapOrderService::BPF_BindTargetTransformDelegate(const FBPOrderServiceInstance& _self, const FBPOrderServiceInstance& _targetServiceInstance, const FTargetTransformDelegate& _delegate) {
+}
+
+FTransform USnapOrderService::BPE_GetTargetTransform_Implementation(const FBPOrderServiceInstance& _instance, float _fDt, bool& _bOutTargetReady) const {
+    return FTransform{};
+}
+
 

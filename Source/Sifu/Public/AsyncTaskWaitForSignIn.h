@@ -19,6 +19,7 @@ public:
     FAsyncTaskWaitForSignInCompleted OnFail;
     
     UAsyncTaskWaitForSignIn();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskWaitForSignIn* BPF_WaitForSignIn(UObject* _menu);
     

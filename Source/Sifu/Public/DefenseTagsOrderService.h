@@ -12,5 +12,6 @@ public:
     FGameplayTagContainer m_SetHitBoxRequiredTags;
     
     UDefenseTagsOrderService();
+
 };
 

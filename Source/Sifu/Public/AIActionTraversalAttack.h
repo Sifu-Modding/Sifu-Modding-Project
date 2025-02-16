@@ -25,6 +25,7 @@ protected:
     
 public:
     UAIActionTraversalAttack();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_OnReachedEntryPoint();

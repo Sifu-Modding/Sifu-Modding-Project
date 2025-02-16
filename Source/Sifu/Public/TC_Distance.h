@@ -15,5 +15,6 @@ public:
     float m_fDistance;
     
     UTC_Distance();
+
 };
 

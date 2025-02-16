@@ -1,5 +1,8 @@
 #include "BaseUseCondition.h"
 
+UBaseUseCondition::UBaseUseCondition() {
+}
+
 bool UBaseUseCondition::IsFulfilled_Implementation() {
     return false;
 }
@@ -64,6 +67,4 @@ float UBaseUseCondition::BPF_GetDamageTaken(float _fTime) const {
 }
 
 
-UBaseUseCondition::UBaseUseCondition() {
-}
 

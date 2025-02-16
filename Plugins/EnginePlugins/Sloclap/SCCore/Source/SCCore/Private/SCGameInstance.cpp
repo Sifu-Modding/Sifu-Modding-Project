@@ -1,5 +1,11 @@
 #include "SCGameInstance.h"
 
+USCGameInstance::USCGameInstance() {
+    this->m_bEnableDevMode = false;
+    this->m_HudOffsetFromBlackBarWhenAboveDefaultRatioRuntime = NULL;
+    this->m_HudOffsetFromBlackBarWhenBelowDefaultRatioRuntime = NULL;
+}
+
 void USCGameInstance::UnlockInGameAchievement(const FGameplayTag& _achievementToUnlock) {
 }
 
@@ -18,9 +24,4 @@ void USCGameInstance::LockInGameAchievement(const FGameplayTag& _achievementToLo
 void USCGameInstance::BPF_BindToLowPerformanceChanged(USCGameInstance::FLowPerformanceModeChanged Delegate) {
 }
 
-USCGameInstance::USCGameInstance() {
-    this->m_bEnableDevMode = false;
-    this->m_HudOffsetFromBlackBarWhenAboveDefaultRatioRuntime = NULL;
-    this->m_HudOffsetFromBlackBarWhenBelowDefaultRatioRuntime = NULL;
-}
 

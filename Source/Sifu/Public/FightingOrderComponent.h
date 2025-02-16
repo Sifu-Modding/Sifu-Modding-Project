@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UFightingOrderComponent : public UOrderComponent {
     GENERATED_BODY()
 public:
-    UFightingOrderComponent();
+    UFightingOrderComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

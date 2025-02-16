@@ -17,5 +17,6 @@ public:
     TArray<UBaseTargetWeightEvaluation*> m_Evaluations;
     
     UTE_WeightEvaluation();
+
 };
 

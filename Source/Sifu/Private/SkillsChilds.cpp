@@ -1,7 +1,7 @@
 #include "SkillsChilds.h"
 
-class USCAbilitySystemComponent;
-class USkillsChilds;
+USkillsChilds::USkillsChilds() {
+}
 
 bool USkillsChilds::BPF_GetParent(const FSkillTreeNode& _node, FSkillTreeNode& _parent) const {
     return false;
@@ -24,6 +24,4 @@ int32 USkillsChilds::BPF_CountChilds(USCAbilitySystemComponent* _component, cons
     return 0;
 }
 
-USkillsChilds::USkillsChilds() {
-}
 

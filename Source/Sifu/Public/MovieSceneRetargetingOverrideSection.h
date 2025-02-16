@@ -13,5 +13,6 @@ public:
     UWGRetargetingOverrideData* m_RetargetingOverrideData;
     
     UMovieSceneRetargetingOverrideSection();
+
 };
 

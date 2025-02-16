@@ -1,8 +1,15 @@
 #include "TableWidget.h"
 
-class UButtonUserWidget;
-class UUserWidget;
-class UWidget;
+UTableWidget::UTableWidget() {
+    this->m_bUseCustomLayout = false;
+    this->m_ItemHorizontalAlignment = HAlign_Fill;
+    this->m_ItemVerticalAlignment = VAlign_Fill;
+    this->m_RowHorizontalAlignment = HAlign_Fill;
+    this->m_RowVerticalAlignment = VAlign_Center;
+    this->m_bUseCustomNavigation = true;
+    this->m_iItemsPerRow = 3;
+    this->m_RowWidgetClass = NULL;
+}
 
 void UTableWidget::OnItemSelected(UButtonUserWidget* _button, UButtonUserWidget* _prevButton) {
 }
@@ -49,14 +56,4 @@ int32 UTableWidget::BPF_GetChildrenCount() {
 void UTableWidget::BPF_AddItem(UUserWidget* _widget) {
 }
 
-UTableWidget::UTableWidget() {
-    this->m_bUseCustomLayout = false;
-    this->m_ItemHorizontalAlignment = HAlign_Fill;
-    this->m_ItemVerticalAlignment = VAlign_Fill;
-    this->m_RowHorizontalAlignment = HAlign_Fill;
-    this->m_RowVerticalAlignment = VAlign_Center;
-    this->m_bUseCustomNavigation = true;
-    this->m_iItemsPerRow = 3;
-    this->m_RowWidgetClass = NULL;
-}
 

@@ -15,5 +15,6 @@ public:
     FAnchorData SmallScreenLayoutData;
     
     UPerPlatformCanvaPanelSlot();
+
 };
 

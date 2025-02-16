@@ -8,5 +8,6 @@ class SIFU_API UFightingStatePushedBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UFightingStatePushedBTTask();
+
 };
 

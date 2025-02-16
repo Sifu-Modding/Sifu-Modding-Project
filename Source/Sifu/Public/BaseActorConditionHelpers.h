@@ -12,6 +12,7 @@ class SIFU_API UBaseActorConditionHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UBaseActorConditionHelpers();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UObject* BPF_GetInstance(const FBaseActorConditionInstance& _instance);
     

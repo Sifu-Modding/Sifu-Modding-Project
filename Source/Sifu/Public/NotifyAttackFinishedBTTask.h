@@ -8,5 +8,6 @@ class SIFU_API UNotifyAttackFinishedBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UNotifyAttackFinishedBTTask();
+
 };
 

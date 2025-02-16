@@ -50,6 +50,7 @@ protected:
     
 public:
     UReplayMainUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     bool OnTimelineModePressed();

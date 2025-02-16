@@ -5,3 +5,4 @@ UTrailNotifyStateExtended::UTrailNotifyStateExtended() {
     this->m_bCheckNotInPerfectLink = false;
 }
 
+

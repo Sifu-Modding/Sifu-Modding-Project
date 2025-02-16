@@ -12,6 +12,7 @@ public:
     FVector m_vDropImpulse;
     
     UAIActionDropObject();
+
     UFUNCTION(BlueprintCallable)
     void BPF_DropObjectInHand();
     

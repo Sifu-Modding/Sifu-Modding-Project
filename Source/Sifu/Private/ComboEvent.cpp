@@ -1,6 +1,7 @@
 #include "ComboEvent.h"
 
-class AFightingCharacter;
+UComboEvent::UComboEvent() {
+}
 
 FString UComboEvent::BPE_GetLog_Implementation() {
     return TEXT("");
@@ -9,6 +10,4 @@ FString UComboEvent::BPE_GetLog_Implementation() {
 void UComboEvent::BPE_Execute_Implementation(AFightingCharacter* _character) {
 }
 
-UComboEvent::UComboEvent() {
-}
 

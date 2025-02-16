@@ -1,7 +1,7 @@
 #include "SCMathTools.h"
 
-class UCurveFloat;
-class USplineComponent;
+USCMathTools::USCMathTools() {
+}
 
 FVector USCMathTools::VectorCriticalSpringInterp(FVector _vCurrent, const FVector& _vTarget, FVector& _vInOutVelocity, float _fSpeedFactor, float _fDeltaTime) {
     return FVector{};
@@ -192,6 +192,4 @@ float USCMathTools::AngleBetweenVectorAbsolute(FVector _v1Normalized, FVector _v
 void USCMathTools::AngleBetweenVector(float& _fHorizontalAngle, float& _fVerticalAngle, FVector _v1Normalized, FVector _v2Normalized) {
 }
 
-USCMathTools::USCMathTools() {
-}
 

@@ -7,30 +7,10 @@ public class Text2LipSync : ModuleRules {
         ShadowVariableWarningLevel = WarningLevel.Warning;
         
         PublicDependencyModuleNames.AddRange(new string[] {
-            "AIModule",
-            "AnimationBudgetAllocator",
-            "AudioMixer",
-            "Chaos",
             "Core",
             "CoreUObject",
-            "DeveloperSettings",
             "Engine",
-            "GameplayAbilities",
-            "GameplayTags",
-            "GameplayTasks",
-            "InputCore",
-            "LevelSequence",
-            "MediaAssets",
-            "MediaUtils",
-            "MovieScene",
-            "MovieSceneTracks",
-            "NavigationSystem",
-            "PhysicsCore",
-            "PropertyPath",
             "SCCore",
-            "Slate",
-            "SlateCore",
-            "UMG",
         });
     }
 }

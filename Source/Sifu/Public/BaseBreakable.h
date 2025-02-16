@@ -6,7 +6,7 @@
 #include "SCCollisionResponsePreset.h"
 #include "BaseBreakable.generated.h"
 
-class UAkAudioEvent;
+//class UAkAudioEvent;
 class UBoxComponent;
 class UPhysicalActorDependencyComponent;
 class UPrimitiveComponent;
@@ -91,8 +91,8 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_BounceRTPC;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<float, UAkAudioEvent*> m_PerImpulseBounceSfxs;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // TMap<float, UAkAudioEvent*> m_PerImpulseBounceSfxs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AActor* m_DestructionCauser;
@@ -101,7 +101,8 @@ protected:
     float m_fProximityCreatePhysicsOffset;
     
 public:
-    ABaseBreakable();
+    ABaseBreakable(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnWakeStateChanged(bool _bIsAwake);

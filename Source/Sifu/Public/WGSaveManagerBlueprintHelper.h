@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "SaveManagerBlueprintHelper.h"
 #include "DuplicatedSaveData.h"
+#include "OnSaveCompletedDelegate.h"
 #include "WGSaveManagerBlueprintHelper.generated.h"
 
 UCLASS(Blueprintable)
@@ -9,11 +10,15 @@ class SIFU_API UWGSaveManagerBlueprintHelper : public USaveManagerBlueprintHelpe
     GENERATED_BODY()
 public:
     UWGSaveManagerBlueprintHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SnapshotPartOfSave(int32 _iSaveTypeBitmask, int32 _iSaveEntryToExclude);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_SetNeedSaveProfile();
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SetNeedSaveGameWithCallback(int32 _iSaveTypeBitmask, FOnSaveCompleted _OnSaveCompleted);
     
     UFUNCTION(BlueprintCallable)
     static void BPF_SetNeedSaveGame(int32 _iSaveTypeBitmask);

@@ -11,6 +11,7 @@ class SIFU_API UTargetableActorHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UTargetableActorHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FVector BPF_GetTargetableLocation(const AActor* _actor);
     

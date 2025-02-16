@@ -13,6 +13,7 @@ class SCCORE_API USaveManagerBlueprintHelper : public UBlueprintFunctionLibrary 
     GENERATED_BODY()
 public:
     USaveManagerBlueprintHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_WriteSaveGameToDisk();
     

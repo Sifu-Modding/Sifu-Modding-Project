@@ -4,3 +4,4 @@ UAttackFramesNotifyState::UAttackFramesNotifyState() {
     this->m_DB = NULL;
 }
 
+

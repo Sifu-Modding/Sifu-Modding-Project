@@ -13,6 +13,7 @@ public:
     bool m_bUseAnimRootMotion;
     
     UTranslateToTargetOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector BPE_GetTarget(const FBPOrderServiceInstance& _instance) const;
     

@@ -9,7 +9,7 @@ UCLASS(Blueprintable, NonTransient)
 class SIFU_API UGhostAnimInstance : public UAnimInstance {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UAnimationAsset> m_MasterAnim;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -19,5 +19,6 @@ public:
     bool m_bMasterAnimMirror;
     
     UGhostAnimInstance();
+
 };
 

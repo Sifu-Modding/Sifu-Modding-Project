@@ -33,5 +33,6 @@ public:
     bool m_bGhostDamageActivated;
     
     UAbsorbPropertyDB();
+
 };
 

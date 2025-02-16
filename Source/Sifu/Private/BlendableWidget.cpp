@@ -1,6 +1,9 @@
 #include "BlendableWidget.h"
 
-class UMaterialParameterCollection;
+UBlendableWidget::UBlendableWidget() {
+    this->m_fBlendDuration = 0.00f;
+    this->m_eBlendValueType = ESCType::Float;
+}
 
 void UBlendableWidget::BPF_StartTimerBlend(bool _bReverse) {
 }
@@ -17,8 +20,4 @@ int32 UBlendableWidget::BPF_BindMaterialParameterToBlendAlpha(UMaterialParameter
     return 0;
 }
 
-UBlendableWidget::UBlendableWidget() {
-    this->m_fBlendDuration = 0.00f;
-    this->m_eBlendValueType = ESCType::Float;
-}
 

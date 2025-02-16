@@ -1,6 +1,7 @@
 #include "SkySphere.h"
 
-ASkySphere::ASkySphere() {
+ASkySphere::ASkySphere(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->BaseMaterial = NULL;
 }
+
 

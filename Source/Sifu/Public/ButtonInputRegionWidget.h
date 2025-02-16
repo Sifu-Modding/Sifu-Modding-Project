@@ -8,5 +8,6 @@ class UButtonInputRegionWidget : public USpacer {
     GENERATED_BODY()
 public:
     UButtonInputRegionWidget();
+
 };
 

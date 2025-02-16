@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "SCDelegate.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=SCCore -ObjectName=SCDynamicDelegate__DelegateSignature -FallbackName=SCDynamicDelegateDelegate
+#include "SCDynamicDelegateDelegate.h"
 #include "EReplayKeyTypeFlag.h"
 #include "OnTimeDilationChangedSignatureDelegate.h"
 #include "ReplayTimelineController.generated.h"
@@ -15,8 +15,8 @@ UCLASS(Blueprintable)
 class SIFU_API UReplayTimelineController : public UObject {
     GENERATED_BODY()
 public:
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    //USCDelegate::FDynamicMulticast* m_OnModelReset;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast m_OnModelReset;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -30,8 +30,9 @@ protected:
     
 public:
     UReplayTimelineController();
-    /*UFUNCTION(BlueprintCallable)
-    void BPF_SaveKeysWithCallback(const FSCDynamicDelegate& _onModelSaved);*/
+
+    UFUNCTION(BlueprintCallable)
+    void BPF_SaveKeysWithCallback(const FSCDynamicDelegate& _onModelSaved);
     
     UFUNCTION(BlueprintCallable)
     void BPF_SaveKeys();
@@ -39,8 +40,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_ResetTransitionContext();
     
-   /* UFUNCTION(BlueprintCallable)
-    void BPF_ResetModelWithCallback(const FSCDynamicDelegate& _onModelSaved);*/
+    UFUNCTION(BlueprintCallable)
+    void BPF_ResetModelWithCallback(const FSCDynamicDelegate& _onModelSaved);
     
     UFUNCTION(BlueprintCallable)
     void BPF_ResetModel();

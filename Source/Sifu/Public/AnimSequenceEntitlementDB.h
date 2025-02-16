@@ -16,5 +16,6 @@ public:
     TArray<UAnimSequenceEntryDB*> m_DBs;
     
     UAnimSequenceEntitlementDB();
+
 };
 

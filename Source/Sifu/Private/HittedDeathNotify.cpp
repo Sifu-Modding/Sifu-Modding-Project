@@ -7,3 +7,4 @@ UHittedDeathNotify::UHittedDeathNotify() {
     this->m_uiDeathTriggeredConditionMask = 3;
 }
 
+

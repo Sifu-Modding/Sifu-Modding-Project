@@ -6,3 +6,4 @@ UFloatInfluenceTest::UFloatInfluenceTest() {
     this->m_fValueMax = 0.00f;
 }
 
+

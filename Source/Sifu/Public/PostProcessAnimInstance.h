@@ -14,5 +14,6 @@ public:
     FName m_ClothAnimDriveCurveName;
     
     UPostProcessAnimInstance();
+
 };
 

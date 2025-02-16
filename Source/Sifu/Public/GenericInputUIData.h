@@ -8,5 +8,6 @@ class SIFU_API UGenericInputUIData : public UObject {
     GENERATED_BODY()
 public:
     UGenericInputUIData();
+
 };
 

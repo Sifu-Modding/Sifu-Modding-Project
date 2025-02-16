@@ -8,5 +8,6 @@ class SIFU_API UTakendownImpactNotify : public UAnimNotify {
     GENERATED_BODY()
 public:
     UTakendownImpactNotify();
+
 };
 

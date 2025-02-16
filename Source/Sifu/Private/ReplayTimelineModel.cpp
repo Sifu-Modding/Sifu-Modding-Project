@@ -1,6 +1,8 @@
 #include "ReplayTimelineModel.h"
 
-class UReplayKey;
+UReplayTimelineModel::UReplayTimelineModel() {
+    this->m_bMusicBackgroundMuted = false;
+}
 
 void UReplayTimelineModel::BPF_UpdateKeyLocationData(UReplayKey* _key, const FVector& _vLocation, const FQuat& _qRotation) {
 }
@@ -11,10 +13,17 @@ void UReplayTimelineModel::BPF_UpdateKeyData(UReplayKey* _key, const FReplayKeyD
 void UReplayTimelineModel::BPF_SetMusicForExport(FName _wantedMusic) {
 }
 
+void UReplayTimelineModel::BPF_SetMusicBackgroundMuted(const bool _bIsMuted) {
+}
+
 void UReplayTimelineModel::BPF_SaveState() {
 }
 
 void UReplayTimelineModel::BPF_RecalcDilatedTimes(int32 _iStartingIndex) {
+}
+
+bool UReplayTimelineModel::BPF_IsMusicBackgroundMuted() const {
+    return false;
 }
 
 bool UReplayTimelineModel::BPF_IsLastKey(const UReplayKey* _key) const {
@@ -81,6 +90,4 @@ FName UReplayTimelineModel::BPF_GetCurrentMusicForExport() const {
     return NAME_None;
 }
 
-UReplayTimelineModel::UReplayTimelineModel() {
-}
 

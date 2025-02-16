@@ -1,8 +1,9 @@
 #include "SCPoolableActorsContainer.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class ASCCharacterImpostor;
+ASCPoolableActorsContainer::ASCPoolableActorsContainer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_iGenerationVersion = 0;
+}
 
 int32 ASCPoolableActorsContainer::BPF_GetActorsCount(TSubclassOf<AActor> _class) {
     return 0;
@@ -19,6 +20,4 @@ AActor* ASCPoolableActorsContainer::BPF_AddActor(TSubclassOf<AActor> _class, FNa
     return NULL;
 }
 
-ASCPoolableActorsContainer::ASCPoolableActorsContainer() {
-}
 

@@ -9,6 +9,7 @@ class CGSDK_API UCgSDKBlueprint : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UCgSDKBlueprint();
+
     UFUNCTION(BlueprintCallable)
     static bool ShowProgressBar(const FString& progressBarName);
     

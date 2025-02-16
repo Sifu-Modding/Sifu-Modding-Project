@@ -10,6 +10,7 @@ class SIFU_API UWGLevelSequence : public USCLevelSequence {
     GENERATED_BODY()
 public:
     UWGLevelSequence();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetCharacterPickedObjectVisibility(FName _roleName, bool _bVisible);

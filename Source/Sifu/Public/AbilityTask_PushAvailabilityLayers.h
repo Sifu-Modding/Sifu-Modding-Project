@@ -17,6 +17,7 @@ public:
     UAvailabilityLayerData* m_availabilityLayerData;
     
     UAbilityTask_PushAvailabilityLayers();
+
     UFUNCTION(BlueprintCallable)
     static UAbilityTask_PushAvailabilityLayers* BPF_PushAvailabilityLayerWithContext(UGameplayAbility* _owningAbility, UAvailabilityLayerData* _AvailabilityLayerData, EALBinaryOperation _eOperation, int32 m_iPriority, bool _bPushContext, EALPriority _eContextPriority);
     

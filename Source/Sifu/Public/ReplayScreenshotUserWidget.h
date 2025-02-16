@@ -19,6 +19,7 @@ protected:
     
 public:
     UReplayScreenshotUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_RequestScreenshot(int32 _iResolutionX, int32 _iResolutionY);

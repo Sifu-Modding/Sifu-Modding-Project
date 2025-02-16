@@ -9,6 +9,7 @@ class UAnimationNotifySerializer : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAnimationNotifySerializer();
+
     UFUNCTION(BlueprintCallable)
     static FSCAnimNotifyExtraInfo BPF_ReadNotifyExtraInfoFromBufferArray(const TArray<uint8>& _extraInfoBufferArray);
     

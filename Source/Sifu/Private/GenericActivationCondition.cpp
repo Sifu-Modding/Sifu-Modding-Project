@@ -5,3 +5,4 @@ UGenericActivationCondition::UGenericActivationCondition() {
     this->m_eDeactivationMethd = EOrderServiceDeactivationMethod::None;
 }
 
+

@@ -15,6 +15,7 @@ class SIFU_API UHittedAnimHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UHittedAnimHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void BPF_MakeGenericHitAnimWithOrderType(FHittedAnimContainer& _animContainer, FAnimContainer _fightingStateLoopAnim, const FAnimContainer& _anim, const FOrderType& _OrderType);
     

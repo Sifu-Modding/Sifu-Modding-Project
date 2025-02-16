@@ -23,6 +23,7 @@ private:
     float m_fSecurityMargin;
     
 public:
-    ASpawningVolume();
+    ASpawningVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

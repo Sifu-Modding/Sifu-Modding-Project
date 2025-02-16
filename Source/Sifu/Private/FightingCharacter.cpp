@@ -5,32 +5,58 @@
 #include "CharacterHitBoxComponent.h"
 #include "DefenseComponent.h"
 #include "FightingCharAnimRepComponent.h"
+#include "FightingMovementComponent.h"
 #include "MessengerComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "ReplayFightingCharacterComponent.h"
 #include "ReplayablePhysicsComponent.h"
 #include "SCAbilitySystemComponent.h"
+#include "SwitchableOrderComponent.h"
 #include "TargetableActorComponent.h"
 
-class AActor;
-class ABaseWeapon;
-class AInteractiveMovable;
-class UAIFightingComponent;
-class UASMComponent;
-class UActorComponent;
-class UAttackComponent;
-class UAvailabilityLayerData;
-class UCameraComponentThird;
-class UDeathDB;
-class UEffectData;
-class UHitComponent;
-class UMaterialInterface;
-class UOrderComponent;
-class UPlayerAnim;
-class UPlayerFightingComponent;
-class UPrimitiveComponent;
-class USkeletalMeshComponent;
-class UStatsComponent;
+AFightingCharacter::AFightingCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UFightingMovementComponent>(TEXT("CharMoveComp")).SetDefaultSubobjectClass<USwitchableOrderComponent>(TEXT("OrderComponent"))) {
+    this->m_availabilityLayerDB = NULL;
+    this->m_AnimSyncBoneViewPoint = TEXT("head");
+    this->m_PushHitBox = CreateDefaultSubobject<UCharacterHitBoxComponent>(TEXT("Push HitBox"));
+    this->m_bHasJustBeenHitted = false;
+    this->m_bAllowAutonomousAnimPoseTick = false;
+    this->m_DefenseComponent = CreateDefaultSubobject<UDefenseComponent>(TEXT("DefenseComponent"));
+    this->m_AbilityComponent = CreateDefaultSubobject<USCAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+    this->m_TargetLocation = CreateDefaultSubobject<UTargetableActorComponent>(TEXT("TargetLocation"));
+    this->m_PhysicalAnimationComponent = CreateDefaultSubobject<UPhysicalAnimationComponent>(TEXT("PhysicalAnimationComponent"));
+    this->m_AttackComponent = NULL;
+    this->m_Camera = NULL;
+    this->m_DefaultHandWeapons = NULL;
+    this->m_DefaultLegWeapons = NULL;
+    this->m_HitComponent = NULL;
+    this->m_PlayerComponent = NULL;
+    this->m_AIComponent = NULL;
+    this->m_AvoidCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Avoid Capsule"));
+    this->m_HitCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Hit Capsule"));
+    this->m_HealthComponent = CreateDefaultSubobject<UCharacterHealthComponent>(TEXT("HealthComponent"));
+    this->m_MessengerComponent = CreateDefaultSubobject<UMessengerComponent>(TEXT("MessengerComponent"));
+    this->m_ReplayablePhysicsComponent = CreateDefaultSubobject<UReplayablePhysicsComponent>(TEXT("ReplayablePhysicsComponent"));
+    this->m_FightingCharAnimRepComponent = CreateDefaultSubobject<UFightingCharAnimRepComponent>(TEXT("FightingCharAnimRepComponent"));
+    this->m_ReplayFightingCharacterComponent = CreateDefaultSubobject<UReplayFightingCharacterComponent>(TEXT("ReplayFightingCharacterComponent"));
+    this->m_ASMComponent = NULL;
+    this->m_DeathDB = NULL;
+    this->m_uiTransitionZoneId = 255;
+    this->m_fMinHeightForVisbilityTrace = 20.00f;
+    this->m_fMaxHeightForVisbilityTrace = 160.00f;
+    this->m_PickUpAngle = 30.00f;
+    this->m_bSpawnOccured = false;
+    this->m_bReceivedSaveFailedCompensation = false;
+    this->m_bCheckInventoryBug1_25 = false;
+    this->m_uiPawnCounter = 255;
+    this->m_eFaction = EFactionsEnums::Faction1;
+    this->m_bUpdateCollisionProfileOnBeginPlay = true;
+    this->m_MaterialParameterCollectionGameplay = NULL;
+    this->m_fCapsuleRadiusRatioForThrowableTargetLocation = 1.00f;
+    this->m_PushHitBox->SetupAttachment(RootComponent);
+    this->m_TargetLocation->SetupAttachment(RootComponent);
+    this->m_AvoidCapsule->SetupAttachment(RootComponent);
+    this->m_HitCapsule->SetupAttachment(RootComponent);
+}
 
 void AFightingCharacter::SetTarget(AActor* _target) {
 }
@@ -163,6 +189,9 @@ void AFightingCharacter::BPF_SetGuardGaugeInfinite(bool _bIsInfinite, bool _bRes
 }
 
 void AFightingCharacter::BPF_SetFaction(EFactionsEnums _eFaction) {
+}
+
+void AFightingCharacter::BPF_SetCanDropWeapon(const bool _CanDropWeapon) {
 }
 
 void AFightingCharacter::BPF_SaveAnimInstanceReference() {
@@ -356,6 +385,10 @@ void AFightingCharacter::BPF_ActivateCollision(const FString& _contextString, bo
 
 
 
+bool AFightingCharacter::BPE_GetContextualCanDieByDamaged_Implementation(bool _bDefaultValue) const {
+    return false;
+}
+
 
 
 
@@ -386,43 +419,4 @@ void AFightingCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& O
     DOREPLIFETIME(AFightingCharacter, m_uiPawnCounter);
 }
 
-AFightingCharacter::AFightingCharacter() {
-    this->m_availabilityLayerDB = NULL;
-    this->m_AnimSyncBoneViewPoint = TEXT("head");
-    this->m_PushHitBox = CreateDefaultSubobject<UCharacterHitBoxComponent>(TEXT("Push HitBox"));
-    this->m_bHasJustBeenHitted = false;
-    this->m_bAllowAutonomousAnimPoseTick = false;
-    this->m_DefenseComponent = CreateDefaultSubobject<UDefenseComponent>(TEXT("DefenseComponent"));
-    this->m_AbilityComponent = CreateDefaultSubobject<USCAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
-    this->m_TargetLocation = CreateDefaultSubobject<UTargetableActorComponent>(TEXT("TargetLocation"));
-    this->m_PhysicalAnimationComponent = CreateDefaultSubobject<UPhysicalAnimationComponent>(TEXT("PhysicalAnimationComponent"));
-    this->m_AttackComponent = NULL;
-    this->m_Camera = NULL;
-    this->m_DefaultHandWeapons = NULL;
-    this->m_DefaultLegWeapons = NULL;
-    this->m_HitComponent = NULL;
-    this->m_PlayerComponent = NULL;
-    this->m_AIComponent = NULL;
-    this->m_AvoidCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Avoid Capsule"));
-    this->m_HitCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Hit Capsule"));
-    this->m_HealthComponent = CreateDefaultSubobject<UCharacterHealthComponent>(TEXT("HealthComponent"));
-    this->m_MessengerComponent = CreateDefaultSubobject<UMessengerComponent>(TEXT("MessengerComponent"));
-    this->m_ReplayablePhysicsComponent = CreateDefaultSubobject<UReplayablePhysicsComponent>(TEXT("ReplayablePhysicsComponent"));
-    this->m_FightingCharAnimRepComponent = CreateDefaultSubobject<UFightingCharAnimRepComponent>(TEXT("FightingCharAnimRepComponent"));
-    this->m_ReplayFightingCharacterComponent = CreateDefaultSubobject<UReplayFightingCharacterComponent>(TEXT("ReplayFightingCharacterComponent"));
-    this->m_ASMComponent = NULL;
-    this->m_DeathDB = NULL;
-    this->m_uiTransitionZoneId = 255;
-    this->m_fMinHeightForVisbilityTrace = 20.00f;
-    this->m_fMaxHeightForVisbilityTrace = 160.00f;
-    this->m_PickUpAngle = 30.00f;
-    this->m_bSpawnOccured = false;
-    this->m_bReceivedSaveFailedCompensation = false;
-    this->m_bCheckInventoryBug1_25 = false;
-    this->m_uiPawnCounter = 255;
-    this->m_eFaction = EFactionsEnums::Faction1;
-    this->m_bUpdateCollisionProfileOnBeginPlay = true;
-    this->m_MaterialParameterCollectionGameplay = NULL;
-    this->m_fCapsuleRadiusRatioForThrowableTargetLocation = 1.00f;
-}
 

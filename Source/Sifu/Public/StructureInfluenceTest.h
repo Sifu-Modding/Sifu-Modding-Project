@@ -8,5 +8,6 @@ class SIFU_API UStructureInfluenceTest : public UFloatInfluenceTest {
     GENERATED_BODY()
 public:
     UStructureInfluenceTest();
+
 };
 

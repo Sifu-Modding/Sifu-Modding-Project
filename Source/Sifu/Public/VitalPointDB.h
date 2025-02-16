@@ -17,5 +17,6 @@ public:
     TArray<FVitalPointDataDefinition> m_VitalPointDefinitionArray;
     
     UVitalPointDB();
+
 };
 

@@ -40,5 +40,6 @@ public:
     FDirectoryPath m_PhonemeDictionaryPath;
     
     USCCoreUserSettings();
+
 };
 

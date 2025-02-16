@@ -17,7 +17,7 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAllActivitiesStarted);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FAchievementCompleted, const FString&, _achievementId);
     
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UUserWidget> m_HUD;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -35,7 +35,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnQueryAchievementsCompleted m_OnQueryAchievementsCompleted;
     
-    ASCPlayerController();
+    ASCPlayerController(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Exec)
     void UnlockAllAchievements();
     
@@ -91,7 +92,7 @@ public:
     bool BPF_IsAchievementCompleted(const FString& _achievementId);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool BPF_HasUnlockAllAchievements();
+    bool BPF_HasUnlockAllAchievements(TArray<FString> _achievementsToIgnore);
     
     UFUNCTION(BlueprintCallable)
     float BPF_GetTimedAchievementElapsed(const FName& _achievementId, int32& _iOutOnGoingOccurences);

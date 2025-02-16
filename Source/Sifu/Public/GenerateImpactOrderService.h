@@ -12,5 +12,6 @@ public:
     FHitBox m_HitGenerated;
     
     UGenerateImpactOrderService();
+
 };
 

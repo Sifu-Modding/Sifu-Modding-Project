@@ -16,6 +16,7 @@ protected:
     
 public:
     UDizzyReductionAbility();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDizzyReduction(const FSCGameplayAbilityActorInfo& _infos, float _fTimeLeft, float _fTimeReduced);
     

@@ -6,3 +6,4 @@ UAnalogInputSequenceData::UAnalogInputSequenceData() {
     this->m_iMaxParalellStates = 4;
 }
 
+

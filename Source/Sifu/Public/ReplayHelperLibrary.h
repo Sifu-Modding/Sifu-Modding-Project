@@ -18,6 +18,7 @@ class SIFU_API UReplayHelperLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UReplayHelperLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetScreenMessagesEnabled(bool _bEnabled);
     

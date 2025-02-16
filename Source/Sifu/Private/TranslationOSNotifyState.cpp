@@ -4,3 +4,4 @@ UTranslationOSNotifyState::UTranslationOSNotifyState() {
     this->m_bUseAnimRootMotion = false;
 }
 
+

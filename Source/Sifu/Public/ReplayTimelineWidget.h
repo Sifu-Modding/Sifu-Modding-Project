@@ -60,6 +60,7 @@ protected:
     
 public:
     UReplayTimelineWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnTimelineControllerTransitionContextInitialized();
@@ -141,7 +142,7 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDebugPaintCursor(FVector2D _vStartPosition, FVector2D _vEndPosition, EReplayTimelineDebugType _eDebugType, UPARAM(Ref) FPaintContext& _context) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 public:
     UFUNCTION(BlueprintCallable)

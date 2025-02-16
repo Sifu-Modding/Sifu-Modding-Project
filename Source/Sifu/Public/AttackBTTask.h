@@ -8,5 +8,6 @@ class SIFU_API UAttackBTTask : public UAIBTTaskNode {
     GENERATED_BODY()
 public:
     UAttackBTTask();
+
 };
 

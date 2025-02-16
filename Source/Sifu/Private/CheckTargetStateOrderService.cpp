@@ -15,3 +15,4 @@ UCheckTargetStateOrderService::UCheckTargetStateOrderService() {
     this->m_RecoveredFightingStates.AddDefaulted(1);
 }
 
+

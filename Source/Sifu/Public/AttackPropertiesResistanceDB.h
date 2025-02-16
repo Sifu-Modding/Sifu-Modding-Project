@@ -42,5 +42,6 @@ public:
     FAnimContainer m_FallFromPushedAnim;
     
     UAttackPropertiesResistanceDB();
+
 };
 

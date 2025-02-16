@@ -8,5 +8,6 @@ class SIFU_API USnapObjectNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     USnapObjectNotify();
+
 };
 

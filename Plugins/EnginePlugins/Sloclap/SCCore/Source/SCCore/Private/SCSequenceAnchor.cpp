@@ -1,7 +1,9 @@
 #include "SCSequenceAnchor.h"
 #include "Components/SkeletalMeshComponent.h"
 
-ASCSequenceAnchor::ASCSequenceAnchor() {
-    this->m_ComponentSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
+ASCSequenceAnchor::ASCSequenceAnchor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
+    this->m_ComponentSkeletalMesh = (USkeletalMeshComponent*)RootComponent;
 }
+
 

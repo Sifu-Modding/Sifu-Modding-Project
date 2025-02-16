@@ -19,3 +19,4 @@ USCFootIkAnimInstance::USCFootIkAnimInstance() {
     this->m_bIsFootIkEnabled = true;
 }
 
+

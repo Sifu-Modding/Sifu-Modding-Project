@@ -8,5 +8,6 @@ class SIFU_API UInGameMenuAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UInGameMenuAbility();
+
 };
 

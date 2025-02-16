@@ -11,5 +11,6 @@ public:
     bool m_bInvert;
     
     UComboAIConditionHasAttackTicket();
+
 };
 

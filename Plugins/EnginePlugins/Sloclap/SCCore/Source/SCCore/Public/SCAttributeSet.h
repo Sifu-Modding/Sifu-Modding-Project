@@ -8,5 +8,6 @@ class SCCORE_API USCAttributeSet : public UAttributeSet {
     GENERATED_BODY()
 public:
     USCAttributeSet();
+
 };
 

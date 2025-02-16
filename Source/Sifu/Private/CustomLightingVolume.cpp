@@ -1,5 +1,6 @@
 #include "CustomLightingVolume.h"
 
-ACustomLightingVolume::ACustomLightingVolume() {
+ACustomLightingVolume::ACustomLightingVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

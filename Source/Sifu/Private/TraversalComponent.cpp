@@ -1,26 +1,6 @@
 #include "TraversalComponent.h"
 
-void UTraversalComponent::ComputeTraversalAIInfo() {
-}
-
-void UTraversalComponent::BPF_SetTraversalActive(bool _bActive, bool _bForce) {
-}
-
-bool UTraversalComponent::BPF_IsTraversalActive() const {
-    return false;
-}
-
-bool UTraversalComponent::BPF_IsEntryTypeAllowed(ETraversalEntryType _eEntryType) const {
-    return false;
-}
-
-bool UTraversalComponent::BPF_IsAnimDrivenCameraForced() const {
-    return false;
-}
-
-
-
-UTraversalComponent::UTraversalComponent() {
+UTraversalComponent::UTraversalComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_traversalWaitTimePerCombatRole[0] = 0.00f;
     this->m_traversalWaitTimePerCombatRole[1] = 0.00f;
     this->m_traversalWaitTimePerCombatRole[2] = 0.00f;
@@ -46,4 +26,25 @@ UTraversalComponent::UTraversalComponent() {
     this->m_fNavLinkCooldownDuration = 0.00f;
     this->m_bUseClimbUIForCine = false;
 }
+
+void UTraversalComponent::ComputeTraversalAIInfo() {
+}
+
+void UTraversalComponent::BPF_SetTraversalActive(bool _bActive, bool _bForce) {
+}
+
+bool UTraversalComponent::BPF_IsTraversalActive() const {
+    return false;
+}
+
+bool UTraversalComponent::BPF_IsEntryTypeAllowed(ETraversalEntryType _eEntryType) const {
+    return false;
+}
+
+bool UTraversalComponent::BPF_IsAnimDrivenCameraForced() const {
+    return false;
+}
+
+
+
 

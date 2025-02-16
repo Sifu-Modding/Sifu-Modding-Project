@@ -12,5 +12,6 @@ public:
     EWidgetPlatform Platform;
     
     UPerPlatformWidgetLoaderSlot();
+
 };
 

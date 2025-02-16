@@ -5,3 +5,4 @@ USCAnimNotifyState::USCAnimNotifyState() {
     this->m_bDebugLogActivationTime = false;
 }
 
+

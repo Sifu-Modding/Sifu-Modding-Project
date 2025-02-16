@@ -18,5 +18,6 @@ public:
     UEvaluateTargetCondition* m_condition;
     
     UTC_ConditionOnTargettingType();
+
 };
 

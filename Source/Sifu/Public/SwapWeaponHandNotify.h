@@ -8,5 +8,6 @@ class SIFU_API USwapWeaponHandNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     USwapWeaponHandNotify();
+
 };
 

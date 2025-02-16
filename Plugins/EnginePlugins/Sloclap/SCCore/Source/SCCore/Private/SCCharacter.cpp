@@ -1,9 +1,16 @@
 #include "SCCharacter.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-class UAnimSequence;
-class USkeletalMesh;
+ASCCharacter::ASCCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bCanUnspawn = true;
+    this->m_bCanSpawnImpostor = true;
+    this->m_bIsPooled = false;
+    this->m_bPooledActorActive = false;
+    this->m_bPooledActorActiveForReplay = false;
+    this->m_PoseDataClass = NULL;
+    this->m_bDontCreateClotOnLowerEndPlatforms = false;
+    this->m_eGender = ECharacterGender::Man;
+}
 
 void ASCCharacter::ServerSetGender_Implementation(ECharacterGender _eGender) {
 }
@@ -29,6 +36,14 @@ void ASCCharacter::BPF_SetGender(ECharacterGender _eGender) {
 void ASCCharacter::BPF_SetCollisionEnabled(bool _bEnabled, bool _bKeepStaticMeshCollisions) {
 }
 
+bool ASCCharacter::BPF_IsInCinematic() const {
+    return false;
+}
+
+bool ASCCharacter::BPF_InputEnabled() const {
+    return false;
+}
+
 ETextGender ASCCharacter::BPF_GetTextGender() const {
     return ETextGender::Masculine;
 }
@@ -52,16 +67,8 @@ void ASCCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(ASCCharacter, m_bPooledActorActive);
+    DOREPLIFETIME(ASCCharacter, m_bPooledActorActiveForReplay);
     DOREPLIFETIME(ASCCharacter, m_eGender);
 }
 
-ASCCharacter::ASCCharacter() {
-    this->m_bCanUnspawn = true;
-    this->m_bCanSpawnImpostor = true;
-    this->m_bIsPooled = false;
-    this->m_bPooledActorActive = false;
-    this->m_PoseDataClass = NULL;
-    this->m_bDontCreateClotOnLowerEndPlatforms = false;
-    this->m_eGender = ECharacterGender::Man;
-}
 

@@ -15,5 +15,6 @@ public:
     FDialogActionArrayContainer m_LastLineActions;
     
     USCDialogRealOverrideDb();
+
 };
 

@@ -21,6 +21,7 @@ private:
     
 public:
     UInputManager();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_ResetAction(UObject* _requester, const ASCPlayerController* _playerController, InputAction _eInputAction);
     

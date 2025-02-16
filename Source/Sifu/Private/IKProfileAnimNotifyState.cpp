@@ -7,3 +7,4 @@ UIKProfileAnimNotifyState::UIKProfileAnimNotifyState() {
     this->m_fForceBoneRotationBlendDuration = 0.10f;
 }
 
+

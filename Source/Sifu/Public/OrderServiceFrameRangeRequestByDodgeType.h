@@ -12,5 +12,6 @@ public:
     FFloatRange m_frameRanges[3];
     
     UOrderServiceFrameRangeRequestByDodgeType();
+
 };
 

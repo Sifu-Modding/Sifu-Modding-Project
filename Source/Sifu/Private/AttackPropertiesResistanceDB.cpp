@@ -5,3 +5,4 @@ UAttackPropertiesResistanceDB::UAttackPropertiesResistanceDB() {
     this->m_bInterruptDownWhenAlone = true;
 }
 
+

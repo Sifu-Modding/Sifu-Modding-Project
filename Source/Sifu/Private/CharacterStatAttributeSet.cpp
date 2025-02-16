@@ -1,6 +1,9 @@
 #include "CharacterStatAttributeSet.h"
 #include "Net/UnrealNetwork.h"
 
+UCharacterStatAttributeSet::UCharacterStatAttributeSet() {
+}
+
 void UCharacterStatAttributeSet::OnRep_DeathCounter() {
 }
 
@@ -14,6 +17,4 @@ void UCharacterStatAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProp
     DOREPLIFETIME(UCharacterStatAttributeSet, DeathCounter);
 }
 
-UCharacterStatAttributeSet::UCharacterStatAttributeSet() {
-}
 

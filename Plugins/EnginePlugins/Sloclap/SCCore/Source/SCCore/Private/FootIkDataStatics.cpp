@@ -1,5 +1,8 @@
 #include "FootIkDataStatics.h"
 
+UFootIkDataStatics::UFootIkDataStatics() {
+}
+
 bool UFootIkDataStatics::BPF_IsFootPlanted(const FSCFootIkData& _inFootIkData) {
     return false;
 }
@@ -8,6 +11,4 @@ bool UFootIkDataStatics::BPF_GetLastFoundGround(const FSCFootIkData& _inFootIkDa
     return false;
 }
 
-UFootIkDataStatics::UFootIkDataStatics() {
-}
 

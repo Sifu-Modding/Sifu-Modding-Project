@@ -20,5 +20,6 @@ public:
     bool m_bAttachInFakieIfCancelledFromThisNotify;
     
     UAttachWeapon_Notify();
+
 };
 

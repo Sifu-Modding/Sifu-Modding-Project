@@ -4,3 +4,4 @@ UCarriedWeaponCondition::UCarriedWeaponCondition() {
     this->m_bInvertCondition = false;
 }
 
+

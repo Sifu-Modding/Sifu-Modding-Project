@@ -7,3 +7,4 @@ UTrumpetSkewData::UTrumpetSkewData() {
     this->m_eTrumpetSkewType = ETrumpetSkewType::HorizontalVertical;
 }
 
+

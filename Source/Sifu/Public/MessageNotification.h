@@ -13,6 +13,7 @@ public:
     FText m_Message;
     
     UMessageNotification();
+
     UFUNCTION(BlueprintCallable)
     UMessageNotification* BPF_Init(FText _message);
     

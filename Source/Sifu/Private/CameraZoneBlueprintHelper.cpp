@@ -1,5 +1,8 @@
 #include "CameraZoneBlueprintHelper.h"
 
+UCameraZoneBlueprintHelper::UCameraZoneBlueprintHelper() {
+}
+
 void UCameraZoneBlueprintHelper::BPF_GetSafeZoneListFromDeadZones(TArray<FDeadZone>& _outListOfSafeZones, const TArray<FDeadZone>& _inDeadZones) {
 }
 
@@ -15,6 +18,4 @@ bool UCameraZoneBlueprintHelper::BPF_GetClosestDeadZoneToAngle(FDeadZone& _outDe
     return false;
 }
 
-UCameraZoneBlueprintHelper::UCameraZoneBlueprintHelper() {
-}
 

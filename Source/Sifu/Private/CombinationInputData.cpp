@@ -4,3 +4,4 @@ UCombinationInputData::UCombinationInputData() {
     this->m_bResetChildHoldToggleOnActivation = false;
 }
 
+

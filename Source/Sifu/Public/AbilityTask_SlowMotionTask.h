@@ -25,6 +25,7 @@ public:
     FSlowMotionTaskDelegate m_OnPaused;
     
     UAbilityTask_SlowMotionTask();
+
     UFUNCTION(BlueprintCallable)
     static UAbilityTask_SlowMotionTask* BPF_SlowMotionTask(UGameplayAbility* _owningAbility, UCurveFloat* _curve, float _fScale, float _fBlendDuration, float _fCameraSlowMotionFactor, bool _bBlockOthers, bool _bScaleInputStack, bool _bStopOnOtherSlomo, bool _bForce);
     

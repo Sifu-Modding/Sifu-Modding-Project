@@ -15,5 +15,6 @@ public:
     FNetStructOpeningDoor m_TransientParams;
     
     UOrderOpeningDoorParams();
+
 };
 

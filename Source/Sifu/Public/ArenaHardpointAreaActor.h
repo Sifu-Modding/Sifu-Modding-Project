@@ -18,17 +18,17 @@ UCLASS(Blueprintable)
 class SIFU_API AArenaHardpointAreaActor : public AActor {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnScoreMultiplierChanged;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnScoreMultiplierChanged;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnEnemyPresenceInsideHardpointChanged;
+    FDynamicMulticast OnEnemyPresenceInsideHardpointChanged;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnScoreDecreaseStarted;
+    FDynamicMulticast OnScoreDecreaseStarted;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnScoreDecreaseEnded;*/
+    FDynamicMulticast OnScoreDecreaseEnded;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -54,7 +54,8 @@ private:
     TMap<AFightingCharacter*, FVolumesArray> m_overlappedVolumesPerEnemy;
     
 public:
-    AArenaHardpointAreaActor();
+    AArenaHardpointAreaActor(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void UpdateVolumeBounds();
     

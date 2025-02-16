@@ -8,5 +8,6 @@ class SCCORE_API USCFootIkService : public UObject {
     GENERATED_BODY()
 public:
     USCFootIkService();
+
 };
 

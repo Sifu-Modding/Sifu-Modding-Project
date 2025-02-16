@@ -15,5 +15,6 @@ public:
     FNetOrderStructPlayAnim m_TransientParams;
     
     UOrderAttackGenericParams();
+
 };
 

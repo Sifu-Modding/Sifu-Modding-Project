@@ -4,3 +4,4 @@ USpawnExternalActorNotify::USpawnExternalActorNotify() {
     this->m_ActorClassToSpawn = NULL;
 }
 
+

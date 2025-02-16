@@ -20,5 +20,6 @@ public:
     int32 m_iPriority;
     
     UAvailabilityLayerOrderService();
+
 };
 

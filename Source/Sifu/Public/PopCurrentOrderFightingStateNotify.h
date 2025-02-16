@@ -8,5 +8,6 @@ class SIFU_API UPopCurrentOrderFightingStateNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     UPopCurrentOrderFightingStateNotify();
+
 };
 

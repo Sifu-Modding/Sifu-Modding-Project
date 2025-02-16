@@ -1,5 +1,8 @@
 #include "QuadrantHelper.h"
 
+UQuadrantHelper::UQuadrantHelper() {
+}
+
 EQuadrantTypes UQuadrantHelper::BPF_Mirror(EQuadrantTypes _eQuadrant, bool _bMirror) {
     return EQuadrantTypes::FrontLeft;
 }
@@ -16,6 +19,4 @@ bool UQuadrantHelper::BPF_IsFront(EQuadrantTypes _eQuadrant) {
     return false;
 }
 
-UQuadrantHelper::UQuadrantHelper() {
-}
 

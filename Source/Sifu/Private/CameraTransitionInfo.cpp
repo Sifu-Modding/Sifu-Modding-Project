@@ -9,3 +9,4 @@ UCameraTransitionInfo::UCameraTransitionInfo() {
     this->m_eUpdateAngleMode = EUpdateAngleMode::Both;
 }
 
+

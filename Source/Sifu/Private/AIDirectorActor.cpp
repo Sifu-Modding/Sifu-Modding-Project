@@ -1,6 +1,7 @@
 #include "AIDirectorActor.h"
 
-class AActor;
+AAIDirectorActor::AAIDirectorActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void AAIDirectorActor::BPF_UnbindFromAlertLevelChanged(AAIDirectorActor::FAlertLevelChanged Delegate) {
 }
@@ -40,6 +41,4 @@ void AAIDirectorActor::BPF_AddGlobalAlertLevelThreshold(EAlertLevel _eLevel, EAl
 
 
 
-AAIDirectorActor::AAIDirectorActor() {
-}
 

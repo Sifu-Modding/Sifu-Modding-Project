@@ -16,8 +16,9 @@ private:
     TMap<FGameplayTag, UBehaviorTree*> m_DynamicSubtrees;
     
 public:
-    USCBehaviorTreeComponent();
-    
+    USCBehaviorTreeComponent(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

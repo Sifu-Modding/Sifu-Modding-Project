@@ -4,3 +4,4 @@ UFightingStateInfluenceTest::UFightingStateInfluenceTest() {
     this->m_eFightingState = EFightingState::None;
 }
 
+

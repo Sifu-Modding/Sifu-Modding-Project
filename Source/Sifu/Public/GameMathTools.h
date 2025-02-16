@@ -15,6 +15,7 @@ class SIFU_API UGameMathTools : public USCMathTools {
     GENERATED_BODY()
 public:
     UGameMathTools();
+
     UFUNCTION(BlueprintCallable)
     static EQuadrantTypes GetQuadrantTowardTarget(AFightingCharacter* _originChar, AActor* _target);
     

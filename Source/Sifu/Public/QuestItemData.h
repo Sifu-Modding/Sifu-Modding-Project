@@ -19,5 +19,6 @@ public:
     FName m_ScalarParameterName;
     
     UQuestItemData();
+
 };
 

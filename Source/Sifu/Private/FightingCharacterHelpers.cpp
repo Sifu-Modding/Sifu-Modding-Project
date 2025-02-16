@@ -1,6 +1,7 @@
 #include "FightingCharacterHelpers.h"
 
-class UAnimSequence;
+UFightingCharacterHelpers::UFightingCharacterHelpers() {
+}
 
 int32 UFightingCharacterHelpers::BPF_PickRandomAnimSequence(TArray<UAnimSequence*>& _inOutAnimHistory, const TArray<UAnimSequence*>& _animSelection, bool _bAddToHistory) {
     return 0;
@@ -10,6 +11,4 @@ int32 UFightingCharacterHelpers::BPF_PickRandomAnimation(TArray<UAnimSequence*>&
     return 0;
 }
 
-UFightingCharacterHelpers::UFightingCharacterHelpers() {
-}
 

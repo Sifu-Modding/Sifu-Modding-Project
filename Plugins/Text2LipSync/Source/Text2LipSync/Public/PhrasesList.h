@@ -16,6 +16,7 @@ private:
     
 public:
     UPhrasesList();
+
     UFUNCTION(BlueprintCallable)
     bool LoadFromDataTable(UDataTable* DataTable);
     

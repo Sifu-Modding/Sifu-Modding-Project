@@ -15,6 +15,7 @@ protected:
     
 public:
     USpringCameraMixerBlender();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetTargetRatio(UCameraComponentThird* _camera) const;
     

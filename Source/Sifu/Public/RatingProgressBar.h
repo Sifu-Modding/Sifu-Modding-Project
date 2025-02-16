@@ -14,5 +14,6 @@ public:
     int32 m_iSteps;
     
     URatingProgressBar();
+
 };
 

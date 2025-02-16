@@ -1,9 +1,8 @@
 #include "ComboTransitionCondition.h"
 #include "Templates/SubclassOf.h"
 
-class AActor;
-class AFightingCharacter;
-class UComboTransitionCondition;
+UComboTransitionCondition::UComboTransitionCondition() {
+}
 
 bool UComboTransitionCondition::BPF_TestConditionOfClass(TSubclassOf<UComboTransitionCondition> _condition, const AFightingCharacter* _owner) {
     return false;
@@ -21,6 +20,4 @@ FString UComboTransitionCondition::BPE_GetLog_Implementation() const {
     return TEXT("");
 }
 
-UComboTransitionCondition::UComboTransitionCondition() {
-}
 

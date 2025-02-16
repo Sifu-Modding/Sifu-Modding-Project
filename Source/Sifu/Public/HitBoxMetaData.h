@@ -8,5 +8,6 @@ class SIFU_API UHitBoxMetaData : public UObject {
     GENERATED_BODY()
 public:
     UHitBoxMetaData();
+
 };
 

@@ -10,6 +10,7 @@ class SIFU_API UAIPhaseTransitionBossKill : public UAIPhaseTransition {
     GENERATED_BODY()
 public:
     UAIPhaseTransitionBossKill();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnKillSpare(UAIFightingComponent* _aiComponent);

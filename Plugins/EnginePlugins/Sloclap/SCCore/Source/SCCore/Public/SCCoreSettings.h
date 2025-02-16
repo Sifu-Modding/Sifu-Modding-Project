@@ -3,6 +3,8 @@
 #include "Engine/DeveloperSettings.h"
 #include "GameplayTagContainer.h"
 #include "ActorsPoolConfig.h"
+#include "ELipSyncLanguage.h"
+#include "LanguageSeparator.h"
 #include "SCErrorPopup.h"
 #include "SCVolumeClusterMaterialsPath.h"
 #include "Templates/SubclassOf.h"
@@ -18,7 +20,7 @@ class USCCheatManagerSettings;
 class USCInGameAchievementsManagerSettings;
 class USCLevelSequenceDirectorData;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=SCCore)
+UCLASS(Blueprintable, DefaultConfig, Config=SCCore)
 class SCCORE_API USCCoreSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -106,6 +108,12 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bPlatformRequireAccountPickup;
     
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ELipSyncLanguage, FLanguageSeparator> m_LanguageSeparators;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FString> m_TagsToIgnoreWhenGeneratingLipSync;
+    
 private:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMaxAICharacterCorpseTimeout;
@@ -121,6 +129,7 @@ private:
     
 public:
     USCCoreSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UCurveFloat* BPF_GetHUDOffsetFromBlackBarRatioCurve();
     

@@ -23,5 +23,6 @@ public:
     ETrumpetSkewType m_eTrumpetSkewType;
     
     UTrumpetSkewData();
+
 };
 

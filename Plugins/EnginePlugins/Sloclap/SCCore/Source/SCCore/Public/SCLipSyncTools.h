@@ -8,5 +8,6 @@ class SCCORE_API USCLipSyncTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCLipSyncTools();
+
 };
 

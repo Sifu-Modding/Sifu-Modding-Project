@@ -11,10 +11,10 @@ enum class DisplayLevel : uint8 {
     Log,
     Verbose,
     VeryVerbose,
-    All = 0x6,
+    All = VeryVerbose,
     NumVerbosity,
-    VerbosityMask = 0xF,
-    SetColor = 0x40,
-    BreakOnLog = 0x80,
+    VerbosityMask = 15,
+    SetColor = 64,
+    BreakOnLog = 128,
 };
 

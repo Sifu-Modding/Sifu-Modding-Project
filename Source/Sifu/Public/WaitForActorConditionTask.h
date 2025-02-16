@@ -15,5 +15,6 @@ public:
     FBaseActorConditionInstance m_condition;
     
     UWaitForActorConditionTask();
+
 };
 

@@ -1,10 +1,18 @@
 #include "CameraComponentThird.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-class UAbstractCameraData;
-class UBlackboardComponent;
-class UCurveFloat;
+UCameraComponentThird::UCameraComponentThird(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_sActualLagParameters = NULL;
+    this->m_CameraDB = NULL;
+    this->m_fMouseYawScale = 2.50f;
+    this->m_fMousePitchScale = 1.75f;
+    this->m_MaterialParameterCollectionCameraDither = NULL;
+    this->m_fDialogAspectRatio = 2.33f;
+    this->m_fDialogAspectRatioBlendDuration = 0.50f;
+    this->m_eDialogAspectRatioBlendType = ESCBlendType::Linear;
+    this->m_CameraFadeMaterialParam = TEXT("CamFade");
+    this->m_bCameraLDMode = false;
+}
 
 void UCameraComponentThird::BPF_UpdateCachedTargets() {
 }
@@ -242,16 +250,4 @@ void UCameraComponentThird::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(UCameraComponentThird, m_bCameraLDMode);
 }
 
-UCameraComponentThird::UCameraComponentThird() {
-    this->m_sActualLagParameters = NULL;
-    this->m_CameraDB = NULL;
-    this->m_fMouseYawScale = 2.50f;
-    this->m_fMousePitchScale = 1.75f;
-    this->m_MaterialParameterCollectionCameraDither = NULL;
-    this->m_fDialogAspectRatio = 2.33f;
-    this->m_fDialogAspectRatioBlendDuration = 0.50f;
-    this->m_eDialogAspectRatioBlendType = ESCBlendType::Linear;
-    this->m_CameraFadeMaterialParam = TEXT("CamFade");
-    this->m_bCameraLDMode = false;
-}
 

@@ -6,3 +6,4 @@ URushAttackDB::URushAttackDB() {
     this->m_fRushAttackTrackingAngle = 90.00f;
 }
 
+

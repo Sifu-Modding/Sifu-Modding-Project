@@ -8,5 +8,6 @@ class SIFU_API UAbilityPayload : public UObject {
     GENERATED_BODY()
 public:
     UAbilityPayload();
+
 };
 

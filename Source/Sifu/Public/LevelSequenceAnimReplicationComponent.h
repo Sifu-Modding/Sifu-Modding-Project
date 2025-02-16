@@ -27,9 +27,10 @@ private:
     int32 m_iPlayingSequenceId;
     
 public:
-    ULevelSequenceAnimReplicationComponent();
+    ULevelSequenceAnimReplicationComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);
@@ -48,7 +49,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_OnSequenceFinished(ALevelSequenceActor* _levelSequenceActor);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

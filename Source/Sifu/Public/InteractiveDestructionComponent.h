@@ -62,7 +62,8 @@ protected:
     float m_fChunkDeactivationDelay;
     
 public:
-    UInteractiveDestructionComponent();
+    UInteractiveDestructionComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnReplaySystemRecordingChanged(bool _bIsRecording);

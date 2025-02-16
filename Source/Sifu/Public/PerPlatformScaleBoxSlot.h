@@ -29,5 +29,6 @@ public:
     TEnumAsByte<EVerticalAlignment> SmallScreenVerticalAlignment;
     
     UPerPlatformScaleBoxSlot();
+
 };
 

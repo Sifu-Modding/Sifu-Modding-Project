@@ -1,6 +1,9 @@
 #include "HittedOrderService.h"
 
-class UAttackPropertiesResistanceDB;
+UHittedOrderService::UHittedOrderService() {
+    this->m_bFreezeInstigator = false;
+    this->m_eInstigatorOrderType = EOrderType::None;
+}
 
 UAttackPropertiesResistanceDB* UHittedOrderService::BPE_GetSpecialResistanceDB_Implementation(const FBPOrderServiceInstance& _orderServiceInstance) const {
     return NULL;
@@ -24,8 +27,4 @@ FAnimContainer UHittedOrderService::BPE_GetFightingStateLoopAnim_Implementation(
     return FAnimContainer{};
 }
 
-UHittedOrderService::UHittedOrderService() {
-    this->m_bFreezeInstigator = false;
-    this->m_eInstigatorOrderType = EOrderType::None;
-}
 

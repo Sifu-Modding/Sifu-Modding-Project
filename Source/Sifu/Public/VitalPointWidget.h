@@ -10,6 +10,7 @@ class SIFU_API UVitalPointWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     UVitalPointWidget();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     AVitalPointActor* BPF_GetVitalPointActor();
     

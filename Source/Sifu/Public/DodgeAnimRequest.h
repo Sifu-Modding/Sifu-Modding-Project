@@ -15,6 +15,7 @@ class SIFU_API UDodgeAnimRequest : public UObject {
     GENERATED_BODY()
 public:
     UDodgeAnimRequest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetDodgeAnimations(TArray<FAnimContainer>& _outAnimContainer, TArray<FAnimContainer>& _outWeaponAnimContainer, bool& _bMirror, ESCCardinalPoints& _eOutCardinalPoint, AFightingCharacter* _owner, EQuadrantTypes _eQuadrant, ESCCardinalPoints _eCardinalPoint, const AFightingCharacter* _attacker, const FHitBox& _nextHit, bool _bAttackMirror, float _fHitDelay, const FNetOrderStructDodge& _dodgeStruct) const;
     

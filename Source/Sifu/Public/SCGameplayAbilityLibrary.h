@@ -11,6 +11,7 @@ class USCGameplayAbilityLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCGameplayAbilityLibrary();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SetFloatAttribute(const AActor* _actor, FGameplayAttribute _attribute, float _fDefaultValue);
     

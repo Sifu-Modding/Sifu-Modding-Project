@@ -12,5 +12,6 @@ public:
     FAttackComboDB m_Struct;
     
     UAttacksComboDB();
+
 };
 

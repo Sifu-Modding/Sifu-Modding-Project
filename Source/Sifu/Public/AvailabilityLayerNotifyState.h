@@ -23,5 +23,6 @@ public:
     FString m_alName;
     
     UAvailabilityLayerNotifyState();
+
 };
 

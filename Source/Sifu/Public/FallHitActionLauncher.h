@@ -21,6 +21,7 @@ public:
     FHitBox m_HitOnInstigator;
     
     UFallHitActionLauncher();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_GetDirection(AActor* _Instigator, AActor* _victim, FVector& _vOutStartDirection, FVector& _vOutTargetDirection, bool& _bOutForceStartDirection);
     

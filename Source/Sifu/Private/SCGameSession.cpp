@@ -1,5 +1,6 @@
 #include "SCGameSession.h"
 
-ASCGameSession::ASCGameSession() {
+ASCGameSession::ASCGameSession(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

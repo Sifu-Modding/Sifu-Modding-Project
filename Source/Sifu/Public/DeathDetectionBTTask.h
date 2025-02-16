@@ -8,5 +8,6 @@ class SIFU_API UDeathDetectionBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UDeathDetectionBTTask();
+
 };
 

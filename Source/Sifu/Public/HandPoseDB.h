@@ -20,5 +20,6 @@ public:
     UAnimSequence* m_Anims[4];
     
     UHandPoseDB();
+
 };
 

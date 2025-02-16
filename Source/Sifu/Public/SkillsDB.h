@@ -7,14 +7,15 @@
 class USkillsChilds;
 
 UCLASS(Blueprintable)
-class USkillsDB : public UDataAsset {
+class USkillsDB : public UDataAsset{
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USkillsChilds* m_Root;
     
     USkillsDB();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

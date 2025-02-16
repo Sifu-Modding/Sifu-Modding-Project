@@ -13,6 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fFOVModifier;
     
-    ASCSpectatorPawn();
+    ASCSpectatorPawn(const FObjectInitializer& ObjectInitializer);
+
 };
 

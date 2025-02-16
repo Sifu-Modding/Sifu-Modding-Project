@@ -18,6 +18,7 @@ public:
     FProgressionDoorStruct m_ProgressionDoorStruct;
     
     UProgressionDoorNotification();
+
     UFUNCTION(BlueprintCallable)
     UProgressionDoorNotification* BPF_Init(const FProgressionDoorStruct& _progressionDoorStruct, UQuestItemData* _lastFulfilledQuest);
     

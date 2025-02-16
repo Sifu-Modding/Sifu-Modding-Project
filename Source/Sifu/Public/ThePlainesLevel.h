@@ -27,17 +27,18 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bInChargeOfSoundSave;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<UAkAudioBank*> m_AudioBanksToLoad;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // TArray<UAkAudioBank*> m_AudioBanksToLoad;
     
     UPROPERTY(EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<uint32, FSoundStateInfo> m_AKStateGroupValues;
     
-    //UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
-    //TArray<UAkAudioBank*> m_SavedSoundBanksToLoad;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    // TArray<UAkAudioBank*> m_SavedSoundBanksToLoad;
     
 public:
-    AThePlainesLevel();
+    AThePlainesLevel(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void UnregisterFromSignificanceOnActorEndPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _eEndPlayReason);

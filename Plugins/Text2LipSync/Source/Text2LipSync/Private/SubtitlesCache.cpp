@@ -1,6 +1,7 @@
 #include "SubtitlesCache.h"
 
-class USoundBase;
+USubtitlesCache::USubtitlesCache() {
+}
 
 int32 USubtitlesCache::SaveToDisk(const FString& Filename) const {
     return 0;
@@ -37,6 +38,4 @@ bool USubtitlesCache::AddAsset(const USoundBase* SoundAsset, const TArray<FLipSy
     return false;
 }
 
-USubtitlesCache::USubtitlesCache() {
-}
 

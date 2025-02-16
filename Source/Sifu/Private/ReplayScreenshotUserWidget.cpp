@@ -1,6 +1,8 @@
 #include "ReplayScreenshotUserWidget.h"
 
-class ABaseReplayController;
+UReplayScreenshotUserWidget::UReplayScreenshotUserWidget() {
+    this->m_bTakeScreenshotOnCooldown = false;
+}
 
 void UReplayScreenshotUserWidget::BPF_RequestScreenshot(int32 _iResolutionX, int32 _iResolutionY) {
 }
@@ -13,7 +15,4 @@ void UReplayScreenshotUserWidget::BPE_OnScreenshotRequestProcessed_Implementatio
 }
 
 
-UReplayScreenshotUserWidget::UReplayScreenshotUserWidget() {
-    this->m_bTakeScreenshotOnCooldown = false;
-}
 

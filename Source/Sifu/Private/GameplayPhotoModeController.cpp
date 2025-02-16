@@ -1,7 +1,8 @@
 #include "GameplayPhotoModeController.h"
 
-class ASCPlayerController;
-class UObject;
+AGameplayPhotoModeController::AGameplayPhotoModeController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ClickEventKeys.AddDefaulted(1);
+}
 
 void AGameplayPhotoModeController::BPF_LeavePhotoMode() {
 }
@@ -15,6 +16,4 @@ void AGameplayPhotoModeController::BPF_EnterPhotoMode(const UObject* _worldConte
 
 
 
-AGameplayPhotoModeController::AGameplayPhotoModeController() {
-}
 

@@ -5,7 +5,7 @@
 #include "AdvisersStruct.h"
 #include "SCEnsureDataSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=SCCore)
+UCLASS(Blueprintable, DefaultConfig, Config=SCCore)
 class SCCORE_API USCEnsureDataSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -33,5 +33,6 @@ protected:
     
 public:
     USCEnsureDataSettings();
+
 };
 

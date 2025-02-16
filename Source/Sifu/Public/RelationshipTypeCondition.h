@@ -12,5 +12,6 @@ public:
     TArray<ERelationshipTypes> m_AllowedRelationshipTypes;
     
     URelationshipTypeCondition();
+
 };
 

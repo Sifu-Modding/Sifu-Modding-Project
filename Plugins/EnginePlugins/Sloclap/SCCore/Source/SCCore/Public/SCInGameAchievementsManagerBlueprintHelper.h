@@ -14,6 +14,7 @@ class SCCORE_API USCInGameAchievementsManagerBlueprintHelper : public UBlueprint
     GENERATED_BODY()
 public:
     USCInGameAchievementsManagerBlueprintHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_TriggerSaveAchievements();
     

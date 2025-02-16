@@ -8,5 +8,6 @@ class UOrderParams : public UObject {
     GENERATED_BODY()
 public:
     UOrderParams();
+
 };
 

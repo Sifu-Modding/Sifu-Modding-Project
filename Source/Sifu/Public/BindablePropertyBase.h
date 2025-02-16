@@ -18,6 +18,7 @@ public:
     FBindablePropertyUpdateSignature m_OnPropertyPreUpdate;
     
     UBindablePropertyBase();
+
     UFUNCTION(BlueprintCallable)
     void BPF_SetOwner(UObject* _owner);
     

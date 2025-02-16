@@ -12,5 +12,6 @@ public:
     ESpeedState m_eForcedSpeedState;
     
     UForceSpeedStateOrderService();
+
 };
 

@@ -8,5 +8,6 @@ class USCTrackingAuthenticationPSN : public USCTrackingAuthentication {
     GENERATED_BODY()
 public:
     USCTrackingAuthenticationPSN();
+
 };
 

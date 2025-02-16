@@ -27,3 +27,4 @@ UTargetDB::UTargetDB() {
     this->m_fTargetMaxRange = 1500.00f;
 }
 
+

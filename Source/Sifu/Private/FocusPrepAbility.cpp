@@ -5,3 +5,4 @@ UFocusPrepAbility::UFocusPrepAbility() {
     this->m_fMinFocusPointsToActivate = 0.00f;
 }
 
+

@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SCCORE_API ASCGameState : public AGameState {
     GENERATED_BODY()
 public:
-    ASCGameState();
+    ASCGameState(const FObjectInitializer& ObjectInitializer);
+
 };
 

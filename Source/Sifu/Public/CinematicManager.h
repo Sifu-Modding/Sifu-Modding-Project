@@ -13,6 +13,7 @@ private:
     
 public:
     UCinematicManager();
+
 private:
     UFUNCTION(BlueprintCallable)
     void MovieStopped();

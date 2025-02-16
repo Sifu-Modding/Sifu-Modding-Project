@@ -8,5 +8,6 @@ class SIFU_API UIsInvolvedInDialogCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
     UIsInvolvedInDialogCondition();
+
 };
 

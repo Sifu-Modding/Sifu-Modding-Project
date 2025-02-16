@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DeveloperSettings.h"
-////#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "SCVisualLoggerSettings.generated.h"
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SCCORE_API USCVisualLoggerSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -21,5 +21,6 @@ public:
     float m_fAIMaxDistance;
     
     USCVisualLoggerSettings();
+
 };
 

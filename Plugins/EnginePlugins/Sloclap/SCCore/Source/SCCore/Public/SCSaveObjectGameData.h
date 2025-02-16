@@ -12,5 +12,6 @@ public:
     FSCGameData m_SCSavedData;
     
     USCSaveObjectGameData();
+
 };
 

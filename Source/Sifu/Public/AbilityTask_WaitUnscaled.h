@@ -15,6 +15,7 @@ public:
     FWaitUnscaled m_OnFinish;
     
     UAbilityTask_WaitUnscaled();
+
     UFUNCTION(BlueprintCallable)
     static UAbilityTask_WaitUnscaled* BPF_WaitUnscaled(UGameplayAbility* _owningAbility, float _fDuration);
     

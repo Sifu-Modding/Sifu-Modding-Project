@@ -12,7 +12,7 @@ class ABaseReplayController;
 class UObject;
 class UReplaySaveGame;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Replay)
+UCLASS(Blueprintable, DefaultConfig, Config=Replay)
 class SIFU_API USCReplaySettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -71,8 +71,12 @@ protected:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fDistanceForObjectTransparency;
     
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float m_fForceGoToTimeTimeDiffThreshold;
+    
 public:
     USCReplaySettings();
+
     UFUNCTION(BlueprintCallable)
     static bool BPF_LocalizeMapName(UPARAM(Ref) FString& _inOutMapName);
     

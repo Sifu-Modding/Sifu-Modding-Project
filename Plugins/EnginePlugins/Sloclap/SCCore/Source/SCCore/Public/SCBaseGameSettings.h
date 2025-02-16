@@ -8,7 +8,7 @@
 
 class UGameFlow;
 
-UCLASS(Blueprintable, Config=Engine, DefaultConfig, Config=Game)
+UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class SCCORE_API USCBaseGameSettings : public UDeveloperSettings {
     GENERATED_BODY()
 public:
@@ -27,9 +27,16 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, TSoftObjectPtr<UGameFlow>> m_ContenRestrictedGameFlows;
     
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FString> m_AchievementsToIgnoreWhenCheckingPlatinum;
+    
     USCBaseGameSettings();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FGameplayTagContainer BPF_GetAllowedContentGameplayTagContainer();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static TArray<FString> BPF_GetAchievementsToIgnoreWhenCheckingPlatinum();
     
 };
 

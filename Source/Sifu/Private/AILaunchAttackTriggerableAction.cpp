@@ -6,3 +6,4 @@ UAILaunchAttackTriggerableAction::UAILaunchAttackTriggerableAction() {
     this->m_bResetTicketCooldown = false;
 }
 
+

@@ -15,6 +15,7 @@ private:
     
 public:
     UGameplayEffectReferencer();
+
     UFUNCTION(BlueprintCallable)
     void RetrieveAllGameplayEffects();
     

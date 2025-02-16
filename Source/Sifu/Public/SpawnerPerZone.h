@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSpawnerPerZone {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AAISpawner> m_Spawner;
     
     SIFU_API FSpawnerPerZone();

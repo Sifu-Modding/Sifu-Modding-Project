@@ -8,5 +8,6 @@ class SIFU_API UEnvQueryGenerator_FightingCharacters : public UEnvQueryGenerator
     GENERATED_BODY()
 public:
     UEnvQueryGenerator_FightingCharacters();
+
 };
 

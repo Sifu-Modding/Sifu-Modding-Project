@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FSCGameplayAbilityTargetData : public FGameplayAbilityTargetData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AActor> m_Target;
     
     SIFU_API FSCGameplayAbilityTargetData();

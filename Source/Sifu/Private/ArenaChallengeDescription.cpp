@@ -1,8 +1,13 @@
 #include "ArenaChallengeDescription.h"
 
-class AAIWaveRefillDirector;
-class ABaseWeapon;
-class UBaseArenaObjective;
+UArenaChallengeDescription::UArenaChallengeDescription() {
+    this->m_iAge = 20;
+    this->m_iDeathCount = 0;
+    this->m_eCharacterGender = ECharacterGender::None;
+    this->m_bOverrideOutfit = false;
+    this->m_iOutfitIndex = 0;
+    this->m_bEnableOutfitPropSpawn = true;
+}
 
 AAIWaveRefillDirector* UArenaChallengeDescription::BPF_GetRefillDirector() const {
     return NULL;
@@ -32,12 +37,4 @@ int32 UArenaChallengeDescription::BPF_GetAge() const {
     return 0;
 }
 
-UArenaChallengeDescription::UArenaChallengeDescription() {
-    this->m_iAge = 20;
-    this->m_iDeathCount = 0;
-    this->m_eCharacterGender = ECharacterGender::None;
-    this->m_bOverrideOutfit = false;
-    this->m_iOutfitIndex = 0;
-    this->m_bEnableOutfitPropSpawn = true;
-}
 

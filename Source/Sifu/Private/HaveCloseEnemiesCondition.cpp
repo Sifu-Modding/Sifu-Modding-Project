@@ -5,3 +5,4 @@ UHaveCloseEnemiesCondition::UHaveCloseEnemiesCondition() {
     this->m_fMaxDist = 0.00f;
 }
 
+

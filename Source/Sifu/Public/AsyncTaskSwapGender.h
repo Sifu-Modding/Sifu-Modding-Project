@@ -19,6 +19,7 @@ public:
     FOnSwapGender OnFail;
     
     UAsyncTaskSwapGender();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskSwapGender* BPF_SwapGender(UPlayerFightingComponent* _playerComponent, ECharacterGender _eNewGender);
     

@@ -8,5 +8,6 @@ class SIFU_API UComboAIConditionIsTargetCarryingWeapon : public UAIComboConditio
     GENERATED_BODY()
 public:
     UComboAIConditionIsTargetCarryingWeapon();
+
 };
 

@@ -8,5 +8,6 @@ class SIFU_API UAIActionThrowObject : public UAIActionAttack {
     GENERATED_BODY()
 public:
     UAIActionThrowObject();
+
 };
 

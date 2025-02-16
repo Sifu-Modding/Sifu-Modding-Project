@@ -14,6 +14,7 @@ protected:
     
 public:
     UCustomWidgetNavigation();
+
     UFUNCTION(BlueprintCallable)
     void BPF_RestoreNavigationConfig();
     

@@ -1,5 +1,8 @@
 #include "MappingEditorHelpers.h"
 
+UMappingEditorHelpers::UMappingEditorHelpers() {
+}
+
 FString UMappingEditorHelpers::BPF_GetInputPriorityGroupDesc(const FInputPriorityGroup& _group) {
     return TEXT("");
 }
@@ -52,6 +55,4 @@ bool UMappingEditorHelpers::BPF_FindInputPresetAvailableKey(FInputPresetsEnumHan
     return false;
 }
 
-UMappingEditorHelpers::UMappingEditorHelpers() {
-}
 

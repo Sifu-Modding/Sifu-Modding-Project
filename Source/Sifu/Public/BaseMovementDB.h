@@ -239,6 +239,7 @@ public:
     UDodgeDB* m_DodgeDB;
     
     UBaseMovementDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float BPF_GetFreeMoveSpeed(const FVector& _vLocalDir, const float _fGlobalIntensity, const ESpeedState _eSpeedState) const;
     

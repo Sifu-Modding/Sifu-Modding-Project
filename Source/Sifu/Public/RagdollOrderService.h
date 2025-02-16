@@ -8,5 +8,6 @@ class SIFU_API URagdollOrderService : public UOrderService {
     GENERATED_BODY()
 public:
     URagdollOrderService();
+
 };
 

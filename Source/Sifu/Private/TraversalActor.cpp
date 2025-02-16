@@ -1,10 +1,8 @@
 #include "TraversalActor.h"
+#include "Components/SceneComponent.h"
 
-
-void ATraversalActor::BPE_GetTraversalAnimation_Implementation(FAnimContainer& _outResult) const {
-}
-
-ATraversalActor::ATraversalActor() {
+ATraversalActor::ATraversalActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("rootSceneComponent"));
     this->m_bTraversalActive = true;
     this->m_bOverrideTraversalEntryAngle = false;
     this->m_fTraversalEntryAngle = 180.00f;
@@ -18,4 +16,9 @@ ATraversalActor::ATraversalActor() {
     this->m_fNavLinkOffsetFromBoxExtents = 50.00f;
     this->m_AllowedEntryTypes = 0;
 }
+
+
+void ATraversalActor::BPE_GetTraversalAnimation_Implementation(FAnimContainer& _outResult) const {
+}
+
 

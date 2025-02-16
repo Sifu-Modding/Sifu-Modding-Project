@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "Layout/Margin.h"
 #include "Styling/SlateBrush.h"
 #include "Fonts/SlateFontInfo.h"
@@ -44,6 +44,7 @@ public:
     bool m_bIsRemappingOccured;
     
     UInputsMappingMenu();
+
     UFUNCTION(BlueprintCallable)
     void OnRemappingStarted(FName _ActionName, EMappableFieldScaleTypes _eScaleType);
     

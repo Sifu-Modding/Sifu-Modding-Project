@@ -8,5 +8,6 @@ class SIFU_API UMoveToTargetNextAttackRangeBTTask : public UBTTask_MoveTo {
     GENERATED_BODY()
 public:
     UMoveToTargetNextAttackRangeBTTask();
+
 };
 

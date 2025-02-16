@@ -18,5 +18,6 @@ public:
     bool m_bUseRetrainOnDesignatedToOnScreenTargets;
     
     UTE_DesignatedPrecise();
+
 };
 

@@ -9,3 +9,4 @@ UHandleSlopeOrderService::UHandleSlopeOrderService() {
     this->m_fInterpSpeed = 10.00f;
 }
 
+

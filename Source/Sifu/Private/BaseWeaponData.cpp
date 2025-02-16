@@ -1,9 +1,5 @@
 #include "BaseWeaponData.h"
 
-
-
-
-
 UBaseWeaponData::UBaseWeaponData() {
     this->m_bUseSwapHand = true;
     this->m_bMirrorAllowed = true;
@@ -21,4 +17,9 @@ UBaseWeaponData::UBaseWeaponData() {
     this->m_ThrowFromPickupAnimRequest = NULL;
     this->m_bUseSpecificMirrorPickupAnim = false;
 }
+
+
+
+
+
 

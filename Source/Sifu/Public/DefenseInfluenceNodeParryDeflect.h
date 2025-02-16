@@ -8,5 +8,6 @@ class SIFU_API UDefenseInfluenceNodeParryDeflect : public UContextualDefenseInfl
     GENERATED_BODY()
 public:
     UDefenseInfluenceNodeParryDeflect();
+
 };
 

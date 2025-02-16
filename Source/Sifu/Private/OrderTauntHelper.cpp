@@ -1,10 +1,9 @@
 #include "OrderTauntHelper.h"
 
-class AActor;
+UOrderTauntHelper::UOrderTauntHelper() {
+}
 
 void UOrderTauntHelper::BP_TriggerTauntEffects(AActor* _Instigator) {
 }
 
-UOrderTauntHelper::UOrderTauntHelper() {
-}
 

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "DeltaTransformAudioStep.generated.h"
 
-class UAkAudioEvent;
+//class UAkAudioEvent;
 
 USTRUCT(BlueprintType)
 struct FDeltaTransformAudioStep {
@@ -14,8 +14,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_fMinDeltaAngle;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_akEvent;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_akEvent;
     
     SIFU_API FDeltaTransformAudioStep();
 };

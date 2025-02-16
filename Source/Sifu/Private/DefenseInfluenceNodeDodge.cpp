@@ -5,3 +5,4 @@ UDefenseInfluenceNodeDodge::UDefenseInfluenceNodeDodge() {
     this->m_eDirectionTypeOverride = EDodgeDirectionType::None;
 }
 
+

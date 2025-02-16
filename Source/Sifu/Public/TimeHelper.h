@@ -13,6 +13,7 @@ class SIFU_API UTimeHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UTimeHelper();
+
     UFUNCTION(BlueprintCallable)
     static float GetDiffBetweenToDateTimeInSeconds(const FDateTime& _dateTimeA, const FDateTime& _dateTimeB);
     

@@ -8,3 +8,4 @@ USafeZoneOrderService::USafeZoneOrderService() {
     this->m_TargetBone = TEXT("custom_joint_05");
 }
 
+

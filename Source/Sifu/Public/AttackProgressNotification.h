@@ -25,6 +25,7 @@ public:
     int32 m_iGainedXP;
     
     UAttackProgressNotification();
+
     UFUNCTION(BlueprintCallable)
     UAttackProgressNotification* BPF_InitUnlocked(FName _attack);
     

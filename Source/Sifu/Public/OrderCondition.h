@@ -20,5 +20,6 @@ public:
     EOrderAccessMode m_eAccessMode;
     
     UOrderCondition();
+
 };
 

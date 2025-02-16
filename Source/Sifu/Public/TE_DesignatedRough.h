@@ -8,5 +8,6 @@ class SIFU_API UTE_DesignatedRough : public UTE_DesignatedPrecise {
     GENERATED_BODY()
 public:
     UTE_DesignatedRough();
+
 };
 

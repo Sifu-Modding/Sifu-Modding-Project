@@ -7,3 +7,4 @@ UHittedDeathOrderService::UHittedDeathOrderService() {
     this->m_uiDeathTriggeredConditionMask = 3;
 }
 
+

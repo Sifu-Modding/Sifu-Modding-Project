@@ -1,8 +1,7 @@
 #include "SaveManagerBlueprintHelper.h"
 
-class USCSaveObjectGameData;
-class USCSaveObjectPlayerProfile;
-class USaveManagerDelegateHandler;
+USaveManagerBlueprintHelper::USaveManagerBlueprintHelper() {
+}
 
 void USaveManagerBlueprintHelper::BPF_WriteSaveGameToDisk() {
 }
@@ -67,6 +66,4 @@ int32 USaveManagerBlueprintHelper::BPF_GenerateIndexFromSaveName(const FString& 
     return 0;
 }
 
-USaveManagerBlueprintHelper::USaveManagerBlueprintHelper() {
-}
 

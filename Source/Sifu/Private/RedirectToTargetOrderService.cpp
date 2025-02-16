@@ -1,17 +1,5 @@
 #include "RedirectToTargetOrderService.h"
 
-FVector URedirectToTargetOrderService::BPF_GetRedirectionOrigin(const FVector& _target, const FBPOrderServiceInstance& _instance) const {
-    return FVector{};
-}
-
-FVector URedirectToTargetOrderService::BPE_GetTarget_Implementation(const FBPOrderServiceInstance& _instance) const {
-    return FVector{};
-}
-
-float URedirectToTargetOrderService::BPE_GetMaxAngularSpeed_Implementation(const FBPOrderServiceInstance& _instance) const {
-    return 0.0f;
-}
-
 URedirectToTargetOrderService::URedirectToTargetOrderService() {
     this->m_StartAfterTargetService = NULL;
     this->m_bUseAnimRootMotion = false;
@@ -28,4 +16,17 @@ URedirectToTargetOrderService::URedirectToTargetOrderService() {
     this->m_eRedirectionOrigin = ERedirectToTargetOrigin::Root;
     this->m_eOrientationApplyMethod = EOrientationApplyMethod::CharacterAndMovement;
 }
+
+FVector URedirectToTargetOrderService::BPF_GetRedirectionOrigin(const FVector& _target, const FBPOrderServiceInstance& _instance) const {
+    return FVector{};
+}
+
+FVector URedirectToTargetOrderService::BPE_GetTarget_Implementation(const FBPOrderServiceInstance& _instance) const {
+    return FVector{};
+}
+
+float URedirectToTargetOrderService::BPE_GetMaxAngularSpeed_Implementation(const FBPOrderServiceInstance& _instance) const {
+    return 0.0f;
+}
+
 

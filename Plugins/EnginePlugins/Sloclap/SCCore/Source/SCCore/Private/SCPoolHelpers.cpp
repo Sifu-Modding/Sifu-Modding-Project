@@ -1,6 +1,7 @@
 #include "SCPoolHelpers.h"
 
-class AActor;
+USCPoolHelpers::USCPoolHelpers() {
+}
 
 AActor* USCPoolHelpers::BPF_SpawnPoolableActor(AActor* _worldCtxt, UClass* _class, const FTransform& _transform, FName _poolName, bool _bGrow, bool _bFailIfNoPoolFound) {
     return NULL;
@@ -20,6 +21,4 @@ void USCPoolHelpers::BPF_GetPoolContextInfos(UClass* _class, int32& _iActiveCoun
 void USCPoolHelpers::BPF_DestroyPoolableActor(AActor* _actor, bool& _bOutWasPooled) {
 }
 
-USCPoolHelpers::USCPoolHelpers() {
-}
 

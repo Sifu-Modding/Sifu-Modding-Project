@@ -88,3 +88,4 @@ UCameraDB::UCameraDB() {
     this->m_eAnimDrivenRootCheckCollisionChannel = ECC_Pawn;
 }
 
+

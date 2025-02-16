@@ -14,5 +14,6 @@ public:
     TArray<TSubclassOf<UOrderDB>> m_Orders;
     
     UOrderDBSet();
+
 };
 

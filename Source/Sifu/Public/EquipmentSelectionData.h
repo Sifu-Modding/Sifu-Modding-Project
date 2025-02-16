@@ -23,5 +23,6 @@ public:
     uint8 m_uiSkinToneIndex;
     
     UEquipmentSelectionData();
+
 };
 

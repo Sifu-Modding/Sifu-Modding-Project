@@ -12,3 +12,4 @@ USCCoreUserSettings::USCCoreUserSettings() {
     this->m_eDebugActorSelectionBoxType = ESCDebugActorBoxType::BottomSquare;
 }
 
+

@@ -10,6 +10,7 @@ class SIFU_API USoundSettingsHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USoundSettingsHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FAudioOutput BPF_GetAudioOuputFromType(EAudioOutputType _eType, bool& _bOutFound);
     

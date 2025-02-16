@@ -1,8 +1,10 @@
 #include "LevelSequenceAnimReplicationComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class ALevelSequenceActor;
-class ULevelSequenceDirector;
+ULevelSequenceAnimReplicationComponent::ULevelSequenceAnimReplicationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_fCinematicSlotWeight = 0.00f;
+    this->m_iPlayingSequenceId = -1;
+}
 
 void ULevelSequenceAnimReplicationComponent::OnReplaySystemRecordingChanged(bool _bIsRecording) {
 }
@@ -28,8 +30,4 @@ void ULevelSequenceAnimReplicationComponent::GetLifetimeReplicatedProps(TArray<F
     DOREPLIFETIME(ULevelSequenceAnimReplicationComponent, m_iPlayingSequenceId);
 }
 
-ULevelSequenceAnimReplicationComponent::ULevelSequenceAnimReplicationComponent() {
-    this->m_fCinematicSlotWeight = 0.00f;
-    this->m_iPlayingSequenceId = -1;
-}
 

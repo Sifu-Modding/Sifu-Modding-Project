@@ -16,5 +16,6 @@ public:
     TArray<UFilterPresetEntryDB*> m_Filters;
     
     UFilterPresetEntitlementDB();
+
 };
 

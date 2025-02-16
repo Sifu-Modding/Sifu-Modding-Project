@@ -40,6 +40,7 @@ public:
     bool m_bUpdateHitboxVelocity;
     
     UHitOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     AActor* BPE_GetInstigator(const FBPOrderServiceInstance& _orderServiceInstance) const;
     

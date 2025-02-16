@@ -1,7 +1,8 @@
 #include "HittedAnimHelper.h"
 #include "Templates/SubclassOf.h"
 
-class UOrderHittedGenericDB;
+UHittedAnimHelper::UHittedAnimHelper() {
+}
 
 void UHittedAnimHelper::BPF_MakeGenericHitAnimWithOrderType(FHittedAnimContainer& _animContainer, FAnimContainer _fightingStateLoopAnim, const FAnimContainer& _anim, const FOrderType& _OrderType) {
 }
@@ -13,6 +14,4 @@ float UHittedAnimHelper::BPF_GetHitAnimDuration(const FHittedAnimContainer& _ani
     return 0.0f;
 }
 
-UHittedAnimHelper::UHittedAnimHelper() {
-}
 

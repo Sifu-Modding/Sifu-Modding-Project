@@ -14,6 +14,7 @@ protected:
     USkeletalMeshComponent* m_ComponentSkeletalMesh;
     
 public:
-    ASCSequenceAnchor();
+    ASCSequenceAnchor(const FObjectInitializer& ObjectInitializer);
+
 };
 

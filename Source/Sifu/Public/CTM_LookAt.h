@@ -11,6 +11,7 @@ class SIFU_API UCTM_LookAt : public UCameraTransitionModule {
     GENERATED_BODY()
 public:
     UCTM_LookAt();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector BPE_GetPositionToLook(UCameraComponentThird* _cameraComponent) const;
     

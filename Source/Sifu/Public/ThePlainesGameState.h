@@ -11,14 +11,14 @@ UCLASS(Blueprintable)
 class SIFU_API AThePlainesGameState : public ASCGameState {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnMatchHasStarted;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnMatchHasStarted;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnMatchHasEnded;
+    FDynamicMulticast OnMatchHasEnded;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnLeavingMap;*/
+    FDynamicMulticast OnLeavingMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Transient, meta=(AllowPrivateAccess=true))
     int32 m_iNumPlayersPerTeam;
@@ -77,9 +77,10 @@ private:
     float m_fRespawnTimeNoDown;
     
 public:
-    AThePlainesGameState();
+    AThePlainesGameState(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void OnRepNumTeam();
     

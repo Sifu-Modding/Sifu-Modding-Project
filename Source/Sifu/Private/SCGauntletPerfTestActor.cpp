@@ -1,5 +1,6 @@
 #include "SCGauntletPerfTestActor.h"
 
-ASCGauntletPerfTestActor::ASCGauntletPerfTestActor() {
+ASCGauntletPerfTestActor::ASCGauntletPerfTestActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -42,5 +42,6 @@ public:
     bool m_bIgnoreQuerier;
     
     USCEnvQueryTest_Trace();
+
 };
 

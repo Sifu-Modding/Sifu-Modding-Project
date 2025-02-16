@@ -1,5 +1,8 @@
 #include "SCTestingLocationsBase.h"
+#include "Components/SceneComponent.h"
 
-ASCTestingLocationsBase::ASCTestingLocationsBase() {
+ASCTestingLocationsBase::ASCTestingLocationsBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
 }
+
 

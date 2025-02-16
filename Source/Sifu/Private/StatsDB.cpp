@@ -52,3 +52,4 @@ UStatsDB::UStatsDB() {
     this->m_iBonusXPWhenPendantIsFull = 100;
 }
 
+

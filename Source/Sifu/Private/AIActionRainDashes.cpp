@@ -1,8 +1,5 @@
 #include "AIActionRainDashes.h"
 
-void UAIActionRainDashes::BPF_OnFinishDash() {
-}
-
 UAIActionRainDashes::UAIActionRainDashes() {
     this->m_fMinDistanceForFinalDash = 300.00f;
     this->m_iMaxNumberOfDashes = 3;
@@ -12,4 +9,8 @@ UAIActionRainDashes::UAIActionRainDashes() {
     this->m_IntermediateDashRight = NULL;
     this->m_FinalDash = NULL;
 }
+
+void UAIActionRainDashes::BPF_OnFinishDash() {
+}
+
 

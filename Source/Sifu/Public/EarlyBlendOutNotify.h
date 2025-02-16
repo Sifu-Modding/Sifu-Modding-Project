@@ -12,5 +12,6 @@ public:
     TArray<EFightingState> m_FightingStateActiveConditions;
     
     UEarlyBlendOutNotify();
+
 };
 

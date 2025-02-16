@@ -17,5 +17,6 @@ public:
     EALBinaryOperation m_eALBinaryOperation;
     
     UGenericAvailabilityLayerDB();
+
 };
 

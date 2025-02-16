@@ -1,5 +1,7 @@
 #include "SCHUD.h"
 
-ASCHUD::ASCHUD() {
+ASCHUD::ASCHUD(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->DebugDisplay.AddDefaulted(1);
 }
+
 

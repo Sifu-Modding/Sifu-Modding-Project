@@ -15,3 +15,4 @@ UEquipmentSelectionData::UEquipmentSelectionData() {
     this->m_uiSkinToneIndex = 0;
 }
 
+

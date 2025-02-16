@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UAISituationVisualizerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UAISituationVisualizerComponent();
+    UAISituationVisualizerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

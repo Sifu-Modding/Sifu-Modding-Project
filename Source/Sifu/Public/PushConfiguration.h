@@ -34,6 +34,7 @@ public:
     float m_fHeightSearchDistanceOnNormal;
     
     UPushConfiguration();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_GetPushCloseTraversalAnimations(const FTraversalInfo& _request, ESCCardinalPoints _eCardinalPoint, AFightingCharacter* _Instigator, AFightingCharacter* _victim, FPushTraversalAnimContainer& _outOnVoidResult) const;
     

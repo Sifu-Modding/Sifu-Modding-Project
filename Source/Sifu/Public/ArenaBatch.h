@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "Templates/SubclassOf.h"
 #include "ArenaBatch.generated.h"
 
@@ -26,7 +27,7 @@ public:
     int32 m_iStarsCountToUnlock;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameplayTag m_WorldMapPathTag;
+    FGameplayTagContainer m_BatchFilters;
     
     SIFU_API FArenaBatch();
 };

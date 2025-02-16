@@ -15,6 +15,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bIsUsingPools;
     
-    ASCGameMode();
+    ASCGameMode(const FObjectInitializer& ObjectInitializer);
+
 };
 

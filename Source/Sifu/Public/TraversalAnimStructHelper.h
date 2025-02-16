@@ -13,6 +13,7 @@ class SIFU_API UTraversalAnimStructHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UTraversalAnimStructHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FAnimContainer BPF_GetAnimContainerFromPhase(UPlayerAnim* _playerAnim, const FAnimStructTraversal& _animStructTraversal, ETraversalPhase _eTraversalPhase);
     

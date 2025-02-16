@@ -1,5 +1,10 @@
 #include "NewNotificationWidget.h"
 
+UNewNotificationWidget::UNewNotificationWidget() {
+    this->m_eAttackLearningState = EAttackLearningState::None;
+    this->m_bAlwaysVisible = false;
+}
+
 void UNewNotificationWidget::OnStatsChanged() {
 }
 
@@ -19,8 +24,4 @@ void UNewNotificationWidget::BPF_Init(TArray<ECharacterProgressionRewardTypes> _
 }
 
 
-UNewNotificationWidget::UNewNotificationWidget() {
-    this->m_eAttackLearningState = EAttackLearningState::None;
-    this->m_bAlwaysVisible = false;
-}
 

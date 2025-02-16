@@ -5,3 +5,4 @@ UComboAIConditionIsAttacking::UComboAIConditionIsAttacking() {
     this->m_AttackToTest = NULL;
 }
 
+

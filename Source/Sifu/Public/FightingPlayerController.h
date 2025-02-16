@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "SCDelegate.h"
 #include "CharacterProgressionReward.h"
 #include "CoopGroup.h"
@@ -96,8 +96,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FCloseIngameMenu OnMenuClosed;
     
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    USCDelegate::FDynamicMulticast* OnGiveInitialControlToPlayer;*/
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDynamicMulticast OnGiveInitialControlToPlayer;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnSwitchToFromPhotomode OnSwitchToFromPhotomode;
@@ -195,9 +195,10 @@ private:
     FName m_EmissiveMultiplierMPCParameterName;
     
 public:
-    AFightingPlayerController();
+    AFightingPlayerController(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Exec)
     void ToggleWaterMark();
     

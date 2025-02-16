@@ -1,7 +1,18 @@
 #include "MenuWidget.h"
 
-class UUserWidget;
-class UWidgetAnimation;
+UMenuWidget::UMenuWidget() {
+    this->m_bNotifyUIInputModeChanged = true;
+    this->m_bIgnoreKeyFlushOnFocus = false;
+    this->m_eLifeCycle = EWidgetLifeCycle::ReleaseOnPop;
+    this->m_bPushInputContext = true;
+    this->m_bBlockParentMenuInputs = false;
+    this->m_bBlockInputsWhenUIInputDisabled = true;
+    this->m_bPopAvailabilityLayersOnlyOnHidden = false;
+    this->m_bHideOnPushedOut = true;
+    this->m_bHideOnPopOut = true;
+    this->m_CurrentMenuVisibility = ESlateVisibility::Collapsed;
+    this->m_iZOrder = 0;
+}
 
 void UMenuWidget::BPF_SetMapTagName(FName _mapTagName) {
 }
@@ -65,16 +76,4 @@ bool UMenuWidget::BPF_AreInputsEnabled() {
 
 
 
-UMenuWidget::UMenuWidget() {
-    this->m_bIgnoreKeyFlushOnFocus = false;
-    this->m_eLifeCycle = EWidgetLifeCycle::ReleaseOnPop;
-    this->m_bPushInputContext = true;
-    this->m_bBlockParentMenuInputs = false;
-    this->m_bBlockInputsWhenUIInputDisabled = true;
-    this->m_bPopAvailabilityLayersOnlyOnHidden = false;
-    this->m_bHideOnPushedOut = true;
-    this->m_bHideOnPopOut = true;
-    this->m_CurrentMenuVisibility = ESlateVisibility::Collapsed;
-    this->m_iZOrder = 0;
-}
 

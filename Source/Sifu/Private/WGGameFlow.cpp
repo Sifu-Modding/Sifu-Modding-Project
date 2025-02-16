@@ -1,5 +1,8 @@
 #include "WGGameFlow.h"
 
+UWGGameFlow::UWGGameFlow() {
+}
+
 void UWGGameFlow::TravelToPendingMapInternal(EWorldTravelLoadSaveStrategy _eLoadSaveStrategy, int32 _iSnapshotToOverrideFrom, bool _bDeleteWorldStateSave, int32 _iPartOfSaveToResetMask, bool _bKeepCheats) {
 }
 
@@ -24,6 +27,10 @@ void UWGGameFlow::BPF_LoadNextMap(bool _bForceClassicTravel) {
 void UWGGameFlow::BPF_LoadMap(FName _mapTag, EGameFlowTravelType _eTravelTypeWanted, EMenuEnum _eMenuToShow, FGameplayTagContainer _mapOptions) {
 }
 
+bool UWGGameFlow::BPF_IsStoryMap(const FName _mapTag) const {
+    return false;
+}
+
 bool UWGGameFlow::BPF_IsPendingTravel() {
     return false;
 }
@@ -33,6 +40,10 @@ void UWGGameFlow::BPF_GoToNextMap(bool _bWantsToSave, bool _bWantsToReloadSave, 
 
 bool UWGGameFlow::BPF_GotoMap(FName _mapTag, FGameplayTagContainer _specificMapOptions, bool _bWantsToSave, int32 _iSnapshotToOverrideFrom, bool _bDeleteWorldStateSave, EMenuEnum _eMenuToShow, bool _bWantsToReloadSave, int32 _iPartOfSaveToResetMask, bool _bKeepCheats, bool _bUseDefaultSave) {
     return false;
+}
+
+EMenuEnum UWGGameFlow::BPF_GetPendingMenuToShow() const {
+    return EMenuEnum::InGameMenu;
 }
 
 FName UWGGameFlow::BPF_GetFirstPlayableMapTagName() const {
@@ -51,6 +62,4 @@ bool UWGGameFlow::BPF_CurrentMapHasMapOption(EWGGameFlowMapOption _eMapOption) c
     return false;
 }
 
-UWGGameFlow::UWGGameFlow() {
-}
 

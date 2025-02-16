@@ -18,6 +18,7 @@ public:
     FOnSpawned NothingToSpawn;
     
     UAsyncTaskWaitForAISituationSpawnedFromSave();
+
     UFUNCTION(BlueprintCallable)
     static UAsyncTaskWaitForAISituationSpawnedFromSave* BPF_WaitForAISituationToSpawnFromSave(const TArray<AAISituationActor*> _situationsToWaitFor);
     

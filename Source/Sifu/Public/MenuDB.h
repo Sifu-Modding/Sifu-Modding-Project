@@ -13,21 +13,21 @@
 #include "IconTextures.h"
 #include "MenuDB.generated.h"
 
-class UAkAudioEvent;
+//class UAkAudioEvent;
 class UTexture2D;
 
 UCLASS(Blueprintable)
 class SIFU_API UMenuDB : public UDataAsset {
     GENERATED_BODY()
 public:
-   /* UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_AudioMove;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_AudioMove;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_AudioValidate;
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_AudioValidate;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* m_AudioBack;*/
+    // UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    // UAkAudioEvent* m_AudioBack;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     FEquipmentCategoryInfos m_EquipmentSlotInfos[11];
@@ -72,6 +72,7 @@ public:
     FIconTextures m_StanceIcons[4];
     
     UMenuDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* BPF_GetStanceIcon(EQuadrantTypes _eQuadrant, EIconStyle _eIconStyle) const;
     

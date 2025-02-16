@@ -1,6 +1,7 @@
 #include "OverTimeCameraMixerBlender.h"
 
-class UCurveFloat;
+UOverTimeCameraMixerBlender::UOverTimeCameraMixerBlender() {
+}
 
 float UOverTimeCameraMixerBlender::GetCoeff() const {
     return 0.0f;
@@ -12,6 +13,4 @@ void UOverTimeCameraMixerBlender::BlendWithStarting(float _fTarget, float _fDela
 void UOverTimeCameraMixerBlender::Blend(float _fTarget, float _fDelay, ESCBlendType _eBlendType, UCurveFloat* _blendCurve) const {
 }
 
-UOverTimeCameraMixerBlender::UOverTimeCameraMixerBlender() {
-}
 

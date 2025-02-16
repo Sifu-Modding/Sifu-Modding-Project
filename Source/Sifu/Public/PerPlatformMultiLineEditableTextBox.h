@@ -15,7 +15,8 @@ public:
     int32 SmallScreenSize;
     
     UPerPlatformMultiLineEditableTextBox();
-    
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

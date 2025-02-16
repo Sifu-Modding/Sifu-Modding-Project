@@ -8,6 +8,5 @@ enum class EPathDistanceTest : uint8 {
     PathDistance_Position,
     PathDistance_Weapon,
     PathDistance_CombatRole,
-    PathDistance_MAX UMETA(Hidden),
 };
 

@@ -31,7 +31,8 @@ private:
     TMap<FOrderType, UOrderDelegateHandler*> m_OrderDelegateHandler;
     
 public:
-    UOrderComponent();
+    UOrderComponent(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerUpdateOrder(uint8 _uiOrderId, EOrderType _eOrderType, FBuffer _ReplicatedBuffer, FUniqueNetIdRepl _callerPlayerId);
@@ -113,7 +114,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_CancelAllOrders();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

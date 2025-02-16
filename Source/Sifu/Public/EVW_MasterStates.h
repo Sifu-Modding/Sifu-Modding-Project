@@ -75,6 +75,5 @@ enum class EVW_MasterStates : uint8 {
     Traversal,
     Count,
     None,
-    EVW_MAX UMETA(Hidden),
 };
 

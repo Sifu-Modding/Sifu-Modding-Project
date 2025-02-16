@@ -87,6 +87,7 @@ public:
     bool m_bSetTargetAsOwningChar;
     
     UHandleLDCollisionOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnCollisionWithCharacter(const FBPOrderServiceInstance& _orderServiceInstance, ACharacter* _otherChara) const;
     

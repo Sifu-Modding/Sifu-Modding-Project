@@ -7,6 +7,6 @@ enum class EHitBoxDefenseMatrix : uint8 {
     None,
     Dodge,
     Deflect,
-    Guard = 0x4,
+    Guard = 4,
 };
 

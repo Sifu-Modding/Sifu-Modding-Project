@@ -15,6 +15,7 @@ protected:
     
 public:
     UInputAvailabilityUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetInputAvailabilityOverride(FInputAvailabilitySignature _delegate);

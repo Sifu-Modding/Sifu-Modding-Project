@@ -1,7 +1,9 @@
 #include "TargetableWidgetUpdaterComponent.h"
 
-class AActor;
-class UTargetableWidget;
+UTargetableWidgetUpdaterComponent::UTargetableWidgetUpdaterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_TargetWidgetToUse = NULL;
+    this->m_fMaxDisplayDist = 800.00f;
+}
 
 void UTargetableWidgetUpdaterComponent::UnRegisterTargetActor(AActor* _actor) {
 }
@@ -19,8 +21,4 @@ UTargetableWidget* UTargetableWidgetUpdaterComponent::BPF_GetAssociatedWidget(AA
     return NULL;
 }
 
-UTargetableWidgetUpdaterComponent::UTargetableWidgetUpdaterComponent() {
-    this->m_TargetWidgetToUse = NULL;
-    this->m_fMaxDisplayDist = 800.00f;
-}
 

@@ -90,8 +90,9 @@ public:
     FName m_VariableWeightMasterStateName;
     
     UAnimInstanceWithDependancy();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void Update(float _fDt);
     

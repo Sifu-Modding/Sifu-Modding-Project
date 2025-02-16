@@ -16,5 +16,6 @@ public:
     EActionType m_eDefaultValue;
     
     UTargetActionTypePerCondition();
+
 };
 

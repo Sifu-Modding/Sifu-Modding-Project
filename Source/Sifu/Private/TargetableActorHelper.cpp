@@ -1,11 +1,10 @@
 #include "TargetableActorHelper.h"
 
-class AActor;
+UTargetableActorHelper::UTargetableActorHelper() {
+}
 
 FVector UTargetableActorHelper::BPF_GetTargetableLocation(const AActor* _actor) {
     return FVector{};
 }
 
-UTargetableActorHelper::UTargetableActorHelper() {
-}
 

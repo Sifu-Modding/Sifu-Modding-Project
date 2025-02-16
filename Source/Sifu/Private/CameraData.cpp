@@ -4,3 +4,4 @@ UCameraData::UCameraData() {
     this->m_ParentCamera = NULL;
 }
 
+

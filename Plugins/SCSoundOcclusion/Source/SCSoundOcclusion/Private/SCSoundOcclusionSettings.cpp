@@ -7,3 +7,4 @@ USCSoundOcclusionSettings::USCSoundOcclusionSettings() {
     this->m_eOcclusionMode = ESCOcclusionMode::RTPC;
 }
 
+

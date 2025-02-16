@@ -1,7 +1,7 @@
 #include "InputManagerHelpers.h"
 
-class ASCPlayerController;
-class UInputPad;
+UInputManagerHelpers::UInputManagerHelpers() {
+}
 
 UInputPad* UInputManagerHelpers::BPF_GetControllerInputPad(ASCPlayerController* _playerController) {
     return NULL;
@@ -15,6 +15,4 @@ float UInputManagerHelpers::BPF_GetActionValue(const ASCPlayerController* _playe
     return 0.0f;
 }
 
-UInputManagerHelpers::UInputManagerHelpers() {
-}
 

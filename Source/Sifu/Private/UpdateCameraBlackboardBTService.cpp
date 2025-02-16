@@ -1,10 +1,8 @@
 #include "UpdateCameraBlackboardBTService.h"
 
-class AFightingCharacter;
-class UASMComponent;
-class UAttackComponent;
-class UCameraComponentThird;
-class UPlayerFightingComponent;
+UUpdateCameraBlackboardBTService::UUpdateCameraBlackboardBTService() {
+    this->NodeName = TEXT("UpdateCameraBlackboardBTService");
+}
 
 void UUpdateCameraBlackboardBTService::BPF_UpdateIsInFlyModeKey(FBlackboardKeySelector _IsInFlyModeKey) {
 }
@@ -47,6 +45,4 @@ UASMComponent* UUpdateCameraBlackboardBTService::BPF_GetASMComponent() const {
 
 
 
-UUpdateCameraBlackboardBTService::UUpdateCameraBlackboardBTService() {
-}
 

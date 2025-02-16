@@ -5,3 +5,4 @@ USCCharacterPoseData::USCCharacterPoseData() {
     this->m_PoseAsset = NULL;
 }
 
+

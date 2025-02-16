@@ -1,8 +1,5 @@
 #include "OrderFallOnSlopeDB.h"
 
-
-
-
 UOrderFallOnSlopeDB::UOrderFallOnSlopeDB() {
     this->m_bPhysicAnimEnabled = true;
     this->m_fFallVelocityThreshold = 10.00f;
@@ -21,7 +18,11 @@ UOrderFallOnSlopeDB::UOrderFallOnSlopeDB() {
     this->m_bPlayInstantRecoveryAnimOnPlaneGround = true;
     this->m_PoseSnapshotName = TEXT("RagdollSnapshot");
     this->m_bMirrorFallOnRightSide = true;
-  /*  this->m_RTCPSpeed = NULL;*/
+//    this->m_RTCPSpeed = NULL;
     this->m_bCallRTPCOnSelf = false;
 }
+
+
+
+
 

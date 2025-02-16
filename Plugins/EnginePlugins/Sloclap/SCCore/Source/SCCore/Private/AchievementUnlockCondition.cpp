@@ -1,7 +1,14 @@
 #include "AchievementUnlockCondition.h"
 
-class UObject;
-class UWorld;
+UAchievementUnlockCondition::UAchievementUnlockCondition() {
+    this->m_bUseCustomAchievementTag = true;
+    this->m_bUseTimer = false;
+    this->m_fTimerTime = 1.00f;
+    this->m_bHasCounter = false;
+    this->m_iCountToReach = 1;
+    this->m_bFailOnCounterReached = false;
+    this->m_bWantAddToRoot = true;
+}
 
 void UAchievementUnlockCondition::BPF_UnlockAchievement(bool _bShutdownCondition) {
 }
@@ -63,13 +70,4 @@ bool UAchievementUnlockCondition::BPE_CanBeUnlocked_Implementation(const UWorld*
     return false;
 }
 
-UAchievementUnlockCondition::UAchievementUnlockCondition() {
-    this->m_bUseCustomAchievementTag = true;
-    this->m_bUseTimer = false;
-    this->m_fTimerTime = 1.00f;
-    this->m_bHasCounter = false;
-    this->m_iCountToReach = 1;
-    this->m_bFailOnCounterReached = false;
-    this->m_bWantAddToRoot = true;
-}
 

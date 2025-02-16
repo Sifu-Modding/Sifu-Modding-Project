@@ -1,8 +1,15 @@
 #include "FightingPlayerState.h"
 #include "Net/UnrealNetwork.h"
 
-class AFightingPlayerState;
-class UDamageType;
+AFightingPlayerState::AFightingPlayerState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_eJoinMethod = EJoinMethod::Default;
+    this->m_uDispatcherToken = 0;
+    this->m_iTeamNumber = 0;
+    this->m_iNumKills = 0;
+    this->m_iNumDeaths = 0;
+    this->m_uiRespawnZoneId = 0;
+    this->m_bQuitter = false;
+}
 
 void AFightingPlayerState::OnRep_TeamNumber() {
 }
@@ -42,13 +49,4 @@ void AFightingPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(AFightingPlayerState, m_uiRespawnZoneId);
 }
 
-AFightingPlayerState::AFightingPlayerState() {
-    this->m_eJoinMethod = EJoinMethod::Default;
-    this->m_uDispatcherToken = 0;
-    this->m_iTeamNumber = 0;
-    this->m_iNumKills = 0;
-    this->m_iNumDeaths = 0;
-    this->m_uiRespawnZoneId = 0;
-    this->m_bQuitter = false;
-}
 

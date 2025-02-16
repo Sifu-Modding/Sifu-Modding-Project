@@ -8,5 +8,6 @@ class SIFU_API UTimeParticleEffectNotifyStateExtended : public UAnimNotifyState_
     GENERATED_BODY()
 public:
     UTimeParticleEffectNotifyStateExtended();
+
 };
 

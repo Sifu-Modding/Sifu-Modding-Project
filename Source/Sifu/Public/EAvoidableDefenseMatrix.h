@@ -7,7 +7,7 @@ enum class EAvoidableDefenseMatrix : uint8 {
     None,
     Jump,
     Duck,
-    SideLeft = 0x4,
-    SideRight = 0x8,
+    SideLeft = 4,
+    SideRight = 8,
 };
 

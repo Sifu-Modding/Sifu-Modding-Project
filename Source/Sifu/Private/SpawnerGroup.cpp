@@ -1,8 +1,21 @@
 #include "SpawnerGroup.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-class UAIFightingComponent;
+ASpawnerGroup::ASpawnerGroup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->bAlwaysRelevant = true;
+    this->bReplicates = true;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
+    this->m_bAssignRolesDynamically = false;
+    this->m_bUseDefaultReal = true;
+    this->m_eJoinDialogActorsOnStart = EJoinDialogActors::All;
+    this->m_dialogNavigationQueryFilter = NULL;
+    this->m_bLookAtEnabledDuringDialog = true;
+    this->m_bSkipSuspiciousOnDetection = false;
+    this->m_bOverrideThreateningActions = false;
+    this->m_uiThreateningActionsMask = 4294967295;
+    this->m_eMCPresenceKnownType = EEnemyPresenceKnownType::Unknown;
+}
 
 void ASpawnerGroup::BPF_TriggerBehaviorChange(AActor* _alertedBy, const EGlobalBehaviors _eNewBehavior, bool _bSkipBark) const {
 }
@@ -24,15 +37,4 @@ void ASpawnerGroup::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
     DOREPLIFETIME(ASpawnerGroup, m_SpawnersUsed);
 }
 
-ASpawnerGroup::ASpawnerGroup() {
-    this->m_bAssignRolesDynamically = false;
-    this->m_bUseDefaultReal = true;
-    this->m_eJoinDialogActorsOnStart = EJoinDialogActors::All;
-    this->m_dialogNavigationQueryFilter = NULL;
-    this->m_bLookAtEnabledDuringDialog = true;
-    this->m_bSkipSuspiciousOnDetection = false;
-    this->m_bOverrideThreateningActions = false;
-    this->m_uiThreateningActionsMask = 4294967295;
-    this->m_eMCPresenceKnownType = EEnemyPresenceKnownType::Unknown;
-}
 

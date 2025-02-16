@@ -1,5 +1,8 @@
 #include "BindableIntProperty.h"
 
+UBindableIntProperty::UBindableIntProperty() {
+}
+
 void UBindableIntProperty::BPF_SetValue(int32 _iValue) {
 }
 
@@ -10,6 +13,4 @@ int32 UBindableIntProperty::BPF_GetValue() const {
     return 0;
 }
 
-UBindableIntProperty::UBindableIntProperty() {
-}
 

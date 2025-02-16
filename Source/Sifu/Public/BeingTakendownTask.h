@@ -8,5 +8,6 @@ class SIFU_API UBeingTakendownTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UBeingTakendownTask();
+
 };
 

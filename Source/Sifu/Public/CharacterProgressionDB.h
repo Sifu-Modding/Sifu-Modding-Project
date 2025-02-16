@@ -74,6 +74,7 @@ public:
     TArray<FRetrieveLostItemStruct> m_RetrieveLostItems;
     
     UCharacterProgressionDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ECharacterProgressionRewardTypes BPF_GetProgressionRewardForSchoolLevel(int32 _iSchoolLevel);
     

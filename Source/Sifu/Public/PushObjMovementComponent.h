@@ -50,7 +50,8 @@ protected:
     float m_fTimeToReachSpeedOnRail;
     
 public:
-    UPushObjMovementComponent();
+    UPushObjMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_SetObjectState(EPushableState _eState, bool _bResetIgnoreWhenMoving);

@@ -8,5 +8,6 @@ class SIFU_API UAIActionFetchObjectBTDecorator : public USCBTDecorator {
     GENERATED_BODY()
 public:
     UAIActionFetchObjectBTDecorator();
+
 };
 

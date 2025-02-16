@@ -1,6 +1,7 @@
 #include "PredictionComponent.h"
 
-UPredictionComponent::UPredictionComponent() {
+UPredictionComponent::UPredictionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_bLocalPredictionOnly = false;
 }
+
 

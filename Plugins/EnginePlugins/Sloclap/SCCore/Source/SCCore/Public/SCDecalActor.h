@@ -13,8 +13,9 @@ private:
     bool m_bIsPooled;
     
 public:
-    ASCDecalActor();
-    
+    ASCDecalActor(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

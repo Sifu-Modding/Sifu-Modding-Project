@@ -4,3 +4,4 @@ UForceFightingStateOrderService::UForceFightingStateOrderService() {
     this->m_eFightingState = EFightingState::None;
 }
 
+

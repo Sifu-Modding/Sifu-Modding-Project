@@ -11,3 +11,4 @@ UAbsorbPropertyDB::UAbsorbPropertyDB() {
     this->m_bGhostDamageActivated = false;
 }
 
+

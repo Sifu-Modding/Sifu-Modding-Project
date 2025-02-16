@@ -24,6 +24,9 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FImpostorDelegate OnSpawnedImpostorDynamic;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FImpostorDelegate OnImpostorActivated;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_ImpostorName;
@@ -40,6 +43,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_PooledActorActive, meta=(AllowPrivateAccess=true))
     bool m_bPooledActorActive;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    bool m_bPooledActorActiveForReplay;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<USCCharacterPoseData> m_PoseDataClass;
     
@@ -50,9 +56,10 @@ private:
     ECharacterGender m_eGender;
     
 public:
-    ASCCharacter();
+    ASCCharacter(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerSetGender(ECharacterGender _eGender);
     
@@ -77,6 +84,12 @@ public:
     void BPF_SetCollisionEnabled(bool _bEnabled, bool _bKeepStaticMeshCollisions);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_IsInCinematic() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool BPF_InputEnabled() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ETextGender BPF_GetTextGender() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -94,7 +107,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_SetGender(ECharacterGender _eGender);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

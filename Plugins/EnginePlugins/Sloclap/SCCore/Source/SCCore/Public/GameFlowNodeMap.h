@@ -27,5 +27,6 @@ public:
     bool m_bIsFirstPlayableMap;
     
     UGameFlowNodeMap();
+
 };
 

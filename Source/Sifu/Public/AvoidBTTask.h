@@ -8,5 +8,6 @@ class SIFU_API UAvoidBTTask : public UAIDefenseBTTask {
     GENERATED_BODY()
 public:
     UAvoidBTTask();
+
 };
 

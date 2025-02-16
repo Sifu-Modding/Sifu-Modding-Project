@@ -21,5 +21,6 @@ public:
     bool m_bResetTicketCooldown;
     
     UAILaunchAttackTriggerableAction();
+
 };
 

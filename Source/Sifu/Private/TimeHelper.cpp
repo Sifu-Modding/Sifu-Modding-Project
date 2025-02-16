@@ -1,7 +1,7 @@
 #include "TimeHelper.h"
 
-class UObject;
-class UWorld;
+UTimeHelper::UTimeHelper() {
+}
 
 float UTimeHelper::GetDiffBetweenToDateTimeInSeconds(const FDateTime& _dateTimeA, const FDateTime& _dateTimeB) {
     return 0.0f;
@@ -27,6 +27,4 @@ FDateTime UTimeHelper::AddDelayToDateTime(const FDateTime& _dateTime, float _fDe
     return FDateTime{};
 }
 
-UTimeHelper::UTimeHelper() {
-}
 

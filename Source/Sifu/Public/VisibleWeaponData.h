@@ -12,5 +12,6 @@ public:
     TArray<FWeaponVisuals> m_WeaponVisuals;
     
     UVisibleWeaponData();
+
 };
 

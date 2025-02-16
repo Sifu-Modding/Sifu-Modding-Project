@@ -1,10 +1,22 @@
 #include "AISituationActor.h"
 #include "SCSaveGameComponent.h"
 
-class AAISpawner;
-class AActor;
-class ASpawnerGroup;
-class UAIFightingComponent;
+AAISituationActor::AAISituationActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bHasActiveLDVisibilityOverride = false;
+    this->m_SaveComponent = CreateDefaultSubobject<USCSaveGameComponent>(TEXT("SaveGameComponent"));
+    this->m_bIsLastManAllowed = true;
+    this->m_bForceLastMan = false;
+    this->m_iMinKillBeforeLastMan = 0;
+    this->m_iLastManGaugeIncrementValue = 1;
+    this->m_iLastManMaxOccuranceCount = 1;
+    this->m_bRepeatBarksWhenExhausted = true;
+    this->m_bEnableMaxImpostorsLimit = false;
+    this->m_bDespawnEnabled = false;
+    this->m_bSpawnRequestedOnSaveLoaded = false;
+    this->m_iCurrentLastManOccuranceCount = 0;
+    this->m_bAutoSpawnedOnSaveLoaded = true;
+    this->m_eBehaviorToSetOnSpawn = EGlobalBehaviors::Idle;
+}
 
 void AAISituationActor::OnUpdatedFromSaveCallback() {
 }
@@ -14,6 +26,9 @@ FAISituationNamedActor AAISituationActor::Conv_NameToAISituationNamedActor(FName
 }
 
 void AAISituationActor::BPF_UnSpawnSituation() {
+}
+
+void AAISituationActor::BPF_SwitchToSuperAbandonState() {
 }
 
 void AAISituationActor::BPF_SwitchToFriendly(bool _bFriendly) {
@@ -69,19 +84,4 @@ void AAISituationActor::BPF_AddNamedActor(AActor* _actor, FName _name) {
 void AAISituationActor::AlertLevelChangedCallback(EAlertLevel _eNewLevel) {
 }
 
-AAISituationActor::AAISituationActor() {
-    this->m_bHasActiveLDVisibilityOverride = false;
-    this->m_SaveComponent = CreateDefaultSubobject<USCSaveGameComponent>(TEXT("SaveGameComponent"));
-    this->m_bIsLastManAllowed = true;
-    this->m_bForceLastMan = false;
-    this->m_iMinKillBeforeLastMan = 0;
-    this->m_iLastManGaugeIncrementValue = 1;
-    this->m_iLastManMaxOccuranceCount = 1;
-    this->m_bRepeatBarksWhenExhausted = true;
-    this->m_bEnableMaxImpostorsLimit = false;
-    this->m_bSpawnRequestedOnSaveLoaded = false;
-    this->m_iCurrentLastManOccuranceCount = 0;
-    this->m_bAutoSpawnedOnSaveLoaded = true;
-    this->m_eBehaviorToSetOnSpawn = EGlobalBehaviors::Idle;
-}
 

@@ -8,5 +8,6 @@ class SIFU_API UDefenseInfluenceNodeTraversalEvasion : public UContextualDefense
     GENERATED_BODY()
 public:
     UDefenseInfluenceNodeTraversalEvasion();
+
 };
 

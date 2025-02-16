@@ -1,6 +1,7 @@
 #include "V2BlockerComponent.h"
 
-class AActor;
+UV2BlockerComponent::UV2BlockerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void UV2BlockerComponent::OnActorEndOverlap(AActor* _overlappedActor, AActor* _otherActor) {
 }
@@ -8,6 +9,4 @@ void UV2BlockerComponent::OnActorEndOverlap(AActor* _overlappedActor, AActor* _o
 void UV2BlockerComponent::OnActorBeginOverlap(AActor* _overlappedActor, AActor* _otherActor) {
 }
 
-UV2BlockerComponent::UV2BlockerComponent() {
-}
 

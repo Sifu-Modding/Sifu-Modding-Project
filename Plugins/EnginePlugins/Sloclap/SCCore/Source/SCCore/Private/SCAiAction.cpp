@@ -1,9 +1,10 @@
 #include "SCAiAction.h"
 
-class ASCCharacter;
-class UBlackboardComponent;
-class UObject;
-class USCAIComponent;
+USCAiAction::USCAiAction() {
+    this->m_BehaviorTreeAsset = NULL;
+    this->m_eScheduleCondition = EAIActionScheduleCondition::None;
+    this->m_bCanForceCancel = true;
+}
 
 void USCAiAction::BPF_SetBlackBoardValueAsVector(FName _key, const FVector& _vValue) const {
 }
@@ -87,9 +88,4 @@ bool USCAiAction::BPE_CanPerform_Implementation(const USCAIComponent* _aiCompone
     return false;
 }
 
-USCAiAction::USCAiAction() {
-    this->m_BehaviorTreeAsset = NULL;
-    this->m_eScheduleCondition = EAIActionScheduleCondition::None;
-    this->m_bCanForceCancel = true;
-}
 

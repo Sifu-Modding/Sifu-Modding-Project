@@ -1,15 +1,16 @@
-#include "ImpostorReplication.h"
-#include "Net/UnrealNetwork.h"
+// #include "ImpostorReplication.h"
+// #include "Net/UnrealNetwork.h"
 
-void UImpostorReplication::OnRep_Impostors() {
-}
+// UImpostorReplication::UImpostorReplication(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+// }
 
-void UImpostorReplication::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
-    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+// void UImpostorReplication::OnRep_Impostors() {
+// }
+
+// void UImpostorReplication::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
+//     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(UImpostorReplication, m_Impostors);
-}
+//     DOREPLIFETIME(UImpostorReplication, m_Impostors);
+// }
 
-UImpostorReplication::UImpostorReplication() {
-}
 

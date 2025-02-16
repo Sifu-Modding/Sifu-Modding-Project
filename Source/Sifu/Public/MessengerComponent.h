@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UMessengerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UMessengerComponent();
+    UMessengerComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

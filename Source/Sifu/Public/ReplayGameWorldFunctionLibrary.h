@@ -16,6 +16,7 @@ class SIFU_API UReplayGameWorldFunctionLibrary : public UBlueprintFunctionLibrar
     GENERATED_BODY()
 public:
     UReplayGameWorldFunctionLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="_worldContextObject"))
     static bool BPF_IsPhotomodeActivated(const UObject* _worldContextObject);
     

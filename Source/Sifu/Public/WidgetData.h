@@ -8,6 +8,7 @@ class UWidgetData : public UObject {
     GENERATED_BODY()
 public:
     UWidgetData();
+
     UFUNCTION(BlueprintCallable)
     void BPF_NotifyDataUpdated();
     

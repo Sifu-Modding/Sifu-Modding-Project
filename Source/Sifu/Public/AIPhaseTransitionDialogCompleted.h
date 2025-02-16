@@ -13,6 +13,7 @@ private:
     
 public:
     UAIPhaseTransitionDialogCompleted();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnInteractiveDialogInterrupted();

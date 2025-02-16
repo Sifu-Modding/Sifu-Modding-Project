@@ -19,6 +19,7 @@ protected:
     
 public:
     UGraphOptionsMenu();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnRequestUIChange();

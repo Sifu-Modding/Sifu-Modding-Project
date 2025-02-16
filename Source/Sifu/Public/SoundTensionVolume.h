@@ -16,6 +16,7 @@ private:
     FSoundTensionThreat m_Threat;
     
 public:
-    ASoundTensionVolume();
+    ASoundTensionVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

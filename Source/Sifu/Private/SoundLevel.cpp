@@ -1,7 +1,8 @@
 #include "SoundLevel.h"
 
-
-
-ASoundLevel::ASoundLevel() {
+ASoundLevel::ASoundLevel(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
+
+
 

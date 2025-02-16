@@ -20,6 +20,7 @@ class SIFU_API UUIHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UUIHelper();
+
     UFUNCTION(BlueprintCallable)
     static void UpdateXPProgressBar(int32 _iCurrentLevelXP, int32 _iNextLevelXP, int32 _iStartXP, int32 _iIncrementXP, float _fProgress, float _fDuration, float _fDelta, float& _fNewProgress, float& _fLevelProgress, int32& _iCurrentXP);
     

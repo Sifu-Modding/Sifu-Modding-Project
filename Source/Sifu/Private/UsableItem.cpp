@@ -1,6 +1,11 @@
 #include "UsableItem.h"
+#include "Components/SceneComponent.h"
 
-class AActor;
+AUsableItem::AUsableItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
+    this->m_ShapeComponent = NULL;
+    this->m_iMatchesWithAvoid = 0;
+}
 
 EItemUseState AUsableItem::BPF_GetItemUseState() const {
     return EItemUseState::BuildUp;
@@ -16,8 +21,4 @@ float AUsableItem::BPF_ComputeAttackKnockbackCoeff_Implementation(AActor* _Insti
 
 
 
-AUsableItem::AUsableItem() {
-    this->m_ShapeComponent = NULL;
-    this->m_iMatchesWithAvoid = 0;
-}
 

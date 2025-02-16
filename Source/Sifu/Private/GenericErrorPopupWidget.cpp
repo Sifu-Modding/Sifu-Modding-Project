@@ -1,11 +1,10 @@
 #include "GenericErrorPopupWidget.h"
 
-class UPopupWidget;
+UGenericErrorPopupWidget::UGenericErrorPopupWidget() {
+}
 
 UPopupWidget* UGenericErrorPopupWidget::BPE_GetPopupWidget_Implementation() {
     return NULL;
 }
 
-UGenericErrorPopupWidget::UGenericErrorPopupWidget() {
-}
 

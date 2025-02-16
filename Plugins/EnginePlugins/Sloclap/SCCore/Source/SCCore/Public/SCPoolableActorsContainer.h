@@ -15,8 +15,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSCPoolableActorsContainerPoolEntry> m_Pools;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 m_iGenerationVersion;
+    
 public:
-    ASCPoolableActorsContainer();
+    ASCPoolableActorsContainer(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     int32 BPF_GetActorsCount(TSubclassOf<AActor> _class);
     

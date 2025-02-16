@@ -26,6 +26,7 @@ protected:
     
 public:
     UAbstractCameraData();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ClearTransitions();

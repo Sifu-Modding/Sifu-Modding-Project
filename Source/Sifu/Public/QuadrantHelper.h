@@ -9,6 +9,7 @@ class SIFU_API UQuadrantHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UQuadrantHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static EQuadrantTypes BPF_Mirror(EQuadrantTypes _eQuadrant, bool _bMirror);
     

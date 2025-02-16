@@ -1,11 +1,13 @@
 #include "ArenaHardpointAreaActor.h"
 #include "Components/SceneComponent.h"
 
-class AAISituationActor;
-class AActor;
-class ASCVolume;
-class UCharacterHealthComponent;
-class UPrimitiveComponent;
+AArenaHardpointAreaActor::AArenaHardpointAreaActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Scene Component"));
+    this->m_bIsActive = false;
+    this->m_fCurrentScoreMultiplier = 1.00f;
+    this->m_bIsAnyEnemyInsideHardpoint = false;
+    this->m_RootComponent = (USceneComponent*)RootComponent;
+}
 
 void AArenaHardpointAreaActor::UpdateVolumeBounds() {
 }
@@ -72,10 +74,4 @@ float AArenaHardpointAreaActor::BFF_GetCurrentCaptureScore() const {
     return 0.0f;
 }
 
-AArenaHardpointAreaActor::AArenaHardpointAreaActor() {
-    this->m_bIsActive = false;
-    this->m_fCurrentScoreMultiplier = 1.00f;
-    this->m_bIsAnyEnemyInsideHardpoint = false;
-    this->m_RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Scene Component"));
-}
 

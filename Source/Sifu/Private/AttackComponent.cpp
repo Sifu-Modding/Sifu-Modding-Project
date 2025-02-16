@@ -1,14 +1,57 @@
 #include "AttackComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AActor;
-class AInteractiveMovable;
-class APushableActor;
-class AThrowableActor;
-class AVitalPointActor;
-class UCombo;
-class UFocusDB;
-class UTargetDB;
+UAttackComponent::UAttackComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_pushAnimRequest = NULL;
+    this->m_DefaultCombo = NULL;
+    this->m_ComboManager = NULL;
+    this->m_fAttackReorientationDurationFromIdle = 0.20f;
+    this->m_fAttackReorientationDurationFromAttack = 0.05f;
+    this->m_fAttackReorientationDurationIfChangedDuringAttack = 0.15f;
+    this->m_IdleDB = NULL;
+    this->m_TakedownDB = NULL;
+    this->m_fEnterFightDistance = 700.00f;
+    this->m_fExitFightDistance = 1000.00f;
+    this->m_fVirtualTargetAntiSpamRange = 150.00f;
+    this->m_VirtualTargetRemapCurve = NULL;
+    this->m_HitTargetBoneName = TEXT("custom_joint_01");
+    this->m_TargetSocketHigh = TEXT("HitTarget_High");
+    this->m_TargetSocketHighMiss = TEXT("HitTarget_High_Miss");
+    this->m_TargetSocketHighMissSide = TEXT("HitTarget_High_Miss_Side");
+    this->m_TargetSocketMid1 = TEXT("HitTarget_Mid_1");
+    this->m_TargetSocketMidMiss = TEXT("HitTarget_Mid_Miss");
+    this->m_TargetSocketMidMissSide = TEXT("HitTarget_Mid_Miss_Side");
+    this->m_TargetSocketMid2 = TEXT("HitTarget_Mid_2");
+    this->m_TargetSocketLowLeft = TEXT("HitTarget_Low_L");
+    this->m_TargetSocketLowMiss = TEXT("HitTarget_Low_Miss");
+    this->m_TargetSocketLowMissSide = TEXT("HitTarget_Low_Miss_Side");
+    this->m_TargetSocketLowRight = TEXT("HitTarget_Low_R");
+    this->m_AimIKCurveName = TEXT("AimIKAlphaCurve");
+    this->m_FakeHipsBoneName = TEXT("custom_joint_02");
+    this->m_TargetDB = NULL;
+    this->m_StaminaConsumptionValues[0] = 0.00f;
+    this->m_StaminaConsumptionValues[1] = 0.00f;
+    this->m_StaminaConsumptionValues[2] = 0.00f;
+    this->m_bAttackHasImpactOnGuardGauge = false;
+    this->m_FreezeFrameNb[0] = 0.00f;
+    this->m_FreezeFrameNb[1] = 0.00f;
+    this->m_FreezeFrameNb[2] = 0.00f;
+    this->m_ResilientFreezeFrameNb[0] = 0.00f;
+    this->m_ResilientFreezeFrameNb[1] = 0.00f;
+    this->m_ResilientFreezeFrameNb[2] = 0.00f;
+    this->m_GuardFreezeFrameNb[0] = 0.00f;
+    this->m_GuardFreezeFrameNb[1] = 0.00f;
+    this->m_GuardFreezeFrameNb[2] = 0.00f;
+    this->m_RushAttackDB = NULL;
+    this->m_fFlatHitBoxesCapsuleHalfHeightFactorThresold = 2.00f;
+    this->m_uiFlatHitBoxesControllerNatureMask = 4294967295;
+    this->m_fDangerTimeOut = 3.00f;
+    this->m_eDangerState = EDangerStates::Safe;
+    this->m_fMaxDistSnap = 0.00f;
+    this->m_bDisableSnapWhenTargetInRange = false;
+    this->m_bCanGuardBreakAfterDeflected = false;
+    this->m_FocusDB = NULL;
+}
 
 void UAttackComponent::SetWantsComboRestart(bool _bWantsRestart) {
 }
@@ -190,55 +233,4 @@ void UAttackComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
     DOREPLIFETIME(UAttackComponent, m_eDangerState);
 }
 
-UAttackComponent::UAttackComponent() {
-    this->m_pushAnimRequest = NULL;
-    this->m_DefaultCombo = NULL;
-    this->m_ComboManager = NULL;
-    this->m_fAttackReorientationDurationFromIdle = 0.20f;
-    this->m_fAttackReorientationDurationFromAttack = 0.05f;
-    this->m_fAttackReorientationDurationIfChangedDuringAttack = 0.15f;
-    this->m_IdleDB = NULL;
-    this->m_TakedownDB = NULL;
-    this->m_fEnterFightDistance = 700.00f;
-    this->m_fExitFightDistance = 1000.00f;
-    this->m_fVirtualTargetAntiSpamRange = 150.00f;
-    this->m_VirtualTargetRemapCurve = NULL;
-    this->m_HitTargetBoneName = TEXT("custom_joint_01");
-    this->m_TargetSocketHigh = TEXT("HitTarget_High");
-    this->m_TargetSocketHighMiss = TEXT("HitTarget_High_Miss");
-    this->m_TargetSocketHighMissSide = TEXT("HitTarget_High_Miss_Side");
-    this->m_TargetSocketMid1 = TEXT("HitTarget_Mid_1");
-    this->m_TargetSocketMidMiss = TEXT("HitTarget_Mid_Miss");
-    this->m_TargetSocketMidMissSide = TEXT("HitTarget_Mid_Miss_Side");
-    this->m_TargetSocketMid2 = TEXT("HitTarget_Mid_2");
-    this->m_TargetSocketLowLeft = TEXT("HitTarget_Low_L");
-    this->m_TargetSocketLowMiss = TEXT("HitTarget_Low_Miss");
-    this->m_TargetSocketLowMissSide = TEXT("HitTarget_Low_Miss_Side");
-    this->m_TargetSocketLowRight = TEXT("HitTarget_Low_R");
-    this->m_AimIKCurveName = TEXT("AimIKAlphaCurve");
-    this->m_FakeHipsBoneName = TEXT("custom_joint_02");
-    this->m_TargetDB = NULL;
-    this->m_StaminaConsumptionValues[0] = 0.00f;
-    this->m_StaminaConsumptionValues[1] = 0.00f;
-    this->m_StaminaConsumptionValues[2] = 0.00f;
-    this->m_bAttackHasImpactOnGuardGauge = false;
-    this->m_FreezeFrameNb[0] = 0.00f;
-    this->m_FreezeFrameNb[1] = 0.00f;
-    this->m_FreezeFrameNb[2] = 0.00f;
-    this->m_ResilientFreezeFrameNb[0] = 0.00f;
-    this->m_ResilientFreezeFrameNb[1] = 0.00f;
-    this->m_ResilientFreezeFrameNb[2] = 0.00f;
-    this->m_GuardFreezeFrameNb[0] = 0.00f;
-    this->m_GuardFreezeFrameNb[1] = 0.00f;
-    this->m_GuardFreezeFrameNb[2] = 0.00f;
-    this->m_RushAttackDB = NULL;
-    this->m_fFlatHitBoxesCapsuleHalfHeightFactorThresold = 2.00f;
-    this->m_uiFlatHitBoxesControllerNatureMask = 4294967295;
-    this->m_fDangerTimeOut = 3.00f;
-    this->m_eDangerState = EDangerStates::Safe;
-    this->m_fMaxDistSnap = 0.00f;
-    this->m_bDisableSnapWhenTargetInRange = false;
-    this->m_bCanGuardBreakAfterDeflected = false;
-    this->m_FocusDB = NULL;
-}
 

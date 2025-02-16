@@ -105,5 +105,6 @@ private:
     
 public:
     UAvoidDB();
+
 };
 

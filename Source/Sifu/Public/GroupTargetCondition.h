@@ -16,5 +16,6 @@ public:
     TArray<FBaseActorTargetConditionInstance> m_Conditions;
     
     UGroupTargetCondition();
+
 };
 

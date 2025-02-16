@@ -8,5 +8,6 @@ class SIFU_API UPushObjectNotify : public USCAnimNotify {
     GENERATED_BODY()
 public:
     UPushObjectNotify();
+
 };
 

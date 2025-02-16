@@ -1,5 +1,6 @@
 #include "SCCustomNavLink.h"
 
-USCCustomNavLink::USCCustomNavLink() {
+USCCustomNavLink::USCCustomNavLink(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

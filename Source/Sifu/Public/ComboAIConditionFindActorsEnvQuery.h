@@ -31,6 +31,7 @@ protected:
     
 public:
     UComboAIConditionFindActorsEnvQuery();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_FillQueryParameters(TArray<FAIDynamicParam>& _outParams) const;

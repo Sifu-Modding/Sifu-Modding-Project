@@ -1,9 +1,11 @@
 #include "AIComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AAISpawner;
-class AActor;
-class UArchetypeAsset;
+UAIComponent::UAIComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_CurrentAIArchetype = NULL;
+    this->m_Spawner = NULL;
+    this->m_Behavior = NULL;
+}
 
 void UAIComponent::OnRep_Spawner() {
 }
@@ -32,9 +34,4 @@ void UAIComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLife
     DOREPLIFETIME(UAIComponent, m_Spawner);
 }
 
-UAIComponent::UAIComponent() {
-    this->m_CurrentAIArchetype = NULL;
-    this->m_Spawner = NULL;
-    this->m_Behavior = NULL;
-}
 

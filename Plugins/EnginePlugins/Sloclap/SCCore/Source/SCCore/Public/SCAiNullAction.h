@@ -8,5 +8,6 @@ class SCCORE_API USCAiNullAction : public USCAiAction {
     GENERATED_BODY()
 public:
     USCAiNullAction();
+
 };
 

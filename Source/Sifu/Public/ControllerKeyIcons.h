@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "ControllerKeyIcons.generated.h"
 
 class UTexture2D;

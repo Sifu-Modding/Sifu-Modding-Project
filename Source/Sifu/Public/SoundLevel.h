@@ -16,7 +16,8 @@ private:
     TArray<uint8> m_SoundManagerSaveData;
     
 public:
-    ASoundLevel();
+    ASoundLevel(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnMoodChanged(FSoundMoodState _previousState, FSoundMoodState _newState);
     

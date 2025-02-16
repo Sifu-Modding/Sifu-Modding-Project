@@ -12,5 +12,6 @@ public:
     EGameDifficulty m_eForcedDifficulty;
     
     USCDebugSettings();
+
 };
 

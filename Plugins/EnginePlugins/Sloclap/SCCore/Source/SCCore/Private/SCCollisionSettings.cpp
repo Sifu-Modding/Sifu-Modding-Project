@@ -9,3 +9,4 @@ USCCollisionSettings::USCCollisionSettings() {
     this->m_eLDCollChannel = ECC_GameTraceChannel4;
 }
 
+

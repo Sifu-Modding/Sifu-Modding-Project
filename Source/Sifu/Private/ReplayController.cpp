@@ -1,13 +1,20 @@
 #include "ReplayController.h"
 
-class AReplayingCamera;
-class UCurveFloat;
-class UObject;
-class UReplayCineCameraComponent;
-class UReplayFightingCharacterComponent;
-class UReplayKey;
-class UReplaySystem;
-class UReplayTimelineModel;
+AReplayController::AReplayController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->ClickEventKeys.AddDefaulted(1);
+    this->m_TimelineController = NULL;
+    this->m_fGoToTimeCompletedTimeS = 0.00f;
+    this->m_bTimeDilationZeroedOnGoToTime = true;
+    this->m_bDebugEnabled = true;
+    this->m_eCurrentCameraMode = EReplayCameraMode::LockedVirtualCam;
+    this->m_VirtualCameraClass = NULL;
+    this->m_LoadingScreenWidgetClass = NULL;
+    this->m_MainUserWidget = NULL;
+    this->m_LoadingScreenWidgetInstance = NULL;
+    this->m_VirtualCamera = NULL;
+    this->m_VideoRecorderClass = NULL;
+    this->m_VideoRecorder = NULL;
+}
 
 void AReplayController::OnKeysLoaded() {
 }
@@ -110,18 +117,4 @@ UReplayCineCameraComponent* AReplayController::BPF_GetCurrentCineCameraComponent
 
 
 
-AReplayController::AReplayController() {
-    this->m_TimelineController = NULL;
-    this->m_fGoToTimeCompletedTimeS = 0.00f;
-    this->m_bTimeDilationZeroedOnGoToTime = true;
-    this->m_bDebugEnabled = true;
-    this->m_eCurrentCameraMode = EReplayCameraMode::LockedVirtualCam;
-    this->m_VirtualCameraClass = NULL;
-    this->m_LoadingScreenWidgetClass = NULL;
-    this->m_MainUserWidget = NULL;
-    this->m_LoadingScreenWidgetInstance = NULL;
-    this->m_VirtualCamera = NULL;
-    this->m_VideoRecorderClass = NULL;
-    this->m_VideoRecorder = NULL;
-}
 

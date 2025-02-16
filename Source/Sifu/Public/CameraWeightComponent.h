@@ -7,7 +7,8 @@ UCLASS(Abstract, Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableCompo
 class SIFU_API UCameraWeightComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    UCameraWeightComponent();
+    UCameraWeightComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float BPE_GetWeight() const;
     

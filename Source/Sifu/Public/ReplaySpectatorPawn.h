@@ -18,7 +18,8 @@ protected:
     float m_fDefaultRollCooldownOnReset;
     
 public:
-    AReplaySpectatorPawn();
+    AReplaySpectatorPawn(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnPossess(AController* _controller);

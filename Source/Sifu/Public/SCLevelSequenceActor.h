@@ -14,9 +14,10 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSequenceBinding> m_SequenceBindings;
     
-    //ASCLevelSequenceActor();
-  /*  UFUNCTION(BlueprintCallable)
-    void BPF_Play();*/
+    ASCLevelSequenceActor(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable)
+    void BPF_Play();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     ULevelSequence* BPF_GetOverridingLevelSequence(ACharacter* _characterOwner) const;

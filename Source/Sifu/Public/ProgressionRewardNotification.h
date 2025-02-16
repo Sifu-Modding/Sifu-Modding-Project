@@ -22,6 +22,7 @@ public:
     UCharacterProgressionUnlockDB* m_Unlock;
     
     UProgressionRewardNotification();
+
     UFUNCTION(BlueprintCallable)
     UProgressionRewardNotification* BPF_Init(ECharacterProgressionRewardTypes _eRewardType, FCharacterProgressionReward _reward, UCharacterProgressionUnlockDB* _unlock);
     

@@ -1,6 +1,7 @@
 #include "SCBlueprintLog.h"
 
-class UObject;
+USCBlueprintLog::USCBlueprintLog() {
+}
 
 void USCBlueprintLog::BPFLogCategory(const FString& _text, FName _categoryName, DisplayLevel _eDisplayLevel) {
 }
@@ -17,6 +18,4 @@ void USCBlueprintLog::BPF_VisualLogBox(UObject* _owner, const FString& _category
 void USCBlueprintLog::BPF_VisualLog(UObject* _worldContextObject, const FString& _category, DisplayLevel _eVerbosity, const FString& _inString) {
 }
 
-USCBlueprintLog::USCBlueprintLog() {
-}
 

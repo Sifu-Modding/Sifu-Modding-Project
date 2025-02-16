@@ -30,5 +30,6 @@ public:
     int32 m_iTargetRecquirements;
     
     UUsableItemData();
+
 };
 

@@ -1,6 +1,16 @@
 #include "PlayAnimSubAnimInstance.h"
 #include "Net/UnrealNetwork.h"
 
+UPlayAnimSubAnimInstance::UPlayAnimSubAnimInstance() {
+    this->m_uiSubStateId = 0;
+    this->m_eOrderType = EOrderType::None;
+    this->m_IKSubInstanceTag = TEXT("IK");
+    this->m_iSubStateID = 0;
+    this->m_uiOrderID = 0;
+    this->m_fGlobalAlpha = 0.00f;
+    this->m_bIKEnabled = false;
+}
+
 
 void UPlayAnimSubAnimInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
@@ -14,13 +24,4 @@ void UPlayAnimSubAnimInstance::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(UPlayAnimSubAnimInstance, m_bIKEnabled);
 }
 
-UPlayAnimSubAnimInstance::UPlayAnimSubAnimInstance() {
-    this->m_uiSubStateId = 0;
-    this->m_eOrderType = EOrderType::None;
-    this->m_IKSubInstanceTag = TEXT("IK");
-    this->m_iSubStateID = 0;
-    this->m_uiOrderID = 0;
-    this->m_fGlobalAlpha = 0.00f;
-    this->m_bIKEnabled = false;
-}
 

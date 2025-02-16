@@ -23,5 +23,6 @@ public:
     TArray<InputAction> m_inputActionArray;
     
     UAvailabilityLayerData();
+
 };
 

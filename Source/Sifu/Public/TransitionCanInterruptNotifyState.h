@@ -15,6 +15,7 @@ public:
     FName m_BaseName;
     
     UTransitionCanInterruptNotifyState();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void InvertUTurn() const;

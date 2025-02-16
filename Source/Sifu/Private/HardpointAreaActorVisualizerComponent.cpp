@@ -1,5 +1,6 @@
 #include "HardpointAreaActorVisualizerComponent.h"
 
-UHardpointAreaActorVisualizerComponent::UHardpointAreaActorVisualizerComponent() {
+UHardpointAreaActorVisualizerComponent::UHardpointAreaActorVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

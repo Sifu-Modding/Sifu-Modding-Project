@@ -7,3 +7,4 @@ UEnvQueryTest_AngleBetween::UEnvQueryTest_AngleBetween() {
     this->ThreatsToEvaluate = UEnvQueryContext_Querier::StaticClass();
 }
 
+

@@ -17,5 +17,6 @@ public:
     bool m_bStopWhenOrderServiceRunning;
     
     UOrderServiceIsPlayingActivationCondition();
+
 };
 

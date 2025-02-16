@@ -13,5 +13,6 @@ public:
     APathPatrol* m_Patrol;
     
     UAIActionPatrol();
+
 };
 

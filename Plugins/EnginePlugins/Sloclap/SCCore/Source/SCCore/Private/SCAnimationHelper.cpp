@@ -1,11 +1,8 @@
 #include "SCAnimationHelper.h"
 #include "Templates/SubclassOf.h"
 
-class UAnimNotify;
-class UAnimNotifyState;
-class UAnimSequence;
-class UAnimSequenceBase;
-class UAnimationAsset;
+USCAnimationHelper::USCAnimationHelper() {
+}
 
 bool USCAnimationHelper::HasInvalidNotifies(UAnimSequenceBase* _sequence, const FString& _inNotifyName) {
     return false;
@@ -39,6 +36,4 @@ FTransform USCAnimationHelper::BPF_ExtractRootTrackTransform(UAnimSequence* _seq
     return FTransform{};
 }
 
-USCAnimationHelper::USCAnimationHelper() {
-}
 

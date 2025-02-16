@@ -1,10 +1,9 @@
 #include "MenuAsyncActionBaseHelper.h"
 
-class UMenuAsyncActionBase;
+UMenuAsyncActionBaseHelper::UMenuAsyncActionBaseHelper() {
+}
 
 void UMenuAsyncActionBaseHelper::BPF_CancelAsyncAction(UMenuAsyncActionBase* _action) {
 }
 
-UMenuAsyncActionBaseHelper::UMenuAsyncActionBaseHelper() {
-}
 

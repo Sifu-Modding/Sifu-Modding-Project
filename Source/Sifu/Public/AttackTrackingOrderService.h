@@ -29,6 +29,7 @@ public:
     TArray<EOrderType> m_StopTrackingIfTargetPlaysOrder;
     
     UAttackTrackingOrderService();
+
     UFUNCTION(BlueprintCallable)
     void BPF_GetTrackingLocation(const FBPOrderServiceInstance& _instance, bool& _bSuccess, FVector& _value);
     

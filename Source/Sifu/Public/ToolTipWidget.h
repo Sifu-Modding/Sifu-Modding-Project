@@ -9,9 +9,10 @@ UCLASS(Blueprintable, EditInlineNew)
 class SIFU_API UToolTipWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<UButtonUserWidget> m_Button;
     
     UToolTipWidget();
+
 };
 

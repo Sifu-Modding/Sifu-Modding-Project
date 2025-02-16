@@ -8,5 +8,6 @@ class USCTrackingAuthenticationNSA : public USCTrackingAuthentication {
     GENERATED_BODY()
 public:
     USCTrackingAuthenticationNSA();
+
 };
 

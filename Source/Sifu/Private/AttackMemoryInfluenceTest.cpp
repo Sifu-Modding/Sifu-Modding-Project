@@ -9,3 +9,4 @@ UAttackMemoryInfluenceTest::UAttackMemoryInfluenceTest() {
     this->m_bAvoided = false;
 }
 
+

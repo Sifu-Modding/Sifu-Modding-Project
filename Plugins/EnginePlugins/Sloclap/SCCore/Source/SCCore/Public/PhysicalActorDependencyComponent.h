@@ -14,6 +14,7 @@ protected:
     TArray<TSoftObjectPtr<UPhysicalActorDependencyComponent>> m_BakedListeners;
     
 public:
-    UPhysicalActorDependencyComponent();
+    UPhysicalActorDependencyComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

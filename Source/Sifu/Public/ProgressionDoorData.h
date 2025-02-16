@@ -24,5 +24,6 @@ public:
     TSubclassOf<USCUserWidget> m_NotificationWidget;
     
     UProgressionDoorData();
+
 };
 

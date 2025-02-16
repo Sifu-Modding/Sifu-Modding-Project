@@ -19,6 +19,7 @@ class SIFU_API UAnimContainerLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAnimContainerLibrary();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetSpeedStateAnim(const FSpeedStateAnimContainer& _animContainer, ESpeedState _eSpeedState, FAnimContainer& _result);
     

@@ -22,6 +22,7 @@ private:
     FSCStreamingVolumeDependencies m_VolumeDependencies[3];
     
 public:
-    ASCLevelStreamingVolume();
+    ASCLevelStreamingVolume(const FObjectInitializer& ObjectInitializer);
+
 };
 

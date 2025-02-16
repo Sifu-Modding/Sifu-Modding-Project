@@ -12,6 +12,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMaterialInstance* BaseMaterial;
     
-    ASkySphere();
+    ASkySphere(const FObjectInitializer& ObjectInitializer);
+
 };
 

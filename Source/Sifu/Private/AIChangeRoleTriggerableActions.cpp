@@ -4,3 +4,4 @@ UAIChangeRoleTriggerableActions::UAIChangeRoleTriggerableActions() {
     this->m_eCombatRoleToAssign = ESCAICombatRoles::NonOpponent;
 }
 
+

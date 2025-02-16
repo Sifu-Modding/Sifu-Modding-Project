@@ -1,14 +1,7 @@
 #include "SCGameplayStatics.h"
 
-class AActor;
-class APawn;
-class APlayerCameraManager;
-class APlayerController;
-class UObject;
-class UParticleSystem;
-class UParticleSystemComponent;
-class UPrimitiveComponent;
-class USceneComponent;
+USCGameplayStatics::USCGameplayStatics() {
+}
 
 void USCGameplayStatics::BPF_UnloadLevels(const UObject* _context, const TArray<FName>& _levels, bool _bSynchronous) {
 }
@@ -75,6 +68,4 @@ void USCGameplayStatics::BPF_ForceRefresh(AActor* _actor) {
 void USCGameplayStatics::BPF_DisplayErrorMessage(FName _title, const FString& _message) {
 }
 
-USCGameplayStatics::USCGameplayStatics() {
-}
 

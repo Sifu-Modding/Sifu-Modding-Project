@@ -16,5 +16,6 @@ public:
     UAttackDB* m_AttackToTest;
     
     UComboAIConditionIsAttacking();
+
 };
 

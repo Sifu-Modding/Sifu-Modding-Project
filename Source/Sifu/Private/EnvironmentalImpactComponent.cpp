@@ -1,6 +1,7 @@
 #include "EnvironmentalImpactComponent.h"
 
-
-UEnvironmentalImpactComponent::UEnvironmentalImpactComponent() {
+UEnvironmentalImpactComponent::UEnvironmentalImpactComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
+
 

@@ -1,5 +1,9 @@
 #include "SCDialogWidget.h"
 
+USCDialogWidget::USCDialogWidget() {
+    this->m_bHandleShowSubtitleOption = true;
+}
+
 void USCDialogWidget::BPF_RemoveAllDelegates() {
 }
 
@@ -28,7 +32,4 @@ void USCDialogWidget::BPF_AddAllDelegates() {
 
 
 
-USCDialogWidget::USCDialogWidget() {
-    this->m_bHandleShowSubtitleOption = true;
-}
 

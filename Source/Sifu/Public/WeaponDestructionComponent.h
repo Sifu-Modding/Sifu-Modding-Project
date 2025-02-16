@@ -21,7 +21,8 @@ protected:
     float m_fDelayForCurrentOrderStop;
     
 public:
-    UWeaponDestructionComponent();
+    UWeaponDestructionComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 BPF_GetNumDamagedWeaponIndex() const;
     

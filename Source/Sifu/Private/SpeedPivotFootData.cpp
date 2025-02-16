@@ -6,3 +6,4 @@ USpeedPivotFootData::USpeedPivotFootData() {
     this->m_StopData = NULL;
 }
 
+

@@ -53,7 +53,8 @@ private:
     USCDialogComponent* m_DialogComponent;
     
 public:
-    ABaseCharacter();
+    ABaseCharacter(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnLandedRaw(const FHitResult& _Impact);
     
@@ -119,7 +120,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_BodyPartsUpdated();
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

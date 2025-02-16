@@ -8,5 +8,6 @@ class SIFU_API UMMCPrepFocusCooldown : public UGameplayModMagnitudeCalculation {
     GENERATED_BODY()
 public:
     UMMCPrepFocusCooldown();
+
 };
 

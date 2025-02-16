@@ -4,3 +4,4 @@ UGameDifficultyInfluenceTest::UGameDifficultyInfluenceTest() {
     this->m_uiGameDifficultyFlags = 7;
 }
 
+

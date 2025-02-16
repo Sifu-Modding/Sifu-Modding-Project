@@ -18,5 +18,6 @@ public:
     ECharacterStat m_eStatUsedToUnlockSkill;
     
     USkillGameplayEffect();
+
 };
 

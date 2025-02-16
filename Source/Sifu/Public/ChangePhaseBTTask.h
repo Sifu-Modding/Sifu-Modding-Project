@@ -8,5 +8,6 @@ class SIFU_API UChangePhaseBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UChangePhaseBTTask();
+
 };
 

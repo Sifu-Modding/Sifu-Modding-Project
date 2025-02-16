@@ -5,3 +5,4 @@ UWGLevelSequenceRoleData::UWGLevelSequenceRoleData() {
     this->m_ForcedAIBehavior = ELevelSequenceAIBehavior::None;
 }
 
+

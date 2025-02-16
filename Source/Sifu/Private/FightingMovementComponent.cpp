@@ -1,8 +1,17 @@
 #include "FightingMovementComponent.h"
 
-class AActor;
-class UBaseMovementDB;
-class UEffectData;
+UFightingMovementComponent::UFightingMovementComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_fPenetrationExpulsionSpeed = 400.00f;
+    this->m_eMoveStatus = EMoveStatus::None;
+    this->m_BaseMovementDB = NULL;
+    this->m_bOverlapOnRemoveCollision = true;
+    this->m_bPushForceScaledToMassInNavWalking = false;
+    this->m_fInitialPushForceFactorInNavWalking = 500.00f;
+    this->m_fPushForceFactorInNavWalking = 750000.00f;
+    this->m_fFlyModeSpeed = 720.00f;
+    this->m_fFlyModeRushSpeed = 2000.00f;
+    this->m_TraversalInfosDB = NULL;
+}
 
 void UFightingMovementComponent::ServerPopDesyncFromServer_Implementation(uint8 _uiResyncID) {
 }
@@ -88,16 +97,4 @@ ESpeedState UFightingMovementComponent::BPF_GetCurrentSpeedState() const {
     return ESpeedState::V0;
 }
 
-UFightingMovementComponent::UFightingMovementComponent() {
-    this->m_fPenetrationExpulsionSpeed = 400.00f;
-    this->m_eMoveStatus = EMoveStatus::None;
-    this->m_BaseMovementDB = NULL;
-    this->m_bOverlapOnRemoveCollision = true;
-    this->m_bPushForceScaledToMassInNavWalking = false;
-    this->m_fInitialPushForceFactorInNavWalking = 500.00f;
-    this->m_fPushForceFactorInNavWalking = 750000.00f;
-    this->m_fFlyModeSpeed = 720.00f;
-    this->m_fFlyModeRushSpeed = 2000.00f;
-    this->m_TraversalInfosDB = NULL;
-}
 

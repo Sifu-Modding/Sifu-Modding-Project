@@ -4,3 +4,4 @@ UOrderPlayAnimVariableWeightDB::UOrderPlayAnimVariableWeightDB() {
     this->m_bUpdateQuadrant = false;
 }
 
+

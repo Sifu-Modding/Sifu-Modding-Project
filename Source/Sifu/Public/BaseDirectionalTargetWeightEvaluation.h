@@ -8,5 +8,6 @@ class SIFU_API UBaseDirectionalTargetWeightEvaluation : public UObject {
     GENERATED_BODY()
 public:
     UBaseDirectionalTargetWeightEvaluation();
+
 };
 

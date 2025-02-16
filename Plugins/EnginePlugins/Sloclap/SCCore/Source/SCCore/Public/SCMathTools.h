@@ -21,6 +21,7 @@ class SCCORE_API USCMathTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCMathTools();
+
     UFUNCTION(BlueprintCallable)
     static FVector VectorCriticalSpringInterp(FVector _vCurrent, const FVector& _vTarget, UPARAM(Ref) FVector& _vInOutVelocity, float _fSpeedFactor, float _fDeltaTime);
     

@@ -8,5 +8,6 @@ class SIFU_API UDebugMenuAbility : public USCGameplayAbility {
     GENERATED_BODY()
 public:
     UDebugMenuAbility();
+
 };
 

@@ -8,5 +8,6 @@ class SIFU_API UAISenseConfig_SCClose : public UAISenseConfig_Sight {
     GENERATED_BODY()
 public:
     UAISenseConfig_SCClose();
+
 };
 

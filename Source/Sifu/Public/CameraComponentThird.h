@@ -76,9 +76,10 @@ private:
     bool m_bCameraLDMode;
     
 public:
-    UCameraComponentThird();
+    UCameraComponentThird(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable)
     void BPF_UpdateCachedTargets();
     
@@ -274,7 +275,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void BPF_AddLookAt(const FCameraLookAtServiceBehavior& _newLookAt, int32& _iHandle);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

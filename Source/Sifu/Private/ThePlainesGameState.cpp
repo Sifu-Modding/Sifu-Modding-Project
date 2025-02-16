@@ -1,6 +1,26 @@
 #include "ThePlainesGameState.h"
 #include "Net/UnrealNetwork.h"
 
+AThePlainesGameState::AThePlainesGameState(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_iNumPlayersPerTeam = 1;
+    this->m_bFriendlyFire = false;
+    this->m_uiLastHostZone = 15;
+    this->m_iNumTeams = 1;
+    this->m_fTimeBeforeVanishActive = 0.00f;
+    this->m_bShouldGiveXPOnKill = true;
+    this->m_bHasRunOnce = false;
+    this->m_eThresholdDangerState = EDangerStates::Safe;
+    this->m_fReviveTime = 5.00f;
+    this->m_fDeathRespawnTime = 5.00f;
+    this->m_fReviveLifePercent = 0.30f;
+    this->m_fDeathLifePercent = 1.00f;
+    this->m_fRoomClearedLifePercent = 1.00f;
+    this->m_fVanishTime = 4.00f;
+    this->m_bCanGoDown = true;
+    this->m_fDownTime = 3.00f;
+    this->m_fRespawnTimeNoDown = 3.00f;
+}
+
 void AThePlainesGameState::OnRepNumTeam() {
 }
 
@@ -35,23 +55,4 @@ void AThePlainesGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>&
     DOREPLIFETIME(AThePlainesGameState, m_ToSpawnFrom);
 }
 
-AThePlainesGameState::AThePlainesGameState() {
-    this->m_iNumPlayersPerTeam = 1;
-    this->m_bFriendlyFire = false;
-    this->m_uiLastHostZone = 15;
-    this->m_iNumTeams = 1;
-    this->m_fTimeBeforeVanishActive = 0.00f;
-    this->m_bShouldGiveXPOnKill = true;
-    this->m_bHasRunOnce = false;
-    this->m_eThresholdDangerState = EDangerStates::Safe;
-    this->m_fReviveTime = 5.00f;
-    this->m_fDeathRespawnTime = 5.00f;
-    this->m_fReviveLifePercent = 0.30f;
-    this->m_fDeathLifePercent = 1.00f;
-    this->m_fRoomClearedLifePercent = 1.00f;
-    this->m_fVanishTime = 4.00f;
-    this->m_bCanGoDown = true;
-    this->m_fDownTime = 3.00f;
-    this->m_fRespawnTimeNoDown = 3.00f;
-}
 

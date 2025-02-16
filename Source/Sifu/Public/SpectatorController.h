@@ -7,7 +7,8 @@ UCLASS(Blueprintable)
 class SIFU_API ASpectatorController : public ASCPlayerController {
     GENERATED_BODY()
 public:
-    ASpectatorController();
+    ASpectatorController(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Exec)
     void BPF_ExitSpectatorMode();
     

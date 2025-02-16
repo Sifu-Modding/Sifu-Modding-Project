@@ -1,6 +1,14 @@
 #include "MenuDB.h"
 
-class UTexture2D;
+UMenuDB::UMenuDB() {
+//    this->m_AudioMove = NULL;
+  //  this->m_AudioValidate = NULL;
+    //this->m_AudioBack = NULL;
+    this->m_QuadrantSelectionIcons[0] = NULL;
+    this->m_QuadrantSelectionIcons[1] = NULL;
+    this->m_QuadrantSelectionIcons[2] = NULL;
+    this->m_QuadrantSelectionIcons[3] = NULL;
+}
 
 UTexture2D* UMenuDB::BPF_GetStanceIcon(EQuadrantTypes _eQuadrant, EIconStyle _eIconStyle) const {
     return NULL;
@@ -37,13 +45,4 @@ TSoftObjectPtr<UTexture2D> UMenuDB::BPF_GetAttackAvoidIcon(EAvoidType _eAvoidTyp
     return NULL;
 }
 
-UMenuDB::UMenuDB() {
-    /*this->m_AudioMove = NULL;
-    this->m_AudioValidate = NULL;
-    this->m_AudioBack = NULL;*/
-    this->m_QuadrantSelectionIcons[0] = NULL;
-    this->m_QuadrantSelectionIcons[1] = NULL;
-    this->m_QuadrantSelectionIcons[2] = NULL;
-    this->m_QuadrantSelectionIcons[3] = NULL;
-}
 

@@ -7,7 +7,7 @@ enum class EBoundingBoxSides : uint8 {
     None,
     Left,
     Right,
-    Front = 0x4,
-    Back = 0x10,
+    Front = 4,
+    Back = 16,
 };
 

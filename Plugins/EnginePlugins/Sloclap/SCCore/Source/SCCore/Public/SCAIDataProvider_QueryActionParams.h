@@ -15,5 +15,6 @@ public:
     FGameplayTag m_ActionInjectionTag;
     
     USCAIDataProvider_QueryActionParams();
+
 };
 

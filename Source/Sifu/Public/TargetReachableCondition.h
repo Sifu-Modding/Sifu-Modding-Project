@@ -37,5 +37,6 @@ public:
     FVector m_vNavQueryExtent;
     
     UTargetReachableCondition();
+
 };
 

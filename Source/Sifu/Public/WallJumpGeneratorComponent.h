@@ -38,8 +38,9 @@ private:
     TArray<FGeneratedWallInfos> m_Walls;
     
 public:
-    UWallJumpGeneratorComponent();
-    
+    UWallJumpGeneratorComponent(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

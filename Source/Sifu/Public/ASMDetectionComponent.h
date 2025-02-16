@@ -14,8 +14,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<USCGameplayAbility>> m_AbilityDetection;
     
-    UASMDetectionComponent();
-    
+    UASMDetectionComponent(const FObjectInitializer& ObjectInitializer);
+
+
     // Fix for true pure virtual functions not being implemented
 };
 

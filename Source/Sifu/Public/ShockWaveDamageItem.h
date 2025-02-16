@@ -14,6 +14,7 @@ protected:
     UCurveFloat* m_KnockbackCoefOverDistToInstig;
     
 public:
-    AShockWaveDamageItem();
+    AShockWaveDamageItem(const FObjectInitializer& ObjectInitializer);
+
 };
 

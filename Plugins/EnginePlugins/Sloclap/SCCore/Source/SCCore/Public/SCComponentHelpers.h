@@ -8,5 +8,6 @@ class SCCORE_API USCComponentHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCComponentHelpers();
+
 };
 

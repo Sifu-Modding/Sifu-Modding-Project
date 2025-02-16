@@ -53,5 +53,6 @@ public:
     TSubclassOf<UTakedownAnimRequest> m_animRequest;
     
     UWallEnvironmentalAttackSettings();
+
 };
 

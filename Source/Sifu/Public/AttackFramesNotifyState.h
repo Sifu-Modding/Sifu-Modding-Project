@@ -13,5 +13,6 @@ public:
     UAttackDB* m_DB;
     
     UAttackFramesNotifyState();
+
 };
 

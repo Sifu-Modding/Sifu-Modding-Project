@@ -30,6 +30,7 @@ protected:
     
 public:
     UReplaySaveGame();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FString BPE_GetTitleInfoForSaveFile(const FString& _fileName, bool _bIsMetaData) const;
     

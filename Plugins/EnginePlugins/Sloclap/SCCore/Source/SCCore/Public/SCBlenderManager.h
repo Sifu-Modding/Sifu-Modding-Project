@@ -7,6 +7,7 @@ UCLASS(Blueprintable)
 class SCCORE_API ASCBlenderManager : public AActor {
     GENERATED_BODY()
 public:
-    ASCBlenderManager();
+    ASCBlenderManager(const FObjectInitializer& ObjectInitializer);
+
 };
 

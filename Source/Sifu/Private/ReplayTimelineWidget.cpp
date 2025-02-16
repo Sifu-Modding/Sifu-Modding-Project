@@ -1,8 +1,15 @@
 #include "ReplayTimelineWidget.h"
 
-class AReplayController;
-class UReplayKey;
-class UReplayKeyWidget;
+UReplayTimelineWidget::UReplayTimelineWidget() : UUserWidget(FObjectInitializer::Get()) {
+    this->m_fZoom = 1.00f;
+    this->m_fPreviewCursorAlphaTriggerUnzoom = 0.00f;
+    this->m_fAdaptZoomViewPercentage = 70.00f;
+    this->m_BackgroundWidget = NULL;
+    this->m_TransitionWidget = NULL;
+    this->m_KeysPanel = NULL;
+    this->m_KeyWidgetClass = NULL;
+    this->m_ReplayController = NULL;
+}
 
 void UReplayTimelineWidget::OnTimelineControllerTransitionContextInitialized() {
 }
@@ -75,14 +82,4 @@ void UReplayTimelineWidget::BPE_OnKeyDilatedTimeRecalc_Implementation(int32 _iSt
 
 
 
-UReplayTimelineWidget::UReplayTimelineWidget() : UUserWidget(FObjectInitializer::Get()) {
-    this->m_fZoom = 1.00f;
-    this->m_fPreviewCursorAlphaTriggerUnzoom = 0.00f;
-    this->m_fAdaptZoomViewPercentage = 70.00f;
-    this->m_BackgroundWidget = NULL;
-    this->m_TransitionWidget = NULL;
-    this->m_KeysPanel = NULL;
-    this->m_KeyWidgetClass = NULL;
-    this->m_ReplayController = NULL;
-}
 

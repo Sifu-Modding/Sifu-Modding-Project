@@ -19,3 +19,4 @@ UInputsDB::UInputsDB() {
     this->m_fStickThresholdBetweenV1V2 = 0.90f;
 }
 
+

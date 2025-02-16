@@ -21,5 +21,6 @@ public:
     FAvailabilityLayerContainer m_AvailabilityInfo;
     
     UOrderDeflectedDB();
+
 };
 

@@ -13,6 +13,7 @@ public:
     bool m_bCanBeHitted;
     
     UOrderTraversalDB();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_HittedFallOnSlopeEntryAnim(const FNetOrderStructTraversal& _netOrderStruct, FAnimContainer& _outResult) const;
     

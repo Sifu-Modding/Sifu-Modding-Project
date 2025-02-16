@@ -1,6 +1,7 @@
 #include "VitalPointWidget.h"
 
-class AVitalPointActor;
+UVitalPointWidget::UVitalPointWidget() {
+}
 
 AVitalPointActor* UVitalPointWidget::BPF_GetVitalPointActor() {
     return NULL;
@@ -8,6 +9,4 @@ AVitalPointActor* UVitalPointWidget::BPF_GetVitalPointActor() {
 
 
 
-UVitalPointWidget::UVitalPointWidget() {
-}
 

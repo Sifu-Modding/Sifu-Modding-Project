@@ -21,7 +21,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FOnVitalPointValidated OnVitalPointValidated;
     
-    AVitalPointActor();
+    AVitalPointActor(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnBillBoardSelectionChanged(bool _bSelected, AAimingBillboardActor* _billboard);

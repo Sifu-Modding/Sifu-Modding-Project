@@ -29,6 +29,7 @@ protected:
     
 public:
     UBoolCameraMixerBlender();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetOldValue() const;

@@ -1,5 +1,6 @@
 #include "AIBehaviorTreeComponent.h"
 
-UAIBehaviorTreeComponent::UAIBehaviorTreeComponent() {
+UAIBehaviorTreeComponent::UAIBehaviorTreeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

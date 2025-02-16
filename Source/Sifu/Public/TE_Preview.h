@@ -11,5 +11,6 @@ public:
     float m_fCameraTargetDirectionCoeff;
     
     UTE_Preview();
+
 };
 

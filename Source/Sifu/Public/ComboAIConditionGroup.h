@@ -19,5 +19,6 @@ public:
     TArray<FAIConditionClassInstance> m_Conditions;
     
     UComboAIConditionGroup();
+
 };
 

@@ -9,3 +9,4 @@ UVitalPointData::UVitalPointData() {
     this->m_CheckConditionBlueprint = NULL;
 }
 
+

@@ -2,9 +2,36 @@
 #include "Components/SceneComponent.h"
 #include "Templates/SubclassOf.h"
 
-class ABaseCharacter;
-class ABaseWeapon;
-class UAIPhaseScenario;
+AAISpawner::AAISpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    this->m_SpawningClass = NULL;
+    this->m_bForcedPreFightLookAtTarget = false;
+    this->m_ForcedPreFightLookAtTarget = NULL;
+    this->m_pathPatrol = NULL;
+    this->m_ePatrolLaunchMethod = EPatrolLaunchMethod::AtSpawn;
+    this->m_PhaseScenarios[0] = NULL;
+    this->m_PhaseScenarios[1] = NULL;
+    this->m_PhaseScenarios[2] = NULL;
+    this->m_PhaseScenario = NULL;
+    this->m_eFaction = EFactionsEnums::Count;
+    this->m_fRespawnTime = 0.10f;
+    this->m_fSpawnDelay = 0.00f;
+    this->m_bCanRespawn = true;
+    this->m_bLowStructureOnSpawn = true;
+    this->m_bIsLoneWolf = false;
+    this->m_iSoundTensionLevelOverride = 0;
+    this->m_iChargesToAddWhenKilled = 0;
+    this->m_iDeathCounterDecreaseWhenKilled = 0;
+    this->m_bDeathCounterResetWhenKilled = false;
+    this->m_eFirstSpawnMethod = EFirstSpawnMethod::OnAnEvent;
+    this->m_bAllowPerceptionInstantOnSpawn = false;
+    this->m_RootComp = (USceneComponent*)RootComponent;
+    this->m_carriedWeapon = NULL;
+    this->m_bKeepIdleAnimDuringAlertedDialogs = false;
+    this->m_AIIdleDB = NULL;
+    this->m_EditorClass = NULL;
+    this->m_PhaseScenarioOverride = NULL;
+}
 
 void AAISpawner::OnAiBehaviorChanged(EGlobalBehaviors _eNewBehavior, const bool _bFromDialog) {
 }
@@ -63,33 +90,4 @@ void AAISpawner::BPF_AskForRespawn() {
 
 
 
-AAISpawner::AAISpawner() {
-    this->m_SpawningClass = NULL;
-    this->m_bForcedPreFightLookAtTarget = false;
-    this->m_ForcedPreFightLookAtTarget = NULL;
-    this->m_pathPatrol = NULL;
-    this->m_ePatrolLaunchMethod = EPatrolLaunchMethod::AtSpawn;
-    this->m_PhaseScenarios[0] = NULL;
-    this->m_PhaseScenarios[1] = NULL;
-    this->m_PhaseScenarios[2] = NULL;
-    this->m_PhaseScenario = NULL;
-    this->m_eFaction = EFactionsEnums::Count;
-    this->m_fRespawnTime = 0.10f;
-    this->m_fSpawnDelay = 0.00f;
-    this->m_bCanRespawn = true;
-    this->m_bLowStructureOnSpawn = true;
-    this->m_bIsLoneWolf = false;
-    this->m_iSoundTensionLevelOverride = 0;
-    this->m_iChargesToAddWhenKilled = 0;
-    this->m_iDeathCounterDecreaseWhenKilled = 0;
-    this->m_bDeathCounterResetWhenKilled = false;
-    this->m_eFirstSpawnMethod = EFirstSpawnMethod::OnAnEvent;
-    this->m_bAllowPerceptionInstantOnSpawn = false;
-    this->m_RootComp = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-    this->m_carriedWeapon = NULL;
-    this->m_bKeepIdleAnimDuringAlertedDialogs = false;
-    this->m_AIIdleDB = NULL;
-    this->m_EditorClass = NULL;
-    this->m_PhaseScenarioOverride = NULL;
-}
 

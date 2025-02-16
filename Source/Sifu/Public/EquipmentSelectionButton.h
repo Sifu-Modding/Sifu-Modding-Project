@@ -8,6 +8,7 @@ class SIFU_API UEquipmentSelectionButton : public USCButton {
     GENERATED_BODY()
 public:
     UEquipmentSelectionButton();
+
     UFUNCTION(BlueprintCallable)
     void OnButtonClicked();
     

@@ -16,6 +16,7 @@ protected:
     
 public:
     UReplayLoadingScreenWidget();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void BPF_NotifyHideCompleted();

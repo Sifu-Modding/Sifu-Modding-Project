@@ -21,5 +21,6 @@ public:
     TSubclassOf<UInteractionObjectComponent> m_CheckType;
     
     UCharacterContextualObjectCondition();
+
 };
 

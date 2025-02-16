@@ -26,5 +26,6 @@ public:
     TSubclassOf<AActor> m_ActorClass;
     
     UEnvQueryGenerator_ActorClassFromManager();
+
 };
 

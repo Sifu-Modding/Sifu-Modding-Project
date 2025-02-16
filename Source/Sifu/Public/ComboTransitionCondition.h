@@ -26,6 +26,7 @@ private:
     
 public:
     UComboTransitionCondition();
+
     UFUNCTION(BlueprintCallable)
     static bool BPF_TestConditionOfClass(TSubclassOf<UComboTransitionCondition> _condition, const AFightingCharacter* _owner);
     

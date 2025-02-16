@@ -8,5 +8,6 @@ class SIFU_API UDifficultyInfluenceTest : public UFloatInfluenceTest {
     GENERATED_BODY()
 public:
     UDifficultyInfluenceTest();
+
 };
 

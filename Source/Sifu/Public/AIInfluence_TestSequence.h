@@ -16,5 +16,6 @@ public:
     float m_fProbability;
     
     UAIInfluence_TestSequence();
+
 };
 

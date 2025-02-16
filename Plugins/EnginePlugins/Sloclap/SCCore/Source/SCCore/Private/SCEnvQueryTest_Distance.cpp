@@ -8,3 +8,4 @@ USCEnvQueryTest_Distance::USCEnvQueryTest_Distance() {
     this->m_ToContext = UEnvQueryContext_Item::StaticClass();
 }
 
+

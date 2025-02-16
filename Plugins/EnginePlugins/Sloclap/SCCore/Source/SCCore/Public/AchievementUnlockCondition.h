@@ -57,6 +57,7 @@ protected:
     
 public:
     UAchievementUnlockCondition();
+
     UFUNCTION(BlueprintCallable)
     void BPF_UnlockAchievement(bool _bShutdownCondition);
     

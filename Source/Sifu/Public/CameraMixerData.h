@@ -23,6 +23,7 @@ public:
     bool m_bUseEndCamForTransition;
     
     UCameraMixerData();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void ImportTransitionsFromStartCam();

@@ -18,6 +18,7 @@ public:
     TArray<FPhaseNodeHandler> m_PhaseNodes;
     
     UAIPhaseScenario();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FName BPF_GetPhaseNameFromIndex(int32 _iPhaseIndex) const;
     

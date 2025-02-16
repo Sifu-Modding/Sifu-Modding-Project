@@ -13,6 +13,7 @@ public:
     FText m_NodeName;
     
     UBPInfluenceTest();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_RunBPTest(const UAIFightingComponent* _testedAI) const;
     

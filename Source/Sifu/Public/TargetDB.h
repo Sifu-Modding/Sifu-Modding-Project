@@ -55,5 +55,6 @@ public:
     TMap<EActionType, TSubclassOf<UTargetSettingsDB>> m_Settings;
     
     UTargetDB();
+
 };
 

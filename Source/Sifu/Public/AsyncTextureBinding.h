@@ -9,6 +9,7 @@ class SIFU_API UAsyncTextureBinding : public UPropertyBinding {
     GENERATED_BODY()
 public:
     UAsyncTextureBinding();
+
     UFUNCTION(BlueprintCallable)
     FAsyncTextureStruct GetValue() const;
     

@@ -24,6 +24,7 @@ protected:
     
 public:
     URangeFeedbackUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnDefaultValuesSet();

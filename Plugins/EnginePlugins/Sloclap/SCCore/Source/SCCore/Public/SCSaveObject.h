@@ -16,6 +16,7 @@ public:
     uint32 m_uiVersion;
     
     USCSaveObject();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FString BPE_GetSubtitlesInfoForSaveFile() const;
     

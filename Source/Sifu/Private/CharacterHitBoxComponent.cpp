@@ -1,5 +1,6 @@
 #include "CharacterHitBoxComponent.h"
 
-UCharacterHitBoxComponent::UCharacterHitBoxComponent() {
+UCharacterHitBoxComponent::UCharacterHitBoxComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

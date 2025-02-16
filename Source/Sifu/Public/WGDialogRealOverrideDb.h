@@ -12,5 +12,6 @@ public:
     EJoinDialogActors m_eJoinDialogActorsOnStart;
     
     UWGDialogRealOverrideDb();
+
 };
 

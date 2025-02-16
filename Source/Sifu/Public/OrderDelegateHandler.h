@@ -24,5 +24,6 @@ public:
     FOrderStartingDynamicDelegate m_OnCanceled;
     
     UOrderDelegateHandler();
+
 };
 

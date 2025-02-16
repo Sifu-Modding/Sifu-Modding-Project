@@ -45,7 +45,7 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_EquipmentSocketName;
     
-    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AFightingCharacter> m_weaponBearer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -64,7 +64,8 @@ protected:
     bool m_bAvailableForIA;
     
 public:
-    ABaseWeapon();
+    ABaseWeapon(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_ResetWeaponGameplayData();
     
@@ -95,7 +96,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BPE_CanUseDamagedWeapon(int32 _iDamagedWeaponIndex);
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

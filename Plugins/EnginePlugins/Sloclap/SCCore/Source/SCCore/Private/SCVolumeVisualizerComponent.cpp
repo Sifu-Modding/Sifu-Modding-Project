@@ -1,5 +1,6 @@
 #include "SCVolumeVisualizerComponent.h"
 
-USCVolumeVisualizerComponent::USCVolumeVisualizerComponent() {
+USCVolumeVisualizerComponent::USCVolumeVisualizerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

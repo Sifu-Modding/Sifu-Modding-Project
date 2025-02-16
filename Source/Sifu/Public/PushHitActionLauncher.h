@@ -30,5 +30,6 @@ public:
     float m_fForcedAILocalDirectionAngle;
     
     UPushHitActionLauncher();
+
 };
 

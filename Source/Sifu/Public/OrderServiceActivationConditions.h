@@ -10,6 +10,7 @@ class SIFU_API UOrderServiceActivationConditions : public UObject {
     GENERATED_BODY()
 public:
     UOrderServiceActivationConditions();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     bool BPE_CanActivate(uint8 _uiOrderId, const ABaseCharacter* _owner) const;

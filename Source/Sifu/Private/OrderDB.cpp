@@ -1,8 +1,5 @@
 #include "OrderDB.h"
 
-
-
-
 UOrderDB::UOrderDB() {
     this->m_eOrderType = EOrderType::None;
     this->m_ePushFightingStateOnStart = EFightingActionState::None;
@@ -18,4 +15,8 @@ UOrderDB::UOrderDB() {
     this->m_eOverridenLookAtRefDirMode = ELookAtRefDirMode::AnimDir;
     this->m_bOrderToLocoUseSpeedStateSpeedForStartingSpeedBlend = false;
 }
+
+
+
+
 

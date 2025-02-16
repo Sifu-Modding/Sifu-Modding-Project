@@ -11,5 +11,6 @@ public:
     TArray<FString> Tags;
     
     USCDlcConfig();
+
 };
 

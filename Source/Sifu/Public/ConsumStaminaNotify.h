@@ -8,5 +8,6 @@ class SIFU_API UConsumStaminaNotify : public UStaminaNotify {
     GENERATED_BODY()
 public:
     UConsumStaminaNotify();
+
 };
 

@@ -22,7 +22,8 @@ protected:
     EGlobalBehaviors m_eNewBehavior;
     
 public:
-    UAIBehaviorSwitchActorComponent();
+    UAIBehaviorSwitchActorComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnComponentStartOverlap(AActor* OverlappedActor, AActor* OtherActor);

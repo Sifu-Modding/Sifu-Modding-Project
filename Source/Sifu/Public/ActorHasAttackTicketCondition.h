@@ -8,5 +8,6 @@ class SIFU_API UActorHasAttackTicketCondition : public UBaseActorCondition {
     GENERATED_BODY()
 public:
     UActorHasAttackTicketCondition();
+
 };
 

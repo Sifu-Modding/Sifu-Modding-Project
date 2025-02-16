@@ -22,6 +22,7 @@ protected:
     
 public:
     UAIActionFetchObject();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnPickupStarting(uint8 _uiOrderId, UOrderComponent* _OrderComponent);

@@ -14,6 +14,7 @@ public:
     bool m_bPlayPrefightAnimations;
     
     UJoinDialogAction();
+
 protected:
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetActorOptions() const;

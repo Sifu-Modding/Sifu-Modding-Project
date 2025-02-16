@@ -155,6 +155,7 @@ public:
     FSCUserDefinedEnumHandler m_BPPickupOnParryOrderID;
     
     UGuardDB();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void BPF_GetPickupOnParryAnim(const FHitRequest& _request, AFightingCharacter* _character, FAnimContainer& _outAnim) const;
     

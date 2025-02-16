@@ -32,5 +32,6 @@ public:
     FString m_MetaData;
     
     URichTextBlockControllerDecorator();
+
 };
 

@@ -1,11 +1,10 @@
 #include "CSCGameplayAbilityTargetDataLibrary.h"
 
-class AActor;
+UCSCGameplayAbilityTargetDataLibrary::UCSCGameplayAbilityTargetDataLibrary() {
+}
 
 FGameplayAbilityTargetDataHandle UCSCGameplayAbilityTargetDataLibrary::BP_AbilityTargetDataWithTarget(AActor* _target) {
     return FGameplayAbilityTargetDataHandle{};
 }
 
-UCSCGameplayAbilityTargetDataLibrary::UCSCGameplayAbilityTargetDataLibrary() {
-}
 

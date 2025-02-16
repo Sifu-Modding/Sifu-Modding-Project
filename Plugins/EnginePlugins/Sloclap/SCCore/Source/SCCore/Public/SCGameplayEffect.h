@@ -8,5 +8,6 @@ class SCCORE_API USCGameplayEffect : public UGameplayEffect {
     GENERATED_BODY()
 public:
     USCGameplayEffect();
+
 };
 

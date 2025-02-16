@@ -33,6 +33,7 @@ protected:
     
 public:
     UFootStepAnimNotify();
+
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void BPF_SetFoot(FName _Foot) const;
     

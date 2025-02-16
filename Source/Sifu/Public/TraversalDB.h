@@ -102,5 +102,6 @@ protected:
     
 public:
     UTraversalDB();
+
 };
 

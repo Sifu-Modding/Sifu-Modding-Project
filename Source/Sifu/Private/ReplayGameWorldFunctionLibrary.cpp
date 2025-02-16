@@ -1,11 +1,7 @@
 #include "ReplayGameWorldFunctionLibrary.h"
 
-class AActor;
-class AFightingCharacter;
-class ASCCharacterImpostor;
-class ASCPlayerController;
-class UExponentialHeightFogComponent;
-class UObject;
+UReplayGameWorldFunctionLibrary::UReplayGameWorldFunctionLibrary() {
+}
 
 bool UReplayGameWorldFunctionLibrary::BPF_IsPhotomodeActivated(const UObject* _worldContextObject) {
     return false;
@@ -43,6 +39,4 @@ TArray<AActor*> UReplayGameWorldFunctionLibrary::BPF_GetActiveAIAndImpostors(con
     return TArray<AActor*>();
 }
 
-UReplayGameWorldFunctionLibrary::UReplayGameWorldFunctionLibrary() {
-}
 

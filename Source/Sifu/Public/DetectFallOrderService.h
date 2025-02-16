@@ -62,6 +62,7 @@ public:
     FAnimContainer m_CustomFallAnimOnSlope;
     
     UDetectFallOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector BPE_GetDirection(const FBPOrderServiceInstance& _instance) const;
     

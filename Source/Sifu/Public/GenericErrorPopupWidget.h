@@ -10,6 +10,7 @@ class SIFU_API UGenericErrorPopupWidget : public USCUserWidget {
     GENERATED_BODY()
 public:
     UGenericErrorPopupWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UPopupWidget* BPE_GetPopupWidget();

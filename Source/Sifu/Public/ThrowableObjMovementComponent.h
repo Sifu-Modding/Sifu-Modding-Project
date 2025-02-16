@@ -26,6 +26,7 @@ protected:
     float m_fFrictionForce;
     
 public:
-    UThrowableObjMovementComponent();
+    UThrowableObjMovementComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

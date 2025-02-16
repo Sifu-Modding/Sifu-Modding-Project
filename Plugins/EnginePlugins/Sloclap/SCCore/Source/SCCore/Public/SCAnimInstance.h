@@ -47,8 +47,9 @@ protected:
     
 public:
     USCAnimInstance();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetSavedTransform(FName _savedBone) const;
     

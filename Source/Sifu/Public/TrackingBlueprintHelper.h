@@ -9,8 +9,12 @@ class SIFU_API UTrackingBlueprintHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UTrackingBlueprintHelper();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_SendTrackingEventTU4Launched();
+    
+    UFUNCTION(BlueprintCallable)
+    static void BPF_SendTrackingEventCustomChallengeStarted();
     
     UFUNCTION(BlueprintCallable)
     static void BPF_SendTrackingEventChallengeStart(const FText _sChallengeName);

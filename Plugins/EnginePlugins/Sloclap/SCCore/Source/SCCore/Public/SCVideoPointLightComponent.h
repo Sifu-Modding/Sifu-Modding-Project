@@ -23,7 +23,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UCurveLinearColor* m_ColourCurve;
     
-    USCVideoPointLightComponent();
+    USCVideoPointLightComponent(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void OnMediaOpen(const FString& _openedUrl);
     

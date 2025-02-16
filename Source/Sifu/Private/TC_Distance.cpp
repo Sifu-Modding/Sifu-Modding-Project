@@ -5,3 +5,4 @@ UTC_Distance::UTC_Distance() {
     this->m_fDistance = 100.00f;
 }
 
+

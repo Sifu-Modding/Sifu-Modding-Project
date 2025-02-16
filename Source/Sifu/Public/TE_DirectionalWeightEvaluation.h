@@ -24,5 +24,6 @@ public:
     TArray<UBaseDirectionalTargetWeightEvaluation*> m_Evaluations;
     
     UTE_DirectionalWeightEvaluation();
+
 };
 

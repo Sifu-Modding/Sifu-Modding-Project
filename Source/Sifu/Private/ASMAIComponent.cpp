@@ -1,5 +1,6 @@
 #include "ASMAIComponent.h"
 
-UASMAIComponent::UASMAIComponent() {
+UASMAIComponent::UASMAIComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

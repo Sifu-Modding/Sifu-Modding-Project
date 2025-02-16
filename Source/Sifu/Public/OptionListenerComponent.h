@@ -13,7 +13,8 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnOptionChangedDynamicDelegate OnOptionChanged;
     
-    UOptionListenerComponent();
+    UOptionListenerComponent(const FObjectInitializer& ObjectInitializer);
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ReceiveOnOptionChanged(EGameOptionTypes _eOptionType);

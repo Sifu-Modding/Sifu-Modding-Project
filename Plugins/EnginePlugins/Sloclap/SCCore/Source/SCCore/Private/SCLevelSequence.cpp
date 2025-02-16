@@ -1,15 +1,10 @@
 #include "SCLevelSequence.h"
 
-class AActor;
-class ACameraActor;
-class ACharacter;
-class APlayerController;
-class ASCSequenceAnchor;
-class UAnimMontage;
-class UAnimSequence;
-class ULevelSequence;
-class UMaterialParameterCollection;
-class USCLevelSequenceDirectorData;
+USCLevelSequence::USCLevelSequence() {
+    this->m_DataAsset = NULL;
+    this->m_ActorCamera = NULL;
+    this->m_ActorAnchor = NULL;
+}
 
 void USCLevelSequence::OnPreStop() {
 }
@@ -86,9 +81,4 @@ int32 USCLevelSequence::BPF_AddMaterialParameterBinding(UMaterialParameterCollec
 
 
 
-USCLevelSequence::USCLevelSequence() {
-    this->m_DataAsset = NULL;
-    this->m_ActorCamera = NULL;
-    this->m_ActorAnchor = NULL;
-}
 

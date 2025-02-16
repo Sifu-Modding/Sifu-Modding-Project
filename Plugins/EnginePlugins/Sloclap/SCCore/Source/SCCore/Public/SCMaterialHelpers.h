@@ -17,6 +17,7 @@ class SCCORE_API USCMaterialHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCMaterialHelpers();
+
     UFUNCTION(BlueprintCallable, meta=(WorldContext="_worldContext"))
     static void BPF_SetMPCVectorParameterValue(const UObject* _worldContext, UMaterialParameterCollection* _collection, FName _parameter, FVector _vValue);
     

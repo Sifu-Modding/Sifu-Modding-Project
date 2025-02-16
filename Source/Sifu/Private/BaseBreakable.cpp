@@ -4,8 +4,35 @@
 #include "SCStreamingActorComponent.h"
 #include "ReplayableDestructibleComponent.h"
 
-class AActor;
-class UPrimitiveComponent;
+ABaseBreakable::ABaseBreakable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<UReplayableDestructibleComponent>(TEXT("ReplayableDestructibleComponent"));
+    this->m_ProximityBoxCreatePhysics = CreateDefaultSubobject<UBoxComponent>(TEXT("ProximityBoxCreatePhysics"));
+    this->m_ReplayableDestructibleComponent = (UReplayableDestructibleComponent*)RootComponent;
+    this->m_ReplayablePhysObjectComponent = NULL;
+    this->m_PhysicalActorDependencyComponent = CreateDefaultSubobject<UPhysicalActorDependencyComponent>(TEXT("PhysicalDependencyComp"));
+    this->m_StreamingComponent = CreateDefaultSubobject<USCStreamingActorComponent>(TEXT("StreamingActorComponent"));
+    this->m_uiActionStateDestroyableByMask = 330715627672;
+    this->m_uiAIActionStateDestroyableByMask = 330715627736;
+    this->m_bFilterByActionStateOnOverlap = true;
+    this->m_bFilterByActionStateOnHit = false;
+    this->m_bFilterByResistanceIfMatchActionStateOnHit = true;
+    this->m_bFilterByResistanceIfDontMatchActionStateOnHit = false;
+    this->m_bDestroyableByThrowable = true;
+    this->m_uiThrowableStateDestroyableByMask = 32992;
+    this->m_fDestructionVelocityRef = 450.00f;
+    this->m_bExecuteFractureOnce = true;
+    this->m_bHasBeenFracturedOnce = false;
+    this->m_fMinDamageRadius = 30.00f;
+    this->m_fActionStateImpulseStrength = 300.00f;
+    this->m_fPhysicImpulseStrength = 200.00f;
+    this->m_fPhysicRightCursor = 700000.00f;
+    this->m_fThrowableImpulseStrength = 300.00f;
+    this->m_bPlayBounceSfx = true;
+    this->m_BounceRTPC = TEXT("GPE_Physical_Switch");
+    this->m_DestructionCauser = NULL;
+    this->m_fProximityCreatePhysicsOffset = 0.00f;
+    this->m_ProximityBoxCreatePhysics->SetupAttachment(RootComponent);
+}
 
 void ABaseBreakable::OnWakeStateChanged(bool _bIsAwake) {
 }
@@ -40,31 +67,4 @@ void ABaseBreakable::BPF_EngageDestruction(const FVector& _vInHurtOrigin, float 
 
 
 
-ABaseBreakable::ABaseBreakable() {
-    this->m_ProximityBoxCreatePhysics = CreateDefaultSubobject<UBoxComponent>(TEXT("ProximityBoxCreatePhysics"));
-    this->m_ReplayableDestructibleComponent = CreateDefaultSubobject<UReplayableDestructibleComponent>(TEXT("ReplayableDestructibleComponent"));
-    this->m_ReplayablePhysObjectComponent = NULL;
-    this->m_PhysicalActorDependencyComponent = CreateDefaultSubobject<UPhysicalActorDependencyComponent>(TEXT("PhysicalDependencyComp"));
-    this->m_StreamingComponent = CreateDefaultSubobject<USCStreamingActorComponent>(TEXT("StreamingActorComponent"));
-    this->m_uiActionStateDestroyableByMask = 330715627672;
-    this->m_uiAIActionStateDestroyableByMask = 330715627736;
-    this->m_bFilterByActionStateOnOverlap = true;
-    this->m_bFilterByActionStateOnHit = false;
-    this->m_bFilterByResistanceIfMatchActionStateOnHit = true;
-    this->m_bFilterByResistanceIfDontMatchActionStateOnHit = false;
-    this->m_bDestroyableByThrowable = true;
-    this->m_uiThrowableStateDestroyableByMask = 32992;
-    this->m_fDestructionVelocityRef = 450.00f;
-    this->m_bExecuteFractureOnce = true;
-    this->m_bHasBeenFracturedOnce = false;
-    this->m_fMinDamageRadius = 30.00f;
-    this->m_fActionStateImpulseStrength = 300.00f;
-    this->m_fPhysicImpulseStrength = 200.00f;
-    this->m_fPhysicRightCursor = 700000.00f;
-    this->m_fThrowableImpulseStrength = 300.00f;
-    this->m_bPlayBounceSfx = true;
-    this->m_BounceRTPC = TEXT("GPE_Physical_Switch");
-    this->m_DestructionCauser = NULL;
-    this->m_fProximityCreatePhysicsOffset = 0.00f;
-}
 

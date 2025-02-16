@@ -1,11 +1,24 @@
 #include "BaseCharacter.h"
+#include "SkeletalMeshComponentBudgeted.h"
 #include "CharacterTextLipSync.h"
 #include "OrderComponent.h"
 #include "SocialComponent.h"
 
-class AActor;
-class UMaterialInstanceDynamic;
-class UPrimitiveComponent;
+ABaseCharacter::ABaseCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USkeletalMeshComponentBudgeted>(TEXT("CharacterMesh0"))) {
+    this->bNetLoadOnClient = false;
+    this->bRelevantForNetworkReplays = false;
+    this->bReplicates = false;
+    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
+    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_None;
+    this->m_SocialComponent = CreateDefaultSubobject<USocialComponent>(TEXT("SocialComponent"));
+    this->m_OrderComponent = CreateDefaultSubobject<UOrderComponent>(TEXT("OrderComponent"));
+    this->m_LipSyncComp = CreateDefaultSubobject<UCharacterTextLipSync>(TEXT("LipSyncComp"));
+    this->m_iBuildUpMaxShrinkingFrames = 3;
+    this->m_SkinTones = NULL;
+    this->m_DialogComponent = NULL;
+    const FProperty* p_Mesh = GetClass()->FindPropertyByName("Mesh");
+    (*p_Mesh->ContainerPtrToValuePtr<USkeletalMeshComponent*>(this))->SetupAttachment(RootComponent);
+}
 
 void ABaseCharacter::OnLandedRaw(const FHitResult& _Impact) {
 }
@@ -74,12 +87,4 @@ void ABaseCharacter::BPF_CreateDynamicMaterials(EFXMaterials _eFxType, bool _bFr
 
 
 
-ABaseCharacter::ABaseCharacter() {
-    this->m_SocialComponent = CreateDefaultSubobject<USocialComponent>(TEXT("SocialComponent"));
-    this->m_OrderComponent = CreateDefaultSubobject<UOrderComponent>(TEXT("OrderComponent"));
-    this->m_LipSyncComp = CreateDefaultSubobject<UCharacterTextLipSync>(TEXT("LipSyncComp"));
-    this->m_iBuildUpMaxShrinkingFrames = 3;
-    this->m_SkinTones = NULL;
-    this->m_DialogComponent = NULL;
-}
 

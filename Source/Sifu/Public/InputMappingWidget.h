@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-//#include "InputCoreTypes.h"
+#include "InputCoreTypes.h"
 #include "AsyncTextureStruct.h"
 #include "EMappableFieldScaleTypes.h"
 #include "ERemappingAllowedInputTypes.h"
@@ -61,6 +61,7 @@ public:
     ERemappingAllowedInputTypes m_eRemappingAllowedType;
     
     UInputMappingWidget();
+
     UFUNCTION(BlueprintCallable)
     void BPF_WaitingKeyInput(EMappableFieldScaleTypes _eScaleType);
     

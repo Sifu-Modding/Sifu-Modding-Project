@@ -302,5 +302,6 @@ public:
     FCollisionResponseContainer m_CameraAnimDrivenRootCheckCollisionResponseParam;
     
     UCameraDB();
+
 };
 

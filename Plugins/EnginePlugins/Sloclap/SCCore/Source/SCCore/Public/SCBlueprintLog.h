@@ -14,6 +14,7 @@ class SCCORE_API USCBlueprintLog : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCBlueprintLog();
+
     UFUNCTION(BlueprintCallable)
     static void BPFLogCategory(const FString& _text, FName _categoryName, DisplayLevel _eDisplayLevel);
     

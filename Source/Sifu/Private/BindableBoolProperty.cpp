@@ -1,5 +1,8 @@
 #include "BindableBoolProperty.h"
 
+UBindableBoolProperty::UBindableBoolProperty() {
+}
+
 void UBindableBoolProperty::BPF_SetValue(bool _bValue) {
 }
 
@@ -10,6 +13,4 @@ bool UBindableBoolProperty::BPF_GetValue() const {
     return false;
 }
 
-UBindableBoolProperty::UBindableBoolProperty() {
-}
 

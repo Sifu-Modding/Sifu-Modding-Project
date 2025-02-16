@@ -3,7 +3,7 @@
 #include "BaseCombatPositionSettings.h"
 #include "DeathPositionSettings.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(Blueprintable, Config=Engine)
 class SIFU_API UDeathPositionSettings : public UBaseCombatPositionSettings {
     GENERATED_BODY()
 public:
@@ -17,5 +17,6 @@ public:
     int32 m_iProbaToPlayLightSurprise;
     
     UDeathPositionSettings();
+
 };
 

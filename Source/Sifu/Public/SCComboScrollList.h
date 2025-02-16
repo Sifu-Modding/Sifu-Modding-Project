@@ -13,6 +13,7 @@ public:
     FItemSelected OnItemSelected;
     
     USCComboScrollList();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_InitFromStrings(const TArray<FString>& _list, int32 _iSelectedItem);
     

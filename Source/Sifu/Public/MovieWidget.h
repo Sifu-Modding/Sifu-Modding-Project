@@ -28,6 +28,7 @@ private:
     
 public:
     UMovieWidget();
+
 private:
     UFUNCTION(BlueprintCallable)
     void MediaOpenedCallback(const FString& _url);

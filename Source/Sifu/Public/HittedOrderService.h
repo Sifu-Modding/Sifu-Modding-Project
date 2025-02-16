@@ -31,6 +31,7 @@ public:
     EOrderType m_eInstigatorOrderType;
     
     UHittedOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     UAttackPropertiesResistanceDB* BPE_GetSpecialResistanceDB(const FBPOrderServiceInstance& _orderServiceInstance) const;
     
@@ -49,7 +50,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FAnimContainer BPE_GetFightingStateLoopAnim(const FBPOrderServiceInstance& _orderServiceInstance) const;
     
-    
+
     // Fix for true pure virtual functions not being implemented
 };
 

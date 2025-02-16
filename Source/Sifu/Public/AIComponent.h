@@ -35,9 +35,10 @@ private:
     UBehaviorTree* m_Behavior;
     
 public:
-    UAIComponent();
+    UAIComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnRep_Spawner();

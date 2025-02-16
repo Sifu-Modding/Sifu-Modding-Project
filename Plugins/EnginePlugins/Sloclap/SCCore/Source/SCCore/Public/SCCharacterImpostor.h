@@ -31,7 +31,11 @@ protected:
     UAnimInstance* m_AnimInstance;
     
 public:
-    ASCCharacterImpostor();
+    ASCCharacterImpostor(const FObjectInitializer& ObjectInitializer);
+
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ASCCharacter* GetCharacterToMimic() const;
+    
     UFUNCTION(BlueprintCallable)
     void BPF_Show();
     

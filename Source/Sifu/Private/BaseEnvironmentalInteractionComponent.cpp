@@ -1,6 +1,10 @@
 #include "BaseEnvironmentalInteractionComponent.h"
 
-class AFightingCharacter;
+UBaseEnvironmentalInteractionComponent::UBaseEnvironmentalInteractionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_bActive = true;
+    this->m_eReaction = EPushObstacleReaction::WallSplash;
+    this->m_uiAllowedInteractionTypes = 3;
+}
 
 
 EPushObstacleReaction UBaseEnvironmentalInteractionComponent::BPE_GetPushReaction_Implementation(const AFightingCharacter* _Instigator, const AFightingCharacter* _takenDown) {
@@ -11,9 +15,4 @@ bool UBaseEnvironmentalInteractionComponent::BPE_CanTakeDown_Implementation(AFig
     return false;
 }
 
-UBaseEnvironmentalInteractionComponent::UBaseEnvironmentalInteractionComponent() {
-    this->m_bActive = true;
-    this->m_eReaction = EPushObstacleReaction::WallSplash;
-    this->m_uiAllowedInteractionTypes = 3;
-}
 

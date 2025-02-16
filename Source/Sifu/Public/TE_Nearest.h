@@ -20,5 +20,6 @@ public:
     bool m_bAutoResetBestTarget;
     
     UTE_Nearest();
+
 };
 

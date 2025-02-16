@@ -5,3 +5,4 @@ UIdleDB::UIdleDB() {
     this->m_fReorientationTimeForEarlyBlendOutFromAttack = 0.40f;
 }
 
+

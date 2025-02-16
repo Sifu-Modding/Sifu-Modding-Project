@@ -12,5 +12,6 @@ public:
     FDirectoryPath m_DialogProjectPath;
     
     USCDialogPerUserSettings();
+
 };
 

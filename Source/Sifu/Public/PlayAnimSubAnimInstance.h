@@ -34,8 +34,9 @@ public:
     bool m_bIKEnabled;
     
     UPlayAnimSubAnimInstance();
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_SetTargetVerticalOffset(float _fVerticalOffet);
     

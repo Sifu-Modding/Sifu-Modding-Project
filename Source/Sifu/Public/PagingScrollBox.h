@@ -54,6 +54,7 @@ protected:
     
 public:
     UPagingScrollBox();
+
 protected:
     UFUNCTION(BlueprintCallable)
     void OnItemSelected(UButtonUserWidget* _button, UButtonUserWidget* _prevButton);

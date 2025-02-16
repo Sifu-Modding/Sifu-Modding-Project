@@ -11,6 +11,7 @@ class URichTextBlockControllerDecoratorHelper : public UBlueprintFunctionLibrary
     GENERATED_BODY()
 public:
     URichTextBlockControllerDecoratorHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString BPF_GetInputActionValueName(InputAction _eAction);
     

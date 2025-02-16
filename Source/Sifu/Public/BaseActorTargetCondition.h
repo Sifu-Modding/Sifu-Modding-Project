@@ -8,5 +8,6 @@ class SIFU_API UBaseActorTargetCondition : public UObject {
     GENERATED_BODY()
 public:
     UBaseActorTargetCondition();
+
 };
 

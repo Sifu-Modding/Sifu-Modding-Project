@@ -1,5 +1,6 @@
 #include "SVONVolumeRenderingComponent.h"
 
-USVONVolumeRenderingComponent::USVONVolumeRenderingComponent() {
+USVONVolumeRenderingComponent::USVONVolumeRenderingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

@@ -22,6 +22,7 @@ private:
     bool m_bSendBarkEventWhenSanctuaryIsSafe;
     
 public:
-    UAISanctuaryComponent();
+    UAISanctuaryComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

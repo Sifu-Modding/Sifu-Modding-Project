@@ -8,5 +8,6 @@ class SIFU_API UDisableCamFadeOnOwnerOrderService : public UOrderService {
     GENERATED_BODY()
 public:
     UDisableCamFadeOnOwnerOrderService();
+
 };
 

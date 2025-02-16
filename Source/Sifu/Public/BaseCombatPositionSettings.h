@@ -4,7 +4,7 @@
 #include "EAIWuguanTicketEvaluation.h"
 #include "BaseCombatPositionSettings.generated.h"
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, Blueprintable, Config=Engine)
 class SIFU_API UBaseCombatPositionSettings : public UBasePositionSettings {
     GENERATED_BODY()
 public:
@@ -12,5 +12,6 @@ public:
     TMap<EAIWuguanTicketEvaluation, float> m_fTestScoreFactors;
     
     UBaseCombatPositionSettings();
+
 };
 

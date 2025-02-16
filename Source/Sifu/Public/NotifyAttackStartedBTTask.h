@@ -8,5 +8,6 @@ class SIFU_API UNotifyAttackStartedBTTask : public USCBTTaskNode {
     GENERATED_BODY()
 public:
     UNotifyAttackStartedBTTask();
+
 };
 

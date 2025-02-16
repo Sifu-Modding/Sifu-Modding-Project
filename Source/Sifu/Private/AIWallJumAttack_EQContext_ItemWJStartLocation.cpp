@@ -3,3 +3,4 @@
 UAIWallJumAttack_EQContext_ItemWJStartLocation::UAIWallJumAttack_EQContext_ItemWJStartLocation() {
 }
 
+

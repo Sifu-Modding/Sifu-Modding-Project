@@ -1,13 +1,48 @@
 #include "DefenseComponent.h"
 #include "Net/UnrealNetwork.h"
 
-class AFightingCharacter;
-class UAttackPropertiesResistanceDB;
-class UEffectData;
-class UFightingMovementComponent;
-class UGuardDB;
-class UHealthComponent;
-class UVitalPointDB;
+UDefenseComponent::UDefenseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->m_UninterruptibleOrderByGuard.AddDefaulted(5);
+    this->m_ParryDB = NULL;
+    this->m_AvoidDB = NULL;
+    this->m_fCurrentGuard = 0.00f;
+    this->m_AvoidPropertyDB = NULL;
+    this->m_DefaultGuardDB = NULL;
+    this->m_fMaxGuard = 100.00f;
+    this->m_MaxGuardMultiplier[0] = 1.00f;
+    this->m_MaxGuardMultiplier[1] = 1.00f;
+    this->m_MaxGuardMultiplier[2] = 1.00f;
+    this->m_fGrabbableGuardRatio = 0.50f;
+    this->m_fGuardBrokenGaugeCoolDownBeforeRecovery = 0.50f;
+    this->m_fGuardRecoveryRate = 24.00f;
+    this->m_GuardRecoveryRateByLife = NULL;
+    this->m_GuardRecoveryRateByLifePerDifficulty[0] = NULL;
+    this->m_GuardRecoveryRateByLifePerDifficulty[1] = NULL;
+    this->m_GuardRecoveryRateByLifePerDifficulty[2] = NULL;
+    this->m_fGuardBrokenRecoveryRate = 48.00f;
+    this->m_GuardGaugeRecoveryRateOverWeightRatioCurve = NULL;
+    this->m_fGuardRecoveryRateCoeffWhenGuarding = 0.50f;
+    this->m_fGuardBreakDuration = 2.00f;
+    this->m_bCanDoActionIfGuardGaugeEmpty = true;
+    this->m_bGuardBlocksImpactsFromBack = false;
+    this->m_bIgnoreRecoveryBlockInGuardBroken = false;
+    this->m_eGuardType = EGuardType::None;
+    this->m_fRangeOfDodgeForRefill = 0.00f;
+    this->m_fDodgeRefillValue = 1.00f;
+    this->m_fDodgeGuardGaugeRefillValue = 0.00f;
+    this->m_fBareHandsGuardCoeff = 1.00f;
+    this->m_fBareHandsGuardSpecialCoeff = 0.00f;
+    this->m_AbsorbDB = NULL;
+    this->m_bCanBeSuperDizzy = true;
+    this->m_fSuperDizzyGaugeRatioAfterSuperDizzy = 0.00f;
+    this->m_fGuardGaugeRecoveryCooldown = -1.00f;
+    this->m_GuardGaugeRecoveryCooldownPerDifficulty[0] = 1.00f;
+    this->m_GuardGaugeRecoveryCooldownPerDifficulty[1] = 1.00f;
+    this->m_GuardGaugeRecoveryCooldownPerDifficulty[2] = 1.00f;
+    this->m_iResilience = 0;
+    this->m_iResilienceAttackBonus = 0;
+    this->m_AttackPropertyResistanceDB = NULL;
+}
 
 void UDefenseComponent::ServerSetGuardValue_Implementation(float _fGuard) {
 }
@@ -215,46 +250,4 @@ void UDefenseComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(UDefenseComponent, m_iResilience);
 }
 
-UDefenseComponent::UDefenseComponent() {
-    this->m_UninterruptibleOrderByGuard.AddDefaulted(5);
-    this->m_ParryDB = NULL;
-    this->m_AvoidDB = NULL;
-    this->m_fCurrentGuard = 0.00f;
-    this->m_AvoidPropertyDB = NULL;
-    this->m_DefaultGuardDB = NULL;
-    this->m_fMaxGuard = 100.00f;
-    this->m_MaxGuardMultiplier[0] = 1.00f;
-    this->m_MaxGuardMultiplier[1] = 1.00f;
-    this->m_MaxGuardMultiplier[2] = 1.00f;
-    this->m_fGrabbableGuardRatio = 0.50f;
-    this->m_fGuardBrokenGaugeCoolDownBeforeRecovery = 0.50f;
-    this->m_fGuardRecoveryRate = 24.00f;
-    this->m_GuardRecoveryRateByLife = NULL;
-    this->m_GuardRecoveryRateByLifePerDifficulty[0] = NULL;
-    this->m_GuardRecoveryRateByLifePerDifficulty[1] = NULL;
-    this->m_GuardRecoveryRateByLifePerDifficulty[2] = NULL;
-    this->m_fGuardBrokenRecoveryRate = 48.00f;
-    this->m_GuardGaugeRecoveryRateOverWeightRatioCurve = NULL;
-    this->m_fGuardRecoveryRateCoeffWhenGuarding = 0.50f;
-    this->m_fGuardBreakDuration = 2.00f;
-    this->m_bCanDoActionIfGuardGaugeEmpty = true;
-    this->m_bGuardBlocksImpactsFromBack = false;
-    this->m_bIgnoreRecoveryBlockInGuardBroken = false;
-    this->m_eGuardType = EGuardType::None;
-    this->m_fRangeOfDodgeForRefill = 0.00f;
-    this->m_fDodgeRefillValue = 1.00f;
-    this->m_fDodgeGuardGaugeRefillValue = 0.00f;
-    this->m_fBareHandsGuardCoeff = 1.00f;
-    this->m_fBareHandsGuardSpecialCoeff = 0.00f;
-    this->m_AbsorbDB = NULL;
-    this->m_bCanBeSuperDizzy = true;
-    this->m_fSuperDizzyGaugeRatioAfterSuperDizzy = 0.00f;
-    this->m_fGuardGaugeRecoveryCooldown = -1.00f;
-    this->m_GuardGaugeRecoveryCooldownPerDifficulty[0] = 1.00f;
-    this->m_GuardGaugeRecoveryCooldownPerDifficulty[1] = 1.00f;
-    this->m_GuardGaugeRecoveryCooldownPerDifficulty[2] = 1.00f;
-    this->m_iResilience = 0;
-    this->m_iResilienceAttackBonus = 0;
-    this->m_AttackPropertyResistanceDB = NULL;
-}
 

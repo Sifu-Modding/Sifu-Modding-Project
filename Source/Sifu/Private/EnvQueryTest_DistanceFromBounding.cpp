@@ -6,3 +6,4 @@ UEnvQueryTest_DistanceFromBounding::UEnvQueryTest_DistanceFromBounding() {
     this->DistanceTo = UEnvQueryContext_Querier::StaticClass();
 }
 
+

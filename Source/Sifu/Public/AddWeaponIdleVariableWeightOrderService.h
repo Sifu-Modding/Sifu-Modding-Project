@@ -12,6 +12,7 @@ class SIFU_API UAddWeaponIdleVariableWeightOrderService : public UAddVariableWei
     GENERATED_BODY()
 public:
     UAddWeaponIdleVariableWeightOrderService();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     FSCUserDefinedEnumHandler BPE_GetEnumLayerForWeapon(const UBaseWeaponData* _weaponData) const;
     

@@ -8,5 +8,6 @@ class UEQContext_Enemy : public UEnvQueryContext {
     GENERATED_BODY()
 public:
     UEQContext_Enemy();
+
 };
 

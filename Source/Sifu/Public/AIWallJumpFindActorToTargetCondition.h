@@ -16,6 +16,7 @@ protected:
     
 public:
     UAIWallJumpFindActorToTargetCondition();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSubclassOf<UAIActionWallJumpAttack> BPF_GetAttackActionClass() const;
     

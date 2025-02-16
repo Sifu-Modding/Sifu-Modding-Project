@@ -11,6 +11,7 @@ class SCCORE_API USCPoolHelpers : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     USCPoolHelpers();
+
     UFUNCTION(BlueprintCallable)
     static AActor* BPF_SpawnPoolableActor(AActor* _worldCtxt, UClass* _class, const FTransform& _transform, FName _poolName, bool _bGrow, bool _bFailIfNoPoolFound);
     

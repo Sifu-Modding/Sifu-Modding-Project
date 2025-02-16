@@ -4,3 +4,4 @@ UOrderAttackDB::UOrderAttackDB() {
     this->m_fRepulsionSpeed = 1000.00f;
 }
 
+

@@ -12,6 +12,7 @@ class SIFU_API UBlendProfileHelper : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UBlendProfileHelper();
+
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UBlendProfile* BPF_GetBlendProfile(const FBlendProfileBySpeedStateStruct& _blendProfileBySpeedStateStruct, ESpeedState _eSpeedState);
     

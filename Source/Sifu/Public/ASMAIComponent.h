@@ -7,6 +7,7 @@ UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class SIFU_API UASMAIComponent : public UASMComponent {
     GENERATED_BODY()
 public:
-    UASMAIComponent();
+    UASMAIComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

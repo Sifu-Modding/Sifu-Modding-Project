@@ -1,5 +1,8 @@
 #include "AnimContainerLibrary.h"
 
+UAnimContainerLibrary::UAnimContainerLibrary() {
+}
+
 void UAnimContainerLibrary::GetSpeedStateAnim(const FSpeedStateAnimContainer& _animContainer, ESpeedState _eSpeedState, FAnimContainer& _result) {
 }
 
@@ -18,6 +21,4 @@ void UAnimContainerLibrary::GetCardinalChangementAnim(const FCardinalChangementA
 void UAnimContainerLibrary::GetCardinalAnim(const FCardinalAnimContainer& _animContainer, ESCCardinalPoints _eCardinal, FAnimContainer& _result) {
 }
 
-UAnimContainerLibrary::UAnimContainerLibrary() {
-}
 

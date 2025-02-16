@@ -20,6 +20,7 @@ private:
     
 public:
     UAIActionPlaySequence();
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnCreatedSequenceActorEndedPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _endPlayReason);

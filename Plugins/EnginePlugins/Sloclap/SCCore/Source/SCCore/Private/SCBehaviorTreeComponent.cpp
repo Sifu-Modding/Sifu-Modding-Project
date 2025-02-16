@@ -1,5 +1,6 @@
 #include "SCBehaviorTreeComponent.h"
 
-USCBehaviorTreeComponent::USCBehaviorTreeComponent() {
+USCBehaviorTreeComponent::USCBehaviorTreeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
+
 

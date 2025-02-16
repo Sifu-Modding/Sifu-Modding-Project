@@ -1,9 +1,7 @@
 #include "AIWaveRefillDirector.h"
 
-class AAISituationActor;
-class AAISpawner;
-class AActor;
-class ABaseCharacter;
+AAIWaveRefillDirector::AAIWaveRefillDirector(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void AAIWaveRefillDirector::OnSituationAIDeathDetected(ABaseCharacter* _character) {
 }
@@ -49,6 +47,4 @@ void AAIWaveRefillDirector::BPF_CancelCurrentWave() {
 
 
 
-AAIWaveRefillDirector::AAIWaveRefillDirector() {
-}
 

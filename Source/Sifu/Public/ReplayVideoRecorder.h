@@ -22,7 +22,8 @@ protected:
     FAvailabilityLayerCache m_AvailabilityLayerCache;
     
 public:
-    AReplayVideoRecorder();
+    AReplayVideoRecorder(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable)
     void BPF_StopVideoRecording();
     

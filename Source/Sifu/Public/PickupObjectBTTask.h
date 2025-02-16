@@ -8,5 +8,6 @@ class SIFU_API UPickupObjectBTTask : public UBTTaskNode {
     GENERATED_BODY()
 public:
     UPickupObjectBTTask();
+
 };
 

@@ -8,5 +8,6 @@ class UAIWallJumAttack_EQContext_ItemWJStartLocation : public UEnvQueryContext {
     GENERATED_BODY()
 public:
     UAIWallJumAttack_EQContext_ItemWJStartLocation();
+
 };
 

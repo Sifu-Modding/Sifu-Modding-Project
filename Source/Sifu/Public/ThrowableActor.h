@@ -181,7 +181,8 @@ private:
     EThrowableState m_eState;
     
 public:
-    AThrowableActor();
+    AThrowableActor(const FObjectInitializer& ObjectInitializer);
+
 private:
     UFUNCTION(BlueprintCallable)
     void OnWakeUp(bool _bWakesUp);
@@ -226,6 +227,9 @@ public:
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OverrideBounceType(const AActor* _Instigator, const AActor* _target);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BPE_OnUpdateTicks();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnThrown();

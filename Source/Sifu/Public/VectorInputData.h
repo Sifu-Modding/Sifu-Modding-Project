@@ -51,5 +51,6 @@ public:
     bool m_bNoInputTreatment;
     
     UVectorInputData();
+
 };
 

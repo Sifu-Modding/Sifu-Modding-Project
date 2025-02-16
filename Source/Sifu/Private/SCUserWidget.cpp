@@ -1,22 +1,20 @@
 #include "SCUserWidget.h"
 
-class AFightingCharacter;
-class AFightingPlayerController;
-class ASCPlayerController;
-class UAttackComponent;
-class UCharacterHealthComponent;
-class UDefenseComponent;
-class UMenuDB;
-class UMenuWidget;
-class UPanelWidget;
-class USCAbilitySystemComponent;
-class USocialComponent;
-class USocialManager;
-class UStatsComponent;
-class UThePlainesGameInstance;
-class UWidgetAnimation;
-class UWidgetData;
-class UWorld;
+USCUserWidget::USCUserWidget() {
+    this->m_ActiveVisibility = ESlateVisibility::Visible;
+    this->m_Data = NULL;
+    this->m_DataClass = NULL;
+    this->m_eControllerInputModeVisibility = ESlateVisibility::Collapsed;
+    this->m_eMouseInputModeVisibility = ESlateVisibility::Collapsed;
+    this->m_bGiveFocusIfNeededWithKeyboard = false;
+    this->m_eFocusedVisibility = ESlateVisibility::Collapsed;
+    this->m_bOnGiveFocusButtonOnly = true;
+    this->m_bNotifyPawnChanged = false;
+    this->m_bNotifyUIInputModeChanged = false;
+    this->m_bForceGamepadUI = false;
+    this->m_bUpdateDataOnCharacterProgression = false;
+    this->m_bUpdateDataOnVisible = true;
+}
 
 void USCUserWidget::OnDataUpdated() {
 }
@@ -143,19 +141,4 @@ UWidgetData* USCUserWidget::BPE_CreateData_Implementation() {
 }
 
 
-USCUserWidget::USCUserWidget() {
-    this->m_ActiveVisibility = ESlateVisibility::Visible;
-    this->m_Data = NULL;
-    this->m_DataClass = NULL;
-    this->m_eControllerInputModeVisibility = ESlateVisibility::Collapsed;
-    this->m_eMouseInputModeVisibility = ESlateVisibility::Collapsed;
-    this->m_bGiveFocusIfNeededWithKeyboard = false;
-    this->m_eFocusedVisibility = ESlateVisibility::Collapsed;
-    this->m_bOnGiveFocusButtonOnly = true;
-    this->m_bNotifyPawnChanged = false;
-    this->m_bNotifyUIInputModeChanged = false;
-    this->m_bForceGamepadUI = false;
-    this->m_bUpdateDataOnCharacterProgression = false;
-    this->m_bUpdateDataOnVisible = true;
-}
 

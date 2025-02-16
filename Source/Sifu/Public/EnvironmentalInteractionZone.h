@@ -13,6 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_bEnvironmentalTakedownEnabled;
     
-    AEnvironmentalInteractionZone();
+    AEnvironmentalInteractionZone(const FObjectInitializer& ObjectInitializer);
+
 };
 

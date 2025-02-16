@@ -1,9 +1,8 @@
 #include "SCAbilitySystemComponent.h"
 #include "Templates/SubclassOf.h"
 
-class UGameplayAbility;
-class UGameplayEffect;
-class USkillGameplayEffect;
+USCAbilitySystemComponent::USCAbilitySystemComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+}
 
 void USCAbilitySystemComponent::BPF_UnlockSkill(TSubclassOf<USkillGameplayEffect> _effect, bool _bForce) {
 }
@@ -84,6 +83,4 @@ void USCAbilitySystemComponent::BPF_AddLooseGameplayTag(FGameplayTag _tag) {
 void USCAbilitySystemComponent::BPF_AddAndSaveGameplayTag(const FGameplayTagContainer& _tag, bool _bNeedSaveGame) {
 }
 
-USCAbilitySystemComponent::USCAbilitySystemComponent() {
-}
 

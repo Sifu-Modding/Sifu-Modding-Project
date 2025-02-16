@@ -28,6 +28,7 @@ protected:
     
 public:
     UReplayUIModeUserWidget();
+
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BPE_OnLeaveMode();

@@ -4,3 +4,4 @@ UComboAIConditionIsFrozenBySanctuary::UComboAIConditionIsFrozenBySanctuary() {
     this->m_bInvert = false;
 }
 
+

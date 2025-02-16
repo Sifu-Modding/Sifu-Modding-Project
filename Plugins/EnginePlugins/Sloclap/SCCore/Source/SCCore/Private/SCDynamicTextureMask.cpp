@@ -1,32 +1,6 @@
 #include "SCDynamicTextureMask.h"
 
-class UTexture;
-
-void USCDynamicTextureMask::SetupLocalBoundsOffline() {
-}
-
-void USCDynamicTextureMask::CreatePositionBakingTextureTarget() {
-}
-
-void USCDynamicTextureMask::CreateMaskTextureTarget() {
-}
-
-void USCDynamicTextureMask::CreateBothTexturesTarget() {
-}
-
-bool USCDynamicTextureMask::BPF_DrawOnMaskOverride(FVector _vWorldPos, float _fHitSize, float _fHitFade, FVector _vAxisV, FVector _vAxisU, UTexture* _TextureToProject, FLinearColor _color, EDynamicTextureMask_DrawShape _eDrawShape) {
-    return false;
-}
-
-bool USCDynamicTextureMask::BPF_DrawOnMask(FVector _vWorldPos, float _fHitSize, float _fHitFade, FVector _vAxisV, FVector _vAxisU, UTexture* _TextureToProject, FLinearColor _color) {
-    return false;
-}
-
-bool USCDynamicTextureMask::BPF_BakeSelfPositionRuntime() {
-    return false;
-}
-
-USCDynamicTextureMask::USCDynamicTextureMask() {
+USCDynamicTextureMask::USCDynamicTextureMask(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_bEnablePositionBaking = false;
     this->m_ePositionBakingTypeEnum = EDynamicTextureMask_PositionBakingType::PBT_SimpleStaticMesh;
     this->m_eDrawType = EDynamicTextureMask_DrawType::DT_Additive;
@@ -65,4 +39,29 @@ USCDynamicTextureMask::USCDynamicTextureMask() {
     this->m_CopyMID = NULL;
     this->m_BakedPositionHitDrawerInstanceDynamic = NULL;
 }
+
+void USCDynamicTextureMask::SetupLocalBoundsOffline() {
+}
+
+void USCDynamicTextureMask::CreatePositionBakingTextureTarget() {
+}
+
+void USCDynamicTextureMask::CreateMaskTextureTarget() {
+}
+
+void USCDynamicTextureMask::CreateBothTexturesTarget() {
+}
+
+bool USCDynamicTextureMask::BPF_DrawOnMaskOverride(FVector _vWorldPos, float _fHitSize, float _fHitFade, FVector _vAxisV, FVector _vAxisU, UTexture* _TextureToProject, FLinearColor _color, EDynamicTextureMask_DrawShape _eDrawShape) {
+    return false;
+}
+
+bool USCDynamicTextureMask::BPF_DrawOnMask(FVector _vWorldPos, float _fHitSize, float _fHitFade, FVector _vAxisV, FVector _vAxisU, UTexture* _TextureToProject, FLinearColor _color) {
+    return false;
+}
+
+bool USCDynamicTextureMask::BPF_BakeSelfPositionRuntime() {
+    return false;
+}
+
 

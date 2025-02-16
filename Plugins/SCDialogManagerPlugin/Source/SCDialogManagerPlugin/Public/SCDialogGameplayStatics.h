@@ -10,6 +10,7 @@ class SCDIALOGMANAGERPLUGIN_API USCDialogGameplayStatics : public UBlueprintFunc
     GENERATED_BODY()
 public:
     USCDialogGameplayStatics();
+
     UFUNCTION(BlueprintCallable)
     static void BPF_PlayDialogLine(ACharacter* _character, FName _line, const bool _bGenericSubtitles);
     

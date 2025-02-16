@@ -26,6 +26,7 @@ protected:
     float m_fShowInteractionRange;
     
 public:
-    UMovableInteractionComponent();
+    UMovableInteractionComponent(const FObjectInitializer& ObjectInitializer);
+
 };
 

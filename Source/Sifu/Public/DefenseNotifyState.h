@@ -14,6 +14,7 @@ public:
     FString m_alName;
     
     UDefenseNotifyState();
+
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BPE_OnHitDefense(const FHitResult& _hitResult, FImpactResult& _Impact, const FHitRequest& _hitRequest, bool& _bShouldDismiss) const;
     

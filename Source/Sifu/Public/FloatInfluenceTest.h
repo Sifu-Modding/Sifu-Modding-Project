@@ -18,5 +18,6 @@ public:
     float m_fValueMax;
     
     UFloatInfluenceTest();
+
 };
 

@@ -79,9 +79,10 @@ private:
     TArray<FInFightPlayersInfo> m_InFightPlayers;
     
 public:
-    USocialComponent();
+    USocialComponent(const FObjectInitializer& ObjectInitializer);
+
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-    
+
 private:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void ServerStopCoop();

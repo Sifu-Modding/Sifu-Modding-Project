@@ -13,5 +13,6 @@ public:
     TMap<ETintEnum, FTintData> m_TintsData;
     
     UTintDB();
+
 };
 

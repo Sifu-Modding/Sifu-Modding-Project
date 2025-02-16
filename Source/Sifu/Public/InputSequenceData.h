@@ -12,5 +12,6 @@ public:
     TArray<FInputSequenceStep> m_Sequence;
     
     UInputSequenceData();
+
 };
 

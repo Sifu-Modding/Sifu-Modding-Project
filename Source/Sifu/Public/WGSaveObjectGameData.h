@@ -15,6 +15,7 @@ public:
     FGameSaveData m_SavedData;
     
     UWGSaveObjectGameData();
+
     UFUNCTION(BlueprintCallable)
     void ReloadDefaultStatsFromDataTable();
     

@@ -8,3 +8,4 @@ UWGLevelSequenceDirectorData::UWGLevelSequenceDirectorData() {
     this->m_bForceOutOfIdle = false;
 }
 
+
